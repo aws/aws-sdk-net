@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,103 +49,103 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalAuthenticationProviders())
             {
                 context.Writer.WritePropertyName("AdditionalAuthenticationProviders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalAuthenticationProvidersListValue in requestObject.AdditionalAuthenticationProviders)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalAuthenticationProvidersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetApiId())
             {
                 context.Writer.WritePropertyName("ApiId");
-                context.Writer.Write(requestObject.ApiId);
+                context.Writer.WriteStringValue(requestObject.ApiId);
             }
 
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLambdaAuthorizerConfig())
             {
                 context.Writer.WritePropertyName("LambdaAuthorizerConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaAuthorizerConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogConfig())
             {
                 context.Writer.WritePropertyName("LogConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAppSyncGraphQlApiLogConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOpenIdConnectConfig())
             {
                 context.Writer.WritePropertyName("OpenIdConnectConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAppSyncGraphQlApiOpenIdConnectConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpenIdConnectConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserPoolConfig())
             {
                 context.Writer.WritePropertyName("UserPoolConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAppSyncGraphQlApiUserPoolConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserPoolConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWafWebAclArn())
             {
                 context.Writer.WritePropertyName("WafWebAclArn");
-                context.Writer.Write(requestObject.WafWebAclArn);
+                context.Writer.WriteStringValue(requestObject.WafWebAclArn);
             }
 
             if(requestObject.IsSetXrayEnabled())
             {
                 context.Writer.WritePropertyName("XrayEnabled");
-                context.Writer.Write(requestObject.XrayEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.XrayEnabled.Value);
             }
 
         }

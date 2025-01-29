@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TimeBasedForecastProperties Object
     /// </summary>  
-    public class TimeBasedForecastPropertiesUnmarshaller : IUnmarshaller<TimeBasedForecastProperties, XmlUnmarshallerContext>, IUnmarshaller<TimeBasedForecastProperties, JsonUnmarshallerContext>
+    public class TimeBasedForecastPropertiesUnmarshaller : IJsonUnmarshaller<TimeBasedForecastProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TimeBasedForecastProperties IUnmarshaller<TimeBasedForecastProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TimeBasedForecastProperties Unmarshall(JsonUnmarshallerContext context)
+        public TimeBasedForecastProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TimeBasedForecastProperties unmarshalledObject = new TimeBasedForecastProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LowerBoundary", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LowerBoundary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LowerBoundary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PeriodsBackward", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PeriodsBackward = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeriodsBackward = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PeriodsForward", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PeriodsForward = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PeriodsForward = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredictionInterval", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PredictionInterval = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredictionInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Seasonality", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Seasonality = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Seasonality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpperBoundary", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.UpperBoundary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpperBoundary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

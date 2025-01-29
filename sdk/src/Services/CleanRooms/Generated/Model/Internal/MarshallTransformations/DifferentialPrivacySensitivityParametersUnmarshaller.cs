@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DifferentialPrivacySensitivityParameters Object
     /// </summary>  
-    public class DifferentialPrivacySensitivityParametersUnmarshaller : IUnmarshaller<DifferentialPrivacySensitivityParameters, XmlUnmarshallerContext>, IUnmarshaller<DifferentialPrivacySensitivityParameters, JsonUnmarshallerContext>
+    public class DifferentialPrivacySensitivityParametersUnmarshaller : IJsonUnmarshaller<DifferentialPrivacySensitivityParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DifferentialPrivacySensitivityParameters IUnmarshaller<DifferentialPrivacySensitivityParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DifferentialPrivacySensitivityParameters Unmarshall(JsonUnmarshallerContext context)
+        public DifferentialPrivacySensitivityParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DifferentialPrivacySensitivityParameters unmarshalledObject = new DifferentialPrivacySensitivityParameters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("aggregationExpression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationExpression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregationExpression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aggregationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AggregationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maxColumnValue", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.MaxColumnValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxColumnValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("minColumnValue", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.MinColumnValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinColumnValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("userContributionLimit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UserContributionLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserContributionLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeliveryChannel Object
     /// </summary>  
-    public class DeliveryChannelUnmarshaller : IUnmarshaller<DeliveryChannel, XmlUnmarshallerContext>, IUnmarshaller<DeliveryChannel, JsonUnmarshallerContext>
+    public class DeliveryChannelUnmarshaller : IJsonUnmarshaller<DeliveryChannel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeliveryChannel IUnmarshaller<DeliveryChannel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeliveryChannel Unmarshall(JsonUnmarshallerContext context)
+        public DeliveryChannel Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeliveryChannel unmarshalledObject = new DeliveryChannel();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("configSnapshotDeliveryProperties", targetDepth))
                 {
                     var unmarshaller = ConfigSnapshotDeliveryPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.ConfigSnapshotDeliveryProperties = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigSnapshotDeliveryProperties = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3BucketName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3BucketName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3KeyPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3KeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3KmsKeyArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3KmsKeyArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3KmsKeyArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("snsTopicARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnsTopicARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnsTopicARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

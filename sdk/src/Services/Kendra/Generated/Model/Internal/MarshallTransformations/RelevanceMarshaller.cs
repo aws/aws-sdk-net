@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("Duration");
-                context.Writer.Write(requestObject.Duration);
+                context.Writer.WriteStringValue(requestObject.Duration);
             }
 
             if(requestObject.IsSetFreshness())
             {
                 context.Writer.WritePropertyName("Freshness");
-                context.Writer.Write(requestObject.Freshness.Value);
+                context.Writer.WriteBooleanValue(requestObject.Freshness.Value);
             }
 
             if(requestObject.IsSetImportance())
             {
                 context.Writer.WritePropertyName("Importance");
-                context.Writer.Write(requestObject.Importance.Value);
+                context.Writer.WriteNumberValue(requestObject.Importance.Value);
             }
 
             if(requestObject.IsSetRankOrder())
             {
                 context.Writer.WritePropertyName("RankOrder");
-                context.Writer.Write(requestObject.RankOrder);
+                context.Writer.WriteStringValue(requestObject.RankOrder);
             }
 
             if(requestObject.IsSetValueImportanceMap())
             {
                 context.Writer.WritePropertyName("ValueImportanceMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectValueImportanceMapKvp in requestObject.ValueImportanceMap)
                 {
                     context.Writer.WritePropertyName(requestObjectValueImportanceMapKvp.Key);
                     var requestObjectValueImportanceMapValue = requestObjectValueImportanceMapKvp.Value;
 
-                        context.Writer.Write(requestObjectValueImportanceMapValue);
+                        context.Writer.WriteNumberValue(requestObjectValueImportanceMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

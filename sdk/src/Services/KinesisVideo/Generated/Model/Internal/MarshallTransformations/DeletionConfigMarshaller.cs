@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleteAfterUpload())
             {
                 context.Writer.WritePropertyName("DeleteAfterUpload");
-                context.Writer.Write(requestObject.DeleteAfterUpload.Value);
+                context.Writer.WriteBooleanValue(requestObject.DeleteAfterUpload.Value);
             }
 
             if(requestObject.IsSetEdgeRetentionInHours())
             {
                 context.Writer.WritePropertyName("EdgeRetentionInHours");
-                context.Writer.Write(requestObject.EdgeRetentionInHours.Value);
+                context.Writer.WriteNumberValue(requestObject.EdgeRetentionInHours.Value);
             }
 
             if(requestObject.IsSetLocalSizeConfig())
             {
                 context.Writer.WritePropertyName("LocalSizeConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocalSizeConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LocalSizeConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentName())
             {
                 context.Writer.WritePropertyName("componentName");
-                context.Writer.Write(requestObject.ComponentName);
+                context.Writer.WriteStringValue(requestObject.ComponentName);
             }
 
             if(requestObject.IsSetComponentVersion())
             {
                 context.Writer.WritePropertyName("componentVersion");
-                context.Writer.Write(requestObject.ComponentVersion);
+                context.Writer.WriteStringValue(requestObject.ComponentVersion);
             }
 
             if(requestObject.IsSetVersionRequirements())
             {
                 context.Writer.WritePropertyName("versionRequirements");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectVersionRequirementsKvp in requestObject.VersionRequirements)
                 {
                     context.Writer.WritePropertyName(requestObjectVersionRequirementsKvp.Key);
                     var requestObjectVersionRequirementsValue = requestObjectVersionRequirementsKvp.Value;
 
-                        context.Writer.Write(requestObjectVersionRequirementsValue);
+                        context.Writer.WriteStringValue(requestObjectVersionRequirementsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

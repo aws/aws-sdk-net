@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Limit Object
     /// </summary>  
-    public class LimitUnmarshaller : IUnmarshaller<Limit, XmlUnmarshallerContext>, IUnmarshaller<Limit, JsonUnmarshallerContext>
+    public class LimitUnmarshaller : IXmlUnmarshaller<Limit, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Limit Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LimitUnmarshaller _instance = new LimitUnmarshaller();        
 

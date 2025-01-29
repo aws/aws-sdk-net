@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExecutorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobTimeout())
             {
                 context.Writer.WritePropertyName("jobTimeout");
-                context.Writer.Write(requestObject.JobTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.JobTimeout.Value);
             }
 
             if(requestObject.IsSetPolicyStatementsTemplate())
             {
                 context.Writer.WritePropertyName("policyStatementsTemplate");
-                context.Writer.Write(requestObject.PolicyStatementsTemplate);
+                context.Writer.WriteStringValue(requestObject.PolicyStatementsTemplate);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

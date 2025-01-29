@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,48 +66,53 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetModelCardExportJobName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetModelCardExportJobName())
-                    {
-                        context.Writer.WritePropertyName("ModelCardExportJobName");
-                        context.Writer.Write(publicRequest.ModelCardExportJobName);
-                    }
-
-                    if(publicRequest.IsSetModelCardName())
-                    {
-                        context.Writer.WritePropertyName("ModelCardName");
-                        context.Writer.Write(publicRequest.ModelCardName);
-                    }
-
-                    if(publicRequest.IsSetModelCardVersion())
-                    {
-                        context.Writer.WritePropertyName("ModelCardVersion");
-                        context.Writer.Write(publicRequest.ModelCardVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetOutputConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelCardExportOutputConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ModelCardExportJobName");
+                context.Writer.WriteStringValue(publicRequest.ModelCardExportJobName);
             }
+
+            if(publicRequest.IsSetModelCardName())
+            {
+                context.Writer.WritePropertyName("ModelCardName");
+                context.Writer.WriteStringValue(publicRequest.ModelCardName);
+            }
+
+            if(publicRequest.IsSetModelCardVersion())
+            {
+                context.Writer.WritePropertyName("ModelCardVersion");
+                context.Writer.WriteNumberValue(publicRequest.ModelCardVersion.Value);
+            }
+
+            if(publicRequest.IsSetOutputConfig())
+            {
+                context.Writer.WritePropertyName("OutputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelCardExportOutputConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

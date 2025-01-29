@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ElasticBeanstalkServiceException operation
     /// </summary>  
-    public class ElasticBeanstalkServiceExceptionUnmarshaller : IErrorResponseUnmarshaller<ElasticBeanstalkServiceException, XmlUnmarshallerContext>
+    public class ElasticBeanstalkServiceExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ElasticBeanstalkServiceException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

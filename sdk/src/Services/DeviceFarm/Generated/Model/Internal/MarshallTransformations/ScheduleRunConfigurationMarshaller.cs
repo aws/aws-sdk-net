@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
@@ -51,80 +49,80 @@ namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuxiliaryApps())
             {
                 context.Writer.WritePropertyName("auxiliaryApps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAuxiliaryAppsListValue in requestObject.AuxiliaryApps)
                 {
-                        context.Writer.Write(requestObjectAuxiliaryAppsListValue);
+                        context.Writer.WriteStringValue(requestObjectAuxiliaryAppsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBillingMethod())
             {
                 context.Writer.WritePropertyName("billingMethod");
-                context.Writer.Write(requestObject.BillingMethod);
+                context.Writer.WriteStringValue(requestObject.BillingMethod);
             }
 
             if(requestObject.IsSetCustomerArtifactPaths())
             {
                 context.Writer.WritePropertyName("customerArtifactPaths");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomerArtifactPathsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomerArtifactPaths, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExtraDataPackageArn())
             {
                 context.Writer.WritePropertyName("extraDataPackageArn");
-                context.Writer.Write(requestObject.ExtraDataPackageArn);
+                context.Writer.WriteStringValue(requestObject.ExtraDataPackageArn);
             }
 
             if(requestObject.IsSetLocale())
             {
                 context.Writer.WritePropertyName("locale");
-                context.Writer.Write(requestObject.Locale);
+                context.Writer.WriteStringValue(requestObject.Locale);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Location, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNetworkProfileArn())
             {
                 context.Writer.WritePropertyName("networkProfileArn");
-                context.Writer.Write(requestObject.NetworkProfileArn);
+                context.Writer.WriteStringValue(requestObject.NetworkProfileArn);
             }
 
             if(requestObject.IsSetRadios())
             {
                 context.Writer.WritePropertyName("radios");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RadiosMarshaller.Instance;
                 marshaller.Marshall(requestObject.Radios, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpceConfigurationArns())
             {
                 context.Writer.WritePropertyName("vpceConfigurationArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVpceConfigurationArnsListValue in requestObject.VpceConfigurationArns)
                 {
-                        context.Writer.Write(requestObjectVpceConfigurationArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectVpceConfigurationArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

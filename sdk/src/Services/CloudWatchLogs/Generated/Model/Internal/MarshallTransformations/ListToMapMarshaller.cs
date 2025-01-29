@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlatten())
             {
                 context.Writer.WritePropertyName("flatten");
-                context.Writer.Write(requestObject.Flatten.Value);
+                context.Writer.WriteBooleanValue(requestObject.Flatten.Value);
             }
 
             if(requestObject.IsSetFlattenedElement())
             {
                 context.Writer.WritePropertyName("flattenedElement");
-                context.Writer.Write(requestObject.FlattenedElement);
+                context.Writer.WriteStringValue(requestObject.FlattenedElement);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetTarget())
             {
                 context.Writer.WritePropertyName("target");
-                context.Writer.Write(requestObject.Target);
+                context.Writer.WriteStringValue(requestObject.Target);
             }
 
             if(requestObject.IsSetValueKey())
             {
                 context.Writer.WritePropertyName("valueKey");
-                context.Writer.Write(requestObject.ValueKey);
+                context.Writer.WriteStringValue(requestObject.ValueKey);
             }
 
         }

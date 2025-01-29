@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,162 +49,162 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCopyTags())
             {
                 context.Writer.WritePropertyName("CopyTags");
-                context.Writer.Write(requestObject.CopyTags.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTags.Value);
             }
 
             if(requestObject.IsSetCreateInterval())
             {
                 context.Writer.WritePropertyName("CreateInterval");
-                context.Writer.Write(requestObject.CreateInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.CreateInterval.Value);
             }
 
             if(requestObject.IsSetCrossRegionCopyTargets())
             {
                 context.Writer.WritePropertyName("CrossRegionCopyTargets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCrossRegionCopyTargetsListValue in requestObject.CrossRegionCopyTargets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CrossRegionCopyTargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectCrossRegionCopyTargetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventSource())
             {
                 context.Writer.WritePropertyName("EventSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExclusions())
             {
                 context.Writer.WritePropertyName("Exclusions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExclusionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Exclusions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExtendDeletion())
             {
                 context.Writer.WritePropertyName("ExtendDeletion");
-                context.Writer.Write(requestObject.ExtendDeletion.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExtendDeletion.Value);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Parameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPolicyLanguage())
             {
                 context.Writer.WritePropertyName("PolicyLanguage");
-                context.Writer.Write(requestObject.PolicyLanguage);
+                context.Writer.WriteStringValue(requestObject.PolicyLanguage);
             }
 
             if(requestObject.IsSetPolicyType())
             {
                 context.Writer.WritePropertyName("PolicyType");
-                context.Writer.Write(requestObject.PolicyType);
+                context.Writer.WriteStringValue(requestObject.PolicyType);
             }
 
             if(requestObject.IsSetResourceLocations())
             {
                 context.Writer.WritePropertyName("ResourceLocations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceLocationsListValue in requestObject.ResourceLocations)
                 {
-                        context.Writer.Write(requestObjectResourceLocationsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceLocationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WriteStringValue(requestObject.ResourceType);
             }
 
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                        context.Writer.Write(requestObjectResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRetainInterval())
             {
                 context.Writer.WritePropertyName("RetainInterval");
-                context.Writer.Write(requestObject.RetainInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.RetainInterval.Value);
             }
 
             if(requestObject.IsSetSchedules())
             {
                 context.Writer.WritePropertyName("Schedules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSchedulesListValue in requestObject.Schedules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ScheduleMarshaller.Instance;
                     marshaller.Marshall(requestObjectSchedulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetTags())
             {
                 context.Writer.WritePropertyName("TargetTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetTagsListValue in requestObject.TargetTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

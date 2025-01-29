@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TimeSeriesSummary Object
     /// </summary>  
-    public class TimeSeriesSummaryUnmarshaller : IUnmarshaller<TimeSeriesSummary, XmlUnmarshallerContext>, IUnmarshaller<TimeSeriesSummary, JsonUnmarshallerContext>
+    public class TimeSeriesSummaryUnmarshaller : IJsonUnmarshaller<TimeSeriesSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TimeSeriesSummary IUnmarshaller<TimeSeriesSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TimeSeriesSummary Unmarshall(JsonUnmarshallerContext context)
+        public TimeSeriesSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TimeSeriesSummary unmarshalledObject = new TimeSeriesSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("alias", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Alias = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("assetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataTypeSpec", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataTypeSpec = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataTypeSpec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("propertyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PropertyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PropertyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeSeriesArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeSeriesArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeSeriesCreationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesCreationDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeSeriesCreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeSeriesId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeSeriesId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeSeriesLastUpdateDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TimeSeriesLastUpdateDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeSeriesLastUpdateDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

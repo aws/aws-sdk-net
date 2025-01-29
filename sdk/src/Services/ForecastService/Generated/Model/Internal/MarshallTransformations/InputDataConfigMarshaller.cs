@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatasetGroupArn())
             {
                 context.Writer.WritePropertyName("DatasetGroupArn");
-                context.Writer.Write(requestObject.DatasetGroupArn);
+                context.Writer.WriteStringValue(requestObject.DatasetGroupArn);
             }
 
             if(requestObject.IsSetSupplementaryFeatures())
             {
                 context.Writer.WritePropertyName("SupplementaryFeatures");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupplementaryFeaturesListValue in requestObject.SupplementaryFeatures)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SupplementaryFeatureMarshaller.Instance;
                     marshaller.Marshall(requestObjectSupplementaryFeaturesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

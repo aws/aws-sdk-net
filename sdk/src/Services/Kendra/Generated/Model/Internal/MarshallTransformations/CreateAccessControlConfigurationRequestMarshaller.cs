@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -63,80 +66,85 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessControlList())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AccessControlList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAccessControlListListValue in publicRequest.AccessControlList)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessControlList())
-                    {
-                        context.Writer.WritePropertyName("AccessControlList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAccessControlListListValue in publicRequest.AccessControlList)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = PrincipalMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAccessControlListListValue, context);
+                    var marshaller = PrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAccessControlListListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetHierarchicalAccessControlList())
-                    {
-                        context.Writer.WritePropertyName("HierarchicalAccessControlList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestHierarchicalAccessControlListListValue in publicRequest.HierarchicalAccessControlList)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = HierarchicalPrincipalMarshaller.Instance;
-                            marshaller.Marshall(publicRequestHierarchicalAccessControlListListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIndexId())
-                    {
-                        context.Writer.WritePropertyName("IndexId");
-                        context.Writer.Write(publicRequest.IndexId);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetHierarchicalAccessControlList())
+            {
+                context.Writer.WritePropertyName("HierarchicalAccessControlList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestHierarchicalAccessControlListListValue in publicRequest.HierarchicalAccessControlList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = HierarchicalPrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequestHierarchicalAccessControlListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetIndexId())
+            {
+                context.Writer.WritePropertyName("IndexId");
+                context.Writer.WriteStringValue(publicRequest.IndexId);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

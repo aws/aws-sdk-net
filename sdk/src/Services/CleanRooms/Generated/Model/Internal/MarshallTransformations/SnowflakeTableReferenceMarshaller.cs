@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountIdentifier())
             {
                 context.Writer.WritePropertyName("accountIdentifier");
-                context.Writer.Write(requestObject.AccountIdentifier);
+                context.Writer.WriteStringValue(requestObject.AccountIdentifier);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("databaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetSchemaName())
             {
                 context.Writer.WritePropertyName("schemaName");
-                context.Writer.Write(requestObject.SchemaName);
+                context.Writer.WriteStringValue(requestObject.SchemaName);
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("secretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("tableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
             if(requestObject.IsSetTableSchema())
             {
                 context.Writer.WritePropertyName("tableSchema");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnowflakeTableSchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.TableSchema, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

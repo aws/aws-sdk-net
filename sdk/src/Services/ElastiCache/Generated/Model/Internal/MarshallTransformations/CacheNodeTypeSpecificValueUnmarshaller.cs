@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheNodeTypeSpecificValue Object
     /// </summary>  
-    public class CacheNodeTypeSpecificValueUnmarshaller : IUnmarshaller<CacheNodeTypeSpecificValue, XmlUnmarshallerContext>, IUnmarshaller<CacheNodeTypeSpecificValue, JsonUnmarshallerContext>
+    public class CacheNodeTypeSpecificValueUnmarshaller : IXmlUnmarshaller<CacheNodeTypeSpecificValue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CacheNodeTypeSpecificValue Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CacheNodeTypeSpecificValueUnmarshaller _instance = new CacheNodeTypeSpecificValueUnmarshaller();        
 

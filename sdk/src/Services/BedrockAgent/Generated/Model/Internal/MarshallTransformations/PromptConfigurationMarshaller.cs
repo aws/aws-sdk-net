@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBasePromptTemplate())
             {
                 context.Writer.WritePropertyName("basePromptTemplate");
-                context.Writer.Write(requestObject.BasePromptTemplate);
+                context.Writer.WriteStringValue(requestObject.BasePromptTemplate);
             }
 
             if(requestObject.IsSetFoundationModel())
             {
                 context.Writer.WritePropertyName("foundationModel");
-                context.Writer.Write(requestObject.FoundationModel);
+                context.Writer.WriteStringValue(requestObject.FoundationModel);
             }
 
             if(requestObject.IsSetInferenceConfiguration())
             {
                 context.Writer.WritePropertyName("inferenceConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InferenceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.InferenceConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParserMode())
             {
                 context.Writer.WritePropertyName("parserMode");
-                context.Writer.Write(requestObject.ParserMode);
+                context.Writer.WriteStringValue(requestObject.ParserMode);
             }
 
             if(requestObject.IsSetPromptCreationMode())
             {
                 context.Writer.WritePropertyName("promptCreationMode");
-                context.Writer.Write(requestObject.PromptCreationMode);
+                context.Writer.WriteStringValue(requestObject.PromptCreationMode);
             }
 
             if(requestObject.IsSetPromptState())
             {
                 context.Writer.WritePropertyName("promptState");
-                context.Writer.Write(requestObject.PromptState);
+                context.Writer.WriteStringValue(requestObject.PromptState);
             }
 
             if(requestObject.IsSetPromptType())
             {
                 context.Writer.WritePropertyName("promptType");
-                context.Writer.Write(requestObject.PromptType);
+                context.Writer.WriteStringValue(requestObject.PromptType);
             }
 
         }

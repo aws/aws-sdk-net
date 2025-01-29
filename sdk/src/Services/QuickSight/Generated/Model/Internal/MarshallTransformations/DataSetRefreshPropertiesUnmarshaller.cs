@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataSetRefreshProperties Object
     /// </summary>  
-    public class DataSetRefreshPropertiesUnmarshaller : IUnmarshaller<DataSetRefreshProperties, XmlUnmarshallerContext>, IUnmarshaller<DataSetRefreshProperties, JsonUnmarshallerContext>
+    public class DataSetRefreshPropertiesUnmarshaller : IJsonUnmarshaller<DataSetRefreshProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataSetRefreshProperties IUnmarshaller<DataSetRefreshProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataSetRefreshProperties Unmarshall(JsonUnmarshallerContext context)
+        public DataSetRefreshProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataSetRefreshProperties unmarshalledObject = new DataSetRefreshProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("RefreshConfiguration", targetDepth))
                 {
                     var unmarshaller = RefreshConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.RefreshConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RefreshConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

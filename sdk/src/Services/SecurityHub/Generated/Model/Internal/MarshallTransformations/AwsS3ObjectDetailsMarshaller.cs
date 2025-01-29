@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("ContentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetETag())
             {
                 context.Writer.WritePropertyName("ETag");
-                context.Writer.Write(requestObject.ETag);
+                context.Writer.WriteStringValue(requestObject.ETag);
             }
 
             if(requestObject.IsSetLastModified())
             {
                 context.Writer.WritePropertyName("LastModified");
-                context.Writer.Write(requestObject.LastModified);
+                context.Writer.WriteStringValue(requestObject.LastModified);
             }
 
             if(requestObject.IsSetServerSideEncryption())
             {
                 context.Writer.WritePropertyName("ServerSideEncryption");
-                context.Writer.Write(requestObject.ServerSideEncryption);
+                context.Writer.WriteStringValue(requestObject.ServerSideEncryption);
             }
 
             if(requestObject.IsSetSSEKMSKeyId())
             {
                 context.Writer.WritePropertyName("SSEKMSKeyId");
-                context.Writer.Write(requestObject.SSEKMSKeyId);
+                context.Writer.WriteStringValue(requestObject.SSEKMSKeyId);
             }
 
             if(requestObject.IsSetVersionId())
             {
                 context.Writer.WritePropertyName("VersionId");
-                context.Writer.Write(requestObject.VersionId);
+                context.Writer.WriteStringValue(requestObject.VersionId);
             }
 
         }

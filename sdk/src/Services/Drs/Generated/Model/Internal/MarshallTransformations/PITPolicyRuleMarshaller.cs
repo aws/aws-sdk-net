@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("interval");
-                context.Writer.Write(requestObject.Interval.Value);
+                context.Writer.WriteNumberValue(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetRetentionDuration())
             {
                 context.Writer.WritePropertyName("retentionDuration");
-                context.Writer.Write(requestObject.RetentionDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.RetentionDuration.Value);
             }
 
             if(requestObject.IsSetRuleID())
             {
                 context.Writer.WritePropertyName("ruleID");
-                context.Writer.Write(requestObject.RuleID.Value);
+                context.Writer.WriteNumberValue(requestObject.RuleID.Value);
             }
 
             if(requestObject.IsSetUnits())
             {
                 context.Writer.WritePropertyName("units");
-                context.Writer.Write(requestObject.Units);
+                context.Writer.WriteStringValue(requestObject.Units);
             }
 
         }

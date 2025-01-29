@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackupOptions())
             {
                 context.Writer.WritePropertyName("BackupOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectBackupOptionsKvp in requestObject.BackupOptions)
                 {
                     context.Writer.WritePropertyName(requestObjectBackupOptionsKvp.Key);
                     var requestObjectBackupOptionsValue = requestObjectBackupOptionsKvp.Value;
 
-                        context.Writer.Write(requestObjectBackupOptionsValue);
+                        context.Writer.WriteStringValue(requestObjectBackupOptionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WriteStringValue(requestObject.ResourceType);
             }
 
         }

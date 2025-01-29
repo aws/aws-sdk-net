@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PasswordPolicyViolationException operation
     /// </summary>  
-    public class PasswordPolicyViolationExceptionUnmarshaller : IErrorResponseUnmarshaller<PasswordPolicyViolationException, XmlUnmarshallerContext>
+    public class PasswordPolicyViolationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PasswordPolicyViolationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

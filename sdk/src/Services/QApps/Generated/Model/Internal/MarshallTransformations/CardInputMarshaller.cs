@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileUpload())
             {
                 context.Writer.WritePropertyName("fileUpload");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileUploadCardInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileUpload, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFormInput())
             {
                 context.Writer.WritePropertyName("formInput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FormInputCardInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.FormInput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQPlugin())
             {
                 context.Writer.WritePropertyName("qPlugin");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QPluginCardInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.QPlugin, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQQuery())
             {
                 context.Writer.WritePropertyName("qQuery");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QQueryCardInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.QQuery, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextInput())
             {
                 context.Writer.WritePropertyName("textInput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TextInputCardInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextInput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommitment())
             {
                 context.Writer.WritePropertyName("commitment");
-                context.Writer.Write(requestObject.Commitment);
+                context.Writer.WriteStringValue(requestObject.Commitment);
             }
 
             if(requestObject.IsSetRenewalType())
             {
                 context.Writer.WritePropertyName("renewalType");
-                context.Writer.Write(requestObject.RenewalType);
+                context.Writer.WriteStringValue(requestObject.RenewalType);
             }
 
             if(requestObject.IsSetReservedSlots())
             {
                 context.Writer.WritePropertyName("reservedSlots");
-                context.Writer.Write(requestObject.ReservedSlots.Value);
+                context.Writer.WriteNumberValue(requestObject.ReservedSlots.Value);
             }
 
         }

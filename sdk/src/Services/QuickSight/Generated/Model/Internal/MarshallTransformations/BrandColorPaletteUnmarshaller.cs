@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BrandColorPalette Object
     /// </summary>  
-    public class BrandColorPaletteUnmarshaller : IUnmarshaller<BrandColorPalette, XmlUnmarshallerContext>, IUnmarshaller<BrandColorPalette, JsonUnmarshallerContext>
+    public class BrandColorPaletteUnmarshaller : IJsonUnmarshaller<BrandColorPalette, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BrandColorPalette IUnmarshaller<BrandColorPalette, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BrandColorPalette Unmarshall(JsonUnmarshallerContext context)
+        public BrandColorPalette Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BrandColorPalette unmarshalledObject = new BrandColorPalette();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Accent", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Accent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Accent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Danger", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Danger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Danger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Dimension", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Dimension = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Dimension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Info", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Info = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Info = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Measure", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Measure = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Measure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Primary", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Primary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Primary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Secondary", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Secondary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Secondary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Success", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Success = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Success = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Warning", targetDepth))
                 {
                     var unmarshaller = PaletteUnmarshaller.Instance;
-                    unmarshalledObject.Warning = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Warning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

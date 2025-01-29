@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Item Object
     /// </summary>  
-    public class ItemUnmarshaller : IUnmarshaller<Item, XmlUnmarshallerContext>, IUnmarshaller<Item, JsonUnmarshallerContext>
+    public class ItemUnmarshaller : IXmlUnmarshaller<Item, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Item Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ItemUnmarshaller _instance = new ItemUnmarshaller();        
 

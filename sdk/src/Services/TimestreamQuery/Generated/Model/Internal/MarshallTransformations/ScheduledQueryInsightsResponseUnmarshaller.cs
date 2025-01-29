@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScheduledQueryInsightsResponse Object
     /// </summary>  
-    public class ScheduledQueryInsightsResponseUnmarshaller : IUnmarshaller<ScheduledQueryInsightsResponse, XmlUnmarshallerContext>, IUnmarshaller<ScheduledQueryInsightsResponse, JsonUnmarshallerContext>
+    public class ScheduledQueryInsightsResponseUnmarshaller : IJsonUnmarshaller<ScheduledQueryInsightsResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScheduledQueryInsightsResponse IUnmarshaller<ScheduledQueryInsightsResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScheduledQueryInsightsResponse Unmarshall(JsonUnmarshallerContext context)
+        public ScheduledQueryInsightsResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScheduledQueryInsightsResponse unmarshalledObject = new ScheduledQueryInsightsResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("OutputBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputRows", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputRows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuerySpatialCoverage", targetDepth))
                 {
                     var unmarshaller = QuerySpatialCoverageUnmarshaller.Instance;
-                    unmarshalledObject.QuerySpatialCoverage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuerySpatialCoverage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryTableCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.QueryTableCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryTableCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryTemporalRange", targetDepth))
                 {
                     var unmarshaller = QueryTemporalRangeUnmarshaller.Instance;
-                    unmarshalledObject.QueryTemporalRange = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryTemporalRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

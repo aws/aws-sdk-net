@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEmailTemplate())
             {
                 context.Writer.WritePropertyName("EmailTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmailTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInAppTemplate())
             {
                 context.Writer.WritePropertyName("InAppTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateMarshaller.Instance;
                 marshaller.Marshall(requestObject.InAppTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPushTemplate())
             {
                 context.Writer.WritePropertyName("PushTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateMarshaller.Instance;
                 marshaller.Marshall(requestObject.PushTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSMSTemplate())
             {
                 context.Writer.WritePropertyName("SMSTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateMarshaller.Instance;
                 marshaller.Marshall(requestObject.SMSTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVoiceTemplate())
             {
                 context.Writer.WritePropertyName("VoiceTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateMarshaller.Instance;
                 marshaller.Marshall(requestObject.VoiceTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

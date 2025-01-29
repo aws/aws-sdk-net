@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitialAudioGain())
             {
                 context.Writer.WritePropertyName("initialAudioGain");
-                context.Writer.Write(requestObject.InitialAudioGain.Value);
+                context.Writer.WriteNumberValue(requestObject.InitialAudioGain.Value);
             }
 
             if(requestObject.IsSetInputEndAction())
             {
                 context.Writer.WritePropertyName("inputEndAction");
-                context.Writer.Write(requestObject.InputEndAction);
+                context.Writer.WriteStringValue(requestObject.InputEndAction);
             }
 
             if(requestObject.IsSetInputLossBehavior())
             {
                 context.Writer.WritePropertyName("inputLossBehavior");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputLossBehaviorMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputLossBehavior, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputLockingMode())
             {
                 context.Writer.WritePropertyName("outputLockingMode");
-                context.Writer.Write(requestObject.OutputLockingMode);
+                context.Writer.WriteStringValue(requestObject.OutputLockingMode);
             }
 
             if(requestObject.IsSetOutputLockingSettings())
             {
                 context.Writer.WritePropertyName("outputLockingSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLockingSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputLockingSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutputTimingSource())
             {
                 context.Writer.WritePropertyName("outputTimingSource");
-                context.Writer.Write(requestObject.OutputTimingSource);
+                context.Writer.WriteStringValue(requestObject.OutputTimingSource);
             }
 
             if(requestObject.IsSetSupportLowFramerateInputs())
             {
                 context.Writer.WritePropertyName("supportLowFramerateInputs");
-                context.Writer.Write(requestObject.SupportLowFramerateInputs);
+                context.Writer.WriteStringValue(requestObject.SupportLowFramerateInputs);
             }
 
         }

@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RackPhysicalProperties Object
     /// </summary>  
-    public class RackPhysicalPropertiesUnmarshaller : IUnmarshaller<RackPhysicalProperties, XmlUnmarshallerContext>, IUnmarshaller<RackPhysicalProperties, JsonUnmarshallerContext>
+    public class RackPhysicalPropertiesUnmarshaller : IJsonUnmarshaller<RackPhysicalProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RackPhysicalProperties IUnmarshaller<RackPhysicalProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RackPhysicalProperties Unmarshall(JsonUnmarshallerContext context)
+        public RackPhysicalProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RackPhysicalProperties unmarshalledObject = new RackPhysicalProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FiberOpticCableType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FiberOpticCableType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FiberOpticCableType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumSupportedWeightLbs", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MaximumSupportedWeightLbs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumSupportedWeightLbs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OpticalStandard", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpticalStandard = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpticalStandard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PowerConnector", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PowerConnector = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PowerConnector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PowerDrawKva", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PowerDrawKva = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PowerDrawKva = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PowerFeedDrop", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PowerFeedDrop = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PowerFeedDrop = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PowerPhase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PowerPhase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PowerPhase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UplinkCount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UplinkCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UplinkCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UplinkGbps", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UplinkGbps = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UplinkGbps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

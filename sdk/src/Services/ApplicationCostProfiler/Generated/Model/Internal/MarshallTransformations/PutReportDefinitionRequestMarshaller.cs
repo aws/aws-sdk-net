@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationCostProfiler.Model.Internal.MarshallTransformations
 {
@@ -61,54 +64,59 @@ namespace Amazon.ApplicationCostProfiler.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/reportDefinition";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestinationS3Location())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestinationS3Location())
-                    {
-                        context.Writer.WritePropertyName("destinationS3Location");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("destinationS3Location");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = S3LocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DestinationS3Location, context);
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DestinationS3Location, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFormat())
-                    {
-                        context.Writer.WritePropertyName("format");
-                        context.Writer.Write(publicRequest.Format);
-                    }
-
-                    if(publicRequest.IsSetReportDescription())
-                    {
-                        context.Writer.WritePropertyName("reportDescription");
-                        context.Writer.Write(publicRequest.ReportDescription);
-                    }
-
-                    if(publicRequest.IsSetReportFrequency())
-                    {
-                        context.Writer.WritePropertyName("reportFrequency");
-                        context.Writer.Write(publicRequest.ReportFrequency);
-                    }
-
-                    if(publicRequest.IsSetReportId())
-                    {
-                        context.Writer.WritePropertyName("reportId");
-                        context.Writer.Write(publicRequest.ReportId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("format");
+                context.Writer.WriteStringValue(publicRequest.Format);
+            }
+
+            if(publicRequest.IsSetReportDescription())
+            {
+                context.Writer.WritePropertyName("reportDescription");
+                context.Writer.WriteStringValue(publicRequest.ReportDescription);
+            }
+
+            if(publicRequest.IsSetReportFrequency())
+            {
+                context.Writer.WritePropertyName("reportFrequency");
+                context.Writer.WriteStringValue(publicRequest.ReportFrequency);
+            }
+
+            if(publicRequest.IsSetReportId())
+            {
+                context.Writer.WritePropertyName("reportId");
+                context.Writer.WriteStringValue(publicRequest.ReportId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

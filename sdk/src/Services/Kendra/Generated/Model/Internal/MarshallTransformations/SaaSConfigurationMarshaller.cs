@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostUrl())
             {
                 context.Writer.WritePropertyName("HostUrl");
-                context.Writer.Write(requestObject.HostUrl);
+                context.Writer.WriteStringValue(requestObject.HostUrl);
             }
 
             if(requestObject.IsSetOrganizationName())
             {
                 context.Writer.WritePropertyName("OrganizationName");
-                context.Writer.Write(requestObject.OrganizationName);
+                context.Writer.WriteStringValue(requestObject.OrganizationName);
             }
 
         }

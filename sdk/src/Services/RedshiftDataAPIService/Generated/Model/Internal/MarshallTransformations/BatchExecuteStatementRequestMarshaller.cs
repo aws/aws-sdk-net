@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
 {
@@ -63,101 +66,106 @@ namespace Amazon.RedshiftDataAPIService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetClusterIdentifier())
-                    {
-                        context.Writer.WritePropertyName("ClusterIdentifier");
-                        context.Writer.Write(publicRequest.ClusterIdentifier);
-                    }
-
-                    if(publicRequest.IsSetDatabase())
-                    {
-                        context.Writer.WritePropertyName("Database");
-                        context.Writer.Write(publicRequest.Database);
-                    }
-
-                    if(publicRequest.IsSetDbUser())
-                    {
-                        context.Writer.WritePropertyName("DbUser");
-                        context.Writer.Write(publicRequest.DbUser);
-                    }
-
-                    if(publicRequest.IsSetResultFormat())
-                    {
-                        context.Writer.WritePropertyName("ResultFormat");
-                        context.Writer.Write(publicRequest.ResultFormat);
-                    }
-
-                    if(publicRequest.IsSetSecretArn())
-                    {
-                        context.Writer.WritePropertyName("SecretArn");
-                        context.Writer.Write(publicRequest.SecretArn);
-                    }
-
-                    if(publicRequest.IsSetSessionId())
-                    {
-                        context.Writer.WritePropertyName("SessionId");
-                        context.Writer.Write(publicRequest.SessionId);
-                    }
-
-                    if(publicRequest.IsSetSessionKeepAliveSeconds())
-                    {
-                        context.Writer.WritePropertyName("SessionKeepAliveSeconds");
-                        context.Writer.Write(publicRequest.SessionKeepAliveSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetSqls())
-                    {
-                        context.Writer.WritePropertyName("Sqls");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSqlsListValue in publicRequest.Sqls)
-                        {
-                                context.Writer.Write(publicRequestSqlsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStatementName())
-                    {
-                        context.Writer.WritePropertyName("StatementName");
-                        context.Writer.Write(publicRequest.StatementName);
-                    }
-
-                    if(publicRequest.IsSetWithEvent())
-                    {
-                        context.Writer.WritePropertyName("WithEvent");
-                        context.Writer.Write(publicRequest.WithEvent.Value);
-                    }
-
-                    if(publicRequest.IsSetWorkgroupName())
-                    {
-                        context.Writer.WritePropertyName("WorkgroupName");
-                        context.Writer.Write(publicRequest.WorkgroupName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetClusterIdentifier())
+            {
+                context.Writer.WritePropertyName("ClusterIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ClusterIdentifier);
+            }
+
+            if(publicRequest.IsSetDatabase())
+            {
+                context.Writer.WritePropertyName("Database");
+                context.Writer.WriteStringValue(publicRequest.Database);
+            }
+
+            if(publicRequest.IsSetDbUser())
+            {
+                context.Writer.WritePropertyName("DbUser");
+                context.Writer.WriteStringValue(publicRequest.DbUser);
+            }
+
+            if(publicRequest.IsSetResultFormat())
+            {
+                context.Writer.WritePropertyName("ResultFormat");
+                context.Writer.WriteStringValue(publicRequest.ResultFormat);
+            }
+
+            if(publicRequest.IsSetSecretArn())
+            {
+                context.Writer.WritePropertyName("SecretArn");
+                context.Writer.WriteStringValue(publicRequest.SecretArn);
+            }
+
+            if(publicRequest.IsSetSessionId())
+            {
+                context.Writer.WritePropertyName("SessionId");
+                context.Writer.WriteStringValue(publicRequest.SessionId);
+            }
+
+            if(publicRequest.IsSetSessionKeepAliveSeconds())
+            {
+                context.Writer.WritePropertyName("SessionKeepAliveSeconds");
+                context.Writer.WriteNumberValue(publicRequest.SessionKeepAliveSeconds.Value);
+            }
+
+            if(publicRequest.IsSetSqls())
+            {
+                context.Writer.WritePropertyName("Sqls");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSqlsListValue in publicRequest.Sqls)
+                {
+                        context.Writer.WriteStringValue(publicRequestSqlsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStatementName())
+            {
+                context.Writer.WritePropertyName("StatementName");
+                context.Writer.WriteStringValue(publicRequest.StatementName);
+            }
+
+            if(publicRequest.IsSetWithEvent())
+            {
+                context.Writer.WritePropertyName("WithEvent");
+                context.Writer.WriteBooleanValue(publicRequest.WithEvent.Value);
+            }
+
+            if(publicRequest.IsSetWorkgroupName())
+            {
+                context.Writer.WritePropertyName("WorkgroupName");
+                context.Writer.WriteStringValue(publicRequest.WorkgroupName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

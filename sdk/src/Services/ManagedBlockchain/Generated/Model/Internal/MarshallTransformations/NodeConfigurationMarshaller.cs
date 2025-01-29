@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.ManagedBlockchain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZone())
             {
                 context.Writer.WritePropertyName("AvailabilityZone");
-                context.Writer.Write(requestObject.AvailabilityZone);
+                context.Writer.WriteStringValue(requestObject.AvailabilityZone);
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetLogPublishingConfiguration())
             {
                 context.Writer.WritePropertyName("LogPublishingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NodeLogPublishingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogPublishingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStateDB())
             {
                 context.Writer.WritePropertyName("StateDB");
-                context.Writer.Write(requestObject.StateDB);
+                context.Writer.WriteStringValue(requestObject.StateDB);
             }
 
         }

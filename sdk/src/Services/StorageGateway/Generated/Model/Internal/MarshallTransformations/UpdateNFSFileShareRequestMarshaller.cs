@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -63,130 +66,135 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAuditDestinationARN())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAuditDestinationARN())
-                    {
-                        context.Writer.WritePropertyName("AuditDestinationARN");
-                        context.Writer.Write(publicRequest.AuditDestinationARN);
-                    }
-
-                    if(publicRequest.IsSetCacheAttributes())
-                    {
-                        context.Writer.WritePropertyName("CacheAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CacheAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CacheAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientList())
-                    {
-                        context.Writer.WritePropertyName("ClientList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestClientListListValue in publicRequest.ClientList)
-                        {
-                                context.Writer.Write(publicRequestClientListListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultStorageClass())
-                    {
-                        context.Writer.WritePropertyName("DefaultStorageClass");
-                        context.Writer.Write(publicRequest.DefaultStorageClass);
-                    }
-
-                    if(publicRequest.IsSetEncryptionType())
-                    {
-                        context.Writer.WritePropertyName("EncryptionType");
-                        context.Writer.Write(publicRequest.EncryptionType);
-                    }
-
-                    if(publicRequest.IsSetFileShareARN())
-                    {
-                        context.Writer.WritePropertyName("FileShareARN");
-                        context.Writer.Write(publicRequest.FileShareARN);
-                    }
-
-                    if(publicRequest.IsSetFileShareName())
-                    {
-                        context.Writer.WritePropertyName("FileShareName");
-                        context.Writer.Write(publicRequest.FileShareName);
-                    }
-
-                    if(publicRequest.IsSetGuessMIMETypeEnabled())
-                    {
-                        context.Writer.WritePropertyName("GuessMIMETypeEnabled");
-                        context.Writer.Write(publicRequest.GuessMIMETypeEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetKMSEncrypted())
-                    {
-                        context.Writer.WritePropertyName("KMSEncrypted");
-                        context.Writer.Write(publicRequest.KMSEncrypted.Value);
-                    }
-
-                    if(publicRequest.IsSetKMSKey())
-                    {
-                        context.Writer.WritePropertyName("KMSKey");
-                        context.Writer.Write(publicRequest.KMSKey);
-                    }
-
-                    if(publicRequest.IsSetNFSFileShareDefaults())
-                    {
-                        context.Writer.WritePropertyName("NFSFileShareDefaults");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NFSFileShareDefaultsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NFSFileShareDefaults, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNotificationPolicy())
-                    {
-                        context.Writer.WritePropertyName("NotificationPolicy");
-                        context.Writer.Write(publicRequest.NotificationPolicy);
-                    }
-
-                    if(publicRequest.IsSetObjectACL())
-                    {
-                        context.Writer.WritePropertyName("ObjectACL");
-                        context.Writer.Write(publicRequest.ObjectACL);
-                    }
-
-                    if(publicRequest.IsSetReadOnly())
-                    {
-                        context.Writer.WritePropertyName("ReadOnly");
-                        context.Writer.Write(publicRequest.ReadOnly.Value);
-                    }
-
-                    if(publicRequest.IsSetRequesterPays())
-                    {
-                        context.Writer.WritePropertyName("RequesterPays");
-                        context.Writer.Write(publicRequest.RequesterPays.Value);
-                    }
-
-                    if(publicRequest.IsSetSquash())
-                    {
-                        context.Writer.WritePropertyName("Squash");
-                        context.Writer.Write(publicRequest.Squash);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AuditDestinationARN");
+                context.Writer.WriteStringValue(publicRequest.AuditDestinationARN);
             }
+
+            if(publicRequest.IsSetCacheAttributes())
+            {
+                context.Writer.WritePropertyName("CacheAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CacheAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CacheAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClientList())
+            {
+                context.Writer.WritePropertyName("ClientList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestClientListListValue in publicRequest.ClientList)
+                {
+                        context.Writer.WriteStringValue(publicRequestClientListListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDefaultStorageClass())
+            {
+                context.Writer.WritePropertyName("DefaultStorageClass");
+                context.Writer.WriteStringValue(publicRequest.DefaultStorageClass);
+            }
+
+            if(publicRequest.IsSetEncryptionType())
+            {
+                context.Writer.WritePropertyName("EncryptionType");
+                context.Writer.WriteStringValue(publicRequest.EncryptionType);
+            }
+
+            if(publicRequest.IsSetFileShareARN())
+            {
+                context.Writer.WritePropertyName("FileShareARN");
+                context.Writer.WriteStringValue(publicRequest.FileShareARN);
+            }
+
+            if(publicRequest.IsSetFileShareName())
+            {
+                context.Writer.WritePropertyName("FileShareName");
+                context.Writer.WriteStringValue(publicRequest.FileShareName);
+            }
+
+            if(publicRequest.IsSetGuessMIMETypeEnabled())
+            {
+                context.Writer.WritePropertyName("GuessMIMETypeEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.GuessMIMETypeEnabled.Value);
+            }
+
+            if(publicRequest.IsSetKMSEncrypted())
+            {
+                context.Writer.WritePropertyName("KMSEncrypted");
+                context.Writer.WriteBooleanValue(publicRequest.KMSEncrypted.Value);
+            }
+
+            if(publicRequest.IsSetKMSKey())
+            {
+                context.Writer.WritePropertyName("KMSKey");
+                context.Writer.WriteStringValue(publicRequest.KMSKey);
+            }
+
+            if(publicRequest.IsSetNFSFileShareDefaults())
+            {
+                context.Writer.WritePropertyName("NFSFileShareDefaults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NFSFileShareDefaultsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NFSFileShareDefaults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNotificationPolicy())
+            {
+                context.Writer.WritePropertyName("NotificationPolicy");
+                context.Writer.WriteStringValue(publicRequest.NotificationPolicy);
+            }
+
+            if(publicRequest.IsSetObjectACL())
+            {
+                context.Writer.WritePropertyName("ObjectACL");
+                context.Writer.WriteStringValue(publicRequest.ObjectACL);
+            }
+
+            if(publicRequest.IsSetReadOnly())
+            {
+                context.Writer.WritePropertyName("ReadOnly");
+                context.Writer.WriteBooleanValue(publicRequest.ReadOnly.Value);
+            }
+
+            if(publicRequest.IsSetRequesterPays())
+            {
+                context.Writer.WritePropertyName("RequesterPays");
+                context.Writer.WriteBooleanValue(publicRequest.RequesterPays.Value);
+            }
+
+            if(publicRequest.IsSetSquash())
+            {
+                context.Writer.WritePropertyName("Squash");
+                context.Writer.WriteStringValue(publicRequest.Squash);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

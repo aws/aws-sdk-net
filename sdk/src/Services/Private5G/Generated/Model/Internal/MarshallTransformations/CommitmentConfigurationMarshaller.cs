@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticRenewal())
             {
                 context.Writer.WritePropertyName("automaticRenewal");
-                context.Writer.Write(requestObject.AutomaticRenewal.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutomaticRenewal.Value);
             }
 
             if(requestObject.IsSetCommitmentLength())
             {
                 context.Writer.WritePropertyName("commitmentLength");
-                context.Writer.Write(requestObject.CommitmentLength);
+                context.Writer.WriteStringValue(requestObject.CommitmentLength);
             }
 
         }

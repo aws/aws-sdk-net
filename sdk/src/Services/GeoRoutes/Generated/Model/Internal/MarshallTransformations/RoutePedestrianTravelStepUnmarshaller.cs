@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RoutePedestrianTravelStep Object
     /// </summary>  
-    public class RoutePedestrianTravelStepUnmarshaller : IUnmarshaller<RoutePedestrianTravelStep, XmlUnmarshallerContext>, IUnmarshaller<RoutePedestrianTravelStep, JsonUnmarshallerContext>
+    public class RoutePedestrianTravelStepUnmarshaller : IJsonUnmarshaller<RoutePedestrianTravelStep, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RoutePedestrianTravelStep IUnmarshaller<RoutePedestrianTravelStep, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RoutePedestrianTravelStep Unmarshall(JsonUnmarshallerContext context)
+        public RoutePedestrianTravelStep Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RoutePedestrianTravelStep unmarshalledObject = new RoutePedestrianTravelStep();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ContinueStepDetails", targetDepth))
                 {
                     var unmarshaller = RouteContinueStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ContinueStepDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContinueStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentRoad", targetDepth))
                 {
                     var unmarshaller = RouteRoadUnmarshaller.Instance;
-                    unmarshalledObject.CurrentRoad = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentRoad = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Distance", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Distance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Distance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Duration", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExitNumber", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LocalizedString, LocalizedStringUnmarshaller>(LocalizedStringUnmarshaller.Instance);
-                    unmarshalledObject.ExitNumber = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LocalizedString, LocalizedStringUnmarshaller>(LocalizedStringUnmarshaller.Instance);
+                    unmarshalledObject.ExitNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GeometryOffset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.GeometryOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GeometryOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Instruction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Instruction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Instruction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeepStepDetails", targetDepth))
                 {
                     var unmarshaller = RouteKeepStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.KeepStepDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeepStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NextRoad", targetDepth))
                 {
                     var unmarshaller = RouteRoadUnmarshaller.Instance;
-                    unmarshalledObject.NextRoad = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextRoad = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoundaboutEnterStepDetails", targetDepth))
                 {
                     var unmarshaller = RouteRoundaboutEnterStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RoundaboutEnterStepDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoundaboutEnterStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoundaboutExitStepDetails", targetDepth))
                 {
                     var unmarshaller = RouteRoundaboutExitStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RoundaboutExitStepDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoundaboutExitStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoundaboutPassStepDetails", targetDepth))
                 {
                     var unmarshaller = RouteRoundaboutPassStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RoundaboutPassStepDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoundaboutPassStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Signpost", targetDepth))
                 {
                     var unmarshaller = RouteSignpostUnmarshaller.Instance;
-                    unmarshalledObject.Signpost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Signpost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TurnStepDetails", targetDepth))
                 {
                     var unmarshaller = RouteTurnStepDetailsUnmarshaller.Instance;
-                    unmarshalledObject.TurnStepDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TurnStepDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

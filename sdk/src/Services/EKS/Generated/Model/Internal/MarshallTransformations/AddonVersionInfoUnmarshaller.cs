@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AddonVersionInfo Object
     /// </summary>  
-    public class AddonVersionInfoUnmarshaller : IUnmarshaller<AddonVersionInfo, XmlUnmarshallerContext>, IUnmarshaller<AddonVersionInfo, JsonUnmarshallerContext>
+    public class AddonVersionInfoUnmarshaller : IJsonUnmarshaller<AddonVersionInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AddonVersionInfo IUnmarshaller<AddonVersionInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AddonVersionInfo Unmarshall(JsonUnmarshallerContext context)
+        public AddonVersionInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AddonVersionInfo unmarshalledObject = new AddonVersionInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("addonVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddonVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddonVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("architecture", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Architecture = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Architecture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("compatibilities", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Compatibility, CompatibilityUnmarshaller>(CompatibilityUnmarshaller.Instance);
-                    unmarshalledObject.Compatibilities = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Compatibility, CompatibilityUnmarshaller>(CompatibilityUnmarshaller.Instance);
+                    unmarshalledObject.Compatibilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("computeTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ComputeTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ComputeTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("requiresConfiguration", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequiresConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequiresConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("requiresIamPermissions", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequiresIamPermissions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequiresIamPermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3SubscriptionRequiredException operation
     /// </summary>  
-    public class S3SubscriptionRequiredExceptionUnmarshaller : IErrorResponseUnmarshaller<S3SubscriptionRequiredException, XmlUnmarshallerContext>
+    public class S3SubscriptionRequiredExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<S3SubscriptionRequiredException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

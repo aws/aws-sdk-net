@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CertificateDetails Object
     /// </summary>  
-    public class CertificateDetailsUnmarshaller : IUnmarshaller<CertificateDetails, XmlUnmarshallerContext>, IUnmarshaller<CertificateDetails, JsonUnmarshallerContext>
+    public class CertificateDetailsUnmarshaller : IXmlUnmarshaller<CertificateDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CertificateDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CertificateDetailsUnmarshaller _instance = new CertificateDetailsUnmarshaller();        
 

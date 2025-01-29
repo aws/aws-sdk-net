@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeploymentConfig Object
     /// </summary>  
-    public class DeploymentConfigUnmarshaller : IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>, IUnmarshaller<DeploymentConfig, JsonUnmarshallerContext>
+    public class DeploymentConfigUnmarshaller : IJsonUnmarshaller<DeploymentConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeploymentConfig IUnmarshaller<DeploymentConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentConfig Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeploymentConfig unmarshalledObject = new DeploymentConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("concurrentDeploymentPercentage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConcurrentDeploymentPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConcurrentDeploymentPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("downloadConditionFile", targetDepth))
                 {
                     var unmarshaller = S3ObjectUnmarshaller.Instance;
-                    unmarshalledObject.DownloadConditionFile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DownloadConditionFile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureThresholdPercentage", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FailureThresholdPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureThresholdPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("robotDeploymentTimeoutInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RobotDeploymentTimeoutInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RobotDeploymentTimeoutInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

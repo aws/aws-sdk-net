@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdjustments())
             {
                 context.Writer.WritePropertyName("Adjustments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdjustmentsListValue in requestObject.Adjustments)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AdjustmentMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdjustmentsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBaseScore())
@@ -69,30 +67,30 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("BaseScore");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.BaseScore.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BaseScore.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BaseScore.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BaseScore.Value);
+                    context.Writer.WriteNumberValue(requestObject.BaseScore.Value);
                 }
             }
 
             if(requestObject.IsSetBaseVector())
             {
                 context.Writer.WritePropertyName("BaseVector");
-                context.Writer.Write(requestObject.BaseVector);
+                context.Writer.WriteStringValue(requestObject.BaseVector);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

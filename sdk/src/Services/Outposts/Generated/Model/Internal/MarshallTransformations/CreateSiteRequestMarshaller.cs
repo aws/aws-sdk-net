@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
@@ -61,84 +64,89 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/sites";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNotes())
-                    {
-                        context.Writer.WritePropertyName("Notes");
-                        context.Writer.Write(publicRequest.Notes);
-                    }
-
-                    if(publicRequest.IsSetOperatingAddress())
-                    {
-                        context.Writer.WritePropertyName("OperatingAddress");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AddressMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OperatingAddress, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRackPhysicalProperties())
-                    {
-                        context.Writer.WritePropertyName("RackPhysicalProperties");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RackPhysicalPropertiesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RackPhysicalProperties, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetShippingAddress())
-                    {
-                        context.Writer.WritePropertyName("ShippingAddress");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AddressMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ShippingAddress, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNotes())
+            {
+                context.Writer.WritePropertyName("Notes");
+                context.Writer.WriteStringValue(publicRequest.Notes);
+            }
+
+            if(publicRequest.IsSetOperatingAddress())
+            {
+                context.Writer.WritePropertyName("OperatingAddress");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AddressMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OperatingAddress, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRackPhysicalProperties())
+            {
+                context.Writer.WritePropertyName("RackPhysicalProperties");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RackPhysicalPropertiesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RackPhysicalProperties, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetShippingAddress())
+            {
+                context.Writer.WritePropertyName("ShippingAddress");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AddressMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ShippingAddress, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

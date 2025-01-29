@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -47,123 +47,123 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeJobRunResponse response = new DescribeJobRunResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Attempt", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.Attempt = unmarshaller.Unmarshall(context);
+                    response.Attempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompletedOn", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CompletedOn = unmarshaller.Unmarshall(context);
+                    response.CompletedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatabaseOutputs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DatabaseOutput, DatabaseOutputUnmarshaller>(DatabaseOutputUnmarshaller.Instance);
-                    response.DatabaseOutputs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DatabaseOutput, DatabaseOutputUnmarshaller>(DatabaseOutputUnmarshaller.Instance);
+                    response.DatabaseOutputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataCatalogOutputs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataCatalogOutput, DataCatalogOutputUnmarshaller>(DataCatalogOutputUnmarshaller.Instance);
-                    response.DataCatalogOutputs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DataCatalogOutput, DataCatalogOutputUnmarshaller>(DataCatalogOutputUnmarshaller.Instance);
+                    response.DataCatalogOutputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DatasetName = unmarshaller.Unmarshall(context);
+                    response.DatasetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ErrorMessage = unmarshaller.Unmarshall(context);
+                    response.ErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExecutionTime", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    response.ExecutionTime = unmarshaller.Unmarshall(context);
+                    response.ExecutionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.JobName = unmarshaller.Unmarshall(context);
+                    response.JobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobSample", targetDepth))
                 {
                     var unmarshaller = JobSampleUnmarshaller.Instance;
-                    response.JobSample = unmarshaller.Unmarshall(context);
+                    response.JobSample = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LogGroupName = unmarshaller.Unmarshall(context);
+                    response.LogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogSubscription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LogSubscription = unmarshaller.Unmarshall(context);
+                    response.LogSubscription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Outputs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Output, OutputUnmarshaller>(OutputUnmarshaller.Instance);
-                    response.Outputs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Output, OutputUnmarshaller>(OutputUnmarshaller.Instance);
+                    response.Outputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProfileConfiguration", targetDepth))
                 {
                     var unmarshaller = ProfileConfigurationUnmarshaller.Instance;
-                    response.ProfileConfiguration = unmarshaller.Unmarshall(context);
+                    response.ProfileConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecipeReference", targetDepth))
                 {
                     var unmarshaller = RecipeReferenceUnmarshaller.Instance;
-                    response.RecipeReference = unmarshaller.Unmarshall(context);
+                    response.RecipeReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RunId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.RunId = unmarshaller.Unmarshall(context);
+                    response.RunId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.StartedBy = unmarshaller.Unmarshall(context);
+                    response.StartedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartedOn", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.StartedOn = unmarshaller.Unmarshall(context);
+                    response.StartedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.State = unmarshaller.Unmarshall(context);
+                    response.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ValidationConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ValidationConfiguration, ValidationConfigurationUnmarshaller>(ValidationConfigurationUnmarshaller.Instance);
-                    response.ValidationConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ValidationConfiguration, ValidationConfigurationUnmarshaller>(ValidationConfigurationUnmarshaller.Instance);
+                    response.ValidationConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -180,22 +180,24 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonGlueDataBrewException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,33 +49,33 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectSourceEmailAddress())
             {
                 context.Writer.WritePropertyName("connectSourceEmailAddress");
-                context.Writer.Write(requestObject.ConnectSourceEmailAddress);
+                context.Writer.WriteStringValue(requestObject.ConnectSourceEmailAddress);
             }
 
             if(requestObject.IsSetDestinationEmailAddress())
             {
                 context.Writer.WritePropertyName("destinationEmailAddress");
-                context.Writer.Write(requestObject.DestinationEmailAddress);
+                context.Writer.WriteStringValue(requestObject.DestinationEmailAddress);
             }
 
             if(requestObject.IsSetTemplateArn())
             {
                 context.Writer.WritePropertyName("templateArn");
-                context.Writer.Write(requestObject.TemplateArn);
+                context.Writer.WriteStringValue(requestObject.TemplateArn);
             }
 
             if(requestObject.IsSetTemplateParameters())
             {
                 context.Writer.WritePropertyName("templateParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTemplateParametersKvp in requestObject.TemplateParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectTemplateParametersKvp.Key);
                     var requestObjectTemplateParametersValue = requestObjectTemplateParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectTemplateParametersValue);
+                        context.Writer.WriteStringValue(requestObjectTemplateParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

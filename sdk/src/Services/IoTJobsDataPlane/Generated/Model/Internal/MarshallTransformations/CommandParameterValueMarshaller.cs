@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
             if(requestObject.IsSetB())
             {
                 context.Writer.WritePropertyName("B");
-                context.Writer.Write(requestObject.B.Value);
+                context.Writer.WriteBooleanValue(requestObject.B.Value);
             }
 
             if(requestObject.IsSetBIN())
             {
                 context.Writer.WritePropertyName("BIN");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.BIN));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.BIN));
             }
 
             if(requestObject.IsSetD())
@@ -65,36 +63,36 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("D");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.D.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.D.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.D.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.D.Value);
+                    context.Writer.WriteNumberValue(requestObject.D.Value);
                 }
             }
 
             if(requestObject.IsSetI())
             {
                 context.Writer.WritePropertyName("I");
-                context.Writer.Write(requestObject.I.Value);
+                context.Writer.WriteNumberValue(requestObject.I.Value);
             }
 
             if(requestObject.IsSetL())
             {
                 context.Writer.WritePropertyName("L");
-                context.Writer.Write(requestObject.L.Value);
+                context.Writer.WriteNumberValue(requestObject.L.Value);
             }
 
             if(requestObject.IsSetS())
             {
                 context.Writer.WritePropertyName("S");
-                context.Writer.Write(requestObject.S);
+                context.Writer.WriteStringValue(requestObject.S);
             }
 
             if(requestObject.IsSetUL())
             {
                 context.Writer.WritePropertyName("UL");
-                context.Writer.Write(requestObject.UL);
+                context.Writer.WriteStringValue(requestObject.UL);
             }
 
         }

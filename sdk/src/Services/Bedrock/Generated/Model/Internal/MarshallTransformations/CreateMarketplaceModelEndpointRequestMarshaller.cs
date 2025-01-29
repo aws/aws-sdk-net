@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -61,75 +64,80 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/marketplace-model/endpoints";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcceptEula())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAcceptEula())
-                    {
-                        context.Writer.WritePropertyName("acceptEula");
-                        context.Writer.Write(publicRequest.AcceptEula.Value);
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetEndpointConfig())
-                    {
-                        context.Writer.WritePropertyName("endpointConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EndpointConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EndpointConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEndpointName())
-                    {
-                        context.Writer.WritePropertyName("endpointName");
-                        context.Writer.Write(publicRequest.EndpointName);
-                    }
-
-                    if(publicRequest.IsSetModelSourceIdentifier())
-                    {
-                        context.Writer.WritePropertyName("modelSourceIdentifier");
-                        context.Writer.Write(publicRequest.ModelSourceIdentifier);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("acceptEula");
+                context.Writer.WriteBooleanValue(publicRequest.AcceptEula.Value);
             }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetEndpointConfig())
+            {
+                context.Writer.WritePropertyName("endpointConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EndpointConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EndpointConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEndpointName())
+            {
+                context.Writer.WritePropertyName("endpointName");
+                context.Writer.WriteStringValue(publicRequest.EndpointName);
+            }
+
+            if(publicRequest.IsSetModelSourceIdentifier())
+            {
+                context.Writer.WritePropertyName("modelSourceIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ModelSourceIdentifier);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

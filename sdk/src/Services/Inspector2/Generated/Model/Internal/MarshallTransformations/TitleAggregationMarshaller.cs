@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFindingType())
             {
                 context.Writer.WritePropertyName("findingType");
-                context.Writer.Write(requestObject.FindingType);
+                context.Writer.WriteStringValue(requestObject.FindingType);
             }
 
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("resourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WriteStringValue(requestObject.ResourceType);
             }
 
             if(requestObject.IsSetSortBy())
             {
                 context.Writer.WritePropertyName("sortBy");
-                context.Writer.Write(requestObject.SortBy);
+                context.Writer.WriteStringValue(requestObject.SortBy);
             }
 
             if(requestObject.IsSetSortOrder())
             {
                 context.Writer.WritePropertyName("sortOrder");
-                context.Writer.Write(requestObject.SortOrder);
+                context.Writer.WriteStringValue(requestObject.SortOrder);
             }
 
             if(requestObject.IsSetTitles())
             {
                 context.Writer.WritePropertyName("titles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTitlesListValue in requestObject.Titles)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectTitlesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVulnerabilityIds())
             {
                 context.Writer.WritePropertyName("vulnerabilityIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVulnerabilityIdsListValue in requestObject.VulnerabilityIds)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StringFilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectVulnerabilityIdsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

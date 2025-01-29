@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -53,36 +51,36 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("bitrate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Bitrate.Value);
+                    context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
                 }
             }
 
             if(requestObject.IsSetCodingMode())
             {
                 context.Writer.WritePropertyName("codingMode");
-                context.Writer.Write(requestObject.CodingMode);
+                context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
             if(requestObject.IsSetDialnorm())
             {
                 context.Writer.WritePropertyName("dialnorm");
-                context.Writer.Write(requestObject.Dialnorm.Value);
+                context.Writer.WriteNumberValue(requestObject.Dialnorm.Value);
             }
 
             if(requestObject.IsSetDrcLine())
             {
                 context.Writer.WritePropertyName("drcLine");
-                context.Writer.Write(requestObject.DrcLine);
+                context.Writer.WriteStringValue(requestObject.DrcLine);
             }
 
             if(requestObject.IsSetDrcRf())
             {
                 context.Writer.WritePropertyName("drcRf");
-                context.Writer.Write(requestObject.DrcRf);
+                context.Writer.WriteStringValue(requestObject.DrcRf);
             }
 
             if(requestObject.IsSetHeightTrim())
@@ -90,11 +88,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("heightTrim");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.HeightTrim.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.HeightTrim.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.HeightTrim.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.HeightTrim.Value);
+                    context.Writer.WriteNumberValue(requestObject.HeightTrim.Value);
                 }
             }
 
@@ -103,11 +101,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("surroundTrim");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.SurroundTrim.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SurroundTrim.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.SurroundTrim.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SurroundTrim.Value);
+                    context.Writer.WriteNumberValue(requestObject.SurroundTrim.Value);
                 }
             }
 

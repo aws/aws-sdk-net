@@ -29,143 +29,133 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Eac3AtmosSettings Object
     /// </summary>  
-    public class Eac3AtmosSettingsUnmarshaller : IUnmarshaller<Eac3AtmosSettings, XmlUnmarshallerContext>, IUnmarshaller<Eac3AtmosSettings, JsonUnmarshallerContext>
+    public class Eac3AtmosSettingsUnmarshaller : IJsonUnmarshaller<Eac3AtmosSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Eac3AtmosSettings IUnmarshaller<Eac3AtmosSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Eac3AtmosSettings Unmarshall(JsonUnmarshallerContext context)
+        public Eac3AtmosSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Eac3AtmosSettings unmarshalledObject = new Eac3AtmosSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bitrate", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Bitrate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Bitrate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("bitstreamMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BitstreamMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BitstreamMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codingMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CodingMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodingMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dialogueIntelligence", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DialogueIntelligence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DialogueIntelligence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("downmixControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DownmixControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DownmixControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dynamicRangeCompressionLine", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DynamicRangeCompressionLine = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamicRangeCompressionLine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dynamicRangeCompressionRf", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DynamicRangeCompressionRf = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamicRangeCompressionRf = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dynamicRangeControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DynamicRangeControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamicRangeControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("loRoCenterMixLevel", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LoRoCenterMixLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoRoCenterMixLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("loRoSurroundMixLevel", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LoRoSurroundMixLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoRoSurroundMixLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ltRtCenterMixLevel", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LtRtCenterMixLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LtRtCenterMixLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ltRtSurroundMixLevel", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LtRtSurroundMixLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LtRtSurroundMixLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("meteringMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeteringMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeteringMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sampleRate", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SampleRate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("speechThreshold", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SpeechThreshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpeechThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stereoDownmix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StereoDownmix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StereoDownmix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("surroundExMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SurroundExMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SurroundExMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

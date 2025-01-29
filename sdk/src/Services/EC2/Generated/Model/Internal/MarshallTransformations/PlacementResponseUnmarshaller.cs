@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PlacementResponse Object
     /// </summary>  
-    public class PlacementResponseUnmarshaller : IUnmarshaller<PlacementResponse, XmlUnmarshallerContext>, IUnmarshaller<PlacementResponse, JsonUnmarshallerContext>
+    public class PlacementResponseUnmarshaller : IXmlUnmarshaller<PlacementResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PlacementResponse Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PlacementResponseUnmarshaller _instance = new PlacementResponseUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,79 +49,79 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAbsentInputAudioBehavior())
             {
                 context.Writer.WritePropertyName("absentInputAudioBehavior");
-                context.Writer.Write(requestObject.AbsentInputAudioBehavior);
+                context.Writer.WriteStringValue(requestObject.AbsentInputAudioBehavior);
             }
 
             if(requestObject.IsSetArib())
             {
                 context.Writer.WritePropertyName("arib");
-                context.Writer.Write(requestObject.Arib);
+                context.Writer.WriteStringValue(requestObject.Arib);
             }
 
             if(requestObject.IsSetAudioBufferModel())
             {
                 context.Writer.WritePropertyName("audioBufferModel");
-                context.Writer.Write(requestObject.AudioBufferModel);
+                context.Writer.WriteStringValue(requestObject.AudioBufferModel);
             }
 
             if(requestObject.IsSetAudioFramesPerPes())
             {
                 context.Writer.WritePropertyName("audioFramesPerPes");
-                context.Writer.Write(requestObject.AudioFramesPerPes.Value);
+                context.Writer.WriteNumberValue(requestObject.AudioFramesPerPes.Value);
             }
 
             if(requestObject.IsSetAudioStreamType())
             {
                 context.Writer.WritePropertyName("audioStreamType");
-                context.Writer.Write(requestObject.AudioStreamType);
+                context.Writer.WriteStringValue(requestObject.AudioStreamType);
             }
 
             if(requestObject.IsSetCcDescriptor())
             {
                 context.Writer.WritePropertyName("ccDescriptor");
-                context.Writer.Write(requestObject.CcDescriptor);
+                context.Writer.WriteStringValue(requestObject.CcDescriptor);
             }
 
             if(requestObject.IsSetEbif())
             {
                 context.Writer.WritePropertyName("ebif");
-                context.Writer.Write(requestObject.Ebif);
+                context.Writer.WriteStringValue(requestObject.Ebif);
             }
 
             if(requestObject.IsSetEsRateInPes())
             {
                 context.Writer.WritePropertyName("esRateInPes");
-                context.Writer.Write(requestObject.EsRateInPes);
+                context.Writer.WriteStringValue(requestObject.EsRateInPes);
             }
 
             if(requestObject.IsSetKlv())
             {
                 context.Writer.WritePropertyName("klv");
-                context.Writer.Write(requestObject.Klv);
+                context.Writer.WriteStringValue(requestObject.Klv);
             }
 
             if(requestObject.IsSetNielsenId3Behavior())
             {
                 context.Writer.WritePropertyName("nielsenId3Behavior");
-                context.Writer.Write(requestObject.NielsenId3Behavior);
+                context.Writer.WriteStringValue(requestObject.NielsenId3Behavior);
             }
 
             if(requestObject.IsSetPcrControl())
             {
                 context.Writer.WritePropertyName("pcrControl");
-                context.Writer.Write(requestObject.PcrControl);
+                context.Writer.WriteStringValue(requestObject.PcrControl);
             }
 
             if(requestObject.IsSetPcrPeriod())
             {
                 context.Writer.WritePropertyName("pcrPeriod");
-                context.Writer.Write(requestObject.PcrPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.PcrPeriod.Value);
             }
 
             if(requestObject.IsSetScte35Control())
             {
                 context.Writer.WritePropertyName("scte35Control");
-                context.Writer.Write(requestObject.Scte35Control);
+                context.Writer.WriteStringValue(requestObject.Scte35Control);
             }
 
             if(requestObject.IsSetScte35PrerollPullupMilliseconds())
@@ -131,11 +129,11 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("scte35PrerollPullupMilliseconds");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Scte35PrerollPullupMilliseconds.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Scte35PrerollPullupMilliseconds.Value);
+                    context.Writer.WriteNumberValue(requestObject.Scte35PrerollPullupMilliseconds.Value);
                 }
             }
 

@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidChangeSetStatusException operation
     /// </summary>  
-    public class InvalidChangeSetStatusExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidChangeSetStatusException, XmlUnmarshallerContext>
+    public class InvalidChangeSetStatusExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidChangeSetStatusException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

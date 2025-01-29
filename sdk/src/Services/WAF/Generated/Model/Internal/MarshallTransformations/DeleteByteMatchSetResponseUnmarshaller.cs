@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAF.Model.Internal.MarshallTransformations
 {
@@ -47,15 +47,15 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DeleteByteMatchSetResponse response = new DeleteByteMatchSetResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ChangeToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChangeToken = unmarshaller.Unmarshall(context);
+                    response.ChangeToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -72,38 +72,40 @@ namespace Amazon.WAF.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInternalErrorException"))
                 {
-                    return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFInternalErrorExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFInvalidAccountException"))
                 {
-                    return WAFInvalidAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFInvalidAccountExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonEmptyEntityException"))
                 {
-                    return WAFNonEmptyEntityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFNonEmptyEntityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFNonexistentItemException"))
                 {
-                    return WAFNonexistentItemExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFNonexistentItemExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFReferencedItemException"))
                 {
-                    return WAFReferencedItemExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFReferencedItemExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("WAFStaleDataException"))
                 {
-                    return WAFStaleDataExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return WAFStaleDataExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonWAFException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

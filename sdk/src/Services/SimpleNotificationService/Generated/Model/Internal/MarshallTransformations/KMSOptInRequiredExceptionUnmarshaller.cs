@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for KMSOptInRequiredException operation
     /// </summary>  
-    public class KMSOptInRequiredExceptionUnmarshaller : IErrorResponseUnmarshaller<KMSOptInRequiredException, XmlUnmarshallerContext>
+    public class KMSOptInRequiredExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KMSOptInRequiredException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

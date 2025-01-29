@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteUTurnStepDetails Object
     /// </summary>  
-    public class RouteUTurnStepDetailsUnmarshaller : IUnmarshaller<RouteUTurnStepDetails, XmlUnmarshallerContext>, IUnmarshaller<RouteUTurnStepDetails, JsonUnmarshallerContext>
+    public class RouteUTurnStepDetailsUnmarshaller : IJsonUnmarshaller<RouteUTurnStepDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteUTurnStepDetails IUnmarshaller<RouteUTurnStepDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteUTurnStepDetails Unmarshall(JsonUnmarshallerContext context)
+        public RouteUTurnStepDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteUTurnStepDetails unmarshalledObject = new RouteUTurnStepDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Intersection", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LocalizedString, LocalizedStringUnmarshaller>(LocalizedStringUnmarshaller.Instance);
-                    unmarshalledObject.Intersection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LocalizedString, LocalizedStringUnmarshaller>(LocalizedStringUnmarshaller.Instance);
+                    unmarshalledObject.Intersection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SteeringDirection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SteeringDirection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SteeringDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TurnAngle", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TurnAngle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TurnAngle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TurnIntensity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TurnIntensity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TurnIntensity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3ObjectMetadata Object
     /// </summary>  
-    public class S3ObjectMetadataUnmarshaller : IUnmarshaller<S3ObjectMetadata, XmlUnmarshallerContext>, IUnmarshaller<S3ObjectMetadata, JsonUnmarshallerContext>
+    public class S3ObjectMetadataUnmarshaller : IXmlUnmarshaller<S3ObjectMetadata, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -118,7 +118,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("UserMetadata", targetDepth))
                     {
-                        var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         unmarshalledObject.UserMetadata = unmarshaller.Unmarshall(context);
                         continue;
                     }
@@ -130,17 +130,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3ObjectMetadata Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static S3ObjectMetadataUnmarshaller _instance = new S3ObjectMetadataUnmarshaller();        
 
         /// <summary>

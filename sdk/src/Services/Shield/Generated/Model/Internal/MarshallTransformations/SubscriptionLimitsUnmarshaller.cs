@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SubscriptionLimits Object
     /// </summary>  
-    public class SubscriptionLimitsUnmarshaller : IUnmarshaller<SubscriptionLimits, XmlUnmarshallerContext>, IUnmarshaller<SubscriptionLimits, JsonUnmarshallerContext>
+    public class SubscriptionLimitsUnmarshaller : IJsonUnmarshaller<SubscriptionLimits, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SubscriptionLimits IUnmarshaller<SubscriptionLimits, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SubscriptionLimits Unmarshall(JsonUnmarshallerContext context)
+        public SubscriptionLimits Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SubscriptionLimits unmarshalledObject = new SubscriptionLimits();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ProtectionGroupLimits", targetDepth))
                 {
                     var unmarshaller = ProtectionGroupLimitsUnmarshaller.Instance;
-                    unmarshalledObject.ProtectionGroupLimits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProtectionGroupLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProtectionLimits", targetDepth))
                 {
                     var unmarshaller = ProtectionLimitsUnmarshaller.Instance;
-                    unmarshalledObject.ProtectionLimits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProtectionLimits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

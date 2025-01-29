@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
 {
@@ -51,117 +49,117 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdsOnDeliveryRestrictions())
             {
                 context.Writer.WritePropertyName("adsOnDeliveryRestrictions");
-                context.Writer.Write(requestObject.AdsOnDeliveryRestrictions);
+                context.Writer.WriteStringValue(requestObject.AdsOnDeliveryRestrictions);
             }
 
             if(requestObject.IsSetAdTriggers())
             {
                 context.Writer.WritePropertyName("adTriggers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdTriggersListValue in requestObject.AdTriggers)
                 {
-                        context.Writer.Write(requestObjectAdTriggersListValue);
+                        context.Writer.WriteStringValue(requestObjectAdTriggersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DashEncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetManifestLayout())
             {
                 context.Writer.WritePropertyName("manifestLayout");
-                context.Writer.Write(requestObject.ManifestLayout);
+                context.Writer.WriteStringValue(requestObject.ManifestLayout);
             }
 
             if(requestObject.IsSetManifestWindowSeconds())
             {
                 context.Writer.WritePropertyName("manifestWindowSeconds");
-                context.Writer.Write(requestObject.ManifestWindowSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ManifestWindowSeconds.Value);
             }
 
             if(requestObject.IsSetMinBufferTimeSeconds())
             {
                 context.Writer.WritePropertyName("minBufferTimeSeconds");
-                context.Writer.Write(requestObject.MinBufferTimeSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MinBufferTimeSeconds.Value);
             }
 
             if(requestObject.IsSetMinUpdatePeriodSeconds())
             {
                 context.Writer.WritePropertyName("minUpdatePeriodSeconds");
-                context.Writer.Write(requestObject.MinUpdatePeriodSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MinUpdatePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetPeriodTriggers())
             {
                 context.Writer.WritePropertyName("periodTriggers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPeriodTriggersListValue in requestObject.PeriodTriggers)
                 {
-                        context.Writer.Write(requestObjectPeriodTriggersListValue);
+                        context.Writer.WriteStringValue(requestObjectPeriodTriggersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WriteStringValue(requestObject.Profile);
             }
 
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentTemplateFormat())
             {
                 context.Writer.WritePropertyName("segmentTemplateFormat");
-                context.Writer.Write(requestObject.SegmentTemplateFormat);
+                context.Writer.WriteStringValue(requestObject.SegmentTemplateFormat);
             }
 
             if(requestObject.IsSetStreamSelection())
             {
                 context.Writer.WritePropertyName("streamSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StreamSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StreamSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSuggestedPresentationDelaySeconds())
             {
                 context.Writer.WritePropertyName("suggestedPresentationDelaySeconds");
-                context.Writer.Write(requestObject.SuggestedPresentationDelaySeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.SuggestedPresentationDelaySeconds.Value);
             }
 
             if(requestObject.IsSetUtcTiming())
             {
                 context.Writer.WritePropertyName("utcTiming");
-                context.Writer.Write(requestObject.UtcTiming);
+                context.Writer.WriteStringValue(requestObject.UtcTiming);
             }
 
             if(requestObject.IsSetUtcTimingUri())
             {
                 context.Writer.WritePropertyName("utcTimingUri");
-                context.Writer.Write(requestObject.UtcTimingUri);
+                context.Writer.WriteStringValue(requestObject.UtcTimingUri);
             }
 
         }

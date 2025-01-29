@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DelegationSet Object
     /// </summary>  
-    public class DelegationSetUnmarshaller : IUnmarshaller<DelegationSet, XmlUnmarshallerContext>, IUnmarshaller<DelegationSet, JsonUnmarshallerContext>
+    public class DelegationSetUnmarshaller : IXmlUnmarshaller<DelegationSet, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,17 +86,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DelegationSet Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static DelegationSetUnmarshaller _instance = new DelegationSetUnmarshaller();        
 
         /// <summary>

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TN3270Summary Object
     /// </summary>  
-    public class TN3270SummaryUnmarshaller : IUnmarshaller<TN3270Summary, XmlUnmarshallerContext>, IUnmarshaller<TN3270Summary, JsonUnmarshallerContext>
+    public class TN3270SummaryUnmarshaller : IJsonUnmarshaller<TN3270Summary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TN3270Summary IUnmarshaller<TN3270Summary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TN3270Summary Unmarshall(JsonUnmarshallerContext context)
+        public TN3270Summary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TN3270Summary unmarshalledObject = new TN3270Summary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("stepInput", targetDepth))
                 {
                     var unmarshaller = TN3270StepInputUnmarshaller.Instance;
-                    unmarshalledObject.StepInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stepOutput", targetDepth))
                 {
                     var unmarshaller = TN3270StepOutputUnmarshaller.Instance;
-                    unmarshalledObject.StepOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

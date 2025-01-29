@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DocumentAttributeBoostingConfiguration Object
     /// </summary>  
-    public class DocumentAttributeBoostingConfigurationUnmarshaller : IUnmarshaller<DocumentAttributeBoostingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DocumentAttributeBoostingConfiguration, JsonUnmarshallerContext>
+    public class DocumentAttributeBoostingConfigurationUnmarshaller : IJsonUnmarshaller<DocumentAttributeBoostingConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DocumentAttributeBoostingConfiguration IUnmarshaller<DocumentAttributeBoostingConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DocumentAttributeBoostingConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public DocumentAttributeBoostingConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DocumentAttributeBoostingConfiguration unmarshalledObject = new DocumentAttributeBoostingConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("dateConfiguration", targetDepth))
                 {
                     var unmarshaller = DateAttributeBoostingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DateConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberConfiguration", targetDepth))
                 {
                     var unmarshaller = NumberAttributeBoostingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.NumberConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stringConfiguration", targetDepth))
                 {
                     var unmarshaller = StringAttributeBoostingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.StringConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StringConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stringListConfiguration", targetDepth))
                 {
                     var unmarshaller = StringListAttributeBoostingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.StringListConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StringListConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

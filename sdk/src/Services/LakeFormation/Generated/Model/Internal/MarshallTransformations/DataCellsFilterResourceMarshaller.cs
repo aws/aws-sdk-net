@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetTableCatalogId())
             {
                 context.Writer.WritePropertyName("TableCatalogId");
-                context.Writer.Write(requestObject.TableCatalogId);
+                context.Writer.WriteStringValue(requestObject.TableCatalogId);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("TableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
         }

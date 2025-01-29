@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RegionDisabledException operation
     /// </summary>  
-    public class RegionDisabledExceptionUnmarshaller : IErrorResponseUnmarshaller<RegionDisabledException, XmlUnmarshallerContext>
+    public class RegionDisabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RegionDisabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

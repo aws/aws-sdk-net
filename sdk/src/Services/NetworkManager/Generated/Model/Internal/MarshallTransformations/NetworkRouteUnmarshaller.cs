@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NetworkRoute Object
     /// </summary>  
-    public class NetworkRouteUnmarshaller : IUnmarshaller<NetworkRoute, XmlUnmarshallerContext>, IUnmarshaller<NetworkRoute, JsonUnmarshallerContext>
+    public class NetworkRouteUnmarshaller : IJsonUnmarshaller<NetworkRoute, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NetworkRoute IUnmarshaller<NetworkRoute, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NetworkRoute Unmarshall(JsonUnmarshallerContext context)
+        public NetworkRoute Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NetworkRoute unmarshalledObject = new NetworkRoute();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DestinationCidrBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Destinations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkRouteDestination, NetworkRouteDestinationUnmarshaller>(NetworkRouteDestinationUnmarshaller.Instance);
-                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkRouteDestination, NetworkRouteDestinationUnmarshaller>(NetworkRouteDestinationUnmarshaller.Instance);
+                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrefixListId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrefixListId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("State", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

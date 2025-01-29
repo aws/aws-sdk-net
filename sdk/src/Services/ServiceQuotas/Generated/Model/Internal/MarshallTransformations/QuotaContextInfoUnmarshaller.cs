@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceQuotas.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QuotaContextInfo Object
     /// </summary>  
-    public class QuotaContextInfoUnmarshaller : IUnmarshaller<QuotaContextInfo, XmlUnmarshallerContext>, IUnmarshaller<QuotaContextInfo, JsonUnmarshallerContext>
+    public class QuotaContextInfoUnmarshaller : IJsonUnmarshaller<QuotaContextInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QuotaContextInfo IUnmarshaller<QuotaContextInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QuotaContextInfo Unmarshall(JsonUnmarshallerContext context)
+        public QuotaContextInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QuotaContextInfo unmarshalledObject = new QuotaContextInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ContextId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContextId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContextId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContextScope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContextScope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContextScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContextScopeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContextScopeType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContextScopeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

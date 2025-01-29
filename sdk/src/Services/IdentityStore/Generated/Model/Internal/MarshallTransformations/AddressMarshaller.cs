@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.IdentityStore.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetFormatted())
             {
                 context.Writer.WritePropertyName("Formatted");
-                context.Writer.Write(requestObject.Formatted);
+                context.Writer.WriteStringValue(requestObject.Formatted);
             }
 
             if(requestObject.IsSetLocality())
             {
                 context.Writer.WritePropertyName("Locality");
-                context.Writer.Write(requestObject.Locality);
+                context.Writer.WriteStringValue(requestObject.Locality);
             }
 
             if(requestObject.IsSetPostalCode())
             {
                 context.Writer.WritePropertyName("PostalCode");
-                context.Writer.Write(requestObject.PostalCode);
+                context.Writer.WriteStringValue(requestObject.PostalCode);
             }
 
             if(requestObject.IsSetPrimary())
             {
                 context.Writer.WritePropertyName("Primary");
-                context.Writer.Write(requestObject.Primary.Value);
+                context.Writer.WriteBooleanValue(requestObject.Primary.Value);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetStreetAddress())
             {
                 context.Writer.WritePropertyName("StreetAddress");
-                context.Writer.Write(requestObject.StreetAddress);
+                context.Writer.WriteStringValue(requestObject.StreetAddress);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

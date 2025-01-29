@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,82 +49,82 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncrypted())
             {
                 context.Writer.WritePropertyName("encrypted");
-                context.Writer.Write(requestObject.Encrypted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Encrypted.Value);
             }
 
             if(requestObject.IsSetFilesystemType())
             {
                 context.Writer.WritePropertyName("filesystemType");
-                context.Writer.Write(requestObject.FilesystemType);
+                context.Writer.WriteStringValue(requestObject.FilesystemType);
             }
 
             if(requestObject.IsSetIops())
             {
                 context.Writer.WritePropertyName("iops");
-                context.Writer.Write(requestObject.Iops.Value);
+                context.Writer.WriteNumberValue(requestObject.Iops.Value);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetSizeInGiB())
             {
                 context.Writer.WritePropertyName("sizeInGiB");
-                context.Writer.Write(requestObject.SizeInGiB.Value);
+                context.Writer.WriteNumberValue(requestObject.SizeInGiB.Value);
             }
 
             if(requestObject.IsSetSnapshotId())
             {
                 context.Writer.WritePropertyName("snapshotId");
-                context.Writer.Write(requestObject.SnapshotId);
+                context.Writer.WriteStringValue(requestObject.SnapshotId);
             }
 
             if(requestObject.IsSetTagSpecifications())
             {
                 context.Writer.WritePropertyName("tagSpecifications");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagSpecificationsListValue in requestObject.TagSpecifications)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EBSTagSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagSpecificationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTerminationPolicy())
             {
                 context.Writer.WritePropertyName("terminationPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TaskManagedEBSVolumeTerminationPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.TerminationPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThroughput())
             {
                 context.Writer.WritePropertyName("throughput");
-                context.Writer.Write(requestObject.Throughput.Value);
+                context.Writer.WriteNumberValue(requestObject.Throughput.Value);
             }
 
             if(requestObject.IsSetVolumeType())
             {
                 context.Writer.WritePropertyName("volumeType");
-                context.Writer.Write(requestObject.VolumeType);
+                context.Writer.WriteStringValue(requestObject.VolumeType);
             }
 
         }

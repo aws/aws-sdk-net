@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountIds())
             {
                 context.Writer.WritePropertyName("AccountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
                 {
-                        context.Writer.Write(requestObjectAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetArns())
             {
                 context.Writer.WritePropertyName("Arns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArnsListValue in requestObject.Arns)
                 {
-                        context.Writer.Write(requestObjectArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBillingGroups())
             {
                 context.Writer.WritePropertyName("BillingGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBillingGroupsListValue in requestObject.BillingGroups)
                 {
-                        context.Writer.Write(requestObjectBillingGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectBillingGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNames())
             {
                 context.Writer.WritePropertyName("Names");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNamesListValue in requestObject.Names)
                 {
-                        context.Writer.Write(requestObjectNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

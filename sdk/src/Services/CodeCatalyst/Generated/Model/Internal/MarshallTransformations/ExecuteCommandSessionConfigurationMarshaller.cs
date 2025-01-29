@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArguments())
             {
                 context.Writer.WritePropertyName("arguments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArgumentsListValue in requestObject.Arguments)
                 {
-                        context.Writer.Write(requestObjectArgumentsListValue);
+                        context.Writer.WriteStringValue(requestObjectArgumentsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
-                context.Writer.Write(requestObject.Command);
+                context.Writer.WriteStringValue(requestObject.Command);
             }
 
         }

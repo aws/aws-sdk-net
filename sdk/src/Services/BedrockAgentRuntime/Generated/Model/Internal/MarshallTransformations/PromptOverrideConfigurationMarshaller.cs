@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverrideLambda())
             {
                 context.Writer.WritePropertyName("overrideLambda");
-                context.Writer.Write(requestObject.OverrideLambda);
+                context.Writer.WriteStringValue(requestObject.OverrideLambda);
             }
 
             if(requestObject.IsSetPromptConfigurations())
             {
                 context.Writer.WritePropertyName("promptConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPromptConfigurationsListValue in requestObject.PromptConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PromptConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectPromptConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

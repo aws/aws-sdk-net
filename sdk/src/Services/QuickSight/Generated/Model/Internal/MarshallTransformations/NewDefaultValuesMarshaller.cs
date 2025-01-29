@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDateTimeStaticValues())
             {
                 context.Writer.WritePropertyName("DateTimeStaticValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDateTimeStaticValuesListValue in requestObject.DateTimeStaticValues)
                 {
-                        context.Writer.Write(requestObjectDateTimeStaticValuesListValue);
+                        context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObjectDateTimeStaticValuesListValue)));
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDecimalStaticValues())
             {
                 context.Writer.WritePropertyName("DecimalStaticValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDecimalStaticValuesListValue in requestObject.DecimalStaticValues)
                 {
-                        context.Writer.Write(requestObjectDecimalStaticValuesListValue);
+                        context.Writer.WriteNumberValue(requestObjectDecimalStaticValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIntegerStaticValues())
             {
                 context.Writer.WritePropertyName("IntegerStaticValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIntegerStaticValuesListValue in requestObject.IntegerStaticValues)
                 {
-                        context.Writer.Write(requestObjectIntegerStaticValuesListValue);
+                        context.Writer.WriteNumberValue(requestObjectIntegerStaticValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStringStaticValues())
             {
                 context.Writer.WritePropertyName("StringStaticValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStringStaticValuesListValue in requestObject.StringStaticValues)
                 {
-                        context.Writer.Write(requestObjectStringStaticValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectStringStaticValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

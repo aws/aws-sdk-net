@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddress())
             {
                 context.Writer.WritePropertyName("Address");
-                context.Writer.Write(requestObject.Address);
+                context.Writer.WriteStringValue(requestObject.Address);
             }
 
             if(requestObject.IsSetLatitude())
             {
                 context.Writer.WritePropertyName("Latitude");
-                context.Writer.Write(requestObject.Latitude);
+                context.Writer.WriteStringValue(requestObject.Latitude);
             }
 
             if(requestObject.IsSetLongitude())
             {
                 context.Writer.WritePropertyName("Longitude");
-                context.Writer.Write(requestObject.Longitude);
+                context.Writer.WriteStringValue(requestObject.Longitude);
             }
 
         }

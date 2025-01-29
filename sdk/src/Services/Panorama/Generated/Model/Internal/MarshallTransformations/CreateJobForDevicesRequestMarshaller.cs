@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
@@ -61,47 +64,52 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/jobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeviceIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DeviceIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDeviceIdsListValue in publicRequest.DeviceIds)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeviceIds())
-                    {
-                        context.Writer.WritePropertyName("DeviceIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDeviceIdsListValue in publicRequest.DeviceIds)
-                        {
-                                context.Writer.Write(publicRequestDeviceIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDeviceJobConfig())
-                    {
-                        context.Writer.WritePropertyName("DeviceJobConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeviceJobConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DeviceJobConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobType())
-                    {
-                        context.Writer.WritePropertyName("JobType");
-                        context.Writer.Write(publicRequest.JobType);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestDeviceIdsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDeviceJobConfig())
+            {
+                context.Writer.WritePropertyName("DeviceJobConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeviceJobConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeviceJobConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobType())
+            {
+                context.Writer.WritePropertyName("JobType");
+                context.Writer.WriteStringValue(publicRequest.JobType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

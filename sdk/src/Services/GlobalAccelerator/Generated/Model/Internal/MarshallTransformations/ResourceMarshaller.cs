@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidr())
             {
                 context.Writer.WritePropertyName("Cidr");
-                context.Writer.Write(requestObject.Cidr);
+                context.Writer.WriteStringValue(requestObject.Cidr);
             }
 
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");
-                context.Writer.Write(requestObject.EndpointId);
+                context.Writer.WriteStringValue(requestObject.EndpointId);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerName())
             {
                 context.Writer.WritePropertyName("ContainerName");
-                context.Writer.Write(requestObject.ContainerName);
+                context.Writer.WriteStringValue(requestObject.ContainerName);
             }
 
             if(requestObject.IsSetDependsOn())
             {
                 context.Writer.WritePropertyName("DependsOn");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDependsOnListValue in requestObject.DependsOn)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContainerDependencyMarshaller.Instance;
                     marshaller.Marshall(requestObjectDependsOnListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnvironmentOverride())
             {
                 context.Writer.WritePropertyName("EnvironmentOverride");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentOverrideListValue in requestObject.EnvironmentOverride)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContainerEnvironmentMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentOverrideListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("ImageUri");
-                context.Writer.Write(requestObject.ImageUri);
+                context.Writer.WriteStringValue(requestObject.ImageUri);
             }
 
             if(requestObject.IsSetMountPoints())
             {
                 context.Writer.WritePropertyName("MountPoints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMountPointsListValue in requestObject.MountPoints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContainerMountPointMarshaller.Instance;
                     marshaller.Marshall(requestObjectMountPointsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPortConfiguration())
             {
                 context.Writer.WritePropertyName("PortConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerPortConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PortConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServerSdkVersion())
             {
                 context.Writer.WritePropertyName("ServerSdkVersion");
-                context.Writer.Write(requestObject.ServerSdkVersion);
+                context.Writer.WriteStringValue(requestObject.ServerSdkVersion);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,250 +49,250 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdvancedInputFilter())
             {
                 context.Writer.WritePropertyName("advancedInputFilter");
-                context.Writer.Write(requestObject.AdvancedInputFilter);
+                context.Writer.WriteStringValue(requestObject.AdvancedInputFilter);
             }
 
             if(requestObject.IsSetAdvancedInputFilterSettings())
             {
                 context.Writer.WritePropertyName("advancedInputFilterSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AdvancedInputFilterSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdvancedInputFilterSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioSelectorGroups())
             {
                 context.Writer.WritePropertyName("audioSelectorGroups");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAudioSelectorGroupsKvp in requestObject.AudioSelectorGroups)
                 {
                     context.Writer.WritePropertyName(requestObjectAudioSelectorGroupsKvp.Key);
                     var requestObjectAudioSelectorGroupsValue = requestObjectAudioSelectorGroupsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AudioSelectorGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectAudioSelectorGroupsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioSelectors())
             {
                 context.Writer.WritePropertyName("audioSelectors");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAudioSelectorsKvp in requestObject.AudioSelectors)
                 {
                     context.Writer.WritePropertyName(requestObjectAudioSelectorsKvp.Key);
                     var requestObjectAudioSelectorsValue = requestObjectAudioSelectorsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AudioSelectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectAudioSelectorsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCaptionSelectors())
             {
                 context.Writer.WritePropertyName("captionSelectors");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCaptionSelectorsKvp in requestObject.CaptionSelectors)
                 {
                     context.Writer.WritePropertyName(requestObjectCaptionSelectorsKvp.Key);
                     var requestObjectCaptionSelectorsValue = requestObjectCaptionSelectorsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CaptionSelectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectCaptionSelectorsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCrop())
             {
                 context.Writer.WritePropertyName("crop");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RectangleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Crop, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeblockFilter())
             {
                 context.Writer.WritePropertyName("deblockFilter");
-                context.Writer.Write(requestObject.DeblockFilter);
+                context.Writer.WriteStringValue(requestObject.DeblockFilter);
             }
 
             if(requestObject.IsSetDecryptionSettings())
             {
                 context.Writer.WritePropertyName("decryptionSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputDecryptionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DecryptionSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDenoiseFilter())
             {
                 context.Writer.WritePropertyName("denoiseFilter");
-                context.Writer.Write(requestObject.DenoiseFilter);
+                context.Writer.WriteStringValue(requestObject.DenoiseFilter);
             }
 
             if(requestObject.IsSetDolbyVisionMetadataXml())
             {
                 context.Writer.WritePropertyName("dolbyVisionMetadataXml");
-                context.Writer.Write(requestObject.DolbyVisionMetadataXml);
+                context.Writer.WriteStringValue(requestObject.DolbyVisionMetadataXml);
             }
 
             if(requestObject.IsSetFileInput())
             {
                 context.Writer.WritePropertyName("fileInput");
-                context.Writer.Write(requestObject.FileInput);
+                context.Writer.WriteStringValue(requestObject.FileInput);
             }
 
             if(requestObject.IsSetFilterEnable())
             {
                 context.Writer.WritePropertyName("filterEnable");
-                context.Writer.Write(requestObject.FilterEnable);
+                context.Writer.WriteStringValue(requestObject.FilterEnable);
             }
 
             if(requestObject.IsSetFilterStrength())
             {
                 context.Writer.WritePropertyName("filterStrength");
-                context.Writer.Write(requestObject.FilterStrength.Value);
+                context.Writer.WriteNumberValue(requestObject.FilterStrength.Value);
             }
 
             if(requestObject.IsSetImageInserter())
             {
                 context.Writer.WritePropertyName("imageInserter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageInserterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageInserter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputClippings())
             {
                 context.Writer.WritePropertyName("inputClippings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInputClippingsListValue in requestObject.InputClippings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputClippingMarshaller.Instance;
                     marshaller.Marshall(requestObjectInputClippingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInputScanType())
             {
                 context.Writer.WritePropertyName("inputScanType");
-                context.Writer.Write(requestObject.InputScanType);
+                context.Writer.WriteStringValue(requestObject.InputScanType);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RectangleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Position, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramNumber.Value);
             }
 
             if(requestObject.IsSetPsiControl())
             {
                 context.Writer.WritePropertyName("psiControl");
-                context.Writer.Write(requestObject.PsiControl);
+                context.Writer.WriteStringValue(requestObject.PsiControl);
             }
 
             if(requestObject.IsSetSupplementalImps())
             {
                 context.Writer.WritePropertyName("supplementalImps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupplementalImpsListValue in requestObject.SupplementalImps)
                 {
-                        context.Writer.Write(requestObjectSupplementalImpsListValue);
+                        context.Writer.WriteStringValue(requestObjectSupplementalImpsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTimecodeSource())
             {
                 context.Writer.WritePropertyName("timecodeSource");
-                context.Writer.Write(requestObject.TimecodeSource);
+                context.Writer.WriteStringValue(requestObject.TimecodeSource);
             }
 
             if(requestObject.IsSetTimecodeStart())
             {
                 context.Writer.WritePropertyName("timecodeStart");
-                context.Writer.Write(requestObject.TimecodeStart);
+                context.Writer.WriteStringValue(requestObject.TimecodeStart);
             }
 
             if(requestObject.IsSetVideoGenerator())
             {
                 context.Writer.WritePropertyName("videoGenerator");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputVideoGeneratorMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoGenerator, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideoOverlays())
             {
                 context.Writer.WritePropertyName("videoOverlays");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVideoOverlaysListValue in requestObject.VideoOverlays)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VideoOverlayMarshaller.Instance;
                     marshaller.Marshall(requestObjectVideoOverlaysListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVideoSelector())
             {
                 context.Writer.WritePropertyName("videoSelector");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoSelectorMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoSelector, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

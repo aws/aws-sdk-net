@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetGroupNotFoundException operation
     /// </summary>  
-    public class TargetGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<TargetGroupNotFoundException, XmlUnmarshallerContext>
+    public class TargetGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TargetGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

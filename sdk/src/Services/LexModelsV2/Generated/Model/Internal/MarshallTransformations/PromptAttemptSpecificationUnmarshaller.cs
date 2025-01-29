@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PromptAttemptSpecification Object
     /// </summary>  
-    public class PromptAttemptSpecificationUnmarshaller : IUnmarshaller<PromptAttemptSpecification, XmlUnmarshallerContext>, IUnmarshaller<PromptAttemptSpecification, JsonUnmarshallerContext>
+    public class PromptAttemptSpecificationUnmarshaller : IJsonUnmarshaller<PromptAttemptSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PromptAttemptSpecification IUnmarshaller<PromptAttemptSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PromptAttemptSpecification Unmarshall(JsonUnmarshallerContext context)
+        public PromptAttemptSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PromptAttemptSpecification unmarshalledObject = new PromptAttemptSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("allowedInputTypes", targetDepth))
                 {
                     var unmarshaller = AllowedInputTypesUnmarshaller.Instance;
-                    unmarshalledObject.AllowedInputTypes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowedInputTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("allowInterrupt", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowInterrupt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowInterrupt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioAndDTMFInputSpecification", targetDepth))
                 {
                     var unmarshaller = AudioAndDTMFInputSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.AudioAndDTMFInputSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioAndDTMFInputSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("textInputSpecification", targetDepth))
                 {
                     var unmarshaller = TextInputSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.TextInputSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextInputSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

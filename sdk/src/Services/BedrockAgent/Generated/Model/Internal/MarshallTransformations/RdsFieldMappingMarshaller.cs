@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetadataField())
             {
                 context.Writer.WritePropertyName("metadataField");
-                context.Writer.Write(requestObject.MetadataField);
+                context.Writer.WriteStringValue(requestObject.MetadataField);
             }
 
             if(requestObject.IsSetPrimaryKeyField())
             {
                 context.Writer.WritePropertyName("primaryKeyField");
-                context.Writer.Write(requestObject.PrimaryKeyField);
+                context.Writer.WriteStringValue(requestObject.PrimaryKeyField);
             }
 
             if(requestObject.IsSetTextField())
             {
                 context.Writer.WritePropertyName("textField");
-                context.Writer.Write(requestObject.TextField);
+                context.Writer.WriteStringValue(requestObject.TextField);
             }
 
             if(requestObject.IsSetVectorField())
             {
                 context.Writer.WritePropertyName("vectorField");
-                context.Writer.Write(requestObject.VectorField);
+                context.Writer.WriteStringValue(requestObject.VectorField);
             }
 
         }

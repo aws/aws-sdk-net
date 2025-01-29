@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSegmentDefinitionName())
             {
                 context.Writer.WritePropertyName("SegmentDefinitionName");
-                context.Writer.Write(requestObject.SegmentDefinitionName);
+                context.Writer.WriteStringValue(requestObject.SegmentDefinitionName);
             }
 
         }

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConflictingTypesException operation
     /// </summary>  
-    public class ConflictingTypesExceptionUnmarshaller : IErrorResponseUnmarshaller<ConflictingTypesException, XmlUnmarshallerContext>
+    public class ConflictingTypesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConflictingTypesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

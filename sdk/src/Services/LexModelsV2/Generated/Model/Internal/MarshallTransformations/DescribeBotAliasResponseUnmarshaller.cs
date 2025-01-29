@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -47,87 +47,87 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeBotAliasResponse response = new DescribeBotAliasResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("botAliasHistoryEvents", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BotAliasHistoryEvent, BotAliasHistoryEventUnmarshaller>(BotAliasHistoryEventUnmarshaller.Instance);
-                    response.BotAliasHistoryEvents = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BotAliasHistoryEvent, BotAliasHistoryEventUnmarshaller>(BotAliasHistoryEventUnmarshaller.Instance);
+                    response.BotAliasHistoryEvents = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botAliasId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BotAliasId = unmarshaller.Unmarshall(context);
+                    response.BotAliasId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botAliasLocaleSettings", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, BotAliasLocaleSettings, StringUnmarshaller, BotAliasLocaleSettingsUnmarshaller>(StringUnmarshaller.Instance, BotAliasLocaleSettingsUnmarshaller.Instance);
-                    response.BotAliasLocaleSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, BotAliasLocaleSettings, StringUnmarshaller, BotAliasLocaleSettingsUnmarshaller>(StringUnmarshaller.Instance, BotAliasLocaleSettingsUnmarshaller.Instance);
+                    response.BotAliasLocaleSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botAliasName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BotAliasName = unmarshaller.Unmarshall(context);
+                    response.BotAliasName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botAliasStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BotAliasStatus = unmarshaller.Unmarshall(context);
+                    response.BotAliasStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BotId = unmarshaller.Unmarshall(context);
+                    response.BotId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.BotVersion = unmarshaller.Unmarshall(context);
+                    response.BotVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("conversationLogSettings", targetDepth))
                 {
                     var unmarshaller = ConversationLogSettingsUnmarshaller.Instance;
-                    response.ConversationLogSettings = unmarshaller.Unmarshall(context);
+                    response.ConversationLogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("creationDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationDateTime = unmarshaller.Unmarshall(context);
+                    response.CreationDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
+                    response.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parentBotNetworks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ParentBotNetwork, ParentBotNetworkUnmarshaller>(ParentBotNetworkUnmarshaller.Instance);
-                    response.ParentBotNetworks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ParentBotNetwork, ParentBotNetworkUnmarshaller>(ParentBotNetworkUnmarshaller.Instance);
+                    response.ParentBotNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sentimentAnalysisSettings", targetDepth))
                 {
                     var unmarshaller = SentimentAnalysisSettingsUnmarshaller.Instance;
-                    response.SentimentAnalysisSettings = unmarshaller.Unmarshall(context);
+                    response.SentimentAnalysisSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -144,34 +144,36 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonLexModelsV2Exception(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

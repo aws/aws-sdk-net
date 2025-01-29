@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetCpuPerformanceMetricBasis())
             {
                 context.Writer.WritePropertyName("cpuPerformanceMetricBasis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UsageMetricBasisMarshaller.Instance;
                 marshaller.Marshall(requestObject.CpuPerformanceMetricBasis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetExcludedInstanceTypes())
             {
                 context.Writer.WritePropertyName("excludedInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludedInstanceTypesListValue in requestObject.ExcludedInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectExcludedInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludedInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPreferredRegion())
             {
                 context.Writer.WritePropertyName("preferredRegion");
-                context.Writer.Write(requestObject.PreferredRegion);
+                context.Writer.WriteStringValue(requestObject.PreferredRegion);
             }
 
             if(requestObject.IsSetRamPerformanceMetricBasis())
             {
                 context.Writer.WritePropertyName("ramPerformanceMetricBasis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UsageMetricBasisMarshaller.Instance;
                 marshaller.Marshall(requestObject.RamPerformanceMetricBasis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReservedInstanceOptions())
             {
                 context.Writer.WritePropertyName("reservedInstanceOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ReservedInstanceOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReservedInstanceOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTenancy())
             {
                 context.Writer.WritePropertyName("tenancy");
-                context.Writer.Write(requestObject.Tenancy);
+                context.Writer.WriteStringValue(requestObject.Tenancy);
             }
 
         }

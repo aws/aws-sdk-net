@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EntityIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Identifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUnspecified())
             {
                 context.Writer.WritePropertyName("unspecified");
-                context.Writer.Write(requestObject.Unspecified.Value);
+                context.Writer.WriteBooleanValue(requestObject.Unspecified.Value);
             }
 
         }

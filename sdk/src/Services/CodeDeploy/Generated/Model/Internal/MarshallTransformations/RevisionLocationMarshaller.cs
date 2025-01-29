@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppSpecContent())
             {
                 context.Writer.WritePropertyName("appSpecContent");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AppSpecContentMarshaller.Instance;
                 marshaller.Marshall(requestObject.AppSpecContent, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGitHubLocation())
             {
                 context.Writer.WritePropertyName("gitHubLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GitHubLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GitHubLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRevisionType())
             {
                 context.Writer.WritePropertyName("revisionType");
-                context.Writer.Write(requestObject.RevisionType);
+                context.Writer.WriteStringValue(requestObject.RevisionType);
             }
 
             if(requestObject.IsSetS3Location())
             {
                 context.Writer.WritePropertyName("s3Location");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Location, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetString())
             {
                 context.Writer.WritePropertyName("string");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RawStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.String, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

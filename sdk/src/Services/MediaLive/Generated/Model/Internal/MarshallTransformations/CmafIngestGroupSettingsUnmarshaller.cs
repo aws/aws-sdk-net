@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CmafIngestGroupSettings Object
     /// </summary>  
-    public class CmafIngestGroupSettingsUnmarshaller : IUnmarshaller<CmafIngestGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<CmafIngestGroupSettings, JsonUnmarshallerContext>
+    public class CmafIngestGroupSettingsUnmarshaller : IJsonUnmarshaller<CmafIngestGroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CmafIngestGroupSettings IUnmarshaller<CmafIngestGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CmafIngestGroupSettings Unmarshall(JsonUnmarshallerContext context)
+        public CmafIngestGroupSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CmafIngestGroupSettings unmarshalledObject = new CmafIngestGroupSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = OutputLocationRefUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("klvBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KlvBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KlvBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("klvNameModifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KlvNameModifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KlvNameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nielsenId3Behavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NielsenId3Behavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NielsenId3Behavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nielsenId3NameModifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NielsenId3NameModifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NielsenId3NameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35NameModifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scte35NameModifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35NameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scte35Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Scte35Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scte35Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentLength", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentLengthUnits", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SegmentLengthUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentLengthUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sendDelayMs", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SendDelayMs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SendDelayMs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

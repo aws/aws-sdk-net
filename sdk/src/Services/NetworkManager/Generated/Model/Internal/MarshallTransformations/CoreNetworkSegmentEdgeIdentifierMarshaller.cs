@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.NetworkManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoreNetworkId())
             {
                 context.Writer.WritePropertyName("CoreNetworkId");
-                context.Writer.Write(requestObject.CoreNetworkId);
+                context.Writer.WriteStringValue(requestObject.CoreNetworkId);
             }
 
             if(requestObject.IsSetEdgeLocation())
             {
                 context.Writer.WritePropertyName("EdgeLocation");
-                context.Writer.Write(requestObject.EdgeLocation);
+                context.Writer.WriteStringValue(requestObject.EdgeLocation);
             }
 
             if(requestObject.IsSetSegmentName())
             {
                 context.Writer.WritePropertyName("SegmentName");
-                context.Writer.Write(requestObject.SegmentName);
+                context.Writer.WriteStringValue(requestObject.SegmentName);
             }
 
         }

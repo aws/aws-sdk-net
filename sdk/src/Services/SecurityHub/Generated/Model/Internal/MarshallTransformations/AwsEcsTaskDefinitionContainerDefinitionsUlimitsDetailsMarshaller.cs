@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHardLimit())
             {
                 context.Writer.WritePropertyName("HardLimit");
-                context.Writer.Write(requestObject.HardLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.HardLimit.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSoftLimit())
             {
                 context.Writer.WritePropertyName("SoftLimit");
-                context.Writer.Write(requestObject.SoftLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.SoftLimit.Value);
             }
 
         }

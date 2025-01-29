@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCenter())
             {
                 context.Writer.WritePropertyName("Center");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCenterListValue in requestObject.Center)
                 {
-                        context.Writer.Write(requestObjectCenterListValue);
+                        context.Writer.WriteNumberValue(requestObjectCenterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                context.Writer.Write(requestObject.Radius.Value);
+                context.Writer.WriteNumberValue(requestObject.Radius.Value);
             }
 
         }

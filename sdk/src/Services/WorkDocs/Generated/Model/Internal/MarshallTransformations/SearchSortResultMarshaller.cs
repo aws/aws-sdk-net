@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("Field");
-                context.Writer.Write(requestObject.Field);
+                context.Writer.WriteStringValue(requestObject.Field);
             }
 
             if(requestObject.IsSetOrder())
             {
                 context.Writer.WritePropertyName("Order");
-                context.Writer.Write(requestObject.Order);
+                context.Writer.WriteStringValue(requestObject.Order);
             }
 
         }

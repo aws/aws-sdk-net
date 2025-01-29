@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidOriginKeepaliveTimeoutException operation
     /// </summary>  
-    public class InvalidOriginKeepaliveTimeoutExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidOriginKeepaliveTimeoutException, XmlUnmarshallerContext>
+    public class InvalidOriginKeepaliveTimeoutExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidOriginKeepaliveTimeoutException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

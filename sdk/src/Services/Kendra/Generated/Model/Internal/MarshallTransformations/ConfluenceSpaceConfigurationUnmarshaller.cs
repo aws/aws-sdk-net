@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfluenceSpaceConfiguration Object
     /// </summary>  
-    public class ConfluenceSpaceConfigurationUnmarshaller : IUnmarshaller<ConfluenceSpaceConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ConfluenceSpaceConfiguration, JsonUnmarshallerContext>
+    public class ConfluenceSpaceConfigurationUnmarshaller : IJsonUnmarshaller<ConfluenceSpaceConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfluenceSpaceConfiguration IUnmarshaller<ConfluenceSpaceConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfluenceSpaceConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ConfluenceSpaceConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfluenceSpaceConfiguration unmarshalledObject = new ConfluenceSpaceConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CrawlArchivedSpaces", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CrawlArchivedSpaces = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlArchivedSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CrawlPersonalSpaces", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CrawlPersonalSpaces = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CrawlPersonalSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExcludeSpaces", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExcludeSpaces = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExcludeSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeSpaces", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.IncludeSpaces = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IncludeSpaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpaceFieldMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ConfluenceSpaceToIndexFieldMapping, ConfluenceSpaceToIndexFieldMappingUnmarshaller>(ConfluenceSpaceToIndexFieldMappingUnmarshaller.Instance);
-                    unmarshalledObject.SpaceFieldMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ConfluenceSpaceToIndexFieldMapping, ConfluenceSpaceToIndexFieldMappingUnmarshaller>(ConfluenceSpaceToIndexFieldMappingUnmarshaller.Instance);
+                    unmarshalledObject.SpaceFieldMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

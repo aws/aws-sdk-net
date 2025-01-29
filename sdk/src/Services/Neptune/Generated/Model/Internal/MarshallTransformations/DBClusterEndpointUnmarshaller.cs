@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterEndpoint Object
     /// </summary>  
-    public class DBClusterEndpointUnmarshaller : IUnmarshaller<DBClusterEndpoint, XmlUnmarshallerContext>, IUnmarshaller<DBClusterEndpoint, JsonUnmarshallerContext>
+    public class DBClusterEndpointUnmarshaller : IXmlUnmarshaller<DBClusterEndpoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -134,17 +134,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBClusterEndpoint Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBClusterEndpointUnmarshaller _instance = new DBClusterEndpointUnmarshaller();        
 

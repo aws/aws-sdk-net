@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ImportResourceSpecification Object
     /// </summary>  
-    public class ImportResourceSpecificationUnmarshaller : IUnmarshaller<ImportResourceSpecification, XmlUnmarshallerContext>, IUnmarshaller<ImportResourceSpecification, JsonUnmarshallerContext>
+    public class ImportResourceSpecificationUnmarshaller : IJsonUnmarshaller<ImportResourceSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ImportResourceSpecification IUnmarshaller<ImportResourceSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImportResourceSpecification Unmarshall(JsonUnmarshallerContext context)
+        public ImportResourceSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ImportResourceSpecification unmarshalledObject = new ImportResourceSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("botImportSpecification", targetDepth))
                 {
                     var unmarshaller = BotImportSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.BotImportSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotImportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("botLocaleImportSpecification", targetDepth))
                 {
                     var unmarshaller = BotLocaleImportSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.BotLocaleImportSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BotLocaleImportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customVocabularyImportSpecification", targetDepth))
                 {
                     var unmarshaller = CustomVocabularyImportSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CustomVocabularyImportSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomVocabularyImportSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("testSetImportResourceSpecification", targetDepth))
                 {
                     var unmarshaller = TestSetImportResourceSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.TestSetImportResourceSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TestSetImportResourceSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

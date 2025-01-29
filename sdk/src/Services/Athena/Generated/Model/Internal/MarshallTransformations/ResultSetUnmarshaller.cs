@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResultSet Object
     /// </summary>  
-    public class ResultSetUnmarshaller : IUnmarshaller<ResultSet, XmlUnmarshallerContext>, IUnmarshaller<ResultSet, JsonUnmarshallerContext>
+    public class ResultSetUnmarshaller : IJsonUnmarshaller<ResultSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResultSet IUnmarshaller<ResultSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResultSet Unmarshall(JsonUnmarshallerContext context)
+        public ResultSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResultSet unmarshalledObject = new ResultSet();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ResultSetMetadata", targetDepth))
                 {
                     var unmarshaller = ResultSetMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ResultSetMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultSetMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Rows", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Row, RowUnmarshaller>(RowUnmarshaller.Instance);
-                    unmarshalledObject.Rows = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Row, RowUnmarshaller>(RowUnmarshaller.Instance);
+                    unmarshalledObject.Rows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

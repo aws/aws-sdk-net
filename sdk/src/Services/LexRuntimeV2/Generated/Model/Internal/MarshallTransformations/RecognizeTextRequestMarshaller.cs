@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -73,50 +76,55 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexRuntimeV2Exception("Request object does not have required field SessionId set");
             request.AddPathResource("{sessionId}", StringUtils.FromString(publicRequest.SessionId));
             request.ResourcePath = "/bots/{botId}/botAliases/{botAliasId}/botLocales/{localeId}/sessions/{sessionId}/text";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetRequestAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("requestAttributes");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetRequestAttributes())
-                    {
-                        context.Writer.WritePropertyName("requestAttributes");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRequestAttributesKvp in publicRequest.RequestAttributes)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
-                            var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestRequestAttributesKvp.Key);
+                    var publicRequestRequestAttributesValue = publicRequestRequestAttributesKvp.Value;
 
-                                context.Writer.Write(publicRequestRequestAttributesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSessionStateValue())
-                    {
-                        context.Writer.WritePropertyName("sessionState");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SessionStateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SessionStateValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetText())
-                    {
-                        context.Writer.WritePropertyName("text");
-                        context.Writer.Write(publicRequest.Text);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestRequestAttributesValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetSessionStateValue())
+            {
+                context.Writer.WritePropertyName("sessionState");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SessionStateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SessionStateValue, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetText())
+            {
+                context.Writer.WritePropertyName("text");
+                context.Writer.WriteStringValue(publicRequest.Text);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

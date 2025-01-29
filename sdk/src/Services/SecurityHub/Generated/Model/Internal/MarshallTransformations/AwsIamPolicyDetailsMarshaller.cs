@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachmentCount())
             {
                 context.Writer.WritePropertyName("AttachmentCount");
-                context.Writer.Write(requestObject.AttachmentCount.Value);
+                context.Writer.WriteNumberValue(requestObject.AttachmentCount.Value);
             }
 
             if(requestObject.IsSetCreateDate())
             {
                 context.Writer.WritePropertyName("CreateDate");
-                context.Writer.Write(requestObject.CreateDate);
+                context.Writer.WriteStringValue(requestObject.CreateDate);
             }
 
             if(requestObject.IsSetDefaultVersionId())
             {
                 context.Writer.WritePropertyName("DefaultVersionId");
-                context.Writer.Write(requestObject.DefaultVersionId);
+                context.Writer.WriteStringValue(requestObject.DefaultVersionId);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetIsAttachable())
             {
                 context.Writer.WritePropertyName("IsAttachable");
-                context.Writer.Write(requestObject.IsAttachable.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsAttachable.Value);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetPermissionsBoundaryUsageCount())
             {
                 context.Writer.WritePropertyName("PermissionsBoundaryUsageCount");
-                context.Writer.Write(requestObject.PermissionsBoundaryUsageCount.Value);
+                context.Writer.WriteNumberValue(requestObject.PermissionsBoundaryUsageCount.Value);
             }
 
             if(requestObject.IsSetPolicyId())
             {
                 context.Writer.WritePropertyName("PolicyId");
-                context.Writer.Write(requestObject.PolicyId);
+                context.Writer.WriteStringValue(requestObject.PolicyId);
             }
 
             if(requestObject.IsSetPolicyName())
             {
                 context.Writer.WritePropertyName("PolicyName");
-                context.Writer.Write(requestObject.PolicyName);
+                context.Writer.WriteStringValue(requestObject.PolicyName);
             }
 
             if(requestObject.IsSetPolicyVersionList())
             {
                 context.Writer.WritePropertyName("PolicyVersionList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPolicyVersionListListValue in requestObject.PolicyVersionList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsIamPolicyVersionMarshaller.Instance;
                     marshaller.Marshall(requestObjectPolicyVersionListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUpdateDate())
             {
                 context.Writer.WritePropertyName("UpdateDate");
-                context.Writer.Write(requestObject.UpdateDate);
+                context.Writer.WriteStringValue(requestObject.UpdateDate);
             }
 
         }

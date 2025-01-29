@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AllowAction Object
     /// </summary>  
-    public class AllowActionUnmarshaller : IUnmarshaller<AllowAction, XmlUnmarshallerContext>, IUnmarshaller<AllowAction, JsonUnmarshallerContext>
+    public class AllowActionUnmarshaller : IJsonUnmarshaller<AllowAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AllowAction IUnmarshaller<AllowAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AllowAction Unmarshall(JsonUnmarshallerContext context)
+        public AllowAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AllowAction unmarshalledObject = new AllowAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomRequestHandling", targetDepth))
                 {
                     var unmarshaller = CustomRequestHandlingUnmarshaller.Instance;
-                    unmarshalledObject.CustomRequestHandling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomRequestHandling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

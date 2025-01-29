@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppComponentId())
             {
                 context.Writer.WritePropertyName("appComponentId");
-                context.Writer.Write(requestObject.AppComponentId);
+                context.Writer.WriteStringValue(requestObject.AppComponentId);
             }
 
             if(requestObject.IsSetEntryId())
             {
                 context.Writer.WritePropertyName("entryId");
-                context.Writer.Write(requestObject.EntryId);
+                context.Writer.WriteStringValue(requestObject.EntryId);
             }
 
             if(requestObject.IsSetExcluded())
             {
                 context.Writer.WritePropertyName("excluded");
-                context.Writer.Write(requestObject.Excluded.Value);
+                context.Writer.WriteBooleanValue(requestObject.Excluded.Value);
             }
 
             if(requestObject.IsSetExcludeReason())
             {
                 context.Writer.WritePropertyName("excludeReason");
-                context.Writer.Write(requestObject.ExcludeReason);
+                context.Writer.WriteStringValue(requestObject.ExcludeReason);
             }
 
             if(requestObject.IsSetItem())
             {
                 context.Writer.WritePropertyName("item");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateRecommendationStatusItemMarshaller.Instance;
                 marshaller.Marshall(requestObject.Item, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReferenceId())
             {
                 context.Writer.WritePropertyName("referenceId");
-                context.Writer.Write(requestObject.ReferenceId);
+                context.Writer.WriteStringValue(requestObject.ReferenceId);
             }
 
         }

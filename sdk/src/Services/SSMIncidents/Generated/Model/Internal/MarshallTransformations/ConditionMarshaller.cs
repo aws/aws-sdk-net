@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAfter())
             {
                 context.Writer.WritePropertyName("after");
-                context.Writer.Write(requestObject.After.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.After.Value)));
             }
 
             if(requestObject.IsSetBefore())
             {
                 context.Writer.WritePropertyName("before");
-                context.Writer.Write(requestObject.Before.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.Before.Value)));
             }
 
             if(requestObject.IsSetEquals())
             {
                 context.Writer.WritePropertyName("equals");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeValueListMarshaller.Instance;
                 marshaller.Marshall(requestObject.Equals, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

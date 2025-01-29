@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -67,64 +70,69 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field EventTriggerName set");
             request.AddPathResource("{EventTriggerName}", StringUtils.FromString(publicRequest.EventTriggerName));
             request.ResourcePath = "/domains/{DomainName}/event-triggers/{EventTriggerName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEventTriggerConditions())
-                    {
-                        context.Writer.WritePropertyName("EventTriggerConditions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEventTriggerConditionsListValue in publicRequest.EventTriggerConditions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EventTriggerConditionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEventTriggerConditionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEventTriggerLimits())
-                    {
-                        context.Writer.WritePropertyName("EventTriggerLimits");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EventTriggerLimitsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EventTriggerLimits, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetObjectTypeName())
-                    {
-                        context.Writer.WritePropertyName("ObjectTypeName");
-                        context.Writer.Write(publicRequest.ObjectTypeName);
-                    }
-
-                    if(publicRequest.IsSetSegmentFilter())
-                    {
-                        context.Writer.WritePropertyName("SegmentFilter");
-                        context.Writer.Write(publicRequest.SegmentFilter);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetEventTriggerConditions())
+            {
+                context.Writer.WritePropertyName("EventTriggerConditions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEventTriggerConditionsListValue in publicRequest.EventTriggerConditions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EventTriggerConditionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEventTriggerConditionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEventTriggerLimits())
+            {
+                context.Writer.WritePropertyName("EventTriggerLimits");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EventTriggerLimitsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EventTriggerLimits, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetObjectTypeName())
+            {
+                context.Writer.WritePropertyName("ObjectTypeName");
+                context.Writer.WriteStringValue(publicRequest.ObjectTypeName);
+            }
+
+            if(publicRequest.IsSetSegmentFilter())
+            {
+                context.Writer.WritePropertyName("SegmentFilter");
+                context.Writer.WriteStringValue(publicRequest.SegmentFilter);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

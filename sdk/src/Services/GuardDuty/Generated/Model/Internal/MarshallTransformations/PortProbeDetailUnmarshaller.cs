@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PortProbeDetail Object
     /// </summary>  
-    public class PortProbeDetailUnmarshaller : IUnmarshaller<PortProbeDetail, XmlUnmarshallerContext>, IUnmarshaller<PortProbeDetail, JsonUnmarshallerContext>
+    public class PortProbeDetailUnmarshaller : IJsonUnmarshaller<PortProbeDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PortProbeDetail IUnmarshaller<PortProbeDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PortProbeDetail Unmarshall(JsonUnmarshallerContext context)
+        public PortProbeDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PortProbeDetail unmarshalledObject = new PortProbeDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("localIpDetails", targetDepth))
                 {
                     var unmarshaller = LocalIpDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LocalIpDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocalIpDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("localPortDetails", targetDepth))
                 {
                     var unmarshaller = LocalPortDetailsUnmarshaller.Instance;
-                    unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocalPortDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("remoteIpDetails", targetDepth))
                 {
                     var unmarshaller = RemoteIpDetailsUnmarshaller.Instance;
-                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemoteIpDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

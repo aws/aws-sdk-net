@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AlarmRule Object
     /// </summary>  
-    public class AlarmRuleUnmarshaller : IUnmarshaller<AlarmRule, XmlUnmarshallerContext>, IUnmarshaller<AlarmRule, JsonUnmarshallerContext>
+    public class AlarmRuleUnmarshaller : IJsonUnmarshaller<AlarmRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AlarmRule IUnmarshaller<AlarmRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AlarmRule Unmarshall(JsonUnmarshallerContext context)
+        public AlarmRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AlarmRule unmarshalledObject = new AlarmRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("simpleRule", targetDepth))
                 {
                     var unmarshaller = SimpleRuleUnmarshaller.Instance;
-                    unmarshalledObject.SimpleRule = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SimpleRule = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCatalogItemId())
             {
                 context.Writer.WritePropertyName("CatalogItemId");
-                context.Writer.Write(requestObject.CatalogItemId);
+                context.Writer.WriteStringValue(requestObject.CatalogItemId);
             }
 
             if(requestObject.IsSetQuantity())
             {
                 context.Writer.WritePropertyName("Quantity");
-                context.Writer.Write(requestObject.Quantity.Value);
+                context.Writer.WriteNumberValue(requestObject.Quantity.Value);
             }
 
         }

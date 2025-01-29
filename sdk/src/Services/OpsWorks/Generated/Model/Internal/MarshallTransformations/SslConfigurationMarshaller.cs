@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("Certificate");
-                context.Writer.Write(requestObject.Certificate);
+                context.Writer.WriteStringValue(requestObject.Certificate);
             }
 
             if(requestObject.IsSetChain())
             {
                 context.Writer.WritePropertyName("Chain");
-                context.Writer.Write(requestObject.Chain);
+                context.Writer.WriteStringValue(requestObject.Chain);
             }
 
             if(requestObject.IsSetPrivateKey())
             {
                 context.Writer.WritePropertyName("PrivateKey");
-                context.Writer.Write(requestObject.PrivateKey);
+                context.Writer.WriteStringValue(requestObject.PrivateKey);
             }
 
         }

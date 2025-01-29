@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludeMimeTypes())
             {
                 context.Writer.WritePropertyName("ExcludeMimeTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeMimeTypesListValue in requestObject.ExcludeMimeTypes)
                 {
-                        context.Writer.Write(requestObjectExcludeMimeTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeMimeTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludeSharedDrives())
             {
                 context.Writer.WritePropertyName("ExcludeSharedDrives");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeSharedDrivesListValue in requestObject.ExcludeSharedDrives)
                 {
-                        context.Writer.Write(requestObjectExcludeSharedDrivesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeSharedDrivesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludeUserAccounts())
             {
                 context.Writer.WritePropertyName("ExcludeUserAccounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeUserAccountsListValue in requestObject.ExcludeUserAccounts)
                 {
-                        context.Writer.Write(requestObjectExcludeUserAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeUserAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExclusionPatterns())
             {
                 context.Writer.WritePropertyName("ExclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFieldMappings())
             {
                 context.Writer.WritePropertyName("FieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldMappingsListValue in requestObject.FieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionPatterns())
             {
                 context.Writer.WritePropertyName("InclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }

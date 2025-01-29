@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
 {
@@ -63,64 +66,69 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessToken())
-                    {
-                        context.Writer.WritePropertyName("accessToken");
-                        context.Writer.Write(publicRequest.AccessToken);
-                    }
-
-                    if(publicRequest.IsSetEntities())
-                    {
-                        context.Writer.WritePropertyName("entities");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EntitiesDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Entities, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIdentityToken())
-                    {
-                        context.Writer.WritePropertyName("identityToken");
-                        context.Writer.Write(publicRequest.IdentityToken);
-                    }
-
-                    if(publicRequest.IsSetPolicyStoreId())
-                    {
-                        context.Writer.WritePropertyName("policyStoreId");
-                        context.Writer.Write(publicRequest.PolicyStoreId);
-                    }
-
-                    if(publicRequest.IsSetRequests())
-                    {
-                        context.Writer.WritePropertyName("requests");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRequestsListValue in publicRequest.Requests)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = BatchIsAuthorizedWithTokenInputItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRequestsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("accessToken");
+                context.Writer.WriteStringValue(publicRequest.AccessToken);
             }
+
+            if(publicRequest.IsSetEntities())
+            {
+                context.Writer.WritePropertyName("entities");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EntitiesDefinitionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Entities, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIdentityToken())
+            {
+                context.Writer.WritePropertyName("identityToken");
+                context.Writer.WriteStringValue(publicRequest.IdentityToken);
+            }
+
+            if(publicRequest.IsSetPolicyStoreId())
+            {
+                context.Writer.WritePropertyName("policyStoreId");
+                context.Writer.WriteStringValue(publicRequest.PolicyStoreId);
+            }
+
+            if(publicRequest.IsSetRequests())
+            {
+                context.Writer.WritePropertyName("requests");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRequestsListValue in publicRequest.Requests)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = BatchIsAuthorizedWithTokenInputItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRequestsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

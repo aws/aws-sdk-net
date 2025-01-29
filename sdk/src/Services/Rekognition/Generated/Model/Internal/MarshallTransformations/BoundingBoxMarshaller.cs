@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Height");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Height.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Height.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Height.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Height.Value);
+                    context.Writer.WriteNumberValue(requestObject.Height.Value);
                 }
             }
 
@@ -66,11 +64,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Left");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Left.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Left.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Left.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Left.Value);
+                    context.Writer.WriteNumberValue(requestObject.Left.Value);
                 }
             }
 
@@ -79,11 +77,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Top");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Top.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Top.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Top.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Top.Value);
+                    context.Writer.WriteNumberValue(requestObject.Top.Value);
                 }
             }
 
@@ -92,11 +90,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Width");
                 if(StringUtils.IsSpecialFloatValue(requestObject.Width.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.Width.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.Width.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Width.Value);
+                    context.Writer.WriteNumberValue(requestObject.Width.Value);
                 }
             }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("Field");
-                context.Writer.Write(requestObject.Field);
+                context.Writer.WriteStringValue(requestObject.Field);
             }
 
             if(requestObject.IsSetOperator())
             {
                 context.Writer.WritePropertyName("Operator");
-                context.Writer.Write(requestObject.Operator);
+                context.Writer.WriteStringValue(requestObject.Operator);
             }
 
             if(requestObject.IsSetValues())
             {
                 context.Writer.WritePropertyName("Values");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.Write(requestObjectValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

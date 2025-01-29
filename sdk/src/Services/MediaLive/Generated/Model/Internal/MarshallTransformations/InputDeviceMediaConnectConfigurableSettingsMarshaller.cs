@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlowArn())
             {
                 context.Writer.WritePropertyName("flowArn");
-                context.Writer.Write(requestObject.FlowArn);
+                context.Writer.WriteStringValue(requestObject.FlowArn);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("secretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetSourceName())
             {
                 context.Writer.WritePropertyName("sourceName");
-                context.Writer.Write(requestObject.SourceName);
+                context.Writer.WriteStringValue(requestObject.SourceName);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,80 +49,80 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityZones())
             {
                 context.Writer.WritePropertyName("AvailabilityZones");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAvailabilityZonesListValue in requestObject.AvailabilityZones)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsAutoScalingAutoScalingGroupAvailabilityZonesListDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectAvailabilityZonesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCapacityRebalance())
             {
                 context.Writer.WritePropertyName("CapacityRebalance");
-                context.Writer.Write(requestObject.CapacityRebalance.Value);
+                context.Writer.WriteBooleanValue(requestObject.CapacityRebalance.Value);
             }
 
             if(requestObject.IsSetCreatedTime())
             {
                 context.Writer.WritePropertyName("CreatedTime");
-                context.Writer.Write(requestObject.CreatedTime);
+                context.Writer.WriteStringValue(requestObject.CreatedTime);
             }
 
             if(requestObject.IsSetHealthCheckGracePeriod())
             {
                 context.Writer.WritePropertyName("HealthCheckGracePeriod");
-                context.Writer.Write(requestObject.HealthCheckGracePeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.HealthCheckGracePeriod.Value);
             }
 
             if(requestObject.IsSetHealthCheckType())
             {
                 context.Writer.WritePropertyName("HealthCheckType");
-                context.Writer.Write(requestObject.HealthCheckType);
+                context.Writer.WriteStringValue(requestObject.HealthCheckType);
             }
 
             if(requestObject.IsSetLaunchConfigurationName())
             {
                 context.Writer.WritePropertyName("LaunchConfigurationName");
-                context.Writer.Write(requestObject.LaunchConfigurationName);
+                context.Writer.WriteStringValue(requestObject.LaunchConfigurationName);
             }
 
             if(requestObject.IsSetLaunchTemplate())
             {
                 context.Writer.WritePropertyName("LaunchTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAutoScalingAutoScalingGroupLaunchTemplateLaunchTemplateSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLoadBalancerNames())
             {
                 context.Writer.WritePropertyName("LoadBalancerNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLoadBalancerNamesListValue in requestObject.LoadBalancerNames)
                 {
-                        context.Writer.Write(requestObjectLoadBalancerNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectLoadBalancerNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMixedInstancesPolicy())
             {
                 context.Writer.WritePropertyName("MixedInstancesPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAutoScalingAutoScalingGroupMixedInstancesPolicyDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MixedInstancesPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDays())
             {
                 context.Writer.WritePropertyName("Days");
-                context.Writer.Write(requestObject.Days.Value);
+                context.Writer.WriteNumberValue(requestObject.Days.Value);
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetYears())
             {
                 context.Writer.WritePropertyName("Years");
-                context.Writer.Write(requestObject.Years.Value);
+                context.Writer.WriteNumberValue(requestObject.Years.Value);
             }
 
         }

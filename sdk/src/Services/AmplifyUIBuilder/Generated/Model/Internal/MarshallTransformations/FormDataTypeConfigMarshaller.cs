@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSourceType())
             {
                 context.Writer.WritePropertyName("dataSourceType");
-                context.Writer.Write(requestObject.DataSourceType);
+                context.Writer.WriteStringValue(requestObject.DataSourceType);
             }
 
             if(requestObject.IsSetDataTypeName())
             {
                 context.Writer.WritePropertyName("dataTypeName");
-                context.Writer.Write(requestObject.DataTypeName);
+                context.Writer.WriteStringValue(requestObject.DataTypeName);
             }
 
         }

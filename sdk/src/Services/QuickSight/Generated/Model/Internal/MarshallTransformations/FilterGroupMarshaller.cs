@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrossDataset())
             {
                 context.Writer.WritePropertyName("CrossDataset");
-                context.Writer.Write(requestObject.CrossDataset);
+                context.Writer.WriteStringValue(requestObject.CrossDataset);
             }
 
             if(requestObject.IsSetFilterGroupId())
             {
                 context.Writer.WritePropertyName("FilterGroupId");
-                context.Writer.Write(requestObject.FilterGroupId);
+                context.Writer.WriteStringValue(requestObject.FilterGroupId);
             }
 
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("Filters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFiltersListValue in requestObject.Filters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FilterMarshaller.Instance;
                     marshaller.Marshall(requestObjectFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetScopeConfiguration())
             {
                 context.Writer.WritePropertyName("ScopeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterScopeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScopeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

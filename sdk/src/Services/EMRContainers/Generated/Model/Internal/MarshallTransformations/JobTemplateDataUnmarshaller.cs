@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobTemplateData Object
     /// </summary>  
-    public class JobTemplateDataUnmarshaller : IUnmarshaller<JobTemplateData, XmlUnmarshallerContext>, IUnmarshaller<JobTemplateData, JsonUnmarshallerContext>
+    public class JobTemplateDataUnmarshaller : IJsonUnmarshaller<JobTemplateData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        JobTemplateData IUnmarshaller<JobTemplateData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobTemplateData Unmarshall(JsonUnmarshallerContext context)
+        public JobTemplateData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             JobTemplateData unmarshalledObject = new JobTemplateData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("configurationOverrides", targetDepth))
                 {
                     var unmarshaller = ParametricConfigurationOverridesUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationOverrides = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("jobDriver", targetDepth))
                 {
                     var unmarshaller = JobDriverUnmarshaller.Instance;
-                    unmarshalledObject.JobDriver = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobDriver = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("jobTags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.JobTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.JobTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parameterConfiguration", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, TemplateParameterConfiguration, StringUnmarshaller, TemplateParameterConfigurationUnmarshaller>(StringUnmarshaller.Instance, TemplateParameterConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.ParameterConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, TemplateParameterConfiguration, StringUnmarshaller, TemplateParameterConfigurationUnmarshaller>(StringUnmarshaller.Instance, TemplateParameterConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.ParameterConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("releaseLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReleaseLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SqsAction Object
     /// </summary>  
-    public class SqsActionUnmarshaller : IUnmarshaller<SqsAction, XmlUnmarshallerContext>, IUnmarshaller<SqsAction, JsonUnmarshallerContext>
+    public class SqsActionUnmarshaller : IJsonUnmarshaller<SqsAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SqsAction IUnmarshaller<SqsAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SqsAction Unmarshall(JsonUnmarshallerContext context)
+        public SqsAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SqsAction unmarshalledObject = new SqsAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("payload", targetDepth))
                 {
                     var unmarshaller = PayloadUnmarshaller.Instance;
-                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queueUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QueueUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueueUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("useBase64", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseBase64 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UseBase64 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

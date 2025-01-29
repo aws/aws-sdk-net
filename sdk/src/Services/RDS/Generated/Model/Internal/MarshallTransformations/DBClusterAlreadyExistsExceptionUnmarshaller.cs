@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterAlreadyExistsException operation
     /// </summary>  
-    public class DBClusterAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBClusterAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

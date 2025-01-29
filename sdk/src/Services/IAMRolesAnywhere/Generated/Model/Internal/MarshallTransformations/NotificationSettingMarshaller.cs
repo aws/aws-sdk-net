@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannel())
             {
                 context.Writer.WritePropertyName("channel");
-                context.Writer.Write(requestObject.Channel);
+                context.Writer.WriteStringValue(requestObject.Channel);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetEvent())
             {
                 context.Writer.WritePropertyName("event");
-                context.Writer.Write(requestObject.Event);
+                context.Writer.WriteStringValue(requestObject.Event);
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");
-                context.Writer.Write(requestObject.Threshold.Value);
+                context.Writer.WriteNumberValue(requestObject.Threshold.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("bucket");
-                context.Writer.Write(requestObject.Bucket);
+                context.Writer.WriteStringValue(requestObject.Bucket);
             }
 
             if(requestObject.IsSetIdentifier())
             {
                 context.Writer.WritePropertyName("identifier");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobIdentifierMarshaller.Instance;
                 marshaller.Marshall(requestObject.Identifier, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKeyPrefix())
             {
                 context.Writer.WritePropertyName("keyPrefix");
-                context.Writer.Write(requestObject.KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.KeyPrefix);
             }
 
         }

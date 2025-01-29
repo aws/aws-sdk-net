@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComment())
             {
                 context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WriteStringValue(requestObject.Comment);
             }
 
             if(requestObject.IsSetControlSetId())
             {
                 context.Writer.WritePropertyName("controlSetId");
-                context.Writer.Write(requestObject.ControlSetId);
+                context.Writer.WriteStringValue(requestObject.ControlSetId);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetRoleType())
             {
                 context.Writer.WritePropertyName("roleType");
-                context.Writer.Write(requestObject.RoleType);
+                context.Writer.WriteStringValue(requestObject.RoleType);
             }
 
         }

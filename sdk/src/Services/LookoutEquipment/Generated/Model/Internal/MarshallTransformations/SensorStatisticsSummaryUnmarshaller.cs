@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutEquipment.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SensorStatisticsSummary Object
     /// </summary>  
-    public class SensorStatisticsSummaryUnmarshaller : IUnmarshaller<SensorStatisticsSummary, XmlUnmarshallerContext>, IUnmarshaller<SensorStatisticsSummary, JsonUnmarshallerContext>
+    public class SensorStatisticsSummaryUnmarshaller : IJsonUnmarshaller<SensorStatisticsSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SensorStatisticsSummary IUnmarshaller<SensorStatisticsSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SensorStatisticsSummary Unmarshall(JsonUnmarshallerContext context)
+        public SensorStatisticsSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SensorStatisticsSummary unmarshalledObject = new SensorStatisticsSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoricalValues", targetDepth))
                 {
                     var unmarshaller = CategoricalValuesUnmarshaller.Instance;
-                    unmarshalledObject.CategoricalValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoricalValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ComponentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComponentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataEndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DataEndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataEndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataExists", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DataExists = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataExists = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DataStartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DuplicateTimestamps", targetDepth))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
-                    unmarshalledObject.DuplicateTimestamps = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DuplicateTimestamps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvalidDateEntries", targetDepth))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
-                    unmarshalledObject.InvalidDateEntries = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvalidDateEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InvalidValues", targetDepth))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
-                    unmarshalledObject.InvalidValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InvalidValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LargeTimestampGaps", targetDepth))
                 {
                     var unmarshaller = LargeTimestampGapsUnmarshaller.Instance;
-                    unmarshalledObject.LargeTimestampGaps = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LargeTimestampGaps = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MissingValues", targetDepth))
                 {
                     var unmarshaller = CountPercentUnmarshaller.Instance;
-                    unmarshalledObject.MissingValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MissingValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonotonicValues", targetDepth))
                 {
                     var unmarshaller = MonotonicValuesUnmarshaller.Instance;
-                    unmarshalledObject.MonotonicValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonotonicValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MultipleOperatingModes", targetDepth))
                 {
                     var unmarshaller = MultipleOperatingModesUnmarshaller.Instance;
-                    unmarshalledObject.MultipleOperatingModes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MultipleOperatingModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SensorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SensorName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SensorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

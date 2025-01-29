@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEvaluationContextIdentifier())
             {
                 context.Writer.WritePropertyName("EvaluationContextIdentifier");
-                context.Writer.Write(requestObject.EvaluationContextIdentifier);
+                context.Writer.WriteStringValue(requestObject.EvaluationContextIdentifier);
             }
 
             if(requestObject.IsSetEvaluationMode())
             {
                 context.Writer.WritePropertyName("EvaluationMode");
-                context.Writer.Write(requestObject.EvaluationMode);
+                context.Writer.WriteStringValue(requestObject.EvaluationMode);
             }
 
             if(requestObject.IsSetTimeWindow())
             {
                 context.Writer.WritePropertyName("TimeWindow");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeWindowMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeWindow, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

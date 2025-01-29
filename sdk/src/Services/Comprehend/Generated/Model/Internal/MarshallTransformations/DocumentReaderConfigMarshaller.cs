@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDocumentReadAction())
             {
                 context.Writer.WritePropertyName("DocumentReadAction");
-                context.Writer.Write(requestObject.DocumentReadAction);
+                context.Writer.WriteStringValue(requestObject.DocumentReadAction);
             }
 
             if(requestObject.IsSetDocumentReadMode())
             {
                 context.Writer.WritePropertyName("DocumentReadMode");
-                context.Writer.Write(requestObject.DocumentReadMode);
+                context.Writer.WriteStringValue(requestObject.DocumentReadMode);
             }
 
             if(requestObject.IsSetFeatureTypes())
             {
                 context.Writer.WritePropertyName("FeatureTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFeatureTypesListValue in requestObject.FeatureTypes)
                 {
-                        context.Writer.Write(requestObjectFeatureTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectFeatureTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

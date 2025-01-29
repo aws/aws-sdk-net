@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccent())
             {
                 context.Writer.WritePropertyName("Accent");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Accent, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDanger())
             {
                 context.Writer.WritePropertyName("Danger");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Danger, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDimension())
             {
                 context.Writer.WritePropertyName("Dimension");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dimension, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInfo())
             {
                 context.Writer.WritePropertyName("Info");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Info, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMeasure())
             {
                 context.Writer.WritePropertyName("Measure");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Measure, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrimary())
             {
                 context.Writer.WritePropertyName("Primary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Primary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecondary())
             {
                 context.Writer.WritePropertyName("Secondary");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Secondary, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSuccess())
             {
                 context.Writer.WritePropertyName("Success");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Success, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWarning())
             {
                 context.Writer.WritePropertyName("Warning");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PaletteMarshaller.Instance;
                 marshaller.Marshall(requestObject.Warning, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

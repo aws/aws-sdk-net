@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMediaFileUri())
             {
                 context.Writer.WritePropertyName("MediaFileUri");
-                context.Writer.Write(requestObject.MediaFileUri);
+                context.Writer.WriteStringValue(requestObject.MediaFileUri);
             }
 
             if(requestObject.IsSetRedactedMediaFileUri())
             {
                 context.Writer.WritePropertyName("RedactedMediaFileUri");
-                context.Writer.Write(requestObject.RedactedMediaFileUri);
+                context.Writer.WriteStringValue(requestObject.RedactedMediaFileUri);
             }
 
         }

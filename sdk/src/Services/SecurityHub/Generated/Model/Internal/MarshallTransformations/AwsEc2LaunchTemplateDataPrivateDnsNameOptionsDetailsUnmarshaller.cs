@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails Object
     /// </summary>  
-    public class AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsUnmarshaller : IUnmarshaller<AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails, JsonUnmarshallerContext>
+    public class AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails IUnmarshaller<AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails unmarshalledObject = new AwsEc2LaunchTemplateDataPrivateDnsNameOptionsDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EnableResourceNameDnsAAAARecord", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableResourceNameDnsAAAARecord = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableResourceNameDnsAAAARecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableResourceNameDnsARecord", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableResourceNameDnsARecord = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableResourceNameDnsARecord = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HostnameType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostnameType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostnameType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

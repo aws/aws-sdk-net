@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AgentTurnResult Object
     /// </summary>  
-    public class AgentTurnResultUnmarshaller : IUnmarshaller<AgentTurnResult, XmlUnmarshallerContext>, IUnmarshaller<AgentTurnResult, JsonUnmarshallerContext>
+    public class AgentTurnResultUnmarshaller : IJsonUnmarshaller<AgentTurnResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AgentTurnResult IUnmarshaller<AgentTurnResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AgentTurnResult Unmarshall(JsonUnmarshallerContext context)
+        public AgentTurnResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AgentTurnResult unmarshalledObject = new AgentTurnResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actualAgentPrompt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActualAgentPrompt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActualAgentPrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("actualElicitedSlot", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActualElicitedSlot = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActualElicitedSlot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("actualIntent", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActualIntent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActualIntent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("errorDetails", targetDepth))
                 {
                     var unmarshaller = ExecutionErrorDetailsUnmarshaller.Instance;
-                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("expectedAgentPrompt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedAgentPrompt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpectedAgentPrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

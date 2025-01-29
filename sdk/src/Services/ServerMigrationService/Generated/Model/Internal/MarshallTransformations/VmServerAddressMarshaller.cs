@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetVmId())
             {
                 context.Writer.WritePropertyName("vmId");
-                context.Writer.Write(requestObject.VmId);
+                context.Writer.WriteStringValue(requestObject.VmId);
             }
 
             if(requestObject.IsSetVmManagerId())
             {
                 context.Writer.WritePropertyName("vmManagerId");
-                context.Writer.Write(requestObject.VmManagerId);
+                context.Writer.WriteStringValue(requestObject.VmManagerId);
             }
 
         }

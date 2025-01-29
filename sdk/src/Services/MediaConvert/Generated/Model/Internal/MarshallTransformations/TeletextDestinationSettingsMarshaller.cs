@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPageNumber())
             {
                 context.Writer.WritePropertyName("pageNumber");
-                context.Writer.Write(requestObject.PageNumber);
+                context.Writer.WriteStringValue(requestObject.PageNumber);
             }
 
             if(requestObject.IsSetPageTypes())
             {
                 context.Writer.WritePropertyName("pageTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPageTypesListValue in requestObject.PageTypes)
                 {
-                        context.Writer.Write(requestObjectPageTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectPageTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

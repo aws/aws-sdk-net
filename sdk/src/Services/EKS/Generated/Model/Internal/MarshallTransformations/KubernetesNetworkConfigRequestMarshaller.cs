@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetElasticLoadBalancing())
             {
                 context.Writer.WritePropertyName("elasticLoadBalancing");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ElasticLoadBalancingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ElasticLoadBalancing, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIpFamily())
             {
                 context.Writer.WritePropertyName("ipFamily");
-                context.Writer.Write(requestObject.IpFamily);
+                context.Writer.WriteStringValue(requestObject.IpFamily);
             }
 
             if(requestObject.IsSetServiceIpv4Cidr())
             {
                 context.Writer.WritePropertyName("serviceIpv4Cidr");
-                context.Writer.Write(requestObject.ServiceIpv4Cidr);
+                context.Writer.WriteStringValue(requestObject.ServiceIpv4Cidr);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
@@ -63,103 +66,108 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAction())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAction())
-                    {
-                        context.Writer.WritePropertyName("Action");
-                        context.Writer.Write(publicRequest.Action);
-                    }
-
-                    if(publicRequest.IsSetBlockOverrideDnsType())
-                    {
-                        context.Writer.WritePropertyName("BlockOverrideDnsType");
-                        context.Writer.Write(publicRequest.BlockOverrideDnsType);
-                    }
-
-                    if(publicRequest.IsSetBlockOverrideDomain())
-                    {
-                        context.Writer.WritePropertyName("BlockOverrideDomain");
-                        context.Writer.Write(publicRequest.BlockOverrideDomain);
-                    }
-
-                    if(publicRequest.IsSetBlockOverrideTtl())
-                    {
-                        context.Writer.WritePropertyName("BlockOverrideTtl");
-                        context.Writer.Write(publicRequest.BlockOverrideTtl.Value);
-                    }
-
-                    if(publicRequest.IsSetBlockResponse())
-                    {
-                        context.Writer.WritePropertyName("BlockResponse");
-                        context.Writer.Write(publicRequest.BlockResponse);
-                    }
-
-                    if(publicRequest.IsSetConfidenceThreshold())
-                    {
-                        context.Writer.WritePropertyName("ConfidenceThreshold");
-                        context.Writer.Write(publicRequest.ConfidenceThreshold);
-                    }
-
-                    if(publicRequest.IsSetDnsThreatProtection())
-                    {
-                        context.Writer.WritePropertyName("DnsThreatProtection");
-                        context.Writer.Write(publicRequest.DnsThreatProtection);
-                    }
-
-                    if(publicRequest.IsSetFirewallDomainListId())
-                    {
-                        context.Writer.WritePropertyName("FirewallDomainListId");
-                        context.Writer.Write(publicRequest.FirewallDomainListId);
-                    }
-
-                    if(publicRequest.IsSetFirewallDomainRedirectionAction())
-                    {
-                        context.Writer.WritePropertyName("FirewallDomainRedirectionAction");
-                        context.Writer.Write(publicRequest.FirewallDomainRedirectionAction);
-                    }
-
-                    if(publicRequest.IsSetFirewallRuleGroupId())
-                    {
-                        context.Writer.WritePropertyName("FirewallRuleGroupId");
-                        context.Writer.Write(publicRequest.FirewallRuleGroupId);
-                    }
-
-                    if(publicRequest.IsSetFirewallThreatProtectionId())
-                    {
-                        context.Writer.WritePropertyName("FirewallThreatProtectionId");
-                        context.Writer.Write(publicRequest.FirewallThreatProtectionId);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPriority())
-                    {
-                        context.Writer.WritePropertyName("Priority");
-                        context.Writer.Write(publicRequest.Priority.Value);
-                    }
-
-                    if(publicRequest.IsSetQtype())
-                    {
-                        context.Writer.WritePropertyName("Qtype");
-                        context.Writer.Write(publicRequest.Qtype);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Action");
+                context.Writer.WriteStringValue(publicRequest.Action);
             }
+
+            if(publicRequest.IsSetBlockOverrideDnsType())
+            {
+                context.Writer.WritePropertyName("BlockOverrideDnsType");
+                context.Writer.WriteStringValue(publicRequest.BlockOverrideDnsType);
+            }
+
+            if(publicRequest.IsSetBlockOverrideDomain())
+            {
+                context.Writer.WritePropertyName("BlockOverrideDomain");
+                context.Writer.WriteStringValue(publicRequest.BlockOverrideDomain);
+            }
+
+            if(publicRequest.IsSetBlockOverrideTtl())
+            {
+                context.Writer.WritePropertyName("BlockOverrideTtl");
+                context.Writer.WriteNumberValue(publicRequest.BlockOverrideTtl.Value);
+            }
+
+            if(publicRequest.IsSetBlockResponse())
+            {
+                context.Writer.WritePropertyName("BlockResponse");
+                context.Writer.WriteStringValue(publicRequest.BlockResponse);
+            }
+
+            if(publicRequest.IsSetConfidenceThreshold())
+            {
+                context.Writer.WritePropertyName("ConfidenceThreshold");
+                context.Writer.WriteStringValue(publicRequest.ConfidenceThreshold);
+            }
+
+            if(publicRequest.IsSetDnsThreatProtection())
+            {
+                context.Writer.WritePropertyName("DnsThreatProtection");
+                context.Writer.WriteStringValue(publicRequest.DnsThreatProtection);
+            }
+
+            if(publicRequest.IsSetFirewallDomainListId())
+            {
+                context.Writer.WritePropertyName("FirewallDomainListId");
+                context.Writer.WriteStringValue(publicRequest.FirewallDomainListId);
+            }
+
+            if(publicRequest.IsSetFirewallDomainRedirectionAction())
+            {
+                context.Writer.WritePropertyName("FirewallDomainRedirectionAction");
+                context.Writer.WriteStringValue(publicRequest.FirewallDomainRedirectionAction);
+            }
+
+            if(publicRequest.IsSetFirewallRuleGroupId())
+            {
+                context.Writer.WritePropertyName("FirewallRuleGroupId");
+                context.Writer.WriteStringValue(publicRequest.FirewallRuleGroupId);
+            }
+
+            if(publicRequest.IsSetFirewallThreatProtectionId())
+            {
+                context.Writer.WritePropertyName("FirewallThreatProtectionId");
+                context.Writer.WriteStringValue(publicRequest.FirewallThreatProtectionId);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPriority())
+            {
+                context.Writer.WritePropertyName("Priority");
+                context.Writer.WriteNumberValue(publicRequest.Priority.Value);
+            }
+
+            if(publicRequest.IsSetQtype())
+            {
+                context.Writer.WritePropertyName("Qtype");
+                context.Writer.WriteStringValue(publicRequest.Qtype);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("channels");
-                context.Writer.Write(requestObject.Channels.Value);
+                context.Writer.WriteNumberValue(requestObject.Channels.Value);
             }
 
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");
-                context.Writer.Write(requestObject.Duration.Value);
+                context.Writer.WriteNumberValue(requestObject.Duration.Value);
             }
 
             if(requestObject.IsSetFramerateDenominator())
             {
                 context.Writer.WritePropertyName("framerateDenominator");
-                context.Writer.Write(requestObject.FramerateDenominator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateDenominator.Value);
             }
 
             if(requestObject.IsSetFramerateNumerator())
             {
                 context.Writer.WritePropertyName("framerateNumerator");
-                context.Writer.Write(requestObject.FramerateNumerator.Value);
+                context.Writer.WriteNumberValue(requestObject.FramerateNumerator.Value);
             }
 
             if(requestObject.IsSetSampleRate())
             {
                 context.Writer.WritePropertyName("sampleRate");
-                context.Writer.Write(requestObject.SampleRate.Value);
+                context.Writer.WriteNumberValue(requestObject.SampleRate.Value);
             }
 
         }

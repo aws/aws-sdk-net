@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrackingOptionsDoesNotExistException operation
     /// </summary>  
-    public class TrackingOptionsDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<TrackingOptionsDoesNotExistException, XmlUnmarshallerContext>
+    public class TrackingOptionsDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TrackingOptionsDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

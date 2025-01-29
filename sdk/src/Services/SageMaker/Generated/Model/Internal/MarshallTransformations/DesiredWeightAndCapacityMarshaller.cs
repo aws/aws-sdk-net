@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredInstanceCount())
             {
                 context.Writer.WritePropertyName("DesiredInstanceCount");
-                context.Writer.Write(requestObject.DesiredInstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.DesiredInstanceCount.Value);
             }
 
             if(requestObject.IsSetDesiredWeight())
@@ -59,29 +57,29 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("DesiredWeight");
                 if(StringUtils.IsSpecialFloatValue(requestObject.DesiredWeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.DesiredWeight.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.DesiredWeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DesiredWeight.Value);
+                    context.Writer.WriteNumberValue(requestObject.DesiredWeight.Value);
                 }
             }
 
             if(requestObject.IsSetServerlessUpdateConfig())
             {
                 context.Writer.WritePropertyName("ServerlessUpdateConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProductionVariantServerlessUpdateConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServerlessUpdateConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVariantName())
             {
                 context.Writer.WritePropertyName("VariantName");
-                context.Writer.Write(requestObject.VariantName);
+                context.Writer.WriteStringValue(requestObject.VariantName);
             }
 
         }

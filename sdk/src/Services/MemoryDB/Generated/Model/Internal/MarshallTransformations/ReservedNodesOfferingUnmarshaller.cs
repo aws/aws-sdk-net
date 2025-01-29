@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MemoryDB.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReservedNodesOffering Object
     /// </summary>  
-    public class ReservedNodesOfferingUnmarshaller : IUnmarshaller<ReservedNodesOffering, XmlUnmarshallerContext>, IUnmarshaller<ReservedNodesOffering, JsonUnmarshallerContext>
+    public class ReservedNodesOfferingUnmarshaller : IJsonUnmarshaller<ReservedNodesOffering, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReservedNodesOffering IUnmarshaller<ReservedNodesOffering, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReservedNodesOffering Unmarshall(JsonUnmarshallerContext context)
+        public ReservedNodesOffering Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReservedNodesOffering unmarshalledObject = new ReservedNodesOffering();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Duration", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Duration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FixedPrice", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FixedPrice = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NodeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NodeType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NodeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OfferingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferingType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OfferingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecurringCharges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RecurringCharge, RecurringChargeUnmarshaller>(RecurringChargeUnmarshaller.Instance);
-                    unmarshalledObject.RecurringCharges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RecurringCharge, RecurringChargeUnmarshaller>(RecurringChargeUnmarshaller.Instance);
+                    unmarshalledObject.RecurringCharges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReservedNodesOfferingId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ReservedNodesOfferingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReservedNodesOfferingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

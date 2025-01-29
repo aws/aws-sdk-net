@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthCodeUrl())
             {
                 context.Writer.WritePropertyName("authCodeUrl");
-                context.Writer.Write(requestObject.AuthCodeUrl);
+                context.Writer.WriteStringValue(requestObject.AuthCodeUrl);
             }
 
             if(requestObject.IsSetOAuthScopes())
             {
                 context.Writer.WritePropertyName("oAuthScopes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOAuthScopesListValue in requestObject.OAuthScopes)
                 {
-                        context.Writer.Write(requestObjectOAuthScopesListValue);
+                        context.Writer.WriteStringValue(requestObjectOAuthScopesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTokenUrl())
             {
                 context.Writer.WritePropertyName("tokenUrl");
-                context.Writer.Write(requestObject.TokenUrl);
+                context.Writer.WriteStringValue(requestObject.TokenUrl);
             }
 
         }

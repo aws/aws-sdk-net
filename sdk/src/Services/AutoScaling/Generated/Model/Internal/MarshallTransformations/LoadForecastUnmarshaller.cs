@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LoadForecast Object
     /// </summary>  
-    public class LoadForecastUnmarshaller : IUnmarshaller<LoadForecast, XmlUnmarshallerContext>, IUnmarshaller<LoadForecast, JsonUnmarshallerContext>
+    public class LoadForecastUnmarshaller : IXmlUnmarshaller<LoadForecast, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,17 +92,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LoadForecast Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LoadForecastUnmarshaller _instance = new LoadForecastUnmarshaller();        
 

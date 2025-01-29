@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PolicyNotAttachableException operation
     /// </summary>  
-    public class PolicyNotAttachableExceptionUnmarshaller : IErrorResponseUnmarshaller<PolicyNotAttachableException, XmlUnmarshallerContext>
+    public class PolicyNotAttachableExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PolicyNotAttachableException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

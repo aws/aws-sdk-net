@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,22 +49,22 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEc2TagSetList())
             {
                 context.Writer.WritePropertyName("ec2TagSetList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEc2TagSetListListValue in requestObject.Ec2TagSetList)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectEc2TagSetListListValueListValue in requestObjectEc2TagSetListListValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = EC2TagFilterMarshaller.Instance;
                         marshaller.Marshall(requestObjectEc2TagSetListListValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

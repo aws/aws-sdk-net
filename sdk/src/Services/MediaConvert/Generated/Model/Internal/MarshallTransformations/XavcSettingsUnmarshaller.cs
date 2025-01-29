@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for XavcSettings Object
     /// </summary>  
-    public class XavcSettingsUnmarshaller : IUnmarshaller<XavcSettings, XmlUnmarshallerContext>, IUnmarshaller<XavcSettings, JsonUnmarshallerContext>
+    public class XavcSettingsUnmarshaller : IJsonUnmarshaller<XavcSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        XavcSettings IUnmarshaller<XavcSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public XavcSettings Unmarshall(JsonUnmarshallerContext context)
+        public XavcSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             XavcSettings unmarshalledObject = new XavcSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("adaptiveQuantization", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdaptiveQuantization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdaptiveQuantization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("entropyEncoding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntropyEncoding = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntropyEncoding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FramerateControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateConversionAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FramerateConversionAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateConversionAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateDenominator", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateNumerator", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("profile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Profile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slowPal", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlowPal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlowPal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("softness", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Softness = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Softness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("spatialAdaptiveQuantization", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SpatialAdaptiveQuantization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpatialAdaptiveQuantization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("temporalAdaptiveQuantization", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TemporalAdaptiveQuantization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemporalAdaptiveQuantization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("xavc4kIntraCbgProfileSettings", targetDepth))
                 {
                     var unmarshaller = Xavc4kIntraCbgProfileSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Xavc4kIntraCbgProfileSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Xavc4kIntraCbgProfileSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("xavc4kIntraVbrProfileSettings", targetDepth))
                 {
                     var unmarshaller = Xavc4kIntraVbrProfileSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Xavc4kIntraVbrProfileSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Xavc4kIntraVbrProfileSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("xavc4kProfileSettings", targetDepth))
                 {
                     var unmarshaller = Xavc4kProfileSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Xavc4kProfileSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Xavc4kProfileSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("xavcHdIntraCbgProfileSettings", targetDepth))
                 {
                     var unmarshaller = XavcHdIntraCbgProfileSettingsUnmarshaller.Instance;
-                    unmarshalledObject.XavcHdIntraCbgProfileSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.XavcHdIntraCbgProfileSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("xavcHdProfileSettings", targetDepth))
                 {
                     var unmarshaller = XavcHdProfileSettingsUnmarshaller.Instance;
-                    unmarshalledObject.XavcHdProfileSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.XavcHdProfileSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FieldLevelEncryptionProfileInUseException operation
     /// </summary>  
-    public class FieldLevelEncryptionProfileInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<FieldLevelEncryptionProfileInUseException, XmlUnmarshallerContext>
+    public class FieldLevelEncryptionProfileInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<FieldLevelEncryptionProfileInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSortField())
             {
                 context.Writer.WritePropertyName("sortField");
-                context.Writer.Write(requestObject.SortField);
+                context.Writer.WriteStringValue(requestObject.SortField);
             }
 
             if(requestObject.IsSetSortOrder())
             {
                 context.Writer.WritePropertyName("sortOrder");
-                context.Writer.Write(requestObject.SortOrder);
+                context.Writer.WriteStringValue(requestObject.SortOrder);
             }
 
         }

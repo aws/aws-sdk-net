@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FromEmailAddressNotVerifiedException operation
     /// </summary>  
-    public class FromEmailAddressNotVerifiedExceptionUnmarshaller : IErrorResponseUnmarshaller<FromEmailAddressNotVerifiedException, XmlUnmarshallerContext>
+    public class FromEmailAddressNotVerifiedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<FromEmailAddressNotVerifiedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

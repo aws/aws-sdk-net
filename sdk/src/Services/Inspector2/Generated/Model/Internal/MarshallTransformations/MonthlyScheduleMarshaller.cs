@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDay())
             {
                 context.Writer.WritePropertyName("day");
-                context.Writer.Write(requestObject.Day);
+                context.Writer.WriteStringValue(requestObject.Day);
             }
 
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeMarshaller.Instance;
                 marshaller.Marshall(requestObject.StartTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

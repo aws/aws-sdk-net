@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsDynamoDbTableGlobalSecondaryIndex Object
     /// </summary>  
-    public class AwsDynamoDbTableGlobalSecondaryIndexUnmarshaller : IUnmarshaller<AwsDynamoDbTableGlobalSecondaryIndex, XmlUnmarshallerContext>, IUnmarshaller<AwsDynamoDbTableGlobalSecondaryIndex, JsonUnmarshallerContext>
+    public class AwsDynamoDbTableGlobalSecondaryIndexUnmarshaller : IJsonUnmarshaller<AwsDynamoDbTableGlobalSecondaryIndex, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsDynamoDbTableGlobalSecondaryIndex IUnmarshaller<AwsDynamoDbTableGlobalSecondaryIndex, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsDynamoDbTableGlobalSecondaryIndex Unmarshall(JsonUnmarshallerContext context)
+        public AwsDynamoDbTableGlobalSecondaryIndex Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsDynamoDbTableGlobalSecondaryIndex unmarshalledObject = new AwsDynamoDbTableGlobalSecondaryIndex();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Backfilling", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Backfilling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Backfilling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexSizeBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.IndexSizeBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexSizeBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IndexStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IndexStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ItemCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeySchema", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsDynamoDbTableKeySchema, AwsDynamoDbTableKeySchemaUnmarshaller>(AwsDynamoDbTableKeySchemaUnmarshaller.Instance);
-                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsDynamoDbTableKeySchema, AwsDynamoDbTableKeySchemaUnmarshaller>(AwsDynamoDbTableKeySchemaUnmarshaller.Instance);
+                    unmarshalledObject.KeySchema = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Projection", targetDepth))
                 {
                     var unmarshaller = AwsDynamoDbTableProjectionUnmarshaller.Instance;
-                    unmarshalledObject.Projection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Projection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedThroughput", targetDepth))
                 {
                     var unmarshaller = AwsDynamoDbTableProvisionedThroughputUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedThroughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

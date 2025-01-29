@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComparator())
             {
                 context.Writer.WritePropertyName("comparator");
-                context.Writer.Write(requestObject.Comparator);
+                context.Writer.WriteStringValue(requestObject.Comparator);
             }
 
             if(requestObject.IsSetTagValues())
             {
                 context.Writer.WritePropertyName("tagValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagValuesListValue in requestObject.TagValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagCriterionPairForJobMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

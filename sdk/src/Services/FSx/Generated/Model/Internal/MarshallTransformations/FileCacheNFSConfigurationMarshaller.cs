@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDnsIps())
             {
                 context.Writer.WritePropertyName("DnsIps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsIpsListValue in requestObject.DnsIps)
                 {
-                        context.Writer.Write(requestObjectDnsIpsListValue);
+                        context.Writer.WriteStringValue(requestObjectDnsIpsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

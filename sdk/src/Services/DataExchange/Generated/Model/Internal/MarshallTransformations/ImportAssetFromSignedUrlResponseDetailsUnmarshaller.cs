@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ImportAssetFromSignedUrlResponseDetails Object
     /// </summary>  
-    public class ImportAssetFromSignedUrlResponseDetailsUnmarshaller : IUnmarshaller<ImportAssetFromSignedUrlResponseDetails, XmlUnmarshallerContext>, IUnmarshaller<ImportAssetFromSignedUrlResponseDetails, JsonUnmarshallerContext>
+    public class ImportAssetFromSignedUrlResponseDetailsUnmarshaller : IJsonUnmarshaller<ImportAssetFromSignedUrlResponseDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ImportAssetFromSignedUrlResponseDetails IUnmarshaller<ImportAssetFromSignedUrlResponseDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ImportAssetFromSignedUrlResponseDetails Unmarshall(JsonUnmarshallerContext context)
+        public ImportAssetFromSignedUrlResponseDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ImportAssetFromSignedUrlResponseDetails unmarshalledObject = new ImportAssetFromSignedUrlResponseDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AssetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssetName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Md5Hash", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Md5Hash = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Md5Hash = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RevisionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SignedUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignedUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignedUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SignedUrlExpiresAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SignedUrlExpiresAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignedUrlExpiresAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxHumanLabeledObjectCount())
             {
                 context.Writer.WritePropertyName("MaxHumanLabeledObjectCount");
-                context.Writer.Write(requestObject.MaxHumanLabeledObjectCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxHumanLabeledObjectCount.Value);
             }
 
             if(requestObject.IsSetMaxPercentageOfInputDatasetLabeled())
             {
                 context.Writer.WritePropertyName("MaxPercentageOfInputDatasetLabeled");
-                context.Writer.Write(requestObject.MaxPercentageOfInputDatasetLabeled.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPercentageOfInputDatasetLabeled.Value);
             }
 
         }

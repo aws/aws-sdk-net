@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Monitoring Object
     /// </summary>  
-    public class MonitoringUnmarshaller : IUnmarshaller<Monitoring, XmlUnmarshallerContext>, IUnmarshaller<Monitoring, JsonUnmarshallerContext>
+    public class MonitoringUnmarshaller : IXmlUnmarshaller<Monitoring, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Monitoring Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MonitoringUnmarshaller _instance = new MonitoringUnmarshaller();        
 

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NetworkAclEntrySet Object
     /// </summary>  
-    public class NetworkAclEntrySetUnmarshaller : IUnmarshaller<NetworkAclEntrySet, XmlUnmarshallerContext>, IUnmarshaller<NetworkAclEntrySet, JsonUnmarshallerContext>
+    public class NetworkAclEntrySetUnmarshaller : IJsonUnmarshaller<NetworkAclEntrySet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NetworkAclEntrySet IUnmarshaller<NetworkAclEntrySet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NetworkAclEntrySet Unmarshall(JsonUnmarshallerContext context)
+        public NetworkAclEntrySet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NetworkAclEntrySet unmarshalledObject = new NetworkAclEntrySet();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FirstEntries", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkAclEntry, NetworkAclEntryUnmarshaller>(NetworkAclEntryUnmarshaller.Instance);
-                    unmarshalledObject.FirstEntries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkAclEntry, NetworkAclEntryUnmarshaller>(NetworkAclEntryUnmarshaller.Instance);
+                    unmarshalledObject.FirstEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForceRemediateForFirstEntries", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ForceRemediateForFirstEntries = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForceRemediateForFirstEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForceRemediateForLastEntries", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ForceRemediateForLastEntries = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForceRemediateForLastEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastEntries", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkAclEntry, NetworkAclEntryUnmarshaller>(NetworkAclEntryUnmarshaller.Instance);
-                    unmarshalledObject.LastEntries = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkAclEntry, NetworkAclEntryUnmarshaller>(NetworkAclEntryUnmarshaller.Instance);
+                    unmarshalledObject.LastEntries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

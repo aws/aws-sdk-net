@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsAmazonMqBrokerLdapServerMetadataDetails Object
     /// </summary>  
-    public class AwsAmazonMqBrokerLdapServerMetadataDetailsUnmarshaller : IUnmarshaller<AwsAmazonMqBrokerLdapServerMetadataDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsAmazonMqBrokerLdapServerMetadataDetails, JsonUnmarshallerContext>
+    public class AwsAmazonMqBrokerLdapServerMetadataDetailsUnmarshaller : IJsonUnmarshaller<AwsAmazonMqBrokerLdapServerMetadataDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsAmazonMqBrokerLdapServerMetadataDetails IUnmarshaller<AwsAmazonMqBrokerLdapServerMetadataDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsAmazonMqBrokerLdapServerMetadataDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsAmazonMqBrokerLdapServerMetadataDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsAmazonMqBrokerLdapServerMetadataDetails unmarshalledObject = new AwsAmazonMqBrokerLdapServerMetadataDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Hosts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Hosts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Hosts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleBase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleBase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleBase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleSearchMatching", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RoleSearchMatching = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleSearchMatching = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RoleSearchSubtree", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RoleSearchSubtree = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoleSearchSubtree = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceAccountUsername", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceAccountUsername = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceAccountUsername = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserBase", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserBase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserBase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserRoleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserRoleName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserRoleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserSearchMatching", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserSearchMatching = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserSearchMatching = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserSearchSubtree", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UserSearchSubtree = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserSearchSubtree = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

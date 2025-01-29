@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for JobListDescriptor Object
     /// </summary>  
-    public class JobListDescriptorUnmarshaller : IUnmarshaller<JobListDescriptor, XmlUnmarshallerContext>, IUnmarshaller<JobListDescriptor, JsonUnmarshallerContext>
+    public class JobListDescriptorUnmarshaller : IXmlUnmarshaller<JobListDescriptor, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public JobListDescriptor Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static JobListDescriptorUnmarshaller _instance = new JobListDescriptorUnmarshaller();        
 
         /// <summary>

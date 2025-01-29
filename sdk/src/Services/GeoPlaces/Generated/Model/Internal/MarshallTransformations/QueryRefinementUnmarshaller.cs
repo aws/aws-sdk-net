@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QueryRefinement Object
     /// </summary>  
-    public class QueryRefinementUnmarshaller : IUnmarshaller<QueryRefinement, XmlUnmarshallerContext>, IUnmarshaller<QueryRefinement, JsonUnmarshallerContext>
+    public class QueryRefinementUnmarshaller : IJsonUnmarshaller<QueryRefinement, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QueryRefinement IUnmarshaller<QueryRefinement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QueryRefinement Unmarshall(JsonUnmarshallerContext context)
+        public QueryRefinement Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QueryRefinement unmarshalledObject = new QueryRefinement();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EndIndex", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndIndex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OriginalTerm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OriginalTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginalTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RefinedTerm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RefinedTerm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RefinedTerm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartIndex", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StartIndex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

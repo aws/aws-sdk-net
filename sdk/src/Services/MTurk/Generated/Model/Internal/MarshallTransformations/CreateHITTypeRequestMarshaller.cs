@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
@@ -63,71 +66,76 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssignmentDurationInSeconds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssignmentDurationInSeconds())
-                    {
-                        context.Writer.WritePropertyName("AssignmentDurationInSeconds");
-                        context.Writer.Write(publicRequest.AssignmentDurationInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetAutoApprovalDelayInSeconds())
-                    {
-                        context.Writer.WritePropertyName("AutoApprovalDelayInSeconds");
-                        context.Writer.Write(publicRequest.AutoApprovalDelayInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetKeywords())
-                    {
-                        context.Writer.WritePropertyName("Keywords");
-                        context.Writer.Write(publicRequest.Keywords);
-                    }
-
-                    if(publicRequest.IsSetQualificationRequirements())
-                    {
-                        context.Writer.WritePropertyName("QualificationRequirements");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestQualificationRequirementsListValue in publicRequest.QualificationRequirements)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = QualificationRequirementMarshaller.Instance;
-                            marshaller.Marshall(publicRequestQualificationRequirementsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetReward())
-                    {
-                        context.Writer.WritePropertyName("Reward");
-                        context.Writer.Write(publicRequest.Reward);
-                    }
-
-                    if(publicRequest.IsSetTitle())
-                    {
-                        context.Writer.WritePropertyName("Title");
-                        context.Writer.Write(publicRequest.Title);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AssignmentDurationInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.AssignmentDurationInSeconds.Value);
             }
+
+            if(publicRequest.IsSetAutoApprovalDelayInSeconds())
+            {
+                context.Writer.WritePropertyName("AutoApprovalDelayInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.AutoApprovalDelayInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetKeywords())
+            {
+                context.Writer.WritePropertyName("Keywords");
+                context.Writer.WriteStringValue(publicRequest.Keywords);
+            }
+
+            if(publicRequest.IsSetQualificationRequirements())
+            {
+                context.Writer.WritePropertyName("QualificationRequirements");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestQualificationRequirementsListValue in publicRequest.QualificationRequirements)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = QualificationRequirementMarshaller.Instance;
+                    marshaller.Marshall(publicRequestQualificationRequirementsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetReward())
+            {
+                context.Writer.WritePropertyName("Reward");
+                context.Writer.WriteStringValue(publicRequest.Reward);
+            }
+
+            if(publicRequest.IsSetTitle())
+            {
+                context.Writer.WritePropertyName("Title");
+                context.Writer.WriteStringValue(publicRequest.Title);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

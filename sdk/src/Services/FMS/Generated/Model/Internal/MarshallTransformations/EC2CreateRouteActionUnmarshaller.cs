@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EC2CreateRouteAction Object
     /// </summary>  
-    public class EC2CreateRouteActionUnmarshaller : IUnmarshaller<EC2CreateRouteAction, XmlUnmarshallerContext>, IUnmarshaller<EC2CreateRouteAction, JsonUnmarshallerContext>
+    public class EC2CreateRouteActionUnmarshaller : IJsonUnmarshaller<EC2CreateRouteAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EC2CreateRouteAction IUnmarshaller<EC2CreateRouteAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EC2CreateRouteAction Unmarshall(JsonUnmarshallerContext context)
+        public EC2CreateRouteAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EC2CreateRouteAction unmarshalledObject = new EC2CreateRouteAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DestinationCidrBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationCidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DestinationIpv6CidrBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationIpv6CidrBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationIpv6CidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DestinationPrefixListId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationPrefixListId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GatewayId", targetDepth))
                 {
                     var unmarshaller = ActionTargetUnmarshaller.Instance;
-                    unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RouteTableId", targetDepth))
                 {
                     var unmarshaller = ActionTargetUnmarshaller.Instance;
-                    unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcEndpointId", targetDepth))
                 {
                     var unmarshaller = ActionTargetUnmarshaller.Instance;
-                    unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcEndpointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

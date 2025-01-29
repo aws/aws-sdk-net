@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SsmSap.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Resilience Object
     /// </summary>  
-    public class ResilienceUnmarshaller : IUnmarshaller<Resilience, XmlUnmarshallerContext>, IUnmarshaller<Resilience, JsonUnmarshallerContext>
+    public class ResilienceUnmarshaller : IJsonUnmarshaller<Resilience, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Resilience IUnmarshaller<Resilience, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Resilience Unmarshall(JsonUnmarshallerContext context)
+        public Resilience Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Resilience unmarshalledObject = new Resilience();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ClusterStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClusterStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClusterStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnqueueReplication", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnqueueReplication = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnqueueReplication = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HsrOperationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HsrOperationMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HsrOperationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HsrReplicationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HsrReplicationMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HsrReplicationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HsrTier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HsrTier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HsrTier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

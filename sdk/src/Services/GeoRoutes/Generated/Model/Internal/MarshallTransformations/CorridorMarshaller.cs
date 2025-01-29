@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLineString())
             {
                 context.Writer.WritePropertyName("LineString");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLineStringListValue in requestObject.LineString)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectLineStringListValueListValue in requestObjectLineStringListValue)
                     {
-                            context.Writer.Write(requestObjectLineStringListValueListValue);
+                            context.Writer.WriteNumberValue(requestObjectLineStringListValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                context.Writer.Write(requestObject.Radius.Value);
+                context.Writer.WriteNumberValue(requestObject.Radius.Value);
             }
 
         }

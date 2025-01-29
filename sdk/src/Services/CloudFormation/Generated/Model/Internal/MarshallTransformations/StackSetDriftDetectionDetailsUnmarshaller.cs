@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StackSetDriftDetectionDetails Object
     /// </summary>  
-    public class StackSetDriftDetectionDetailsUnmarshaller : IUnmarshaller<StackSetDriftDetectionDetails, XmlUnmarshallerContext>, IUnmarshaller<StackSetDriftDetectionDetails, JsonUnmarshallerContext>
+    public class StackSetDriftDetectionDetailsUnmarshaller : IXmlUnmarshaller<StackSetDriftDetectionDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StackSetDriftDetectionDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StackSetDriftDetectionDetailsUnmarshaller _instance = new StackSetDriftDetectionDetailsUnmarshaller();        
 

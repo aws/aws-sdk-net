@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
-                context.Writer.Write(requestObject.Count.Value);
+                context.Writer.WriteNumberValue(requestObject.Count.Value);
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.Write(requestObject.Interval.Value);
+                context.Writer.WriteNumberValue(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetIntervalUnit())
             {
                 context.Writer.WritePropertyName("IntervalUnit");
-                context.Writer.Write(requestObject.IntervalUnit);
+                context.Writer.WriteStringValue(requestObject.IntervalUnit);
             }
 
         }

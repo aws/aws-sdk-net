@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProtectedResourceConditions Object
     /// </summary>  
-    public class ProtectedResourceConditionsUnmarshaller : IUnmarshaller<ProtectedResourceConditions, XmlUnmarshallerContext>, IUnmarshaller<ProtectedResourceConditions, JsonUnmarshallerContext>
+    public class ProtectedResourceConditionsUnmarshaller : IJsonUnmarshaller<ProtectedResourceConditions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProtectedResourceConditions IUnmarshaller<ProtectedResourceConditions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProtectedResourceConditions Unmarshall(JsonUnmarshallerContext context)
+        public ProtectedResourceConditions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProtectedResourceConditions unmarshalledObject = new ProtectedResourceConditions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("StringEquals", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KeyValue, KeyValueUnmarshaller>(KeyValueUnmarshaller.Instance);
-                    unmarshalledObject.StringEquals = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KeyValue, KeyValueUnmarshaller>(KeyValueUnmarshaller.Instance);
+                    unmarshalledObject.StringEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StringNotEquals", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KeyValue, KeyValueUnmarshaller>(KeyValueUnmarshaller.Instance);
-                    unmarshalledObject.StringNotEquals = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KeyValue, KeyValueUnmarshaller>(KeyValueUnmarshaller.Instance);
+                    unmarshalledObject.StringNotEquals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

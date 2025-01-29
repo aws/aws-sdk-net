@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLaunchTemplateId())
             {
                 context.Writer.WritePropertyName("launchTemplateId");
-                context.Writer.Write(requestObject.LaunchTemplateId);
+                context.Writer.WriteStringValue(requestObject.LaunchTemplateId);
             }
 
             if(requestObject.IsSetLaunchTemplateName())
             {
                 context.Writer.WritePropertyName("launchTemplateName");
-                context.Writer.Write(requestObject.LaunchTemplateName);
+                context.Writer.WriteStringValue(requestObject.LaunchTemplateName);
             }
 
             if(requestObject.IsSetOverrides())
             {
                 context.Writer.WritePropertyName("overrides");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOverridesListValue in requestObject.Overrides)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LaunchTemplateSpecificationOverrideMarshaller.Instance;
                     marshaller.Marshall(requestObjectOverridesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

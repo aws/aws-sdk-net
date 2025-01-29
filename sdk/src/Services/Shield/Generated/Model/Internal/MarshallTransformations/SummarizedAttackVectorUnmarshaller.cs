@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SummarizedAttackVector Object
     /// </summary>  
-    public class SummarizedAttackVectorUnmarshaller : IUnmarshaller<SummarizedAttackVector, XmlUnmarshallerContext>, IUnmarshaller<SummarizedAttackVector, JsonUnmarshallerContext>
+    public class SummarizedAttackVectorUnmarshaller : IJsonUnmarshaller<SummarizedAttackVector, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SummarizedAttackVector IUnmarshaller<SummarizedAttackVector, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SummarizedAttackVector Unmarshall(JsonUnmarshallerContext context)
+        public SummarizedAttackVector Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SummarizedAttackVector unmarshalledObject = new SummarizedAttackVector();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("VectorCounters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance);
-                    unmarshalledObject.VectorCounters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SummarizedCounter, SummarizedCounterUnmarshaller>(SummarizedCounterUnmarshaller.Instance);
+                    unmarshalledObject.VectorCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VectorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VectorType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VectorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Translate.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UnsupportedLanguagePairException Object
     /// </summary>  
-    public class UnsupportedLanguagePairExceptionUnmarshaller : IErrorResponseUnmarshaller<UnsupportedLanguagePairException, JsonUnmarshallerContext>
+    public class UnsupportedLanguagePairExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<UnsupportedLanguagePairException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public UnsupportedLanguagePairException Unmarshall(JsonUnmarshallerContext context)
+        public UnsupportedLanguagePairException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,28 +55,35 @@ namespace Amazon.Translate.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public UnsupportedLanguagePairException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public UnsupportedLanguagePairException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             UnsupportedLanguagePairException unmarshalledObject = new UnsupportedLanguagePairException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("SourceLanguageCode", targetDepth))
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceLanguageCode = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TargetLanguageCode", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetLanguageCode = unmarshaller.Unmarshall(context);
-                    continue;
+                    if (context.TestExpression("SourceLanguageCode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.SourceLanguageCode = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
+                    if (context.TestExpression("TargetLanguageCode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.TargetLanguageCode = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

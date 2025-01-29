@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParameter())
             {
                 context.Writer.WritePropertyName("Parameter");
-                context.Writer.Write(requestObject.Parameter);
+                context.Writer.WriteStringValue(requestObject.Parameter);
             }
 
             if(requestObject.IsSetRollingDate())
             {
                 context.Writer.WritePropertyName("RollingDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RollingDateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RollingDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStaticValue())
             {
                 context.Writer.WritePropertyName("StaticValue");
-                context.Writer.Write(requestObject.StaticValue.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StaticValue.Value)));
             }
 
         }

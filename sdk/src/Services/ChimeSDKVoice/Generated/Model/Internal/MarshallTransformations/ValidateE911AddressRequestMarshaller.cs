@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -61,61 +64,66 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/emergency-calling/address";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAwsAccountId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAwsAccountId())
-                    {
-                        context.Writer.WritePropertyName("AwsAccountId");
-                        context.Writer.Write(publicRequest.AwsAccountId);
-                    }
-
-                    if(publicRequest.IsSetCity())
-                    {
-                        context.Writer.WritePropertyName("City");
-                        context.Writer.Write(publicRequest.City);
-                    }
-
-                    if(publicRequest.IsSetCountry())
-                    {
-                        context.Writer.WritePropertyName("Country");
-                        context.Writer.Write(publicRequest.Country);
-                    }
-
-                    if(publicRequest.IsSetPostalCode())
-                    {
-                        context.Writer.WritePropertyName("PostalCode");
-                        context.Writer.Write(publicRequest.PostalCode);
-                    }
-
-                    if(publicRequest.IsSetState())
-                    {
-                        context.Writer.WritePropertyName("State");
-                        context.Writer.Write(publicRequest.State);
-                    }
-
-                    if(publicRequest.IsSetStreetInfo())
-                    {
-                        context.Writer.WritePropertyName("StreetInfo");
-                        context.Writer.Write(publicRequest.StreetInfo);
-                    }
-
-                    if(publicRequest.IsSetStreetNumber())
-                    {
-                        context.Writer.WritePropertyName("StreetNumber");
-                        context.Writer.Write(publicRequest.StreetNumber);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AwsAccountId");
+                context.Writer.WriteStringValue(publicRequest.AwsAccountId);
             }
+
+            if(publicRequest.IsSetCity())
+            {
+                context.Writer.WritePropertyName("City");
+                context.Writer.WriteStringValue(publicRequest.City);
+            }
+
+            if(publicRequest.IsSetCountry())
+            {
+                context.Writer.WritePropertyName("Country");
+                context.Writer.WriteStringValue(publicRequest.Country);
+            }
+
+            if(publicRequest.IsSetPostalCode())
+            {
+                context.Writer.WritePropertyName("PostalCode");
+                context.Writer.WriteStringValue(publicRequest.PostalCode);
+            }
+
+            if(publicRequest.IsSetState())
+            {
+                context.Writer.WritePropertyName("State");
+                context.Writer.WriteStringValue(publicRequest.State);
+            }
+
+            if(publicRequest.IsSetStreetInfo())
+            {
+                context.Writer.WritePropertyName("StreetInfo");
+                context.Writer.WriteStringValue(publicRequest.StreetInfo);
+            }
+
+            if(publicRequest.IsSetStreetNumber())
+            {
+                context.Writer.WritePropertyName("StreetNumber");
+                context.Writer.WriteStringValue(publicRequest.StreetNumber);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

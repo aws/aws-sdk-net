@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceTypeNotSupportedException operation
     /// </summary>  
-    public class ResourceTypeNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceTypeNotSupportedException, XmlUnmarshallerContext>
+    public class ResourceTypeNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceTypeNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

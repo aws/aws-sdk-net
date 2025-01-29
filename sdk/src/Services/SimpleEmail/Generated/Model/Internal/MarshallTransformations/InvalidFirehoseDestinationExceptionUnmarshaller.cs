@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidFirehoseDestinationException operation
     /// </summary>  
-    public class InvalidFirehoseDestinationExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidFirehoseDestinationException, XmlUnmarshallerContext>
+    public class InvalidFirehoseDestinationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidFirehoseDestinationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

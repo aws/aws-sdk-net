@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyApplicationsException operation
     /// </summary>  
-    public class TooManyApplicationsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyApplicationsException, XmlUnmarshallerContext>
+    public class TooManyApplicationsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyApplicationsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

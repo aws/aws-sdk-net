@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -63,78 +66,83 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComputeConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComputeConfig())
-                    {
-                        context.Writer.WritePropertyName("ComputeConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("ComputeConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ComputeConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ComputeConfig, context);
+                var marshaller = ComputeConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ComputeConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReplicationConfigArn())
-                    {
-                        context.Writer.WritePropertyName("ReplicationConfigArn");
-                        context.Writer.Write(publicRequest.ReplicationConfigArn);
-                    }
-
-                    if(publicRequest.IsSetReplicationConfigIdentifier())
-                    {
-                        context.Writer.WritePropertyName("ReplicationConfigIdentifier");
-                        context.Writer.Write(publicRequest.ReplicationConfigIdentifier);
-                    }
-
-                    if(publicRequest.IsSetReplicationSettings())
-                    {
-                        context.Writer.WritePropertyName("ReplicationSettings");
-                        context.Writer.Write(publicRequest.ReplicationSettings);
-                    }
-
-                    if(publicRequest.IsSetReplicationType())
-                    {
-                        context.Writer.WritePropertyName("ReplicationType");
-                        context.Writer.Write(publicRequest.ReplicationType);
-                    }
-
-                    if(publicRequest.IsSetSourceEndpointArn())
-                    {
-                        context.Writer.WritePropertyName("SourceEndpointArn");
-                        context.Writer.Write(publicRequest.SourceEndpointArn);
-                    }
-
-                    if(publicRequest.IsSetSupplementalSettings())
-                    {
-                        context.Writer.WritePropertyName("SupplementalSettings");
-                        context.Writer.Write(publicRequest.SupplementalSettings);
-                    }
-
-                    if(publicRequest.IsSetTableMappings())
-                    {
-                        context.Writer.WritePropertyName("TableMappings");
-                        context.Writer.Write(publicRequest.TableMappings);
-                    }
-
-                    if(publicRequest.IsSetTargetEndpointArn())
-                    {
-                        context.Writer.WritePropertyName("TargetEndpointArn");
-                        context.Writer.Write(publicRequest.TargetEndpointArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetReplicationConfigArn())
+            {
+                context.Writer.WritePropertyName("ReplicationConfigArn");
+                context.Writer.WriteStringValue(publicRequest.ReplicationConfigArn);
+            }
+
+            if(publicRequest.IsSetReplicationConfigIdentifier())
+            {
+                context.Writer.WritePropertyName("ReplicationConfigIdentifier");
+                context.Writer.WriteStringValue(publicRequest.ReplicationConfigIdentifier);
+            }
+
+            if(publicRequest.IsSetReplicationSettings())
+            {
+                context.Writer.WritePropertyName("ReplicationSettings");
+                context.Writer.WriteStringValue(publicRequest.ReplicationSettings);
+            }
+
+            if(publicRequest.IsSetReplicationType())
+            {
+                context.Writer.WritePropertyName("ReplicationType");
+                context.Writer.WriteStringValue(publicRequest.ReplicationType);
+            }
+
+            if(publicRequest.IsSetSourceEndpointArn())
+            {
+                context.Writer.WritePropertyName("SourceEndpointArn");
+                context.Writer.WriteStringValue(publicRequest.SourceEndpointArn);
+            }
+
+            if(publicRequest.IsSetSupplementalSettings())
+            {
+                context.Writer.WritePropertyName("SupplementalSettings");
+                context.Writer.WriteStringValue(publicRequest.SupplementalSettings);
+            }
+
+            if(publicRequest.IsSetTableMappings())
+            {
+                context.Writer.WritePropertyName("TableMappings");
+                context.Writer.WriteStringValue(publicRequest.TableMappings);
+            }
+
+            if(publicRequest.IsSetTargetEndpointArn())
+            {
+                context.Writer.WritePropertyName("TargetEndpointArn");
+                context.Writer.WriteStringValue(publicRequest.TargetEndpointArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("headers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeadersListValue in requestObject.Headers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HttpGatewayRouteHeaderMarshaller.Instance;
                     marshaller.Marshall(requestObjectHeadersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("hostname");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GatewayRouteHostnameMatchMarshaller.Instance;
                 marshaller.Marshall(requestObject.Hostname, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMethod())
             {
                 context.Writer.WritePropertyName("method");
-                context.Writer.Write(requestObject.Method);
+                context.Writer.WriteStringValue(requestObject.Method);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HttpPathMatchMarshaller.Instance;
                 marshaller.Marshall(requestObject.Path, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetQueryParameters())
             {
                 context.Writer.WritePropertyName("queryParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueryParametersListValue in requestObject.QueryParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HttpQueryParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectQueryParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

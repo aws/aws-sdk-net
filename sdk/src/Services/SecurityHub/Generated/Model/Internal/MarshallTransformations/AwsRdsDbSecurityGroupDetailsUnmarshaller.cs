@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsRdsDbSecurityGroupDetails Object
     /// </summary>  
-    public class AwsRdsDbSecurityGroupDetailsUnmarshaller : IUnmarshaller<AwsRdsDbSecurityGroupDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsRdsDbSecurityGroupDetails, JsonUnmarshallerContext>
+    public class AwsRdsDbSecurityGroupDetailsUnmarshaller : IJsonUnmarshaller<AwsRdsDbSecurityGroupDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsRdsDbSecurityGroupDetails IUnmarshaller<AwsRdsDbSecurityGroupDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsRdsDbSecurityGroupDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsRdsDbSecurityGroupDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsRdsDbSecurityGroupDetails unmarshalledObject = new AwsRdsDbSecurityGroupDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DbSecurityGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DbSecurityGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DbSecurityGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DbSecurityGroupDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DbSecurityGroupDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DbSecurityGroupDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DbSecurityGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DbSecurityGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DbSecurityGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Ec2SecurityGroups", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsRdsDbSecurityGroupEc2SecurityGroup, AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller>(AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller.Instance);
-                    unmarshalledObject.Ec2SecurityGroups = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsRdsDbSecurityGroupEc2SecurityGroup, AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller>(AwsRdsDbSecurityGroupEc2SecurityGroupUnmarshaller.Instance);
+                    unmarshalledObject.Ec2SecurityGroups = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IpRanges", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsRdsDbSecurityGroupIpRange, AwsRdsDbSecurityGroupIpRangeUnmarshaller>(AwsRdsDbSecurityGroupIpRangeUnmarshaller.Instance);
-                    unmarshalledObject.IpRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsRdsDbSecurityGroupIpRange, AwsRdsDbSecurityGroupIpRangeUnmarshaller>(AwsRdsDbSecurityGroupIpRangeUnmarshaller.Instance);
+                    unmarshalledObject.IpRanges = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OwnerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OwnerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

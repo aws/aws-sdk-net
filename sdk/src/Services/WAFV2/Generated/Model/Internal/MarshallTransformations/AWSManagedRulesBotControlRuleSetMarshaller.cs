@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMachineLearning())
             {
                 context.Writer.WritePropertyName("EnableMachineLearning");
-                context.Writer.Write(requestObject.EnableMachineLearning.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableMachineLearning.Value);
             }
 
             if(requestObject.IsSetInspectionLevel())
             {
                 context.Writer.WritePropertyName("InspectionLevel");
-                context.Writer.Write(requestObject.InspectionLevel);
+                context.Writer.WriteStringValue(requestObject.InspectionLevel);
             }
 
         }

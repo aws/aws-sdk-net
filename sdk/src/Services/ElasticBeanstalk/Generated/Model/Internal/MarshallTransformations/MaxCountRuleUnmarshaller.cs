@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MaxCountRule Object
     /// </summary>  
-    public class MaxCountRuleUnmarshaller : IUnmarshaller<MaxCountRule, XmlUnmarshallerContext>, IUnmarshaller<MaxCountRule, JsonUnmarshallerContext>
+    public class MaxCountRuleUnmarshaller : IXmlUnmarshaller<MaxCountRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MaxCountRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MaxCountRuleUnmarshaller _instance = new MaxCountRuleUnmarshaller();        
 

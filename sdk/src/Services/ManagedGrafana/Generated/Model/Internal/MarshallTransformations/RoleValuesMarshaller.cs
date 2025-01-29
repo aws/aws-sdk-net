@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ManagedGrafana.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdmin())
             {
                 context.Writer.WritePropertyName("admin");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdminListValue in requestObject.Admin)
                 {
-                        context.Writer.Write(requestObjectAdminListValue);
+                        context.Writer.WriteStringValue(requestObjectAdminListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEditor())
             {
                 context.Writer.WritePropertyName("editor");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEditorListValue in requestObject.Editor)
                 {
-                        context.Writer.Write(requestObjectEditorListValue);
+                        context.Writer.WriteStringValue(requestObjectEditorListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

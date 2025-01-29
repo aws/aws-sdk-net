@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReplicationJobId())
             {
                 context.Writer.WritePropertyName("replicationJobId");
-                context.Writer.Write(requestObject.ReplicationJobId);
+                context.Writer.WriteStringValue(requestObject.ReplicationJobId);
             }
 
             if(requestObject.IsSetReplicationJobTerminated())
             {
                 context.Writer.WritePropertyName("replicationJobTerminated");
-                context.Writer.Write(requestObject.ReplicationJobTerminated.Value);
+                context.Writer.WriteBooleanValue(requestObject.ReplicationJobTerminated.Value);
             }
 
             if(requestObject.IsSetServerId())
             {
                 context.Writer.WritePropertyName("serverId");
-                context.Writer.Write(requestObject.ServerId);
+                context.Writer.WriteStringValue(requestObject.ServerId);
             }
 
             if(requestObject.IsSetServerType())
             {
                 context.Writer.WritePropertyName("serverType");
-                context.Writer.Write(requestObject.ServerType);
+                context.Writer.WriteStringValue(requestObject.ServerType);
             }
 
             if(requestObject.IsSetVmServer())
             {
                 context.Writer.WritePropertyName("vmServer");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VmServerMarshaller.Instance;
                 marshaller.Marshall(requestObject.VmServer, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

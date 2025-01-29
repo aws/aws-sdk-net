@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -64,48 +67,53 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/programmable-numbers/proxy";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultSessionExpiryMinutes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDefaultSessionExpiryMinutes())
-                    {
-                        context.Writer.WritePropertyName("DefaultSessionExpiryMinutes");
-                        context.Writer.Write(publicRequest.DefaultSessionExpiryMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetDisabled())
-                    {
-                        context.Writer.WritePropertyName("Disabled");
-                        context.Writer.Write(publicRequest.Disabled.Value);
-                    }
-
-                    if(publicRequest.IsSetFallBackPhoneNumber())
-                    {
-                        context.Writer.WritePropertyName("FallBackPhoneNumber");
-                        context.Writer.Write(publicRequest.FallBackPhoneNumber);
-                    }
-
-                    if(publicRequest.IsSetPhoneNumberPoolCountries())
-                    {
-                        context.Writer.WritePropertyName("PhoneNumberPoolCountries");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPhoneNumberPoolCountriesListValue in publicRequest.PhoneNumberPoolCountries)
-                        {
-                                context.Writer.Write(publicRequestPhoneNumberPoolCountriesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DefaultSessionExpiryMinutes");
+                context.Writer.WriteNumberValue(publicRequest.DefaultSessionExpiryMinutes.Value);
             }
+
+            if(publicRequest.IsSetDisabled())
+            {
+                context.Writer.WritePropertyName("Disabled");
+                context.Writer.WriteBooleanValue(publicRequest.Disabled.Value);
+            }
+
+            if(publicRequest.IsSetFallBackPhoneNumber())
+            {
+                context.Writer.WritePropertyName("FallBackPhoneNumber");
+                context.Writer.WriteStringValue(publicRequest.FallBackPhoneNumber);
+            }
+
+            if(publicRequest.IsSetPhoneNumberPoolCountries())
+            {
+                context.Writer.WritePropertyName("PhoneNumberPoolCountries");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPhoneNumberPoolCountriesListValue in publicRequest.PhoneNumberPoolCountries)
+                {
+                        context.Writer.WriteStringValue(publicRequestPhoneNumberPoolCountriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

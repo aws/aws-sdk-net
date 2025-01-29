@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregations())
             {
                 context.Writer.WritePropertyName("Aggregations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAggregationsListValue in requestObject.Aggregations)
                 {
-                        context.Writer.Write(requestObjectAggregationsListValue);
+                        context.Writer.WriteStringValue(requestObjectAggregationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPatterns())
             {
                 context.Writer.WritePropertyName("Patterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPatternsListValue in requestObject.Patterns)
                 {
-                        context.Writer.Write(requestObjectPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProtectionGroupIds())
             {
                 context.Writer.WritePropertyName("ProtectionGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProtectionGroupIdsListValue in requestObject.ProtectionGroupIds)
                 {
-                        context.Writer.Write(requestObjectProtectionGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectProtectionGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                        context.Writer.Write(requestObjectResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

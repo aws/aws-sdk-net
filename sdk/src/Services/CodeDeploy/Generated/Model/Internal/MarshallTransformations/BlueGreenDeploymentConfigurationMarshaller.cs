@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeploymentReadyOption())
             {
                 context.Writer.WritePropertyName("deploymentReadyOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeploymentReadyOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeploymentReadyOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGreenFleetProvisioningOption())
             {
                 context.Writer.WritePropertyName("greenFleetProvisioningOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GreenFleetProvisioningOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.GreenFleetProvisioningOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTerminateBlueInstancesOnDeploymentSuccess())
             {
                 context.Writer.WritePropertyName("terminateBlueInstancesOnDeploymentSuccess");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BlueInstanceTerminationOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.TerminateBlueInstancesOnDeploymentSuccess, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationBranchName())
             {
                 context.Writer.WritePropertyName("DestinationBranchName");
-                context.Writer.Write(requestObject.DestinationBranchName);
+                context.Writer.WriteStringValue(requestObject.DestinationBranchName);
             }
 
             if(requestObject.IsSetSourceBranchName())
             {
                 context.Writer.WritePropertyName("SourceBranchName");
-                context.Writer.Write(requestObject.SourceBranchName);
+                context.Writer.WriteStringValue(requestObject.SourceBranchName);
             }
 
         }

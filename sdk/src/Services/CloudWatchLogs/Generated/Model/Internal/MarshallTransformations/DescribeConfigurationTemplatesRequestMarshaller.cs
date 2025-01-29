@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -63,70 +66,75 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeliveryDestinationTypes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("deliveryDestinationTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDeliveryDestinationTypesListValue in publicRequest.DeliveryDestinationTypes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeliveryDestinationTypes())
-                    {
-                        context.Writer.WritePropertyName("deliveryDestinationTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDeliveryDestinationTypesListValue in publicRequest.DeliveryDestinationTypes)
-                        {
-                                context.Writer.Write(publicRequestDeliveryDestinationTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLimit())
-                    {
-                        context.Writer.WritePropertyName("limit");
-                        context.Writer.Write(publicRequest.Limit.Value);
-                    }
-
-                    if(publicRequest.IsSetLogTypes())
-                    {
-                        context.Writer.WritePropertyName("logTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLogTypesListValue in publicRequest.LogTypes)
-                        {
-                                context.Writer.Write(publicRequestLogTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetResourceTypes())
-                    {
-                        context.Writer.WritePropertyName("resourceTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
-                        {
-                                context.Writer.Write(publicRequestResourceTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetService())
-                    {
-                        context.Writer.WritePropertyName("service");
-                        context.Writer.Write(publicRequest.Service);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestDeliveryDestinationTypesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetLimit())
+            {
+                context.Writer.WritePropertyName("limit");
+                context.Writer.WriteNumberValue(publicRequest.Limit.Value);
+            }
+
+            if(publicRequest.IsSetLogTypes())
+            {
+                context.Writer.WritePropertyName("logTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLogTypesListValue in publicRequest.LogTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestLogTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetResourceTypes())
+            {
+                context.Writer.WritePropertyName("resourceTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetService())
+            {
+                context.Writer.WritePropertyName("service");
+                context.Writer.WriteStringValue(publicRequest.Service);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

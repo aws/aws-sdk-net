@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SidewalkDevice Object
     /// </summary>  
-    public class SidewalkDeviceUnmarshaller : IUnmarshaller<SidewalkDevice, XmlUnmarshallerContext>, IUnmarshaller<SidewalkDevice, JsonUnmarshallerContext>
+    public class SidewalkDeviceUnmarshaller : IJsonUnmarshaller<SidewalkDevice, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SidewalkDevice IUnmarshaller<SidewalkDevice, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SidewalkDevice Unmarshall(JsonUnmarshallerContext context)
+        public SidewalkDevice Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SidewalkDevice unmarshalledObject = new SidewalkDevice();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AmazonId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AmazonId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AmazonId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CertificateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceCertificates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
-                    unmarshalledObject.DeviceCertificates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
+                    unmarshalledObject.DeviceCertificates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceProfileId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrivateKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
-                    unmarshalledObject.PrivateKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
+                    unmarshalledObject.PrivateKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SidewalkId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SidewalkId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SidewalkId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SidewalkManufacturingSn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SidewalkManufacturingSn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SidewalkManufacturingSn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

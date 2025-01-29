@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationRegion())
             {
                 context.Writer.WritePropertyName("DestinationRegion");
-                context.Writer.Write(requestObject.DestinationRegion);
+                context.Writer.WriteStringValue(requestObject.DestinationRegion);
             }
 
             if(requestObject.IsSetManualSnapshotRetentionPeriod())
             {
                 context.Writer.WritePropertyName("ManualSnapshotRetentionPeriod");
-                context.Writer.Write(requestObject.ManualSnapshotRetentionPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.ManualSnapshotRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetRetentionPeriod())
             {
                 context.Writer.WritePropertyName("RetentionPeriod");
-                context.Writer.Write(requestObject.RetentionPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.RetentionPeriod.Value);
             }
 
             if(requestObject.IsSetSnapshotCopyGrantName())
             {
                 context.Writer.WritePropertyName("SnapshotCopyGrantName");
-                context.Writer.Write(requestObject.SnapshotCopyGrantName);
+                context.Writer.WriteStringValue(requestObject.SnapshotCopyGrantName);
             }
 
         }

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryLoggingConfigAlreadyExistsException operation
     /// </summary>  
-    public class QueryLoggingConfigAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<QueryLoggingConfigAlreadyExistsException, XmlUnmarshallerContext>
+    public class QueryLoggingConfigAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<QueryLoggingConfigAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,149 +29,139 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TopicIRFilterOption Object
     /// </summary>  
-    public class TopicIRFilterOptionUnmarshaller : IUnmarshaller<TopicIRFilterOption, XmlUnmarshallerContext>, IUnmarshaller<TopicIRFilterOption, JsonUnmarshallerContext>
+    public class TopicIRFilterOptionUnmarshaller : IJsonUnmarshaller<TopicIRFilterOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TopicIRFilterOption IUnmarshaller<TopicIRFilterOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicIRFilterOption Unmarshall(JsonUnmarshallerContext context)
+        public TopicIRFilterOption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TopicIRFilterOption unmarshalledObject = new TopicIRFilterOption();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AggMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FilterAggMetrics, FilterAggMetricsUnmarshaller>(FilterAggMetricsUnmarshaller.Instance);
-                    unmarshalledObject.AggMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FilterAggMetrics, FilterAggMetricsUnmarshaller>(FilterAggMetricsUnmarshaller.Instance);
+                    unmarshalledObject.AggMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Aggregation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AggregationFunctionParameters", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.AggregationFunctionParameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AggregationFunctionParameters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AggregationPartitionBy", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AggregationPartitionBy, AggregationPartitionByUnmarshaller>(AggregationPartitionByUnmarshaller.Instance);
-                    unmarshalledObject.AggregationPartitionBy = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AggregationPartitionBy, AggregationPartitionByUnmarshaller>(AggregationPartitionByUnmarshaller.Instance);
+                    unmarshalledObject.AggregationPartitionBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Anchor", targetDepth))
                 {
                     var unmarshaller = AnchorUnmarshaller.Instance;
-                    unmarshalledObject.Anchor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Anchor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Constant", targetDepth))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
-                    unmarshalledObject.Constant = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Constant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Function", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Function = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Function = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Inclusive", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Inclusive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Inclusive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Inverse", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Inverse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Inverse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastNextOffset", targetDepth))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
-                    unmarshalledObject.LastNextOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastNextOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NullFilter", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NullFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NullFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OperandField", targetDepth))
                 {
                     var unmarshaller = IdentifierUnmarshaller.Instance;
-                    unmarshalledObject.OperandField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperandField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Range", targetDepth))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
-                    unmarshalledObject.Range = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Range = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SortDirection", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SortDirection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SortDirection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeGranularity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeGranularity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TopBottomLimit", targetDepth))
                 {
                     var unmarshaller = TopicConstantValueUnmarshaller.Instance;
-                    unmarshalledObject.TopBottomLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TopBottomLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

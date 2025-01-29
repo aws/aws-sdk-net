@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAthena())
             {
                 context.Writer.WritePropertyName("athena");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AthenaTableReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Athena, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGlue())
             {
                 context.Writer.WritePropertyName("glue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GlueTableReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Glue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSnowflake())
             {
                 context.Writer.WritePropertyName("snowflake");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnowflakeTableReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Snowflake, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

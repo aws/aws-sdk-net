@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentIdentificationType())
             {
                 context.Writer.WritePropertyName("ContentIdentificationType");
-                context.Writer.Write(requestObject.ContentIdentificationType);
+                context.Writer.WriteStringValue(requestObject.ContentIdentificationType);
             }
 
             if(requestObject.IsSetContentRedactionType())
             {
                 context.Writer.WritePropertyName("ContentRedactionType");
-                context.Writer.Write(requestObject.ContentRedactionType);
+                context.Writer.WriteStringValue(requestObject.ContentRedactionType);
             }
 
             if(requestObject.IsSetEnablePartialResultsStabilization())
             {
                 context.Writer.WritePropertyName("EnablePartialResultsStabilization");
-                context.Writer.Write(requestObject.EnablePartialResultsStabilization.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnablePartialResultsStabilization.Value);
             }
 
             if(requestObject.IsSetIdentifyLanguage())
             {
                 context.Writer.WritePropertyName("IdentifyLanguage");
-                context.Writer.Write(requestObject.IdentifyLanguage.Value);
+                context.Writer.WriteBooleanValue(requestObject.IdentifyLanguage.Value);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetLanguageModelName())
             {
                 context.Writer.WritePropertyName("LanguageModelName");
-                context.Writer.Write(requestObject.LanguageModelName);
+                context.Writer.WriteStringValue(requestObject.LanguageModelName);
             }
 
             if(requestObject.IsSetLanguageOptions())
             {
                 context.Writer.WritePropertyName("LanguageOptions");
-                context.Writer.Write(requestObject.LanguageOptions);
+                context.Writer.WriteStringValue(requestObject.LanguageOptions);
             }
 
             if(requestObject.IsSetPartialResultsStability())
             {
                 context.Writer.WritePropertyName("PartialResultsStability");
-                context.Writer.Write(requestObject.PartialResultsStability);
+                context.Writer.WriteStringValue(requestObject.PartialResultsStability);
             }
 
             if(requestObject.IsSetPiiEntityTypes())
             {
                 context.Writer.WritePropertyName("PiiEntityTypes");
-                context.Writer.Write(requestObject.PiiEntityTypes);
+                context.Writer.WriteStringValue(requestObject.PiiEntityTypes);
             }
 
             if(requestObject.IsSetPreferredLanguage())
             {
                 context.Writer.WritePropertyName("PreferredLanguage");
-                context.Writer.Write(requestObject.PreferredLanguage);
+                context.Writer.WriteStringValue(requestObject.PreferredLanguage);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetVocabularyFilterMethod())
             {
                 context.Writer.WritePropertyName("VocabularyFilterMethod");
-                context.Writer.Write(requestObject.VocabularyFilterMethod);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterMethod);
             }
 
             if(requestObject.IsSetVocabularyFilterName())
             {
                 context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.Write(requestObject.VocabularyFilterName);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
             }
 
             if(requestObject.IsSetVocabularyFilterNames())
             {
                 context.Writer.WritePropertyName("VocabularyFilterNames");
-                context.Writer.Write(requestObject.VocabularyFilterNames);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterNames);
             }
 
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.Write(requestObject.VocabularyName);
+                context.Writer.WriteStringValue(requestObject.VocabularyName);
             }
 
             if(requestObject.IsSetVocabularyNames())
             {
                 context.Writer.WritePropertyName("VocabularyNames");
-                context.Writer.Write(requestObject.VocabularyNames);
+                context.Writer.WriteStringValue(requestObject.VocabularyNames);
             }
 
         }

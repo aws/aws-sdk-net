@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProductionVariantServerlessConfig Object
     /// </summary>  
-    public class ProductionVariantServerlessConfigUnmarshaller : IUnmarshaller<ProductionVariantServerlessConfig, XmlUnmarshallerContext>, IUnmarshaller<ProductionVariantServerlessConfig, JsonUnmarshallerContext>
+    public class ProductionVariantServerlessConfigUnmarshaller : IJsonUnmarshaller<ProductionVariantServerlessConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProductionVariantServerlessConfig IUnmarshaller<ProductionVariantServerlessConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProductionVariantServerlessConfig Unmarshall(JsonUnmarshallerContext context)
+        public ProductionVariantServerlessConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProductionVariantServerlessConfig unmarshalledObject = new ProductionVariantServerlessConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MaxConcurrency", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxConcurrency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MemorySizeInMB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MemorySizeInMB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemorySizeInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProvisionedConcurrency", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedConcurrency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedConcurrency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TestFailoverNotAvailableException operation
     /// </summary>  
-    public class TestFailoverNotAvailableExceptionUnmarshaller : IErrorResponseUnmarshaller<TestFailoverNotAvailableException, XmlUnmarshallerContext>
+    public class TestFailoverNotAvailableExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TestFailoverNotAvailableException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InferenceContainerExecutionParameters Object
     /// </summary>  
-    public class InferenceContainerExecutionParametersUnmarshaller : IUnmarshaller<InferenceContainerExecutionParameters, XmlUnmarshallerContext>, IUnmarshaller<InferenceContainerExecutionParameters, JsonUnmarshallerContext>
+    public class InferenceContainerExecutionParametersUnmarshaller : IJsonUnmarshaller<InferenceContainerExecutionParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InferenceContainerExecutionParameters IUnmarshaller<InferenceContainerExecutionParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InferenceContainerExecutionParameters Unmarshall(JsonUnmarshallerContext context)
+        public InferenceContainerExecutionParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InferenceContainerExecutionParameters unmarshalledObject = new InferenceContainerExecutionParameters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("maxPayloadInMB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxPayloadInMB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxPayloadInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

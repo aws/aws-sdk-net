@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ATITrainingMetricsValue Object
     /// </summary>  
-    public class ATITrainingMetricsValueUnmarshaller : IUnmarshaller<ATITrainingMetricsValue, XmlUnmarshallerContext>, IUnmarshaller<ATITrainingMetricsValue, JsonUnmarshallerContext>
+    public class ATITrainingMetricsValueUnmarshaller : IJsonUnmarshaller<ATITrainingMetricsValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ATITrainingMetricsValue IUnmarshaller<ATITrainingMetricsValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ATITrainingMetricsValue Unmarshall(JsonUnmarshallerContext context)
+        public ATITrainingMetricsValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ATITrainingMetricsValue unmarshalledObject = new ATITrainingMetricsValue();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("metricDataPoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ATIMetricDataPoint, ATIMetricDataPointUnmarshaller>(ATIMetricDataPointUnmarshaller.Instance);
-                    unmarshalledObject.MetricDataPoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ATIMetricDataPoint, ATIMetricDataPointUnmarshaller>(ATIMetricDataPointUnmarshaller.Instance);
+                    unmarshalledObject.MetricDataPoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("modelPerformance", targetDepth))
                 {
                     var unmarshaller = ATIModelPerformanceUnmarshaller.Instance;
-                    unmarshalledObject.ModelPerformance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPerformance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

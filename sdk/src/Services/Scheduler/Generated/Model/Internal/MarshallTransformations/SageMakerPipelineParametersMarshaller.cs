@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPipelineParameterList())
             {
                 context.Writer.WritePropertyName("PipelineParameterList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPipelineParameterListListValue in requestObject.PipelineParameterList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SageMakerPipelineParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectPipelineParameterListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

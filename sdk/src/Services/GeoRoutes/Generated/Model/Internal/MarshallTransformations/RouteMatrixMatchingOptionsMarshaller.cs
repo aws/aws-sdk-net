@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNameHint())
             {
                 context.Writer.WritePropertyName("NameHint");
-                context.Writer.Write(requestObject.NameHint);
+                context.Writer.WriteStringValue(requestObject.NameHint);
             }
 
             if(requestObject.IsSetOnRoadThreshold())
             {
                 context.Writer.WritePropertyName("OnRoadThreshold");
-                context.Writer.Write(requestObject.OnRoadThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.OnRoadThreshold.Value);
             }
 
             if(requestObject.IsSetRadius())
             {
                 context.Writer.WritePropertyName("Radius");
-                context.Writer.Write(requestObject.Radius.Value);
+                context.Writer.WriteNumberValue(requestObject.Radius.Value);
             }
 
             if(requestObject.IsSetStrategy())
             {
                 context.Writer.WritePropertyName("Strategy");
-                context.Writer.Write(requestObject.Strategy);
+                context.Writer.WriteStringValue(requestObject.Strategy);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAreaCode())
             {
                 context.Writer.WritePropertyName("AreaCode");
-                context.Writer.Write(requestObject.AreaCode);
+                context.Writer.WriteStringValue(requestObject.AreaCode);
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
         }

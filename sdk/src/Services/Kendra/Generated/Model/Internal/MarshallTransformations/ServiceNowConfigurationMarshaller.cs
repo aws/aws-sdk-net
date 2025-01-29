@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetHostUrl())
             {
                 context.Writer.WritePropertyName("HostUrl");
-                context.Writer.Write(requestObject.HostUrl);
+                context.Writer.WriteStringValue(requestObject.HostUrl);
             }
 
             if(requestObject.IsSetKnowledgeArticleConfiguration())
             {
                 context.Writer.WritePropertyName("KnowledgeArticleConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceNowKnowledgeArticleConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KnowledgeArticleConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetServiceCatalogConfiguration())
             {
                 context.Writer.WritePropertyName("ServiceCatalogConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceNowServiceCatalogConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceCatalogConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceNowBuildVersion())
             {
                 context.Writer.WritePropertyName("ServiceNowBuildVersion");
-                context.Writer.Write(requestObject.ServiceNowBuildVersion);
+                context.Writer.WriteStringValue(requestObject.ServiceNowBuildVersion);
             }
 
         }

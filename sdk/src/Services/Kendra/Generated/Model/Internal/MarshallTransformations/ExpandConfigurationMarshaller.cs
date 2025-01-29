@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxExpandedResultsPerItem())
             {
                 context.Writer.WritePropertyName("MaxExpandedResultsPerItem");
-                context.Writer.Write(requestObject.MaxExpandedResultsPerItem.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxExpandedResultsPerItem.Value);
             }
 
             if(requestObject.IsSetMaxResultItemsToExpand())
             {
                 context.Writer.WritePropertyName("MaxResultItemsToExpand");
-                context.Writer.Write(requestObject.MaxResultItemsToExpand.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxResultItemsToExpand.Value);
             }
 
         }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VirtualGatewayListener Object
     /// </summary>  
-    public class VirtualGatewayListenerUnmarshaller : IUnmarshaller<VirtualGatewayListener, XmlUnmarshallerContext>, IUnmarshaller<VirtualGatewayListener, JsonUnmarshallerContext>
+    public class VirtualGatewayListenerUnmarshaller : IJsonUnmarshaller<VirtualGatewayListener, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VirtualGatewayListener IUnmarshaller<VirtualGatewayListener, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VirtualGatewayListener Unmarshall(JsonUnmarshallerContext context)
+        public VirtualGatewayListener Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VirtualGatewayListener unmarshalledObject = new VirtualGatewayListener();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("connectionPool", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayConnectionPoolUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthCheck", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayHealthCheckPolicyUnmarshaller.Instance;
-                    unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portMapping", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayPortMappingUnmarshaller.Instance;
-                    unmarshalledObject.PortMapping = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PortMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tls", targetDepth))
                 {
                     var unmarshaller = VirtualGatewayListenerTlsUnmarshaller.Instance;
-                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmiProductSort())
             {
                 context.Writer.WritePropertyName("AmiProductSort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmiProductSortMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmiProductSort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainerProductSort())
             {
                 context.Writer.WritePropertyName("ContainerProductSort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerProductSortMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerProductSort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataProductSort())
             {
                 context.Writer.WritePropertyName("DataProductSort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataProductSortMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataProductSort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOfferSort())
             {
                 context.Writer.WritePropertyName("OfferSort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OfferSortMarshaller.Instance;
                 marshaller.Marshall(requestObject.OfferSort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResaleAuthorizationSort())
             {
                 context.Writer.WritePropertyName("ResaleAuthorizationSort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResaleAuthorizationSortMarshaller.Instance;
                 marshaller.Marshall(requestObject.ResaleAuthorizationSort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSaaSProductSort())
             {
                 context.Writer.WritePropertyName("SaaSProductSort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SaaSProductSortMarshaller.Instance;
                 marshaller.Marshall(requestObject.SaaSProductSort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

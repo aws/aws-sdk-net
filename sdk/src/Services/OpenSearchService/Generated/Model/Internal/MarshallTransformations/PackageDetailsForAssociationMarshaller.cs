@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociationConfiguration())
             {
                 context.Writer.WritePropertyName("AssociationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PackageAssociationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AssociationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPackageID())
             {
                 context.Writer.WritePropertyName("PackageID");
-                context.Writer.Write(requestObject.PackageID);
+                context.Writer.WriteStringValue(requestObject.PackageID);
             }
 
             if(requestObject.IsSetPrerequisitePackageIDList())
             {
                 context.Writer.WritePropertyName("PrerequisitePackageIDList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrerequisitePackageIDListListValue in requestObject.PrerequisitePackageIDList)
                 {
-                        context.Writer.Write(requestObjectPrerequisitePackageIDListListValue);
+                        context.Writer.WriteStringValue(requestObjectPrerequisitePackageIDListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

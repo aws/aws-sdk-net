@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -67,54 +70,59 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 throw new AmazonEMRContainersException("Request object does not have required field VirtualClusterIdentifier set");
             request.AddPathResource("{virtualClusterId}", StringUtils.FromString(publicRequest.VirtualClusterIdentifier));
             request.ResourcePath = "/virtualclusters/{virtualClusterId}/endpoints/{endpointId}/credentials";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetCredentialType())
-                    {
-                        context.Writer.WritePropertyName("credentialType");
-                        context.Writer.Write(publicRequest.CredentialType);
-                    }
-
-                    if(publicRequest.IsSetDurationInSeconds())
-                    {
-                        context.Writer.WritePropertyName("durationInSeconds");
-                        context.Writer.Write(publicRequest.DurationInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetExecutionRoleArn())
-                    {
-                        context.Writer.WritePropertyName("executionRoleArn");
-                        context.Writer.Write(publicRequest.ExecutionRoleArn);
-                    }
-
-                    if(publicRequest.IsSetLogContext())
-                    {
-                        context.Writer.WritePropertyName("logContext");
-                        context.Writer.Write(publicRequest.LogContext);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetCredentialType())
+            {
+                context.Writer.WritePropertyName("credentialType");
+                context.Writer.WriteStringValue(publicRequest.CredentialType);
+            }
+
+            if(publicRequest.IsSetDurationInSeconds())
+            {
+                context.Writer.WritePropertyName("durationInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.DurationInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("executionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
+            }
+
+            if(publicRequest.IsSetLogContext())
+            {
+                context.Writer.WritePropertyName("logContext");
+                context.Writer.WriteStringValue(publicRequest.LogContext);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParticipantTimerAction())
             {
                 context.Writer.WritePropertyName("ParticipantTimerAction");
-                context.Writer.Write(requestObject.ParticipantTimerAction);
+                context.Writer.WriteStringValue(requestObject.ParticipantTimerAction);
             }
 
             if(requestObject.IsSetParticipantTimerDurationInMinutes())
             {
                 context.Writer.WritePropertyName("ParticipantTimerDurationInMinutes");
-                context.Writer.Write(requestObject.ParticipantTimerDurationInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.ParticipantTimerDurationInMinutes.Value);
             }
 
         }

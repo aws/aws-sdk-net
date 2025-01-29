@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostHeaderConditionConfig Object
     /// </summary>  
-    public class HostHeaderConditionConfigUnmarshaller : IUnmarshaller<HostHeaderConditionConfig, XmlUnmarshallerContext>, IUnmarshaller<HostHeaderConditionConfig, JsonUnmarshallerContext>
+    public class HostHeaderConditionConfigUnmarshaller : IXmlUnmarshaller<HostHeaderConditionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public HostHeaderConditionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static HostHeaderConditionConfigUnmarshaller _instance = new HostHeaderConditionConfigUnmarshaller();        
 

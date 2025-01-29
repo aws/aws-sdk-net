@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BucketPermissionException operation
     /// </summary>  
-    public class BucketPermissionExceptionUnmarshaller : IErrorResponseUnmarshaller<BucketPermissionException, XmlUnmarshallerContext>
+    public class BucketPermissionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BucketPermissionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

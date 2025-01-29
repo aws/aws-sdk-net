@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RejectedRecordsException Object
     /// </summary>  
-    public class RejectedRecordsExceptionUnmarshaller : IErrorResponseUnmarshaller<RejectedRecordsException, JsonUnmarshallerContext>
+    public class RejectedRecordsExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<RejectedRecordsException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public RejectedRecordsException Unmarshall(JsonUnmarshallerContext context)
+        public RejectedRecordsException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,22 +55,29 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public RejectedRecordsException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public RejectedRecordsException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             RejectedRecordsException unmarshalledObject = new RejectedRecordsException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
-                if (context.TestExpression("RejectedRecords", targetDepth))
+                while (context.ReadAtDepth(targetDepth, ref reader))
                 {
-                    var unmarshaller = new ListUnmarshaller<RejectedRecord, RejectedRecordUnmarshaller>(RejectedRecordUnmarshaller.Instance);
-                    unmarshalledObject.RejectedRecords = unmarshaller.Unmarshall(context);
-                    continue;
+                    if (context.TestExpression("RejectedRecords", targetDepth))
+                    {
+                        var unmarshaller = new JsonListUnmarshaller<RejectedRecord, RejectedRecordUnmarshaller>(RejectedRecordUnmarshaller.Instance);
+                        unmarshalledObject.RejectedRecords = unmarshaller.Unmarshall(context, ref reader);
+                        continue;
+                    }
                 }
             }
           

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlockSizeBytes())
             {
                 context.Writer.WritePropertyName("BlockSizeBytes");
-                context.Writer.Write(requestObject.BlockSizeBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.BlockSizeBytes.Value);
             }
 
             if(requestObject.IsSetCompression())
             {
                 context.Writer.WritePropertyName("Compression");
-                context.Writer.Write(requestObject.Compression);
+                context.Writer.WriteStringValue(requestObject.Compression);
             }
 
             if(requestObject.IsSetEnableDictionaryCompression())
             {
                 context.Writer.WritePropertyName("EnableDictionaryCompression");
-                context.Writer.Write(requestObject.EnableDictionaryCompression.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableDictionaryCompression.Value);
             }
 
             if(requestObject.IsSetMaxPaddingBytes())
             {
                 context.Writer.WritePropertyName("MaxPaddingBytes");
-                context.Writer.Write(requestObject.MaxPaddingBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPaddingBytes.Value);
             }
 
             if(requestObject.IsSetPageSizeBytes())
             {
                 context.Writer.WritePropertyName("PageSizeBytes");
-                context.Writer.Write(requestObject.PageSizeBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.PageSizeBytes.Value);
             }
 
             if(requestObject.IsSetWriterVersion())
             {
                 context.Writer.WritePropertyName("WriterVersion");
-                context.Writer.Write(requestObject.WriterVersion);
+                context.Writer.WriteStringValue(requestObject.WriterVersion);
             }
 
         }

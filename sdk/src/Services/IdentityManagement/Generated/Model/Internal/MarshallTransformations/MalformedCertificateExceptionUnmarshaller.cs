@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MalformedCertificateException operation
     /// </summary>  
-    public class MalformedCertificateExceptionUnmarshaller : IErrorResponseUnmarshaller<MalformedCertificateException, XmlUnmarshallerContext>
+    public class MalformedCertificateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MalformedCertificateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

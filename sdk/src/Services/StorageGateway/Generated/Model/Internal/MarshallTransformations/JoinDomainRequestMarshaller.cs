@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -63,66 +66,71 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDomainControllers())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DomainControllers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDomainControllersListValue in publicRequest.DomainControllers)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDomainControllers())
-                    {
-                        context.Writer.WritePropertyName("DomainControllers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDomainControllersListValue in publicRequest.DomainControllers)
-                        {
-                                context.Writer.Write(publicRequestDomainControllersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDomainName())
-                    {
-                        context.Writer.WritePropertyName("DomainName");
-                        context.Writer.Write(publicRequest.DomainName);
-                    }
-
-                    if(publicRequest.IsSetGatewayARN())
-                    {
-                        context.Writer.WritePropertyName("GatewayARN");
-                        context.Writer.Write(publicRequest.GatewayARN);
-                    }
-
-                    if(publicRequest.IsSetOrganizationalUnit())
-                    {
-                        context.Writer.WritePropertyName("OrganizationalUnit");
-                        context.Writer.Write(publicRequest.OrganizationalUnit);
-                    }
-
-                    if(publicRequest.IsSetPassword())
-                    {
-                        context.Writer.WritePropertyName("Password");
-                        context.Writer.Write(publicRequest.Password);
-                    }
-
-                    if(publicRequest.IsSetTimeoutInSeconds())
-                    {
-                        context.Writer.WritePropertyName("TimeoutInSeconds");
-                        context.Writer.Write(publicRequest.TimeoutInSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetUserName())
-                    {
-                        context.Writer.WritePropertyName("UserName");
-                        context.Writer.Write(publicRequest.UserName);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestDomainControllersListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDomainName())
+            {
+                context.Writer.WritePropertyName("DomainName");
+                context.Writer.WriteStringValue(publicRequest.DomainName);
+            }
+
+            if(publicRequest.IsSetGatewayARN())
+            {
+                context.Writer.WritePropertyName("GatewayARN");
+                context.Writer.WriteStringValue(publicRequest.GatewayARN);
+            }
+
+            if(publicRequest.IsSetOrganizationalUnit())
+            {
+                context.Writer.WritePropertyName("OrganizationalUnit");
+                context.Writer.WriteStringValue(publicRequest.OrganizationalUnit);
+            }
+
+            if(publicRequest.IsSetPassword())
+            {
+                context.Writer.WritePropertyName("Password");
+                context.Writer.WriteStringValue(publicRequest.Password);
+            }
+
+            if(publicRequest.IsSetTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("TimeoutInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.TimeoutInSeconds.Value);
+            }
+
+            if(publicRequest.IsSetUserName())
+            {
+                context.Writer.WritePropertyName("UserName");
+                context.Writer.WriteStringValue(publicRequest.UserName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

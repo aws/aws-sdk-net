@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlComments())
             {
                 context.Writer.WritePropertyName("CrawlComments");
-                context.Writer.Write(requestObject.CrawlComments.Value);
+                context.Writer.WriteBooleanValue(requestObject.CrawlComments.Value);
             }
 
             if(requestObject.IsSetExclusionPatterns())
             {
                 context.Writer.WritePropertyName("ExclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFieldMappings())
             {
                 context.Writer.WritePropertyName("FieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldMappingsListValue in requestObject.FieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionPatterns())
             {
                 context.Writer.WritePropertyName("InclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOrganizationId())
             {
                 context.Writer.WritePropertyName("OrganizationId");
-                context.Writer.Write(requestObject.OrganizationId);
+                context.Writer.WriteStringValue(requestObject.OrganizationId);
             }
 
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseChangeLog.Value);
             }
 
         }

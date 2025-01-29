@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
@@ -64,65 +67,70 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
                 throw new AmazonFinSpaceDataException("Request object does not have required field DatasetId set");
             request.AddPathResource("{datasetId}", StringUtils.FromString(publicRequest.DatasetId));
             request.ResourcePath = "/datasetsv2/{datasetId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlias())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlias())
-                    {
-                        context.Writer.WritePropertyName("alias");
-                        context.Writer.Write(publicRequest.Alias);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDatasetDescription())
-                    {
-                        context.Writer.WritePropertyName("datasetDescription");
-                        context.Writer.Write(publicRequest.DatasetDescription);
-                    }
-
-                    if(publicRequest.IsSetDatasetTitle())
-                    {
-                        context.Writer.WritePropertyName("datasetTitle");
-                        context.Writer.Write(publicRequest.DatasetTitle);
-                    }
-
-                    if(publicRequest.IsSetKind())
-                    {
-                        context.Writer.WritePropertyName("kind");
-                        context.Writer.Write(publicRequest.Kind);
-                    }
-
-                    if(publicRequest.IsSetSchemaDefinition())
-                    {
-                        context.Writer.WritePropertyName("schemaDefinition");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SchemaUnionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SchemaDefinition, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("alias");
+                context.Writer.WriteStringValue(publicRequest.Alias);
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDatasetDescription())
+            {
+                context.Writer.WritePropertyName("datasetDescription");
+                context.Writer.WriteStringValue(publicRequest.DatasetDescription);
+            }
+
+            if(publicRequest.IsSetDatasetTitle())
+            {
+                context.Writer.WritePropertyName("datasetTitle");
+                context.Writer.WriteStringValue(publicRequest.DatasetTitle);
+            }
+
+            if(publicRequest.IsSetKind())
+            {
+                context.Writer.WritePropertyName("kind");
+                context.Writer.WriteStringValue(publicRequest.Kind);
+            }
+
+            if(publicRequest.IsSetSchemaDefinition())
+            {
+                context.Writer.WritePropertyName("schemaDefinition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchemaUnionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SchemaDefinition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

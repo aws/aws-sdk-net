@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,84 +49,84 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAncillarySourceSettings())
             {
                 context.Writer.WritePropertyName("ancillarySourceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AncillarySourceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AncillarySourceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDvbSubSourceSettings())
             {
                 context.Writer.WritePropertyName("dvbSubSourceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DvbSubSourceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DvbSubSourceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmbeddedSourceSettings())
             {
                 context.Writer.WritePropertyName("embeddedSourceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmbeddedSourceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmbeddedSourceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFileSourceSettings())
             {
                 context.Writer.WritePropertyName("fileSourceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FileSourceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FileSourceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("sourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
             if(requestObject.IsSetTeletextSourceSettings())
             {
                 context.Writer.WritePropertyName("teletextSourceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TeletextSourceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TeletextSourceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrackSourceSettings())
             {
                 context.Writer.WritePropertyName("trackSourceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrackSourceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrackSourceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWebvttHlsSourceSettings())
             {
                 context.Writer.WritePropertyName("webvttHlsSourceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WebvttHlsSourceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.WebvttHlsSourceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

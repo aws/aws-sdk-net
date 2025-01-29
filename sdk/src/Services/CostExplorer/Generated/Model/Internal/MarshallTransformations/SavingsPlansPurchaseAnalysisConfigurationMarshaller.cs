@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetAccountScope())
             {
                 context.Writer.WritePropertyName("AccountScope");
-                context.Writer.Write(requestObject.AccountScope);
+                context.Writer.WriteStringValue(requestObject.AccountScope);
             }
 
             if(requestObject.IsSetAnalysisType())
             {
                 context.Writer.WritePropertyName("AnalysisType");
-                context.Writer.Write(requestObject.AnalysisType);
+                context.Writer.WriteStringValue(requestObject.AnalysisType);
             }
 
             if(requestObject.IsSetLookBackTimePeriod())
             {
                 context.Writer.WritePropertyName("LookBackTimePeriod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DateIntervalMarshaller.Instance;
                 marshaller.Marshall(requestObject.LookBackTimePeriod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSavingsPlansToAdd())
             {
                 context.Writer.WritePropertyName("SavingsPlansToAdd");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSavingsPlansToAddListValue in requestObject.SavingsPlansToAdd)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SavingsPlansMarshaller.Instance;
                     marshaller.Marshall(requestObjectSavingsPlansToAddListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSavingsPlansToExclude())
             {
                 context.Writer.WritePropertyName("SavingsPlansToExclude");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSavingsPlansToExcludeListValue in requestObject.SavingsPlansToExclude)
                 {
-                        context.Writer.Write(requestObjectSavingsPlansToExcludeListValue);
+                        context.Writer.WriteStringValue(requestObjectSavingsPlansToExcludeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

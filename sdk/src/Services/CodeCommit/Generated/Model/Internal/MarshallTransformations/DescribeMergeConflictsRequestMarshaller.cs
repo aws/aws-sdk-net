@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
 {
@@ -63,73 +66,78 @@ namespace Amazon.CodeCommit.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConflictDetailLevel())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConflictDetailLevel())
-                    {
-                        context.Writer.WritePropertyName("conflictDetailLevel");
-                        context.Writer.Write(publicRequest.ConflictDetailLevel);
-                    }
-
-                    if(publicRequest.IsSetConflictResolutionStrategy())
-                    {
-                        context.Writer.WritePropertyName("conflictResolutionStrategy");
-                        context.Writer.Write(publicRequest.ConflictResolutionStrategy);
-                    }
-
-                    if(publicRequest.IsSetDestinationCommitSpecifier())
-                    {
-                        context.Writer.WritePropertyName("destinationCommitSpecifier");
-                        context.Writer.Write(publicRequest.DestinationCommitSpecifier);
-                    }
-
-                    if(publicRequest.IsSetFilePath())
-                    {
-                        context.Writer.WritePropertyName("filePath");
-                        context.Writer.Write(publicRequest.FilePath);
-                    }
-
-                    if(publicRequest.IsSetMaxMergeHunks())
-                    {
-                        context.Writer.WritePropertyName("maxMergeHunks");
-                        context.Writer.Write(publicRequest.MaxMergeHunks.Value);
-                    }
-
-                    if(publicRequest.IsSetMergeOption())
-                    {
-                        context.Writer.WritePropertyName("mergeOption");
-                        context.Writer.Write(publicRequest.MergeOption);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetRepositoryName())
-                    {
-                        context.Writer.WritePropertyName("repositoryName");
-                        context.Writer.Write(publicRequest.RepositoryName);
-                    }
-
-                    if(publicRequest.IsSetSourceCommitSpecifier())
-                    {
-                        context.Writer.WritePropertyName("sourceCommitSpecifier");
-                        context.Writer.Write(publicRequest.SourceCommitSpecifier);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("conflictDetailLevel");
+                context.Writer.WriteStringValue(publicRequest.ConflictDetailLevel);
             }
+
+            if(publicRequest.IsSetConflictResolutionStrategy())
+            {
+                context.Writer.WritePropertyName("conflictResolutionStrategy");
+                context.Writer.WriteStringValue(publicRequest.ConflictResolutionStrategy);
+            }
+
+            if(publicRequest.IsSetDestinationCommitSpecifier())
+            {
+                context.Writer.WritePropertyName("destinationCommitSpecifier");
+                context.Writer.WriteStringValue(publicRequest.DestinationCommitSpecifier);
+            }
+
+            if(publicRequest.IsSetFilePath())
+            {
+                context.Writer.WritePropertyName("filePath");
+                context.Writer.WriteStringValue(publicRequest.FilePath);
+            }
+
+            if(publicRequest.IsSetMaxMergeHunks())
+            {
+                context.Writer.WritePropertyName("maxMergeHunks");
+                context.Writer.WriteNumberValue(publicRequest.MaxMergeHunks.Value);
+            }
+
+            if(publicRequest.IsSetMergeOption())
+            {
+                context.Writer.WritePropertyName("mergeOption");
+                context.Writer.WriteStringValue(publicRequest.MergeOption);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetRepositoryName())
+            {
+                context.Writer.WritePropertyName("repositoryName");
+                context.Writer.WriteStringValue(publicRequest.RepositoryName);
+            }
+
+            if(publicRequest.IsSetSourceCommitSpecifier())
+            {
+                context.Writer.WritePropertyName("sourceCommitSpecifier");
+                context.Writer.WriteStringValue(publicRequest.SourceCommitSpecifier);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

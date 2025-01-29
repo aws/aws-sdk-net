@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -61,52 +64,57 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/amazonclouddirectory/2017-01-11/typedlink/facet";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttributeUpdates())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AttributeUpdates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttributeUpdatesListValue in publicRequest.AttributeUpdates)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttributeUpdates())
-                    {
-                        context.Writer.WritePropertyName("AttributeUpdates");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAttributeUpdatesListValue in publicRequest.AttributeUpdates)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = TypedLinkFacetAttributeUpdateMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAttributeUpdatesListValue, context);
+                    var marshaller = TypedLinkFacetAttributeUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttributeUpdatesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdentityAttributeOrder())
-                    {
-                        context.Writer.WritePropertyName("IdentityAttributeOrder");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIdentityAttributeOrderListValue in publicRequest.IdentityAttributeOrder)
-                        {
-                                context.Writer.Write(publicRequestIdentityAttributeOrderListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetIdentityAttributeOrder())
+            {
+                context.Writer.WritePropertyName("IdentityAttributeOrder");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIdentityAttributeOrderListValue in publicRequest.IdentityAttributeOrder)
+                {
+                        context.Writer.WriteStringValue(publicRequestIdentityAttributeOrderListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetSchemaArn()) 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Mgn.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogGroupName())
             {
                 context.Writer.WritePropertyName("cloudWatchLogGroupName");
-                context.Writer.Write(requestObject.CloudWatchLogGroupName);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogGroupName);
             }
 
             if(requestObject.IsSetCloudWatchOutputEnabled())
             {
                 context.Writer.WritePropertyName("cloudWatchOutputEnabled");
-                context.Writer.Write(requestObject.CloudWatchOutputEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudWatchOutputEnabled.Value);
             }
 
             if(requestObject.IsSetOutputS3BucketName())
             {
                 context.Writer.WritePropertyName("outputS3BucketName");
-                context.Writer.Write(requestObject.OutputS3BucketName);
+                context.Writer.WriteStringValue(requestObject.OutputS3BucketName);
             }
 
             if(requestObject.IsSetS3OutputEnabled())
             {
                 context.Writer.WritePropertyName("s3OutputEnabled");
-                context.Writer.Write(requestObject.S3OutputEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.S3OutputEnabled.Value);
             }
 
         }

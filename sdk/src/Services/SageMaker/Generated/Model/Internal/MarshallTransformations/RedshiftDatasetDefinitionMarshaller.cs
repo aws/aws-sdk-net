@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClusterId())
             {
                 context.Writer.WritePropertyName("ClusterId");
-                context.Writer.Write(requestObject.ClusterId);
+                context.Writer.WriteStringValue(requestObject.ClusterId);
             }
 
             if(requestObject.IsSetClusterRoleArn())
             {
                 context.Writer.WritePropertyName("ClusterRoleArn");
-                context.Writer.Write(requestObject.ClusterRoleArn);
+                context.Writer.WriteStringValue(requestObject.ClusterRoleArn);
             }
 
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");
-                context.Writer.Write(requestObject.Database);
+                context.Writer.WriteStringValue(requestObject.Database);
             }
 
             if(requestObject.IsSetDbUser())
             {
                 context.Writer.WritePropertyName("DbUser");
-                context.Writer.Write(requestObject.DbUser);
+                context.Writer.WriteStringValue(requestObject.DbUser);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetOutputCompression())
             {
                 context.Writer.WritePropertyName("OutputCompression");
-                context.Writer.Write(requestObject.OutputCompression);
+                context.Writer.WriteStringValue(requestObject.OutputCompression);
             }
 
             if(requestObject.IsSetOutputFormat())
             {
                 context.Writer.WritePropertyName("OutputFormat");
-                context.Writer.Write(requestObject.OutputFormat);
+                context.Writer.WriteStringValue(requestObject.OutputFormat);
             }
 
             if(requestObject.IsSetOutputS3Uri())
             {
                 context.Writer.WritePropertyName("OutputS3Uri");
-                context.Writer.Write(requestObject.OutputS3Uri);
+                context.Writer.WriteStringValue(requestObject.OutputS3Uri);
             }
 
             if(requestObject.IsSetQueryString())
             {
                 context.Writer.WritePropertyName("QueryString");
-                context.Writer.Write(requestObject.QueryString);
+                context.Writer.WriteStringValue(requestObject.QueryString);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOrder())
             {
                 context.Writer.WritePropertyName("Order");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrderListValue in requestObject.Order)
                 {
-                        context.Writer.Write(requestObjectOrderListValue);
+                        context.Writer.WriteStringValue(requestObjectOrderListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPinnedFieldOptions())
             {
                 context.Writer.WritePropertyName("PinnedFieldOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TablePinnedFieldOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PinnedFieldOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectedFieldOptions())
             {
                 context.Writer.WritePropertyName("SelectedFieldOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSelectedFieldOptionsListValue in requestObject.SelectedFieldOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TableFieldOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectSelectedFieldOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelTag())
             {
                 context.Writer.WritePropertyName("channelTag");
-                context.Writer.Write(requestObject.ChannelTag);
+                context.Writer.WriteStringValue(requestObject.ChannelTag);
             }
 
             if(requestObject.IsSetChannelTags())
             {
                 context.Writer.WritePropertyName("channelTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChannelTagsListValue in requestObject.ChannelTags)
                 {
-                        context.Writer.Write(requestObjectChannelTagsListValue);
+                        context.Writer.WriteStringValue(requestObjectChannelTagsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

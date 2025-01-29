@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SavingsPlansPurchaseRecommendation Object
     /// </summary>  
-    public class SavingsPlansPurchaseRecommendationUnmarshaller : IUnmarshaller<SavingsPlansPurchaseRecommendation, XmlUnmarshallerContext>, IUnmarshaller<SavingsPlansPurchaseRecommendation, JsonUnmarshallerContext>
+    public class SavingsPlansPurchaseRecommendationUnmarshaller : IJsonUnmarshaller<SavingsPlansPurchaseRecommendation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SavingsPlansPurchaseRecommendation IUnmarshaller<SavingsPlansPurchaseRecommendation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SavingsPlansPurchaseRecommendation Unmarshall(JsonUnmarshallerContext context)
+        public SavingsPlansPurchaseRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SavingsPlansPurchaseRecommendation unmarshalledObject = new SavingsPlansPurchaseRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccountScope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountScope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LookbackPeriodInDays", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LookbackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PaymentOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SavingsPlansPurchaseRecommendationDetails", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SavingsPlansPurchaseRecommendationDetail, SavingsPlansPurchaseRecommendationDetailUnmarshaller>(SavingsPlansPurchaseRecommendationDetailUnmarshaller.Instance);
-                    unmarshalledObject.SavingsPlansPurchaseRecommendationDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SavingsPlansPurchaseRecommendationDetail, SavingsPlansPurchaseRecommendationDetailUnmarshaller>(SavingsPlansPurchaseRecommendationDetailUnmarshaller.Instance);
+                    unmarshalledObject.SavingsPlansPurchaseRecommendationDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SavingsPlansPurchaseRecommendationSummary", targetDepth))
                 {
                     var unmarshaller = SavingsPlansPurchaseRecommendationSummaryUnmarshaller.Instance;
-                    unmarshalledObject.SavingsPlansPurchaseRecommendationSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SavingsPlansPurchaseRecommendationSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SavingsPlansType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SavingsPlansType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SavingsPlansType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TermInYears", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TermInYears = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TermInYears = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

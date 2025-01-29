@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigRuleEvaluationStatus Object
     /// </summary>  
-    public class ConfigRuleEvaluationStatusUnmarshaller : IUnmarshaller<ConfigRuleEvaluationStatus, XmlUnmarshallerContext>, IUnmarshaller<ConfigRuleEvaluationStatus, JsonUnmarshallerContext>
+    public class ConfigRuleEvaluationStatusUnmarshaller : IJsonUnmarshaller<ConfigRuleEvaluationStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfigRuleEvaluationStatus IUnmarshaller<ConfigRuleEvaluationStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigRuleEvaluationStatus Unmarshall(JsonUnmarshallerContext context)
+        public ConfigRuleEvaluationStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfigRuleEvaluationStatus unmarshalledObject = new ConfigRuleEvaluationStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConfigRuleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigRuleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigRuleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigRuleId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigRuleId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigRuleId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConfigRuleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigRuleName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigRuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirstActivatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.FirstActivatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirstActivatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirstEvaluationStarted", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.FirstEvaluationStarted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirstEvaluationStarted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastDeactivatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastDeactivatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastDeactivatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastDebugLogDeliveryStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastDebugLogDeliveryStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastDebugLogDeliveryStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastDebugLogDeliveryStatusReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastDebugLogDeliveryStatusReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastDebugLogDeliveryStatusReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastDebugLogDeliveryTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastDebugLogDeliveryTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastDebugLogDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastErrorCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastErrorCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastErrorCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastErrorMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastErrorMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastErrorMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastFailedEvaluationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastFailedEvaluationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastFailedEvaluationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastFailedInvocationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastFailedInvocationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastFailedInvocationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessfulEvaluationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSuccessfulEvaluationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSuccessfulEvaluationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessfulInvocationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSuccessfulInvocationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSuccessfulInvocationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

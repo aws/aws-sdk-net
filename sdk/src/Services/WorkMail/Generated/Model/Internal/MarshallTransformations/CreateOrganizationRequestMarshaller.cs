@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
 {
@@ -63,70 +66,75 @@ namespace Amazon.WorkMail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlias())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlias())
-                    {
-                        context.Writer.WritePropertyName("Alias");
-                        context.Writer.Write(publicRequest.Alias);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDirectoryId())
-                    {
-                        context.Writer.WritePropertyName("DirectoryId");
-                        context.Writer.Write(publicRequest.DirectoryId);
-                    }
-
-                    if(publicRequest.IsSetDomains())
-                    {
-                        context.Writer.WritePropertyName("Domains");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDomainsListValue in publicRequest.Domains)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DomainMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDomainsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEnableInteroperability())
-                    {
-                        context.Writer.WritePropertyName("EnableInteroperability");
-                        context.Writer.Write(publicRequest.EnableInteroperability.Value);
-                    }
-
-                    if(publicRequest.IsSetKmsKeyArn())
-                    {
-                        context.Writer.WritePropertyName("KmsKeyArn");
-                        context.Writer.Write(publicRequest.KmsKeyArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Alias");
+                context.Writer.WriteStringValue(publicRequest.Alias);
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDirectoryId())
+            {
+                context.Writer.WritePropertyName("DirectoryId");
+                context.Writer.WriteStringValue(publicRequest.DirectoryId);
+            }
+
+            if(publicRequest.IsSetDomains())
+            {
+                context.Writer.WritePropertyName("Domains");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDomainsListValue in publicRequest.Domains)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DomainMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDomainsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEnableInteroperability())
+            {
+                context.Writer.WritePropertyName("EnableInteroperability");
+                context.Writer.WriteBooleanValue(publicRequest.EnableInteroperability.Value);
+            }
+
+            if(publicRequest.IsSetKmsKeyArn())
+            {
+                context.Writer.WritePropertyName("KmsKeyArn");
+                context.Writer.WriteStringValue(publicRequest.KmsKeyArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

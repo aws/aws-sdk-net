@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LabelingJobForWorkteamSummary Object
     /// </summary>  
-    public class LabelingJobForWorkteamSummaryUnmarshaller : IUnmarshaller<LabelingJobForWorkteamSummary, XmlUnmarshallerContext>, IUnmarshaller<LabelingJobForWorkteamSummary, JsonUnmarshallerContext>
+    public class LabelingJobForWorkteamSummaryUnmarshaller : IJsonUnmarshaller<LabelingJobForWorkteamSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LabelingJobForWorkteamSummary IUnmarshaller<LabelingJobForWorkteamSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LabelingJobForWorkteamSummary Unmarshall(JsonUnmarshallerContext context)
+        public LabelingJobForWorkteamSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LabelingJobForWorkteamSummary unmarshalledObject = new LabelingJobForWorkteamSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("JobReferenceCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JobReferenceCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JobReferenceCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelCounters", targetDepth))
                 {
                     var unmarshaller = LabelCountersForWorkteamUnmarshaller.Instance;
-                    unmarshalledObject.LabelCounters = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LabelCounters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LabelingJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LabelingJobName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LabelingJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfHumanWorkersPerDataObject", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfHumanWorkersPerDataObject = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfHumanWorkersPerDataObject = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkRequesterAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkRequesterAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkRequesterAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

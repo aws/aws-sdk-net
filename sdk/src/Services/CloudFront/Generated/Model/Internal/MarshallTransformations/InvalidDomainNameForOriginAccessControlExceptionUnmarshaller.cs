@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDomainNameForOriginAccessControlException operation
     /// </summary>  
-    public class InvalidDomainNameForOriginAccessControlExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDomainNameForOriginAccessControlException, XmlUnmarshallerContext>
+    public class InvalidDomainNameForOriginAccessControlExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDomainNameForOriginAccessControlException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

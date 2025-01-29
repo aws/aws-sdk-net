@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDuration())
             {
                 context.Writer.WritePropertyName("audioDuration");
-                context.Writer.Write(requestObject.AudioDuration);
+                context.Writer.WriteStringValue(requestObject.AudioDuration);
             }
 
             if(requestObject.IsSetCslgAtom())
             {
                 context.Writer.WritePropertyName("cslgAtom");
-                context.Writer.Write(requestObject.CslgAtom);
+                context.Writer.WriteStringValue(requestObject.CslgAtom);
             }
 
             if(requestObject.IsSetCttsVersion())
             {
                 context.Writer.WritePropertyName("cttsVersion");
-                context.Writer.Write(requestObject.CttsVersion.Value);
+                context.Writer.WriteNumberValue(requestObject.CttsVersion.Value);
             }
 
             if(requestObject.IsSetFreeSpaceBox())
             {
                 context.Writer.WritePropertyName("freeSpaceBox");
-                context.Writer.Write(requestObject.FreeSpaceBox);
+                context.Writer.WriteStringValue(requestObject.FreeSpaceBox);
             }
 
             if(requestObject.IsSetMoovPlacement())
             {
                 context.Writer.WritePropertyName("moovPlacement");
-                context.Writer.Write(requestObject.MoovPlacement);
+                context.Writer.WriteStringValue(requestObject.MoovPlacement);
             }
 
             if(requestObject.IsSetMp4MajorBrand())
             {
                 context.Writer.WritePropertyName("mp4MajorBrand");
-                context.Writer.Write(requestObject.Mp4MajorBrand);
+                context.Writer.WriteStringValue(requestObject.Mp4MajorBrand);
             }
 
         }

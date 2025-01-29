@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromDate())
             {
                 context.Writer.WritePropertyName("fromDate");
-                context.Writer.Write(requestObject.FromDate);
+                context.Writer.WriteStringValue(requestObject.FromDate);
             }
 
             if(requestObject.IsSetJobIDs())
             {
                 context.Writer.WritePropertyName("jobIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectJobIDsListValue in requestObject.JobIDs)
                 {
-                        context.Writer.Write(requestObjectJobIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectJobIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetToDate())
             {
                 context.Writer.WritePropertyName("toDate");
-                context.Writer.Write(requestObject.ToDate);
+                context.Writer.WriteStringValue(requestObject.ToDate);
             }
 
         }

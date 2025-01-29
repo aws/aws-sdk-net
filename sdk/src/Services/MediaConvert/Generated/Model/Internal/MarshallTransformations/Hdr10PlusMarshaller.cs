@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMasteringMonitorNits())
             {
                 context.Writer.WritePropertyName("masteringMonitorNits");
-                context.Writer.Write(requestObject.MasteringMonitorNits.Value);
+                context.Writer.WriteNumberValue(requestObject.MasteringMonitorNits.Value);
             }
 
             if(requestObject.IsSetTargetMonitorNits())
             {
                 context.Writer.WritePropertyName("targetMonitorNits");
-                context.Writer.Write(requestObject.TargetMonitorNits.Value);
+                context.Writer.WriteNumberValue(requestObject.TargetMonitorNits.Value);
             }
 
         }

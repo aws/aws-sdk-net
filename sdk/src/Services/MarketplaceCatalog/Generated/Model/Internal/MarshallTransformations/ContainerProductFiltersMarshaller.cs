@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEntityId())
             {
                 context.Writer.WritePropertyName("EntityId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerProductEntityIdFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLastModifiedDate())
             {
                 context.Writer.WritePropertyName("LastModifiedDate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerProductLastModifiedDateFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.LastModifiedDate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProductTitle())
             {
                 context.Writer.WritePropertyName("ProductTitle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerProductTitleFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProductTitle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerProductVisibilityFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Visibility, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

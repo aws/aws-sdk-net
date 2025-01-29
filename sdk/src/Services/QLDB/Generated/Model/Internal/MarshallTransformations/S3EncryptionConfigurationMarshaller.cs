@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKmsKeyArn())
             {
                 context.Writer.WritePropertyName("KmsKeyArn");
-                context.Writer.Write(requestObject.KmsKeyArn);
+                context.Writer.WriteStringValue(requestObject.KmsKeyArn);
             }
 
             if(requestObject.IsSetObjectEncryptionType())
             {
                 context.Writer.WritePropertyName("ObjectEncryptionType");
-                context.Writer.Write(requestObject.ObjectEncryptionType);
+                context.Writer.WriteStringValue(requestObject.ObjectEncryptionType);
             }
 
         }

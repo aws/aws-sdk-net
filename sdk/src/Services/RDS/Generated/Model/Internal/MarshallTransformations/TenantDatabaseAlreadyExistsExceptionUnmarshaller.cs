@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TenantDatabaseAlreadyExistsException operation
     /// </summary>  
-    public class TenantDatabaseAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<TenantDatabaseAlreadyExistsException, XmlUnmarshallerContext>
+    public class TenantDatabaseAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TenantDatabaseAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStatistics())
             {
                 context.Writer.WritePropertyName("Statistics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatisticsListValue in requestObject.Statistics)
                 {
-                        context.Writer.Write(requestObjectStatisticsListValue);
+                        context.Writer.WriteStringValue(requestObjectStatisticsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetBands())
             {
                 context.Writer.WritePropertyName("TargetBands");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetBandsListValue in requestObject.TargetBands)
                 {
-                        context.Writer.Write(requestObjectTargetBandsListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetBandsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetZoneS3Path())
             {
                 context.Writer.WritePropertyName("ZoneS3Path");
-                context.Writer.Write(requestObject.ZoneS3Path);
+                context.Writer.WriteStringValue(requestObject.ZoneS3Path);
             }
 
             if(requestObject.IsSetZoneS3PathKmsKeyId())
             {
                 context.Writer.WritePropertyName("ZoneS3PathKmsKeyId");
-                context.Writer.Write(requestObject.ZoneS3PathKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.ZoneS3PathKmsKeyId);
             }
 
         }

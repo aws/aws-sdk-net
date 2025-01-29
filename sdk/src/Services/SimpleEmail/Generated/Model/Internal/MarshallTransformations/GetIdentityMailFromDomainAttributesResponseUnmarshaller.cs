@@ -84,7 +84,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
                     if (context.TestExpression("MailFromDomainAttributes/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, IdentityMailFromDomainAttributes, StringUnmarshaller, IdentityMailFromDomainAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityMailFromDomainAttributesUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, IdentityMailFromDomainAttributes, StringUnmarshaller, IdentityMailFromDomainAttributesUnmarshaller>(StringUnmarshaller.Instance, IdentityMailFromDomainAttributesUnmarshaller.Instance);
                         if (response.MailFromDomainAttributes == null)
                         {
                             response.MailFromDomainAttributes = new Dictionary<string, IdentityMailFromDomainAttributes>();
@@ -109,7 +109,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            ErrorResponse errorResponse = XmlErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 

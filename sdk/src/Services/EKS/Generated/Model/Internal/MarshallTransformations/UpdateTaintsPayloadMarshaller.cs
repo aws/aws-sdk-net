@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,33 +49,33 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddOrUpdateTaints())
             {
                 context.Writer.WritePropertyName("addOrUpdateTaints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAddOrUpdateTaintsListValue in requestObject.AddOrUpdateTaints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TaintMarshaller.Instance;
                     marshaller.Marshall(requestObjectAddOrUpdateTaintsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRemoveTaints())
             {
                 context.Writer.WritePropertyName("removeTaints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRemoveTaintsListValue in requestObject.RemoveTaints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TaintMarshaller.Instance;
                     marshaller.Marshall(requestObjectRemoveTaintsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

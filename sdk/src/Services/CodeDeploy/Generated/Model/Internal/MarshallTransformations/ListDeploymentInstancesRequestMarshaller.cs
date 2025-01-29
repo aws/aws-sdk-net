@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -63,53 +66,58 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeploymentId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeploymentId())
-                    {
-                        context.Writer.WritePropertyName("deploymentId");
-                        context.Writer.Write(publicRequest.DeploymentId);
-                    }
-
-                    if(publicRequest.IsSetInstanceStatusFilter())
-                    {
-                        context.Writer.WritePropertyName("instanceStatusFilter");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInstanceStatusFilterListValue in publicRequest.InstanceStatusFilter)
-                        {
-                                context.Writer.Write(publicRequestInstanceStatusFilterListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetInstanceTypeFilter())
-                    {
-                        context.Writer.WritePropertyName("instanceTypeFilter");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInstanceTypeFilterListValue in publicRequest.InstanceTypeFilter)
-                        {
-                                context.Writer.Write(publicRequestInstanceTypeFilterListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("deploymentId");
+                context.Writer.WriteStringValue(publicRequest.DeploymentId);
             }
+
+            if(publicRequest.IsSetInstanceStatusFilter())
+            {
+                context.Writer.WritePropertyName("instanceStatusFilter");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstanceStatusFilterListValue in publicRequest.InstanceStatusFilter)
+                {
+                        context.Writer.WriteStringValue(publicRequestInstanceStatusFilterListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetInstanceTypeFilter())
+            {
+                context.Writer.WritePropertyName("instanceTypeFilter");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInstanceTypeFilterListValue in publicRequest.InstanceTypeFilter)
+                {
+                        context.Writer.WriteStringValue(publicRequestInstanceTypeFilterListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

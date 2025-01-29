@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BackupPlansListMember Object
     /// </summary>  
-    public class BackupPlansListMemberUnmarshaller : IUnmarshaller<BackupPlansListMember, XmlUnmarshallerContext>, IUnmarshaller<BackupPlansListMember, JsonUnmarshallerContext>
+    public class BackupPlansListMemberUnmarshaller : IJsonUnmarshaller<BackupPlansListMember, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BackupPlansListMember IUnmarshaller<BackupPlansListMember, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BackupPlansListMember Unmarshall(JsonUnmarshallerContext context)
+        public BackupPlansListMember Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BackupPlansListMember unmarshalledObject = new BackupPlansListMember();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdvancedBackupSettings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AdvancedBackupSetting, AdvancedBackupSettingUnmarshaller>(AdvancedBackupSettingUnmarshaller.Instance);
-                    unmarshalledObject.AdvancedBackupSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AdvancedBackupSetting, AdvancedBackupSettingUnmarshaller>(AdvancedBackupSettingUnmarshaller.Instance);
+                    unmarshalledObject.AdvancedBackupSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupPlanArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupPlanArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupPlanArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupPlanId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupPlanId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupPlanId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BackupPlanName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackupPlanName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackupPlanName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatorRequestId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatorRequestId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeletionDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.DeletionDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeletionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastExecutionDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastExecutionDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastExecutionDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VersionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VersionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

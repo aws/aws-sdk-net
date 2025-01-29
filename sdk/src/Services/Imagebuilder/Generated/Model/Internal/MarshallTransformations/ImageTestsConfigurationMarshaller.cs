@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageTestsEnabled())
             {
                 context.Writer.WritePropertyName("imageTestsEnabled");
-                context.Writer.Write(requestObject.ImageTestsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ImageTestsEnabled.Value);
             }
 
             if(requestObject.IsSetTimeoutMinutes())
             {
                 context.Writer.WritePropertyName("timeoutMinutes");
-                context.Writer.Write(requestObject.TimeoutMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutMinutes.Value);
             }
 
         }

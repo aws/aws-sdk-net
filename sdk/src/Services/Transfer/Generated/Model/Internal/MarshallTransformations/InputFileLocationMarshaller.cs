@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEfsFileLocation())
             {
                 context.Writer.WritePropertyName("EfsFileLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EfsFileLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EfsFileLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3FileLocation())
             {
                 context.Writer.WritePropertyName("S3FileLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3InputFileLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3FileLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlias())
             {
                 context.Writer.WritePropertyName("Alias");
-                context.Writer.Write(requestObject.Alias);
+                context.Writer.WriteStringValue(requestObject.Alias);
             }
 
             if(requestObject.IsSetDataTransforms())
             {
                 context.Writer.WritePropertyName("DataTransforms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataTransformsListValue in requestObject.DataTransforms)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TransformOperationMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataTransformsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LogicalTableSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Source, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

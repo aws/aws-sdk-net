@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCollectionConfigurations())
             {
                 context.Writer.WritePropertyName("CollectionConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCollectionConfigurationsListValue in requestObject.CollectionConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CollectionConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCollectionConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHookParameters())
             {
                 context.Writer.WritePropertyName("HookParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectHookParametersKvp in requestObject.HookParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectHookParametersKvp.Key);
                     var requestObjectHookParametersValue = requestObjectHookParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectHookParametersValue);
+                        context.Writer.WriteStringValue(requestObjectHookParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLocalPath())
             {
                 context.Writer.WritePropertyName("LocalPath");
-                context.Writer.Write(requestObject.LocalPath);
+                context.Writer.WriteStringValue(requestObject.LocalPath);
             }
 
             if(requestObject.IsSetS3OutputPath())
             {
                 context.Writer.WritePropertyName("S3OutputPath");
-                context.Writer.Write(requestObject.S3OutputPath);
+                context.Writer.WriteStringValue(requestObject.S3OutputPath);
             }
 
         }

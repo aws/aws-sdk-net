@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiKeySource())
             {
                 context.Writer.WritePropertyName("ApiKeySource");
-                context.Writer.Write(requestObject.ApiKeySource);
+                context.Writer.WriteStringValue(requestObject.ApiKeySource);
             }
 
             if(requestObject.IsSetBinaryMediaTypes())
             {
                 context.Writer.WritePropertyName("BinaryMediaTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBinaryMediaTypesListValue in requestObject.BinaryMediaTypes)
                 {
-                        context.Writer.Write(requestObjectBinaryMediaTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectBinaryMediaTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreatedDate())
             {
                 context.Writer.WritePropertyName("CreatedDate");
-                context.Writer.Write(requestObject.CreatedDate);
+                context.Writer.WriteStringValue(requestObject.CreatedDate);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEndpointConfiguration())
             {
                 context.Writer.WritePropertyName("EndpointConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsApiGatewayEndpointConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EndpointConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetMinimumCompressionSize())
             {
                 context.Writer.WritePropertyName("MinimumCompressionSize");
-                context.Writer.Write(requestObject.MinimumCompressionSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumCompressionSize.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

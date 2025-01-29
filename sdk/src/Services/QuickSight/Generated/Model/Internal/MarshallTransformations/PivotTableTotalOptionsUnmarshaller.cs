@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PivotTableTotalOptions Object
     /// </summary>  
-    public class PivotTableTotalOptionsUnmarshaller : IUnmarshaller<PivotTableTotalOptions, XmlUnmarshallerContext>, IUnmarshaller<PivotTableTotalOptions, JsonUnmarshallerContext>
+    public class PivotTableTotalOptionsUnmarshaller : IJsonUnmarshaller<PivotTableTotalOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PivotTableTotalOptions IUnmarshaller<PivotTableTotalOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PivotTableTotalOptions Unmarshall(JsonUnmarshallerContext context)
+        public PivotTableTotalOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PivotTableTotalOptions unmarshalledObject = new PivotTableTotalOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ColumnSubtotalOptions", targetDepth))
                 {
                     var unmarshaller = SubtotalOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ColumnSubtotalOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnSubtotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnTotalOptions", targetDepth))
                 {
                     var unmarshaller = PivotTotalOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ColumnTotalOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnTotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowSubtotalOptions", targetDepth))
                 {
                     var unmarshaller = SubtotalOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RowSubtotalOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowSubtotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowTotalOptions", targetDepth))
                 {
                     var unmarshaller = PivotTotalOptionsUnmarshaller.Instance;
-                    unmarshalledObject.RowTotalOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowTotalOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

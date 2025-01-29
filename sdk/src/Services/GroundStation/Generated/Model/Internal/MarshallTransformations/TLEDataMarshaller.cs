@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTleLine1())
             {
                 context.Writer.WritePropertyName("tleLine1");
-                context.Writer.Write(requestObject.TleLine1);
+                context.Writer.WriteStringValue(requestObject.TleLine1);
             }
 
             if(requestObject.IsSetTleLine2())
             {
                 context.Writer.WritePropertyName("tleLine2");
-                context.Writer.Write(requestObject.TleLine2);
+                context.Writer.WriteStringValue(requestObject.TleLine2);
             }
 
             if(requestObject.IsSetValidTimeRange())
             {
                 context.Writer.WritePropertyName("validTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.ValidTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

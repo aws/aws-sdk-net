@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,44 +49,44 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppCookieStickinessPolicies())
             {
                 context.Writer.WritePropertyName("AppCookieStickinessPolicies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAppCookieStickinessPoliciesListValue in requestObject.AppCookieStickinessPolicies)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElbAppCookieStickinessPolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectAppCookieStickinessPoliciesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLbCookieStickinessPolicies())
             {
                 context.Writer.WritePropertyName("LbCookieStickinessPolicies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectLbCookieStickinessPoliciesListValue in requestObject.LbCookieStickinessPolicies)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElbLbCookieStickinessPolicyMarshaller.Instance;
                     marshaller.Marshall(requestObjectLbCookieStickinessPoliciesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOtherPolicies())
             {
                 context.Writer.WritePropertyName("OtherPolicies");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOtherPoliciesListValue in requestObject.OtherPolicies)
                 {
-                        context.Writer.Write(requestObjectOtherPoliciesListValue);
+                        context.Writer.WriteStringValue(requestObjectOtherPoliciesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

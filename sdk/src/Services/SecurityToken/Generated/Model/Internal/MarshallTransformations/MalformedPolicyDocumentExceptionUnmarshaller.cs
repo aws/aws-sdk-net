@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MalformedPolicyDocumentException operation
     /// </summary>  
-    public class MalformedPolicyDocumentExceptionUnmarshaller : IErrorResponseUnmarshaller<MalformedPolicyDocumentException, XmlUnmarshallerContext>
+    public class MalformedPolicyDocumentExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MalformedPolicyDocumentException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

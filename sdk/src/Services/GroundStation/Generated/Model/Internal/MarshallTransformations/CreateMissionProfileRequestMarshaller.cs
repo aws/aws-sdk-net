@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -61,96 +64,101 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/missionprofile";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContactPostPassDurationSeconds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContactPostPassDurationSeconds())
-                    {
-                        context.Writer.WritePropertyName("contactPostPassDurationSeconds");
-                        context.Writer.Write(publicRequest.ContactPostPassDurationSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetContactPrePassDurationSeconds())
-                    {
-                        context.Writer.WritePropertyName("contactPrePassDurationSeconds");
-                        context.Writer.Write(publicRequest.ContactPrePassDurationSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetDataflowEdges())
-                    {
-                        context.Writer.WritePropertyName("dataflowEdges");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDataflowEdgesListValue in publicRequest.DataflowEdges)
-                        {
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestDataflowEdgesListValueListValue in publicRequestDataflowEdgesListValue)
-                            {
-                                    context.Writer.Write(publicRequestDataflowEdgesListValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMinimumViableContactDurationSeconds())
-                    {
-                        context.Writer.WritePropertyName("minimumViableContactDurationSeconds");
-                        context.Writer.Write(publicRequest.MinimumViableContactDurationSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetStreamsKmsKey())
-                    {
-                        context.Writer.WritePropertyName("streamsKmsKey");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = KmsKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StreamsKmsKey, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStreamsKmsRole())
-                    {
-                        context.Writer.WritePropertyName("streamsKmsRole");
-                        context.Writer.Write(publicRequest.StreamsKmsRole);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTrackingConfigArn())
-                    {
-                        context.Writer.WritePropertyName("trackingConfigArn");
-                        context.Writer.Write(publicRequest.TrackingConfigArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("contactPostPassDurationSeconds");
+                context.Writer.WriteNumberValue(publicRequest.ContactPostPassDurationSeconds.Value);
             }
+
+            if(publicRequest.IsSetContactPrePassDurationSeconds())
+            {
+                context.Writer.WritePropertyName("contactPrePassDurationSeconds");
+                context.Writer.WriteNumberValue(publicRequest.ContactPrePassDurationSeconds.Value);
+            }
+
+            if(publicRequest.IsSetDataflowEdges())
+            {
+                context.Writer.WritePropertyName("dataflowEdges");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDataflowEdgesListValue in publicRequest.DataflowEdges)
+                {
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestDataflowEdgesListValueListValue in publicRequestDataflowEdgesListValue)
+                    {
+                            context.Writer.WriteStringValue(publicRequestDataflowEdgesListValueListValue);
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMinimumViableContactDurationSeconds())
+            {
+                context.Writer.WritePropertyName("minimumViableContactDurationSeconds");
+                context.Writer.WriteNumberValue(publicRequest.MinimumViableContactDurationSeconds.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetStreamsKmsKey())
+            {
+                context.Writer.WritePropertyName("streamsKmsKey");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KmsKeyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StreamsKmsKey, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStreamsKmsRole())
+            {
+                context.Writer.WritePropertyName("streamsKmsRole");
+                context.Writer.WriteStringValue(publicRequest.StreamsKmsRole);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTrackingConfigArn())
+            {
+                context.Writer.WritePropertyName("trackingConfigArn");
+                context.Writer.WriteStringValue(publicRequest.TrackingConfigArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

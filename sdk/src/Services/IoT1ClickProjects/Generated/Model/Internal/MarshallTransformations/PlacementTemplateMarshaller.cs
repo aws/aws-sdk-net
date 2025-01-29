@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultAttributes())
             {
                 context.Writer.WritePropertyName("defaultAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDefaultAttributesKvp in requestObject.DefaultAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectDefaultAttributesKvp.Key);
                     var requestObjectDefaultAttributesValue = requestObjectDefaultAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectDefaultAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectDefaultAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceTemplates())
             {
                 context.Writer.WritePropertyName("deviceTemplates");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDeviceTemplatesKvp in requestObject.DeviceTemplates)
                 {
                     context.Writer.WritePropertyName(requestObjectDeviceTemplatesKvp.Key);
                     var requestObjectDeviceTemplatesValue = requestObjectDeviceTemplatesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DeviceTemplateMarshaller.Instance;
                     marshaller.Marshall(requestObjectDeviceTemplatesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

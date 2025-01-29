@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RollbackInfo Object
     /// </summary>  
-    public class RollbackInfoUnmarshaller : IUnmarshaller<RollbackInfo, XmlUnmarshallerContext>, IUnmarshaller<RollbackInfo, JsonUnmarshallerContext>
+    public class RollbackInfoUnmarshaller : IJsonUnmarshaller<RollbackInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RollbackInfo IUnmarshaller<RollbackInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RollbackInfo Unmarshall(JsonUnmarshallerContext context)
+        public RollbackInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RollbackInfo unmarshalledObject = new RollbackInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("rollbackDeploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RollbackDeploymentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackDeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rollbackMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RollbackMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rollbackTriggeringDeploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RollbackTriggeringDeploymentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackTriggeringDeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStackSetAccounts())
             {
                 context.Writer.WritePropertyName("StackSetAccounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStackSetAccountsListValue in requestObject.StackSetAccounts)
                 {
-                        context.Writer.Write(requestObjectStackSetAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectStackSetAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStackSetFailureToleranceCount())
             {
                 context.Writer.WritePropertyName("StackSetFailureToleranceCount");
-                context.Writer.Write(requestObject.StackSetFailureToleranceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.StackSetFailureToleranceCount.Value);
             }
 
             if(requestObject.IsSetStackSetFailureTolerancePercentage())
             {
                 context.Writer.WritePropertyName("StackSetFailureTolerancePercentage");
-                context.Writer.Write(requestObject.StackSetFailureTolerancePercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.StackSetFailureTolerancePercentage.Value);
             }
 
             if(requestObject.IsSetStackSetMaxConcurrencyCount())
             {
                 context.Writer.WritePropertyName("StackSetMaxConcurrencyCount");
-                context.Writer.Write(requestObject.StackSetMaxConcurrencyCount.Value);
+                context.Writer.WriteNumberValue(requestObject.StackSetMaxConcurrencyCount.Value);
             }
 
             if(requestObject.IsSetStackSetMaxConcurrencyPercentage())
             {
                 context.Writer.WritePropertyName("StackSetMaxConcurrencyPercentage");
-                context.Writer.Write(requestObject.StackSetMaxConcurrencyPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.StackSetMaxConcurrencyPercentage.Value);
             }
 
             if(requestObject.IsSetStackSetRegions())
             {
                 context.Writer.WritePropertyName("StackSetRegions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStackSetRegionsListValue in requestObject.StackSetRegions)
                 {
-                        context.Writer.Write(requestObjectStackSetRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectStackSetRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

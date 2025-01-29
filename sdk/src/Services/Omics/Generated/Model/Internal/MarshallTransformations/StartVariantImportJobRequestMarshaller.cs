@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -61,67 +64,72 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/import/variant";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAnnotationFields())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("annotationFields");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestAnnotationFieldsKvp in publicRequest.AnnotationFields)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAnnotationFields())
-                    {
-                        context.Writer.WritePropertyName("annotationFields");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestAnnotationFieldsKvp in publicRequest.AnnotationFields)
-                        {
-                            context.Writer.WritePropertyName(publicRequestAnnotationFieldsKvp.Key);
-                            var publicRequestAnnotationFieldsValue = publicRequestAnnotationFieldsKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestAnnotationFieldsKvp.Key);
+                    var publicRequestAnnotationFieldsValue = publicRequestAnnotationFieldsKvp.Value;
 
-                                context.Writer.Write(publicRequestAnnotationFieldsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDestinationName())
-                    {
-                        context.Writer.WritePropertyName("destinationName");
-                        context.Writer.Write(publicRequest.DestinationName);
-                    }
-
-                    if(publicRequest.IsSetItems())
-                    {
-                        context.Writer.WritePropertyName("items");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestItemsListValue in publicRequest.Items)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = VariantImportItemSourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestItemsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetRunLeftNormalization())
-                    {
-                        context.Writer.WritePropertyName("runLeftNormalization");
-                        context.Writer.Write(publicRequest.RunLeftNormalization.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAnnotationFieldsValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDestinationName())
+            {
+                context.Writer.WritePropertyName("destinationName");
+                context.Writer.WriteStringValue(publicRequest.DestinationName);
+            }
+
+            if(publicRequest.IsSetItems())
+            {
+                context.Writer.WritePropertyName("items");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestItemsListValue in publicRequest.Items)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = VariantImportItemSourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestItemsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetRunLeftNormalization())
+            {
+                context.Writer.WritePropertyName("runLeftNormalization");
+                context.Writer.WriteBooleanValue(publicRequest.RunLeftNormalization.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"analytics-";

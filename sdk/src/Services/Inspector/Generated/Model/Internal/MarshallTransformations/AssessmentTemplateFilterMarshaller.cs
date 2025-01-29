@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationRange())
             {
                 context.Writer.WritePropertyName("durationRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DurationRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNamePattern())
             {
                 context.Writer.WritePropertyName("namePattern");
-                context.Writer.Write(requestObject.NamePattern);
+                context.Writer.WriteStringValue(requestObject.NamePattern);
             }
 
             if(requestObject.IsSetRulesPackageArns())
             {
                 context.Writer.WritePropertyName("rulesPackageArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesPackageArnsListValue in requestObject.RulesPackageArns)
                 {
-                        context.Writer.Write(requestObjectRulesPackageArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectRulesPackageArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

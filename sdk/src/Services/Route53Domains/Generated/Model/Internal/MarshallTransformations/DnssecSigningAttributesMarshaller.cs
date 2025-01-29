@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Route53Domains.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithm())
             {
                 context.Writer.WritePropertyName("Algorithm");
-                context.Writer.Write(requestObject.Algorithm.Value);
+                context.Writer.WriteNumberValue(requestObject.Algorithm.Value);
             }
 
             if(requestObject.IsSetFlags())
             {
                 context.Writer.WritePropertyName("Flags");
-                context.Writer.Write(requestObject.Flags.Value);
+                context.Writer.WriteNumberValue(requestObject.Flags.Value);
             }
 
             if(requestObject.IsSetPublicKey())
             {
                 context.Writer.WritePropertyName("PublicKey");
-                context.Writer.Write(requestObject.PublicKey);
+                context.Writer.WriteStringValue(requestObject.PublicKey);
             }
 
         }

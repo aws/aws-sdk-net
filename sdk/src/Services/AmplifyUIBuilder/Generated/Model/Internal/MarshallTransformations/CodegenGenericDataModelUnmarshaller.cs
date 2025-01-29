@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CodegenGenericDataModel Object
     /// </summary>  
-    public class CodegenGenericDataModelUnmarshaller : IUnmarshaller<CodegenGenericDataModel, XmlUnmarshallerContext>, IUnmarshaller<CodegenGenericDataModel, JsonUnmarshallerContext>
+    public class CodegenGenericDataModelUnmarshaller : IJsonUnmarshaller<CodegenGenericDataModel, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CodegenGenericDataModel IUnmarshaller<CodegenGenericDataModel, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CodegenGenericDataModel Unmarshall(JsonUnmarshallerContext context)
+        public CodegenGenericDataModel Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CodegenGenericDataModel unmarshalledObject = new CodegenGenericDataModel();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("fields", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, CodegenGenericDataField, StringUnmarshaller, CodegenGenericDataFieldUnmarshaller>(StringUnmarshaller.Instance, CodegenGenericDataFieldUnmarshaller.Instance);
-                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, CodegenGenericDataField, StringUnmarshaller, CodegenGenericDataFieldUnmarshaller>(StringUnmarshaller.Instance, CodegenGenericDataFieldUnmarshaller.Instance);
+                    unmarshalledObject.Fields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isJoinTable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsJoinTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsJoinTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("primaryKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.PrimaryKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.PrimaryKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

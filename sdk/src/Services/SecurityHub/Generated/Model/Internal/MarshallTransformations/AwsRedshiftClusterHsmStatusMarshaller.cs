@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHsmClientCertificateIdentifier())
             {
                 context.Writer.WritePropertyName("HsmClientCertificateIdentifier");
-                context.Writer.Write(requestObject.HsmClientCertificateIdentifier);
+                context.Writer.WriteStringValue(requestObject.HsmClientCertificateIdentifier);
             }
 
             if(requestObject.IsSetHsmConfigurationIdentifier())
             {
                 context.Writer.WritePropertyName("HsmConfigurationIdentifier");
-                context.Writer.Write(requestObject.HsmConfigurationIdentifier);
+                context.Writer.WriteStringValue(requestObject.HsmConfigurationIdentifier);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

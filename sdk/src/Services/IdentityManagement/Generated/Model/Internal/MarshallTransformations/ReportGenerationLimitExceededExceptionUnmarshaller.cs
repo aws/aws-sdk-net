@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReportGenerationLimitExceededException operation
     /// </summary>  
-    public class ReportGenerationLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<ReportGenerationLimitExceededException, XmlUnmarshallerContext>
+    public class ReportGenerationLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReportGenerationLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

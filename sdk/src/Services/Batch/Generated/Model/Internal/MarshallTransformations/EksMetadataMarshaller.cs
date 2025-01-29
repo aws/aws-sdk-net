@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnnotations())
             {
                 context.Writer.WritePropertyName("annotations");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAnnotationsKvp in requestObject.Annotations)
                 {
                     context.Writer.WritePropertyName(requestObjectAnnotationsKvp.Key);
                     var requestObjectAnnotationsValue = requestObjectAnnotationsKvp.Value;
 
-                        context.Writer.Write(requestObjectAnnotationsValue);
+                        context.Writer.WriteStringValue(requestObjectAnnotationsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabels())
             {
                 context.Writer.WritePropertyName("labels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectLabelsKvp in requestObject.Labels)
                 {
                     context.Writer.WritePropertyName(requestObjectLabelsKvp.Key);
                     var requestObjectLabelsValue = requestObjectLabelsKvp.Value;
 
-                        context.Writer.Write(requestObjectLabelsValue);
+                        context.Writer.WriteStringValue(requestObjectLabelsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
         }

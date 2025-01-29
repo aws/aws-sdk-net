@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDedupeString())
             {
                 context.Writer.WritePropertyName("dedupeString");
-                context.Writer.Write(requestObject.DedupeString);
+                context.Writer.WriteStringValue(requestObject.DedupeString);
             }
 
             if(requestObject.IsSetImpact())
             {
                 context.Writer.WritePropertyName("impact");
-                context.Writer.Write(requestObject.Impact.Value);
+                context.Writer.WriteNumberValue(requestObject.Impact.Value);
             }
 
             if(requestObject.IsSetIncidentTags())
             {
                 context.Writer.WritePropertyName("incidentTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectIncidentTagsKvp in requestObject.IncidentTags)
                 {
                     context.Writer.WritePropertyName(requestObjectIncidentTagsKvp.Key);
                     var requestObjectIncidentTagsValue = requestObjectIncidentTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectIncidentTagsValue);
+                        context.Writer.WriteStringValue(requestObjectIncidentTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNotificationTargets())
             {
                 context.Writer.WritePropertyName("notificationTargets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotificationTargetsListValue in requestObject.NotificationTargets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NotificationTargetItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectNotificationTargetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSummary())
             {
                 context.Writer.WritePropertyName("summary");
-                context.Writer.Write(requestObject.Summary);
+                context.Writer.WriteStringValue(requestObject.Summary);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
         }

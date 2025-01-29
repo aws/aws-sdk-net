@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopySourceArn())
             {
                 context.Writer.WritePropertyName("CopySourceArn");
-                context.Writer.Write(requestObject.CopySourceArn);
+                context.Writer.WriteStringValue(requestObject.CopySourceArn);
             }
 
             if(requestObject.IsSetCredentialPair())
             {
                 context.Writer.WritePropertyName("CredentialPair");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CredentialPairMarshaller.Instance;
                 marshaller.Marshall(requestObject.CredentialPair, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
         }

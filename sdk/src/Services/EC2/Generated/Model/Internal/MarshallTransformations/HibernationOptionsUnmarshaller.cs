@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HibernationOptions Object
     /// </summary>  
-    public class HibernationOptionsUnmarshaller : IUnmarshaller<HibernationOptions, XmlUnmarshallerContext>, IUnmarshaller<HibernationOptions, JsonUnmarshallerContext>
+    public class HibernationOptionsUnmarshaller : IXmlUnmarshaller<HibernationOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public HibernationOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static HibernationOptionsUnmarshaller _instance = new HibernationOptionsUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArgs())
             {
                 context.Writer.WritePropertyName("Args");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArgsListValue in requestObject.Args)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CodeGenNodeArgMarshaller.Instance;
                     marshaller.Marshall(requestObjectArgsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLineNumber())
             {
                 context.Writer.WritePropertyName("LineNumber");
-                context.Writer.Write(requestObject.LineNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.LineNumber.Value);
             }
 
             if(requestObject.IsSetNodeType())
             {
                 context.Writer.WritePropertyName("NodeType");
-                context.Writer.Write(requestObject.NodeType);
+                context.Writer.WriteStringValue(requestObject.NodeType);
             }
 
         }

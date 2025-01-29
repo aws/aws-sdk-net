@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ChannelStorageSummary Object
     /// </summary>  
-    public class ChannelStorageSummaryUnmarshaller : IUnmarshaller<ChannelStorageSummary, XmlUnmarshallerContext>, IUnmarshaller<ChannelStorageSummary, JsonUnmarshallerContext>
+    public class ChannelStorageSummaryUnmarshaller : IJsonUnmarshaller<ChannelStorageSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ChannelStorageSummary IUnmarshaller<ChannelStorageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChannelStorageSummary Unmarshall(JsonUnmarshallerContext context)
+        public ChannelStorageSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ChannelStorageSummary unmarshalledObject = new ChannelStorageSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customerManagedS3", targetDepth))
                 {
                     var unmarshaller = CustomerManagedChannelS3StorageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CustomerManagedS3 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomerManagedS3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceManagedS3", targetDepth))
                 {
                     var unmarshaller = ServiceManagedChannelS3StorageSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ServiceManagedS3 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceManagedS3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

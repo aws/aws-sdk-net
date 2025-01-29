@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomKnowledgeArticleTypeConfigurations())
             {
                 context.Writer.WritePropertyName("CustomKnowledgeArticleTypeConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomKnowledgeArticleTypeConfigurationsListValue in requestObject.CustomKnowledgeArticleTypeConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SalesforceCustomKnowledgeArticleTypeConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomKnowledgeArticleTypeConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludedStates())
             {
                 context.Writer.WritePropertyName("IncludedStates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludedStatesListValue in requestObject.IncludedStates)
                 {
-                        context.Writer.Write(requestObjectIncludedStatesListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludedStatesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStandardKnowledgeArticleTypeConfiguration())
             {
                 context.Writer.WritePropertyName("StandardKnowledgeArticleTypeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SalesforceStandardKnowledgeArticleTypeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.StandardKnowledgeArticleTypeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

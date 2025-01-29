@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyVPCAssociationAuthorizationsException operation
     /// </summary>  
-    public class TooManyVPCAssociationAuthorizationsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyVPCAssociationAuthorizationsException, XmlUnmarshallerContext>
+    public class TooManyVPCAssociationAuthorizationsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyVPCAssociationAuthorizationsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

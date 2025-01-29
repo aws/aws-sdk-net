@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchMetricsEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchMetricsEnabled");
-                context.Writer.Write(requestObject.CloudWatchMetricsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudWatchMetricsEnabled.Value);
             }
 
             if(requestObject.IsSetCompositeRuleEvaluationMethod())
             {
                 context.Writer.WritePropertyName("CompositeRuleEvaluationMethod");
-                context.Writer.Write(requestObject.CompositeRuleEvaluationMethod);
+                context.Writer.WriteStringValue(requestObject.CompositeRuleEvaluationMethod);
             }
 
             if(requestObject.IsSetResultsS3Prefix())
             {
                 context.Writer.WritePropertyName("ResultsS3Prefix");
-                context.Writer.Write(requestObject.ResultsS3Prefix);
+                context.Writer.WriteStringValue(requestObject.ResultsS3Prefix);
             }
 
         }

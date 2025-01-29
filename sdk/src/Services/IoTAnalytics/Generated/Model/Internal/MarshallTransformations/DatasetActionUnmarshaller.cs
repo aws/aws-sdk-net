@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DatasetAction Object
     /// </summary>  
-    public class DatasetActionUnmarshaller : IUnmarshaller<DatasetAction, XmlUnmarshallerContext>, IUnmarshaller<DatasetAction, JsonUnmarshallerContext>
+    public class DatasetActionUnmarshaller : IJsonUnmarshaller<DatasetAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DatasetAction IUnmarshaller<DatasetAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DatasetAction Unmarshall(JsonUnmarshallerContext context)
+        public DatasetAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DatasetAction unmarshalledObject = new DatasetAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("containerAction", targetDepth))
                 {
                     var unmarshaller = ContainerDatasetActionUnmarshaller.Instance;
-                    unmarshalledObject.ContainerAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queryAction", targetDepth))
                 {
                     var unmarshaller = SqlQueryDatasetActionUnmarshaller.Instance;
-                    unmarshalledObject.QueryAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

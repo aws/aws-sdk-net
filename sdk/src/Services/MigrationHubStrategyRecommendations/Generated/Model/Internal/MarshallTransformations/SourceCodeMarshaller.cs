@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTran
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetProjectName())
             {
                 context.Writer.WritePropertyName("projectName");
-                context.Writer.Write(requestObject.ProjectName);
+                context.Writer.WriteStringValue(requestObject.ProjectName);
             }
 
             if(requestObject.IsSetSourceVersion())
             {
                 context.Writer.WritePropertyName("sourceVersion");
-                context.Writer.Write(requestObject.SourceVersion);
+                context.Writer.WriteStringValue(requestObject.SourceVersion);
             }
 
             if(requestObject.IsSetVersionControl())
             {
                 context.Writer.WritePropertyName("versionControl");
-                context.Writer.Write(requestObject.VersionControl);
+                context.Writer.WriteStringValue(requestObject.VersionControl);
             }
 
         }

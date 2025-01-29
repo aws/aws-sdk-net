@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ValidStorageOptions Object
     /// </summary>  
-    public class ValidStorageOptionsUnmarshaller : IUnmarshaller<ValidStorageOptions, XmlUnmarshallerContext>, IUnmarshaller<ValidStorageOptions, JsonUnmarshallerContext>
+    public class ValidStorageOptionsUnmarshaller : IXmlUnmarshaller<ValidStorageOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -103,17 +103,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ValidStorageOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ValidStorageOptionsUnmarshaller _instance = new ValidStorageOptionsUnmarshaller();        
 

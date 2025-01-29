@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDrmSystems())
             {
                 context.Writer.WritePropertyName("DrmSystems");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDrmSystemsListValue in requestObject.DrmSystems)
                 {
-                        context.Writer.Write(requestObjectDrmSystemsListValue);
+                        context.Writer.WriteStringValue(requestObjectDrmSystemsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEncryptionContractConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionContractConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionContractConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionContractConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("ResourceId");
-                context.Writer.Write(requestObject.ResourceId);
+                context.Writer.WriteStringValue(requestObject.ResourceId);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

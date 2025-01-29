@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCreatedAfter())
             {
                 context.Writer.WritePropertyName("CreatedAfter");
-                context.Writer.Write(requestObject.CreatedAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedAfter.Value)));
             }
 
             if(requestObject.IsSetCreatedBefore())
             {
                 context.Writer.WritePropertyName("CreatedBefore");
-                context.Writer.Write(requestObject.CreatedBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.CreatedBefore.Value)));
             }
 
             if(requestObject.IsSetGlueVersion())
             {
                 context.Writer.WritePropertyName("GlueVersion");
-                context.Writer.Write(requestObject.GlueVersion);
+                context.Writer.WriteStringValue(requestObject.GlueVersion);
             }
 
             if(requestObject.IsSetLastModifiedAfter())
             {
                 context.Writer.WritePropertyName("LastModifiedAfter");
-                context.Writer.Write(requestObject.LastModifiedAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastModifiedAfter.Value)));
             }
 
             if(requestObject.IsSetLastModifiedBefore())
             {
                 context.Writer.WritePropertyName("LastModifiedBefore");
-                context.Writer.Write(requestObject.LastModifiedBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LastModifiedBefore.Value)));
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("Schema");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSchemaListValue in requestObject.Schema)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SchemaColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectSchemaListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetTransformType())
             {
                 context.Writer.WritePropertyName("TransformType");
-                context.Writer.Write(requestObject.TransformType);
+                context.Writer.WriteStringValue(requestObject.TransformType);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBProxyTargetGroupNotFoundException operation
     /// </summary>  
-    public class DBProxyTargetGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBProxyTargetGroupNotFoundException, XmlUnmarshallerContext>
+    public class DBProxyTargetGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBProxyTargetGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

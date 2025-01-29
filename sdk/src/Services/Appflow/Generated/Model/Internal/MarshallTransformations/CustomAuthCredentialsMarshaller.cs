@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCredentialsMap())
             {
                 context.Writer.WritePropertyName("credentialsMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCredentialsMapKvp in requestObject.CredentialsMap)
                 {
                     context.Writer.WritePropertyName(requestObjectCredentialsMapKvp.Key);
                     var requestObjectCredentialsMapValue = requestObjectCredentialsMapKvp.Value;
 
-                        context.Writer.Write(requestObjectCredentialsMapValue);
+                        context.Writer.WriteStringValue(requestObjectCredentialsMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomAuthenticationType())
             {
                 context.Writer.WritePropertyName("customAuthenticationType");
-                context.Writer.Write(requestObject.CustomAuthenticationType);
+                context.Writer.WriteStringValue(requestObject.CustomAuthenticationType);
             }
 
         }

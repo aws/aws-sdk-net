@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociations())
             {
                 context.Writer.WritePropertyName("Associations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssociationsListValue in requestObject.Associations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2NetworkAclAssociationMarshaller.Instance;
                     marshaller.Marshall(requestObjectAssociationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntries())
             {
                 context.Writer.WritePropertyName("Entries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntriesListValue in requestObject.Entries)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2NetworkAclEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectEntriesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIsDefault())
             {
                 context.Writer.WritePropertyName("IsDefault");
-                context.Writer.Write(requestObject.IsDefault.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsDefault.Value);
             }
 
             if(requestObject.IsSetNetworkAclId())
             {
                 context.Writer.WritePropertyName("NetworkAclId");
-                context.Writer.Write(requestObject.NetworkAclId);
+                context.Writer.WriteStringValue(requestObject.NetworkAclId);
             }
 
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
+                context.Writer.WriteStringValue(requestObject.OwnerId);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

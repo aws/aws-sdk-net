@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceRole Object
     /// </summary>  
-    public class DBInstanceRoleUnmarshaller : IUnmarshaller<DBInstanceRole, XmlUnmarshallerContext>, IUnmarshaller<DBInstanceRole, JsonUnmarshallerContext>
+    public class DBInstanceRoleUnmarshaller : IXmlUnmarshaller<DBInstanceRole, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DBInstanceRole Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DBInstanceRoleUnmarshaller _instance = new DBInstanceRoleUnmarshaller();        
 

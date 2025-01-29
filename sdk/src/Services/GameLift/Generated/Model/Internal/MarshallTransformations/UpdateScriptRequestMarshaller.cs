@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -63,54 +66,59 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetScriptId())
-                    {
-                        context.Writer.WritePropertyName("ScriptId");
-                        context.Writer.Write(publicRequest.ScriptId);
-                    }
-
-                    if(publicRequest.IsSetStorageLocation())
-                    {
-                        context.Writer.WritePropertyName("StorageLocation");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3LocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StorageLocation, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetVersion())
-                    {
-                        context.Writer.WritePropertyName("Version");
-                        context.Writer.Write(publicRequest.Version);
-                    }
-
-                    if(publicRequest.IsSetZipFile())
-                    {
-                        context.Writer.WritePropertyName("ZipFile");
-                        context.Writer.Write(StringUtils.FromMemoryStream(publicRequest.ZipFile));
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
             }
+
+            if(publicRequest.IsSetScriptId())
+            {
+                context.Writer.WritePropertyName("ScriptId");
+                context.Writer.WriteStringValue(publicRequest.ScriptId);
+            }
+
+            if(publicRequest.IsSetStorageLocation())
+            {
+                context.Writer.WritePropertyName("StorageLocation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StorageLocation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetVersion())
+            {
+                context.Writer.WritePropertyName("Version");
+                context.Writer.WriteStringValue(publicRequest.Version);
+            }
+
+            if(publicRequest.IsSetZipFile())
+            {
+                context.Writer.WritePropertyName("ZipFile");
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(publicRequest.ZipFile));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchResponseHeadersPolicyException operation
     /// </summary>  
-    public class NoSuchResponseHeadersPolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchResponseHeadersPolicyException, XmlUnmarshallerContext>
+    public class NoSuchResponseHeadersPolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchResponseHeadersPolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

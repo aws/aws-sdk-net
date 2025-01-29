@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Block Object
     /// </summary>  
-    public class BlockUnmarshaller : IUnmarshaller<Block, XmlUnmarshallerContext>, IUnmarshaller<Block, JsonUnmarshallerContext>
+    public class BlockUnmarshaller : IJsonUnmarshaller<Block, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Block IUnmarshaller<Block, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Block Unmarshall(JsonUnmarshallerContext context)
+        public Block Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Block unmarshalledObject = new Block();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BlockType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BlockType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlockType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnIndex", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ColumnIndex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ColumnSpan", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ColumnSpan = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColumnSpan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Confidence", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Confidence = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EntityTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EntityTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Geometry", targetDepth))
                 {
                     var unmarshaller = GeometryUnmarshaller.Instance;
-                    unmarshalledObject.Geometry = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Geometry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Page", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Page = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Page = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Query", targetDepth))
                 {
                     var unmarshaller = QueryUnmarshaller.Instance;
-                    unmarshalledObject.Query = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Query = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Relationships", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Relationship, RelationshipUnmarshaller>(RelationshipUnmarshaller.Instance);
-                    unmarshalledObject.Relationships = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Relationship, RelationshipUnmarshaller>(RelationshipUnmarshaller.Instance);
+                    unmarshalledObject.Relationships = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowIndex", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RowIndex = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowIndex = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RowSpan", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RowSpan = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RowSpan = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectionStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectionStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Text", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Text = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Text = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TextType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TextType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

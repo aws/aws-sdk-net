@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -61,71 +64,76 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/pindata/generate";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEncryptionKeyIdentifier())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEncryptionKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("EncryptionKeyIdentifier");
-                        context.Writer.Write(publicRequest.EncryptionKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetEncryptionWrappedKey())
-                    {
-                        context.Writer.WritePropertyName("EncryptionWrappedKey");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = WrappedKeyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncryptionWrappedKey, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGenerationAttributes())
-                    {
-                        context.Writer.WritePropertyName("GenerationAttributes");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PinGenerationAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GenerationAttributes, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGenerationKeyIdentifier())
-                    {
-                        context.Writer.WritePropertyName("GenerationKeyIdentifier");
-                        context.Writer.Write(publicRequest.GenerationKeyIdentifier);
-                    }
-
-                    if(publicRequest.IsSetPinBlockFormat())
-                    {
-                        context.Writer.WritePropertyName("PinBlockFormat");
-                        context.Writer.Write(publicRequest.PinBlockFormat);
-                    }
-
-                    if(publicRequest.IsSetPinDataLength())
-                    {
-                        context.Writer.WritePropertyName("PinDataLength");
-                        context.Writer.Write(publicRequest.PinDataLength.Value);
-                    }
-
-                    if(publicRequest.IsSetPrimaryAccountNumber())
-                    {
-                        context.Writer.WritePropertyName("PrimaryAccountNumber");
-                        context.Writer.Write(publicRequest.PrimaryAccountNumber);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("EncryptionKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.EncryptionKeyIdentifier);
             }
+
+            if(publicRequest.IsSetEncryptionWrappedKey())
+            {
+                context.Writer.WritePropertyName("EncryptionWrappedKey");
+                context.Writer.WriteStartObject();
+
+                var marshaller = WrappedKeyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionWrappedKey, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGenerationAttributes())
+            {
+                context.Writer.WritePropertyName("GenerationAttributes");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PinGenerationAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GenerationAttributes, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGenerationKeyIdentifier())
+            {
+                context.Writer.WritePropertyName("GenerationKeyIdentifier");
+                context.Writer.WriteStringValue(publicRequest.GenerationKeyIdentifier);
+            }
+
+            if(publicRequest.IsSetPinBlockFormat())
+            {
+                context.Writer.WritePropertyName("PinBlockFormat");
+                context.Writer.WriteStringValue(publicRequest.PinBlockFormat);
+            }
+
+            if(publicRequest.IsSetPinDataLength())
+            {
+                context.Writer.WritePropertyName("PinDataLength");
+                context.Writer.WriteNumberValue(publicRequest.PinDataLength.Value);
+            }
+
+            if(publicRequest.IsSetPrimaryAccountNumber())
+            {
+                context.Writer.WritePropertyName("PrimaryAccountNumber");
+                context.Writer.WriteStringValue(publicRequest.PrimaryAccountNumber);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

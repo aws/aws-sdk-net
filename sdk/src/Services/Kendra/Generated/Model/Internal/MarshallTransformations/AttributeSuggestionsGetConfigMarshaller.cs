@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalResponseAttributes())
             {
                 context.Writer.WritePropertyName("AdditionalResponseAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalResponseAttributesListValue in requestObject.AdditionalResponseAttributes)
                 {
-                        context.Writer.Write(requestObjectAdditionalResponseAttributesListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalResponseAttributesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAttributeFilter())
             {
                 context.Writer.WritePropertyName("AttributeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSuggestionAttributes())
             {
                 context.Writer.WritePropertyName("SuggestionAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSuggestionAttributesListValue in requestObject.SuggestionAttributes)
                 {
-                        context.Writer.Write(requestObjectSuggestionAttributesListValue);
+                        context.Writer.WriteStringValue(requestObjectSuggestionAttributesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUserContext())
             {
                 context.Writer.WritePropertyName("UserContext");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UserContextMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserContext, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

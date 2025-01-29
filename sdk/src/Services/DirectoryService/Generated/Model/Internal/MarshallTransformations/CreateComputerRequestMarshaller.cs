@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
 {
@@ -63,59 +66,64 @@ namespace Amazon.DirectoryService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComputerAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ComputerAttributes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestComputerAttributesListValue in publicRequest.ComputerAttributes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComputerAttributes())
-                    {
-                        context.Writer.WritePropertyName("ComputerAttributes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestComputerAttributesListValue in publicRequest.ComputerAttributes)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AttributeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestComputerAttributesListValue, context);
+                    var marshaller = AttributeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestComputerAttributesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetComputerName())
-                    {
-                        context.Writer.WritePropertyName("ComputerName");
-                        context.Writer.Write(publicRequest.ComputerName);
-                    }
-
-                    if(publicRequest.IsSetDirectoryId())
-                    {
-                        context.Writer.WritePropertyName("DirectoryId");
-                        context.Writer.Write(publicRequest.DirectoryId);
-                    }
-
-                    if(publicRequest.IsSetOrganizationalUnitDistinguishedName())
-                    {
-                        context.Writer.WritePropertyName("OrganizationalUnitDistinguishedName");
-                        context.Writer.Write(publicRequest.OrganizationalUnitDistinguishedName);
-                    }
-
-                    if(publicRequest.IsSetPassword())
-                    {
-                        context.Writer.WritePropertyName("Password");
-                        context.Writer.Write(publicRequest.Password);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetComputerName())
+            {
+                context.Writer.WritePropertyName("ComputerName");
+                context.Writer.WriteStringValue(publicRequest.ComputerName);
+            }
+
+            if(publicRequest.IsSetDirectoryId())
+            {
+                context.Writer.WritePropertyName("DirectoryId");
+                context.Writer.WriteStringValue(publicRequest.DirectoryId);
+            }
+
+            if(publicRequest.IsSetOrganizationalUnitDistinguishedName())
+            {
+                context.Writer.WritePropertyName("OrganizationalUnitDistinguishedName");
+                context.Writer.WriteStringValue(publicRequest.OrganizationalUnitDistinguishedName);
+            }
+
+            if(publicRequest.IsSetPassword())
+            {
+                context.Writer.WritePropertyName("Password");
+                context.Writer.WriteStringValue(publicRequest.Password);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

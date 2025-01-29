@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSOAdmin.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ApplicationAssignmentForPrincipal Object
     /// </summary>  
-    public class ApplicationAssignmentForPrincipalUnmarshaller : IUnmarshaller<ApplicationAssignmentForPrincipal, XmlUnmarshallerContext>, IUnmarshaller<ApplicationAssignmentForPrincipal, JsonUnmarshallerContext>
+    public class ApplicationAssignmentForPrincipalUnmarshaller : IJsonUnmarshaller<ApplicationAssignmentForPrincipal, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ApplicationAssignmentForPrincipal IUnmarshaller<ApplicationAssignmentForPrincipal, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ApplicationAssignmentForPrincipal Unmarshall(JsonUnmarshallerContext context)
+        public ApplicationAssignmentForPrincipal Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ApplicationAssignmentForPrincipal unmarshalledObject = new ApplicationAssignmentForPrincipal();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApplicationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrincipalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrincipalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrincipalType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrincipalType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrincipalType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

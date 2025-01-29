@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MultiplexProgram Object
     /// </summary>  
-    public class MultiplexProgramUnmarshaller : IUnmarshaller<MultiplexProgram, XmlUnmarshallerContext>, IUnmarshaller<MultiplexProgram, JsonUnmarshallerContext>
+    public class MultiplexProgramUnmarshaller : IJsonUnmarshaller<MultiplexProgram, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MultiplexProgram IUnmarshaller<MultiplexProgram, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MultiplexProgram Unmarshall(JsonUnmarshallerContext context)
+        public MultiplexProgram Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MultiplexProgram unmarshalledObject = new MultiplexProgram();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("channelId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("multiplexProgramSettings", targetDepth))
                 {
                     var unmarshaller = MultiplexProgramSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MultiplexProgramSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MultiplexProgramSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("packetIdentifiersMap", targetDepth))
                 {
                     var unmarshaller = MultiplexProgramPacketIdentifiersMapUnmarshaller.Instance;
-                    unmarshalledObject.PacketIdentifiersMap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PacketIdentifiersMap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pipelineDetails", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MultiplexProgramPipelineDetail, MultiplexProgramPipelineDetailUnmarshaller>(MultiplexProgramPipelineDetailUnmarshaller.Instance);
-                    unmarshalledObject.PipelineDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MultiplexProgramPipelineDetail, MultiplexProgramPipelineDetailUnmarshaller>(MultiplexProgramPipelineDetailUnmarshaller.Instance);
+                    unmarshalledObject.PipelineDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("programName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgramName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

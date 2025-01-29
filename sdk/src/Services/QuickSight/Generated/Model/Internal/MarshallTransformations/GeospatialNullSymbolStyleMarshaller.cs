@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFillColor())
             {
                 context.Writer.WritePropertyName("FillColor");
-                context.Writer.Write(requestObject.FillColor);
+                context.Writer.WriteStringValue(requestObject.FillColor);
             }
 
             if(requestObject.IsSetStrokeColor())
             {
                 context.Writer.WritePropertyName("StrokeColor");
-                context.Writer.Write(requestObject.StrokeColor);
+                context.Writer.WriteStringValue(requestObject.StrokeColor);
             }
 
             if(requestObject.IsSetStrokeWidth())
@@ -65,11 +63,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("StrokeWidth");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.StrokeWidth.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StrokeWidth.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.StrokeWidth.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StrokeWidth.Value);
+                    context.Writer.WriteNumberValue(requestObject.StrokeWidth.Value);
                 }
             }
 

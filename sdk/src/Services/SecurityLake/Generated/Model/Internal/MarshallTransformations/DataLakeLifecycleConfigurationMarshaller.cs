@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpiration())
             {
                 context.Writer.WritePropertyName("expiration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataLakeLifecycleExpirationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Expiration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransitions())
             {
                 context.Writer.WritePropertyName("transitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTransitionsListValue in requestObject.Transitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataLakeLifecycleTransitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTransitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

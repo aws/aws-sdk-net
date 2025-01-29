@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
@@ -61,57 +64,62 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/apps.updateQAppPermissions";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppId())
-                    {
-                        context.Writer.WritePropertyName("appId");
-                        context.Writer.Write(publicRequest.AppId);
-                    }
-
-                    if(publicRequest.IsSetGrantPermissions())
-                    {
-                        context.Writer.WritePropertyName("grantPermissions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PermissionInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRevokePermissions())
-                    {
-                        context.Writer.WritePropertyName("revokePermissions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PermissionInputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("appId");
+                context.Writer.WriteStringValue(publicRequest.AppId);
             }
+
+            if(publicRequest.IsSetGrantPermissions())
+            {
+                context.Writer.WritePropertyName("grantPermissions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGrantPermissionsListValue in publicRequest.GrantPermissions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PermissionInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGrantPermissionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRevokePermissions())
+            {
+                context.Writer.WritePropertyName("revokePermissions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRevokePermissionsListValue in publicRequest.RevokePermissions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PermissionInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRevokePermissionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetInstanceId()) 

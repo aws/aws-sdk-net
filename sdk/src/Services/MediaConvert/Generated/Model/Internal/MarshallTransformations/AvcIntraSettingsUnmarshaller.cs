@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AvcIntraSettings Object
     /// </summary>  
-    public class AvcIntraSettingsUnmarshaller : IUnmarshaller<AvcIntraSettings, XmlUnmarshallerContext>, IUnmarshaller<AvcIntraSettings, JsonUnmarshallerContext>
+    public class AvcIntraSettingsUnmarshaller : IJsonUnmarshaller<AvcIntraSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AvcIntraSettings IUnmarshaller<AvcIntraSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AvcIntraSettings Unmarshall(JsonUnmarshallerContext context)
+        public AvcIntraSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AvcIntraSettings unmarshalledObject = new AvcIntraSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("avcIntraClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvcIntraClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvcIntraClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("avcIntraUhdSettings", targetDepth))
                 {
                     var unmarshaller = AvcIntraUhdSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AvcIntraUhdSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvcIntraUhdSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FramerateControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateConversionAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FramerateConversionAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateConversionAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateDenominator", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateDenominator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("framerateNumerator", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FramerateNumerator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("interlaceMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InterlaceMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InterlaceMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scanTypeConversionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ScanTypeConversionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScanTypeConversionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slowPal", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SlowPal = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SlowPal = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("telecine", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Telecine = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Telecine = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

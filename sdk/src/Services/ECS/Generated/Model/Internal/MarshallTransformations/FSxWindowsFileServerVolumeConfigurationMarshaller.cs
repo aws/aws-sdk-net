@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationConfig())
             {
                 context.Writer.WritePropertyName("authorizationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FSxWindowsFileServerAuthorizationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthorizationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFileSystemId())
             {
                 context.Writer.WritePropertyName("fileSystemId");
-                context.Writer.Write(requestObject.FileSystemId);
+                context.Writer.WriteStringValue(requestObject.FileSystemId);
             }
 
             if(requestObject.IsSetRootDirectory())
             {
                 context.Writer.WritePropertyName("rootDirectory");
-                context.Writer.Write(requestObject.RootDirectory);
+                context.Writer.WriteStringValue(requestObject.RootDirectory);
             }
 
         }

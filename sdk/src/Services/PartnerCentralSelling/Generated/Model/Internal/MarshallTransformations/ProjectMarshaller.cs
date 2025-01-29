@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,98 +49,98 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalComments())
             {
                 context.Writer.WritePropertyName("AdditionalComments");
-                context.Writer.Write(requestObject.AdditionalComments);
+                context.Writer.WriteStringValue(requestObject.AdditionalComments);
             }
 
             if(requestObject.IsSetApnPrograms())
             {
                 context.Writer.WritePropertyName("ApnPrograms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectApnProgramsListValue in requestObject.ApnPrograms)
                 {
-                        context.Writer.Write(requestObjectApnProgramsListValue);
+                        context.Writer.WriteStringValue(requestObjectApnProgramsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCompetitorName())
             {
                 context.Writer.WritePropertyName("CompetitorName");
-                context.Writer.Write(requestObject.CompetitorName);
+                context.Writer.WriteStringValue(requestObject.CompetitorName);
             }
 
             if(requestObject.IsSetCustomerBusinessProblem())
             {
                 context.Writer.WritePropertyName("CustomerBusinessProblem");
-                context.Writer.Write(requestObject.CustomerBusinessProblem);
+                context.Writer.WriteStringValue(requestObject.CustomerBusinessProblem);
             }
 
             if(requestObject.IsSetCustomerUseCase())
             {
                 context.Writer.WritePropertyName("CustomerUseCase");
-                context.Writer.Write(requestObject.CustomerUseCase);
+                context.Writer.WriteStringValue(requestObject.CustomerUseCase);
             }
 
             if(requestObject.IsSetDeliveryModels())
             {
                 context.Writer.WritePropertyName("DeliveryModels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDeliveryModelsListValue in requestObject.DeliveryModels)
                 {
-                        context.Writer.Write(requestObjectDeliveryModelsListValue);
+                        context.Writer.WriteStringValue(requestObjectDeliveryModelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExpectedCustomerSpend())
             {
                 context.Writer.WritePropertyName("ExpectedCustomerSpend");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExpectedCustomerSpendListValue in requestObject.ExpectedCustomerSpend)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExpectedCustomerSpendMarshaller.Instance;
                     marshaller.Marshall(requestObjectExpectedCustomerSpendListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOtherCompetitorNames())
             {
                 context.Writer.WritePropertyName("OtherCompetitorNames");
-                context.Writer.Write(requestObject.OtherCompetitorNames);
+                context.Writer.WriteStringValue(requestObject.OtherCompetitorNames);
             }
 
             if(requestObject.IsSetOtherSolutionDescription())
             {
                 context.Writer.WritePropertyName("OtherSolutionDescription");
-                context.Writer.Write(requestObject.OtherSolutionDescription);
+                context.Writer.WriteStringValue(requestObject.OtherSolutionDescription);
             }
 
             if(requestObject.IsSetRelatedOpportunityIdentifier())
             {
                 context.Writer.WritePropertyName("RelatedOpportunityIdentifier");
-                context.Writer.Write(requestObject.RelatedOpportunityIdentifier);
+                context.Writer.WriteStringValue(requestObject.RelatedOpportunityIdentifier);
             }
 
             if(requestObject.IsSetSalesActivities())
             {
                 context.Writer.WritePropertyName("SalesActivities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSalesActivitiesListValue in requestObject.SalesActivities)
                 {
-                        context.Writer.Write(requestObjectSalesActivitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectSalesActivitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
         }

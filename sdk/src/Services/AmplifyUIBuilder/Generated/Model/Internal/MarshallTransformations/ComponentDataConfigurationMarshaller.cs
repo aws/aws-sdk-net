@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIdentifiers())
             {
                 context.Writer.WritePropertyName("identifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIdentifiersListValue in requestObject.Identifiers)
                 {
-                        context.Writer.Write(requestObjectIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetModel())
             {
                 context.Writer.WritePropertyName("model");
-                context.Writer.Write(requestObject.Model);
+                context.Writer.WriteStringValue(requestObject.Model);
             }
 
             if(requestObject.IsSetPredicate())
             {
                 context.Writer.WritePropertyName("predicate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredicateMarshaller.Instance;
                 marshaller.Marshall(requestObject.Predicate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSort())
             {
                 context.Writer.WritePropertyName("sort");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSortListValue in requestObject.Sort)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SortPropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectSortListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

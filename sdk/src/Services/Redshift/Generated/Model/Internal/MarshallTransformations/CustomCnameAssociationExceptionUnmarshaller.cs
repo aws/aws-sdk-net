@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomCnameAssociationException operation
     /// </summary>  
-    public class CustomCnameAssociationExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomCnameAssociationException, XmlUnmarshallerContext>
+    public class CustomCnameAssociationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomCnameAssociationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

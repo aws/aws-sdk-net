@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SMSMessageTemplateContentBody Object
     /// </summary>  
-    public class SMSMessageTemplateContentBodyUnmarshaller : IUnmarshaller<SMSMessageTemplateContentBody, XmlUnmarshallerContext>, IUnmarshaller<SMSMessageTemplateContentBody, JsonUnmarshallerContext>
+    public class SMSMessageTemplateContentBodyUnmarshaller : IJsonUnmarshaller<SMSMessageTemplateContentBody, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SMSMessageTemplateContentBody IUnmarshaller<SMSMessageTemplateContentBody, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SMSMessageTemplateContentBody Unmarshall(JsonUnmarshallerContext context)
+        public SMSMessageTemplateContentBody Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SMSMessageTemplateContentBody unmarshalledObject = new SMSMessageTemplateContentBody();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("plainText", targetDepth))
                 {
                     var unmarshaller = MessageTemplateBodyContentProviderUnmarshaller.Instance;
-                    unmarshalledObject.PlainText = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlainText = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

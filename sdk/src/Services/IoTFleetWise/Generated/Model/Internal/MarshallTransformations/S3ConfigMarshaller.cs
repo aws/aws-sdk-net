@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketArn())
             {
                 context.Writer.WritePropertyName("bucketArn");
-                context.Writer.Write(requestObject.BucketArn);
+                context.Writer.WriteStringValue(requestObject.BucketArn);
             }
 
             if(requestObject.IsSetDataFormat())
             {
                 context.Writer.WritePropertyName("dataFormat");
-                context.Writer.Write(requestObject.DataFormat);
+                context.Writer.WriteStringValue(requestObject.DataFormat);
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetStorageCompressionFormat())
             {
                 context.Writer.WritePropertyName("storageCompressionFormat");
-                context.Writer.Write(requestObject.StorageCompressionFormat);
+                context.Writer.WriteStringValue(requestObject.StorageCompressionFormat);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoOperationException operation
     /// </summary>  
-    public class NoOperationExceptionUnmarshaller : IErrorResponseUnmarshaller<NoOperationException, XmlUnmarshallerContext>
+    public class NoOperationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoOperationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

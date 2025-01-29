@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSubTypeName())
             {
                 context.Writer.WritePropertyName("SubTypeName");
-                context.Writer.Write(requestObject.SubTypeName);
+                context.Writer.WriteStringValue(requestObject.SubTypeName);
             }
 
             if(requestObject.IsSetTypeName())
             {
                 context.Writer.WritePropertyName("TypeName");
-                context.Writer.Write(requestObject.TypeName);
+                context.Writer.WriteStringValue(requestObject.TypeName);
             }
 
             if(requestObject.IsSetTypeParameters())
             {
                 context.Writer.WritePropertyName("TypeParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTypeParametersKvp in requestObject.TypeParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectTypeParametersKvp.Key);
                     var requestObjectTypeParametersValue = requestObjectTypeParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectTypeParametersValue);
+                        context.Writer.WriteStringValue(requestObjectTypeParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

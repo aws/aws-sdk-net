@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigurationSummary Object
     /// </summary>  
-    public class ConfigurationSummaryUnmarshaller : IUnmarshaller<ConfigurationSummary, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationSummary, JsonUnmarshallerContext>
+    public class ConfigurationSummaryUnmarshaller : IJsonUnmarshaller<ConfigurationSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfigurationSummary IUnmarshaller<ConfigurationSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationSummary Unmarshall(JsonUnmarshallerContext context)
+        public ConfigurationSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfigurationSummary unmarshalledObject = new ConfigurationSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ipAddressBasedRemoteInfoList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<IPAddressBasedRemoteInfo, IPAddressBasedRemoteInfoUnmarshaller>(IPAddressBasedRemoteInfoUnmarshaller.Instance);
-                    unmarshalledObject.IpAddressBasedRemoteInfoList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<IPAddressBasedRemoteInfo, IPAddressBasedRemoteInfoUnmarshaller>(IPAddressBasedRemoteInfoUnmarshaller.Instance);
+                    unmarshalledObject.IpAddressBasedRemoteInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pipelineInfoList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PipelineInfo, PipelineInfoUnmarshaller>(PipelineInfoUnmarshaller.Instance);
-                    unmarshalledObject.PipelineInfoList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PipelineInfo, PipelineInfoUnmarshaller>(PipelineInfoUnmarshaller.Instance);
+                    unmarshalledObject.PipelineInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("remoteSourceCodeAnalysisServerInfo", targetDepth))
                 {
                     var unmarshaller = RemoteSourceCodeAnalysisServerInfoUnmarshaller.Instance;
-                    unmarshalledObject.RemoteSourceCodeAnalysisServerInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemoteSourceCodeAnalysisServerInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vcenterBasedRemoteInfoList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VcenterBasedRemoteInfo, VcenterBasedRemoteInfoUnmarshaller>(VcenterBasedRemoteInfoUnmarshaller.Instance);
-                    unmarshalledObject.VcenterBasedRemoteInfoList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VcenterBasedRemoteInfo, VcenterBasedRemoteInfoUnmarshaller>(VcenterBasedRemoteInfoUnmarshaller.Instance);
+                    unmarshalledObject.VcenterBasedRemoteInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("versionControlInfoList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VersionControlInfo, VersionControlInfoUnmarshaller>(VersionControlInfoUnmarshaller.Instance);
-                    unmarshalledObject.VersionControlInfoList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VersionControlInfo, VersionControlInfoUnmarshaller>(VersionControlInfoUnmarshaller.Instance);
+                    unmarshalledObject.VersionControlInfoList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

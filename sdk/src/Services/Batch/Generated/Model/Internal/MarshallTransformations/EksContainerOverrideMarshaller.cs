@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArgs())
             {
                 context.Writer.WritePropertyName("args");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArgsListValue in requestObject.Args)
                 {
-                        context.Writer.Write(requestObjectArgsListValue);
+                        context.Writer.WriteStringValue(requestObjectArgsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommandListValue in requestObject.Command)
                 {
-                        context.Writer.Write(requestObjectCommandListValue);
+                        context.Writer.WriteStringValue(requestObjectCommandListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnv())
             {
                 context.Writer.WritePropertyName("env");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvListValue in requestObject.Env)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EksContainerEnvironmentVariableMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetResources())
             {
                 context.Writer.WritePropertyName("resources");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EksContainerResourceRequirementsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Resources, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

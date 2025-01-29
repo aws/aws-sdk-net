@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("bucket");
-                context.Writer.Write(requestObject.Bucket);
+                context.Writer.WriteStringValue(requestObject.Bucket);
             }
 
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.Write(requestObject.DefaultValue);
+                context.Writer.WriteStringValue(requestObject.DefaultValue);
             }
 
             if(requestObject.IsSetField())
             {
                 context.Writer.WritePropertyName("field");
-                context.Writer.Write(requestObject.Field);
+                context.Writer.WriteStringValue(requestObject.Field);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetModel())
             {
                 context.Writer.WritePropertyName("model");
-                context.Writer.Write(requestObject.Model);
+                context.Writer.WriteStringValue(requestObject.Model);
             }
 
             if(requestObject.IsSetPredicates())
             {
                 context.Writer.WritePropertyName("predicates");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPredicatesListValue in requestObject.Predicates)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PredicateMarshaller.Instance;
                     marshaller.Marshall(requestObjectPredicatesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSlotName())
             {
                 context.Writer.WritePropertyName("slotName");
-                context.Writer.Write(requestObject.SlotName);
+                context.Writer.WriteStringValue(requestObject.SlotName);
             }
 
             if(requestObject.IsSetUserAttribute())
             {
                 context.Writer.WritePropertyName("userAttribute");
-                context.Writer.Write(requestObject.UserAttribute);
+                context.Writer.WriteStringValue(requestObject.UserAttribute);
             }
 
         }

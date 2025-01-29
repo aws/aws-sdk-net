@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxSnapshotAgeHours())
             {
                 context.Writer.WritePropertyName("maxSnapshotAgeHours");
-                context.Writer.Write(requestObject.MaxSnapshotAgeHours.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxSnapshotAgeHours.Value);
             }
 
             if(requestObject.IsSetMinSnapshotsToKeep())
             {
                 context.Writer.WritePropertyName("minSnapshotsToKeep");
-                context.Writer.Write(requestObject.MinSnapshotsToKeep.Value);
+                context.Writer.WriteNumberValue(requestObject.MinSnapshotsToKeep.Value);
             }
 
         }

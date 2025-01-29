@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCmkType())
             {
                 context.Writer.WritePropertyName("CmkType");
-                context.Writer.Write(requestObject.CmkType);
+                context.Writer.WriteStringValue(requestObject.CmkType);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
         }

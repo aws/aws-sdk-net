@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProgressUpdateStreamSummary Object
     /// </summary>  
-    public class ProgressUpdateStreamSummaryUnmarshaller : IUnmarshaller<ProgressUpdateStreamSummary, XmlUnmarshallerContext>, IUnmarshaller<ProgressUpdateStreamSummary, JsonUnmarshallerContext>
+    public class ProgressUpdateStreamSummaryUnmarshaller : IJsonUnmarshaller<ProgressUpdateStreamSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProgressUpdateStreamSummary IUnmarshaller<ProgressUpdateStreamSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProgressUpdateStreamSummary Unmarshall(JsonUnmarshallerContext context)
+        public ProgressUpdateStreamSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProgressUpdateStreamSummary unmarshalledObject = new ProgressUpdateStreamSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ProgressUpdateStreamName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProgressUpdateStreamName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgressUpdateStreamName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

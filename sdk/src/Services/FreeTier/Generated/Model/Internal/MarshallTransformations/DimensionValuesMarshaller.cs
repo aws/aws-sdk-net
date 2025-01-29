@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.FreeTier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetMatchOptions())
             {
                 context.Writer.WritePropertyName("MatchOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMatchOptionsListValue in requestObject.MatchOptions)
                 {
-                        context.Writer.Write(requestObjectMatchOptionsListValue);
+                        context.Writer.WriteStringValue(requestObjectMatchOptionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetValues())
             {
                 context.Writer.WritePropertyName("Values");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValuesListValue in requestObject.Values)
                 {
-                        context.Writer.Write(requestObjectValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

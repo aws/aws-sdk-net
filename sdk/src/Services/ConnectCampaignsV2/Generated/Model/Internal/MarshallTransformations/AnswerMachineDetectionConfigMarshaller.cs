@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwaitAnswerMachinePrompt())
             {
                 context.Writer.WritePropertyName("awaitAnswerMachinePrompt");
-                context.Writer.Write(requestObject.AwaitAnswerMachinePrompt.Value);
+                context.Writer.WriteBooleanValue(requestObject.AwaitAnswerMachinePrompt.Value);
             }
 
             if(requestObject.IsSetEnableAnswerMachineDetection())
             {
                 context.Writer.WritePropertyName("enableAnswerMachineDetection");
-                context.Writer.Write(requestObject.EnableAnswerMachineDetection.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableAnswerMachineDetection.Value);
             }
 
         }

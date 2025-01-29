@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategoricalParameterRanges())
             {
                 context.Writer.WritePropertyName("CategoricalParameterRanges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCategoricalParameterRangesListValue in requestObject.CategoricalParameterRanges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CategoricalParameterRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectCategoricalParameterRangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContinuousParameterRanges())
             {
                 context.Writer.WritePropertyName("ContinuousParameterRanges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContinuousParameterRangesListValue in requestObject.ContinuousParameterRanges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContinuousParameterRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectContinuousParameterRangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIntegerParameterRanges())
             {
                 context.Writer.WritePropertyName("IntegerParameterRanges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIntegerParameterRangesListValue in requestObject.IntegerParameterRanges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IntegerParameterRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectIntegerParameterRangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

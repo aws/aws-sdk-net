@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CalculatedAttributeDimension Object
     /// </summary>  
-    public class CalculatedAttributeDimensionUnmarshaller : IUnmarshaller<CalculatedAttributeDimension, XmlUnmarshallerContext>, IUnmarshaller<CalculatedAttributeDimension, JsonUnmarshallerContext>
+    public class CalculatedAttributeDimensionUnmarshaller : IJsonUnmarshaller<CalculatedAttributeDimension, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CalculatedAttributeDimension IUnmarshaller<CalculatedAttributeDimension, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CalculatedAttributeDimension Unmarshall(JsonUnmarshallerContext context)
+        public CalculatedAttributeDimension Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CalculatedAttributeDimension unmarshalledObject = new CalculatedAttributeDimension();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConditionOverrides", targetDepth))
                 {
                     var unmarshaller = ConditionOverridesUnmarshaller.Instance;
-                    unmarshalledObject.ConditionOverrides = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConditionOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DimensionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DimensionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DimensionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Values", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Values = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Values = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

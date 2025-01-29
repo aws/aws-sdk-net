@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.SocialMessaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssociateInProgressToken())
             {
                 context.Writer.WritePropertyName("associateInProgressToken");
-                context.Writer.Write(requestObject.AssociateInProgressToken);
+                context.Writer.WriteStringValue(requestObject.AssociateInProgressToken);
             }
 
             if(requestObject.IsSetPhoneNumberParent())
             {
                 context.Writer.WritePropertyName("phoneNumberParent");
-                context.Writer.Write(requestObject.PhoneNumberParent);
+                context.Writer.WriteStringValue(requestObject.PhoneNumberParent);
             }
 
             if(requestObject.IsSetPhoneNumbers())
             {
                 context.Writer.WritePropertyName("phoneNumbers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhoneNumbersListValue in requestObject.PhoneNumbers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = WabaPhoneNumberSetupFinalizationMarshaller.Instance;
                     marshaller.Marshall(requestObjectPhoneNumbersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWaba())
             {
                 context.Writer.WritePropertyName("waba");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WabaSetupFinalizationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Waba, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

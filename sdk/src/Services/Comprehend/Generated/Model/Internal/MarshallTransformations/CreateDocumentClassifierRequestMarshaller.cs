@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -63,127 +66,132 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientRequestToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDataAccessRoleArn())
-                    {
-                        context.Writer.WritePropertyName("DataAccessRoleArn");
-                        context.Writer.Write(publicRequest.DataAccessRoleArn);
-                    }
-
-                    if(publicRequest.IsSetDocumentClassifierName())
-                    {
-                        context.Writer.WritePropertyName("DocumentClassifierName");
-                        context.Writer.Write(publicRequest.DocumentClassifierName);
-                    }
-
-                    if(publicRequest.IsSetInputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("InputDataConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DocumentClassifierInputDataConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLanguageCode())
-                    {
-                        context.Writer.WritePropertyName("LanguageCode");
-                        context.Writer.Write(publicRequest.LanguageCode);
-                    }
-
-                    if(publicRequest.IsSetMode())
-                    {
-                        context.Writer.WritePropertyName("Mode");
-                        context.Writer.Write(publicRequest.Mode);
-                    }
-
-                    if(publicRequest.IsSetModelKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("ModelKmsKeyId");
-                        context.Writer.Write(publicRequest.ModelKmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetModelPolicy())
-                    {
-                        context.Writer.WritePropertyName("ModelPolicy");
-                        context.Writer.Write(publicRequest.ModelPolicy);
-                    }
-
-                    if(publicRequest.IsSetOutputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputDataConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DocumentClassifierOutputDataConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVersionName())
-                    {
-                        context.Writer.WritePropertyName("VersionName");
-                        context.Writer.Write(publicRequest.VersionName);
-                    }
-
-                    if(publicRequest.IsSetVolumeKmsKeyId())
-                    {
-                        context.Writer.WritePropertyName("VolumeKmsKeyId");
-                        context.Writer.Write(publicRequest.VolumeKmsKeyId);
-                    }
-
-                    if(publicRequest.IsSetVpcConfig())
-                    {
-                        context.Writer.WritePropertyName("VpcConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VpcConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VpcConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
             }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDataAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("DataAccessRoleArn");
+                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
+            }
+
+            if(publicRequest.IsSetDocumentClassifierName())
+            {
+                context.Writer.WritePropertyName("DocumentClassifierName");
+                context.Writer.WriteStringValue(publicRequest.DocumentClassifierName);
+            }
+
+            if(publicRequest.IsSetInputDataConfig())
+            {
+                context.Writer.WritePropertyName("InputDataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DocumentClassifierInputDataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InputDataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLanguageCode())
+            {
+                context.Writer.WritePropertyName("LanguageCode");
+                context.Writer.WriteStringValue(publicRequest.LanguageCode);
+            }
+
+            if(publicRequest.IsSetMode())
+            {
+                context.Writer.WritePropertyName("Mode");
+                context.Writer.WriteStringValue(publicRequest.Mode);
+            }
+
+            if(publicRequest.IsSetModelKmsKeyId())
+            {
+                context.Writer.WritePropertyName("ModelKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.ModelKmsKeyId);
+            }
+
+            if(publicRequest.IsSetModelPolicy())
+            {
+                context.Writer.WritePropertyName("ModelPolicy");
+                context.Writer.WriteStringValue(publicRequest.ModelPolicy);
+            }
+
+            if(publicRequest.IsSetOutputDataConfig())
+            {
+                context.Writer.WritePropertyName("OutputDataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DocumentClassifierOutputDataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVersionName())
+            {
+                context.Writer.WritePropertyName("VersionName");
+                context.Writer.WriteStringValue(publicRequest.VersionName);
+            }
+
+            if(publicRequest.IsSetVolumeKmsKeyId())
+            {
+                context.Writer.WritePropertyName("VolumeKmsKeyId");
+                context.Writer.WriteStringValue(publicRequest.VolumeKmsKeyId);
+            }
+
+            if(publicRequest.IsSetVpcConfig())
+            {
+                context.Writer.WritePropertyName("VpcConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VpcConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

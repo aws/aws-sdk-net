@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -61,81 +64,86 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/StartResourceStateUpdate";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetExclusionRules())
-                    {
-                        context.Writer.WritePropertyName("exclusionRules");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceStateUpdateExclusionRulesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExclusionRules, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExecutionRole())
-                    {
-                        context.Writer.WritePropertyName("executionRole");
-                        context.Writer.Write(publicRequest.ExecutionRole);
-                    }
-
-                    if(publicRequest.IsSetIncludeResources())
-                    {
-                        context.Writer.WritePropertyName("includeResources");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceStateUpdateIncludeResourcesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IncludeResources, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceArn())
-                    {
-                        context.Writer.WritePropertyName("resourceArn");
-                        context.Writer.Write(publicRequest.ResourceArn);
-                    }
-
-                    if(publicRequest.IsSetState())
-                    {
-                        context.Writer.WritePropertyName("state");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceStateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.State, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetUpdateAt())
-                    {
-                        context.Writer.WritePropertyName("updateAt");
-                        context.Writer.Write(publicRequest.UpdateAt.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetExclusionRules())
+            {
+                context.Writer.WritePropertyName("exclusionRules");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceStateUpdateExclusionRulesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExclusionRules, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExecutionRole())
+            {
+                context.Writer.WritePropertyName("executionRole");
+                context.Writer.WriteStringValue(publicRequest.ExecutionRole);
+            }
+
+            if(publicRequest.IsSetIncludeResources())
+            {
+                context.Writer.WritePropertyName("includeResources");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceStateUpdateIncludeResourcesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IncludeResources, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceArn())
+            {
+                context.Writer.WritePropertyName("resourceArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceArn);
+            }
+
+            if(publicRequest.IsSetState())
+            {
+                context.Writer.WritePropertyName("state");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceStateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.State, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetUpdateAt())
+            {
+                context.Writer.WritePropertyName("updateAt");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.UpdateAt.Value)));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

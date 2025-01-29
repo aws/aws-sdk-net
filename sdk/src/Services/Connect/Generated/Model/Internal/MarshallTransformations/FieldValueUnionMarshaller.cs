@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBooleanValue())
             {
                 context.Writer.WritePropertyName("BooleanValue");
-                context.Writer.Write(requestObject.BooleanValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.BooleanValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
@@ -59,29 +57,29 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("DoubleValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DoubleValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.DoubleValue.Value);
                 }
             }
 
             if(requestObject.IsSetEmptyValue())
             {
                 context.Writer.WritePropertyName("EmptyValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmptyFieldValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmptyValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("StringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
         }

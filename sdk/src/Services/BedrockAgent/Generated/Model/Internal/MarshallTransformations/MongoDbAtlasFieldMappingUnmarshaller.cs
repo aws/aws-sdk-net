@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MongoDbAtlasFieldMapping Object
     /// </summary>  
-    public class MongoDbAtlasFieldMappingUnmarshaller : IUnmarshaller<MongoDbAtlasFieldMapping, XmlUnmarshallerContext>, IUnmarshaller<MongoDbAtlasFieldMapping, JsonUnmarshallerContext>
+    public class MongoDbAtlasFieldMappingUnmarshaller : IJsonUnmarshaller<MongoDbAtlasFieldMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MongoDbAtlasFieldMapping IUnmarshaller<MongoDbAtlasFieldMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MongoDbAtlasFieldMapping Unmarshall(JsonUnmarshallerContext context)
+        public MongoDbAtlasFieldMapping Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MongoDbAtlasFieldMapping unmarshalledObject = new MongoDbAtlasFieldMapping();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("metadataField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetadataField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetadataField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("textField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TextField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vectorField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VectorField = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VectorField = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

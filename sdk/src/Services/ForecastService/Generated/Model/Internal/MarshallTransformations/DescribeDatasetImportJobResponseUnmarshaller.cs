@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
@@ -47,111 +47,111 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeDatasetImportJobResponse response = new DescribeDatasetImportJobResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DatasetArn = unmarshaller.Unmarshall(context);
+                    response.DatasetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetImportJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DatasetImportJobArn = unmarshaller.Unmarshall(context);
+                    response.DatasetImportJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetImportJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.DatasetImportJobName = unmarshaller.Unmarshall(context);
+                    response.DatasetImportJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSize", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    response.DataSize = unmarshaller.Unmarshall(context);
+                    response.DataSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataSource", targetDepth))
                 {
                     var unmarshaller = DataSourceUnmarshaller.Instance;
-                    response.DataSource = unmarshaller.Unmarshall(context);
+                    response.DataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedTimeRemainingInMinutes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.EstimatedTimeRemainingInMinutes = unmarshaller.Unmarshall(context);
+                    response.EstimatedTimeRemainingInMinutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FieldStatistics", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, Statistics, StringUnmarshaller, StatisticsUnmarshaller>(StringUnmarshaller.Instance, StatisticsUnmarshaller.Instance);
-                    response.FieldStatistics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, Statistics, StringUnmarshaller, StatisticsUnmarshaller>(StringUnmarshaller.Instance, StatisticsUnmarshaller.Instance);
+                    response.FieldStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Format", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Format = unmarshaller.Unmarshall(context);
+                    response.Format = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GeolocationFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.GeolocationFormat = unmarshaller.Unmarshall(context);
+                    response.GeolocationFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ImportMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ImportMode = unmarshaller.Unmarshall(context);
+                    response.ImportMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastModificationTime = unmarshaller.Unmarshall(context);
+                    response.LastModificationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Message = unmarshaller.Unmarshall(context);
+                    response.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Status = unmarshaller.Unmarshall(context);
+                    response.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimestampFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TimestampFormat = unmarshaller.Unmarshall(context);
+                    response.TimestampFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TimeZone = unmarshaller.Unmarshall(context);
+                    response.TimeZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UseGeolocationForTimeZone", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.UseGeolocationForTimeZone = unmarshaller.Unmarshall(context);
+                    response.UseGeolocationForTimeZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -168,22 +168,24 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
                 {
-                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonForecastServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

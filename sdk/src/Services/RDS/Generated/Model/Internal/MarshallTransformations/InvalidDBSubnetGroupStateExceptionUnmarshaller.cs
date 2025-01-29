@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBSubnetGroupStateException operation
     /// </summary>  
-    public class InvalidDBSubnetGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBSubnetGroupStateException, XmlUnmarshallerContext>
+    public class InvalidDBSubnetGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBSubnetGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

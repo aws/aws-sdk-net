@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
 {
@@ -70,65 +73,70 @@ namespace Amazon.CodeArtifact.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetPackageGroup())
                 request.Parameters.Add("package-group", StringUtils.FromString(publicRequest.PackageGroup));
             request.ResourcePath = "/v1/package-group-origin-configuration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddAllowedRepositories())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("addAllowedRepositories");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddAllowedRepositoriesListValue in publicRequest.AddAllowedRepositories)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAddAllowedRepositories())
-                    {
-                        context.Writer.WritePropertyName("addAllowedRepositories");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAddAllowedRepositoriesListValue in publicRequest.AddAllowedRepositories)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAddAllowedRepositoriesListValue, context);
+                    var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAddAllowedRepositoriesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRemoveAllowedRepositories())
-                    {
-                        context.Writer.WritePropertyName("removeAllowedRepositories");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRemoveAllowedRepositoriesListValue in publicRequest.RemoveAllowedRepositories)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRemoveAllowedRepositoriesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRestrictions())
-                    {
-                        context.Writer.WritePropertyName("restrictions");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRestrictionsKvp in publicRequest.Restrictions)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRestrictionsKvp.Key);
-                            var publicRequestRestrictionsValue = publicRequestRestrictionsKvp.Value;
-
-                                context.Writer.Write(publicRequestRestrictionsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetRemoveAllowedRepositories())
+            {
+                context.Writer.WritePropertyName("removeAllowedRepositories");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemoveAllowedRepositoriesListValue in publicRequest.RemoveAllowedRepositories)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PackageGroupAllowedRepositoryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRemoveAllowedRepositoriesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRestrictions())
+            {
+                context.Writer.WritePropertyName("restrictions");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRestrictionsKvp in publicRequest.Restrictions)
+                {
+                    context.Writer.WritePropertyName(publicRequestRestrictionsKvp.Key);
+                    var publicRequestRestrictionsValue = publicRequestRestrictionsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestRestrictionsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

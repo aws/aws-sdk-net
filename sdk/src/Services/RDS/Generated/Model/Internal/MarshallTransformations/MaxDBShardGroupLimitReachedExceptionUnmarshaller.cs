@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MaxDBShardGroupLimitReachedException operation
     /// </summary>  
-    public class MaxDBShardGroupLimitReachedExceptionUnmarshaller : IErrorResponseUnmarshaller<MaxDBShardGroupLimitReachedException, XmlUnmarshallerContext>
+    public class MaxDBShardGroupLimitReachedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MaxDBShardGroupLimitReachedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

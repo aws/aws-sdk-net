@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AuthenticationProfileNotFoundException operation
     /// </summary>  
-    public class AuthenticationProfileNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<AuthenticationProfileNotFoundException, XmlUnmarshallerContext>
+    public class AuthenticationProfileNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AuthenticationProfileNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

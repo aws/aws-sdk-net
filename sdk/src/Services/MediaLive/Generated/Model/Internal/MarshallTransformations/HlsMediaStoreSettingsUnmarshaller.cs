@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HlsMediaStoreSettings Object
     /// </summary>  
-    public class HlsMediaStoreSettingsUnmarshaller : IUnmarshaller<HlsMediaStoreSettings, XmlUnmarshallerContext>, IUnmarshaller<HlsMediaStoreSettings, JsonUnmarshallerContext>
+    public class HlsMediaStoreSettingsUnmarshaller : IJsonUnmarshaller<HlsMediaStoreSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HlsMediaStoreSettings IUnmarshaller<HlsMediaStoreSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HlsMediaStoreSettings Unmarshall(JsonUnmarshallerContext context)
+        public HlsMediaStoreSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HlsMediaStoreSettings unmarshalledObject = new HlsMediaStoreSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("connectionRetryInterval", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionRetryInterval = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionRetryInterval = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("filecacheDuration", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FilecacheDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilecacheDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mediaStoreStorageClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MediaStoreStorageClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MediaStoreStorageClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numRetries", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumRetries = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumRetries = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("restartDelay", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RestartDelay = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RestartDelay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

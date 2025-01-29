@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,66 +49,66 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");
-                context.Writer.Write(requestObject.Duration.Value);
+                context.Writer.WriteNumberValue(requestObject.Duration.Value);
             }
 
             if(requestObject.IsSetFadeIn())
             {
                 context.Writer.WritePropertyName("fadeIn");
-                context.Writer.Write(requestObject.FadeIn.Value);
+                context.Writer.WriteNumberValue(requestObject.FadeIn.Value);
             }
 
             if(requestObject.IsSetFadeOut())
             {
                 context.Writer.WritePropertyName("fadeOut");
-                context.Writer.Write(requestObject.FadeOut.Value);
+                context.Writer.WriteNumberValue(requestObject.FadeOut.Value);
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("image");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Image, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageX())
             {
                 context.Writer.WritePropertyName("imageX");
-                context.Writer.Write(requestObject.ImageX.Value);
+                context.Writer.WriteNumberValue(requestObject.ImageX.Value);
             }
 
             if(requestObject.IsSetImageY())
             {
                 context.Writer.WritePropertyName("imageY");
-                context.Writer.Write(requestObject.ImageY.Value);
+                context.Writer.WriteNumberValue(requestObject.ImageY.Value);
             }
 
             if(requestObject.IsSetLayer())
             {
                 context.Writer.WritePropertyName("layer");
-                context.Writer.Write(requestObject.Layer.Value);
+                context.Writer.WriteNumberValue(requestObject.Layer.Value);
             }
 
             if(requestObject.IsSetOpacity())
             {
                 context.Writer.WritePropertyName("opacity");
-                context.Writer.Write(requestObject.Opacity.Value);
+                context.Writer.WriteNumberValue(requestObject.Opacity.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("width");
-                context.Writer.Write(requestObject.Width.Value);
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
         }

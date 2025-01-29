@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails Object
     /// </summary>  
-    public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsUnmarshaller : IUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails, JsonUnmarshallerContext>
+    public class AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetailsUnmarshaller : IJsonUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails IUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails unmarshalledObject = new AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Capabilities", targetDepth))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersCapabilitiesDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Capabilities = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Devices", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails, AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Devices = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetails, AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersDevicesDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Devices = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InitProcessEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InitProcessEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxSwap", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxSwap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxSwap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SharedMemorySize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SharedMemorySize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SharedMemorySize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Swappiness", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Swappiness = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Swappiness = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tmpfs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails, AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Tmpfs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetails, AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsUnmarshaller>(AwsEcsTaskDefinitionContainerDefinitionsLinuxParametersTmpfsDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Tmpfs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

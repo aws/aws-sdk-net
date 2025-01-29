@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelOrder())
             {
                 context.Writer.WritePropertyName("channelOrder");
-                context.Writer.Write(requestObject.ChannelOrder);
+                context.Writer.WriteStringValue(requestObject.ChannelOrder);
             }
 
             if(requestObject.IsSetColorimetry())
             {
                 context.Writer.WritePropertyName("colorimetry");
-                context.Writer.Write(requestObject.Colorimetry);
+                context.Writer.WriteStringValue(requestObject.Colorimetry);
             }
 
             if(requestObject.IsSetExactFramerate())
             {
                 context.Writer.WritePropertyName("exactFramerate");
-                context.Writer.Write(requestObject.ExactFramerate);
+                context.Writer.WriteStringValue(requestObject.ExactFramerate);
             }
 
             if(requestObject.IsSetPar())
             {
                 context.Writer.WritePropertyName("par");
-                context.Writer.Write(requestObject.Par);
+                context.Writer.WriteStringValue(requestObject.Par);
             }
 
             if(requestObject.IsSetRange())
             {
                 context.Writer.WritePropertyName("range");
-                context.Writer.Write(requestObject.Range);
+                context.Writer.WriteStringValue(requestObject.Range);
             }
 
             if(requestObject.IsSetScanMode())
             {
                 context.Writer.WritePropertyName("scanMode");
-                context.Writer.Write(requestObject.ScanMode);
+                context.Writer.WriteStringValue(requestObject.ScanMode);
             }
 
             if(requestObject.IsSetTcs())
             {
                 context.Writer.WritePropertyName("tcs");
-                context.Writer.Write(requestObject.Tcs);
+                context.Writer.WriteStringValue(requestObject.Tcs);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExternalExecutionId())
             {
                 context.Writer.WritePropertyName("externalExecutionId");
-                context.Writer.Write(requestObject.ExternalExecutionId);
+                context.Writer.WriteStringValue(requestObject.ExternalExecutionId);
             }
 
             if(requestObject.IsSetPercentComplete())
             {
                 context.Writer.WritePropertyName("percentComplete");
-                context.Writer.Write(requestObject.PercentComplete.Value);
+                context.Writer.WriteNumberValue(requestObject.PercentComplete.Value);
             }
 
             if(requestObject.IsSetSummary())
             {
                 context.Writer.WritePropertyName("summary");
-                context.Writer.Write(requestObject.Summary);
+                context.Writer.WriteStringValue(requestObject.Summary);
             }
 
         }

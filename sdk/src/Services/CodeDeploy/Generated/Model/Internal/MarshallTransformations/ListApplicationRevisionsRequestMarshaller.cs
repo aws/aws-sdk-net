@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -63,61 +66,66 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicationName())
-                    {
-                        context.Writer.WritePropertyName("applicationName");
-                        context.Writer.Write(publicRequest.ApplicationName);
-                    }
-
-                    if(publicRequest.IsSetDeployed())
-                    {
-                        context.Writer.WritePropertyName("deployed");
-                        context.Writer.Write(publicRequest.Deployed);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetS3Bucket())
-                    {
-                        context.Writer.WritePropertyName("s3Bucket");
-                        context.Writer.Write(publicRequest.S3Bucket);
-                    }
-
-                    if(publicRequest.IsSetS3KeyPrefix())
-                    {
-                        context.Writer.WritePropertyName("s3KeyPrefix");
-                        context.Writer.Write(publicRequest.S3KeyPrefix);
-                    }
-
-                    if(publicRequest.IsSetSortBy())
-                    {
-                        context.Writer.WritePropertyName("sortBy");
-                        context.Writer.Write(publicRequest.SortBy);
-                    }
-
-                    if(publicRequest.IsSetSortOrder())
-                    {
-                        context.Writer.WritePropertyName("sortOrder");
-                        context.Writer.Write(publicRequest.SortOrder);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("applicationName");
+                context.Writer.WriteStringValue(publicRequest.ApplicationName);
             }
+
+            if(publicRequest.IsSetDeployed())
+            {
+                context.Writer.WritePropertyName("deployed");
+                context.Writer.WriteStringValue(publicRequest.Deployed);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetS3Bucket())
+            {
+                context.Writer.WritePropertyName("s3Bucket");
+                context.Writer.WriteStringValue(publicRequest.S3Bucket);
+            }
+
+            if(publicRequest.IsSetS3KeyPrefix())
+            {
+                context.Writer.WritePropertyName("s3KeyPrefix");
+                context.Writer.WriteStringValue(publicRequest.S3KeyPrefix);
+            }
+
+            if(publicRequest.IsSetSortBy())
+            {
+                context.Writer.WritePropertyName("sortBy");
+                context.Writer.WriteStringValue(publicRequest.SortBy);
+            }
+
+            if(publicRequest.IsSetSortOrder())
+            {
+                context.Writer.WritePropertyName("sortOrder");
+                context.Writer.WriteStringValue(publicRequest.SortOrder);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

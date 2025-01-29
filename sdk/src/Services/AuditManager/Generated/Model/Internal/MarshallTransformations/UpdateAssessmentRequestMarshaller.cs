@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -64,69 +67,74 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 throw new AmazonAuditManagerException("Request object does not have required field AssessmentId set");
             request.AddPathResource("{assessmentId}", StringUtils.FromString(publicRequest.AssessmentId));
             request.ResourcePath = "/assessments/{assessmentId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssessmentDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssessmentDescription())
-                    {
-                        context.Writer.WritePropertyName("assessmentDescription");
-                        context.Writer.Write(publicRequest.AssessmentDescription);
-                    }
-
-                    if(publicRequest.IsSetAssessmentName())
-                    {
-                        context.Writer.WritePropertyName("assessmentName");
-                        context.Writer.Write(publicRequest.AssessmentName);
-                    }
-
-                    if(publicRequest.IsSetAssessmentReportsDestination())
-                    {
-                        context.Writer.WritePropertyName("assessmentReportsDestination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AssessmentReportsDestinationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AssessmentReportsDestination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoles())
-                    {
-                        context.Writer.WritePropertyName("roles");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRolesListValue in publicRequest.Roles)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RoleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRolesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetScope())
-                    {
-                        context.Writer.WritePropertyName("scope");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ScopeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Scope, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("assessmentDescription");
+                context.Writer.WriteStringValue(publicRequest.AssessmentDescription);
             }
+
+            if(publicRequest.IsSetAssessmentName())
+            {
+                context.Writer.WritePropertyName("assessmentName");
+                context.Writer.WriteStringValue(publicRequest.AssessmentName);
+            }
+
+            if(publicRequest.IsSetAssessmentReportsDestination())
+            {
+                context.Writer.WritePropertyName("assessmentReportsDestination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AssessmentReportsDestinationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AssessmentReportsDestination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoles())
+            {
+                context.Writer.WritePropertyName("roles");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRolesListValue in publicRequest.Roles)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RoleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRolesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("scope");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScopeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Scope, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

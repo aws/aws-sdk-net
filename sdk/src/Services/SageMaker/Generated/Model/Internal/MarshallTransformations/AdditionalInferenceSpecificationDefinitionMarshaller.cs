@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,73 +49,73 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainers())
             {
                 context.Writer.WritePropertyName("Containers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContainersListValue in requestObject.Containers)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ModelPackageContainerDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectContainersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSupportedContentTypes())
             {
                 context.Writer.WritePropertyName("SupportedContentTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedContentTypesListValue in requestObject.SupportedContentTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedContentTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedContentTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedRealtimeInferenceInstanceTypes())
             {
                 context.Writer.WritePropertyName("SupportedRealtimeInferenceInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedRealtimeInferenceInstanceTypesListValue in requestObject.SupportedRealtimeInferenceInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedRealtimeInferenceInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedRealtimeInferenceInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedResponseMIMETypes())
             {
                 context.Writer.WritePropertyName("SupportedResponseMIMETypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedResponseMIMETypesListValue in requestObject.SupportedResponseMIMETypes)
                 {
-                        context.Writer.Write(requestObjectSupportedResponseMIMETypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedResponseMIMETypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedTransformInstanceTypes())
             {
                 context.Writer.WritePropertyName("SupportedTransformInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedTransformInstanceTypesListValue in requestObject.SupportedTransformInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedTransformInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedTransformInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxResponseLengthForInference())
             {
                 context.Writer.WritePropertyName("maxResponseLengthForInference");
-                context.Writer.Write(requestObject.MaxResponseLengthForInference.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxResponseLengthForInference.Value);
             }
 
             if(requestObject.IsSetTeacherModelIdentifier())
             {
                 context.Writer.WritePropertyName("teacherModelIdentifier");
-                context.Writer.Write(requestObject.TeacherModelIdentifier);
+                context.Writer.WriteStringValue(requestObject.TeacherModelIdentifier);
             }
 
         }

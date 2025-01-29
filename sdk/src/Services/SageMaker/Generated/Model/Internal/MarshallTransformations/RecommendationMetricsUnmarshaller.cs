@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecommendationMetrics Object
     /// </summary>  
-    public class RecommendationMetricsUnmarshaller : IUnmarshaller<RecommendationMetrics, XmlUnmarshallerContext>, IUnmarshaller<RecommendationMetrics, JsonUnmarshallerContext>
+    public class RecommendationMetricsUnmarshaller : IJsonUnmarshaller<RecommendationMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RecommendationMetrics IUnmarshaller<RecommendationMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommendationMetrics Unmarshall(JsonUnmarshallerContext context)
+        public RecommendationMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RecommendationMetrics unmarshalledObject = new RecommendationMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CostPerHour", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.CostPerHour = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CostPerHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CostPerInference", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.CostPerInference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CostPerInference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CpuUtilization", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.CpuUtilization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CpuUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaxInvocations", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaxInvocations = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxInvocations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MemoryUtilization", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.MemoryUtilization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemoryUtilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelLatency", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ModelLatency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelLatency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelSetupTime", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ModelSetupTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelSetupTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DefaultWorkspaceCreationProperties Object
     /// </summary>  
-    public class DefaultWorkspaceCreationPropertiesUnmarshaller : IUnmarshaller<DefaultWorkspaceCreationProperties, XmlUnmarshallerContext>, IUnmarshaller<DefaultWorkspaceCreationProperties, JsonUnmarshallerContext>
+    public class DefaultWorkspaceCreationPropertiesUnmarshaller : IJsonUnmarshaller<DefaultWorkspaceCreationProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DefaultWorkspaceCreationProperties IUnmarshaller<DefaultWorkspaceCreationProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DefaultWorkspaceCreationProperties Unmarshall(JsonUnmarshallerContext context)
+        public DefaultWorkspaceCreationProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DefaultWorkspaceCreationProperties unmarshalledObject = new DefaultWorkspaceCreationProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CustomSecurityGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CustomSecurityGroupId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomSecurityGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultOu", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultOu = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultOu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableInternetAccess", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableInternetAccess = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableInternetAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableMaintenanceMode", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableMaintenanceMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableMaintenanceMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnableWorkDocs", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableWorkDocs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnableWorkDocs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceIamRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceIamRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceIamRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserEnabledAsLocalAdministrator", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UserEnabledAsLocalAdministrator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserEnabledAsLocalAdministrator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

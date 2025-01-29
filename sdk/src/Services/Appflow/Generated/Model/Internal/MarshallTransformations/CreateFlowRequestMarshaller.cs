@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -61,127 +64,132 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-flow";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDestinationFlowConfigList())
-                    {
-                        context.Writer.WritePropertyName("destinationFlowConfigList");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationFlowConfigListListValue in publicRequest.DestinationFlowConfigList)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DestinationFlowConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDestinationFlowConfigListListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFlowName())
-                    {
-                        context.Writer.WritePropertyName("flowName");
-                        context.Writer.Write(publicRequest.FlowName);
-                    }
-
-                    if(publicRequest.IsSetKmsArn())
-                    {
-                        context.Writer.WritePropertyName("kmsArn");
-                        context.Writer.Write(publicRequest.KmsArn);
-                    }
-
-                    if(publicRequest.IsSetMetadataCatalogConfig())
-                    {
-                        context.Writer.WritePropertyName("metadataCatalogConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MetadataCatalogConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MetadataCatalogConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceFlowConfig())
-                    {
-                        context.Writer.WritePropertyName("sourceFlowConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SourceFlowConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SourceFlowConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTasks())
-                    {
-                        context.Writer.WritePropertyName("tasks");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTasksListValue in publicRequest.Tasks)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TaskMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTasksListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTriggerConfig())
-                    {
-                        context.Writer.WritePropertyName("triggerConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TriggerConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TriggerConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDestinationFlowConfigList())
+            {
+                context.Writer.WritePropertyName("destinationFlowConfigList");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationFlowConfigListListValue in publicRequest.DestinationFlowConfigList)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DestinationFlowConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDestinationFlowConfigListListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFlowName())
+            {
+                context.Writer.WritePropertyName("flowName");
+                context.Writer.WriteStringValue(publicRequest.FlowName);
+            }
+
+            if(publicRequest.IsSetKmsArn())
+            {
+                context.Writer.WritePropertyName("kmsArn");
+                context.Writer.WriteStringValue(publicRequest.KmsArn);
+            }
+
+            if(publicRequest.IsSetMetadataCatalogConfig())
+            {
+                context.Writer.WritePropertyName("metadataCatalogConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MetadataCatalogConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetadataCatalogConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceFlowConfig())
+            {
+                context.Writer.WritePropertyName("sourceFlowConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SourceFlowConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceFlowConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTasks())
+            {
+                context.Writer.WritePropertyName("tasks");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTasksListValue in publicRequest.Tasks)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TaskMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTasksListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTriggerConfig())
+            {
+                context.Writer.WritePropertyName("triggerConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TriggerConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TriggerConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetAttributeName())
             {
                 context.Writer.WritePropertyName("TargetAttributeName");
-                context.Writer.Write(requestObject.TargetAttributeName);
+                context.Writer.WriteStringValue(requestObject.TargetAttributeName);
             }
 
             if(requestObject.IsSetTargetFacetName())
             {
                 context.Writer.WritePropertyName("TargetFacetName");
-                context.Writer.Write(requestObject.TargetFacetName);
+                context.Writer.WriteStringValue(requestObject.TargetFacetName);
             }
 
         }

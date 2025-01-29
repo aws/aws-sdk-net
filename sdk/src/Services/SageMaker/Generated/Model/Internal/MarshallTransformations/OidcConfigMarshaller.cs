@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,69 +49,69 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationRequestExtraParams())
             {
                 context.Writer.WritePropertyName("AuthenticationRequestExtraParams");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAuthenticationRequestExtraParamsKvp in requestObject.AuthenticationRequestExtraParams)
                 {
                     context.Writer.WritePropertyName(requestObjectAuthenticationRequestExtraParamsKvp.Key);
                     var requestObjectAuthenticationRequestExtraParamsValue = requestObjectAuthenticationRequestExtraParamsKvp.Value;
 
-                        context.Writer.Write(requestObjectAuthenticationRequestExtraParamsValue);
+                        context.Writer.WriteStringValue(requestObjectAuthenticationRequestExtraParamsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAuthorizationEndpoint())
             {
                 context.Writer.WritePropertyName("AuthorizationEndpoint");
-                context.Writer.Write(requestObject.AuthorizationEndpoint);
+                context.Writer.WriteStringValue(requestObject.AuthorizationEndpoint);
             }
 
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("ClientId");
-                context.Writer.Write(requestObject.ClientId);
+                context.Writer.WriteStringValue(requestObject.ClientId);
             }
 
             if(requestObject.IsSetClientSecret())
             {
                 context.Writer.WritePropertyName("ClientSecret");
-                context.Writer.Write(requestObject.ClientSecret);
+                context.Writer.WriteStringValue(requestObject.ClientSecret);
             }
 
             if(requestObject.IsSetIssuer())
             {
                 context.Writer.WritePropertyName("Issuer");
-                context.Writer.Write(requestObject.Issuer);
+                context.Writer.WriteStringValue(requestObject.Issuer);
             }
 
             if(requestObject.IsSetJwksUri())
             {
                 context.Writer.WritePropertyName("JwksUri");
-                context.Writer.Write(requestObject.JwksUri);
+                context.Writer.WriteStringValue(requestObject.JwksUri);
             }
 
             if(requestObject.IsSetLogoutEndpoint())
             {
                 context.Writer.WritePropertyName("LogoutEndpoint");
-                context.Writer.Write(requestObject.LogoutEndpoint);
+                context.Writer.WriteStringValue(requestObject.LogoutEndpoint);
             }
 
             if(requestObject.IsSetScope())
             {
                 context.Writer.WritePropertyName("Scope");
-                context.Writer.Write(requestObject.Scope);
+                context.Writer.WriteStringValue(requestObject.Scope);
             }
 
             if(requestObject.IsSetTokenEndpoint())
             {
                 context.Writer.WritePropertyName("TokenEndpoint");
-                context.Writer.Write(requestObject.TokenEndpoint);
+                context.Writer.WriteStringValue(requestObject.TokenEndpoint);
             }
 
             if(requestObject.IsSetUserInfoEndpoint())
             {
                 context.Writer.WritePropertyName("UserInfoEndpoint");
-                context.Writer.Write(requestObject.UserInfoEndpoint);
+                context.Writer.WriteStringValue(requestObject.UserInfoEndpoint);
             }
 
         }

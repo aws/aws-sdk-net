@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");
-                context.Writer.Write(requestObject.Domain);
+                context.Writer.WriteStringValue(requestObject.Domain);
             }
 
             if(requestObject.IsSetInboxPlacementTrackingOption())
             {
                 context.Writer.WritePropertyName("InboxPlacementTrackingOption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InboxPlacementTrackingOptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.InboxPlacementTrackingOption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSubscriptionStartDate())
             {
                 context.Writer.WritePropertyName("SubscriptionStartDate");
-                context.Writer.Write(requestObject.SubscriptionStartDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.SubscriptionStartDate.Value)));
             }
 
         }

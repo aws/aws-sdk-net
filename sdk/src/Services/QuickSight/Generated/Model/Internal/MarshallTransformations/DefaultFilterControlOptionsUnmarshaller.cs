@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DefaultFilterControlOptions Object
     /// </summary>  
-    public class DefaultFilterControlOptionsUnmarshaller : IUnmarshaller<DefaultFilterControlOptions, XmlUnmarshallerContext>, IUnmarshaller<DefaultFilterControlOptions, JsonUnmarshallerContext>
+    public class DefaultFilterControlOptionsUnmarshaller : IJsonUnmarshaller<DefaultFilterControlOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DefaultFilterControlOptions IUnmarshaller<DefaultFilterControlOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DefaultFilterControlOptions Unmarshall(JsonUnmarshallerContext context)
+        public DefaultFilterControlOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DefaultFilterControlOptions unmarshalledObject = new DefaultFilterControlOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DefaultDateTimePickerOptions", targetDepth))
                 {
                     var unmarshaller = DefaultDateTimePickerControlOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DefaultDateTimePickerOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultDateTimePickerOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultDropdownOptions", targetDepth))
                 {
                     var unmarshaller = DefaultFilterDropDownControlOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DefaultDropdownOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultDropdownOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultListOptions", targetDepth))
                 {
                     var unmarshaller = DefaultFilterListControlOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DefaultListOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultListOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultRelativeDateTimeOptions", targetDepth))
                 {
                     var unmarshaller = DefaultRelativeDateTimeControlOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DefaultRelativeDateTimeOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultRelativeDateTimeOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultSliderOptions", targetDepth))
                 {
                     var unmarshaller = DefaultSliderControlOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DefaultSliderOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultSliderOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultTextAreaOptions", targetDepth))
                 {
                     var unmarshaller = DefaultTextAreaControlOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DefaultTextAreaOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultTextAreaOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultTextFieldOptions", targetDepth))
                 {
                     var unmarshaller = DefaultTextFieldControlOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DefaultTextFieldOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultTextFieldOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

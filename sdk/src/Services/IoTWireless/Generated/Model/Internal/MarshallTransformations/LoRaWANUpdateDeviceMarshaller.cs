@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAbpV1_0_x())
             {
                 context.Writer.WritePropertyName("AbpV1_0_x");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateAbpV1_0_xMarshaller.Instance;
                 marshaller.Marshall(requestObject.AbpV1_0_x, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAbpV1_1())
             {
                 context.Writer.WritePropertyName("AbpV1_1");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateAbpV1_1Marshaller.Instance;
                 marshaller.Marshall(requestObject.AbpV1_1, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceProfileId())
             {
                 context.Writer.WritePropertyName("DeviceProfileId");
-                context.Writer.Write(requestObject.DeviceProfileId);
+                context.Writer.WriteStringValue(requestObject.DeviceProfileId);
             }
 
             if(requestObject.IsSetFPorts())
             {
                 context.Writer.WritePropertyName("FPorts");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UpdateFPortsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FPorts, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceProfileId())
             {
                 context.Writer.WritePropertyName("ServiceProfileId");
-                context.Writer.Write(requestObject.ServiceProfileId);
+                context.Writer.WriteStringValue(requestObject.ServiceProfileId);
             }
 
         }

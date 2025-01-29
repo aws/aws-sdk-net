@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("City");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CityMarshaller.Instance;
                 marshaller.Marshall(requestObject.City, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CountryMarshaller.Instance;
                 marshaller.Marshall(requestObject.Country, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGeoLocation())
             {
                 context.Writer.WritePropertyName("GeoLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeoLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.GeoLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIpAddressV4())
             {
                 context.Writer.WritePropertyName("IpAddressV4");
-                context.Writer.Write(requestObject.IpAddressV4);
+                context.Writer.WriteStringValue(requestObject.IpAddressV4);
             }
 
             if(requestObject.IsSetOrganization())
             {
                 context.Writer.WritePropertyName("Organization");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IpOrganizationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Organization, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

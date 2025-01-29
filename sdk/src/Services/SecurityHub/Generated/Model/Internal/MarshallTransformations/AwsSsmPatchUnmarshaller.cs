@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsSsmPatch Object
     /// </summary>  
-    public class AwsSsmPatchUnmarshaller : IUnmarshaller<AwsSsmPatch, XmlUnmarshallerContext>, IUnmarshaller<AwsSsmPatch, JsonUnmarshallerContext>
+    public class AwsSsmPatchUnmarshaller : IJsonUnmarshaller<AwsSsmPatch, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsSsmPatch IUnmarshaller<AwsSsmPatch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsSsmPatch Unmarshall(JsonUnmarshallerContext context)
+        public AwsSsmPatch Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsSsmPatch unmarshalledObject = new AwsSsmPatch();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ComplianceSummary", targetDepth))
                 {
                     var unmarshaller = AwsSsmComplianceSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComplianceSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

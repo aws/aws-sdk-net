@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CredentialReportNotReadyException operation
     /// </summary>  
-    public class CredentialReportNotReadyExceptionUnmarshaller : IErrorResponseUnmarshaller<CredentialReportNotReadyException, XmlUnmarshallerContext>
+    public class CredentialReportNotReadyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CredentialReportNotReadyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

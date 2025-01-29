@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TemplateAlreadyExistsException Object
     /// </summary>  
-    public class TemplateAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<TemplateAlreadyExistsException, JsonUnmarshallerContext>
+    public class TemplateAlreadyExistsExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<TemplateAlreadyExistsException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public TemplateAlreadyExistsException Unmarshall(JsonUnmarshallerContext context)
+        public TemplateAlreadyExistsException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,17 +55,24 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public TemplateAlreadyExistsException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public TemplateAlreadyExistsException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             TemplateAlreadyExistsException unmarshalledObject = new TemplateAlreadyExistsException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+                }
             }
           
             return unmarshalledObject;

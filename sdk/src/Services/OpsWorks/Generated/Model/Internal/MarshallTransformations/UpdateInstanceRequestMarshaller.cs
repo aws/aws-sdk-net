@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -63,96 +66,101 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAgentVersion())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAgentVersion())
-                    {
-                        context.Writer.WritePropertyName("AgentVersion");
-                        context.Writer.Write(publicRequest.AgentVersion);
-                    }
-
-                    if(publicRequest.IsSetAmiId())
-                    {
-                        context.Writer.WritePropertyName("AmiId");
-                        context.Writer.Write(publicRequest.AmiId);
-                    }
-
-                    if(publicRequest.IsSetArchitecture())
-                    {
-                        context.Writer.WritePropertyName("Architecture");
-                        context.Writer.Write(publicRequest.Architecture);
-                    }
-
-                    if(publicRequest.IsSetAutoScalingType())
-                    {
-                        context.Writer.WritePropertyName("AutoScalingType");
-                        context.Writer.Write(publicRequest.AutoScalingType);
-                    }
-
-                    if(publicRequest.IsSetEbsOptimized())
-                    {
-                        context.Writer.WritePropertyName("EbsOptimized");
-                        context.Writer.Write(publicRequest.EbsOptimized.Value);
-                    }
-
-                    if(publicRequest.IsSetHostname())
-                    {
-                        context.Writer.WritePropertyName("Hostname");
-                        context.Writer.Write(publicRequest.Hostname);
-                    }
-
-                    if(publicRequest.IsSetInstallUpdatesOnBoot())
-                    {
-                        context.Writer.WritePropertyName("InstallUpdatesOnBoot");
-                        context.Writer.Write(publicRequest.InstallUpdatesOnBoot.Value);
-                    }
-
-                    if(publicRequest.IsSetInstanceId())
-                    {
-                        context.Writer.WritePropertyName("InstanceId");
-                        context.Writer.Write(publicRequest.InstanceId);
-                    }
-
-                    if(publicRequest.IsSetInstanceType())
-                    {
-                        context.Writer.WritePropertyName("InstanceType");
-                        context.Writer.Write(publicRequest.InstanceType);
-                    }
-
-                    if(publicRequest.IsSetLayerIds())
-                    {
-                        context.Writer.WritePropertyName("LayerIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
-                        {
-                                context.Writer.Write(publicRequestLayerIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOs())
-                    {
-                        context.Writer.WritePropertyName("Os");
-                        context.Writer.Write(publicRequest.Os);
-                    }
-
-                    if(publicRequest.IsSetSshKeyName())
-                    {
-                        context.Writer.WritePropertyName("SshKeyName");
-                        context.Writer.Write(publicRequest.SshKeyName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AgentVersion");
+                context.Writer.WriteStringValue(publicRequest.AgentVersion);
             }
+
+            if(publicRequest.IsSetAmiId())
+            {
+                context.Writer.WritePropertyName("AmiId");
+                context.Writer.WriteStringValue(publicRequest.AmiId);
+            }
+
+            if(publicRequest.IsSetArchitecture())
+            {
+                context.Writer.WritePropertyName("Architecture");
+                context.Writer.WriteStringValue(publicRequest.Architecture);
+            }
+
+            if(publicRequest.IsSetAutoScalingType())
+            {
+                context.Writer.WritePropertyName("AutoScalingType");
+                context.Writer.WriteStringValue(publicRequest.AutoScalingType);
+            }
+
+            if(publicRequest.IsSetEbsOptimized())
+            {
+                context.Writer.WritePropertyName("EbsOptimized");
+                context.Writer.WriteBooleanValue(publicRequest.EbsOptimized.Value);
+            }
+
+            if(publicRequest.IsSetHostname())
+            {
+                context.Writer.WritePropertyName("Hostname");
+                context.Writer.WriteStringValue(publicRequest.Hostname);
+            }
+
+            if(publicRequest.IsSetInstallUpdatesOnBoot())
+            {
+                context.Writer.WritePropertyName("InstallUpdatesOnBoot");
+                context.Writer.WriteBooleanValue(publicRequest.InstallUpdatesOnBoot.Value);
+            }
+
+            if(publicRequest.IsSetInstanceId())
+            {
+                context.Writer.WritePropertyName("InstanceId");
+                context.Writer.WriteStringValue(publicRequest.InstanceId);
+            }
+
+            if(publicRequest.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("InstanceType");
+                context.Writer.WriteStringValue(publicRequest.InstanceType);
+            }
+
+            if(publicRequest.IsSetLayerIds())
+            {
+                context.Writer.WritePropertyName("LayerIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLayerIdsListValue in publicRequest.LayerIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestLayerIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOs())
+            {
+                context.Writer.WritePropertyName("Os");
+                context.Writer.WriteStringValue(publicRequest.Os);
+            }
+
+            if(publicRequest.IsSetSshKeyName())
+            {
+                context.Writer.WritePropertyName("SshKeyName");
+                context.Writer.WriteStringValue(publicRequest.SshKeyName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

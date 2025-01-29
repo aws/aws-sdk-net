@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetStatistic())
             {
                 context.Writer.WritePropertyName("Statistic");
-                context.Writer.Write(requestObject.Statistic);
+                context.Writer.WriteStringValue(requestObject.Statistic);
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("Threshold");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ThresholdMarshaller.Instance;
                 marshaller.Marshall(requestObject.Threshold, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

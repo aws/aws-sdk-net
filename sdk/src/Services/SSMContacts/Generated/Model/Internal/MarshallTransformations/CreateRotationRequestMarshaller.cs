@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -63,81 +66,86 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContactIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ContactIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestContactIdsListValue in publicRequest.ContactIds)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContactIds())
-                    {
-                        context.Writer.WritePropertyName("ContactIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestContactIdsListValue in publicRequest.ContactIds)
-                        {
-                                context.Writer.Write(publicRequestContactIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetIdempotencyToken())
-                    {
-                        context.Writer.WritePropertyName("IdempotencyToken");
-                        context.Writer.Write(publicRequest.IdempotencyToken);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRecurrence())
-                    {
-                        context.Writer.WritePropertyName("Recurrence");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecurrenceSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Recurrence, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStartTime())
-                    {
-                        context.Writer.WritePropertyName("StartTime");
-                        context.Writer.Write(publicRequest.StartTime.Value);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTimeZoneId())
-                    {
-                        context.Writer.WritePropertyName("TimeZoneId");
-                        context.Writer.Write(publicRequest.TimeZoneId);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestContactIdsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetIdempotencyToken())
+            {
+                context.Writer.WritePropertyName("IdempotencyToken");
+                context.Writer.WriteStringValue(publicRequest.IdempotencyToken);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRecurrence())
+            {
+                context.Writer.WritePropertyName("Recurrence");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecurrenceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Recurrence, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStartTime())
+            {
+                context.Writer.WritePropertyName("StartTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartTime.Value)));
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTimeZoneId())
+            {
+                context.Writer.WritePropertyName("TimeZoneId");
+                context.Writer.WriteStringValue(publicRequest.TimeZoneId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

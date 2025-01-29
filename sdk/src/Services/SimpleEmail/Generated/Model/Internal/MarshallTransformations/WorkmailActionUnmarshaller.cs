@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WorkmailAction Object
     /// </summary>  
-    public class WorkmailActionUnmarshaller : IUnmarshaller<WorkmailAction, XmlUnmarshallerContext>, IUnmarshaller<WorkmailAction, JsonUnmarshallerContext>
+    public class WorkmailActionUnmarshaller : IXmlUnmarshaller<WorkmailAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public WorkmailAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static WorkmailActionUnmarshaller _instance = new WorkmailActionUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSubnetGroupQuotaExceededException operation
     /// </summary>  
-    public class DBSubnetGroupQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSubnetGroupQuotaExceededException, XmlUnmarshallerContext>
+    public class DBSubnetGroupQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSubnetGroupQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

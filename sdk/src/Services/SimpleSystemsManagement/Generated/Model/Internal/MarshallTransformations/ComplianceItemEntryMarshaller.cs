@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetails())
             {
                 context.Writer.WritePropertyName("Details");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDetailsKvp in requestObject.Details)
                 {
                     context.Writer.WritePropertyName(requestObjectDetailsKvp.Key);
                     var requestObjectDetailsValue = requestObjectDetailsKvp.Value;
 
-                        context.Writer.Write(requestObjectDetailsValue);
+                        context.Writer.WriteStringValue(requestObjectDetailsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetSeverity())
             {
                 context.Writer.WritePropertyName("Severity");
-                context.Writer.Write(requestObject.Severity);
+                context.Writer.WriteStringValue(requestObject.Severity);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
         }

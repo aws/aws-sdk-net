@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -53,23 +51,23 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Heading");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Heading.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Heading.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Heading.Value);
+                    context.Writer.WriteNumberValue(requestObject.Heading.Value);
                 }
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("Position");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPositionListValue in requestObject.Position)
                 {
-                        context.Writer.Write(requestObjectPositionListValue);
+                        context.Writer.WriteNumberValue(requestObjectPositionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSpeed())
@@ -77,18 +75,18 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Speed");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Speed.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Speed.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Speed.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Speed.Value);
+                    context.Writer.WriteNumberValue(requestObject.Speed.Value);
                 }
             }
 
             if(requestObject.IsSetTimestamp())
             {
                 context.Writer.WritePropertyName("Timestamp");
-                context.Writer.Write(requestObject.Timestamp);
+                context.Writer.WriteStringValue(requestObject.Timestamp);
             }
 
         }

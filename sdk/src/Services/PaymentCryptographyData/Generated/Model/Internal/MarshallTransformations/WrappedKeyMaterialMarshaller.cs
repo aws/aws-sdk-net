@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDiffieHellmanSymmetricKey())
             {
                 context.Writer.WritePropertyName("DiffieHellmanSymmetricKey");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EcdhDerivationAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DiffieHellmanSymmetricKey, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTr31KeyBlock())
             {
                 context.Writer.WritePropertyName("Tr31KeyBlock");
-                context.Writer.Write(requestObject.Tr31KeyBlock);
+                context.Writer.WriteStringValue(requestObject.Tr31KeyBlock);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.CodeGuruReviewer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventInfo())
             {
                 context.Writer.WritePropertyName("EventInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EventInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.EventInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRequester())
             {
                 context.Writer.WritePropertyName("Requester");
-                context.Writer.Write(requestObject.Requester);
+                context.Writer.WriteStringValue(requestObject.Requester);
             }
 
             if(requestObject.IsSetRequestId())
             {
                 context.Writer.WritePropertyName("RequestId");
-                context.Writer.Write(requestObject.RequestId);
+                context.Writer.WriteStringValue(requestObject.RequestId);
             }
 
             if(requestObject.IsSetVendorName())
             {
                 context.Writer.WritePropertyName("VendorName");
-                context.Writer.Write(requestObject.VendorName);
+                context.Writer.WriteStringValue(requestObject.VendorName);
             }
 
         }

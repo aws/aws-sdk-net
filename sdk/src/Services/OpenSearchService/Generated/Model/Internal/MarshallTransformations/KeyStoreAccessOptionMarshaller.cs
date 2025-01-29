@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyAccessRoleArn())
             {
                 context.Writer.WritePropertyName("KeyAccessRoleArn");
-                context.Writer.Write(requestObject.KeyAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.KeyAccessRoleArn);
             }
 
             if(requestObject.IsSetKeyStoreAccessEnabled())
             {
                 context.Writer.WritePropertyName("KeyStoreAccessEnabled");
-                context.Writer.Write(requestObject.KeyStoreAccessEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.KeyStoreAccessEnabled.Value);
             }
 
         }

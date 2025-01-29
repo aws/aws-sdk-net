@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentUpdatePolicy())
             {
                 context.Writer.WritePropertyName("componentUpdatePolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeploymentComponentUpdatePolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ComponentUpdatePolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfigurationValidationPolicy())
             {
                 context.Writer.WritePropertyName("configurationValidationPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeploymentConfigurationValidationPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfigurationValidationPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFailureHandlingPolicy())
             {
                 context.Writer.WritePropertyName("failureHandlingPolicy");
-                context.Writer.Write(requestObject.FailureHandlingPolicy);
+                context.Writer.WriteStringValue(requestObject.FailureHandlingPolicy);
             }
 
         }

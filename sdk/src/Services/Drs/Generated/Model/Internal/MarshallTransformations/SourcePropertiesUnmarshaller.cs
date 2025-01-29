@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Drs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SourceProperties Object
     /// </summary>  
-    public class SourcePropertiesUnmarshaller : IUnmarshaller<SourceProperties, XmlUnmarshallerContext>, IUnmarshaller<SourceProperties, JsonUnmarshallerContext>
+    public class SourcePropertiesUnmarshaller : IJsonUnmarshaller<SourceProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SourceProperties IUnmarshaller<SourceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SourceProperties Unmarshall(JsonUnmarshallerContext context)
+        public SourceProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SourceProperties unmarshalledObject = new SourceProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cpus", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CPU, CPUUnmarshaller>(CPUUnmarshaller.Instance);
-                    unmarshalledObject.Cpus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CPU, CPUUnmarshaller>(CPUUnmarshaller.Instance);
+                    unmarshalledObject.Cpus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("disks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Disk, DiskUnmarshaller>(DiskUnmarshaller.Instance);
-                    unmarshalledObject.Disks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Disk, DiskUnmarshaller>(DiskUnmarshaller.Instance);
+                    unmarshalledObject.Disks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("identificationHints", targetDepth))
                 {
                     var unmarshaller = IdentificationHintsUnmarshaller.Instance;
-                    unmarshalledObject.IdentificationHints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentificationHints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedDateTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("networkInterfaces", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
-                    unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);
+                    unmarshalledObject.NetworkInterfaces = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("os", targetDepth))
                 {
                     var unmarshaller = OSUnmarshaller.Instance;
-                    unmarshalledObject.Os = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Os = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ramBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RamBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RamBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recommendedInstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecommendedInstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecommendedInstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportsNitroInstances", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SupportsNitroInstances = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SupportsNitroInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

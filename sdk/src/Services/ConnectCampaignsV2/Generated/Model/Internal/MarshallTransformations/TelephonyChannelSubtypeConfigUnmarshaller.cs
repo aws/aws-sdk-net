@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TelephonyChannelSubtypeConfig Object
     /// </summary>  
-    public class TelephonyChannelSubtypeConfigUnmarshaller : IUnmarshaller<TelephonyChannelSubtypeConfig, XmlUnmarshallerContext>, IUnmarshaller<TelephonyChannelSubtypeConfig, JsonUnmarshallerContext>
+    public class TelephonyChannelSubtypeConfigUnmarshaller : IJsonUnmarshaller<TelephonyChannelSubtypeConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TelephonyChannelSubtypeConfig IUnmarshaller<TelephonyChannelSubtypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TelephonyChannelSubtypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public TelephonyChannelSubtypeConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TelephonyChannelSubtypeConfig unmarshalledObject = new TelephonyChannelSubtypeConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("capacity", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Capacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Capacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectQueueId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectQueueId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectQueueId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultOutboundConfig", targetDepth))
                 {
                     var unmarshaller = TelephonyOutboundConfigUnmarshaller.Instance;
-                    unmarshalledObject.DefaultOutboundConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultOutboundConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outboundMode", targetDepth))
                 {
                     var unmarshaller = TelephonyOutboundModeUnmarshaller.Instance;
-                    unmarshalledObject.OutboundMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutboundMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

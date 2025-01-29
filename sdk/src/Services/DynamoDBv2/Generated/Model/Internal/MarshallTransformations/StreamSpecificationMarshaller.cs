@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStreamEnabled())
             {
                 context.Writer.WritePropertyName("StreamEnabled");
-                context.Writer.Write(requestObject.StreamEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.StreamEnabled.Value);
             }
 
             if(requestObject.IsSetStreamViewType())
             {
                 context.Writer.WritePropertyName("StreamViewType");
-                context.Writer.Write(requestObject.StreamViewType);
+                context.Writer.WriteStringValue(requestObject.StreamViewType);
             }
 
         }

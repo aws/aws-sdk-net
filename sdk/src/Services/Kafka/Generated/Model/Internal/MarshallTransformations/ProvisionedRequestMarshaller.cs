@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,91 +49,91 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBrokerNodeGroupInfo())
             {
                 context.Writer.WritePropertyName("brokerNodeGroupInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BrokerNodeGroupInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.BrokerNodeGroupInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClientAuthentication())
             {
                 context.Writer.WritePropertyName("clientAuthentication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClientAuthenticationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClientAuthentication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfigurationInfo())
             {
                 context.Writer.WritePropertyName("configurationInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConfigurationInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfigurationInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryptionInfo())
             {
                 context.Writer.WritePropertyName("encryptionInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnhancedMonitoring())
             {
                 context.Writer.WritePropertyName("enhancedMonitoring");
-                context.Writer.Write(requestObject.EnhancedMonitoring);
+                context.Writer.WriteStringValue(requestObject.EnhancedMonitoring);
             }
 
             if(requestObject.IsSetKafkaVersion())
             {
                 context.Writer.WritePropertyName("kafkaVersion");
-                context.Writer.Write(requestObject.KafkaVersion);
+                context.Writer.WriteStringValue(requestObject.KafkaVersion);
             }
 
             if(requestObject.IsSetLoggingInfo())
             {
                 context.Writer.WritePropertyName("loggingInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LoggingInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.LoggingInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumberOfBrokerNodes())
             {
                 context.Writer.WritePropertyName("numberOfBrokerNodes");
-                context.Writer.Write(requestObject.NumberOfBrokerNodes.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfBrokerNodes.Value);
             }
 
             if(requestObject.IsSetOpenMonitoring())
             {
                 context.Writer.WritePropertyName("openMonitoring");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenMonitoringInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpenMonitoring, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorageMode())
             {
                 context.Writer.WritePropertyName("storageMode");
-                context.Writer.Write(requestObject.StorageMode);
+                context.Writer.WriteStringValue(requestObject.StorageMode);
             }
 
         }

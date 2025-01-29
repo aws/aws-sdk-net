@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CardStatus Object
     /// </summary>  
-    public class CardStatusUnmarshaller : IUnmarshaller<CardStatus, XmlUnmarshallerContext>, IUnmarshaller<CardStatus, JsonUnmarshallerContext>
+    public class CardStatusUnmarshaller : IJsonUnmarshaller<CardStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CardStatus IUnmarshaller<CardStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CardStatus Unmarshall(JsonUnmarshallerContext context)
+        public CardStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CardStatus unmarshalledObject = new CardStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("currentState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("submissions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Submission, SubmissionUnmarshaller>(SubmissionUnmarshaller.Instance);
-                    unmarshalledObject.Submissions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Submission, SubmissionUnmarshaller>(SubmissionUnmarshaller.Instance);
+                    unmarshalledObject.Submissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

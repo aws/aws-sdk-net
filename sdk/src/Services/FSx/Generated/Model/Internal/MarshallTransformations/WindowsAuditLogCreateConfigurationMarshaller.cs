@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuditLogDestination())
             {
                 context.Writer.WritePropertyName("AuditLogDestination");
-                context.Writer.Write(requestObject.AuditLogDestination);
+                context.Writer.WriteStringValue(requestObject.AuditLogDestination);
             }
 
             if(requestObject.IsSetFileAccessAuditLogLevel())
             {
                 context.Writer.WritePropertyName("FileAccessAuditLogLevel");
-                context.Writer.Write(requestObject.FileAccessAuditLogLevel);
+                context.Writer.WriteStringValue(requestObject.FileAccessAuditLogLevel);
             }
 
             if(requestObject.IsSetFileShareAccessAuditLogLevel())
             {
                 context.Writer.WritePropertyName("FileShareAccessAuditLogLevel");
-                context.Writer.Write(requestObject.FileShareAccessAuditLogLevel);
+                context.Writer.WriteStringValue(requestObject.FileShareAccessAuditLogLevel);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDimensionsKvp in requestObject.Dimensions)
                 {
                     context.Writer.WritePropertyName(requestObjectDimensionsKvp.Key);
                     var requestObjectDimensionsValue = requestObjectDimensionsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectDimensionsValueListValue in requestObjectDimensionsValue)
                     {
-                            context.Writer.Write(requestObjectDimensionsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectDimensionsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.Write(requestObject.EndDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDate.Value)));
             }
 
             if(requestObject.IsSetMetrics())
             {
                 context.Writer.WritePropertyName("Metrics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricsListValue in requestObject.Metrics)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExportMetricMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetricsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.Write(requestObject.StartDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartDate.Value)));
             }
 
         }

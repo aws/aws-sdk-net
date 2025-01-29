@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -51,100 +49,100 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDynamoDB())
             {
                 context.Writer.WritePropertyName("dynamoDB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamoDBActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamoDB, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamoDBv2())
             {
                 context.Writer.WritePropertyName("dynamoDBv2");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamoDBv2ActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamoDBv2, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirehose())
             {
                 context.Writer.WritePropertyName("firehose");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FirehoseActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Firehose, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIotEvents())
             {
                 context.Writer.WritePropertyName("iotEvents");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IotEventsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotEvents, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIotSiteWise())
             {
                 context.Writer.WritePropertyName("iotSiteWise");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IotSiteWiseActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotSiteWise, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIotTopicPublish())
             {
                 context.Writer.WritePropertyName("iotTopicPublish");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IotTopicPublishActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.IotTopicPublish, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambda())
             {
                 context.Writer.WritePropertyName("lambda");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lambda, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSns())
             {
                 context.Writer.WritePropertyName("sns");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SNSTopicPublishActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sns, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqs())
             {
                 context.Writer.WritePropertyName("sqs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqsActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sqs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
@@ -61,65 +64,70 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/blueprints/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBlueprintName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBlueprintName())
-                    {
-                        context.Writer.WritePropertyName("blueprintName");
-                        context.Writer.Write(publicRequest.BlueprintName);
-                    }
-
-                    if(publicRequest.IsSetBlueprintStage())
-                    {
-                        context.Writer.WritePropertyName("blueprintStage");
-                        context.Writer.Write(publicRequest.BlueprintStage);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetEncryptionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("encryptionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncryptionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSchema())
-                    {
-                        context.Writer.WritePropertyName("schema");
-                        context.Writer.Write(publicRequest.Schema);
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("blueprintName");
+                context.Writer.WriteStringValue(publicRequest.BlueprintName);
             }
+
+            if(publicRequest.IsSetBlueprintStage())
+            {
+                context.Writer.WritePropertyName("blueprintStage");
+                context.Writer.WriteStringValue(publicRequest.BlueprintStage);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("encryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSchema())
+            {
+                context.Writer.WritePropertyName("schema");
+                context.Writer.WriteStringValue(publicRequest.Schema);
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

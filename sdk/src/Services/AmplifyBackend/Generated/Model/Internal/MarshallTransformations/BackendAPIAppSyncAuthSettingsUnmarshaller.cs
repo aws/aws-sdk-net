@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BackendAPIAppSyncAuthSettings Object
     /// </summary>  
-    public class BackendAPIAppSyncAuthSettingsUnmarshaller : IUnmarshaller<BackendAPIAppSyncAuthSettings, XmlUnmarshallerContext>, IUnmarshaller<BackendAPIAppSyncAuthSettings, JsonUnmarshallerContext>
+    public class BackendAPIAppSyncAuthSettingsUnmarshaller : IJsonUnmarshaller<BackendAPIAppSyncAuthSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BackendAPIAppSyncAuthSettings IUnmarshaller<BackendAPIAppSyncAuthSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BackendAPIAppSyncAuthSettings Unmarshall(JsonUnmarshallerContext context)
+        public BackendAPIAppSyncAuthSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BackendAPIAppSyncAuthSettings unmarshalledObject = new BackendAPIAppSyncAuthSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cognitoUserPoolId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CognitoUserPoolId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CognitoUserPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("expirationTime", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpirationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openIDAuthTTL", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpenIDAuthTTL = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenIDAuthTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openIDClientId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpenIDClientId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenIDClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openIDIatTTL", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpenIDIatTTL = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenIDIatTTL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openIDIssueURL", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpenIDIssueURL = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenIDIssueURL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openIDProviderName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OpenIDProviderName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenIDProviderName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

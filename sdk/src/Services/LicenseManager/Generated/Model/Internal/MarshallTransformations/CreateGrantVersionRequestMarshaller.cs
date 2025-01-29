@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
@@ -63,77 +66,82 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowedOperations())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AllowedOperations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAllowedOperationsListValue in publicRequest.AllowedOperations)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllowedOperations())
-                    {
-                        context.Writer.WritePropertyName("AllowedOperations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAllowedOperationsListValue in publicRequest.AllowedOperations)
-                        {
-                                context.Writer.Write(publicRequestAllowedOperationsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetGrantArn())
-                    {
-                        context.Writer.WritePropertyName("GrantArn");
-                        context.Writer.Write(publicRequest.GrantArn);
-                    }
-
-                    if(publicRequest.IsSetGrantName())
-                    {
-                        context.Writer.WritePropertyName("GrantName");
-                        context.Writer.Write(publicRequest.GrantName);
-                    }
-
-                    if(publicRequest.IsSetOptions())
-                    {
-                        context.Writer.WritePropertyName("Options");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Options, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceVersion())
-                    {
-                        context.Writer.WritePropertyName("SourceVersion");
-                        context.Writer.Write(publicRequest.SourceVersion);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetStatusReason())
-                    {
-                        context.Writer.WritePropertyName("StatusReason");
-                        context.Writer.Write(publicRequest.StatusReason);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAllowedOperationsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            if(publicRequest.IsSetGrantArn())
+            {
+                context.Writer.WritePropertyName("GrantArn");
+                context.Writer.WriteStringValue(publicRequest.GrantArn);
+            }
+
+            if(publicRequest.IsSetGrantName())
+            {
+                context.Writer.WritePropertyName("GrantName");
+                context.Writer.WriteStringValue(publicRequest.GrantName);
+            }
+
+            if(publicRequest.IsSetOptions())
+            {
+                context.Writer.WritePropertyName("Options");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Options, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceVersion())
+            {
+                context.Writer.WritePropertyName("SourceVersion");
+                context.Writer.WriteStringValue(publicRequest.SourceVersion);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetStatusReason())
+            {
+                context.Writer.WritePropertyName("StatusReason");
+                context.Writer.WriteStringValue(publicRequest.StatusReason);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

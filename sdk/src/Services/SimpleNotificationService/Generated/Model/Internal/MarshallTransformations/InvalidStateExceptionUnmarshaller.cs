@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for InvalidStateException operation
     /// </summary>  
-    public class InvalidStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidStateException, XmlUnmarshallerContext>
+    public class InvalidStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

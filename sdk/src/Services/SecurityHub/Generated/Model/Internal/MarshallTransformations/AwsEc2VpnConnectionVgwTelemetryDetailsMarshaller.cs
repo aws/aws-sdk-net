@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceptedRouteCount())
             {
                 context.Writer.WritePropertyName("AcceptedRouteCount");
-                context.Writer.Write(requestObject.AcceptedRouteCount.Value);
+                context.Writer.WriteNumberValue(requestObject.AcceptedRouteCount.Value);
             }
 
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("CertificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
             if(requestObject.IsSetLastStatusChange())
             {
                 context.Writer.WritePropertyName("LastStatusChange");
-                context.Writer.Write(requestObject.LastStatusChange);
+                context.Writer.WriteStringValue(requestObject.LastStatusChange);
             }
 
             if(requestObject.IsSetOutsideIpAddress())
             {
                 context.Writer.WritePropertyName("OutsideIpAddress");
-                context.Writer.Write(requestObject.OutsideIpAddress);
+                context.Writer.WriteStringValue(requestObject.OutsideIpAddress);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetStatusMessage())
             {
                 context.Writer.WritePropertyName("StatusMessage");
-                context.Writer.Write(requestObject.StatusMessage);
+                context.Writer.WriteStringValue(requestObject.StatusMessage);
             }
 
         }

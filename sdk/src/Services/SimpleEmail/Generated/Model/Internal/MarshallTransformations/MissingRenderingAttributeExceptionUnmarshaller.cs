@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MissingRenderingAttributeException operation
     /// </summary>  
-    public class MissingRenderingAttributeExceptionUnmarshaller : IErrorResponseUnmarshaller<MissingRenderingAttributeException, XmlUnmarshallerContext>
+    public class MissingRenderingAttributeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MissingRenderingAttributeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

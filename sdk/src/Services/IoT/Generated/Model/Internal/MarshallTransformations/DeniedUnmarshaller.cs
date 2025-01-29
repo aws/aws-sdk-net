@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Denied Object
     /// </summary>  
-    public class DeniedUnmarshaller : IUnmarshaller<Denied, XmlUnmarshallerContext>, IUnmarshaller<Denied, JsonUnmarshallerContext>
+    public class DeniedUnmarshaller : IJsonUnmarshaller<Denied, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Denied IUnmarshaller<Denied, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Denied Unmarshall(JsonUnmarshallerContext context)
+        public Denied Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Denied unmarshalledObject = new Denied();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("explicitDeny", targetDepth))
                 {
                     var unmarshaller = ExplicitDenyUnmarshaller.Instance;
-                    unmarshalledObject.ExplicitDeny = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExplicitDeny = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("implicitDeny", targetDepth))
                 {
                     var unmarshaller = ImplicitDenyUnmarshaller.Instance;
-                    unmarshalledObject.ImplicitDeny = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImplicitDeny = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

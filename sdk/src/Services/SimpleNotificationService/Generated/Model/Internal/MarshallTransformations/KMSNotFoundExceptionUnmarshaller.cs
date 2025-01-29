@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for KMSNotFoundException operation
     /// </summary>  
-    public class KMSNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<KMSNotFoundException, XmlUnmarshallerContext>
+    public class KMSNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KMSNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

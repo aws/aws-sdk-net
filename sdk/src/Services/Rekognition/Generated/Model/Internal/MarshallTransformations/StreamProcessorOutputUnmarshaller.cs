@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StreamProcessorOutput Object
     /// </summary>  
-    public class StreamProcessorOutputUnmarshaller : IUnmarshaller<StreamProcessorOutput, XmlUnmarshallerContext>, IUnmarshaller<StreamProcessorOutput, JsonUnmarshallerContext>
+    public class StreamProcessorOutputUnmarshaller : IJsonUnmarshaller<StreamProcessorOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StreamProcessorOutput IUnmarshaller<StreamProcessorOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StreamProcessorOutput Unmarshall(JsonUnmarshallerContext context)
+        public StreamProcessorOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StreamProcessorOutput unmarshalledObject = new StreamProcessorOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("KinesisDataStream", targetDepth))
                 {
                     var unmarshaller = KinesisDataStreamUnmarshaller.Instance;
-                    unmarshalledObject.KinesisDataStream = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KinesisDataStream = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3Destination", targetDepth))
                 {
                     var unmarshaller = S3DestinationUnmarshaller.Instance;
-                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDimensionsKvp in requestObject.Dimensions)
                 {
                     context.Writer.WritePropertyName(requestObjectDimensionsKvp.Key);
                     var requestObjectDimensionsValue = requestObjectDimensionsKvp.Value;
 
-                        context.Writer.Write(requestObjectDimensionsValue);
+                        context.Writer.WriteStringValue(requestObjectDimensionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndDate())
             {
                 context.Writer.WritePropertyName("EndDate");
-                context.Writer.Write(requestObject.EndDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.EndDate.Value)));
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetMetric())
             {
                 context.Writer.WritePropertyName("Metric");
-                context.Writer.Write(requestObject.Metric);
+                context.Writer.WriteStringValue(requestObject.Metric);
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
             if(requestObject.IsSetStartDate())
             {
                 context.Writer.WritePropertyName("StartDate");
-                context.Writer.Write(requestObject.StartDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartDate.Value)));
             }
 
         }

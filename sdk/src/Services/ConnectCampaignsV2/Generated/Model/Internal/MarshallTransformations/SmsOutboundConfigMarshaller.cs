@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectSourcePhoneNumberArn())
             {
                 context.Writer.WritePropertyName("connectSourcePhoneNumberArn");
-                context.Writer.Write(requestObject.ConnectSourcePhoneNumberArn);
+                context.Writer.WriteStringValue(requestObject.ConnectSourcePhoneNumberArn);
             }
 
             if(requestObject.IsSetWisdomTemplateArn())
             {
                 context.Writer.WritePropertyName("wisdomTemplateArn");
-                context.Writer.Write(requestObject.WisdomTemplateArn);
+                context.Writer.WriteStringValue(requestObject.WisdomTemplateArn);
             }
 
         }

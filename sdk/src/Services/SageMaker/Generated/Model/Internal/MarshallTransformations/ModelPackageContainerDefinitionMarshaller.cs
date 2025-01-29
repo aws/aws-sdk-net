@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,96 +49,96 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalS3DataSource())
             {
                 context.Writer.WritePropertyName("AdditionalS3DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AdditionalS3DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalS3DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContainerHostname())
             {
                 context.Writer.WritePropertyName("ContainerHostname");
-                context.Writer.Write(requestObject.ContainerHostname);
+                context.Writer.WriteStringValue(requestObject.ContainerHostname);
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnvironmentKvp in requestObject.Environment)
                 {
                     context.Writer.WritePropertyName(requestObjectEnvironmentKvp.Key);
                     var requestObjectEnvironmentValue = requestObjectEnvironmentKvp.Value;
 
-                        context.Writer.Write(requestObjectEnvironmentValue);
+                        context.Writer.WriteStringValue(requestObjectEnvironmentValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFramework())
             {
                 context.Writer.WritePropertyName("Framework");
-                context.Writer.Write(requestObject.Framework);
+                context.Writer.WriteStringValue(requestObject.Framework);
             }
 
             if(requestObject.IsSetFrameworkVersion())
             {
                 context.Writer.WritePropertyName("FrameworkVersion");
-                context.Writer.Write(requestObject.FrameworkVersion);
+                context.Writer.WriteStringValue(requestObject.FrameworkVersion);
             }
 
             if(requestObject.IsSetImage())
             {
                 context.Writer.WritePropertyName("Image");
-                context.Writer.Write(requestObject.Image);
+                context.Writer.WriteStringValue(requestObject.Image);
             }
 
             if(requestObject.IsSetImageDigest())
             {
                 context.Writer.WritePropertyName("ImageDigest");
-                context.Writer.Write(requestObject.ImageDigest);
+                context.Writer.WriteStringValue(requestObject.ImageDigest);
             }
 
             if(requestObject.IsSetModelDataSource())
             {
                 context.Writer.WritePropertyName("ModelDataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelDataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelDataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelDataUrl())
             {
                 context.Writer.WritePropertyName("ModelDataUrl");
-                context.Writer.Write(requestObject.ModelDataUrl);
+                context.Writer.WriteStringValue(requestObject.ModelDataUrl);
             }
 
             if(requestObject.IsSetModelInput())
             {
                 context.Writer.WritePropertyName("ModelInput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelInput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNearestModelName())
             {
                 context.Writer.WritePropertyName("NearestModelName");
-                context.Writer.Write(requestObject.NearestModelName);
+                context.Writer.WriteStringValue(requestObject.NearestModelName);
             }
 
             if(requestObject.IsSetProductId())
             {
                 context.Writer.WritePropertyName("ProductId");
-                context.Writer.Write(requestObject.ProductId);
+                context.Writer.WriteStringValue(requestObject.ProductId);
             }
 
         }

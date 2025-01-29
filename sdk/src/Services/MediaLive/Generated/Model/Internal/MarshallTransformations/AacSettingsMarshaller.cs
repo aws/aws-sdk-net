@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -53,42 +51,42 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("bitrate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Bitrate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Bitrate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Bitrate.Value);
+                    context.Writer.WriteNumberValue(requestObject.Bitrate.Value);
                 }
             }
 
             if(requestObject.IsSetCodingMode())
             {
                 context.Writer.WritePropertyName("codingMode");
-                context.Writer.Write(requestObject.CodingMode);
+                context.Writer.WriteStringValue(requestObject.CodingMode);
             }
 
             if(requestObject.IsSetInputType())
             {
                 context.Writer.WritePropertyName("inputType");
-                context.Writer.Write(requestObject.InputType);
+                context.Writer.WriteStringValue(requestObject.InputType);
             }
 
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WriteStringValue(requestObject.Profile);
             }
 
             if(requestObject.IsSetRateControlMode())
             {
                 context.Writer.WritePropertyName("rateControlMode");
-                context.Writer.Write(requestObject.RateControlMode);
+                context.Writer.WriteStringValue(requestObject.RateControlMode);
             }
 
             if(requestObject.IsSetRawFormat())
             {
                 context.Writer.WritePropertyName("rawFormat");
-                context.Writer.Write(requestObject.RawFormat);
+                context.Writer.WriteStringValue(requestObject.RawFormat);
             }
 
             if(requestObject.IsSetSampleRate())
@@ -96,24 +94,24 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("sampleRate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.SampleRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.SampleRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.SampleRate.Value);
+                    context.Writer.WriteNumberValue(requestObject.SampleRate.Value);
                 }
             }
 
             if(requestObject.IsSetSpec())
             {
                 context.Writer.WritePropertyName("spec");
-                context.Writer.Write(requestObject.Spec);
+                context.Writer.WriteStringValue(requestObject.Spec);
             }
 
             if(requestObject.IsSetVbrQuality())
             {
                 context.Writer.WritePropertyName("vbrQuality");
-                context.Writer.Write(requestObject.VbrQuality);
+                context.Writer.WriteStringValue(requestObject.VbrQuality);
             }
 
         }

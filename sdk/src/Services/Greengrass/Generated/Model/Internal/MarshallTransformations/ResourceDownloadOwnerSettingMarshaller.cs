@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupOwner())
             {
                 context.Writer.WritePropertyName("GroupOwner");
-                context.Writer.Write(requestObject.GroupOwner);
+                context.Writer.WriteStringValue(requestObject.GroupOwner);
             }
 
             if(requestObject.IsSetGroupPermission())
             {
                 context.Writer.WritePropertyName("GroupPermission");
-                context.Writer.Write(requestObject.GroupPermission);
+                context.Writer.WriteStringValue(requestObject.GroupPermission);
             }
 
         }

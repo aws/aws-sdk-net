@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -47,123 +47,123 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             DescribeFlowResponse response = new DescribeFlowResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    response.CreatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("createdBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.CreatedBy = unmarshaller.Unmarshall(context);
+                    response.CreatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Description = unmarshaller.Unmarshall(context);
+                    response.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationFlowConfigList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DestinationFlowConfig, DestinationFlowConfigUnmarshaller>(DestinationFlowConfigUnmarshaller.Instance);
-                    response.DestinationFlowConfigList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DestinationFlowConfig, DestinationFlowConfigUnmarshaller>(DestinationFlowConfigUnmarshaller.Instance);
+                    response.DestinationFlowConfigList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("flowArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FlowArn = unmarshaller.Unmarshall(context);
+                    response.FlowArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("flowName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FlowName = unmarshaller.Unmarshall(context);
+                    response.FlowName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("flowStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FlowStatus = unmarshaller.Unmarshall(context);
+                    response.FlowStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("flowStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.FlowStatusMessage = unmarshaller.Unmarshall(context);
+                    response.FlowStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("kmsArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.KmsArn = unmarshaller.Unmarshall(context);
+                    response.KmsArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastRunExecutionDetails", targetDepth))
                 {
                     var unmarshaller = ExecutionDetailsUnmarshaller.Instance;
-                    response.LastRunExecutionDetails = unmarshaller.Unmarshall(context);
+                    response.LastRunExecutionDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastRunMetadataCatalogDetails", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MetadataCatalogDetail, MetadataCatalogDetailUnmarshaller>(MetadataCatalogDetailUnmarshaller.Instance);
-                    response.LastRunMetadataCatalogDetails = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MetadataCatalogDetail, MetadataCatalogDetailUnmarshaller>(MetadataCatalogDetailUnmarshaller.Instance);
+                    response.LastRunMetadataCatalogDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LastUpdatedAt = unmarshaller.Unmarshall(context);
+                    response.LastUpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastUpdatedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LastUpdatedBy = unmarshaller.Unmarshall(context);
+                    response.LastUpdatedBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("metadataCatalogConfig", targetDepth))
                 {
                     var unmarshaller = MetadataCatalogConfigUnmarshaller.Instance;
-                    response.MetadataCatalogConfig = unmarshaller.Unmarshall(context);
+                    response.MetadataCatalogConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("schemaVersion", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.SchemaVersion = unmarshaller.Unmarshall(context);
+                    response.SchemaVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceFlowConfig", targetDepth))
                 {
                     var unmarshaller = SourceFlowConfigUnmarshaller.Instance;
-                    response.SourceFlowConfig = unmarshaller.Unmarshall(context);
+                    response.SourceFlowConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    response.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tasks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Task, TaskUnmarshaller>(TaskUnmarshaller.Instance);
-                    response.Tasks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Task, TaskUnmarshaller>(TaskUnmarshaller.Instance);
+                    response.Tasks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("triggerConfig", targetDepth))
                 {
                     var unmarshaller = TriggerConfigUnmarshaller.Instance;
-                    response.TriggerConfig = unmarshaller.Unmarshall(context);
+                    response.TriggerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -180,22 +180,24 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
-                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonAppflowException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

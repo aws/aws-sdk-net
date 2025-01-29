@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyCookiesInCachePolicyException operation
     /// </summary>  
-    public class TooManyCookiesInCachePolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyCookiesInCachePolicyException, XmlUnmarshallerContext>
+    public class TooManyCookiesInCachePolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyCookiesInCachePolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

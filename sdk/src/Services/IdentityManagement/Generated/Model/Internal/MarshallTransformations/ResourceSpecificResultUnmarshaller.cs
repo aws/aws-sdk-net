@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceSpecificResult Object
     /// </summary>  
-    public class ResourceSpecificResultUnmarshaller : IUnmarshaller<ResourceSpecificResult, XmlUnmarshallerContext>, IUnmarshaller<ResourceSpecificResult, JsonUnmarshallerContext>
+    public class ResourceSpecificResultUnmarshaller : IXmlUnmarshaller<ResourceSpecificResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,7 +57,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("EvalDecisionDetails/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         if (unmarshalledObject.EvalDecisionDetails == null)
                         {
                             unmarshalledObject.EvalDecisionDetails = new Dictionary<string, string>();
@@ -115,17 +115,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResourceSpecificResult Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ResourceSpecificResultUnmarshaller _instance = new ResourceSpecificResultUnmarshaller();        
 

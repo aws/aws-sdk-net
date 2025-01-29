@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,85 +66,90 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAssociationType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAssociationType())
-                    {
-                        context.Writer.WritePropertyName("AssociationType");
-                        context.Writer.Write(publicRequest.AssociationType);
-                    }
-
-                    if(publicRequest.IsSetCreatedAfter())
-                    {
-                        context.Writer.WritePropertyName("CreatedAfter");
-                        context.Writer.Write(publicRequest.CreatedAfter.Value);
-                    }
-
-                    if(publicRequest.IsSetCreatedBefore())
-                    {
-                        context.Writer.WritePropertyName("CreatedBefore");
-                        context.Writer.Write(publicRequest.CreatedBefore.Value);
-                    }
-
-                    if(publicRequest.IsSetDestinationArn())
-                    {
-                        context.Writer.WritePropertyName("DestinationArn");
-                        context.Writer.Write(publicRequest.DestinationArn);
-                    }
-
-                    if(publicRequest.IsSetDestinationType())
-                    {
-                        context.Writer.WritePropertyName("DestinationType");
-                        context.Writer.Write(publicRequest.DestinationType);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetSortBy())
-                    {
-                        context.Writer.WritePropertyName("SortBy");
-                        context.Writer.Write(publicRequest.SortBy);
-                    }
-
-                    if(publicRequest.IsSetSortOrder())
-                    {
-                        context.Writer.WritePropertyName("SortOrder");
-                        context.Writer.Write(publicRequest.SortOrder);
-                    }
-
-                    if(publicRequest.IsSetSourceArn())
-                    {
-                        context.Writer.WritePropertyName("SourceArn");
-                        context.Writer.Write(publicRequest.SourceArn);
-                    }
-
-                    if(publicRequest.IsSetSourceType())
-                    {
-                        context.Writer.WritePropertyName("SourceType");
-                        context.Writer.Write(publicRequest.SourceType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AssociationType");
+                context.Writer.WriteStringValue(publicRequest.AssociationType);
             }
+
+            if(publicRequest.IsSetCreatedAfter())
+            {
+                context.Writer.WritePropertyName("CreatedAfter");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedAfter.Value)));
+            }
+
+            if(publicRequest.IsSetCreatedBefore())
+            {
+                context.Writer.WritePropertyName("CreatedBefore");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CreatedBefore.Value)));
+            }
+
+            if(publicRequest.IsSetDestinationArn())
+            {
+                context.Writer.WritePropertyName("DestinationArn");
+                context.Writer.WriteStringValue(publicRequest.DestinationArn);
+            }
+
+            if(publicRequest.IsSetDestinationType())
+            {
+                context.Writer.WritePropertyName("DestinationType");
+                context.Writer.WriteStringValue(publicRequest.DestinationType);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetSortBy())
+            {
+                context.Writer.WritePropertyName("SortBy");
+                context.Writer.WriteStringValue(publicRequest.SortBy);
+            }
+
+            if(publicRequest.IsSetSortOrder())
+            {
+                context.Writer.WritePropertyName("SortOrder");
+                context.Writer.WriteStringValue(publicRequest.SortOrder);
+            }
+
+            if(publicRequest.IsSetSourceArn())
+            {
+                context.Writer.WritePropertyName("SourceArn");
+                context.Writer.WriteStringValue(publicRequest.SourceArn);
+            }
+
+            if(publicRequest.IsSetSourceType())
+            {
+                context.Writer.WritePropertyName("SourceType");
+                context.Writer.WriteStringValue(publicRequest.SourceType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

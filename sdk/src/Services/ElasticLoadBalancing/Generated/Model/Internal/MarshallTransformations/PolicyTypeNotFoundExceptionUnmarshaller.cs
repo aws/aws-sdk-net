@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PolicyTypeNotFoundException operation
     /// </summary>  
-    public class PolicyTypeNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<PolicyTypeNotFoundException, XmlUnmarshallerContext>
+    public class PolicyTypeNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PolicyTypeNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

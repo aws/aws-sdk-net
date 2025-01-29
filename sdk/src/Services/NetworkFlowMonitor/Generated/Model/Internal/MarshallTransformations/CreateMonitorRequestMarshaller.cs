@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
 {
@@ -61,88 +64,93 @@ namespace Amazon.NetworkFlowMonitor.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/monitors";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetLocalResources())
-                    {
-                        context.Writer.WritePropertyName("localResources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLocalResourcesListValue in publicRequest.LocalResources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MonitorLocalResourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestLocalResourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMonitorName())
-                    {
-                        context.Writer.WritePropertyName("monitorName");
-                        context.Writer.Write(publicRequest.MonitorName);
-                    }
-
-                    if(publicRequest.IsSetRemoteResources())
-                    {
-                        context.Writer.WritePropertyName("remoteResources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRemoteResourcesListValue in publicRequest.RemoteResources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MonitorRemoteResourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRemoteResourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetScopeArn())
-                    {
-                        context.Writer.WritePropertyName("scopeArn");
-                        context.Writer.Write(publicRequest.ScopeArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetLocalResources())
+            {
+                context.Writer.WritePropertyName("localResources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLocalResourcesListValue in publicRequest.LocalResources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MonitorLocalResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLocalResourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMonitorName())
+            {
+                context.Writer.WritePropertyName("monitorName");
+                context.Writer.WriteStringValue(publicRequest.MonitorName);
+            }
+
+            if(publicRequest.IsSetRemoteResources())
+            {
+                context.Writer.WritePropertyName("remoteResources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemoteResourcesListValue in publicRequest.RemoteResources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MonitorRemoteResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRemoteResourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetScopeArn())
+            {
+                context.Writer.WritePropertyName("scopeArn");
+                context.Writer.WriteStringValue(publicRequest.ScopeArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

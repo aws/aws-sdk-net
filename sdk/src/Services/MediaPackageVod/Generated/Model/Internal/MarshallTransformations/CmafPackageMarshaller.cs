@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CmafEncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsManifests())
             {
                 context.Writer.WritePropertyName("hlsManifests");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHlsManifestsListValue in requestObject.HlsManifests)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HlsManifestMarshaller.Instance;
                     marshaller.Marshall(requestObjectHlsManifestsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeEncoderConfigurationInSegments())
             {
                 context.Writer.WritePropertyName("includeEncoderConfigurationInSegments");
-                context.Writer.Write(requestObject.IncludeEncoderConfigurationInSegments.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeEncoderConfigurationInSegments.Value);
             }
 
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentDurationSeconds.Value);
             }
 
         }

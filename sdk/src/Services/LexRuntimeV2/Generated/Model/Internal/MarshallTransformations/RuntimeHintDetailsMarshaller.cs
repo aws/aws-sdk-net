@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRuntimeHintValues())
             {
                 context.Writer.WritePropertyName("runtimeHintValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRuntimeHintValuesListValue in requestObject.RuntimeHintValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RuntimeHintValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectRuntimeHintValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubSlotHints())
             {
                 context.Writer.WritePropertyName("subSlotHints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSubSlotHintsKvp in requestObject.SubSlotHints)
                 {
                     context.Writer.WritePropertyName(requestObjectSubSlotHintsKvp.Key);
                     var requestObjectSubSlotHintsValue = requestObjectSubSlotHintsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RuntimeHintDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectSubSlotHintsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

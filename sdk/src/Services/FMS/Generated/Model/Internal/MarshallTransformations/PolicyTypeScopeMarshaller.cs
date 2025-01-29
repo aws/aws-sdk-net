@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllPolicyTypesEnabled())
             {
                 context.Writer.WritePropertyName("AllPolicyTypesEnabled");
-                context.Writer.Write(requestObject.AllPolicyTypesEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllPolicyTypesEnabled.Value);
             }
 
             if(requestObject.IsSetPolicyTypes())
             {
                 context.Writer.WritePropertyName("PolicyTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPolicyTypesListValue in requestObject.PolicyTypes)
                 {
-                        context.Writer.Write(requestObjectPolicyTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectPolicyTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

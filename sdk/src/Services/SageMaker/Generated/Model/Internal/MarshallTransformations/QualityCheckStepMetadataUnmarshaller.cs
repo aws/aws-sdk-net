@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QualityCheckStepMetadata Object
     /// </summary>  
-    public class QualityCheckStepMetadataUnmarshaller : IUnmarshaller<QualityCheckStepMetadata, XmlUnmarshallerContext>, IUnmarshaller<QualityCheckStepMetadata, JsonUnmarshallerContext>
+    public class QualityCheckStepMetadataUnmarshaller : IJsonUnmarshaller<QualityCheckStepMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QualityCheckStepMetadata IUnmarshaller<QualityCheckStepMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QualityCheckStepMetadata Unmarshall(JsonUnmarshallerContext context)
+        public QualityCheckStepMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QualityCheckStepMetadata unmarshalledObject = new QualityCheckStepMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BaselineUsedForDriftCheckConstraints", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaselineUsedForDriftCheckConstraints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaselineUsedForDriftCheckConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BaselineUsedForDriftCheckStatistics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaselineUsedForDriftCheckStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaselineUsedForDriftCheckStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CalculatedBaselineConstraints", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CalculatedBaselineConstraints = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CalculatedBaselineConstraints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CalculatedBaselineStatistics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CalculatedBaselineStatistics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CalculatedBaselineStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CheckJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CheckJobArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CheckJobArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CheckType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CheckType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CheckType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegisterNewBaseline", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RegisterNewBaseline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegisterNewBaseline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SkipCheck", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.SkipCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SkipCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ViolationReport", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ViolationReport = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ViolationReport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

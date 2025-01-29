@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("ResourceId");
-                context.Writer.Write(requestObject.ResourceId);
+                context.Writer.WriteStringValue(requestObject.ResourceId);
             }
 
             if(requestObject.IsSetResourceName())
             {
                 context.Writer.WritePropertyName("ResourceName");
-                context.Writer.Write(requestObject.ResourceName);
+                context.Writer.WriteStringValue(requestObject.ResourceName);
             }
 
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WriteStringValue(requestObject.ResourceType);
             }
 
             if(requestObject.IsSetSourceAccountId())
             {
                 context.Writer.WritePropertyName("SourceAccountId");
-                context.Writer.Write(requestObject.SourceAccountId);
+                context.Writer.WriteStringValue(requestObject.SourceAccountId);
             }
 
             if(requestObject.IsSetSourceRegion())
             {
                 context.Writer.WritePropertyName("SourceRegion");
-                context.Writer.Write(requestObject.SourceRegion);
+                context.Writer.WriteStringValue(requestObject.SourceRegion);
             }
 
         }

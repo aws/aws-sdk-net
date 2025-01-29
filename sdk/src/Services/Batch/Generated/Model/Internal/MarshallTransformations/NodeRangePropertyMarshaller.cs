@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainer())
             {
                 context.Writer.WritePropertyName("container");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Container, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEcsProperties())
             {
                 context.Writer.WritePropertyName("ecsProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EcsPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.EcsProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEksProperties())
             {
                 context.Writer.WritePropertyName("eksProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EksPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.EksProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInstanceTypes())
             {
                 context.Writer.WritePropertyName("instanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
                 {
-                        context.Writer.Write(requestObjectInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetNodes())
             {
                 context.Writer.WritePropertyName("targetNodes");
-                context.Writer.Write(requestObject.TargetNodes);
+                context.Writer.WriteStringValue(requestObject.TargetNodes);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.SimpleDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AttributeDoesNotExistException operation
     /// </summary>  
-    public class AttributeDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<AttributeDoesNotExistException, XmlUnmarshallerContext>
+    public class AttributeDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AttributeDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

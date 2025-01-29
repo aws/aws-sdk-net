@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VPC Object
     /// </summary>  
-    public class VPCUnmarshaller : IUnmarshaller<VPC, XmlUnmarshallerContext>, IUnmarshaller<VPC, JsonUnmarshallerContext>
+    public class VPCUnmarshaller : IXmlUnmarshaller<VPC, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VPC Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static VPCUnmarshaller _instance = new VPCUnmarshaller();        
 
         /// <summary>

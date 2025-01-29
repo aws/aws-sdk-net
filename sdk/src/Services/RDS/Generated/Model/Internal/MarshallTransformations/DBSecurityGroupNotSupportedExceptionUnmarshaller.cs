@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBSecurityGroupNotSupportedException operation
     /// </summary>  
-    public class DBSecurityGroupNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<DBSecurityGroupNotSupportedException, XmlUnmarshallerContext>
+    public class DBSecurityGroupNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBSecurityGroupNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

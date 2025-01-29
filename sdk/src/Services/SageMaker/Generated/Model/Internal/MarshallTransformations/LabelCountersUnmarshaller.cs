@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LabelCounters Object
     /// </summary>  
-    public class LabelCountersUnmarshaller : IUnmarshaller<LabelCounters, XmlUnmarshallerContext>, IUnmarshaller<LabelCounters, JsonUnmarshallerContext>
+    public class LabelCountersUnmarshaller : IJsonUnmarshaller<LabelCounters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LabelCounters IUnmarshaller<LabelCounters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LabelCounters Unmarshall(JsonUnmarshallerContext context)
+        public LabelCounters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LabelCounters unmarshalledObject = new LabelCounters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FailedNonRetryableError", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FailedNonRetryableError = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailedNonRetryableError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HumanLabeled", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HumanLabeled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HumanLabeled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MachineLabeled", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MachineLabeled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MachineLabeled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalLabeled", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalLabeled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalLabeled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Unlabeled", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Unlabeled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Unlabeled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

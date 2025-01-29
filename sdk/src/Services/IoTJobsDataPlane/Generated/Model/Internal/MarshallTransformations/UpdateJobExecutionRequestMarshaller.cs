@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
 {
@@ -67,69 +70,74 @@ namespace Amazon.IoTJobsDataPlane.Model.Internal.MarshallTransformations
                 throw new AmazonIoTJobsDataPlaneException("Request object does not have required field ThingName set");
             request.AddPathResource("{thingName}", StringUtils.FromString(publicRequest.ThingName));
             request.ResourcePath = "/things/{thingName}/jobs/{jobId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetExecutionNumber())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetExecutionNumber())
-                    {
-                        context.Writer.WritePropertyName("executionNumber");
-                        context.Writer.Write(publicRequest.ExecutionNumber.Value);
-                    }
-
-                    if(publicRequest.IsSetExpectedVersion())
-                    {
-                        context.Writer.WritePropertyName("expectedVersion");
-                        context.Writer.Write(publicRequest.ExpectedVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetIncludeJobDocument())
-                    {
-                        context.Writer.WritePropertyName("includeJobDocument");
-                        context.Writer.Write(publicRequest.IncludeJobDocument.Value);
-                    }
-
-                    if(publicRequest.IsSetIncludeJobExecutionState())
-                    {
-                        context.Writer.WritePropertyName("includeJobExecutionState");
-                        context.Writer.Write(publicRequest.IncludeJobExecutionState.Value);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetStatusDetails())
-                    {
-                        context.Writer.WritePropertyName("statusDetails");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestStatusDetailsKvp in publicRequest.StatusDetails)
-                        {
-                            context.Writer.WritePropertyName(publicRequestStatusDetailsKvp.Key);
-                            var publicRequestStatusDetailsValue = publicRequestStatusDetailsKvp.Value;
-
-                                context.Writer.Write(publicRequestStatusDetailsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStepTimeoutInMinutes())
-                    {
-                        context.Writer.WritePropertyName("stepTimeoutInMinutes");
-                        context.Writer.Write(publicRequest.StepTimeoutInMinutes.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("executionNumber");
+                context.Writer.WriteNumberValue(publicRequest.ExecutionNumber.Value);
             }
+
+            if(publicRequest.IsSetExpectedVersion())
+            {
+                context.Writer.WritePropertyName("expectedVersion");
+                context.Writer.WriteNumberValue(publicRequest.ExpectedVersion.Value);
+            }
+
+            if(publicRequest.IsSetIncludeJobDocument())
+            {
+                context.Writer.WritePropertyName("includeJobDocument");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeJobDocument.Value);
+            }
+
+            if(publicRequest.IsSetIncludeJobExecutionState())
+            {
+                context.Writer.WritePropertyName("includeJobExecutionState");
+                context.Writer.WriteBooleanValue(publicRequest.IncludeJobExecutionState.Value);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetStatusDetails())
+            {
+                context.Writer.WritePropertyName("statusDetails");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestStatusDetailsKvp in publicRequest.StatusDetails)
+                {
+                    context.Writer.WritePropertyName(publicRequestStatusDetailsKvp.Key);
+                    var publicRequestStatusDetailsValue = publicRequestStatusDetailsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestStatusDetailsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStepTimeoutInMinutes())
+            {
+                context.Writer.WritePropertyName("stepTimeoutInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.StepTimeoutInMinutes.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FailoverState Object
     /// </summary>  
-    public class FailoverStateUnmarshaller : IUnmarshaller<FailoverState, XmlUnmarshallerContext>, IUnmarshaller<FailoverState, JsonUnmarshallerContext>
+    public class FailoverStateUnmarshaller : IXmlUnmarshaller<FailoverState, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FailoverState Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FailoverStateUnmarshaller _instance = new FailoverStateUnmarshaller();        
 

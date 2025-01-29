@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -63,97 +66,102 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomEventData())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCustomEventData())
-                    {
-                        context.Writer.WritePropertyName("CustomEventData");
-                        context.Writer.Write(publicRequest.CustomEventData);
-                    }
-
-                    if(publicRequest.IsSetDestinations())
-                    {
-                        context.Writer.WritePropertyName("Destinations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GameSessionQueueDestinationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDestinationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFilterConfiguration())
-                    {
-                        context.Writer.WritePropertyName("FilterConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FilterConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FilterConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNotificationTarget())
-                    {
-                        context.Writer.WritePropertyName("NotificationTarget");
-                        context.Writer.Write(publicRequest.NotificationTarget);
-                    }
-
-                    if(publicRequest.IsSetPlayerLatencyPolicies())
-                    {
-                        context.Writer.WritePropertyName("PlayerLatencyPolicies");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPlayerLatencyPoliciesListValue in publicRequest.PlayerLatencyPolicies)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PlayerLatencyPolicyMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPlayerLatencyPoliciesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPriorityConfiguration())
-                    {
-                        context.Writer.WritePropertyName("PriorityConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PriorityConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PriorityConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTimeoutInSeconds())
-                    {
-                        context.Writer.WritePropertyName("TimeoutInSeconds");
-                        context.Writer.Write(publicRequest.TimeoutInSeconds.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CustomEventData");
+                context.Writer.WriteStringValue(publicRequest.CustomEventData);
             }
+
+            if(publicRequest.IsSetDestinations())
+            {
+                context.Writer.WritePropertyName("Destinations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationsListValue in publicRequest.Destinations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GameSessionQueueDestinationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDestinationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetFilterConfiguration())
+            {
+                context.Writer.WritePropertyName("FilterConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FilterConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FilterConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNotificationTarget())
+            {
+                context.Writer.WritePropertyName("NotificationTarget");
+                context.Writer.WriteStringValue(publicRequest.NotificationTarget);
+            }
+
+            if(publicRequest.IsSetPlayerLatencyPolicies())
+            {
+                context.Writer.WritePropertyName("PlayerLatencyPolicies");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPlayerLatencyPoliciesListValue in publicRequest.PlayerLatencyPolicies)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PlayerLatencyPolicyMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPlayerLatencyPoliciesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPriorityConfiguration())
+            {
+                context.Writer.WritePropertyName("PriorityConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PriorityConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PriorityConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTimeoutInSeconds())
+            {
+                context.Writer.WritePropertyName("TimeoutInSeconds");
+                context.Writer.WriteNumberValue(publicRequest.TimeoutInSeconds.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

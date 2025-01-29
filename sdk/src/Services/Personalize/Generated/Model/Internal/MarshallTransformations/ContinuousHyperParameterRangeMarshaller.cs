@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -53,11 +51,11 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("maxValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MaxValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MaxValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MaxValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.MaxValue.Value);
                 }
             }
 
@@ -66,18 +64,18 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("minValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MinValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MinValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinValue.Value);
                 }
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

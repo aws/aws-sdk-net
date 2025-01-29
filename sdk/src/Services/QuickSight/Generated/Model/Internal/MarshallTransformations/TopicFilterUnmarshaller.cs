@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TopicFilter Object
     /// </summary>  
-    public class TopicFilterUnmarshaller : IUnmarshaller<TopicFilter, XmlUnmarshallerContext>, IUnmarshaller<TopicFilter, JsonUnmarshallerContext>
+    public class TopicFilterUnmarshaller : IJsonUnmarshaller<TopicFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TopicFilter IUnmarshaller<TopicFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicFilter Unmarshall(JsonUnmarshallerContext context)
+        public TopicFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TopicFilter unmarshalledObject = new TopicFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoryFilter", targetDepth))
                 {
                     var unmarshaller = TopicCategoryFilterUnmarshaller.Instance;
-                    unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoryFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DateRangeFilter", targetDepth))
                 {
                     var unmarshaller = TopicDateRangeFilterUnmarshaller.Instance;
-                    unmarshalledObject.DateRangeFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterClass", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterClass = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterClass = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterSynonyms", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.FilterSynonyms = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.FilterSynonyms = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FilterType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumericEqualityFilter", targetDepth))
                 {
                     var unmarshaller = TopicNumericEqualityFilterUnmarshaller.Instance;
-                    unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumericEqualityFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumericRangeFilter", targetDepth))
                 {
                     var unmarshaller = TopicNumericRangeFilterUnmarshaller.Instance;
-                    unmarshalledObject.NumericRangeFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumericRangeFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OperandFieldName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OperandFieldName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OperandFieldName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RelativeDateFilter", targetDepth))
                 {
                     var unmarshaller = TopicRelativeDateFilterUnmarshaller.Instance;
-                    unmarshalledObject.RelativeDateFilter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelativeDateFilter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

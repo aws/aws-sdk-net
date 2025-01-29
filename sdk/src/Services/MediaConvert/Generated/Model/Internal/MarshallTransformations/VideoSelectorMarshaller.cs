@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,72 +49,72 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlphaBehavior())
             {
                 context.Writer.WritePropertyName("alphaBehavior");
-                context.Writer.Write(requestObject.AlphaBehavior);
+                context.Writer.WriteStringValue(requestObject.AlphaBehavior);
             }
 
             if(requestObject.IsSetColorSpace())
             {
                 context.Writer.WritePropertyName("colorSpace");
-                context.Writer.Write(requestObject.ColorSpace);
+                context.Writer.WriteStringValue(requestObject.ColorSpace);
             }
 
             if(requestObject.IsSetColorSpaceUsage())
             {
                 context.Writer.WritePropertyName("colorSpaceUsage");
-                context.Writer.Write(requestObject.ColorSpaceUsage);
+                context.Writer.WriteStringValue(requestObject.ColorSpaceUsage);
             }
 
             if(requestObject.IsSetEmbeddedTimecodeOverride())
             {
                 context.Writer.WritePropertyName("embeddedTimecodeOverride");
-                context.Writer.Write(requestObject.EmbeddedTimecodeOverride);
+                context.Writer.WriteStringValue(requestObject.EmbeddedTimecodeOverride);
             }
 
             if(requestObject.IsSetHdr10Metadata())
             {
                 context.Writer.WritePropertyName("hdr10Metadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Hdr10MetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.Hdr10Metadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxLuminance())
             {
                 context.Writer.WritePropertyName("maxLuminance");
-                context.Writer.Write(requestObject.MaxLuminance.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxLuminance.Value);
             }
 
             if(requestObject.IsSetPadVideo())
             {
                 context.Writer.WritePropertyName("padVideo");
-                context.Writer.Write(requestObject.PadVideo);
+                context.Writer.WriteStringValue(requestObject.PadVideo);
             }
 
             if(requestObject.IsSetPid())
             {
                 context.Writer.WritePropertyName("pid");
-                context.Writer.Write(requestObject.Pid.Value);
+                context.Writer.WriteNumberValue(requestObject.Pid.Value);
             }
 
             if(requestObject.IsSetProgramNumber())
             {
                 context.Writer.WritePropertyName("programNumber");
-                context.Writer.Write(requestObject.ProgramNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramNumber.Value);
             }
 
             if(requestObject.IsSetRotate())
             {
                 context.Writer.WritePropertyName("rotate");
-                context.Writer.Write(requestObject.Rotate);
+                context.Writer.WriteStringValue(requestObject.Rotate);
             }
 
             if(requestObject.IsSetSampleRange())
             {
                 context.Writer.WritePropertyName("sampleRange");
-                context.Writer.Write(requestObject.SampleRange);
+                context.Writer.WriteStringValue(requestObject.SampleRange);
             }
 
         }

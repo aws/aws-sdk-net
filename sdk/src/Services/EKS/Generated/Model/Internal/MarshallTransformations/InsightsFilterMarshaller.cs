@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategories())
             {
                 context.Writer.WritePropertyName("categories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCategoriesListValue in requestObject.Categories)
                 {
-                        context.Writer.Write(requestObjectCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKubernetesVersions())
             {
                 context.Writer.WritePropertyName("kubernetesVersions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKubernetesVersionsListValue in requestObject.KubernetesVersions)
                 {
-                        context.Writer.Write(requestObjectKubernetesVersionsListValue);
+                        context.Writer.WriteStringValue(requestObjectKubernetesVersionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("statuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusesListValue in requestObject.Statuses)
                 {
-                        context.Writer.Write(requestObjectStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

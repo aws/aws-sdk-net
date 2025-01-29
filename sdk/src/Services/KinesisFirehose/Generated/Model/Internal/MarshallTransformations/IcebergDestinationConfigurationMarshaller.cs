@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,117 +49,117 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBufferingHints())
             {
                 context.Writer.WritePropertyName("BufferingHints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BufferingHintsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BufferingHints, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCatalogConfiguration())
             {
                 context.Writer.WritePropertyName("CatalogConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CatalogConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CatalogConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCloudWatchLoggingOptions())
             {
                 context.Writer.WritePropertyName("CloudWatchLoggingOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchLoggingOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLoggingOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDestinationTableConfigurationList())
             {
                 context.Writer.WritePropertyName("DestinationTableConfigurationList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDestinationTableConfigurationListListValue in requestObject.DestinationTableConfigurationList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DestinationTableConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectDestinationTableConfigurationListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProcessingConfiguration())
             {
                 context.Writer.WritePropertyName("ProcessingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProcessingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProcessingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetryOptions())
             {
                 context.Writer.WritePropertyName("RetryOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetryOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetryOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("RoleARN");
-                context.Writer.Write(requestObject.RoleARN);
+                context.Writer.WriteStringValue(requestObject.RoleARN);
             }
 
             if(requestObject.IsSetS3BackupMode())
             {
                 context.Writer.WritePropertyName("S3BackupMode");
-                context.Writer.Write(requestObject.S3BackupMode);
+                context.Writer.WriteStringValue(requestObject.S3BackupMode);
             }
 
             if(requestObject.IsSetS3Configuration())
             {
                 context.Writer.WritePropertyName("S3Configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DestinationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Configuration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchemaEvolutionConfiguration())
             {
                 context.Writer.WritePropertyName("SchemaEvolutionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SchemaEvolutionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SchemaEvolutionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableCreationConfiguration())
             {
                 context.Writer.WritePropertyName("TableCreationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCreationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TableCreationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

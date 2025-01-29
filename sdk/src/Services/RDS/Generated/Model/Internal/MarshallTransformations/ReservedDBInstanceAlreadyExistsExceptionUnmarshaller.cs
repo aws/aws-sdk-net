@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedDBInstanceAlreadyExistsException operation
     /// </summary>  
-    public class ReservedDBInstanceAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedDBInstanceAlreadyExistsException, XmlUnmarshallerContext>
+    public class ReservedDBInstanceAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedDBInstanceAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RemoteNetworkConfigResponse Object
     /// </summary>  
-    public class RemoteNetworkConfigResponseUnmarshaller : IUnmarshaller<RemoteNetworkConfigResponse, XmlUnmarshallerContext>, IUnmarshaller<RemoteNetworkConfigResponse, JsonUnmarshallerContext>
+    public class RemoteNetworkConfigResponseUnmarshaller : IJsonUnmarshaller<RemoteNetworkConfigResponse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RemoteNetworkConfigResponse IUnmarshaller<RemoteNetworkConfigResponse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RemoteNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context)
+        public RemoteNetworkConfigResponse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RemoteNetworkConfigResponse unmarshalledObject = new RemoteNetworkConfigResponse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("remoteNodeNetworks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RemoteNodeNetwork, RemoteNodeNetworkUnmarshaller>(RemoteNodeNetworkUnmarshaller.Instance);
-                    unmarshalledObject.RemoteNodeNetworks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RemoteNodeNetwork, RemoteNodeNetworkUnmarshaller>(RemoteNodeNetworkUnmarshaller.Instance);
+                    unmarshalledObject.RemoteNodeNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("remotePodNetworks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RemotePodNetwork, RemotePodNetworkUnmarshaller>(RemotePodNetworkUnmarshaller.Instance);
-                    unmarshalledObject.RemotePodNetworks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RemotePodNetwork, RemotePodNetworkUnmarshaller>(RemotePodNetworkUnmarshaller.Instance);
+                    unmarshalledObject.RemotePodNetworks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

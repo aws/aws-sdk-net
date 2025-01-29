@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SupportedInstanceType Object
     /// </summary>  
-    public class SupportedInstanceTypeUnmarshaller : IUnmarshaller<SupportedInstanceType, XmlUnmarshallerContext>, IUnmarshaller<SupportedInstanceType, JsonUnmarshallerContext>
+    public class SupportedInstanceTypeUnmarshaller : IJsonUnmarshaller<SupportedInstanceType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SupportedInstanceType IUnmarshaller<SupportedInstanceType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SupportedInstanceType Unmarshall(JsonUnmarshallerContext context)
+        public SupportedInstanceType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SupportedInstanceType unmarshalledObject = new SupportedInstanceType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Architecture", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Architecture = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Architecture = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EbsOptimizedAvailable", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EbsOptimizedAvailable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EbsOptimizedAvailable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EbsOptimizedByDefault", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EbsOptimizedByDefault = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EbsOptimizedByDefault = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EbsStorageOnly", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EbsStorageOnly = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EbsStorageOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceFamilyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceFamilyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceFamilyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Is64BitsOnly", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Is64BitsOnly = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Is64BitsOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MemoryGB", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.MemoryGB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemoryGB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfDisks", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfDisks = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfDisks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StorageGB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StorageGB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageGB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VCPU", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.VCPU = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VCPU = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

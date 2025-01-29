@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddressAllocationIds())
             {
                 context.Writer.WritePropertyName("AddressAllocationIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAddressAllocationIdsListValue in requestObject.AddressAllocationIds)
                 {
-                        context.Writer.Write(requestObjectAddressAllocationIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAddressAllocationIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("SubnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVpcEndpointId())
             {
                 context.Writer.WritePropertyName("VpcEndpointId");
-                context.Writer.Write(requestObject.VpcEndpointId);
+                context.Writer.WriteStringValue(requestObject.VpcEndpointId);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

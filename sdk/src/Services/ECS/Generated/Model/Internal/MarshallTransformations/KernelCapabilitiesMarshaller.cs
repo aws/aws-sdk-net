@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdd())
             {
                 context.Writer.WritePropertyName("add");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAddListValue in requestObject.Add)
                 {
-                        context.Writer.Write(requestObjectAddListValue);
+                        context.Writer.WriteStringValue(requestObjectAddListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDrop())
             {
                 context.Writer.WritePropertyName("drop");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDropListValue in requestObject.Drop)
                 {
-                        context.Writer.Write(requestObjectDropListValue);
+                        context.Writer.WriteStringValue(requestObjectDropListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

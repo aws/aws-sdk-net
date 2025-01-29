@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBenefitsConsidered())
             {
                 context.Writer.WritePropertyName("BenefitsConsidered");
-                context.Writer.Write(requestObject.BenefitsConsidered.Value);
+                context.Writer.WriteBooleanValue(requestObject.BenefitsConsidered.Value);
             }
 
             if(requestObject.IsSetRecommendationTarget())
             {
                 context.Writer.WritePropertyName("RecommendationTarget");
-                context.Writer.Write(requestObject.RecommendationTarget);
+                context.Writer.WriteStringValue(requestObject.RecommendationTarget);
             }
 
         }

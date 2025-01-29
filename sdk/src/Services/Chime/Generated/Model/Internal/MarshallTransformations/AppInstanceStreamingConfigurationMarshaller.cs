@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppInstanceDataType())
             {
                 context.Writer.WritePropertyName("AppInstanceDataType");
-                context.Writer.Write(requestObject.AppInstanceDataType);
+                context.Writer.WriteStringValue(requestObject.AppInstanceDataType);
             }
 
             if(requestObject.IsSetResourceArn())
             {
                 context.Writer.WritePropertyName("ResourceArn");
-                context.Writer.Write(requestObject.ResourceArn);
+                context.Writer.WriteStringValue(requestObject.ResourceArn);
             }
 
         }

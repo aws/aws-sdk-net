@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEcsServiceLoadBalancersDetails Object
     /// </summary>  
-    public class AwsEcsServiceLoadBalancersDetailsUnmarshaller : IUnmarshaller<AwsEcsServiceLoadBalancersDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEcsServiceLoadBalancersDetails, JsonUnmarshallerContext>
+    public class AwsEcsServiceLoadBalancersDetailsUnmarshaller : IJsonUnmarshaller<AwsEcsServiceLoadBalancersDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEcsServiceLoadBalancersDetails IUnmarshaller<AwsEcsServiceLoadBalancersDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEcsServiceLoadBalancersDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEcsServiceLoadBalancersDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEcsServiceLoadBalancersDetails unmarshalledObject = new AwsEcsServiceLoadBalancersDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ContainerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContainerPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainerPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LoadBalancerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoadBalancerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoadBalancerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetGroupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetGroupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetGroupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

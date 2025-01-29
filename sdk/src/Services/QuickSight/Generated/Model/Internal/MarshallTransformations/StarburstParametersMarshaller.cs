@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationType())
             {
                 context.Writer.WritePropertyName("AuthenticationType");
-                context.Writer.Write(requestObject.AuthenticationType);
+                context.Writer.WriteStringValue(requestObject.AuthenticationType);
             }
 
             if(requestObject.IsSetCatalog())
             {
                 context.Writer.WritePropertyName("Catalog");
-                context.Writer.Write(requestObject.Catalog);
+                context.Writer.WriteStringValue(requestObject.Catalog);
             }
 
             if(requestObject.IsSetDatabaseAccessControlRole())
             {
                 context.Writer.WritePropertyName("DatabaseAccessControlRole");
-                context.Writer.Write(requestObject.DatabaseAccessControlRole);
+                context.Writer.WriteStringValue(requestObject.DatabaseAccessControlRole);
             }
 
             if(requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("Host");
-                context.Writer.Write(requestObject.Host);
+                context.Writer.WriteStringValue(requestObject.Host);
             }
 
             if(requestObject.IsSetOAuthParameters())
             {
                 context.Writer.WritePropertyName("OAuthParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuthParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuthParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProductType())
             {
                 context.Writer.WritePropertyName("ProductType");
-                context.Writer.Write(requestObject.ProductType);
+                context.Writer.WriteStringValue(requestObject.ProductType);
             }
 
         }

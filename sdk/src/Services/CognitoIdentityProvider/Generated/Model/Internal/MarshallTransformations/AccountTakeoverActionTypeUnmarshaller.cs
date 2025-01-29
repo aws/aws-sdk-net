@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AccountTakeoverActionType Object
     /// </summary>  
-    public class AccountTakeoverActionTypeUnmarshaller : IUnmarshaller<AccountTakeoverActionType, XmlUnmarshallerContext>, IUnmarshaller<AccountTakeoverActionType, JsonUnmarshallerContext>
+    public class AccountTakeoverActionTypeUnmarshaller : IJsonUnmarshaller<AccountTakeoverActionType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AccountTakeoverActionType IUnmarshaller<AccountTakeoverActionType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AccountTakeoverActionType Unmarshall(JsonUnmarshallerContext context)
+        public AccountTakeoverActionType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AccountTakeoverActionType unmarshalledObject = new AccountTakeoverActionType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EventAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Notify", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Notify = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Notify = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

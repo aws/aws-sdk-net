@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetectorId())
             {
                 context.Writer.WritePropertyName("detectorId");
-                context.Writer.Write(requestObject.DetectorId);
+                context.Writer.WriteStringValue(requestObject.DetectorId);
             }
 
             if(requestObject.IsSetRuleId())
             {
                 context.Writer.WritePropertyName("ruleId");
-                context.Writer.Write(requestObject.RuleId);
+                context.Writer.WriteStringValue(requestObject.RuleId);
             }
 
             if(requestObject.IsSetRuleVersion())
             {
                 context.Writer.WritePropertyName("ruleVersion");
-                context.Writer.Write(requestObject.RuleVersion);
+                context.Writer.WriteStringValue(requestObject.RuleVersion);
             }
 
         }

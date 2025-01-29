@@ -29,209 +29,199 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CmafGroupSettings Object
     /// </summary>  
-    public class CmafGroupSettingsUnmarshaller : IUnmarshaller<CmafGroupSettings, XmlUnmarshallerContext>, IUnmarshaller<CmafGroupSettings, JsonUnmarshallerContext>
+    public class CmafGroupSettingsUnmarshaller : IJsonUnmarshaller<CmafGroupSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CmafGroupSettings IUnmarshaller<CmafGroupSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CmafGroupSettings Unmarshall(JsonUnmarshallerContext context)
+        public CmafGroupSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CmafGroupSettings unmarshalledObject = new CmafGroupSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("additionalManifests", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CmafAdditionalManifest, CmafAdditionalManifestUnmarshaller>(CmafAdditionalManifestUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CmafAdditionalManifest, CmafAdditionalManifestUnmarshaller>(CmafAdditionalManifestUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalManifests = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("baseUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BaseUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BaseUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("clientCache", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientCache = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientCache = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codecSpecification", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CodecSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodecSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dashIFrameTrickPlayNameModifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DashIFrameTrickPlayNameModifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DashIFrameTrickPlayNameModifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dashManifestStyle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DashManifestStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DashManifestStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationSettings", targetDepth))
                 {
                     var unmarshaller = DestinationSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("encryption", targetDepth))
                 {
                     var unmarshaller = CmafEncryptionSettingsUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fragmentLength", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FragmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imageBasedTrickPlay", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ImageBasedTrickPlay = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageBasedTrickPlay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imageBasedTrickPlaySettings", targetDepth))
                 {
                     var unmarshaller = CmafImageBasedTrickPlaySettingsUnmarshaller.Instance;
-                    unmarshalledObject.ImageBasedTrickPlaySettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageBasedTrickPlaySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manifestCompression", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestCompression = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestCompression = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manifestDurationFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ManifestDurationFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManifestDurationFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("minBufferTime", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinBufferTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinBufferTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("minFinalSegmentLength", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MinFinalSegmentLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinFinalSegmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mpdManifestBandwidthType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MpdManifestBandwidthType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MpdManifestBandwidthType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mpdProfile", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MpdProfile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MpdProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ptsOffsetHandlingForBFrames", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PtsOffsetHandlingForBFrames = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PtsOffsetHandlingForBFrames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SegmentControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentLength", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentLengthControl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SegmentLengthControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentLengthControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("streamInfResolution", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StreamInfResolution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StreamInfResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetDurationCompatibilityMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetDurationCompatibilityMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetDurationCompatibilityMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoCompositionOffsets", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VideoCompositionOffsets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoCompositionOffsets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("writeDashManifest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WriteDashManifest = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WriteDashManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("writeHlsManifest", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WriteHlsManifest = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WriteHlsManifest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("writeSegmentTimelineInRepresentation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WriteSegmentTimelineInRepresentation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WriteSegmentTimelineInRepresentation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

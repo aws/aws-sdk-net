@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetToken())
             {
                 context.Writer.WritePropertyName("token");
-                context.Writer.Write(requestObject.Token);
+                context.Writer.WriteStringValue(requestObject.Token);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

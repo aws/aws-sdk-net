@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BedrockFoundationModelConfiguration Object
     /// </summary>  
-    public class BedrockFoundationModelConfigurationUnmarshaller : IUnmarshaller<BedrockFoundationModelConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BedrockFoundationModelConfiguration, JsonUnmarshallerContext>
+    public class BedrockFoundationModelConfigurationUnmarshaller : IJsonUnmarshaller<BedrockFoundationModelConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BedrockFoundationModelConfiguration IUnmarshaller<BedrockFoundationModelConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BedrockFoundationModelConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public BedrockFoundationModelConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BedrockFoundationModelConfiguration unmarshalledObject = new BedrockFoundationModelConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("modelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parsingModality", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParsingModality = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParsingModality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("parsingPrompt", targetDepth))
                 {
                     var unmarshaller = ParsingPromptUnmarshaller.Instance;
-                    unmarshalledObject.ParsingPrompt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParsingPrompt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCascadingControlConfiguration())
             {
                 context.Writer.WritePropertyName("CascadingControlConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CascadingControlConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CascadingControlConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisplayOptions())
             {
                 context.Writer.WritePropertyName("DisplayOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ListControlDisplayOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DisplayOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameterControlId())
             {
                 context.Writer.WritePropertyName("ParameterControlId");
-                context.Writer.Write(requestObject.ParameterControlId);
+                context.Writer.WriteStringValue(requestObject.ParameterControlId);
             }
 
             if(requestObject.IsSetSelectableValues())
             {
                 context.Writer.WritePropertyName("SelectableValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParameterSelectableValuesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SelectableValues, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceParameterName())
             {
                 context.Writer.WritePropertyName("SourceParameterName");
-                context.Writer.Write(requestObject.SourceParameterName);
+                context.Writer.WriteStringValue(requestObject.SourceParameterName);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

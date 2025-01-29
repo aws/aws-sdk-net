@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyRegistrationsForTargetIdException operation
     /// </summary>  
-    public class TooManyRegistrationsForTargetIdExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyRegistrationsForTargetIdException, XmlUnmarshallerContext>
+    public class TooManyRegistrationsForTargetIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyRegistrationsForTargetIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

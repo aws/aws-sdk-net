@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECR.Model.Internal.MarshallTransformations
 {
@@ -63,93 +66,98 @@ namespace Amazon.ECR.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppliedFor())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("appliedFor");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAppliedForListValue in publicRequest.AppliedFor)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppliedFor())
-                    {
-                        context.Writer.WritePropertyName("appliedFor");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAppliedForListValue in publicRequest.AppliedFor)
-                        {
-                                context.Writer.Write(publicRequestAppliedForListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCustomRoleArn())
-                    {
-                        context.Writer.WritePropertyName("customRoleArn");
-                        context.Writer.Write(publicRequest.CustomRoleArn);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEncryptionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("encryptionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncryptionConfigurationForRepositoryCreationTemplateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetImageTagMutability())
-                    {
-                        context.Writer.WritePropertyName("imageTagMutability");
-                        context.Writer.Write(publicRequest.ImageTagMutability);
-                    }
-
-                    if(publicRequest.IsSetLifecyclePolicy())
-                    {
-                        context.Writer.WritePropertyName("lifecyclePolicy");
-                        context.Writer.Write(publicRequest.LifecyclePolicy);
-                    }
-
-                    if(publicRequest.IsSetPrefix())
-                    {
-                        context.Writer.WritePropertyName("prefix");
-                        context.Writer.Write(publicRequest.Prefix);
-                    }
-
-                    if(publicRequest.IsSetRepositoryPolicy())
-                    {
-                        context.Writer.WritePropertyName("repositoryPolicy");
-                        context.Writer.Write(publicRequest.RepositoryPolicy);
-                    }
-
-                    if(publicRequest.IsSetResourceTags())
-                    {
-                        context.Writer.WritePropertyName("resourceTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestResourceTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAppliedForListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetCustomRoleArn())
+            {
+                context.Writer.WritePropertyName("customRoleArn");
+                context.Writer.WriteStringValue(publicRequest.CustomRoleArn);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEncryptionConfiguration())
+            {
+                context.Writer.WritePropertyName("encryptionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionConfigurationForRepositoryCreationTemplateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetImageTagMutability())
+            {
+                context.Writer.WritePropertyName("imageTagMutability");
+                context.Writer.WriteStringValue(publicRequest.ImageTagMutability);
+            }
+
+            if(publicRequest.IsSetLifecyclePolicy())
+            {
+                context.Writer.WritePropertyName("lifecyclePolicy");
+                context.Writer.WriteStringValue(publicRequest.LifecyclePolicy);
+            }
+
+            if(publicRequest.IsSetPrefix())
+            {
+                context.Writer.WritePropertyName("prefix");
+                context.Writer.WriteStringValue(publicRequest.Prefix);
+            }
+
+            if(publicRequest.IsSetRepositoryPolicy())
+            {
+                context.Writer.WritePropertyName("repositoryPolicy");
+                context.Writer.WriteStringValue(publicRequest.RepositoryPolicy);
+            }
+
+            if(publicRequest.IsSetResourceTags())
+            {
+                context.Writer.WritePropertyName("resourceTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceTagsListValue in publicRequest.ResourceTags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResourceTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

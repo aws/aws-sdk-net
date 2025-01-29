@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTargetDocumentAttributeKey())
             {
                 context.Writer.WritePropertyName("TargetDocumentAttributeKey");
-                context.Writer.Write(requestObject.TargetDocumentAttributeKey);
+                context.Writer.WriteStringValue(requestObject.TargetDocumentAttributeKey);
             }
 
             if(requestObject.IsSetTargetDocumentAttributeValue())
             {
                 context.Writer.WritePropertyName("TargetDocumentAttributeValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DocumentAttributeValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetDocumentAttributeValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetDocumentAttributeValueDeletion())
             {
                 context.Writer.WritePropertyName("TargetDocumentAttributeValueDeletion");
-                context.Writer.Write(requestObject.TargetDocumentAttributeValueDeletion.Value);
+                context.Writer.WriteBooleanValue(requestObject.TargetDocumentAttributeValueDeletion.Value);
             }
 
         }

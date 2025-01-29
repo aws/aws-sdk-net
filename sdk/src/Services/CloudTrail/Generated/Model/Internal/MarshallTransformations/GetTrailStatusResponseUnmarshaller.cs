@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -47,111 +47,111 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             GetTrailStatusResponse response = new GetTrailStatusResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IsLogging", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    response.IsLogging = unmarshaller.Unmarshall(context);
+                    response.IsLogging = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestCloudWatchLogsDeliveryError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestCloudWatchLogsDeliveryError = unmarshaller.Unmarshall(context);
+                    response.LatestCloudWatchLogsDeliveryError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestCloudWatchLogsDeliveryTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LatestCloudWatchLogsDeliveryTime = unmarshaller.Unmarshall(context);
+                    response.LatestCloudWatchLogsDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestDeliveryAttemptSucceeded", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestDeliveryAttemptSucceeded = unmarshaller.Unmarshall(context);
+                    response.LatestDeliveryAttemptSucceeded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestDeliveryAttemptTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestDeliveryAttemptTime = unmarshaller.Unmarshall(context);
+                    response.LatestDeliveryAttemptTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestDeliveryError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestDeliveryError = unmarshaller.Unmarshall(context);
+                    response.LatestDeliveryError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestDeliveryTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LatestDeliveryTime = unmarshaller.Unmarshall(context);
+                    response.LatestDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestDigestDeliveryError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestDigestDeliveryError = unmarshaller.Unmarshall(context);
+                    response.LatestDigestDeliveryError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestDigestDeliveryTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LatestDigestDeliveryTime = unmarshaller.Unmarshall(context);
+                    response.LatestDigestDeliveryTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestNotificationAttemptSucceeded", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestNotificationAttemptSucceeded = unmarshaller.Unmarshall(context);
+                    response.LatestNotificationAttemptSucceeded = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestNotificationAttemptTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestNotificationAttemptTime = unmarshaller.Unmarshall(context);
+                    response.LatestNotificationAttemptTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestNotificationError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LatestNotificationError = unmarshaller.Unmarshall(context);
+                    response.LatestNotificationError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestNotificationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.LatestNotificationTime = unmarshaller.Unmarshall(context);
+                    response.LatestNotificationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartLoggingTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.StartLoggingTime = unmarshaller.Unmarshall(context);
+                    response.StartLoggingTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StopLoggingTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.StopLoggingTime = unmarshaller.Unmarshall(context);
+                    response.StopLoggingTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeLoggingStarted", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TimeLoggingStarted = unmarshaller.Unmarshall(context);
+                    response.TimeLoggingStarted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeLoggingStopped", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.TimeLoggingStopped = unmarshaller.Unmarshall(context);
+                    response.TimeLoggingStopped = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -168,34 +168,36 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("CloudTrailARNInvalidException"))
                 {
-                    return CloudTrailARNInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return CloudTrailARNInvalidExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidTrailNameException"))
                 {
-                    return InvalidTrailNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidTrailNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("OperationNotPermittedException"))
                 {
-                    return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return OperationNotPermittedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("TrailNotFoundException"))
                 {
-                    return TrailNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return TrailNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperationException"))
                 {
-                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonCloudTrailException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

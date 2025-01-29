@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QuickConnectConfig Object
     /// </summary>  
-    public class QuickConnectConfigUnmarshaller : IUnmarshaller<QuickConnectConfig, XmlUnmarshallerContext>, IUnmarshaller<QuickConnectConfig, JsonUnmarshallerContext>
+    public class QuickConnectConfigUnmarshaller : IJsonUnmarshaller<QuickConnectConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QuickConnectConfig IUnmarshaller<QuickConnectConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QuickConnectConfig Unmarshall(JsonUnmarshallerContext context)
+        public QuickConnectConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QuickConnectConfig unmarshalledObject = new QuickConnectConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("PhoneConfig", targetDepth))
                 {
                     var unmarshaller = PhoneNumberQuickConnectConfigUnmarshaller.Instance;
-                    unmarshalledObject.PhoneConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PhoneConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueueConfig", targetDepth))
                 {
                     var unmarshaller = QueueQuickConnectConfigUnmarshaller.Instance;
-                    unmarshalledObject.QueueConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueueConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QuickConnectType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QuickConnectType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QuickConnectType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserConfig", targetDepth))
                 {
                     var unmarshaller = UserQuickConnectConfigUnmarshaller.Instance;
-                    unmarshalledObject.UserConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

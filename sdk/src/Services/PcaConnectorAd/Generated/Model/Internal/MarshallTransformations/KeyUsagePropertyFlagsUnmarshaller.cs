@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KeyUsagePropertyFlags Object
     /// </summary>  
-    public class KeyUsagePropertyFlagsUnmarshaller : IUnmarshaller<KeyUsagePropertyFlags, XmlUnmarshallerContext>, IUnmarshaller<KeyUsagePropertyFlags, JsonUnmarshallerContext>
+    public class KeyUsagePropertyFlagsUnmarshaller : IJsonUnmarshaller<KeyUsagePropertyFlags, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KeyUsagePropertyFlags IUnmarshaller<KeyUsagePropertyFlags, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KeyUsagePropertyFlags Unmarshall(JsonUnmarshallerContext context)
+        public KeyUsagePropertyFlags Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KeyUsagePropertyFlags unmarshalledObject = new KeyUsagePropertyFlags();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Decrypt", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Decrypt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Decrypt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyAgreement", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.KeyAgreement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KeyAgreement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Sign", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Sign = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sign = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

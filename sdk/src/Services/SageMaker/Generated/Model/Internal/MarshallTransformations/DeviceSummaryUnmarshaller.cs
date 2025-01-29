@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeviceSummary Object
     /// </summary>  
-    public class DeviceSummaryUnmarshaller : IUnmarshaller<DeviceSummary, XmlUnmarshallerContext>, IUnmarshaller<DeviceSummary, JsonUnmarshallerContext>
+    public class DeviceSummaryUnmarshaller : IJsonUnmarshaller<DeviceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeviceSummary IUnmarshaller<DeviceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeviceSummary Unmarshall(JsonUnmarshallerContext context)
+        public DeviceSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeviceSummary unmarshalledObject = new DeviceSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AgentVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceFleetName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceFleetName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceFleetName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeviceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeviceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IotThingName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IotThingName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IotThingName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestHeartbeat", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LatestHeartbeat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestHeartbeat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Models", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EdgeModelSummary, EdgeModelSummaryUnmarshaller>(EdgeModelSummaryUnmarshaller.Instance);
-                    unmarshalledObject.Models = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EdgeModelSummary, EdgeModelSummaryUnmarshaller>(EdgeModelSummaryUnmarshaller.Instance);
+                    unmarshalledObject.Models = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegistrationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RegistrationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegistrationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchTransformInput Object
     /// </summary>  
-    public class BatchTransformInputUnmarshaller : IUnmarshaller<BatchTransformInput, XmlUnmarshallerContext>, IUnmarshaller<BatchTransformInput, JsonUnmarshallerContext>
+    public class BatchTransformInputUnmarshaller : IJsonUnmarshaller<BatchTransformInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchTransformInput IUnmarshaller<BatchTransformInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchTransformInput Unmarshall(JsonUnmarshallerContext context)
+        public BatchTransformInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchTransformInput unmarshalledObject = new BatchTransformInput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataCapturedDestinationS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataCapturedDestinationS3Uri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataCapturedDestinationS3Uri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatasetFormat", targetDepth))
                 {
                     var unmarshaller = MonitoringDatasetFormatUnmarshaller.Instance;
-                    unmarshalledObject.DatasetFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatasetFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndTimeOffset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndTimeOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTimeOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExcludeFeaturesAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExcludeFeaturesAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExcludeFeaturesAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeaturesAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeaturesAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeaturesAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InferenceAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InferenceAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InferenceAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LocalPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocalPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProbabilityAttribute", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProbabilityAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProbabilityAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProbabilityThresholdAttribute", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ProbabilityThresholdAttribute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProbabilityThresholdAttribute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3DataDistributionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3DataDistributionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3DataDistributionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3InputMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3InputMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3InputMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTimeOffset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartTimeOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTimeOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

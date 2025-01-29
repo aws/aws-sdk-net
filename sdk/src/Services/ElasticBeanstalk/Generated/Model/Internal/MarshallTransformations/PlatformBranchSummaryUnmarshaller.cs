@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PlatformBranchSummary Object
     /// </summary>  
-    public class PlatformBranchSummaryUnmarshaller : IUnmarshaller<PlatformBranchSummary, XmlUnmarshallerContext>, IUnmarshaller<PlatformBranchSummary, JsonUnmarshallerContext>
+    public class PlatformBranchSummaryUnmarshaller : IXmlUnmarshaller<PlatformBranchSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -99,17 +99,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PlatformBranchSummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PlatformBranchSummaryUnmarshaller _instance = new PlatformBranchSummaryUnmarshaller();        
 

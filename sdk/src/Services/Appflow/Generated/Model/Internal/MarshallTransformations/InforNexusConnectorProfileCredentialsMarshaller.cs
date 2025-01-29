@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessKeyId())
             {
                 context.Writer.WritePropertyName("accessKeyId");
-                context.Writer.Write(requestObject.AccessKeyId);
+                context.Writer.WriteStringValue(requestObject.AccessKeyId);
             }
 
             if(requestObject.IsSetDatakey())
             {
                 context.Writer.WritePropertyName("datakey");
-                context.Writer.Write(requestObject.Datakey);
+                context.Writer.WriteStringValue(requestObject.Datakey);
             }
 
             if(requestObject.IsSetSecretAccessKey())
             {
                 context.Writer.WritePropertyName("secretAccessKey");
-                context.Writer.Write(requestObject.SecretAccessKey);
+                context.Writer.WriteStringValue(requestObject.SecretAccessKey);
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("userId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBotResponse())
             {
                 context.Writer.WritePropertyName("botResponse");
-                context.Writer.Write(requestObject.BotResponse);
+                context.Writer.WriteStringValue(requestObject.BotResponse);
             }
 
             if(requestObject.IsSetInputTranscript())
             {
                 context.Writer.WritePropertyName("inputTranscript");
-                context.Writer.Write(requestObject.InputTranscript);
+                context.Writer.WriteStringValue(requestObject.InputTranscript);
             }
 
             if(requestObject.IsSetTurnNumber())
             {
                 context.Writer.WritePropertyName("turnNumber");
-                context.Writer.Write(requestObject.TurnNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.TurnNumber.Value);
             }
 
         }

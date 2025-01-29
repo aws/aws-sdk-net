@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DependentServiceUnavailableException operation
     /// </summary>  
-    public class DependentServiceUnavailableExceptionUnmarshaller : IErrorResponseUnmarshaller<DependentServiceUnavailableException, XmlUnmarshallerContext>
+    public class DependentServiceUnavailableExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DependentServiceUnavailableException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

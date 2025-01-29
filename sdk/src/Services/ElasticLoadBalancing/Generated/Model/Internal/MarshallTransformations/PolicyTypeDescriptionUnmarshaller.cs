@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PolicyTypeDescription Object
     /// </summary>  
-    public class PolicyTypeDescriptionUnmarshaller : IUnmarshaller<PolicyTypeDescription, XmlUnmarshallerContext>, IUnmarshaller<PolicyTypeDescription, JsonUnmarshallerContext>
+    public class PolicyTypeDescriptionUnmarshaller : IXmlUnmarshaller<PolicyTypeDescription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PolicyTypeDescription Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PolicyTypeDescriptionUnmarshaller _instance = new PolicyTypeDescriptionUnmarshaller();        
 

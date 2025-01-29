@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -63,56 +66,61 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCollectionId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCollectionId())
-                    {
-                        context.Writer.WritePropertyName("CollectionId");
-                        context.Writer.Write(publicRequest.CollectionId);
-                    }
-
-                    if(publicRequest.IsSetFaceId())
-                    {
-                        context.Writer.WritePropertyName("FaceId");
-                        context.Writer.Write(publicRequest.FaceId);
-                    }
-
-                    if(publicRequest.IsSetMaxUsers())
-                    {
-                        context.Writer.WritePropertyName("MaxUsers");
-                        context.Writer.Write(publicRequest.MaxUsers.Value);
-                    }
-
-                    if(publicRequest.IsSetUserId())
-                    {
-                        context.Writer.WritePropertyName("UserId");
-                        context.Writer.Write(publicRequest.UserId);
-                    }
-
-                    if(publicRequest.IsSetUserMatchThreshold())
-                    {
-                        context.Writer.WritePropertyName("UserMatchThreshold");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.UserMatchThreshold.Value);
-                        }
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CollectionId");
+                context.Writer.WriteStringValue(publicRequest.CollectionId);
             }
+
+            if(publicRequest.IsSetFaceId())
+            {
+                context.Writer.WritePropertyName("FaceId");
+                context.Writer.WriteStringValue(publicRequest.FaceId);
+            }
+
+            if(publicRequest.IsSetMaxUsers())
+            {
+                context.Writer.WritePropertyName("MaxUsers");
+                context.Writer.WriteNumberValue(publicRequest.MaxUsers.Value);
+            }
+
+            if(publicRequest.IsSetUserId())
+            {
+                context.Writer.WritePropertyName("UserId");
+                context.Writer.WriteStringValue(publicRequest.UserId);
+            }
+
+            if(publicRequest.IsSetUserMatchThreshold())
+            {
+                context.Writer.WritePropertyName("UserMatchThreshold");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.UserMatchThreshold.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.UserMatchThreshold.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.UserMatchThreshold.Value);
+                }
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

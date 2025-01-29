@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalStagingLabelsToDownload())
             {
                 context.Writer.WritePropertyName("AdditionalStagingLabelsToDownload");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalStagingLabelsToDownloadListValue in requestObject.AdditionalStagingLabelsToDownload)
                 {
-                        context.Writer.Write(requestObjectAdditionalStagingLabelsToDownloadListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalStagingLabelsToDownloadListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetARN())
             {
                 context.Writer.WritePropertyName("ARN");
-                context.Writer.Write(requestObject.ARN);
+                context.Writer.WriteStringValue(requestObject.ARN);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumIndividualPlayerLatencyMilliseconds())
             {
                 context.Writer.WritePropertyName("MaximumIndividualPlayerLatencyMilliseconds");
-                context.Writer.Write(requestObject.MaximumIndividualPlayerLatencyMilliseconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumIndividualPlayerLatencyMilliseconds.Value);
             }
 
             if(requestObject.IsSetPolicyDurationSeconds())
             {
                 context.Writer.WritePropertyName("PolicyDurationSeconds");
-                context.Writer.Write(requestObject.PolicyDurationSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.PolicyDurationSeconds.Value);
             }
 
         }

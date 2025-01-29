@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomPrompt())
             {
                 context.Writer.WritePropertyName("customPrompt");
-                context.Writer.Write(requestObject.CustomPrompt);
+                context.Writer.WriteStringValue(requestObject.CustomPrompt);
             }
 
             if(requestObject.IsSetGuardrail())
             {
                 context.Writer.WritePropertyName("guardrail");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BedrockGuardrailConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Guardrail, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelArn())
             {
                 context.Writer.WritePropertyName("modelArn");
-                context.Writer.Write(requestObject.ModelArn);
+                context.Writer.WriteStringValue(requestObject.ModelArn);
             }
 
             if(requestObject.IsSetTraceStatus())
             {
                 context.Writer.WritePropertyName("traceStatus");
-                context.Writer.Write(requestObject.TraceStatus);
+                context.Writer.WriteStringValue(requestObject.TraceStatus);
             }
 
         }

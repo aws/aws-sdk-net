@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -51,15 +49,15 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetItemExplorationConfig())
             {
                 context.Writer.WritePropertyName("itemExplorationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectItemExplorationConfigKvp in requestObject.ItemExplorationConfig)
                 {
                     context.Writer.WritePropertyName(requestObjectItemExplorationConfigKvp.Key);
                     var requestObjectItemExplorationConfigValue = requestObjectItemExplorationConfigKvp.Value;
 
-                        context.Writer.Write(requestObjectItemExplorationConfigValue);
+                        context.Writer.WriteStringValue(requestObjectItemExplorationConfigValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

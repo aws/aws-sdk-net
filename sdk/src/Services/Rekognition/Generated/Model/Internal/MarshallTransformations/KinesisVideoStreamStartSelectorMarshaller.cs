@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFragmentNumber())
             {
                 context.Writer.WritePropertyName("FragmentNumber");
-                context.Writer.Write(requestObject.FragmentNumber);
+                context.Writer.WriteStringValue(requestObject.FragmentNumber);
             }
 
             if(requestObject.IsSetProducerTimestamp())
             {
                 context.Writer.WritePropertyName("ProducerTimestamp");
-                context.Writer.Write(requestObject.ProducerTimestamp.Value);
+                context.Writer.WriteNumberValue(requestObject.ProducerTimestamp.Value);
             }
 
         }

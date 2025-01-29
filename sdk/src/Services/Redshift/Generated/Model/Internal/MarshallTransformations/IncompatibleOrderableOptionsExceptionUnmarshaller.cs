@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IncompatibleOrderableOptionsException operation
     /// </summary>  
-    public class IncompatibleOrderableOptionsExceptionUnmarshaller : IErrorResponseUnmarshaller<IncompatibleOrderableOptionsException, XmlUnmarshallerContext>
+    public class IncompatibleOrderableOptionsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IncompatibleOrderableOptionsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

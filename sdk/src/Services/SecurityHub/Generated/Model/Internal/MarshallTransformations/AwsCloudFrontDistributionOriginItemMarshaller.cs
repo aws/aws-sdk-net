@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomOriginConfig())
             {
                 context.Writer.WritePropertyName("CustomOriginConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionOriginCustomOriginConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomOriginConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetOriginPath())
             {
                 context.Writer.WritePropertyName("OriginPath");
-                context.Writer.Write(requestObject.OriginPath);
+                context.Writer.WriteStringValue(requestObject.OriginPath);
             }
 
             if(requestObject.IsSetS3OriginConfig())
             {
                 context.Writer.WritePropertyName("S3OriginConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionOriginS3OriginConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3OriginConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

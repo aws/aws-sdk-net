@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAppValidationStrategy())
             {
                 context.Writer.WritePropertyName("appValidationStrategy");
-                context.Writer.Write(requestObject.AppValidationStrategy);
+                context.Writer.WriteStringValue(requestObject.AppValidationStrategy);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSsmValidationParameters())
             {
                 context.Writer.WritePropertyName("ssmValidationParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SSMValidationParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SsmValidationParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValidationId())
             {
                 context.Writer.WritePropertyName("validationId");
-                context.Writer.Write(requestObject.ValidationId);
+                context.Writer.WriteStringValue(requestObject.ValidationId);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFileInput())
             {
                 context.Writer.WritePropertyName("fileInput");
-                context.Writer.Write(requestObject.FileInput);
+                context.Writer.WriteStringValue(requestObject.FileInput);
             }
 
             if(requestObject.IsSetInputColorSpace())
             {
                 context.Writer.WritePropertyName("inputColorSpace");
-                context.Writer.Write(requestObject.InputColorSpace);
+                context.Writer.WriteStringValue(requestObject.InputColorSpace);
             }
 
             if(requestObject.IsSetInputMasteringLuminance())
             {
                 context.Writer.WritePropertyName("inputMasteringLuminance");
-                context.Writer.Write(requestObject.InputMasteringLuminance.Value);
+                context.Writer.WriteNumberValue(requestObject.InputMasteringLuminance.Value);
             }
 
             if(requestObject.IsSetOutputColorSpace())
             {
                 context.Writer.WritePropertyName("outputColorSpace");
-                context.Writer.Write(requestObject.OutputColorSpace);
+                context.Writer.WriteStringValue(requestObject.OutputColorSpace);
             }
 
             if(requestObject.IsSetOutputMasteringLuminance())
             {
                 context.Writer.WritePropertyName("outputMasteringLuminance");
-                context.Writer.Write(requestObject.OutputMasteringLuminance.Value);
+                context.Writer.WriteNumberValue(requestObject.OutputMasteringLuminance.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplyTo())
             {
                 context.Writer.WritePropertyName("ApplyTo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AxisLabelReferenceOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApplyTo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomLabel())
             {
                 context.Writer.WritePropertyName("CustomLabel");
-                context.Writer.Write(requestObject.CustomLabel);
+                context.Writer.WriteStringValue(requestObject.CustomLabel);
             }
 
             if(requestObject.IsSetFontConfiguration())
             {
                 context.Writer.WritePropertyName("FontConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FontConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FontConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

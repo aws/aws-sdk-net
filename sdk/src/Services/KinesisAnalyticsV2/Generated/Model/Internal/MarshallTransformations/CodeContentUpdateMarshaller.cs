@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3ContentLocationUpdate())
             {
                 context.Writer.WritePropertyName("S3ContentLocationUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ContentLocationUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3ContentLocationUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextContentUpdate())
             {
                 context.Writer.WritePropertyName("TextContentUpdate");
-                context.Writer.Write(requestObject.TextContentUpdate);
+                context.Writer.WriteStringValue(requestObject.TextContentUpdate);
             }
 
             if(requestObject.IsSetZipFileContentUpdate())
             {
                 context.Writer.WritePropertyName("ZipFileContentUpdate");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.ZipFileContentUpdate));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.ZipFileContentUpdate));
             }
 
         }

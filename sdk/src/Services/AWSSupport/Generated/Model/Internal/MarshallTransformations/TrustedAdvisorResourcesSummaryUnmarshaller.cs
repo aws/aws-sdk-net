@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TrustedAdvisorResourcesSummary Object
     /// </summary>  
-    public class TrustedAdvisorResourcesSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorResourcesSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorResourcesSummary, JsonUnmarshallerContext>
+    public class TrustedAdvisorResourcesSummaryUnmarshaller : IJsonUnmarshaller<TrustedAdvisorResourcesSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TrustedAdvisorResourcesSummary IUnmarshaller<TrustedAdvisorResourcesSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrustedAdvisorResourcesSummary Unmarshall(JsonUnmarshallerContext context)
+        public TrustedAdvisorResourcesSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TrustedAdvisorResourcesSummary unmarshalledObject = new TrustedAdvisorResourcesSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("resourcesFlagged", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ResourcesFlagged = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourcesFlagged = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourcesIgnored", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ResourcesIgnored = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourcesIgnored = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourcesProcessed", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ResourcesProcessed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourcesProcessed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourcesSuppressed", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ResourcesSuppressed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourcesSuppressed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

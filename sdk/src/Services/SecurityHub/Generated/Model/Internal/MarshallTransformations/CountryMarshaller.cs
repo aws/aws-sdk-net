@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCountryCode())
             {
                 context.Writer.WritePropertyName("CountryCode");
-                context.Writer.Write(requestObject.CountryCode);
+                context.Writer.WriteStringValue(requestObject.CountryCode);
             }
 
             if(requestObject.IsSetCountryName())
             {
                 context.Writer.WritePropertyName("CountryName");
-                context.Writer.Write(requestObject.CountryName);
+                context.Writer.WriteStringValue(requestObject.CountryName);
             }
 
         }

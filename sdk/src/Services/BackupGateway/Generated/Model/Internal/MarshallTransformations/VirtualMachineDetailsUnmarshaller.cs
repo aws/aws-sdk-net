@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VirtualMachineDetails Object
     /// </summary>  
-    public class VirtualMachineDetailsUnmarshaller : IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>, IUnmarshaller<VirtualMachineDetails, JsonUnmarshallerContext>
+    public class VirtualMachineDetailsUnmarshaller : IJsonUnmarshaller<VirtualMachineDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VirtualMachineDetails IUnmarshaller<VirtualMachineDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VirtualMachineDetails Unmarshall(JsonUnmarshallerContext context)
+        public VirtualMachineDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VirtualMachineDetails unmarshalledObject = new VirtualMachineDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("HostName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HostName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HypervisorId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HypervisorId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastBackupDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastBackupDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastBackupDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Path", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Path = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VmwareTags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VmwareTag, VmwareTagUnmarshaller>(VmwareTagUnmarshaller.Instance);
-                    unmarshalledObject.VmwareTags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VmwareTag, VmwareTagUnmarshaller>(VmwareTagUnmarshaller.Instance);
+                    unmarshalledObject.VmwareTags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

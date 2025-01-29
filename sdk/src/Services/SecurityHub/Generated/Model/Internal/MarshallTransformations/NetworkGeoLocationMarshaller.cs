@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("City");
-                context.Writer.Write(requestObject.City);
+                context.Writer.WriteStringValue(requestObject.City);
             }
 
             if(requestObject.IsSetCountry())
             {
                 context.Writer.WritePropertyName("Country");
-                context.Writer.Write(requestObject.Country);
+                context.Writer.WriteStringValue(requestObject.Country);
             }
 
             if(requestObject.IsSetLat())
@@ -65,11 +63,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Lat");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Lat.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lat.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Lat.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lat.Value);
+                    context.Writer.WriteNumberValue(requestObject.Lat.Value);
                 }
             }
 
@@ -78,11 +76,11 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Lon");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Lon.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Lon.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Lon.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Lon.Value);
+                    context.Writer.WriteNumberValue(requestObject.Lon.Value);
                 }
             }
 

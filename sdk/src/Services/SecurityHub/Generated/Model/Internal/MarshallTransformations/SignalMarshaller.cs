@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,76 +49,76 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActorIds())
             {
                 context.Writer.WritePropertyName("ActorIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActorIdsListValue in requestObject.ActorIds)
                 {
-                        context.Writer.Write(requestObjectActorIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectActorIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCount())
             {
                 context.Writer.WritePropertyName("Count");
-                context.Writer.Write(requestObject.Count.Value);
+                context.Writer.WriteNumberValue(requestObject.Count.Value);
             }
 
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt.Value);
+                context.Writer.WriteNumberValue(requestObject.CreatedAt.Value);
             }
 
             if(requestObject.IsSetEndpointIds())
             {
                 context.Writer.WritePropertyName("EndpointIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEndpointIdsListValue in requestObject.EndpointIds)
                 {
-                        context.Writer.Write(requestObjectEndpointIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectEndpointIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFirstSeenAt())
             {
                 context.Writer.WritePropertyName("FirstSeenAt");
-                context.Writer.Write(requestObject.FirstSeenAt.Value);
+                context.Writer.WriteNumberValue(requestObject.FirstSeenAt.Value);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetLastSeenAt())
             {
                 context.Writer.WritePropertyName("LastSeenAt");
-                context.Writer.Write(requestObject.LastSeenAt.Value);
+                context.Writer.WriteNumberValue(requestObject.LastSeenAt.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetProductArn())
             {
                 context.Writer.WritePropertyName("ProductArn");
-                context.Writer.Write(requestObject.ProductArn);
+                context.Writer.WriteStringValue(requestObject.ProductArn);
             }
 
             if(requestObject.IsSetResourceIds())
             {
                 context.Writer.WritePropertyName("ResourceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceIdsListValue in requestObject.ResourceIds)
                 {
-                        context.Writer.Write(requestObjectResourceIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSeverity())
@@ -128,46 +126,46 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Severity");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Severity.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Severity.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Severity.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Severity.Value);
+                    context.Writer.WriteNumberValue(requestObject.Severity.Value);
                 }
             }
 
             if(requestObject.IsSetSignalIndicators())
             {
                 context.Writer.WritePropertyName("SignalIndicators");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSignalIndicatorsListValue in requestObject.SignalIndicators)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = IndicatorMarshaller.Instance;
                     marshaller.Marshall(requestObjectSignalIndicatorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("UpdatedAt");
-                context.Writer.Write(requestObject.UpdatedAt.Value);
+                context.Writer.WriteNumberValue(requestObject.UpdatedAt.Value);
             }
 
         }

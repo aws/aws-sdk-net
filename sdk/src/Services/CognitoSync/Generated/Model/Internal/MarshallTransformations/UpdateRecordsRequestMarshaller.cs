@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
 {
@@ -70,47 +73,52 @@ namespace Amazon.CognitoSync.Model.Internal.MarshallTransformations
                 throw new AmazonCognitoSyncException("Request object does not have required field IdentityPoolId set");
             request.AddPathResource("{IdentityPoolId}", StringUtils.FromString(publicRequest.IdentityPoolId));
             request.ResourcePath = "/identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeviceId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeviceId())
-                    {
-                        context.Writer.WritePropertyName("DeviceId");
-                        context.Writer.Write(publicRequest.DeviceId);
-                    }
-
-                    if(publicRequest.IsSetRecordPatches())
-                    {
-                        context.Writer.WritePropertyName("RecordPatches");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRecordPatchesListValue in publicRequest.RecordPatches)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RecordPatchMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRecordPatchesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSyncSessionToken())
-                    {
-                        context.Writer.WritePropertyName("SyncSessionToken");
-                        context.Writer.Write(publicRequest.SyncSessionToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DeviceId");
+                context.Writer.WriteStringValue(publicRequest.DeviceId);
             }
+
+            if(publicRequest.IsSetRecordPatches())
+            {
+                context.Writer.WritePropertyName("RecordPatches");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRecordPatchesListValue in publicRequest.RecordPatches)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RecordPatchMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRecordPatchesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSyncSessionToken())
+            {
+                context.Writer.WritePropertyName("SyncSessionToken");
+                context.Writer.WriteStringValue(publicRequest.SyncSessionToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetClientContext()) 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomMLMemberAbilities())
             {
                 context.Writer.WritePropertyName("customMLMemberAbilities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomMLMemberAbilitiesListValue in requestObject.CustomMLMemberAbilities)
                 {
-                        context.Writer.Write(requestObjectCustomMLMemberAbilitiesListValue);
+                        context.Writer.WriteStringValue(requestObjectCustomMLMemberAbilitiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,64 +49,64 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSourceType())
             {
                 context.Writer.WritePropertyName("dataSourceType");
-                context.Writer.Write(requestObject.DataSourceType);
+                context.Writer.WriteStringValue(requestObject.DataSourceType);
             }
 
             if(requestObject.IsSetEnums())
             {
                 context.Writer.WritePropertyName("enums");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEnumsKvp in requestObject.Enums)
                 {
                     context.Writer.WritePropertyName(requestObjectEnumsKvp.Key);
                     var requestObjectEnumsValue = requestObjectEnumsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CodegenGenericDataEnumMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnumsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModels())
             {
                 context.Writer.WritePropertyName("models");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectModelsKvp in requestObject.Models)
                 {
                     context.Writer.WritePropertyName(requestObjectModelsKvp.Key);
                     var requestObjectModelsValue = requestObjectModelsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CodegenGenericDataModelMarshaller.Instance;
                     marshaller.Marshall(requestObjectModelsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNonModels())
             {
                 context.Writer.WritePropertyName("nonModels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectNonModelsKvp in requestObject.NonModels)
                 {
                     context.Writer.WritePropertyName(requestObjectNonModelsKvp.Key);
                     var requestObjectNonModelsValue = requestObjectNonModelsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CodegenGenericDataNonModelMarshaller.Instance;
                     marshaller.Marshall(requestObjectNonModelsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

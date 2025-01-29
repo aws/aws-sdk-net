@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InputAttachment Object
     /// </summary>  
-    public class InputAttachmentUnmarshaller : IUnmarshaller<InputAttachment, XmlUnmarshallerContext>, IUnmarshaller<InputAttachment, JsonUnmarshallerContext>
+    public class InputAttachmentUnmarshaller : IJsonUnmarshaller<InputAttachment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InputAttachment IUnmarshaller<InputAttachment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InputAttachment Unmarshall(JsonUnmarshallerContext context)
+        public InputAttachment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InputAttachment unmarshalledObject = new InputAttachment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("automaticInputFailoverSettings", targetDepth))
                 {
                     var unmarshaller = AutomaticInputFailoverSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AutomaticInputFailoverSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutomaticInputFailoverSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputAttachmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputAttachmentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputAttachmentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InputId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inputSettings", targetDepth))
                 {
                     var unmarshaller = InputSettingsUnmarshaller.Instance;
-                    unmarshalledObject.InputSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InputSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logicalInterfaceNames", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.LogicalInterfaceNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.LogicalInterfaceNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

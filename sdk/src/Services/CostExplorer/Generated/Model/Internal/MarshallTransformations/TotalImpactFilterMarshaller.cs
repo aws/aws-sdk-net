@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("EndValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.EndValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.EndValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.EndValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.EndValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.EndValue.Value);
                 }
             }
 
             if(requestObject.IsSetNumericOperator())
             {
                 context.Writer.WritePropertyName("NumericOperator");
-                context.Writer.Write(requestObject.NumericOperator);
+                context.Writer.WriteStringValue(requestObject.NumericOperator);
             }
 
             if(requestObject.IsSetStartValue())
@@ -72,11 +70,11 @@ namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("StartValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.StartValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StartValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.StartValue.Value);
                 }
             }
 

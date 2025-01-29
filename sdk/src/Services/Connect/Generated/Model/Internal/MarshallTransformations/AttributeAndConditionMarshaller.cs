@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,28 +49,28 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHierarchyGroupCondition())
             {
                 context.Writer.WritePropertyName("HierarchyGroupCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HierarchyGroupConditionMarshaller.Instance;
                 marshaller.Marshall(requestObject.HierarchyGroupCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTagConditions())
             {
                 context.Writer.WritePropertyName("TagConditions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTagConditionsListValue in requestObject.TagConditions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagConditionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTagConditionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

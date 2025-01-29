@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomFileSystemConfigs())
             {
                 context.Writer.WritePropertyName("CustomFileSystemConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomFileSystemConfigsListValue in requestObject.CustomFileSystemConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = CustomFileSystemConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomFileSystemConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomPosixUserConfig())
             {
                 context.Writer.WritePropertyName("CustomPosixUserConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomPosixUserConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomPosixUserConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExecutionRole())
             {
                 context.Writer.WritePropertyName("ExecutionRole");
-                context.Writer.Write(requestObject.ExecutionRole);
+                context.Writer.WriteStringValue(requestObject.ExecutionRole);
             }
 
             if(requestObject.IsSetJupyterLabAppSettings())
             {
                 context.Writer.WritePropertyName("JupyterLabAppSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JupyterLabAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.JupyterLabAppSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJupyterServerAppSettings())
             {
                 context.Writer.WritePropertyName("JupyterServerAppSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JupyterServerAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.JupyterServerAppSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKernelGatewayAppSettings())
             {
                 context.Writer.WritePropertyName("KernelGatewayAppSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KernelGatewayAppSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.KernelGatewayAppSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("SecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSpaceStorageSettings())
             {
                 context.Writer.WritePropertyName("SpaceStorageSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DefaultSpaceStorageSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpaceStorageSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

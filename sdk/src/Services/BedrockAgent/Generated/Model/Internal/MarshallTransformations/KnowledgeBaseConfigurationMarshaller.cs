@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKendraKnowledgeBaseConfiguration())
             {
                 context.Writer.WritePropertyName("kendraKnowledgeBaseConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KendraKnowledgeBaseConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KendraKnowledgeBaseConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqlKnowledgeBaseConfiguration())
             {
                 context.Writer.WritePropertyName("sqlKnowledgeBaseConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqlKnowledgeBaseConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqlKnowledgeBaseConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetVectorKnowledgeBaseConfiguration())
             {
                 context.Writer.WritePropertyName("vectorKnowledgeBaseConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VectorKnowledgeBaseConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VectorKnowledgeBaseConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

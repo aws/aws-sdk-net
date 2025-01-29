@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 {
@@ -61,93 +64,98 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/profiles";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcceptRoleSessionName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAcceptRoleSessionName())
-                    {
-                        context.Writer.WritePropertyName("acceptRoleSessionName");
-                        context.Writer.Write(publicRequest.AcceptRoleSessionName.Value);
-                    }
-
-                    if(publicRequest.IsSetDurationSeconds())
-                    {
-                        context.Writer.WritePropertyName("durationSeconds");
-                        context.Writer.Write(publicRequest.DurationSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetEnabled())
-                    {
-                        context.Writer.WritePropertyName("enabled");
-                        context.Writer.Write(publicRequest.Enabled.Value);
-                    }
-
-                    if(publicRequest.IsSetManagedPolicyArns())
-                    {
-                        context.Writer.WritePropertyName("managedPolicyArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestManagedPolicyArnsListValue in publicRequest.ManagedPolicyArns)
-                        {
-                                context.Writer.Write(publicRequestManagedPolicyArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRequireInstanceProperties())
-                    {
-                        context.Writer.WritePropertyName("requireInstanceProperties");
-                        context.Writer.Write(publicRequest.RequireInstanceProperties.Value);
-                    }
-
-                    if(publicRequest.IsSetRoleArns())
-                    {
-                        context.Writer.WritePropertyName("roleArns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRoleArnsListValue in publicRequest.RoleArns)
-                        {
-                                context.Writer.Write(publicRequestRoleArnsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSessionPolicy())
-                    {
-                        context.Writer.WritePropertyName("sessionPolicy");
-                        context.Writer.Write(publicRequest.SessionPolicy);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("acceptRoleSessionName");
+                context.Writer.WriteBooleanValue(publicRequest.AcceptRoleSessionName.Value);
             }
+
+            if(publicRequest.IsSetDurationSeconds())
+            {
+                context.Writer.WritePropertyName("durationSeconds");
+                context.Writer.WriteNumberValue(publicRequest.DurationSeconds.Value);
+            }
+
+            if(publicRequest.IsSetEnabled())
+            {
+                context.Writer.WritePropertyName("enabled");
+                context.Writer.WriteBooleanValue(publicRequest.Enabled.Value);
+            }
+
+            if(publicRequest.IsSetManagedPolicyArns())
+            {
+                context.Writer.WritePropertyName("managedPolicyArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestManagedPolicyArnsListValue in publicRequest.ManagedPolicyArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestManagedPolicyArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRequireInstanceProperties())
+            {
+                context.Writer.WritePropertyName("requireInstanceProperties");
+                context.Writer.WriteBooleanValue(publicRequest.RequireInstanceProperties.Value);
+            }
+
+            if(publicRequest.IsSetRoleArns())
+            {
+                context.Writer.WritePropertyName("roleArns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRoleArnsListValue in publicRequest.RoleArns)
+                {
+                        context.Writer.WriteStringValue(publicRequestRoleArnsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSessionPolicy())
+            {
+                context.Writer.WritePropertyName("sessionPolicy");
+                context.Writer.WriteStringValue(publicRequest.SessionPolicy);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

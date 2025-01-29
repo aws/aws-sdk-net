@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTagFilter())
             {
                 context.Writer.WritePropertyName("TagFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ControlPlaneTagFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.TagFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserAttributeFilter())
             {
                 context.Writer.WritePropertyName("UserAttributeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ControlPlaneUserAttributeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserAttributeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

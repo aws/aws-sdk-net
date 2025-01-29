@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CertificateManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetValidationDomain())
             {
                 context.Writer.WritePropertyName("ValidationDomain");
-                context.Writer.Write(requestObject.ValidationDomain);
+                context.Writer.WriteStringValue(requestObject.ValidationDomain);
             }
 
         }

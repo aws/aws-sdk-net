@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
 {
@@ -61,57 +64,62 @@ namespace Amazon.PersonalizeRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/action-recommendations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCampaignArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCampaignArn())
-                    {
-                        context.Writer.WritePropertyName("campaignArn");
-                        context.Writer.Write(publicRequest.CampaignArn);
-                    }
-
-                    if(publicRequest.IsSetFilterArn())
-                    {
-                        context.Writer.WritePropertyName("filterArn");
-                        context.Writer.Write(publicRequest.FilterArn);
-                    }
-
-                    if(publicRequest.IsSetFilterValues())
-                    {
-                        context.Writer.WritePropertyName("filterValues");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFilterValuesKvp in publicRequest.FilterValues)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFilterValuesKvp.Key);
-                            var publicRequestFilterValuesValue = publicRequestFilterValuesKvp.Value;
-
-                                context.Writer.Write(publicRequestFilterValuesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNumResults())
-                    {
-                        context.Writer.WritePropertyName("numResults");
-                        context.Writer.Write(publicRequest.NumResults.Value);
-                    }
-
-                    if(publicRequest.IsSetUserId())
-                    {
-                        context.Writer.WritePropertyName("userId");
-                        context.Writer.Write(publicRequest.UserId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("campaignArn");
+                context.Writer.WriteStringValue(publicRequest.CampaignArn);
             }
+
+            if(publicRequest.IsSetFilterArn())
+            {
+                context.Writer.WritePropertyName("filterArn");
+                context.Writer.WriteStringValue(publicRequest.FilterArn);
+            }
+
+            if(publicRequest.IsSetFilterValues())
+            {
+                context.Writer.WritePropertyName("filterValues");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFilterValuesKvp in publicRequest.FilterValues)
+                {
+                    context.Writer.WritePropertyName(publicRequestFilterValuesKvp.Key);
+                    var publicRequestFilterValuesValue = publicRequestFilterValuesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestFilterValuesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNumResults())
+            {
+                context.Writer.WritePropertyName("numResults");
+                context.Writer.WriteNumberValue(publicRequest.NumResults.Value);
+            }
+
+            if(publicRequest.IsSetUserId())
+            {
+                context.Writer.WritePropertyName("userId");
+                context.Writer.WriteStringValue(publicRequest.UserId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

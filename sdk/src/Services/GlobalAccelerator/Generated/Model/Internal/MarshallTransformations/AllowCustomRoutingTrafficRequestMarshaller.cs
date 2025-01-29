@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
 {
@@ -63,59 +66,64 @@ namespace Amazon.GlobalAccelerator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllowAllTrafficToEndpoint())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllowAllTrafficToEndpoint())
-                    {
-                        context.Writer.WritePropertyName("AllowAllTrafficToEndpoint");
-                        context.Writer.Write(publicRequest.AllowAllTrafficToEndpoint.Value);
-                    }
-
-                    if(publicRequest.IsSetDestinationAddresses())
-                    {
-                        context.Writer.WritePropertyName("DestinationAddresses");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationAddressesListValue in publicRequest.DestinationAddresses)
-                        {
-                                context.Writer.Write(publicRequestDestinationAddressesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDestinationPorts())
-                    {
-                        context.Writer.WritePropertyName("DestinationPorts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDestinationPortsListValue in publicRequest.DestinationPorts)
-                        {
-                                context.Writer.Write(publicRequestDestinationPortsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEndpointGroupArn())
-                    {
-                        context.Writer.WritePropertyName("EndpointGroupArn");
-                        context.Writer.Write(publicRequest.EndpointGroupArn);
-                    }
-
-                    if(publicRequest.IsSetEndpointId())
-                    {
-                        context.Writer.WritePropertyName("EndpointId");
-                        context.Writer.Write(publicRequest.EndpointId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AllowAllTrafficToEndpoint");
+                context.Writer.WriteBooleanValue(publicRequest.AllowAllTrafficToEndpoint.Value);
             }
+
+            if(publicRequest.IsSetDestinationAddresses())
+            {
+                context.Writer.WritePropertyName("DestinationAddresses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationAddressesListValue in publicRequest.DestinationAddresses)
+                {
+                        context.Writer.WriteStringValue(publicRequestDestinationAddressesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDestinationPorts())
+            {
+                context.Writer.WritePropertyName("DestinationPorts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDestinationPortsListValue in publicRequest.DestinationPorts)
+                {
+                        context.Writer.WriteNumberValue(publicRequestDestinationPortsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEndpointGroupArn())
+            {
+                context.Writer.WritePropertyName("EndpointGroupArn");
+                context.Writer.WriteStringValue(publicRequest.EndpointGroupArn);
+            }
+
+            if(publicRequest.IsSetEndpointId())
+            {
+                context.Writer.WritePropertyName("EndpointId");
+                context.Writer.WriteStringValue(publicRequest.EndpointId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

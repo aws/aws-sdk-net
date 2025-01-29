@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Milestone Object
     /// </summary>  
-    public class MilestoneUnmarshaller : IUnmarshaller<Milestone, XmlUnmarshallerContext>, IUnmarshaller<Milestone, JsonUnmarshallerContext>
+    public class MilestoneUnmarshaller : IJsonUnmarshaller<Milestone, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Milestone IUnmarshaller<Milestone, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Milestone Unmarshall(JsonUnmarshallerContext context)
+        public Milestone Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Milestone unmarshalledObject = new Milestone();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MilestoneName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MilestoneName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MilestoneName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MilestoneNumber", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MilestoneNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MilestoneNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RecordedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Workload", targetDepth))
                 {
                     var unmarshaller = WorkloadUnmarshaller.Instance;
-                    unmarshalledObject.Workload = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Workload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

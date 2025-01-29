@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEcsTaskDefinitionVolumesDetails Object
     /// </summary>  
-    public class AwsEcsTaskDefinitionVolumesDetailsUnmarshaller : IUnmarshaller<AwsEcsTaskDefinitionVolumesDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEcsTaskDefinitionVolumesDetails, JsonUnmarshallerContext>
+    public class AwsEcsTaskDefinitionVolumesDetailsUnmarshaller : IJsonUnmarshaller<AwsEcsTaskDefinitionVolumesDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEcsTaskDefinitionVolumesDetails IUnmarshaller<AwsEcsTaskDefinitionVolumesDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEcsTaskDefinitionVolumesDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEcsTaskDefinitionVolumesDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEcsTaskDefinitionVolumesDetails unmarshalledObject = new AwsEcsTaskDefinitionVolumesDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DockerVolumeConfiguration", targetDepth))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesDockerVolumeConfigurationDetailsUnmarshaller.Instance;
-                    unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DockerVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EfsVolumeConfiguration", targetDepth))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesEfsVolumeConfigurationDetailsUnmarshaller.Instance;
-                    unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EfsVolumeConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Host", targetDepth))
                 {
                     var unmarshaller = AwsEcsTaskDefinitionVolumesHostDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Host = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Host = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

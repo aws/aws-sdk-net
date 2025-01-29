@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidSnsTopicException operation
     /// </summary>  
-    public class InvalidSnsTopicExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSnsTopicException, XmlUnmarshallerContext>
+    public class InvalidSnsTopicExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSnsTopicException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSasl())
             {
                 context.Writer.WritePropertyName("Sasl");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsMskClusterClusterInfoClientAuthenticationSaslDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sasl, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTls())
             {
                 context.Writer.WritePropertyName("Tls");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsMskClusterClusterInfoClientAuthenticationTlsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tls, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUnauthenticated())
             {
                 context.Writer.WritePropertyName("Unauthenticated");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsMskClusterClusterInfoClientAuthenticationUnauthenticatedDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Unauthenticated, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

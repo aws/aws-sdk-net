@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndpointUri())
             {
                 context.Writer.WritePropertyName("EndpointUri");
-                context.Writer.Write(requestObject.EndpointUri);
+                context.Writer.WriteStringValue(requestObject.EndpointUri);
             }
 
             if(requestObject.IsSetErrorRetryDuration())
             {
                 context.Writer.WritePropertyName("ErrorRetryDuration");
-                context.Writer.Write(requestObject.ErrorRetryDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.ErrorRetryDuration.Value);
             }
 
             if(requestObject.IsSetFullLoadErrorPercentage())
             {
                 context.Writer.WritePropertyName("FullLoadErrorPercentage");
-                context.Writer.Write(requestObject.FullLoadErrorPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.FullLoadErrorPercentage.Value);
             }
 
             if(requestObject.IsSetServiceAccessRoleArn())
             {
                 context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                context.Writer.Write(requestObject.ServiceAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.ServiceAccessRoleArn);
             }
 
             if(requestObject.IsSetUseNewMappingType())
             {
                 context.Writer.WritePropertyName("UseNewMappingType");
-                context.Writer.Write(requestObject.UseNewMappingType.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseNewMappingType.Value);
             }
 
         }

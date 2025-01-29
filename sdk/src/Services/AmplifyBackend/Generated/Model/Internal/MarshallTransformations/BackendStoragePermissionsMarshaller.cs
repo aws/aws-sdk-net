@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticated())
             {
                 context.Writer.WritePropertyName("authenticated");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAuthenticatedListValue in requestObject.Authenticated)
                 {
-                        context.Writer.Write(requestObjectAuthenticatedListValue);
+                        context.Writer.WriteStringValue(requestObjectAuthenticatedListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUnAuthenticated())
             {
                 context.Writer.WritePropertyName("unAuthenticated");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUnAuthenticatedListValue in requestObject.UnAuthenticated)
                 {
-                        context.Writer.Write(requestObjectUnAuthenticatedListValue);
+                        context.Writer.WriteStringValue(requestObjectUnAuthenticatedListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

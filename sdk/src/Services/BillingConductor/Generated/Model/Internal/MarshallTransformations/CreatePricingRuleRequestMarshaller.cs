@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
@@ -61,105 +64,110 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/create-pricing-rule";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBillingEntity())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBillingEntity())
-                    {
-                        context.Writer.WritePropertyName("BillingEntity");
-                        context.Writer.Write(publicRequest.BillingEntity);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetModifierPercentage())
-                    {
-                        context.Writer.WritePropertyName("ModifierPercentage");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.ModifierPercentage.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOperation())
-                    {
-                        context.Writer.WritePropertyName("Operation");
-                        context.Writer.Write(publicRequest.Operation);
-                    }
-
-                    if(publicRequest.IsSetScope())
-                    {
-                        context.Writer.WritePropertyName("Scope");
-                        context.Writer.Write(publicRequest.Scope);
-                    }
-
-                    if(publicRequest.IsSetService())
-                    {
-                        context.Writer.WritePropertyName("Service");
-                        context.Writer.Write(publicRequest.Service);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTiering())
-                    {
-                        context.Writer.WritePropertyName("Tiering");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CreateTieringInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Tiering, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("Type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    if(publicRequest.IsSetUsageType())
-                    {
-                        context.Writer.WritePropertyName("UsageType");
-                        context.Writer.Write(publicRequest.UsageType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("BillingEntity");
+                context.Writer.WriteStringValue(publicRequest.BillingEntity);
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetModifierPercentage())
+            {
+                context.Writer.WritePropertyName("ModifierPercentage");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.ModifierPercentage.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.ModifierPercentage.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.ModifierPercentage.Value);
+                }
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOperation())
+            {
+                context.Writer.WritePropertyName("Operation");
+                context.Writer.WriteStringValue(publicRequest.Operation);
+            }
+
+            if(publicRequest.IsSetScope())
+            {
+                context.Writer.WritePropertyName("Scope");
+                context.Writer.WriteStringValue(publicRequest.Scope);
+            }
+
+            if(publicRequest.IsSetService())
+            {
+                context.Writer.WritePropertyName("Service");
+                context.Writer.WriteStringValue(publicRequest.Service);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTiering())
+            {
+                context.Writer.WritePropertyName("Tiering");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CreateTieringInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Tiering, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            if(publicRequest.IsSetUsageType())
+            {
+                context.Writer.WritePropertyName("UsageType");
+                context.Writer.WriteStringValue(publicRequest.UsageType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetClientToken()) 

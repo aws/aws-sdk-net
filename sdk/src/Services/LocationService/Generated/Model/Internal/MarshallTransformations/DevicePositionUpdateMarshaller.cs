@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccuracy())
             {
                 context.Writer.WritePropertyName("Accuracy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PositionalAccuracyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Accuracy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceId())
             {
                 context.Writer.WritePropertyName("DeviceId");
-                context.Writer.Write(requestObject.DeviceId);
+                context.Writer.WriteStringValue(requestObject.DeviceId);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("Position");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPositionListValue in requestObject.Position)
                 {
-                        context.Writer.Write(requestObjectPositionListValue);
+                        context.Writer.WriteNumberValue(requestObjectPositionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPositionProperties())
             {
                 context.Writer.WritePropertyName("PositionProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPositionPropertiesKvp in requestObject.PositionProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectPositionPropertiesKvp.Key);
                     var requestObjectPositionPropertiesValue = requestObjectPositionPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectPositionPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectPositionPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSampleTime())
             {
                 context.Writer.WritePropertyName("SampleTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SampleTime));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.SampleTime));
             }
 
         }

@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KeyModesOfUse Object
     /// </summary>  
-    public class KeyModesOfUseUnmarshaller : IUnmarshaller<KeyModesOfUse, XmlUnmarshallerContext>, IUnmarshaller<KeyModesOfUse, JsonUnmarshallerContext>
+    public class KeyModesOfUseUnmarshaller : IJsonUnmarshaller<KeyModesOfUse, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KeyModesOfUse IUnmarshaller<KeyModesOfUse, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KeyModesOfUse Unmarshall(JsonUnmarshallerContext context)
+        public KeyModesOfUse Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KeyModesOfUse unmarshalledObject = new KeyModesOfUse();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Decrypt", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Decrypt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Decrypt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeriveKey", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeriveKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeriveKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Encrypt", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Encrypt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encrypt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Generate", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Generate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Generate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NoRestrictions", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.NoRestrictions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NoRestrictions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Sign", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Sign = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sign = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Unwrap", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Unwrap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Unwrap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Verify", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Verify = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Verify = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Wrap", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Wrap = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Wrap = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataAccessRole())
             {
                 context.Writer.WritePropertyName("dataAccessRole");
-                context.Writer.Write(requestObject.DataAccessRole);
+                context.Writer.WriteStringValue(requestObject.DataAccessRole);
             }
 
             if(requestObject.IsSetRedshiftCredentialConfiguration())
             {
                 context.Writer.WritePropertyName("redshiftCredentialConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftCredentialConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftCredentialConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftStorage())
             {
                 context.Writer.WritePropertyName("redshiftStorage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftStorageMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftStorage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRelationalFilterConfigurations())
             {
                 context.Writer.WritePropertyName("relationalFilterConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRelationalFilterConfigurationsListValue in requestObject.RelationalFilterConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RelationalFilterConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectRelationalFilterConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

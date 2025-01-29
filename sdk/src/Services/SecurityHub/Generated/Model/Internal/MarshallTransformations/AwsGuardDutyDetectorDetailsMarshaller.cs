@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSources())
             {
                 context.Writer.WritePropertyName("DataSources");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGuardDutyDetectorDataSourcesDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSources, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFeatures())
             {
                 context.Writer.WritePropertyName("Features");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFeaturesListValue in requestObject.Features)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsGuardDutyDetectorFeaturesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectFeaturesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetFindingPublishingFrequency())
             {
                 context.Writer.WritePropertyName("FindingPublishingFrequency");
-                context.Writer.Write(requestObject.FindingPublishingFrequency);
+                context.Writer.WriteStringValue(requestObject.FindingPublishingFrequency);
             }
 
             if(requestObject.IsSetServiceRole())
             {
                 context.Writer.WritePropertyName("ServiceRole");
-                context.Writer.Write(requestObject.ServiceRole);
+                context.Writer.WriteStringValue(requestObject.ServiceRole);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

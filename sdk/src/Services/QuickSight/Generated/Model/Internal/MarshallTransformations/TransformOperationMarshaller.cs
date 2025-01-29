@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCastColumnTypeOperation())
             {
                 context.Writer.WritePropertyName("CastColumnTypeOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CastColumnTypeOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CastColumnTypeOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreateColumnsOperation())
             {
                 context.Writer.WritePropertyName("CreateColumnsOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateColumnsOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreateColumnsOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilterOperation())
             {
                 context.Writer.WritePropertyName("FilterOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilterOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOverrideDatasetParameterOperation())
             {
                 context.Writer.WritePropertyName("OverrideDatasetParameterOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OverrideDatasetParameterOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OverrideDatasetParameterOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProjectOperation())
             {
                 context.Writer.WritePropertyName("ProjectOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProjectOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProjectOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRenameColumnOperation())
             {
                 context.Writer.WritePropertyName("RenameColumnOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RenameColumnOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RenameColumnOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTagColumnOperation())
             {
                 context.Writer.WritePropertyName("TagColumnOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TagColumnOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TagColumnOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUntagColumnOperation())
             {
                 context.Writer.WritePropertyName("UntagColumnOperation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UntagColumnOperationMarshaller.Instance;
                 marshaller.Marshall(requestObject.UntagColumnOperation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

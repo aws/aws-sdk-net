@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PlatformScriptKey Object
     /// </summary>  
-    public class PlatformScriptKeyUnmarshaller : IUnmarshaller<PlatformScriptKey, XmlUnmarshallerContext>, IUnmarshaller<PlatformScriptKey, JsonUnmarshallerContext>
+    public class PlatformScriptKeyUnmarshaller : IJsonUnmarshaller<PlatformScriptKey, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PlatformScriptKey IUnmarshaller<PlatformScriptKey, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PlatformScriptKey Unmarshall(JsonUnmarshallerContext context)
+        public PlatformScriptKey Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PlatformScriptKey unmarshalledObject = new PlatformScriptKey();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("linux", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Linux = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Linux = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("windows", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Windows = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Windows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

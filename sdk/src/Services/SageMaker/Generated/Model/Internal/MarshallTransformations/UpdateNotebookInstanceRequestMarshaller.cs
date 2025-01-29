@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,118 +66,123 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcceleratorTypes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AcceleratorTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAcceleratorTypes())
-                    {
-                        context.Writer.WritePropertyName("AcceleratorTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAcceleratorTypesListValue in publicRequest.AcceleratorTypes)
-                        {
-                                context.Writer.Write(publicRequestAcceleratorTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAdditionalCodeRepositories())
-                    {
-                        context.Writer.WritePropertyName("AdditionalCodeRepositories");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalCodeRepositoriesListValue in publicRequest.AdditionalCodeRepositories)
-                        {
-                                context.Writer.Write(publicRequestAdditionalCodeRepositoriesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultCodeRepository())
-                    {
-                        context.Writer.WritePropertyName("DefaultCodeRepository");
-                        context.Writer.Write(publicRequest.DefaultCodeRepository);
-                    }
-
-                    if(publicRequest.IsSetDisassociateAcceleratorTypes())
-                    {
-                        context.Writer.WritePropertyName("DisassociateAcceleratorTypes");
-                        context.Writer.Write(publicRequest.DisassociateAcceleratorTypes.Value);
-                    }
-
-                    if(publicRequest.IsSetDisassociateAdditionalCodeRepositories())
-                    {
-                        context.Writer.WritePropertyName("DisassociateAdditionalCodeRepositories");
-                        context.Writer.Write(publicRequest.DisassociateAdditionalCodeRepositories.Value);
-                    }
-
-                    if(publicRequest.IsSetDisassociateDefaultCodeRepository())
-                    {
-                        context.Writer.WritePropertyName("DisassociateDefaultCodeRepository");
-                        context.Writer.Write(publicRequest.DisassociateDefaultCodeRepository.Value);
-                    }
-
-                    if(publicRequest.IsSetDisassociateLifecycleConfig())
-                    {
-                        context.Writer.WritePropertyName("DisassociateLifecycleConfig");
-                        context.Writer.Write(publicRequest.DisassociateLifecycleConfig.Value);
-                    }
-
-                    if(publicRequest.IsSetInstanceMetadataServiceConfiguration())
-                    {
-                        context.Writer.WritePropertyName("InstanceMetadataServiceConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InstanceMetadataServiceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InstanceMetadataServiceConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInstanceType())
-                    {
-                        context.Writer.WritePropertyName("InstanceType");
-                        context.Writer.Write(publicRequest.InstanceType);
-                    }
-
-                    if(publicRequest.IsSetLifecycleConfigName())
-                    {
-                        context.Writer.WritePropertyName("LifecycleConfigName");
-                        context.Writer.Write(publicRequest.LifecycleConfigName);
-                    }
-
-                    if(publicRequest.IsSetNotebookInstanceName())
-                    {
-                        context.Writer.WritePropertyName("NotebookInstanceName");
-                        context.Writer.Write(publicRequest.NotebookInstanceName);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetRootAccess())
-                    {
-                        context.Writer.WritePropertyName("RootAccess");
-                        context.Writer.Write(publicRequest.RootAccess);
-                    }
-
-                    if(publicRequest.IsSetVolumeSizeInGB())
-                    {
-                        context.Writer.WritePropertyName("VolumeSizeInGB");
-                        context.Writer.Write(publicRequest.VolumeSizeInGB.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAcceleratorTypesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAdditionalCodeRepositories())
+            {
+                context.Writer.WritePropertyName("AdditionalCodeRepositories");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdditionalCodeRepositoriesListValue in publicRequest.AdditionalCodeRepositories)
+                {
+                        context.Writer.WriteStringValue(publicRequestAdditionalCodeRepositoriesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDefaultCodeRepository())
+            {
+                context.Writer.WritePropertyName("DefaultCodeRepository");
+                context.Writer.WriteStringValue(publicRequest.DefaultCodeRepository);
+            }
+
+            if(publicRequest.IsSetDisassociateAcceleratorTypes())
+            {
+                context.Writer.WritePropertyName("DisassociateAcceleratorTypes");
+                context.Writer.WriteBooleanValue(publicRequest.DisassociateAcceleratorTypes.Value);
+            }
+
+            if(publicRequest.IsSetDisassociateAdditionalCodeRepositories())
+            {
+                context.Writer.WritePropertyName("DisassociateAdditionalCodeRepositories");
+                context.Writer.WriteBooleanValue(publicRequest.DisassociateAdditionalCodeRepositories.Value);
+            }
+
+            if(publicRequest.IsSetDisassociateDefaultCodeRepository())
+            {
+                context.Writer.WritePropertyName("DisassociateDefaultCodeRepository");
+                context.Writer.WriteBooleanValue(publicRequest.DisassociateDefaultCodeRepository.Value);
+            }
+
+            if(publicRequest.IsSetDisassociateLifecycleConfig())
+            {
+                context.Writer.WritePropertyName("DisassociateLifecycleConfig");
+                context.Writer.WriteBooleanValue(publicRequest.DisassociateLifecycleConfig.Value);
+            }
+
+            if(publicRequest.IsSetInstanceMetadataServiceConfiguration())
+            {
+                context.Writer.WritePropertyName("InstanceMetadataServiceConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InstanceMetadataServiceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InstanceMetadataServiceConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInstanceType())
+            {
+                context.Writer.WritePropertyName("InstanceType");
+                context.Writer.WriteStringValue(publicRequest.InstanceType);
+            }
+
+            if(publicRequest.IsSetLifecycleConfigName())
+            {
+                context.Writer.WritePropertyName("LifecycleConfigName");
+                context.Writer.WriteStringValue(publicRequest.LifecycleConfigName);
+            }
+
+            if(publicRequest.IsSetNotebookInstanceName())
+            {
+                context.Writer.WritePropertyName("NotebookInstanceName");
+                context.Writer.WriteStringValue(publicRequest.NotebookInstanceName);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetRootAccess())
+            {
+                context.Writer.WritePropertyName("RootAccess");
+                context.Writer.WriteStringValue(publicRequest.RootAccess);
+            }
+
+            if(publicRequest.IsSetVolumeSizeInGB())
+            {
+                context.Writer.WritePropertyName("VolumeSizeInGB");
+                context.Writer.WriteNumberValue(publicRequest.VolumeSizeInGB.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

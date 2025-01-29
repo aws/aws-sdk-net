@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SharedImagePermissions Object
     /// </summary>  
-    public class SharedImagePermissionsUnmarshaller : IUnmarshaller<SharedImagePermissions, XmlUnmarshallerContext>, IUnmarshaller<SharedImagePermissions, JsonUnmarshallerContext>
+    public class SharedImagePermissionsUnmarshaller : IJsonUnmarshaller<SharedImagePermissions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SharedImagePermissions IUnmarshaller<SharedImagePermissions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SharedImagePermissions Unmarshall(JsonUnmarshallerContext context)
+        public SharedImagePermissions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SharedImagePermissions unmarshalledObject = new SharedImagePermissions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("imagePermissions", targetDepth))
                 {
                     var unmarshaller = ImagePermissionsUnmarshaller.Instance;
-                    unmarshalledObject.ImagePermissions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImagePermissions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sharedAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SharedAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SharedAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

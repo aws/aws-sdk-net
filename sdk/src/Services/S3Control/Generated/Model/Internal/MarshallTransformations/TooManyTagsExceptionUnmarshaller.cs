@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyTagsException operation
     /// </summary>  
-    public class TooManyTagsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyTagsException, XmlUnmarshallerContext>
+    public class TooManyTagsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyTagsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

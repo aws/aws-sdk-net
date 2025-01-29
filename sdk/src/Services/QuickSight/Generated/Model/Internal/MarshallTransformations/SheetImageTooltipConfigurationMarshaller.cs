@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTooltipText())
             {
                 context.Writer.WritePropertyName("TooltipText");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SheetImageTooltipTextMarshaller.Instance;
                 marshaller.Marshall(requestObject.TooltipText, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.Write(requestObject.Visibility);
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
         }

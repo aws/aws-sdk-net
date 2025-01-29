@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidErrorCodeException operation
     /// </summary>  
-    public class InvalidErrorCodeExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidErrorCodeException, XmlUnmarshallerContext>
+    public class InvalidErrorCodeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidErrorCodeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

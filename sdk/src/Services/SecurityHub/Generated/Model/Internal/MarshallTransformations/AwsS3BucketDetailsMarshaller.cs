@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,125 +49,125 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessControlList())
             {
                 context.Writer.WritePropertyName("AccessControlList");
-                context.Writer.Write(requestObject.AccessControlList);
+                context.Writer.WriteStringValue(requestObject.AccessControlList);
             }
 
             if(requestObject.IsSetBucketLifecycleConfiguration())
             {
                 context.Writer.WritePropertyName("BucketLifecycleConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketBucketLifecycleConfigurationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BucketLifecycleConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBucketLoggingConfiguration())
             {
                 context.Writer.WritePropertyName("BucketLoggingConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketLoggingConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BucketLoggingConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBucketNotificationConfiguration())
             {
                 context.Writer.WritePropertyName("BucketNotificationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketNotificationConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BucketNotificationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBucketVersioningConfiguration())
             {
                 context.Writer.WritePropertyName("BucketVersioningConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketBucketVersioningConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BucketVersioningConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBucketWebsiteConfiguration())
             {
                 context.Writer.WritePropertyName("BucketWebsiteConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketWebsiteConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BucketWebsiteConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreatedAt())
             {
                 context.Writer.WritePropertyName("CreatedAt");
-                context.Writer.Write(requestObject.CreatedAt);
+                context.Writer.WriteStringValue(requestObject.CreatedAt);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetObjectLockConfiguration())
             {
                 context.Writer.WritePropertyName("ObjectLockConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketObjectLockConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ObjectLockConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOwnerAccountId())
             {
                 context.Writer.WritePropertyName("OwnerAccountId");
-                context.Writer.Write(requestObject.OwnerAccountId);
+                context.Writer.WriteStringValue(requestObject.OwnerAccountId);
             }
 
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
+                context.Writer.WriteStringValue(requestObject.OwnerId);
             }
 
             if(requestObject.IsSetOwnerName())
             {
                 context.Writer.WritePropertyName("OwnerName");
-                context.Writer.Write(requestObject.OwnerName);
+                context.Writer.WriteStringValue(requestObject.OwnerName);
             }
 
             if(requestObject.IsSetPublicAccessBlockConfiguration())
             {
                 context.Writer.WritePropertyName("PublicAccessBlockConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3AccountPublicAccessBlockDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublicAccessBlockConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServerSideEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("ServerSideEncryptionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3BucketServerSideEncryptionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServerSideEncryptionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

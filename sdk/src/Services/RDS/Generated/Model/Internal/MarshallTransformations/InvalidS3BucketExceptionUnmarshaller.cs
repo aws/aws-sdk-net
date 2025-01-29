@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidS3BucketException operation
     /// </summary>  
-    public class InvalidS3BucketExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidS3BucketException, XmlUnmarshallerContext>
+    public class InvalidS3BucketExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidS3BucketException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

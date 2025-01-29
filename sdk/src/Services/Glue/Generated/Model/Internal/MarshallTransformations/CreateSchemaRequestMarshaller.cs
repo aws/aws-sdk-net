@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,74 +66,79 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCompatibility())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCompatibility())
-                    {
-                        context.Writer.WritePropertyName("Compatibility");
-                        context.Writer.Write(publicRequest.Compatibility);
-                    }
-
-                    if(publicRequest.IsSetDataFormat())
-                    {
-                        context.Writer.WritePropertyName("DataFormat");
-                        context.Writer.Write(publicRequest.DataFormat);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetRegistryId())
-                    {
-                        context.Writer.WritePropertyName("RegistryId");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RegistryIdMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RegistryId, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSchemaDefinition())
-                    {
-                        context.Writer.WritePropertyName("SchemaDefinition");
-                        context.Writer.Write(publicRequest.SchemaDefinition);
-                    }
-
-                    if(publicRequest.IsSetSchemaName())
-                    {
-                        context.Writer.WritePropertyName("SchemaName");
-                        context.Writer.Write(publicRequest.SchemaName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Compatibility");
+                context.Writer.WriteStringValue(publicRequest.Compatibility);
             }
+
+            if(publicRequest.IsSetDataFormat())
+            {
+                context.Writer.WritePropertyName("DataFormat");
+                context.Writer.WriteStringValue(publicRequest.DataFormat);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetRegistryId())
+            {
+                context.Writer.WritePropertyName("RegistryId");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RegistryIdMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RegistryId, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSchemaDefinition())
+            {
+                context.Writer.WritePropertyName("SchemaDefinition");
+                context.Writer.WriteStringValue(publicRequest.SchemaDefinition);
+            }
+
+            if(publicRequest.IsSetSchemaName())
+            {
+                context.Writer.WritePropertyName("SchemaName");
+                context.Writer.WriteStringValue(publicRequest.SchemaName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

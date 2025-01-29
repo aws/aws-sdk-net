@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompressionFormat())
             {
                 context.Writer.WritePropertyName("CompressionFormat");
-                context.Writer.Write(requestObject.CompressionFormat);
+                context.Writer.WriteStringValue(requestObject.CompressionFormat);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetFormatOptions())
             {
                 context.Writer.WritePropertyName("FormatOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputFormatOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FormatOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Location, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxOutputFiles())
             {
                 context.Writer.WritePropertyName("MaxOutputFiles");
-                context.Writer.Write(requestObject.MaxOutputFiles.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxOutputFiles.Value);
             }
 
             if(requestObject.IsSetOverwrite())
             {
                 context.Writer.WritePropertyName("Overwrite");
-                context.Writer.Write(requestObject.Overwrite.Value);
+                context.Writer.WriteBooleanValue(requestObject.Overwrite.Value);
             }
 
             if(requestObject.IsSetPartitionColumns())
             {
                 context.Writer.WritePropertyName("PartitionColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPartitionColumnsListValue in requestObject.PartitionColumns)
                 {
-                        context.Writer.Write(requestObjectPartitionColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectPartitionColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

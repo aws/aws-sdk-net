@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("authenticationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuthenticationConfigurationPatchMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectionProperties())
             {
                 context.Writer.WritePropertyName("connectionProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectConnectionPropertiesKvp in requestObject.ConnectionProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectConnectionPropertiesKvp.Key);
                     var requestObjectConnectionPropertiesValue = requestObjectConnectionPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectConnectionPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectConnectionPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
         }

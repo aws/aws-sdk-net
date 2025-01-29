@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndPercentage())
             {
                 context.Writer.WritePropertyName("EndPercentage");
-                context.Writer.Write(requestObject.EndPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.EndPercentage.Value);
             }
 
             if(requestObject.IsSetFirst())
             {
                 context.Writer.WritePropertyName("First");
-                context.Writer.Write(requestObject.First.Value);
+                context.Writer.WriteNumberValue(requestObject.First.Value);
             }
 
             if(requestObject.IsSetLast())
             {
                 context.Writer.WritePropertyName("Last");
-                context.Writer.Write(requestObject.Last.Value);
+                context.Writer.WriteNumberValue(requestObject.Last.Value);
             }
 
             if(requestObject.IsSetStartPercentage())
             {
                 context.Writer.WritePropertyName("StartPercentage");
-                context.Writer.Write(requestObject.StartPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.StartPercentage.Value);
             }
 
         }

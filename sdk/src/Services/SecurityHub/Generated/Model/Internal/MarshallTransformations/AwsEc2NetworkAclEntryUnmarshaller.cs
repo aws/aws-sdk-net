@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2NetworkAclEntry Object
     /// </summary>  
-    public class AwsEc2NetworkAclEntryUnmarshaller : IUnmarshaller<AwsEc2NetworkAclEntry, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2NetworkAclEntry, JsonUnmarshallerContext>
+    public class AwsEc2NetworkAclEntryUnmarshaller : IJsonUnmarshaller<AwsEc2NetworkAclEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2NetworkAclEntry IUnmarshaller<AwsEc2NetworkAclEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2NetworkAclEntry Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2NetworkAclEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2NetworkAclEntry unmarshalledObject = new AwsEc2NetworkAclEntry();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CidrBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Egress", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Egress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Egress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IcmpTypeCode", targetDepth))
                 {
                     var unmarshaller = IcmpTypeCodeUnmarshaller.Instance;
-                    unmarshalledObject.IcmpTypeCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IcmpTypeCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Ipv6CidrBlock", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Ipv6CidrBlock = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ipv6CidrBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PortRange", targetDepth))
                 {
                     var unmarshaller = PortRangeFromToUnmarshaller.Instance;
-                    unmarshalledObject.PortRange = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PortRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Protocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Protocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleAction", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleAction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleNumber", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RuleNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

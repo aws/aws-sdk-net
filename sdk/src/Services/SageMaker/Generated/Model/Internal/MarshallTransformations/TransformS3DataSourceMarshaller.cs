@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3DataType())
             {
                 context.Writer.WritePropertyName("S3DataType");
-                context.Writer.Write(requestObject.S3DataType);
+                context.Writer.WriteStringValue(requestObject.S3DataType);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }

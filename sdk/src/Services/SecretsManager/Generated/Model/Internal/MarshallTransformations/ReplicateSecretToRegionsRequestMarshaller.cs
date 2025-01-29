@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
@@ -63,47 +66,52 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddReplicaRegions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AddReplicaRegions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddReplicaRegionsListValue in publicRequest.AddReplicaRegions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAddReplicaRegions())
-                    {
-                        context.Writer.WritePropertyName("AddReplicaRegions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAddReplicaRegionsListValue in publicRequest.AddReplicaRegions)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ReplicaRegionTypeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAddReplicaRegionsListValue, context);
+                    var marshaller = ReplicaRegionTypeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAddReplicaRegionsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetForceOverwriteReplicaSecret())
-                    {
-                        context.Writer.WritePropertyName("ForceOverwriteReplicaSecret");
-                        context.Writer.Write(publicRequest.ForceOverwriteReplicaSecret.Value);
-                    }
-
-                    if(publicRequest.IsSetSecretId())
-                    {
-                        context.Writer.WritePropertyName("SecretId");
-                        context.Writer.Write(publicRequest.SecretId);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetForceOverwriteReplicaSecret())
+            {
+                context.Writer.WritePropertyName("ForceOverwriteReplicaSecret");
+                context.Writer.WriteBooleanValue(publicRequest.ForceOverwriteReplicaSecret.Value);
+            }
+
+            if(publicRequest.IsSetSecretId())
+            {
+                context.Writer.WritePropertyName("SecretId");
+                context.Writer.WriteStringValue(publicRequest.SecretId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

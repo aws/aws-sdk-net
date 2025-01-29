@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,74 +49,74 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomLabel())
             {
                 context.Writer.WritePropertyName("CustomLabel");
-                context.Writer.Write(requestObject.CustomLabel);
+                context.Writer.WriteStringValue(requestObject.CustomLabel);
             }
 
             if(requestObject.IsSetMetricHeaderCellStyle())
             {
                 context.Writer.WritePropertyName("MetricHeaderCellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.MetricHeaderCellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlacement())
             {
                 context.Writer.WritePropertyName("Placement");
-                context.Writer.Write(requestObject.Placement);
+                context.Writer.WriteStringValue(requestObject.Placement);
             }
 
             if(requestObject.IsSetScrollStatus())
             {
                 context.Writer.WritePropertyName("ScrollStatus");
-                context.Writer.Write(requestObject.ScrollStatus);
+                context.Writer.WriteStringValue(requestObject.ScrollStatus);
             }
 
             if(requestObject.IsSetTotalAggregationOptions())
             {
                 context.Writer.WritePropertyName("TotalAggregationOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTotalAggregationOptionsListValue in requestObject.TotalAggregationOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TotalAggregationOptionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTotalAggregationOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTotalCellStyle())
             {
                 context.Writer.WritePropertyName("TotalCellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.TotalCellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTotalsVisibility())
             {
                 context.Writer.WritePropertyName("TotalsVisibility");
-                context.Writer.Write(requestObject.TotalsVisibility);
+                context.Writer.WriteStringValue(requestObject.TotalsVisibility);
             }
 
             if(requestObject.IsSetValueCellStyle())
             {
                 context.Writer.WritePropertyName("ValueCellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.ValueCellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

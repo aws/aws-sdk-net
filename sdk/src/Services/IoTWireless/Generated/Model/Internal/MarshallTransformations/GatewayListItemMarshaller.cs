@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDownlinkFrequency())
             {
                 context.Writer.WritePropertyName("DownlinkFrequency");
-                context.Writer.Write(requestObject.DownlinkFrequency.Value);
+                context.Writer.WriteNumberValue(requestObject.DownlinkFrequency.Value);
             }
 
             if(requestObject.IsSetGatewayId())
             {
                 context.Writer.WritePropertyName("GatewayId");
-                context.Writer.Write(requestObject.GatewayId);
+                context.Writer.WriteStringValue(requestObject.GatewayId);
             }
 
         }

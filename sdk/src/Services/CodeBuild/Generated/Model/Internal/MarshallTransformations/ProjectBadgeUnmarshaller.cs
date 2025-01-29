@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProjectBadge Object
     /// </summary>  
-    public class ProjectBadgeUnmarshaller : IUnmarshaller<ProjectBadge, XmlUnmarshallerContext>, IUnmarshaller<ProjectBadge, JsonUnmarshallerContext>
+    public class ProjectBadgeUnmarshaller : IJsonUnmarshaller<ProjectBadge, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProjectBadge IUnmarshaller<ProjectBadge, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProjectBadge Unmarshall(JsonUnmarshallerContext context)
+        public ProjectBadge Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProjectBadge unmarshalledObject = new ProjectBadge();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("badgeEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.BadgeEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BadgeEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("badgeRequestUrl", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BadgeRequestUrl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BadgeRequestUrl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

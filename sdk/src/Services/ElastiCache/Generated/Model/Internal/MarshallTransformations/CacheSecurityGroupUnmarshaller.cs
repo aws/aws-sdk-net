@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheSecurityGroup Object
     /// </summary>  
-    public class CacheSecurityGroupUnmarshaller : IUnmarshaller<CacheSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<CacheSecurityGroup, JsonUnmarshallerContext>
+    public class CacheSecurityGroupUnmarshaller : IXmlUnmarshaller<CacheSecurityGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -99,17 +99,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CacheSecurityGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CacheSecurityGroupUnmarshaller _instance = new CacheSecurityGroupUnmarshaller();        
 

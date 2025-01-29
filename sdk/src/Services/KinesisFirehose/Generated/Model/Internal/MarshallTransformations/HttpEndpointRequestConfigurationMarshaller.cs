@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommonAttributes())
             {
                 context.Writer.WritePropertyName("CommonAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommonAttributesListValue in requestObject.CommonAttributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HttpEndpointCommonAttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectCommonAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContentEncoding())
             {
                 context.Writer.WritePropertyName("ContentEncoding");
-                context.Writer.Write(requestObject.ContentEncoding);
+                context.Writer.WriteStringValue(requestObject.ContentEncoding);
             }
 
         }

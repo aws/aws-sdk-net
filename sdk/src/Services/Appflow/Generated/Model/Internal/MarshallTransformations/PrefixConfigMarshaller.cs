@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPathPrefixHierarchy())
             {
                 context.Writer.WritePropertyName("pathPrefixHierarchy");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPathPrefixHierarchyListValue in requestObject.PathPrefixHierarchy)
                 {
-                        context.Writer.Write(requestObjectPathPrefixHierarchyListValue);
+                        context.Writer.WriteStringValue(requestObjectPathPrefixHierarchyListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrefixFormat())
             {
                 context.Writer.WritePropertyName("prefixFormat");
-                context.Writer.Write(requestObject.PrefixFormat);
+                context.Writer.WriteStringValue(requestObject.PrefixFormat);
             }
 
             if(requestObject.IsSetPrefixType())
             {
                 context.Writer.WritePropertyName("prefixType");
-                context.Writer.Write(requestObject.PrefixType);
+                context.Writer.WriteStringValue(requestObject.PrefixType);
             }
 
         }

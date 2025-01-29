@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDbSecurityGroupArn())
             {
                 context.Writer.WritePropertyName("DbSecurityGroupArn");
-                context.Writer.Write(requestObject.DbSecurityGroupArn);
+                context.Writer.WriteStringValue(requestObject.DbSecurityGroupArn);
             }
 
             if(requestObject.IsSetDbSecurityGroupDescription())
             {
                 context.Writer.WritePropertyName("DbSecurityGroupDescription");
-                context.Writer.Write(requestObject.DbSecurityGroupDescription);
+                context.Writer.WriteStringValue(requestObject.DbSecurityGroupDescription);
             }
 
             if(requestObject.IsSetDbSecurityGroupName())
             {
                 context.Writer.WritePropertyName("DbSecurityGroupName");
-                context.Writer.Write(requestObject.DbSecurityGroupName);
+                context.Writer.WriteStringValue(requestObject.DbSecurityGroupName);
             }
 
             if(requestObject.IsSetEc2SecurityGroups())
             {
                 context.Writer.WritePropertyName("Ec2SecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEc2SecurityGroupsListValue in requestObject.Ec2SecurityGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsRdsDbSecurityGroupEc2SecurityGroupMarshaller.Instance;
                     marshaller.Marshall(requestObjectEc2SecurityGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIpRanges())
             {
                 context.Writer.WritePropertyName("IpRanges");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpRangesListValue in requestObject.IpRanges)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsRdsDbSecurityGroupIpRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpRangesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
+                context.Writer.WriteStringValue(requestObject.OwnerId);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

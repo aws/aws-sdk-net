@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoSubscribe())
             {
                 context.Writer.WritePropertyName("autoSubscribe");
-                context.Writer.Write(requestObject.AutoSubscribe);
+                context.Writer.WriteStringValue(requestObject.AutoSubscribe);
             }
 
             if(requestObject.IsSetDefaultSubscriptionType())
             {
                 context.Writer.WritePropertyName("defaultSubscriptionType");
-                context.Writer.Write(requestObject.DefaultSubscriptionType);
+                context.Writer.WriteStringValue(requestObject.DefaultSubscriptionType);
             }
 
         }

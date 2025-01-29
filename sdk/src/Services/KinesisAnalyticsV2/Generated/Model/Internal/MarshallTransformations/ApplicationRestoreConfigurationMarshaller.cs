@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisAnalyticsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationRestoreType())
             {
                 context.Writer.WritePropertyName("ApplicationRestoreType");
-                context.Writer.Write(requestObject.ApplicationRestoreType);
+                context.Writer.WriteStringValue(requestObject.ApplicationRestoreType);
             }
 
             if(requestObject.IsSetSnapshotName())
             {
                 context.Writer.WritePropertyName("SnapshotName");
-                context.Writer.Write(requestObject.SnapshotName);
+                context.Writer.WriteStringValue(requestObject.SnapshotName);
             }
 
         }

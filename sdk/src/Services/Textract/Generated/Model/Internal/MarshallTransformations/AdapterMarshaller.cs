@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Textract.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Textract.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdapterId())
             {
                 context.Writer.WritePropertyName("AdapterId");
-                context.Writer.Write(requestObject.AdapterId);
+                context.Writer.WriteStringValue(requestObject.AdapterId);
             }
 
             if(requestObject.IsSetPages())
             {
                 context.Writer.WritePropertyName("Pages");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPagesListValue in requestObject.Pages)
                 {
-                        context.Writer.Write(requestObjectPagesListValue);
+                        context.Writer.WriteStringValue(requestObjectPagesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

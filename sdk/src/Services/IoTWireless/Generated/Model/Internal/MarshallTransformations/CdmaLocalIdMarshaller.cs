@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCdmaChannel())
             {
                 context.Writer.WritePropertyName("CdmaChannel");
-                context.Writer.Write(requestObject.CdmaChannel.Value);
+                context.Writer.WriteNumberValue(requestObject.CdmaChannel.Value);
             }
 
             if(requestObject.IsSetPnOffset())
             {
                 context.Writer.WritePropertyName("PnOffset");
-                context.Writer.Write(requestObject.PnOffset.Value);
+                context.Writer.WriteNumberValue(requestObject.PnOffset.Value);
             }
 
         }

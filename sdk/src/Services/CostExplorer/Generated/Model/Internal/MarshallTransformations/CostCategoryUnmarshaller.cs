@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CostCategory Object
     /// </summary>  
-    public class CostCategoryUnmarshaller : IUnmarshaller<CostCategory, XmlUnmarshallerContext>, IUnmarshaller<CostCategory, JsonUnmarshallerContext>
+    public class CostCategoryUnmarshaller : IJsonUnmarshaller<CostCategory, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CostCategory IUnmarshaller<CostCategory, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CostCategory Unmarshall(JsonUnmarshallerContext context)
+        public CostCategory Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CostCategory unmarshalledObject = new CostCategory();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CostCategoryArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CostCategoryArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CostCategoryArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EffectiveEnd", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveEnd = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EffectiveEnd = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EffectiveStart", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveStart = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EffectiveStart = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProcessingStatus", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CostCategoryProcessingStatus, CostCategoryProcessingStatusUnmarshaller>(CostCategoryProcessingStatusUnmarshaller.Instance);
-                    unmarshalledObject.ProcessingStatus = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CostCategoryProcessingStatus, CostCategoryProcessingStatusUnmarshaller>(CostCategoryProcessingStatusUnmarshaller.Instance);
+                    unmarshalledObject.ProcessingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Rules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CostCategoryRule, CostCategoryRuleUnmarshaller>(CostCategoryRuleUnmarshaller.Instance);
-                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CostCategoryRule, CostCategoryRuleUnmarshaller>(CostCategoryRuleUnmarshaller.Instance);
+                    unmarshalledObject.Rules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RuleVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SplitChargeRules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CostCategorySplitChargeRule, CostCategorySplitChargeRuleUnmarshaller>(CostCategorySplitChargeRuleUnmarshaller.Instance);
-                    unmarshalledObject.SplitChargeRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CostCategorySplitChargeRule, CostCategorySplitChargeRuleUnmarshaller>(CostCategorySplitChargeRuleUnmarshaller.Instance);
+                    unmarshalledObject.SplitChargeRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

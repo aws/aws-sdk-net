@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsTagKey())
             {
                 context.Writer.WritePropertyName("AwsTagKey");
-                context.Writer.Write(requestObject.AwsTagKey);
+                context.Writer.WriteStringValue(requestObject.AwsTagKey);
             }
 
             if(requestObject.IsSetAwsTagValue())
             {
                 context.Writer.WritePropertyName("AwsTagValue");
-                context.Writer.Write(requestObject.AwsTagValue);
+                context.Writer.WriteStringValue(requestObject.AwsTagValue);
             }
 
             if(requestObject.IsSetVmwareCategory())
             {
                 context.Writer.WritePropertyName("VmwareCategory");
-                context.Writer.Write(requestObject.VmwareCategory);
+                context.Writer.WriteStringValue(requestObject.VmwareCategory);
             }
 
             if(requestObject.IsSetVmwareTagName())
             {
                 context.Writer.WritePropertyName("VmwareTagName");
-                context.Writer.Write(requestObject.VmwareTagName);
+                context.Writer.WriteStringValue(requestObject.VmwareTagName);
             }
 
         }

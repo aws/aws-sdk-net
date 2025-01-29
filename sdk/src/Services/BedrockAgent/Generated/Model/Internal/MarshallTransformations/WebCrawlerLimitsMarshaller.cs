@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxPages())
             {
                 context.Writer.WritePropertyName("maxPages");
-                context.Writer.Write(requestObject.MaxPages.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxPages.Value);
             }
 
             if(requestObject.IsSetRateLimit())
             {
                 context.Writer.WritePropertyName("rateLimit");
-                context.Writer.Write(requestObject.RateLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.RateLimit.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPathLoss())
             {
                 context.Writer.WritePropertyName("PathLoss");
-                context.Writer.Write(requestObject.PathLoss.Value);
+                context.Writer.WriteNumberValue(requestObject.PathLoss.Value);
             }
 
             if(requestObject.IsSetPsc())
             {
                 context.Writer.WritePropertyName("Psc");
-                context.Writer.Write(requestObject.Psc.Value);
+                context.Writer.WriteNumberValue(requestObject.Psc.Value);
             }
 
             if(requestObject.IsSetRscp())
             {
                 context.Writer.WritePropertyName("Rscp");
-                context.Writer.Write(requestObject.Rscp.Value);
+                context.Writer.WriteNumberValue(requestObject.Rscp.Value);
             }
 
             if(requestObject.IsSetUarfcndl())
             {
                 context.Writer.WritePropertyName("Uarfcndl");
-                context.Writer.Write(requestObject.Uarfcndl.Value);
+                context.Writer.WriteNumberValue(requestObject.Uarfcndl.Value);
             }
 
             if(requestObject.IsSetUtranCid())
             {
                 context.Writer.WritePropertyName("UtranCid");
-                context.Writer.Write(requestObject.UtranCid.Value);
+                context.Writer.WriteNumberValue(requestObject.UtranCid.Value);
             }
 
         }

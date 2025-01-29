@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddressLine1())
             {
                 context.Writer.WritePropertyName("AddressLine1");
-                context.Writer.Write(requestObject.AddressLine1);
+                context.Writer.WriteStringValue(requestObject.AddressLine1);
             }
 
             if(requestObject.IsSetAddressLine2())
             {
                 context.Writer.WritePropertyName("AddressLine2");
-                context.Writer.Write(requestObject.AddressLine2);
+                context.Writer.WriteStringValue(requestObject.AddressLine2);
             }
 
             if(requestObject.IsSetAddressLine3())
             {
                 context.Writer.WritePropertyName("AddressLine3");
-                context.Writer.Write(requestObject.AddressLine3);
+                context.Writer.WriteStringValue(requestObject.AddressLine3);
             }
 
             if(requestObject.IsSetCity())
             {
                 context.Writer.WritePropertyName("City");
-                context.Writer.Write(requestObject.City);
+                context.Writer.WriteStringValue(requestObject.City);
             }
 
             if(requestObject.IsSetContactName())
             {
                 context.Writer.WritePropertyName("ContactName");
-                context.Writer.Write(requestObject.ContactName);
+                context.Writer.WriteStringValue(requestObject.ContactName);
             }
 
             if(requestObject.IsSetContactPhoneNumber())
             {
                 context.Writer.WritePropertyName("ContactPhoneNumber");
-                context.Writer.Write(requestObject.ContactPhoneNumber);
+                context.Writer.WriteStringValue(requestObject.ContactPhoneNumber);
             }
 
             if(requestObject.IsSetCountryCode())
             {
                 context.Writer.WritePropertyName("CountryCode");
-                context.Writer.Write(requestObject.CountryCode);
+                context.Writer.WriteStringValue(requestObject.CountryCode);
             }
 
             if(requestObject.IsSetDistrictOrCounty())
             {
                 context.Writer.WritePropertyName("DistrictOrCounty");
-                context.Writer.Write(requestObject.DistrictOrCounty);
+                context.Writer.WriteStringValue(requestObject.DistrictOrCounty);
             }
 
             if(requestObject.IsSetMunicipality())
             {
                 context.Writer.WritePropertyName("Municipality");
-                context.Writer.Write(requestObject.Municipality);
+                context.Writer.WriteStringValue(requestObject.Municipality);
             }
 
             if(requestObject.IsSetPostalCode())
             {
                 context.Writer.WritePropertyName("PostalCode");
-                context.Writer.Write(requestObject.PostalCode);
+                context.Writer.WriteStringValue(requestObject.PostalCode);
             }
 
             if(requestObject.IsSetStateOrRegion())
             {
                 context.Writer.WritePropertyName("StateOrRegion");
-                context.Writer.Write(requestObject.StateOrRegion);
+                context.Writer.WriteStringValue(requestObject.StateOrRegion);
             }
 
         }

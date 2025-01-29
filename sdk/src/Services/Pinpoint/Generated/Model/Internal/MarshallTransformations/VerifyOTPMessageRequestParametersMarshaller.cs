@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationIdentity())
             {
                 context.Writer.WritePropertyName("DestinationIdentity");
-                context.Writer.Write(requestObject.DestinationIdentity);
+                context.Writer.WriteStringValue(requestObject.DestinationIdentity);
             }
 
             if(requestObject.IsSetOtp())
             {
                 context.Writer.WritePropertyName("Otp");
-                context.Writer.Write(requestObject.Otp);
+                context.Writer.WriteStringValue(requestObject.Otp);
             }
 
             if(requestObject.IsSetReferenceId())
             {
                 context.Writer.WritePropertyName("ReferenceId");
-                context.Writer.Write(requestObject.ReferenceId);
+                context.Writer.WriteStringValue(requestObject.ReferenceId);
             }
 
         }

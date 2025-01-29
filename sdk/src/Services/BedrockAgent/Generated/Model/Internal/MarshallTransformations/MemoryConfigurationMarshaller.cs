@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabledMemoryTypes())
             {
                 context.Writer.WritePropertyName("enabledMemoryTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnabledMemoryTypesListValue in requestObject.EnabledMemoryTypes)
                 {
-                        context.Writer.Write(requestObjectEnabledMemoryTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectEnabledMemoryTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSessionSummaryConfiguration())
             {
                 context.Writer.WritePropertyName("sessionSummaryConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SessionSummaryConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SessionSummaryConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorageDays())
             {
                 context.Writer.WritePropertyName("storageDays");
-                context.Writer.Write(requestObject.StorageDays.Value);
+                context.Writer.WriteNumberValue(requestObject.StorageDays.Value);
             }
 
         }

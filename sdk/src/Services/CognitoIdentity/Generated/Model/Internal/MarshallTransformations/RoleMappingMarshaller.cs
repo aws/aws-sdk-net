@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmbiguousRoleResolution())
             {
                 context.Writer.WritePropertyName("AmbiguousRoleResolution");
-                context.Writer.Write(requestObject.AmbiguousRoleResolution);
+                context.Writer.WriteStringValue(requestObject.AmbiguousRoleResolution);
             }
 
             if(requestObject.IsSetRulesConfiguration())
             {
                 context.Writer.WritePropertyName("RulesConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RulesConfigurationTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RulesConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

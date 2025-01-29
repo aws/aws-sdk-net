@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDialogAction())
             {
                 context.Writer.WritePropertyName("dialogAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DialogActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DialogAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIntent())
             {
                 context.Writer.WritePropertyName("intent");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IntentOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.Intent, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSessionAttributes())
             {
                 context.Writer.WritePropertyName("sessionAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSessionAttributesKvp in requestObject.SessionAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectSessionAttributesKvp.Key);
                     var requestObjectSessionAttributesValue = requestObjectSessionAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectSessionAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectSessionAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

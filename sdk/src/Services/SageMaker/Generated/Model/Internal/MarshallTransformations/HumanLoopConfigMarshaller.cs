@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,65 +49,65 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHumanTaskUiArn())
             {
                 context.Writer.WritePropertyName("HumanTaskUiArn");
-                context.Writer.Write(requestObject.HumanTaskUiArn);
+                context.Writer.WriteStringValue(requestObject.HumanTaskUiArn);
             }
 
             if(requestObject.IsSetPublicWorkforceTaskPrice())
             {
                 context.Writer.WritePropertyName("PublicWorkforceTaskPrice");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PublicWorkforceTaskPriceMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublicWorkforceTaskPrice, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTaskAvailabilityLifetimeInSeconds())
             {
                 context.Writer.WritePropertyName("TaskAvailabilityLifetimeInSeconds");
-                context.Writer.Write(requestObject.TaskAvailabilityLifetimeInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TaskAvailabilityLifetimeInSeconds.Value);
             }
 
             if(requestObject.IsSetTaskCount())
             {
                 context.Writer.WritePropertyName("TaskCount");
-                context.Writer.Write(requestObject.TaskCount.Value);
+                context.Writer.WriteNumberValue(requestObject.TaskCount.Value);
             }
 
             if(requestObject.IsSetTaskDescription())
             {
                 context.Writer.WritePropertyName("TaskDescription");
-                context.Writer.Write(requestObject.TaskDescription);
+                context.Writer.WriteStringValue(requestObject.TaskDescription);
             }
 
             if(requestObject.IsSetTaskKeywords())
             {
                 context.Writer.WritePropertyName("TaskKeywords");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTaskKeywordsListValue in requestObject.TaskKeywords)
                 {
-                        context.Writer.Write(requestObjectTaskKeywordsListValue);
+                        context.Writer.WriteStringValue(requestObjectTaskKeywordsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTaskTimeLimitInSeconds())
             {
                 context.Writer.WritePropertyName("TaskTimeLimitInSeconds");
-                context.Writer.Write(requestObject.TaskTimeLimitInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.TaskTimeLimitInSeconds.Value);
             }
 
             if(requestObject.IsSetTaskTitle())
             {
                 context.Writer.WritePropertyName("TaskTitle");
-                context.Writer.Write(requestObject.TaskTitle);
+                context.Writer.WriteStringValue(requestObject.TaskTitle);
             }
 
             if(requestObject.IsSetWorkteamArn())
             {
                 context.Writer.WritePropertyName("WorkteamArn");
-                context.Writer.Write(requestObject.WorkteamArn);
+                context.Writer.WriteStringValue(requestObject.WorkteamArn);
             }
 
         }

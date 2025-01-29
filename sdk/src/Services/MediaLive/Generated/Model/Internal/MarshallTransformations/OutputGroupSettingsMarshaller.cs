@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,111 +49,111 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchiveGroupSettings())
             {
                 context.Writer.WritePropertyName("archiveGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ArchiveGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArchiveGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCmafIngestGroupSettings())
             {
                 context.Writer.WritePropertyName("cmafIngestGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CmafIngestGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CmafIngestGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrameCaptureGroupSettings())
             {
                 context.Writer.WritePropertyName("frameCaptureGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrameCaptureGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FrameCaptureGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsGroupSettings())
             {
                 context.Writer.WritePropertyName("hlsGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMediaPackageGroupSettings())
             {
                 context.Writer.WritePropertyName("mediaPackageGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MediaPackageGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MediaPackageGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMsSmoothGroupSettings())
             {
                 context.Writer.WritePropertyName("msSmoothGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MsSmoothGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MsSmoothGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMultiplexGroupSettings())
             {
                 context.Writer.WritePropertyName("multiplexGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiplexGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MultiplexGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRtmpGroupSettings())
             {
                 context.Writer.WritePropertyName("rtmpGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RtmpGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RtmpGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSrtGroupSettings())
             {
                 context.Writer.WritePropertyName("srtGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SrtGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SrtGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUdpGroupSettings())
             {
                 context.Writer.WritePropertyName("udpGroupSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UdpGroupSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UdpGroupSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxParallelExecutionSteps())
             {
                 context.Writer.WritePropertyName("MaxParallelExecutionSteps");
-                context.Writer.Write(requestObject.MaxParallelExecutionSteps.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxParallelExecutionSteps.Value);
             }
 
         }

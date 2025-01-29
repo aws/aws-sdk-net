@@ -29,24 +29,25 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EndpointTemporarilyUnavailableException Object
     /// </summary>  
-    public class EndpointTemporarilyUnavailableExceptionUnmarshaller : IErrorResponseUnmarshaller<EndpointTemporarilyUnavailableException, JsonUnmarshallerContext>
+    public class EndpointTemporarilyUnavailableExceptionUnmarshaller : IJsonErrorResponseUnmarshaller<EndpointTemporarilyUnavailableException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public EndpointTemporarilyUnavailableException Unmarshall(JsonUnmarshallerContext context)
+        public EndpointTemporarilyUnavailableException Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
-            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
+            return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse(), ref reader);
         }
 
         /// <summary>
@@ -54,17 +55,24 @@ namespace Amazon.Route53RecoveryCluster.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
+        /// <param name="reader"></param>
         /// <returns></returns>
-        public EndpointTemporarilyUnavailableException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public EndpointTemporarilyUnavailableException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse, ref StreamingUtf8JsonReader reader)
         {
-            context.Read();
+            if (context.Stream.Length > 0)
+            {
+                context.Read(ref reader);
+            }
 
             EndpointTemporarilyUnavailableException unmarshalledObject = new EndpointTemporarilyUnavailableException(errorResponse.Message, errorResponse.InnerException,
                 errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            if (context.Stream.Length > 0)
             {
+                while (context.ReadAtDepth(targetDepth, ref reader))
+                {
+                }
             }
           
             return unmarshalledObject;

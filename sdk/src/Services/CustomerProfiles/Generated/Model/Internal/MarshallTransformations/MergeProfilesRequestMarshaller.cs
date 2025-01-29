@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -64,47 +67,52 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
                 throw new AmazonCustomerProfilesException("Request object does not have required field DomainName set");
             request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/domains/{DomainName}/profiles/objects/merge";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFieldSourceProfileIds())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFieldSourceProfileIds())
-                    {
-                        context.Writer.WritePropertyName("FieldSourceProfileIds");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("FieldSourceProfileIds");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = FieldSourceProfileIdsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FieldSourceProfileIds, context);
+                var marshaller = FieldSourceProfileIdsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FieldSourceProfileIds, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMainProfileId())
-                    {
-                        context.Writer.WritePropertyName("MainProfileId");
-                        context.Writer.Write(publicRequest.MainProfileId);
-                    }
-
-                    if(publicRequest.IsSetProfileIdsToBeMerged())
-                    {
-                        context.Writer.WritePropertyName("ProfileIdsToBeMerged");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestProfileIdsToBeMergedListValue in publicRequest.ProfileIdsToBeMerged)
-                        {
-                                context.Writer.Write(publicRequestProfileIdsToBeMergedListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetMainProfileId())
+            {
+                context.Writer.WritePropertyName("MainProfileId");
+                context.Writer.WriteStringValue(publicRequest.MainProfileId);
+            }
+
+            if(publicRequest.IsSetProfileIdsToBeMerged())
+            {
+                context.Writer.WritePropertyName("ProfileIdsToBeMerged");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestProfileIdsToBeMergedListValue in publicRequest.ProfileIdsToBeMerged)
+                {
+                        context.Writer.WriteStringValue(publicRequestProfileIdsToBeMergedListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

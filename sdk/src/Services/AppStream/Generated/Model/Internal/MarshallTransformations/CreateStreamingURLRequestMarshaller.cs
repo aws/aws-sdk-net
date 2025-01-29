@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicationId())
-                    {
-                        context.Writer.WritePropertyName("ApplicationId");
-                        context.Writer.Write(publicRequest.ApplicationId);
-                    }
-
-                    if(publicRequest.IsSetFleetName())
-                    {
-                        context.Writer.WritePropertyName("FleetName");
-                        context.Writer.Write(publicRequest.FleetName);
-                    }
-
-                    if(publicRequest.IsSetSessionContext())
-                    {
-                        context.Writer.WritePropertyName("SessionContext");
-                        context.Writer.Write(publicRequest.SessionContext);
-                    }
-
-                    if(publicRequest.IsSetStackName())
-                    {
-                        context.Writer.WritePropertyName("StackName");
-                        context.Writer.Write(publicRequest.StackName);
-                    }
-
-                    if(publicRequest.IsSetUserId())
-                    {
-                        context.Writer.WritePropertyName("UserId");
-                        context.Writer.Write(publicRequest.UserId);
-                    }
-
-                    if(publicRequest.IsSetValidity())
-                    {
-                        context.Writer.WritePropertyName("Validity");
-                        context.Writer.Write(publicRequest.Validity.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ApplicationId");
+                context.Writer.WriteStringValue(publicRequest.ApplicationId);
             }
+
+            if(publicRequest.IsSetFleetName())
+            {
+                context.Writer.WritePropertyName("FleetName");
+                context.Writer.WriteStringValue(publicRequest.FleetName);
+            }
+
+            if(publicRequest.IsSetSessionContext())
+            {
+                context.Writer.WritePropertyName("SessionContext");
+                context.Writer.WriteStringValue(publicRequest.SessionContext);
+            }
+
+            if(publicRequest.IsSetStackName())
+            {
+                context.Writer.WritePropertyName("StackName");
+                context.Writer.WriteStringValue(publicRequest.StackName);
+            }
+
+            if(publicRequest.IsSetUserId())
+            {
+                context.Writer.WritePropertyName("UserId");
+                context.Writer.WriteStringValue(publicRequest.UserId);
+            }
+
+            if(publicRequest.IsSetValidity())
+            {
+                context.Writer.WritePropertyName("Validity");
+                context.Writer.WriteNumberValue(publicRequest.Validity.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformati
             if(requestObject.IsSetOfferingClass())
             {
                 context.Writer.WritePropertyName("offeringClass");
-                context.Writer.Write(requestObject.OfferingClass);
+                context.Writer.WriteStringValue(requestObject.OfferingClass);
             }
 
             if(requestObject.IsSetPurchasingOption())
             {
                 context.Writer.WritePropertyName("purchasingOption");
-                context.Writer.Write(requestObject.PurchasingOption);
+                context.Writer.WriteStringValue(requestObject.PurchasingOption);
             }
 
             if(requestObject.IsSetTermLength())
             {
                 context.Writer.WritePropertyName("termLength");
-                context.Writer.Write(requestObject.TermLength);
+                context.Writer.WriteStringValue(requestObject.TermLength);
             }
 
         }

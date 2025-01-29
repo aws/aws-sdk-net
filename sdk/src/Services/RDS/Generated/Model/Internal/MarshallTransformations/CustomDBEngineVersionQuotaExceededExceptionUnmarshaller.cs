@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomDBEngineVersionQuotaExceededException operation
     /// </summary>  
-    public class CustomDBEngineVersionQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomDBEngineVersionQuotaExceededException, XmlUnmarshallerContext>
+    public class CustomDBEngineVersionQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomDBEngineVersionQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetailedResultsLocation())
             {
                 context.Writer.WritePropertyName("DetailedResultsLocation");
-                context.Writer.Write(requestObject.DetailedResultsLocation);
+                context.Writer.WriteStringValue(requestObject.DetailedResultsLocation);
             }
 
             if(requestObject.IsSetResult())
             {
                 context.Writer.WritePropertyName("Result");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClassificationResultMarshaller.Instance;
                 marshaller.Marshall(requestObject.Result, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

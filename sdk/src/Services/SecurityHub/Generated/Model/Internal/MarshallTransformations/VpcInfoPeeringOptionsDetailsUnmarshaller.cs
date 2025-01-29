@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VpcInfoPeeringOptionsDetails Object
     /// </summary>  
-    public class VpcInfoPeeringOptionsDetailsUnmarshaller : IUnmarshaller<VpcInfoPeeringOptionsDetails, XmlUnmarshallerContext>, IUnmarshaller<VpcInfoPeeringOptionsDetails, JsonUnmarshallerContext>
+    public class VpcInfoPeeringOptionsDetailsUnmarshaller : IJsonUnmarshaller<VpcInfoPeeringOptionsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VpcInfoPeeringOptionsDetails IUnmarshaller<VpcInfoPeeringOptionsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VpcInfoPeeringOptionsDetails Unmarshall(JsonUnmarshallerContext context)
+        public VpcInfoPeeringOptionsDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VpcInfoPeeringOptionsDetails unmarshalledObject = new VpcInfoPeeringOptionsDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AllowDnsResolutionFromRemoteVpc", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowDnsResolutionFromRemoteVpc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowDnsResolutionFromRemoteVpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AllowEgressFromLocalClassicLinkToRemoteVpc", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowEgressFromLocalClassicLinkToRemoteVpc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowEgressFromLocalClassicLinkToRemoteVpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AllowEgressFromLocalVpcToRemoteClassicLink", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowEgressFromLocalVpcToRemoteClassicLink = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowEgressFromLocalVpcToRemoteClassicLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

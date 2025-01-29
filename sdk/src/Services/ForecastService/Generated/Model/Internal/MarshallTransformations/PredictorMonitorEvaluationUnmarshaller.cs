@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PredictorMonitorEvaluation Object
     /// </summary>  
-    public class PredictorMonitorEvaluationUnmarshaller : IUnmarshaller<PredictorMonitorEvaluation, XmlUnmarshallerContext>, IUnmarshaller<PredictorMonitorEvaluation, JsonUnmarshallerContext>
+    public class PredictorMonitorEvaluationUnmarshaller : IJsonUnmarshaller<PredictorMonitorEvaluation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PredictorMonitorEvaluation IUnmarshaller<PredictorMonitorEvaluation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PredictorMonitorEvaluation Unmarshall(JsonUnmarshallerContext context)
+        public PredictorMonitorEvaluation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PredictorMonitorEvaluation unmarshalledObject = new PredictorMonitorEvaluation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EvaluationState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricResults", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MetricResult, MetricResultUnmarshaller>(MetricResultUnmarshaller.Instance);
-                    unmarshalledObject.MetricResults = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MetricResult, MetricResultUnmarshaller>(MetricResultUnmarshaller.Instance);
+                    unmarshalledObject.MetricResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MonitorArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MonitorDataSource", targetDepth))
                 {
                     var unmarshaller = MonitorDataSourceUnmarshaller.Instance;
-                    unmarshalledObject.MonitorDataSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonitorDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumItemsEvaluated", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumItemsEvaluated = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumItemsEvaluated = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PredictorEvent", targetDepth))
                 {
                     var unmarshaller = PredictorEventUnmarshaller.Instance;
-                    unmarshalledObject.PredictorEvent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PredictorEvent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WindowEndDatetime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.WindowEndDatetime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WindowEndDatetime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WindowStartDatetime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.WindowStartDatetime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WindowStartDatetime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

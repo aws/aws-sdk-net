@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -63,55 +66,60 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAcceptCode())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAcceptCode())
-                    {
-                        context.Writer.WritePropertyName("AcceptCode");
-                        context.Writer.Write(publicRequest.AcceptCode);
-                    }
-
-                    if(publicRequest.IsSetAcceptCodeValidation())
-                    {
-                        context.Writer.WritePropertyName("AcceptCodeValidation");
-                        context.Writer.Write(publicRequest.AcceptCodeValidation);
-                    }
-
-                    if(publicRequest.IsSetAcceptType())
-                    {
-                        context.Writer.WritePropertyName("AcceptType");
-                        context.Writer.Write(publicRequest.AcceptType);
-                    }
-
-                    if(publicRequest.IsSetContactChannelId())
-                    {
-                        context.Writer.WritePropertyName("ContactChannelId");
-                        context.Writer.Write(publicRequest.ContactChannelId);
-                    }
-
-                    if(publicRequest.IsSetNote())
-                    {
-                        context.Writer.WritePropertyName("Note");
-                        context.Writer.Write(publicRequest.Note);
-                    }
-
-                    if(publicRequest.IsSetPageId())
-                    {
-                        context.Writer.WritePropertyName("PageId");
-                        context.Writer.Write(publicRequest.PageId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AcceptCode");
+                context.Writer.WriteStringValue(publicRequest.AcceptCode);
             }
+
+            if(publicRequest.IsSetAcceptCodeValidation())
+            {
+                context.Writer.WritePropertyName("AcceptCodeValidation");
+                context.Writer.WriteStringValue(publicRequest.AcceptCodeValidation);
+            }
+
+            if(publicRequest.IsSetAcceptType())
+            {
+                context.Writer.WritePropertyName("AcceptType");
+                context.Writer.WriteStringValue(publicRequest.AcceptType);
+            }
+
+            if(publicRequest.IsSetContactChannelId())
+            {
+                context.Writer.WritePropertyName("ContactChannelId");
+                context.Writer.WriteStringValue(publicRequest.ContactChannelId);
+            }
+
+            if(publicRequest.IsSetNote())
+            {
+                context.Writer.WritePropertyName("Note");
+                context.Writer.WriteStringValue(publicRequest.Note);
+            }
+
+            if(publicRequest.IsSetPageId())
+            {
+                context.Writer.WritePropertyName("PageId");
+                context.Writer.WriteStringValue(publicRequest.PageId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAugmentedManifests())
             {
                 context.Writer.WritePropertyName("AugmentedManifests");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAugmentedManifestsListValue in requestObject.AugmentedManifests)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DatasetAugmentedManifestsListItemMarshaller.Instance;
                     marshaller.Marshall(requestObjectAugmentedManifestsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataFormat())
             {
                 context.Writer.WritePropertyName("DataFormat");
-                context.Writer.Write(requestObject.DataFormat);
+                context.Writer.WriteStringValue(requestObject.DataFormat);
             }
 
             if(requestObject.IsSetDocumentClassifierInputDataConfig())
             {
                 context.Writer.WritePropertyName("DocumentClassifierInputDataConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatasetDocumentClassifierInputDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DocumentClassifierInputDataConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEntityRecognizerInputDataConfig())
             {
                 context.Writer.WritePropertyName("EntityRecognizerInputDataConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatasetEntityRecognizerInputDataConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityRecognizerInputDataConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

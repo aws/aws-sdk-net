@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BrandDefinition Object
     /// </summary>  
-    public class BrandDefinitionUnmarshaller : IUnmarshaller<BrandDefinition, XmlUnmarshallerContext>, IUnmarshaller<BrandDefinition, JsonUnmarshallerContext>
+    public class BrandDefinitionUnmarshaller : IJsonUnmarshaller<BrandDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BrandDefinition IUnmarshaller<BrandDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BrandDefinition Unmarshall(JsonUnmarshallerContext context)
+        public BrandDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BrandDefinition unmarshalledObject = new BrandDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ApplicationTheme", targetDepth))
                 {
                     var unmarshaller = ApplicationThemeUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationTheme = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationTheme = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BrandName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BrandName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BrandName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogoConfiguration", targetDepth))
                 {
                     var unmarshaller = LogoConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LogoConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogoConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

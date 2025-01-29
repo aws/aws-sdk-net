@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -53,42 +51,42 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("CurrentRestoreRateInMegaBytesPerSecond");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value);
+                    context.Writer.WriteNumberValue(requestObject.CurrentRestoreRateInMegaBytesPerSecond.Value);
                 }
             }
 
             if(requestObject.IsSetElapsedTimeInSeconds())
             {
                 context.Writer.WritePropertyName("ElapsedTimeInSeconds");
-                context.Writer.Write(requestObject.ElapsedTimeInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ElapsedTimeInSeconds.Value);
             }
 
             if(requestObject.IsSetEstimatedTimeToCompletionInSeconds())
             {
                 context.Writer.WritePropertyName("EstimatedTimeToCompletionInSeconds");
-                context.Writer.Write(requestObject.EstimatedTimeToCompletionInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.EstimatedTimeToCompletionInSeconds.Value);
             }
 
             if(requestObject.IsSetProgressInMegaBytes())
             {
                 context.Writer.WritePropertyName("ProgressInMegaBytes");
-                context.Writer.Write(requestObject.ProgressInMegaBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgressInMegaBytes.Value);
             }
 
             if(requestObject.IsSetSnapshotSizeInMegaBytes())
             {
                 context.Writer.WritePropertyName("SnapshotSizeInMegaBytes");
-                context.Writer.Write(requestObject.SnapshotSizeInMegaBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.SnapshotSizeInMegaBytes.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

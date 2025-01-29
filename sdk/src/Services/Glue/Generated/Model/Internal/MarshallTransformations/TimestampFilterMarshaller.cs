@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRecordedAfter())
             {
                 context.Writer.WritePropertyName("RecordedAfter");
-                context.Writer.Write(requestObject.RecordedAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.RecordedAfter.Value)));
             }
 
             if(requestObject.IsSetRecordedBefore())
             {
                 context.Writer.WritePropertyName("RecordedBefore");
-                context.Writer.Write(requestObject.RecordedBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.RecordedBefore.Value)));
             }
 
         }

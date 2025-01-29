@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrawlerArn())
             {
                 context.Writer.WritePropertyName("crawlerArn");
-                context.Writer.Write(requestObject.CrawlerArn);
+                context.Writer.WriteStringValue(requestObject.CrawlerArn);
             }
 
             if(requestObject.IsSetDatabaseArn())
             {
                 context.Writer.WritePropertyName("databaseArn");
-                context.Writer.Write(requestObject.DatabaseArn);
+                context.Writer.WriteStringValue(requestObject.DatabaseArn);
             }
 
             if(requestObject.IsSetTableArn())
             {
                 context.Writer.WritePropertyName("tableArn");
-                context.Writer.Write(requestObject.TableArn);
+                context.Writer.WriteStringValue(requestObject.TableArn);
             }
 
         }

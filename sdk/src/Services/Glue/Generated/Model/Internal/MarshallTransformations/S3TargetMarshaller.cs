@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetDlqEventQueueArn())
             {
                 context.Writer.WritePropertyName("DlqEventQueueArn");
-                context.Writer.Write(requestObject.DlqEventQueueArn);
+                context.Writer.WriteStringValue(requestObject.DlqEventQueueArn);
             }
 
             if(requestObject.IsSetEventQueueArn())
             {
                 context.Writer.WritePropertyName("EventQueueArn");
-                context.Writer.Write(requestObject.EventQueueArn);
+                context.Writer.WriteStringValue(requestObject.EventQueueArn);
             }
 
             if(requestObject.IsSetExclusions())
             {
                 context.Writer.WritePropertyName("Exclusions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionsListValue in requestObject.Exclusions)
                 {
-                        context.Writer.Write(requestObjectExclusionsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetSampleSize())
             {
                 context.Writer.WritePropertyName("SampleSize");
-                context.Writer.Write(requestObject.SampleSize.Value);
+                context.Writer.WriteNumberValue(requestObject.SampleSize.Value);
             }
 
         }

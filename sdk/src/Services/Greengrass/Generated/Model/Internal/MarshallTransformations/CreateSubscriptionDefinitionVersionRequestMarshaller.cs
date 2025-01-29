@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -64,35 +67,40 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
                 throw new AmazonGreengrassException("Request object does not have required field SubscriptionDefinitionId set");
             request.AddPathResource("{SubscriptionDefinitionId}", StringUtils.FromString(publicRequest.SubscriptionDefinitionId));
             request.ResourcePath = "/greengrass/definition/subscriptions/{SubscriptionDefinitionId}/versions";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetSubscriptions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Subscriptions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubscriptionsListValue in publicRequest.Subscriptions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetSubscriptions())
-                    {
-                        context.Writer.WritePropertyName("Subscriptions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubscriptionsListValue in publicRequest.Subscriptions)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = SubscriptionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSubscriptionsListValue, context);
+                    var marshaller = SubscriptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSubscriptionsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetAmznClientToken()) 

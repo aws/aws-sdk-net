@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentIdentificationType())
             {
                 context.Writer.WritePropertyName("ContentIdentificationType");
-                context.Writer.Write(requestObject.ContentIdentificationType);
+                context.Writer.WriteStringValue(requestObject.ContentIdentificationType);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetSpecialty())
             {
                 context.Writer.WritePropertyName("Specialty");
-                context.Writer.Write(requestObject.Specialty);
+                context.Writer.WriteStringValue(requestObject.Specialty);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.Write(requestObject.VocabularyName);
+                context.Writer.WriteStringValue(requestObject.VocabularyName);
             }
 
         }

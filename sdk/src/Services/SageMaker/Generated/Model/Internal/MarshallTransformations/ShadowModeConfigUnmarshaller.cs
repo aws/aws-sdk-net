@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ShadowModeConfig Object
     /// </summary>  
-    public class ShadowModeConfigUnmarshaller : IUnmarshaller<ShadowModeConfig, XmlUnmarshallerContext>, IUnmarshaller<ShadowModeConfig, JsonUnmarshallerContext>
+    public class ShadowModeConfigUnmarshaller : IJsonUnmarshaller<ShadowModeConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ShadowModeConfig IUnmarshaller<ShadowModeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ShadowModeConfig Unmarshall(JsonUnmarshallerContext context)
+        public ShadowModeConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ShadowModeConfig unmarshalledObject = new ShadowModeConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ShadowModelVariants", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ShadowModelVariantConfig, ShadowModelVariantConfigUnmarshaller>(ShadowModelVariantConfigUnmarshaller.Instance);
-                    unmarshalledObject.ShadowModelVariants = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ShadowModelVariantConfig, ShadowModelVariantConfigUnmarshaller>(ShadowModelVariantConfigUnmarshaller.Instance);
+                    unmarshalledObject.ShadowModelVariants = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceModelVariantName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceModelVariantName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceModelVariantName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

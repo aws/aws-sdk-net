@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidrBlock())
             {
                 context.Writer.WritePropertyName("CidrBlock");
-                context.Writer.Write(requestObject.CidrBlock);
+                context.Writer.WriteStringValue(requestObject.CidrBlock);
             }
 
             if(requestObject.IsSetCidrBlockSet())
             {
                 context.Writer.WritePropertyName("CidrBlockSet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCidrBlockSetListValue in requestObject.CidrBlockSet)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VpcInfoCidrBlockSetDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectCidrBlockSetListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIpv6CidrBlockSet())
             {
                 context.Writer.WritePropertyName("Ipv6CidrBlockSet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIpv6CidrBlockSetListValue in requestObject.Ipv6CidrBlockSet)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VpcInfoIpv6CidrBlockSetDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectIpv6CidrBlockSetListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOwnerId())
             {
                 context.Writer.WritePropertyName("OwnerId");
-                context.Writer.Write(requestObject.OwnerId);
+                context.Writer.WriteStringValue(requestObject.OwnerId);
             }
 
             if(requestObject.IsSetPeeringOptions())
             {
                 context.Writer.WritePropertyName("PeeringOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcInfoPeeringOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PeeringOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("Region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
         }

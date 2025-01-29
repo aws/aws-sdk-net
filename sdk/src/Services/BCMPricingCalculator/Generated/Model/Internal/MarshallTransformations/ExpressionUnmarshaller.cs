@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Expression Object
     /// </summary>  
-    public class ExpressionUnmarshaller : IUnmarshaller<Expression, XmlUnmarshallerContext>, IUnmarshaller<Expression, JsonUnmarshallerContext>
+    public class ExpressionUnmarshaller : IJsonUnmarshaller<Expression, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Expression IUnmarshaller<Expression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Expression Unmarshall(JsonUnmarshallerContext context)
+        public Expression Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Expression unmarshalledObject = new Expression();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("and", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
-                    unmarshalledObject.And = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
+                    unmarshalledObject.And = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("costCategories", targetDepth))
                 {
                     var unmarshaller = ExpressionFilterUnmarshaller.Instance;
-                    unmarshalledObject.CostCategories = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CostCategories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dimensions", targetDepth))
                 {
                     var unmarshaller = ExpressionFilterUnmarshaller.Instance;
-                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Dimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("not", targetDepth))
                 {
                     var unmarshaller = ExpressionUnmarshaller.Instance;
-                    unmarshalledObject.Not = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Not = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("or", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
-                    unmarshalledObject.Or = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Expression, ExpressionUnmarshaller>(ExpressionUnmarshaller.Instance);
+                    unmarshalledObject.Or = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = ExpressionFilterUnmarshaller.Instance;
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

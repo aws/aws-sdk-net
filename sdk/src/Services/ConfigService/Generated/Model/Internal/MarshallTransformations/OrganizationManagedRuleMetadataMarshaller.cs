@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetInputParameters())
             {
                 context.Writer.WritePropertyName("InputParameters");
-                context.Writer.Write(requestObject.InputParameters);
+                context.Writer.WriteStringValue(requestObject.InputParameters);
             }
 
             if(requestObject.IsSetMaximumExecutionFrequency())
             {
                 context.Writer.WritePropertyName("MaximumExecutionFrequency");
-                context.Writer.Write(requestObject.MaximumExecutionFrequency);
+                context.Writer.WriteStringValue(requestObject.MaximumExecutionFrequency);
             }
 
             if(requestObject.IsSetResourceIdScope())
             {
                 context.Writer.WritePropertyName("ResourceIdScope");
-                context.Writer.Write(requestObject.ResourceIdScope);
+                context.Writer.WriteStringValue(requestObject.ResourceIdScope);
             }
 
             if(requestObject.IsSetResourceTypesScope())
             {
                 context.Writer.WritePropertyName("ResourceTypesScope");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesScopeListValue in requestObject.ResourceTypesScope)
                 {
-                        context.Writer.Write(requestObjectResourceTypesScopeListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesScopeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRuleIdentifier())
             {
                 context.Writer.WritePropertyName("RuleIdentifier");
-                context.Writer.Write(requestObject.RuleIdentifier);
+                context.Writer.WriteStringValue(requestObject.RuleIdentifier);
             }
 
             if(requestObject.IsSetTagKeyScope())
             {
                 context.Writer.WritePropertyName("TagKeyScope");
-                context.Writer.Write(requestObject.TagKeyScope);
+                context.Writer.WriteStringValue(requestObject.TagKeyScope);
             }
 
             if(requestObject.IsSetTagValueScope())
             {
                 context.Writer.WritePropertyName("TagValueScope");
-                context.Writer.Write(requestObject.TagValueScope);
+                context.Writer.WriteStringValue(requestObject.TagValueScope);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.PrometheusService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClusterArn())
             {
                 context.Writer.WritePropertyName("clusterArn");
-                context.Writer.Write(requestObject.ClusterArn);
+                context.Writer.WriteStringValue(requestObject.ClusterArn);
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnetIds())
             {
                 context.Writer.WritePropertyName("subnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetIdsListValue in requestObject.SubnetIds)
                 {
-                        context.Writer.Write(requestObjectSubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

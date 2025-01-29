@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
 {
@@ -51,27 +49,27 @@ namespace Amazon.FinSpaceData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationType())
             {
                 context.Writer.WritePropertyName("destinationType");
-                context.Writer.Write(requestObject.DestinationType);
+                context.Writer.WriteStringValue(requestObject.DestinationType);
             }
 
             if(requestObject.IsSetS3DestinationExportFileFormat())
             {
                 context.Writer.WritePropertyName("s3DestinationExportFileFormat");
-                context.Writer.Write(requestObject.S3DestinationExportFileFormat);
+                context.Writer.WriteStringValue(requestObject.S3DestinationExportFileFormat);
             }
 
             if(requestObject.IsSetS3DestinationExportFileFormatOptions())
             {
                 context.Writer.WritePropertyName("s3DestinationExportFileFormatOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectS3DestinationExportFileFormatOptionsKvp in requestObject.S3DestinationExportFileFormatOptions)
                 {
                     context.Writer.WritePropertyName(requestObjectS3DestinationExportFileFormatOptionsKvp.Key);
                     var requestObjectS3DestinationExportFileFormatOptionsValue = requestObjectS3DestinationExportFileFormatOptionsKvp.Value;
 
-                        context.Writer.Write(requestObjectS3DestinationExportFileFormatOptionsValue);
+                        context.Writer.WriteStringValue(requestObjectS3DestinationExportFileFormatOptionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

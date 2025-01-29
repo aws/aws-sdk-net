@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeliveryModel())
             {
                 context.Writer.WritePropertyName("DeliveryModel");
-                context.Writer.Write(requestObject.DeliveryModel);
+                context.Writer.WriteStringValue(requestObject.DeliveryModel);
             }
 
             if(requestObject.IsSetEffectiveDate())
             {
                 context.Writer.WritePropertyName("EffectiveDate");
-                context.Writer.Write(requestObject.EffectiveDate);
+                context.Writer.WriteStringValue(requestObject.EffectiveDate);
             }
 
             if(requestObject.IsSetExpirationDate())
             {
                 context.Writer.WritePropertyName("ExpirationDate");
-                context.Writer.Write(requestObject.ExpirationDate);
+                context.Writer.WriteStringValue(requestObject.ExpirationDate);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MonetaryValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.Value, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

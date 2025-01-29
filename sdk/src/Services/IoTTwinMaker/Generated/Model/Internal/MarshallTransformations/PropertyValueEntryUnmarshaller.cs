@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PropertyValueEntry Object
     /// </summary>  
-    public class PropertyValueEntryUnmarshaller : IUnmarshaller<PropertyValueEntry, XmlUnmarshallerContext>, IUnmarshaller<PropertyValueEntry, JsonUnmarshallerContext>
+    public class PropertyValueEntryUnmarshaller : IJsonUnmarshaller<PropertyValueEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PropertyValueEntry IUnmarshaller<PropertyValueEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PropertyValueEntry Unmarshall(JsonUnmarshallerContext context)
+        public PropertyValueEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PropertyValueEntry unmarshalledObject = new PropertyValueEntry();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("entityPropertyReference", targetDepth))
                 {
                     var unmarshaller = EntityPropertyReferenceUnmarshaller.Instance;
-                    unmarshalledObject.EntityPropertyReference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntityPropertyReference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("propertyValues", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PropertyValue, PropertyValueUnmarshaller>(PropertyValueUnmarshaller.Instance);
-                    unmarshalledObject.PropertyValues = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<PropertyValue, PropertyValueUnmarshaller>(PropertyValueUnmarshaller.Instance);
+                    unmarshalledObject.PropertyValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

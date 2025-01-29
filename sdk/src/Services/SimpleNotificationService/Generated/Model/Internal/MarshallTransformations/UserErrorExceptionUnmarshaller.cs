@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for UserErrorException operation
     /// </summary>  
-    public class UserErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<UserErrorException, XmlUnmarshallerContext>
+    public class UserErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UserErrorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

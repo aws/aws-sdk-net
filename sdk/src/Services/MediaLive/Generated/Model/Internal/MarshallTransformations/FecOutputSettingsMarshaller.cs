@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnDepth())
             {
                 context.Writer.WritePropertyName("columnDepth");
-                context.Writer.Write(requestObject.ColumnDepth.Value);
+                context.Writer.WriteNumberValue(requestObject.ColumnDepth.Value);
             }
 
             if(requestObject.IsSetIncludeFec())
             {
                 context.Writer.WritePropertyName("includeFec");
-                context.Writer.Write(requestObject.IncludeFec);
+                context.Writer.WriteStringValue(requestObject.IncludeFec);
             }
 
             if(requestObject.IsSetRowLength())
             {
                 context.Writer.WritePropertyName("rowLength");
-                context.Writer.Write(requestObject.RowLength.Value);
+                context.Writer.WriteNumberValue(requestObject.RowLength.Value);
             }
 
         }

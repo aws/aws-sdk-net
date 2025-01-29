@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TrustedAdvisorCostOptimizingSummary Object
     /// </summary>  
-    public class TrustedAdvisorCostOptimizingSummaryUnmarshaller : IUnmarshaller<TrustedAdvisorCostOptimizingSummary, XmlUnmarshallerContext>, IUnmarshaller<TrustedAdvisorCostOptimizingSummary, JsonUnmarshallerContext>
+    public class TrustedAdvisorCostOptimizingSummaryUnmarshaller : IJsonUnmarshaller<TrustedAdvisorCostOptimizingSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TrustedAdvisorCostOptimizingSummary IUnmarshaller<TrustedAdvisorCostOptimizingSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TrustedAdvisorCostOptimizingSummary Unmarshall(JsonUnmarshallerContext context)
+        public TrustedAdvisorCostOptimizingSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TrustedAdvisorCostOptimizingSummary unmarshalledObject = new TrustedAdvisorCostOptimizingSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("estimatedMonthlySavings", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("estimatedPercentMonthlySavings", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedPercentMonthlySavings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedPercentMonthlySavings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

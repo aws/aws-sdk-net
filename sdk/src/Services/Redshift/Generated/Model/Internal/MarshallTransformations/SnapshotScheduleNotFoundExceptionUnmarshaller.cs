@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotScheduleNotFoundException operation
     /// </summary>  
-    public class SnapshotScheduleNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotScheduleNotFoundException, XmlUnmarshallerContext>
+    public class SnapshotScheduleNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotScheduleNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

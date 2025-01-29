@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConsumerGroupsToExclude())
             {
                 context.Writer.WritePropertyName("consumerGroupsToExclude");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConsumerGroupsToExcludeListValue in requestObject.ConsumerGroupsToExclude)
                 {
-                        context.Writer.Write(requestObjectConsumerGroupsToExcludeListValue);
+                        context.Writer.WriteStringValue(requestObjectConsumerGroupsToExcludeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConsumerGroupsToReplicate())
             {
                 context.Writer.WritePropertyName("consumerGroupsToReplicate");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConsumerGroupsToReplicateListValue in requestObject.ConsumerGroupsToReplicate)
                 {
-                        context.Writer.Write(requestObjectConsumerGroupsToReplicateListValue);
+                        context.Writer.WriteStringValue(requestObjectConsumerGroupsToReplicateListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDetectAndCopyNewConsumerGroups())
             {
                 context.Writer.WritePropertyName("detectAndCopyNewConsumerGroups");
-                context.Writer.Write(requestObject.DetectAndCopyNewConsumerGroups.Value);
+                context.Writer.WriteBooleanValue(requestObject.DetectAndCopyNewConsumerGroups.Value);
             }
 
             if(requestObject.IsSetSynchroniseConsumerGroupOffsets())
             {
                 context.Writer.WritePropertyName("synchroniseConsumerGroupOffsets");
-                context.Writer.Write(requestObject.SynchroniseConsumerGroupOffsets.Value);
+                context.Writer.WriteBooleanValue(requestObject.SynchroniseConsumerGroupOffsets.Value);
             }
 
         }

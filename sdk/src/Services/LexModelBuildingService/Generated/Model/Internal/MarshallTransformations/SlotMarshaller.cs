@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
@@ -51,82 +49,82 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultValueSpec())
             {
                 context.Writer.WritePropertyName("defaultValueSpec");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SlotDefaultValueSpecMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultValueSpec, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetObfuscationSetting())
             {
                 context.Writer.WritePropertyName("obfuscationSetting");
-                context.Writer.Write(requestObject.ObfuscationSetting);
+                context.Writer.WriteStringValue(requestObject.ObfuscationSetting);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetResponseCard())
             {
                 context.Writer.WritePropertyName("responseCard");
-                context.Writer.Write(requestObject.ResponseCard);
+                context.Writer.WriteStringValue(requestObject.ResponseCard);
             }
 
             if(requestObject.IsSetSampleUtterances())
             {
                 context.Writer.WritePropertyName("sampleUtterances");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSampleUtterancesListValue in requestObject.SampleUtterances)
                 {
-                        context.Writer.Write(requestObjectSampleUtterancesListValue);
+                        context.Writer.WriteStringValue(requestObjectSampleUtterancesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSlotConstraint())
             {
                 context.Writer.WritePropertyName("slotConstraint");
-                context.Writer.Write(requestObject.SlotConstraint);
+                context.Writer.WriteStringValue(requestObject.SlotConstraint);
             }
 
             if(requestObject.IsSetSlotType())
             {
                 context.Writer.WritePropertyName("slotType");
-                context.Writer.Write(requestObject.SlotType);
+                context.Writer.WriteStringValue(requestObject.SlotType);
             }
 
             if(requestObject.IsSetSlotTypeVersion())
             {
                 context.Writer.WritePropertyName("slotTypeVersion");
-                context.Writer.Write(requestObject.SlotTypeVersion);
+                context.Writer.WriteStringValue(requestObject.SlotTypeVersion);
             }
 
             if(requestObject.IsSetValueElicitationPrompt())
             {
                 context.Writer.WritePropertyName("valueElicitationPrompt");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptMarshaller.Instance;
                 marshaller.Marshall(requestObject.ValueElicitationPrompt, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

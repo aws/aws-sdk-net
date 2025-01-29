@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSamplePayloadUrl())
             {
                 context.Writer.WritePropertyName("SamplePayloadUrl");
-                context.Writer.Write(requestObject.SamplePayloadUrl);
+                context.Writer.WriteStringValue(requestObject.SamplePayloadUrl);
             }
 
             if(requestObject.IsSetSupportedContentTypes())
             {
                 context.Writer.WritePropertyName("SupportedContentTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedContentTypesListValue in requestObject.SupportedContentTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedContentTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedContentTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

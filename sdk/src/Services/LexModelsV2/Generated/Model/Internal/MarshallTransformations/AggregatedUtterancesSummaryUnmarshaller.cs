@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AggregatedUtterancesSummary Object
     /// </summary>  
-    public class AggregatedUtterancesSummaryUnmarshaller : IUnmarshaller<AggregatedUtterancesSummary, XmlUnmarshallerContext>, IUnmarshaller<AggregatedUtterancesSummary, JsonUnmarshallerContext>
+    public class AggregatedUtterancesSummaryUnmarshaller : IJsonUnmarshaller<AggregatedUtterancesSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AggregatedUtterancesSummary IUnmarshaller<AggregatedUtterancesSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AggregatedUtterancesSummary Unmarshall(JsonUnmarshallerContext context)
+        public AggregatedUtterancesSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AggregatedUtterancesSummary unmarshalledObject = new AggregatedUtterancesSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("containsDataFromDeletedResources", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ContainsDataFromDeletedResources = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContainsDataFromDeletedResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hitCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HitCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HitCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("missedCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MissedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MissedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utterance", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Utterance = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Utterance = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utteranceFirstRecordedInAggregationDuration", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UtteranceFirstRecordedInAggregationDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UtteranceFirstRecordedInAggregationDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utteranceLastRecordedInAggregationDuration", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UtteranceLastRecordedInAggregationDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UtteranceLastRecordedInAggregationDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,66 +49,66 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiEndpoint())
             {
                 context.Writer.WritePropertyName("ApiEndpoint");
-                context.Writer.Write(requestObject.ApiEndpoint);
+                context.Writer.WriteStringValue(requestObject.ApiEndpoint);
             }
 
             if(requestObject.IsSetApiId())
             {
                 context.Writer.WritePropertyName("ApiId");
-                context.Writer.Write(requestObject.ApiId);
+                context.Writer.WriteStringValue(requestObject.ApiId);
             }
 
             if(requestObject.IsSetApiKeySelectionExpression())
             {
                 context.Writer.WritePropertyName("ApiKeySelectionExpression");
-                context.Writer.Write(requestObject.ApiKeySelectionExpression);
+                context.Writer.WriteStringValue(requestObject.ApiKeySelectionExpression);
             }
 
             if(requestObject.IsSetCorsConfiguration())
             {
                 context.Writer.WritePropertyName("CorsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCorsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CorsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCreatedDate())
             {
                 context.Writer.WritePropertyName("CreatedDate");
-                context.Writer.Write(requestObject.CreatedDate);
+                context.Writer.WriteStringValue(requestObject.CreatedDate);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetProtocolType())
             {
                 context.Writer.WritePropertyName("ProtocolType");
-                context.Writer.Write(requestObject.ProtocolType);
+                context.Writer.WriteStringValue(requestObject.ProtocolType);
             }
 
             if(requestObject.IsSetRouteSelectionExpression())
             {
                 context.Writer.WritePropertyName("RouteSelectionExpression");
-                context.Writer.Write(requestObject.RouteSelectionExpression);
+                context.Writer.WriteStringValue(requestObject.RouteSelectionExpression);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HlsCdnSettings Object
     /// </summary>  
-    public class HlsCdnSettingsUnmarshaller : IUnmarshaller<HlsCdnSettings, XmlUnmarshallerContext>, IUnmarshaller<HlsCdnSettings, JsonUnmarshallerContext>
+    public class HlsCdnSettingsUnmarshaller : IJsonUnmarshaller<HlsCdnSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HlsCdnSettings IUnmarshaller<HlsCdnSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HlsCdnSettings Unmarshall(JsonUnmarshallerContext context)
+        public HlsCdnSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HlsCdnSettings unmarshalledObject = new HlsCdnSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("hlsAkamaiSettings", targetDepth))
                 {
                     var unmarshaller = HlsAkamaiSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsAkamaiSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsAkamaiSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hlsBasicPutSettings", targetDepth))
                 {
                     var unmarshaller = HlsBasicPutSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsBasicPutSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsBasicPutSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hlsMediaStoreSettings", targetDepth))
                 {
                     var unmarshaller = HlsMediaStoreSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsMediaStoreSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsMediaStoreSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hlsS3Settings", targetDepth))
                 {
                     var unmarshaller = HlsS3SettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsS3Settings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsS3Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hlsWebdavSettings", targetDepth))
                 {
                     var unmarshaller = HlsWebdavSettingsUnmarshaller.Instance;
-                    unmarshalledObject.HlsWebdavSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HlsWebdavSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

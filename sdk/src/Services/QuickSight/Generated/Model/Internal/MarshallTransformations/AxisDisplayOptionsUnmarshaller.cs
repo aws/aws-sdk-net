@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AxisDisplayOptions Object
     /// </summary>  
-    public class AxisDisplayOptionsUnmarshaller : IUnmarshaller<AxisDisplayOptions, XmlUnmarshallerContext>, IUnmarshaller<AxisDisplayOptions, JsonUnmarshallerContext>
+    public class AxisDisplayOptionsUnmarshaller : IJsonUnmarshaller<AxisDisplayOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AxisDisplayOptions IUnmarshaller<AxisDisplayOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AxisDisplayOptions Unmarshall(JsonUnmarshallerContext context)
+        public AxisDisplayOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AxisDisplayOptions unmarshalledObject = new AxisDisplayOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AxisLineVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AxisLineVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AxisLineVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AxisOffset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AxisOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AxisOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataOptions", targetDepth))
                 {
                     var unmarshaller = AxisDataOptionsUnmarshaller.Instance;
-                    unmarshalledObject.DataOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GridLineVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GridLineVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GridLineVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScrollbarOptions", targetDepth))
                 {
                     var unmarshaller = ScrollBarOptionsUnmarshaller.Instance;
-                    unmarshalledObject.ScrollbarOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScrollbarOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TickLabelOptions", targetDepth))
                 {
                     var unmarshaller = AxisTickLabelOptionsUnmarshaller.Instance;
-                    unmarshalledObject.TickLabelOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TickLabelOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

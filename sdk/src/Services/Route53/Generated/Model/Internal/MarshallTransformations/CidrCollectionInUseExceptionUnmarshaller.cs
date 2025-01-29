@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CidrCollectionInUseException operation
     /// </summary>  
-    public class CidrCollectionInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<CidrCollectionInUseException, XmlUnmarshallerContext>
+    public class CidrCollectionInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CidrCollectionInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

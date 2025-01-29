@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefinition())
             {
                 context.Writer.WritePropertyName("Definition");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDefinitionListValue in requestObject.Definition)
                 {
-                        context.Writer.Write(requestObjectDefinitionListValue);
+                        context.Writer.WriteStringValue(requestObjectDefinitionListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConnectionDraining Object
     /// </summary>  
-    public class ConnectionDrainingUnmarshaller : IUnmarshaller<ConnectionDraining, XmlUnmarshallerContext>, IUnmarshaller<ConnectionDraining, JsonUnmarshallerContext>
+    public class ConnectionDrainingUnmarshaller : IXmlUnmarshaller<ConnectionDraining, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConnectionDraining Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ConnectionDrainingUnmarshaller _instance = new ConnectionDrainingUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSourceLevelMetricsBehavior())
             {
                 context.Writer.WritePropertyName("dataSourceLevelMetricsBehavior");
-                context.Writer.Write(requestObject.DataSourceLevelMetricsBehavior);
+                context.Writer.WriteStringValue(requestObject.DataSourceLevelMetricsBehavior);
             }
 
             if(requestObject.IsSetOperationLevelMetricsConfig())
             {
                 context.Writer.WritePropertyName("operationLevelMetricsConfig");
-                context.Writer.Write(requestObject.OperationLevelMetricsConfig);
+                context.Writer.WriteStringValue(requestObject.OperationLevelMetricsConfig);
             }
 
             if(requestObject.IsSetResolverLevelMetricsBehavior())
             {
                 context.Writer.WritePropertyName("resolverLevelMetricsBehavior");
-                context.Writer.Write(requestObject.ResolverLevelMetricsBehavior);
+                context.Writer.WriteStringValue(requestObject.ResolverLevelMetricsBehavior);
             }
 
         }

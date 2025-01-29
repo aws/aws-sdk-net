@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Omics.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnnotationType())
             {
                 context.Writer.WritePropertyName("annotationType");
-                context.Writer.Write(requestObject.AnnotationType);
+                context.Writer.WriteStringValue(requestObject.AnnotationType);
             }
 
             if(requestObject.IsSetFormatToHeader())
             {
                 context.Writer.WritePropertyName("formatToHeader");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFormatToHeaderKvp in requestObject.FormatToHeader)
                 {
                     context.Writer.WritePropertyName(requestObjectFormatToHeaderKvp.Key);
                     var requestObjectFormatToHeaderValue = requestObjectFormatToHeaderKvp.Value;
 
-                        context.Writer.Write(requestObjectFormatToHeaderValue);
+                        context.Writer.WriteStringValue(requestObjectFormatToHeaderValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchema())
             {
                 context.Writer.WritePropertyName("schema");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSchemaListValue in requestObject.Schema)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectSchemaListValueKvp in requestObjectSchemaListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectSchemaListValueKvp.Key);
                         var requestObjectSchemaListValueValue = requestObjectSchemaListValueKvp.Value;
 
-                            context.Writer.Write(requestObjectSchemaListValueValue);
+                            context.Writer.WriteStringValue(requestObjectSchemaListValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

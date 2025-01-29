@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicatePolicyNameException operation
     /// </summary>  
-    public class DuplicatePolicyNameExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicatePolicyNameException, XmlUnmarshallerContext>
+    public class DuplicatePolicyNameExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicatePolicyNameException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

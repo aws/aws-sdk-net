@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyOptions())
             {
                 context.Writer.WritePropertyName("CopyOptions");
-                context.Writer.Write(requestObject.CopyOptions);
+                context.Writer.WriteStringValue(requestObject.CopyOptions);
             }
 
             if(requestObject.IsSetDataTableColumns())
             {
                 context.Writer.WritePropertyName("DataTableColumns");
-                context.Writer.Write(requestObject.DataTableColumns);
+                context.Writer.WriteStringValue(requestObject.DataTableColumns);
             }
 
             if(requestObject.IsSetDataTableName())
             {
                 context.Writer.WritePropertyName("DataTableName");
-                context.Writer.Write(requestObject.DataTableName);
+                context.Writer.WriteStringValue(requestObject.DataTableName);
             }
 
         }

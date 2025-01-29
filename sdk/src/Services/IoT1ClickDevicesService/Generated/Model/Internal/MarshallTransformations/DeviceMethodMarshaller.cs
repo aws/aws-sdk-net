@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoT1ClickDevicesService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceType())
             {
                 context.Writer.WritePropertyName("deviceType");
-                context.Writer.Write(requestObject.DeviceType);
+                context.Writer.WriteStringValue(requestObject.DeviceType);
             }
 
             if(requestObject.IsSetMethodName())
             {
                 context.Writer.WritePropertyName("methodName");
-                context.Writer.Write(requestObject.MethodName);
+                context.Writer.WriteStringValue(requestObject.MethodName);
             }
 
         }

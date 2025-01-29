@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VolumeRecoveryPointInfo Object
     /// </summary>  
-    public class VolumeRecoveryPointInfoUnmarshaller : IUnmarshaller<VolumeRecoveryPointInfo, XmlUnmarshallerContext>, IUnmarshaller<VolumeRecoveryPointInfo, JsonUnmarshallerContext>
+    public class VolumeRecoveryPointInfoUnmarshaller : IJsonUnmarshaller<VolumeRecoveryPointInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VolumeRecoveryPointInfo IUnmarshaller<VolumeRecoveryPointInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VolumeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context)
+        public VolumeRecoveryPointInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VolumeRecoveryPointInfo unmarshalledObject = new VolumeRecoveryPointInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("VolumeARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumeRecoveryPointTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeRecoveryPointTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeRecoveryPointTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumeSizeInBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.VolumeSizeInBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeSizeInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumeUsageInBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeUsageInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

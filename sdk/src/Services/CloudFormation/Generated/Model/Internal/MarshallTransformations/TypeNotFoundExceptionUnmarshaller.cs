@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TypeNotFoundException operation
     /// </summary>  
-    public class TypeNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<TypeNotFoundException, XmlUnmarshallerContext>
+    public class TypeNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TypeNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

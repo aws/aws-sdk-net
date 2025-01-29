@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBOOL())
             {
                 context.Writer.WritePropertyName("BOOL");
-                context.Writer.Write(requestObject.BOOL.Value);
+                context.Writer.WriteBooleanValue(requestObject.BOOL.Value);
             }
 
             if(requestObject.IsSetN())
             {
                 context.Writer.WritePropertyName("N");
-                context.Writer.Write(requestObject.N.Value);
+                context.Writer.WriteNumberValue(requestObject.N.Value);
             }
 
             if(requestObject.IsSetS())
             {
                 context.Writer.WritePropertyName("S");
-                context.Writer.Write(requestObject.S);
+                context.Writer.WriteStringValue(requestObject.S);
             }
 
             if(requestObject.IsSetSS())
             {
                 context.Writer.WritePropertyName("SS");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSSListValue in requestObject.SS)
                 {
-                        context.Writer.Write(requestObjectSSListValue);
+                        context.Writer.WriteStringValue(requestObjectSSListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

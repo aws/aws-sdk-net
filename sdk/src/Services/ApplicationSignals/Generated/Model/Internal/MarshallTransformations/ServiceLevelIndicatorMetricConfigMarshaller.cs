@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeyAttributes())
             {
                 context.Writer.WritePropertyName("KeyAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectKeyAttributesKvp in requestObject.KeyAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectKeyAttributesKvp.Key);
                     var requestObjectKeyAttributesValue = requestObjectKeyAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectKeyAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectKeyAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricDataQueries())
             {
                 context.Writer.WritePropertyName("MetricDataQueries");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricDataQueriesListValue in requestObject.MetricDataQueries)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MetricDataQueryMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetricDataQueriesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMetricType())
             {
                 context.Writer.WritePropertyName("MetricType");
-                context.Writer.Write(requestObject.MetricType);
+                context.Writer.WriteStringValue(requestObject.MetricType);
             }
 
             if(requestObject.IsSetOperationName())
             {
                 context.Writer.WritePropertyName("OperationName");
-                context.Writer.Write(requestObject.OperationName);
+                context.Writer.WriteStringValue(requestObject.OperationName);
             }
 
             if(requestObject.IsSetPeriodSeconds())
             {
                 context.Writer.WritePropertyName("PeriodSeconds");
-                context.Writer.Write(requestObject.PeriodSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.PeriodSeconds.Value);
             }
 
             if(requestObject.IsSetStatistic())
             {
                 context.Writer.WritePropertyName("Statistic");
-                context.Writer.Write(requestObject.Statistic);
+                context.Writer.WriteStringValue(requestObject.Statistic);
             }
 
         }

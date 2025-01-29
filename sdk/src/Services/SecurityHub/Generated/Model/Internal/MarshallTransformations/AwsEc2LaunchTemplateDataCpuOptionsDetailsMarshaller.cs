@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCoreCount())
             {
                 context.Writer.WritePropertyName("CoreCount");
-                context.Writer.Write(requestObject.CoreCount.Value);
+                context.Writer.WriteNumberValue(requestObject.CoreCount.Value);
             }
 
             if(requestObject.IsSetThreadsPerCore())
             {
                 context.Writer.WritePropertyName("ThreadsPerCore");
-                context.Writer.Write(requestObject.ThreadsPerCore.Value);
+                context.Writer.WriteNumberValue(requestObject.ThreadsPerCore.Value);
             }
 
         }

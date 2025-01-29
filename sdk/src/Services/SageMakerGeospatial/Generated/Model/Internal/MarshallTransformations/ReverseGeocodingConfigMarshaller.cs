@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if(requestObject.IsSetXAttributeName())
             {
                 context.Writer.WritePropertyName("XAttributeName");
-                context.Writer.Write(requestObject.XAttributeName);
+                context.Writer.WriteStringValue(requestObject.XAttributeName);
             }
 
             if(requestObject.IsSetYAttributeName())
             {
                 context.Writer.WritePropertyName("YAttributeName");
-                context.Writer.Write(requestObject.YAttributeName);
+                context.Writer.WriteStringValue(requestObject.YAttributeName);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHealthyThreshold())
             {
                 context.Writer.WritePropertyName("HealthyThreshold");
-                context.Writer.Write(requestObject.HealthyThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.HealthyThreshold.Value);
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.Write(requestObject.Interval.Value);
+                context.Writer.WriteNumberValue(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("Path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("Protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout.Value);
+                context.Writer.WriteNumberValue(requestObject.Timeout.Value);
             }
 
             if(requestObject.IsSetUnhealthyThreshold())
             {
                 context.Writer.WritePropertyName("UnhealthyThreshold");
-                context.Writer.Write(requestObject.UnhealthyThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.UnhealthyThreshold.Value);
             }
 
         }

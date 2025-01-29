@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoolValue())
             {
                 context.Writer.WritePropertyName("boolValue");
-                context.Writer.Write(requestObject.BoolValue.Value);
+                context.Writer.WriteBooleanValue(requestObject.BoolValue.Value);
             }
 
             if(requestObject.IsSetDoubleValue())
@@ -59,24 +57,24 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("doubleValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.DoubleValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.DoubleValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.DoubleValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.DoubleValue.Value);
                 }
             }
 
             if(requestObject.IsSetLongValue())
             {
                 context.Writer.WritePropertyName("longValue");
-                context.Writer.Write(requestObject.LongValue.Value);
+                context.Writer.WriteNumberValue(requestObject.LongValue.Value);
             }
 
             if(requestObject.IsSetStringValue())
             {
                 context.Writer.WritePropertyName("stringValue");
-                context.Writer.Write(requestObject.StringValue);
+                context.Writer.WriteStringValue(requestObject.StringValue);
             }
 
         }

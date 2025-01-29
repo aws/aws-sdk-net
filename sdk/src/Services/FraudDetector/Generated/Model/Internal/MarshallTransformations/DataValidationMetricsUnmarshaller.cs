@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataValidationMetrics Object
     /// </summary>  
-    public class DataValidationMetricsUnmarshaller : IUnmarshaller<DataValidationMetrics, XmlUnmarshallerContext>, IUnmarshaller<DataValidationMetrics, JsonUnmarshallerContext>
+    public class DataValidationMetricsUnmarshaller : IJsonUnmarshaller<DataValidationMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataValidationMetrics IUnmarshaller<DataValidationMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataValidationMetrics Unmarshall(JsonUnmarshallerContext context)
+        public DataValidationMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataValidationMetrics unmarshalledObject = new DataValidationMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("fieldLevelMessages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FieldValidationMessage, FieldValidationMessageUnmarshaller>(FieldValidationMessageUnmarshaller.Instance);
-                    unmarshalledObject.FieldLevelMessages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FieldValidationMessage, FieldValidationMessageUnmarshaller>(FieldValidationMessageUnmarshaller.Instance);
+                    unmarshalledObject.FieldLevelMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileLevelMessages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FileValidationMessage, FileValidationMessageUnmarshaller>(FileValidationMessageUnmarshaller.Instance);
-                    unmarshalledObject.FileLevelMessages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FileValidationMessage, FileValidationMessageUnmarshaller>(FileValidationMessageUnmarshaller.Instance);
+                    unmarshalledObject.FileLevelMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

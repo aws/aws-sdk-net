@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PCS.Model.Internal.MarshallTransformations
 {
@@ -51,17 +49,17 @@ namespace Amazon.PCS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSlurmCustomSettings())
             {
                 context.Writer.WritePropertyName("slurmCustomSettings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSlurmCustomSettingsListValue in requestObject.SlurmCustomSettings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SlurmCustomSettingMarshaller.Instance;
                     marshaller.Marshall(requestObjectSlurmCustomSettingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

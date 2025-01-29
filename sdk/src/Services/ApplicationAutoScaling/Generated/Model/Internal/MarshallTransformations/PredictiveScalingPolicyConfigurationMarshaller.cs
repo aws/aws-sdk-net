@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacityBreachBehavior())
             {
                 context.Writer.WritePropertyName("MaxCapacityBreachBehavior");
-                context.Writer.Write(requestObject.MaxCapacityBreachBehavior);
+                context.Writer.WriteStringValue(requestObject.MaxCapacityBreachBehavior);
             }
 
             if(requestObject.IsSetMaxCapacityBuffer())
             {
                 context.Writer.WritePropertyName("MaxCapacityBuffer");
-                context.Writer.Write(requestObject.MaxCapacityBuffer.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCapacityBuffer.Value);
             }
 
             if(requestObject.IsSetMetricSpecifications())
             {
                 context.Writer.WritePropertyName("MetricSpecifications");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricSpecificationsListValue in requestObject.MetricSpecifications)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PredictiveScalingMetricSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetricSpecificationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetSchedulingBufferTime())
             {
                 context.Writer.WritePropertyName("SchedulingBufferTime");
-                context.Writer.Write(requestObject.SchedulingBufferTime.Value);
+                context.Writer.WriteNumberValue(requestObject.SchedulingBufferTime.Value);
             }
 
         }

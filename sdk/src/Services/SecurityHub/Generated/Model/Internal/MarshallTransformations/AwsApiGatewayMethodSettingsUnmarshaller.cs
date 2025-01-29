@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsApiGatewayMethodSettings Object
     /// </summary>  
-    public class AwsApiGatewayMethodSettingsUnmarshaller : IUnmarshaller<AwsApiGatewayMethodSettings, XmlUnmarshallerContext>, IUnmarshaller<AwsApiGatewayMethodSettings, JsonUnmarshallerContext>
+    public class AwsApiGatewayMethodSettingsUnmarshaller : IJsonUnmarshaller<AwsApiGatewayMethodSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsApiGatewayMethodSettings IUnmarshaller<AwsApiGatewayMethodSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsApiGatewayMethodSettings Unmarshall(JsonUnmarshallerContext context)
+        public AwsApiGatewayMethodSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsApiGatewayMethodSettings unmarshalledObject = new AwsApiGatewayMethodSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CacheDataEncrypted", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CacheDataEncrypted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CacheDataEncrypted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CacheTtlInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CacheTtlInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CacheTtlInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CachingEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CachingEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CachingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataTraceEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DataTraceEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataTraceEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HttpMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HttpMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HttpMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LoggingLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoggingLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoggingLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricsEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.MetricsEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireAuthorizationForCacheControl", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireAuthorizationForCacheControl = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireAuthorizationForCacheControl = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourcePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourcePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourcePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThrottlingBurstLimit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ThrottlingBurstLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThrottlingBurstLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThrottlingRateLimit", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThrottlingRateLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThrottlingRateLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UnauthorizedCacheControlHeaderStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UnauthorizedCacheControlHeaderStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnauthorizedCacheControlHeaderStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

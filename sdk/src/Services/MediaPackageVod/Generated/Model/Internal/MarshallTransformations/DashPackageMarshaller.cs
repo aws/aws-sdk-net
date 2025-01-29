@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDashManifests())
             {
                 context.Writer.WritePropertyName("dashManifests");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDashManifestsListValue in requestObject.DashManifests)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DashManifestMarshaller.Instance;
                     marshaller.Marshall(requestObjectDashManifestsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DashEncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIncludeEncoderConfigurationInSegments())
             {
                 context.Writer.WritePropertyName("includeEncoderConfigurationInSegments");
-                context.Writer.Write(requestObject.IncludeEncoderConfigurationInSegments.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeEncoderConfigurationInSegments.Value);
             }
 
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetPeriodTriggers())
             {
                 context.Writer.WritePropertyName("periodTriggers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPeriodTriggersListValue in requestObject.PeriodTriggers)
                 {
-                        context.Writer.Write(requestObjectPeriodTriggersListValue);
+                        context.Writer.WriteStringValue(requestObjectPeriodTriggersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSegmentDurationSeconds())
             {
                 context.Writer.WritePropertyName("segmentDurationSeconds");
-                context.Writer.Write(requestObject.SegmentDurationSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentDurationSeconds.Value);
             }
 
             if(requestObject.IsSetSegmentTemplateFormat())
             {
                 context.Writer.WritePropertyName("segmentTemplateFormat");
-                context.Writer.Write(requestObject.SegmentTemplateFormat);
+                context.Writer.WriteStringValue(requestObject.SegmentTemplateFormat);
             }
 
         }

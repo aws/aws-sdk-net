@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchPutAssetPropertyErrorEntry Object
     /// </summary>  
-    public class BatchPutAssetPropertyErrorEntryUnmarshaller : IUnmarshaller<BatchPutAssetPropertyErrorEntry, XmlUnmarshallerContext>, IUnmarshaller<BatchPutAssetPropertyErrorEntry, JsonUnmarshallerContext>
+    public class BatchPutAssetPropertyErrorEntryUnmarshaller : IJsonUnmarshaller<BatchPutAssetPropertyErrorEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchPutAssetPropertyErrorEntry IUnmarshaller<BatchPutAssetPropertyErrorEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchPutAssetPropertyErrorEntry Unmarshall(JsonUnmarshallerContext context)
+        public BatchPutAssetPropertyErrorEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchPutAssetPropertyErrorEntry unmarshalledObject = new BatchPutAssetPropertyErrorEntry();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("entryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntryId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntryId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("errors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchPutAssetPropertyError, BatchPutAssetPropertyErrorUnmarshaller>(BatchPutAssetPropertyErrorUnmarshaller.Instance);
-                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BatchPutAssetPropertyError, BatchPutAssetPropertyErrorUnmarshaller>(BatchPutAssetPropertyErrorUnmarshaller.Instance);
+                    unmarshalledObject.Errors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

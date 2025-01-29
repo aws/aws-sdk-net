@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxVisibleColumns())
             {
                 context.Writer.WritePropertyName("MaxVisibleColumns");
-                context.Writer.Write(requestObject.MaxVisibleColumns.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxVisibleColumns.Value);
             }
 
             if(requestObject.IsSetMaxVisibleRows())
             {
                 context.Writer.WritePropertyName("MaxVisibleRows");
-                context.Writer.Write(requestObject.MaxVisibleRows.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxVisibleRows.Value);
             }
 
             if(requestObject.IsSetPanelConfiguration())
             {
                 context.Writer.WritePropertyName("PanelConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PanelConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PanelConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXAxis())
             {
                 context.Writer.WritePropertyName("XAxis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SmallMultiplesAxisPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.XAxis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetYAxis())
             {
                 context.Writer.WritePropertyName("YAxis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SmallMultiplesAxisPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.YAxis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

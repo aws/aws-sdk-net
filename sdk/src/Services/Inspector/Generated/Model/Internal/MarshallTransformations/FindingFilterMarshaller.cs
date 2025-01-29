@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector.Model.Internal.MarshallTransformations
 {
@@ -51,99 +49,99 @@ namespace Amazon.Inspector.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentIds())
             {
                 context.Writer.WritePropertyName("agentIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAgentIdsListValue in requestObject.AgentIds)
                 {
-                        context.Writer.Write(requestObjectAgentIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAgentIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("attributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributesListValue in requestObject.Attributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAutoScalingGroups())
             {
                 context.Writer.WritePropertyName("autoScalingGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAutoScalingGroupsListValue in requestObject.AutoScalingGroups)
                 {
-                        context.Writer.Write(requestObjectAutoScalingGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectAutoScalingGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCreationTimeRange())
             {
                 context.Writer.WritePropertyName("creationTimeRange");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimestampRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.CreationTimeRange, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleNames())
             {
                 context.Writer.WritePropertyName("ruleNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRuleNamesListValue in requestObject.RuleNames)
                 {
-                        context.Writer.Write(requestObjectRuleNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectRuleNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRulesPackageArns())
             {
                 context.Writer.WritePropertyName("rulesPackageArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesPackageArnsListValue in requestObject.RulesPackageArns)
                 {
-                        context.Writer.Write(requestObjectRulesPackageArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectRulesPackageArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSeverities())
             {
                 context.Writer.WritePropertyName("severities");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSeveritiesListValue in requestObject.Severities)
                 {
-                        context.Writer.Write(requestObjectSeveritiesListValue);
+                        context.Writer.WriteStringValue(requestObjectSeveritiesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUserAttributes())
             {
                 context.Writer.WritePropertyName("userAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserAttributesListValue in requestObject.UserAttributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectUserAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

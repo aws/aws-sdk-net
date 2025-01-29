@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3BucketOwner())
             {
                 context.Writer.WritePropertyName("s3BucketOwner");
-                context.Writer.Write(requestObject.S3BucketOwner);
+                context.Writer.WriteStringValue(requestObject.S3BucketOwner);
             }
 
             if(requestObject.IsSetS3EncryptionKeyId())
             {
                 context.Writer.WritePropertyName("s3EncryptionKeyId");
-                context.Writer.Write(requestObject.S3EncryptionKeyId);
+                context.Writer.WriteStringValue(requestObject.S3EncryptionKeyId);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("s3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
         }

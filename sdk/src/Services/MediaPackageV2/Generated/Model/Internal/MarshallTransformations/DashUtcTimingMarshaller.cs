@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimingMode())
             {
                 context.Writer.WritePropertyName("TimingMode");
-                context.Writer.Write(requestObject.TimingMode);
+                context.Writer.WriteStringValue(requestObject.TimingMode);
             }
 
             if(requestObject.IsSetTimingSource())
             {
                 context.Writer.WritePropertyName("TimingSource");
-                context.Writer.Write(requestObject.TimingSource);
+                context.Writer.WriteStringValue(requestObject.TimingSource);
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BinaryColumnStatisticsData Object
     /// </summary>  
-    public class BinaryColumnStatisticsDataUnmarshaller : IUnmarshaller<BinaryColumnStatisticsData, XmlUnmarshallerContext>, IUnmarshaller<BinaryColumnStatisticsData, JsonUnmarshallerContext>
+    public class BinaryColumnStatisticsDataUnmarshaller : IJsonUnmarshaller<BinaryColumnStatisticsData, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BinaryColumnStatisticsData IUnmarshaller<BinaryColumnStatisticsData, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BinaryColumnStatisticsData Unmarshall(JsonUnmarshallerContext context)
+        public BinaryColumnStatisticsData Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BinaryColumnStatisticsData unmarshalledObject = new BinaryColumnStatisticsData();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AverageLength", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.AverageLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AverageLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumLength", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MaximumLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NumberOfNulls", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfNulls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfNulls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

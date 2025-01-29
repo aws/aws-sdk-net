@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFixedModeScheduleActionStartSettings())
             {
                 context.Writer.WritePropertyName("fixedModeScheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FixedModeScheduleActionStartSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FixedModeScheduleActionStartSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFollowModeScheduleActionStartSettings())
             {
                 context.Writer.WritePropertyName("followModeScheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FollowModeScheduleActionStartSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FollowModeScheduleActionStartSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImmediateModeScheduleActionStartSettings())
             {
                 context.Writer.WritePropertyName("immediateModeScheduleActionStartSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImmediateModeScheduleActionStartSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImmediateModeScheduleActionStartSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

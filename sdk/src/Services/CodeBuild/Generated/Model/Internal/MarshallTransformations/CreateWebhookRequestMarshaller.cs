@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -63,75 +66,80 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBranchFilter())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBranchFilter())
-                    {
-                        context.Writer.WritePropertyName("branchFilter");
-                        context.Writer.Write(publicRequest.BranchFilter);
-                    }
-
-                    if(publicRequest.IsSetBuildType())
-                    {
-                        context.Writer.WritePropertyName("buildType");
-                        context.Writer.Write(publicRequest.BuildType);
-                    }
-
-                    if(publicRequest.IsSetFilterGroups())
-                    {
-                        context.Writer.WritePropertyName("filterGroups");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilterGroupsListValue in publicRequest.FilterGroups)
-                        {
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestFilterGroupsListValueListValue in publicRequestFilterGroupsListValue)
-                            {
-                                context.Writer.WriteObjectStart();
-
-                                var marshaller = WebhookFilterMarshaller.Instance;
-                                marshaller.Marshall(publicRequestFilterGroupsListValueListValue, context);
-
-                                context.Writer.WriteObjectEnd();
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetManualCreation())
-                    {
-                        context.Writer.WritePropertyName("manualCreation");
-                        context.Writer.Write(publicRequest.ManualCreation.Value);
-                    }
-
-                    if(publicRequest.IsSetProjectName())
-                    {
-                        context.Writer.WritePropertyName("projectName");
-                        context.Writer.Write(publicRequest.ProjectName);
-                    }
-
-                    if(publicRequest.IsSetScopeConfiguration())
-                    {
-                        context.Writer.WritePropertyName("scopeConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ScopeConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ScopeConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("branchFilter");
+                context.Writer.WriteStringValue(publicRequest.BranchFilter);
             }
+
+            if(publicRequest.IsSetBuildType())
+            {
+                context.Writer.WritePropertyName("buildType");
+                context.Writer.WriteStringValue(publicRequest.BuildType);
+            }
+
+            if(publicRequest.IsSetFilterGroups())
+            {
+                context.Writer.WritePropertyName("filterGroups");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilterGroupsListValue in publicRequest.FilterGroups)
+                {
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestFilterGroupsListValueListValue in publicRequestFilterGroupsListValue)
+                    {
+                        context.Writer.WriteStartObject();
+
+                        var marshaller = WebhookFilterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFilterGroupsListValueListValue, context);
+
+                        context.Writer.WriteEndObject();
+                    }
+                    context.Writer.WriteEndArray();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetManualCreation())
+            {
+                context.Writer.WritePropertyName("manualCreation");
+                context.Writer.WriteBooleanValue(publicRequest.ManualCreation.Value);
+            }
+
+            if(publicRequest.IsSetProjectName())
+            {
+                context.Writer.WritePropertyName("projectName");
+                context.Writer.WriteStringValue(publicRequest.ProjectName);
+            }
+
+            if(publicRequest.IsSetScopeConfiguration())
+            {
+                context.Writer.WritePropertyName("scopeConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ScopeConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ScopeConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

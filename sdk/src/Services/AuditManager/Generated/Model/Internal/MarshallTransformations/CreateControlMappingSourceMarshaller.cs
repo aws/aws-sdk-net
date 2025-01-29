@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSourceDescription())
             {
                 context.Writer.WritePropertyName("sourceDescription");
-                context.Writer.Write(requestObject.SourceDescription);
+                context.Writer.WriteStringValue(requestObject.SourceDescription);
             }
 
             if(requestObject.IsSetSourceFrequency())
             {
                 context.Writer.WritePropertyName("sourceFrequency");
-                context.Writer.Write(requestObject.SourceFrequency);
+                context.Writer.WriteStringValue(requestObject.SourceFrequency);
             }
 
             if(requestObject.IsSetSourceKeyword())
             {
                 context.Writer.WritePropertyName("sourceKeyword");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SourceKeywordMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceKeyword, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceName())
             {
                 context.Writer.WritePropertyName("sourceName");
-                context.Writer.Write(requestObject.SourceName);
+                context.Writer.WriteStringValue(requestObject.SourceName);
             }
 
             if(requestObject.IsSetSourceSetUpOption())
             {
                 context.Writer.WritePropertyName("sourceSetUpOption");
-                context.Writer.Write(requestObject.SourceSetUpOption);
+                context.Writer.WriteStringValue(requestObject.SourceSetUpOption);
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("sourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
             if(requestObject.IsSetTroubleshootingText())
             {
                 context.Writer.WritePropertyName("troubleshootingText");
-                context.Writer.Write(requestObject.TroubleshootingText);
+                context.Writer.WriteStringValue(requestObject.TroubleshootingText);
             }
 
         }

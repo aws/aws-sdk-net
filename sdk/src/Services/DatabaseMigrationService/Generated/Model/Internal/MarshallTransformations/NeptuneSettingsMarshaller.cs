@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetErrorRetryDuration())
             {
                 context.Writer.WritePropertyName("ErrorRetryDuration");
-                context.Writer.Write(requestObject.ErrorRetryDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.ErrorRetryDuration.Value);
             }
 
             if(requestObject.IsSetIamAuthEnabled())
             {
                 context.Writer.WritePropertyName("IamAuthEnabled");
-                context.Writer.Write(requestObject.IamAuthEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.IamAuthEnabled.Value);
             }
 
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");
-                context.Writer.Write(requestObject.MaxFileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFileSize.Value);
             }
 
             if(requestObject.IsSetMaxRetryCount())
             {
                 context.Writer.WritePropertyName("MaxRetryCount");
-                context.Writer.Write(requestObject.MaxRetryCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRetryCount.Value);
             }
 
             if(requestObject.IsSetS3BucketFolder())
             {
                 context.Writer.WritePropertyName("S3BucketFolder");
-                context.Writer.Write(requestObject.S3BucketFolder);
+                context.Writer.WriteStringValue(requestObject.S3BucketFolder);
             }
 
             if(requestObject.IsSetS3BucketName())
             {
                 context.Writer.WritePropertyName("S3BucketName");
-                context.Writer.Write(requestObject.S3BucketName);
+                context.Writer.WriteStringValue(requestObject.S3BucketName);
             }
 
             if(requestObject.IsSetServiceAccessRoleArn())
             {
                 context.Writer.WritePropertyName("ServiceAccessRoleArn");
-                context.Writer.Write(requestObject.ServiceAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.ServiceAccessRoleArn);
             }
 
         }

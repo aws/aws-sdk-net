@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DirectConnectGatewayAttachment Object
     /// </summary>  
-    public class DirectConnectGatewayAttachmentUnmarshaller : IUnmarshaller<DirectConnectGatewayAttachment, XmlUnmarshallerContext>, IUnmarshaller<DirectConnectGatewayAttachment, JsonUnmarshallerContext>
+    public class DirectConnectGatewayAttachmentUnmarshaller : IJsonUnmarshaller<DirectConnectGatewayAttachment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DirectConnectGatewayAttachment IUnmarshaller<DirectConnectGatewayAttachment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DirectConnectGatewayAttachment Unmarshall(JsonUnmarshallerContext context)
+        public DirectConnectGatewayAttachment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DirectConnectGatewayAttachment unmarshalledObject = new DirectConnectGatewayAttachment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("attachmentState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttachmentState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttachmentState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("attachmentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AttachmentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttachmentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("directConnectGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DirectConnectGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stateChangeError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateChangeError = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StateChangeError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualInterfaceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualInterfaceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VirtualInterfaceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualInterfaceOwnerAccount", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualInterfaceOwnerAccount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VirtualInterfaceOwnerAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("virtualInterfaceRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VirtualInterfaceRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VirtualInterfaceRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

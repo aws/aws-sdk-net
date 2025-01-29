@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -64,64 +67,69 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/snap-to-roads";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetSnappedGeometryFormat())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetSnappedGeometryFormat())
-                    {
-                        context.Writer.WritePropertyName("SnappedGeometryFormat");
-                        context.Writer.Write(publicRequest.SnappedGeometryFormat);
-                    }
-
-                    if(publicRequest.IsSetSnapRadius())
-                    {
-                        context.Writer.WritePropertyName("SnapRadius");
-                        context.Writer.Write(publicRequest.SnapRadius.Value);
-                    }
-
-                    if(publicRequest.IsSetTracePoints())
-                    {
-                        context.Writer.WritePropertyName("TracePoints");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTracePointsListValue in publicRequest.TracePoints)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RoadSnapTracePointMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTracePointsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTravelMode())
-                    {
-                        context.Writer.WritePropertyName("TravelMode");
-                        context.Writer.Write(publicRequest.TravelMode);
-                    }
-
-                    if(publicRequest.IsSetTravelModeOptions())
-                    {
-                        context.Writer.WritePropertyName("TravelModeOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RoadSnapTravelModeOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TravelModeOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("SnappedGeometryFormat");
+                context.Writer.WriteStringValue(publicRequest.SnappedGeometryFormat);
             }
+
+            if(publicRequest.IsSetSnapRadius())
+            {
+                context.Writer.WritePropertyName("SnapRadius");
+                context.Writer.WriteNumberValue(publicRequest.SnapRadius.Value);
+            }
+
+            if(publicRequest.IsSetTracePoints())
+            {
+                context.Writer.WritePropertyName("TracePoints");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTracePointsListValue in publicRequest.TracePoints)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RoadSnapTracePointMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTracePointsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTravelMode())
+            {
+                context.Writer.WritePropertyName("TravelMode");
+                context.Writer.WriteStringValue(publicRequest.TravelMode);
+            }
+
+            if(publicRequest.IsSetTravelModeOptions())
+            {
+                context.Writer.WritePropertyName("TravelModeOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RoadSnapTravelModeOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TravelModeOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

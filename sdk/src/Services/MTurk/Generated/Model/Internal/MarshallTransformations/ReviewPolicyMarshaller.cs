@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MTurk.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.MTurk.Model.Internal.MarshallTransformations
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectParametersListValue in requestObject.Parameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PolicyParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPolicyName())
             {
                 context.Writer.WritePropertyName("PolicyName");
-                context.Writer.Write(requestObject.PolicyName);
+                context.Writer.WriteStringValue(requestObject.PolicyName);
             }
 
         }

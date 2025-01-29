@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Cipher Object
     /// </summary>  
-    public class CipherUnmarshaller : IUnmarshaller<Cipher, XmlUnmarshallerContext>, IUnmarshaller<Cipher, JsonUnmarshallerContext>
+    public class CipherUnmarshaller : IXmlUnmarshaller<Cipher, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Cipher Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CipherUnmarshaller _instance = new CipherUnmarshaller();        
 

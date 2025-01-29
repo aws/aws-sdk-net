@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationTransactionCounter())
             {
                 context.Writer.WritePropertyName("ApplicationTransactionCounter");
-                context.Writer.Write(requestObject.ApplicationTransactionCounter);
+                context.Writer.WriteStringValue(requestObject.ApplicationTransactionCounter);
             }
 
             if(requestObject.IsSetPanSequenceNumber())
             {
                 context.Writer.WritePropertyName("PanSequenceNumber");
-                context.Writer.Write(requestObject.PanSequenceNumber);
+                context.Writer.WriteStringValue(requestObject.PanSequenceNumber);
             }
 
             if(requestObject.IsSetTrackData())
             {
                 context.Writer.WritePropertyName("TrackData");
-                context.Writer.Write(requestObject.TrackData);
+                context.Writer.WriteStringValue(requestObject.TrackData);
             }
 
             if(requestObject.IsSetUnpredictableNumber())
             {
                 context.Writer.WritePropertyName("UnpredictableNumber");
-                context.Writer.Write(requestObject.UnpredictableNumber);
+                context.Writer.WriteStringValue(requestObject.UnpredictableNumber);
             }
 
         }

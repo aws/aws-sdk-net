@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,87 +66,92 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAppNetworkAccessType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAppNetworkAccessType())
-                    {
-                        context.Writer.WritePropertyName("AppNetworkAccessType");
-                        context.Writer.Write(publicRequest.AppNetworkAccessType);
-                    }
-
-                    if(publicRequest.IsSetAppSecurityGroupManagement())
-                    {
-                        context.Writer.WritePropertyName("AppSecurityGroupManagement");
-                        context.Writer.Write(publicRequest.AppSecurityGroupManagement);
-                    }
-
-                    if(publicRequest.IsSetDefaultSpaceSettings())
-                    {
-                        context.Writer.WritePropertyName("DefaultSpaceSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DefaultSpaceSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultUserSettings())
-                    {
-                        context.Writer.WritePropertyName("DefaultUserSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DefaultUserSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDomainId())
-                    {
-                        context.Writer.WritePropertyName("DomainId");
-                        context.Writer.Write(publicRequest.DomainId);
-                    }
-
-                    if(publicRequest.IsSetDomainSettingsForUpdate())
-                    {
-                        context.Writer.WritePropertyName("DomainSettingsForUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DomainSettingsForUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DomainSettingsForUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnetIds())
-                    {
-                        context.Writer.WritePropertyName("SubnetIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                        {
-                                context.Writer.Write(publicRequestSubnetIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTagPropagation())
-                    {
-                        context.Writer.WritePropertyName("TagPropagation");
-                        context.Writer.Write(publicRequest.TagPropagation);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AppNetworkAccessType");
+                context.Writer.WriteStringValue(publicRequest.AppNetworkAccessType);
             }
+
+            if(publicRequest.IsSetAppSecurityGroupManagement())
+            {
+                context.Writer.WritePropertyName("AppSecurityGroupManagement");
+                context.Writer.WriteStringValue(publicRequest.AppSecurityGroupManagement);
+            }
+
+            if(publicRequest.IsSetDefaultSpaceSettings())
+            {
+                context.Writer.WritePropertyName("DefaultSpaceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DefaultSpaceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultSpaceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDefaultUserSettings())
+            {
+                context.Writer.WritePropertyName("DefaultUserSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DefaultUserSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDomainId())
+            {
+                context.Writer.WritePropertyName("DomainId");
+                context.Writer.WriteStringValue(publicRequest.DomainId);
+            }
+
+            if(publicRequest.IsSetDomainSettingsForUpdate())
+            {
+                context.Writer.WritePropertyName("DomainSettingsForUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DomainSettingsForUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DomainSettingsForUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("SubnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTagPropagation())
+            {
+                context.Writer.WritePropertyName("TagPropagation");
+                context.Writer.WriteStringValue(publicRequest.TagPropagation);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompletedStatus())
             {
                 context.Writer.WritePropertyName("completedStatus");
-                context.Writer.Write(requestObject.CompletedStatus);
+                context.Writer.WriteStringValue(requestObject.CompletedStatus);
             }
 
             if(requestObject.IsSetEndedAt())
             {
                 context.Writer.WritePropertyName("endedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.EndedAt));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.EndedAt));
             }
 
             if(requestObject.IsSetProcessExitCode())
             {
                 context.Writer.WritePropertyName("processExitCode");
-                context.Writer.Write(requestObject.ProcessExitCode.Value);
+                context.Writer.WriteNumberValue(requestObject.ProcessExitCode.Value);
             }
 
             if(requestObject.IsSetProgressMessage())
             {
                 context.Writer.WritePropertyName("progressMessage");
-                context.Writer.Write(requestObject.ProgressMessage);
+                context.Writer.WriteStringValue(requestObject.ProgressMessage);
             }
 
             if(requestObject.IsSetProgressPercent())
@@ -77,24 +75,24 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("progressPercent");
                 if(StringUtils.IsSpecialFloatValue(requestObject.ProgressPercent.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ProgressPercent.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.ProgressPercent.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ProgressPercent.Value);
+                    context.Writer.WriteNumberValue(requestObject.ProgressPercent.Value);
                 }
             }
 
             if(requestObject.IsSetStartedAt())
             {
                 context.Writer.WritePropertyName("startedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartedAt));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartedAt));
             }
 
             if(requestObject.IsSetUpdatedAt())
             {
                 context.Writer.WritePropertyName("updatedAt");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.UpdatedAt));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.UpdatedAt));
             }
 
         }

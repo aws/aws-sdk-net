@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamDiscoveryFailureReason Object
     /// </summary>  
-    public class IpamDiscoveryFailureReasonUnmarshaller : IUnmarshaller<IpamDiscoveryFailureReason, XmlUnmarshallerContext>, IUnmarshaller<IpamDiscoveryFailureReason, JsonUnmarshallerContext>
+    public class IpamDiscoveryFailureReasonUnmarshaller : IXmlUnmarshaller<IpamDiscoveryFailureReason, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamDiscoveryFailureReason Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamDiscoveryFailureReasonUnmarshaller _instance = new IpamDiscoveryFailureReasonUnmarshaller();        
 

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TagHealth Object
     /// </summary>  
-    public class TagHealthUnmarshaller : IUnmarshaller<TagHealth, XmlUnmarshallerContext>, IUnmarshaller<TagHealth, JsonUnmarshallerContext>
+    public class TagHealthUnmarshaller : IJsonUnmarshaller<TagHealth, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TagHealth IUnmarshaller<TagHealth, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TagHealth Unmarshall(JsonUnmarshallerContext context)
+        public TagHealth Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TagHealth unmarshalledObject = new TagHealth();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AnalyzedResourceCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.AnalyzedResourceCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AnalyzedResourceCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AppBoundaryKey", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppBoundaryKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppBoundaryKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Insight", targetDepth))
                 {
                     var unmarshaller = InsightHealthUnmarshaller.Instance;
-                    unmarshalledObject.Insight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Insight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TagValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TagValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TagValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

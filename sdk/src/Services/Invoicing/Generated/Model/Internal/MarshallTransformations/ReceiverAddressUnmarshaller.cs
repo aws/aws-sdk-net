@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReceiverAddress Object
     /// </summary>  
-    public class ReceiverAddressUnmarshaller : IUnmarshaller<ReceiverAddress, XmlUnmarshallerContext>, IUnmarshaller<ReceiverAddress, JsonUnmarshallerContext>
+    public class ReceiverAddressUnmarshaller : IJsonUnmarshaller<ReceiverAddress, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReceiverAddress IUnmarshaller<ReceiverAddress, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReceiverAddress Unmarshall(JsonUnmarshallerContext context)
+        public ReceiverAddress Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReceiverAddress unmarshalledObject = new ReceiverAddress();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AddressLine1", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressLine1 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddressLine1 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AddressLine2", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressLine2 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddressLine2 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AddressLine3", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AddressLine3 = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AddressLine3 = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("City", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.City = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.City = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompanyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CompanyName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompanyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CountryCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CountryCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CountryCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DistrictOrCounty", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DistrictOrCounty = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DistrictOrCounty = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostalCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StateOrRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StateOrRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StateOrRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

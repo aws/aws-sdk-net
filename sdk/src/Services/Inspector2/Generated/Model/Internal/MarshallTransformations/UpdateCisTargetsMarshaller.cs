@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountIds())
             {
                 context.Writer.WritePropertyName("accountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
                 {
-                        context.Writer.Write(requestObjectAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetResourceTags())
             {
                 context.Writer.WritePropertyName("targetResourceTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTargetResourceTagsKvp in requestObject.TargetResourceTags)
                 {
                     context.Writer.WritePropertyName(requestObjectTargetResourceTagsKvp.Key);
                     var requestObjectTargetResourceTagsValue = requestObjectTargetResourceTagsKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectTargetResourceTagsValueListValue in requestObjectTargetResourceTagsValue)
                     {
-                            context.Writer.Write(requestObjectTargetResourceTagsValueListValue);
+                            context.Writer.WriteStringValue(requestObjectTargetResourceTagsValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

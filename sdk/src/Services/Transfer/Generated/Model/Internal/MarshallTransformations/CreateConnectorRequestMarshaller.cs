@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -63,81 +66,86 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccessRole())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccessRole())
-                    {
-                        context.Writer.WritePropertyName("AccessRole");
-                        context.Writer.Write(publicRequest.AccessRole);
-                    }
-
-                    if(publicRequest.IsSetAs2Config())
-                    {
-                        context.Writer.WritePropertyName("As2Config");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = As2ConnectorConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.As2Config, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLoggingRole())
-                    {
-                        context.Writer.WritePropertyName("LoggingRole");
-                        context.Writer.Write(publicRequest.LoggingRole);
-                    }
-
-                    if(publicRequest.IsSetSecurityPolicyName())
-                    {
-                        context.Writer.WritePropertyName("SecurityPolicyName");
-                        context.Writer.Write(publicRequest.SecurityPolicyName);
-                    }
-
-                    if(publicRequest.IsSetSftpConfig())
-                    {
-                        context.Writer.WritePropertyName("SftpConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SftpConnectorConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SftpConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUrl())
-                    {
-                        context.Writer.WritePropertyName("Url");
-                        context.Writer.Write(publicRequest.Url);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccessRole");
+                context.Writer.WriteStringValue(publicRequest.AccessRole);
             }
+
+            if(publicRequest.IsSetAs2Config())
+            {
+                context.Writer.WritePropertyName("As2Config");
+                context.Writer.WriteStartObject();
+
+                var marshaller = As2ConnectorConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.As2Config, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLoggingRole())
+            {
+                context.Writer.WritePropertyName("LoggingRole");
+                context.Writer.WriteStringValue(publicRequest.LoggingRole);
+            }
+
+            if(publicRequest.IsSetSecurityPolicyName())
+            {
+                context.Writer.WritePropertyName("SecurityPolicyName");
+                context.Writer.WriteStringValue(publicRequest.SecurityPolicyName);
+            }
+
+            if(publicRequest.IsSetSftpConfig())
+            {
+                context.Writer.WritePropertyName("SftpConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SftpConnectorConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SftpConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUrl())
+            {
+                context.Writer.WritePropertyName("Url");
+                context.Writer.WriteStringValue(publicRequest.Url);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

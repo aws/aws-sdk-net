@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -63,213 +66,218 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlarmConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlarmConfiguration())
-                    {
-                        context.Writer.WritePropertyName("alarmConfiguration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("alarmConfiguration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AlarmConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AlarmConfiguration, context);
+                var marshaller = AlarmConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AlarmConfiguration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetApplicationName())
-                    {
-                        context.Writer.WritePropertyName("applicationName");
-                        context.Writer.Write(publicRequest.ApplicationName);
-                    }
-
-                    if(publicRequest.IsSetAutoRollbackConfiguration())
-                    {
-                        context.Writer.WritePropertyName("autoRollbackConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoRollbackConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAutoScalingGroups())
-                    {
-                        context.Writer.WritePropertyName("autoScalingGroups");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAutoScalingGroupsListValue in publicRequest.AutoScalingGroups)
-                        {
-                                context.Writer.Write(publicRequestAutoScalingGroupsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetBlueGreenDeploymentConfiguration())
-                    {
-                        context.Writer.WritePropertyName("blueGreenDeploymentConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BlueGreenDeploymentConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BlueGreenDeploymentConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCurrentDeploymentGroupName())
-                    {
-                        context.Writer.WritePropertyName("currentDeploymentGroupName");
-                        context.Writer.Write(publicRequest.CurrentDeploymentGroupName);
-                    }
-
-                    if(publicRequest.IsSetDeploymentConfigName())
-                    {
-                        context.Writer.WritePropertyName("deploymentConfigName");
-                        context.Writer.Write(publicRequest.DeploymentConfigName);
-                    }
-
-                    if(publicRequest.IsSetDeploymentStyle())
-                    {
-                        context.Writer.WritePropertyName("deploymentStyle");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeploymentStyleMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DeploymentStyle, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEc2TagFilters())
-                    {
-                        context.Writer.WritePropertyName("ec2TagFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEc2TagFiltersListValue in publicRequest.Ec2TagFilters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = EC2TagFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEc2TagFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEc2TagSet())
-                    {
-                        context.Writer.WritePropertyName("ec2TagSet");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EC2TagSetMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Ec2TagSet, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEcsServices())
-                    {
-                        context.Writer.WritePropertyName("ecsServices");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEcsServicesListValue in publicRequest.EcsServices)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ECSServiceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestEcsServicesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetLoadBalancerInfo())
-                    {
-                        context.Writer.WritePropertyName("loadBalancerInfo");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LoadBalancerInfoMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LoadBalancerInfo, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNewDeploymentGroupName())
-                    {
-                        context.Writer.WritePropertyName("newDeploymentGroupName");
-                        context.Writer.Write(publicRequest.NewDeploymentGroupName);
-                    }
-
-                    if(publicRequest.IsSetOnPremisesInstanceTagFilters())
-                    {
-                        context.Writer.WritePropertyName("onPremisesInstanceTagFilters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOnPremisesInstanceTagFiltersListValue in publicRequest.OnPremisesInstanceTagFilters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOnPremisesInstanceTagFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetOnPremisesTagSet())
-                    {
-                        context.Writer.WritePropertyName("onPremisesTagSet");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OnPremisesTagSetMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OnPremisesTagSet, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutdatedInstancesStrategy())
-                    {
-                        context.Writer.WritePropertyName("outdatedInstancesStrategy");
-                        context.Writer.Write(publicRequest.OutdatedInstancesStrategy);
-                    }
-
-                    if(publicRequest.IsSetServiceRoleArn())
-                    {
-                        context.Writer.WritePropertyName("serviceRoleArn");
-                        context.Writer.Write(publicRequest.ServiceRoleArn);
-                    }
-
-                    if(publicRequest.IsSetTerminationHookEnabled())
-                    {
-                        context.Writer.WritePropertyName("terminationHookEnabled");
-                        context.Writer.Write(publicRequest.TerminationHookEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetTriggerConfigurations())
-                    {
-                        context.Writer.WritePropertyName("triggerConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTriggerConfigurationsListValue in publicRequest.TriggerConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TriggerConfigMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTriggerConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetApplicationName())
+            {
+                context.Writer.WritePropertyName("applicationName");
+                context.Writer.WriteStringValue(publicRequest.ApplicationName);
+            }
+
+            if(publicRequest.IsSetAutoRollbackConfiguration())
+            {
+                context.Writer.WritePropertyName("autoRollbackConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoRollbackConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoRollbackConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetAutoScalingGroups())
+            {
+                context.Writer.WritePropertyName("autoScalingGroups");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAutoScalingGroupsListValue in publicRequest.AutoScalingGroups)
+                {
+                        context.Writer.WriteStringValue(publicRequestAutoScalingGroupsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetBlueGreenDeploymentConfiguration())
+            {
+                context.Writer.WritePropertyName("blueGreenDeploymentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BlueGreenDeploymentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BlueGreenDeploymentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCurrentDeploymentGroupName())
+            {
+                context.Writer.WritePropertyName("currentDeploymentGroupName");
+                context.Writer.WriteStringValue(publicRequest.CurrentDeploymentGroupName);
+            }
+
+            if(publicRequest.IsSetDeploymentConfigName())
+            {
+                context.Writer.WritePropertyName("deploymentConfigName");
+                context.Writer.WriteStringValue(publicRequest.DeploymentConfigName);
+            }
+
+            if(publicRequest.IsSetDeploymentStyle())
+            {
+                context.Writer.WritePropertyName("deploymentStyle");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentStyleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentStyle, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEc2TagFilters())
+            {
+                context.Writer.WritePropertyName("ec2TagFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEc2TagFiltersListValue in publicRequest.Ec2TagFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = EC2TagFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEc2TagFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetEc2TagSet())
+            {
+                context.Writer.WritePropertyName("ec2TagSet");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EC2TagSetMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Ec2TagSet, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEcsServices())
+            {
+                context.Writer.WritePropertyName("ecsServices");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEcsServicesListValue in publicRequest.EcsServices)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ECSServiceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestEcsServicesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetLoadBalancerInfo())
+            {
+                context.Writer.WritePropertyName("loadBalancerInfo");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LoadBalancerInfoMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LoadBalancerInfo, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNewDeploymentGroupName())
+            {
+                context.Writer.WritePropertyName("newDeploymentGroupName");
+                context.Writer.WriteStringValue(publicRequest.NewDeploymentGroupName);
+            }
+
+            if(publicRequest.IsSetOnPremisesInstanceTagFilters())
+            {
+                context.Writer.WritePropertyName("onPremisesInstanceTagFilters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOnPremisesInstanceTagFiltersListValue in publicRequest.OnPremisesInstanceTagFilters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOnPremisesInstanceTagFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetOnPremisesTagSet())
+            {
+                context.Writer.WritePropertyName("onPremisesTagSet");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OnPremisesTagSetMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OnPremisesTagSet, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutdatedInstancesStrategy())
+            {
+                context.Writer.WritePropertyName("outdatedInstancesStrategy");
+                context.Writer.WriteStringValue(publicRequest.OutdatedInstancesStrategy);
+            }
+
+            if(publicRequest.IsSetServiceRoleArn())
+            {
+                context.Writer.WritePropertyName("serviceRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ServiceRoleArn);
+            }
+
+            if(publicRequest.IsSetTerminationHookEnabled())
+            {
+                context.Writer.WritePropertyName("terminationHookEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.TerminationHookEnabled.Value);
+            }
+
+            if(publicRequest.IsSetTriggerConfigurations())
+            {
+                context.Writer.WritePropertyName("triggerConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTriggerConfigurationsListValue in publicRequest.TriggerConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TriggerConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTriggerConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

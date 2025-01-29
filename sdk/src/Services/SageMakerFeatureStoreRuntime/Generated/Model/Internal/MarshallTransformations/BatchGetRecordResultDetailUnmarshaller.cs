@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchGetRecordResultDetail Object
     /// </summary>  
-    public class BatchGetRecordResultDetailUnmarshaller : IUnmarshaller<BatchGetRecordResultDetail, XmlUnmarshallerContext>, IUnmarshaller<BatchGetRecordResultDetail, JsonUnmarshallerContext>
+    public class BatchGetRecordResultDetailUnmarshaller : IJsonUnmarshaller<BatchGetRecordResultDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchGetRecordResultDetail IUnmarshaller<BatchGetRecordResultDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchGetRecordResultDetail Unmarshall(JsonUnmarshallerContext context)
+        public BatchGetRecordResultDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchGetRecordResultDetail unmarshalledObject = new BatchGetRecordResultDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ExpiresAt", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpiresAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpiresAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Record", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FeatureValue, FeatureValueUnmarshaller>(FeatureValueUnmarshaller.Instance);
-                    unmarshalledObject.Record = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FeatureValue, FeatureValueUnmarshaller>(FeatureValueUnmarshaller.Instance);
+                    unmarshalledObject.Record = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordIdentifierValueAsString", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecordIdentifierValueAsString = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordIdentifierValueAsString = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

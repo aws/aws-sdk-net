@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterEndpointNotFoundException operation
     /// </summary>  
-    public class DBClusterEndpointNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterEndpointNotFoundException, XmlUnmarshallerContext>
+    public class DBClusterEndpointNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterEndpointNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

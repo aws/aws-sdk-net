@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for S3Config Object
     /// </summary>  
-    public class S3ConfigUnmarshaller : IUnmarshaller<S3Config, XmlUnmarshallerContext>, IUnmarshaller<S3Config, JsonUnmarshallerContext>
+    public class S3ConfigUnmarshaller : IJsonUnmarshaller<S3Config, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        S3Config IUnmarshaller<S3Config, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3Config Unmarshall(JsonUnmarshallerContext context)
+        public S3Config Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             S3Config unmarshalledObject = new S3Config();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("bucketArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("storageCompressionFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StorageCompressionFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageCompressionFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

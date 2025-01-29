@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -63,65 +66,70 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicationName())
-                    {
-                        context.Writer.WritePropertyName("applicationName");
-                        context.Writer.Write(publicRequest.ApplicationName);
-                    }
-
-                    if(publicRequest.IsSetCreateTimeRange())
-                    {
-                        context.Writer.WritePropertyName("createTimeRange");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimeRangeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CreateTimeRange, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDeploymentGroupName())
-                    {
-                        context.Writer.WritePropertyName("deploymentGroupName");
-                        context.Writer.Write(publicRequest.DeploymentGroupName);
-                    }
-
-                    if(publicRequest.IsSetExternalId())
-                    {
-                        context.Writer.WritePropertyName("externalId");
-                        context.Writer.Write(publicRequest.ExternalId);
-                    }
-
-                    if(publicRequest.IsSetIncludeOnlyStatuses())
-                    {
-                        context.Writer.WritePropertyName("includeOnlyStatuses");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestIncludeOnlyStatusesListValue in publicRequest.IncludeOnlyStatuses)
-                        {
-                                context.Writer.Write(publicRequestIncludeOnlyStatusesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("applicationName");
+                context.Writer.WriteStringValue(publicRequest.ApplicationName);
             }
+
+            if(publicRequest.IsSetCreateTimeRange())
+            {
+                context.Writer.WritePropertyName("createTimeRange");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeRangeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CreateTimeRange, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDeploymentGroupName())
+            {
+                context.Writer.WritePropertyName("deploymentGroupName");
+                context.Writer.WriteStringValue(publicRequest.DeploymentGroupName);
+            }
+
+            if(publicRequest.IsSetExternalId())
+            {
+                context.Writer.WritePropertyName("externalId");
+                context.Writer.WriteStringValue(publicRequest.ExternalId);
+            }
+
+            if(publicRequest.IsSetIncludeOnlyStatuses())
+            {
+                context.Writer.WritePropertyName("includeOnlyStatuses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestIncludeOnlyStatusesListValue in publicRequest.IncludeOnlyStatuses)
+                {
+                        context.Writer.WriteStringValue(publicRequestIncludeOnlyStatusesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

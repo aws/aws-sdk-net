@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBClusterRoleNotFoundException operation
     /// </summary>  
-    public class DBClusterRoleNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBClusterRoleNotFoundException, XmlUnmarshallerContext>
+    public class DBClusterRoleNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBClusterRoleNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

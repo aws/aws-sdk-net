@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurationSet())
             {
                 context.Writer.WritePropertyName("ConfigurationSet");
-                context.Writer.Write(requestObject.ConfigurationSet);
+                context.Writer.WriteStringValue(requestObject.ConfigurationSet);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetFromAddress())
             {
                 context.Writer.WritePropertyName("FromAddress");
-                context.Writer.Write(requestObject.FromAddress);
+                context.Writer.WriteStringValue(requestObject.FromAddress);
             }
 
             if(requestObject.IsSetIdentity())
             {
                 context.Writer.WritePropertyName("Identity");
-                context.Writer.Write(requestObject.Identity);
+                context.Writer.WriteStringValue(requestObject.Identity);
             }
 
             if(requestObject.IsSetOrchestrationSendingRoleArn())
             {
                 context.Writer.WritePropertyName("OrchestrationSendingRoleArn");
-                context.Writer.Write(requestObject.OrchestrationSendingRoleArn);
+                context.Writer.WriteStringValue(requestObject.OrchestrationSendingRoleArn);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
         }

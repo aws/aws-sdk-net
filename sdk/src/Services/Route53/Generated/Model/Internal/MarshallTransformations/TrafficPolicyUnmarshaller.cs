@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrafficPolicy Object
     /// </summary>  
-    public class TrafficPolicyUnmarshaller : IUnmarshaller<TrafficPolicy, XmlUnmarshallerContext>, IUnmarshaller<TrafficPolicy, JsonUnmarshallerContext>
+    public class TrafficPolicyUnmarshaller : IXmlUnmarshaller<TrafficPolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TrafficPolicy Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static TrafficPolicyUnmarshaller _instance = new TrafficPolicyUnmarshaller();        
 
         /// <summary>

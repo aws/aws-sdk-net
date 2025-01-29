@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MFADevice Object
     /// </summary>  
-    public class MFADeviceUnmarshaller : IUnmarshaller<MFADevice, XmlUnmarshallerContext>, IUnmarshaller<MFADevice, JsonUnmarshallerContext>
+    public class MFADeviceUnmarshaller : IXmlUnmarshaller<MFADevice, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MFADevice Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MFADeviceUnmarshaller _instance = new MFADeviceUnmarshaller();        
 

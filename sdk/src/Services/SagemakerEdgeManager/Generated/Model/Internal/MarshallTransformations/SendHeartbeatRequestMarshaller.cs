@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
 {
@@ -61,80 +64,85 @@ namespace Amazon.SagemakerEdgeManager.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/SendHeartbeat";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAgentMetrics())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AgentMetrics");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAgentMetricsListValue in publicRequest.AgentMetrics)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAgentMetrics())
-                    {
-                        context.Writer.WritePropertyName("AgentMetrics");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAgentMetricsListValue in publicRequest.AgentMetrics)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = EdgeMetricMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAgentMetricsListValue, context);
+                    var marshaller = EdgeMetricMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAgentMetricsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAgentVersion())
-                    {
-                        context.Writer.WritePropertyName("AgentVersion");
-                        context.Writer.Write(publicRequest.AgentVersion);
-                    }
-
-                    if(publicRequest.IsSetDeploymentResult())
-                    {
-                        context.Writer.WritePropertyName("DeploymentResult");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DeploymentResultMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DeploymentResult, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDeviceFleetName())
-                    {
-                        context.Writer.WritePropertyName("DeviceFleetName");
-                        context.Writer.Write(publicRequest.DeviceFleetName);
-                    }
-
-                    if(publicRequest.IsSetDeviceName())
-                    {
-                        context.Writer.WritePropertyName("DeviceName");
-                        context.Writer.Write(publicRequest.DeviceName);
-                    }
-
-                    if(publicRequest.IsSetModels())
-                    {
-                        context.Writer.WritePropertyName("Models");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestModelsListValue in publicRequest.Models)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ModelMarshaller.Instance;
-                            marshaller.Marshall(publicRequestModelsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAgentVersion())
+            {
+                context.Writer.WritePropertyName("AgentVersion");
+                context.Writer.WriteStringValue(publicRequest.AgentVersion);
+            }
+
+            if(publicRequest.IsSetDeploymentResult())
+            {
+                context.Writer.WritePropertyName("DeploymentResult");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DeploymentResultMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DeploymentResult, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDeviceFleetName())
+            {
+                context.Writer.WritePropertyName("DeviceFleetName");
+                context.Writer.WriteStringValue(publicRequest.DeviceFleetName);
+            }
+
+            if(publicRequest.IsSetDeviceName())
+            {
+                context.Writer.WritePropertyName("DeviceName");
+                context.Writer.WriteStringValue(publicRequest.DeviceName);
+            }
+
+            if(publicRequest.IsSetModels())
+            {
+                context.Writer.WritePropertyName("Models");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestModelsListValue in publicRequest.Models)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ModelMarshaller.Instance;
+                    marshaller.Marshall(publicRequestModelsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

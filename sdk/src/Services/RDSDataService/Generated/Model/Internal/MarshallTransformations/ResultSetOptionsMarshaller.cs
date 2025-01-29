@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.RDSDataService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDecimalReturnType())
             {
                 context.Writer.WritePropertyName("decimalReturnType");
-                context.Writer.Write(requestObject.DecimalReturnType);
+                context.Writer.WriteStringValue(requestObject.DecimalReturnType);
             }
 
             if(requestObject.IsSetLongReturnType())
             {
                 context.Writer.WritePropertyName("longReturnType");
-                context.Writer.Write(requestObject.LongReturnType);
+                context.Writer.WriteStringValue(requestObject.LongReturnType);
             }
 
         }

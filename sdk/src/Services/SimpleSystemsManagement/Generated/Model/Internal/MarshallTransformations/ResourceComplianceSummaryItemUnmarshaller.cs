@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceComplianceSummaryItem Object
     /// </summary>  
-    public class ResourceComplianceSummaryItemUnmarshaller : IUnmarshaller<ResourceComplianceSummaryItem, XmlUnmarshallerContext>, IUnmarshaller<ResourceComplianceSummaryItem, JsonUnmarshallerContext>
+    public class ResourceComplianceSummaryItemUnmarshaller : IJsonUnmarshaller<ResourceComplianceSummaryItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceComplianceSummaryItem IUnmarshaller<ResourceComplianceSummaryItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceComplianceSummaryItem Unmarshall(JsonUnmarshallerContext context)
+        public ResourceComplianceSummaryItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceComplianceSummaryItem unmarshalledObject = new ResourceComplianceSummaryItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ComplianceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantSummary", targetDepth))
                 {
                     var unmarshaller = CompliantSummaryUnmarshaller.Instance;
-                    unmarshalledObject.CompliantSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExecutionSummary", targetDepth))
                 {
                     var unmarshaller = ComplianceExecutionSummaryUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantSummary", targetDepth))
                 {
                     var unmarshaller = NonCompliantSummaryUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantSummary = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantSummary = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OverallSeverity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OverallSeverity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OverallSeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

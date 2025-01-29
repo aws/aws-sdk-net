@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompilerOptions())
             {
                 context.Writer.WritePropertyName("CompilerOptions");
-                context.Writer.Write(requestObject.CompilerOptions);
+                context.Writer.WriteStringValue(requestObject.CompilerOptions);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetS3OutputLocation())
             {
                 context.Writer.WritePropertyName("S3OutputLocation");
-                context.Writer.Write(requestObject.S3OutputLocation);
+                context.Writer.WriteStringValue(requestObject.S3OutputLocation);
             }
 
             if(requestObject.IsSetTargetDevice())
             {
                 context.Writer.WritePropertyName("TargetDevice");
-                context.Writer.Write(requestObject.TargetDevice);
+                context.Writer.WriteStringValue(requestObject.TargetDevice);
             }
 
             if(requestObject.IsSetTargetPlatform())
             {
                 context.Writer.WritePropertyName("TargetPlatform");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TargetPlatformMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetPlatform, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

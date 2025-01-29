@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFirstZoneMonitorDurationInSeconds())
             {
                 context.Writer.WritePropertyName("firstZoneMonitorDurationInSeconds");
-                context.Writer.Write(requestObject.FirstZoneMonitorDurationInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.FirstZoneMonitorDurationInSeconds.Value);
             }
 
             if(requestObject.IsSetMinimumHealthyHostsPerZone())
             {
                 context.Writer.WritePropertyName("minimumHealthyHostsPerZone");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MinimumHealthyHostsPerZoneMarshaller.Instance;
                 marshaller.Marshall(requestObject.MinimumHealthyHostsPerZone, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMonitorDurationInSeconds())
             {
                 context.Writer.WritePropertyName("monitorDurationInSeconds");
-                context.Writer.Write(requestObject.MonitorDurationInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MonitorDurationInSeconds.Value);
             }
 
         }

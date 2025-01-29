@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyAccessPointsException operation
     /// </summary>  
-    public class TooManyAccessPointsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyAccessPointsException, XmlUnmarshallerContext>
+    public class TooManyAccessPointsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyAccessPointsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NitroTpmInfo Object
     /// </summary>  
-    public class NitroTpmInfoUnmarshaller : IUnmarshaller<NitroTpmInfo, XmlUnmarshallerContext>, IUnmarshaller<NitroTpmInfo, JsonUnmarshallerContext>
+    public class NitroTpmInfoUnmarshaller : IXmlUnmarshaller<NitroTpmInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NitroTpmInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NitroTpmInfoUnmarshaller _instance = new NitroTpmInfoUnmarshaller();        
 

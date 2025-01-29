@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensionName())
             {
                 context.Writer.WritePropertyName("DimensionName");
-                context.Writer.Write(requestObject.DimensionName);
+                context.Writer.WriteStringValue(requestObject.DimensionName);
             }
 
             if(requestObject.IsSetDimensionValueList())
             {
                 context.Writer.WritePropertyName("DimensionValueList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionValueListListValue in requestObject.DimensionValueList)
                 {
-                        context.Writer.Write(requestObjectDimensionValueListListValue);
+                        context.Writer.WriteStringValue(requestObjectDimensionValueListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

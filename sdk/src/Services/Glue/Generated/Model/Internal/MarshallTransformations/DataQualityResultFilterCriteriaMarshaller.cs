@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");
-                context.Writer.Write(requestObject.JobName);
+                context.Writer.WriteStringValue(requestObject.JobName);
             }
 
             if(requestObject.IsSetJobRunId())
             {
                 context.Writer.WritePropertyName("JobRunId");
-                context.Writer.Write(requestObject.JobRunId);
+                context.Writer.WriteStringValue(requestObject.JobRunId);
             }
 
             if(requestObject.IsSetStartedAfter())
             {
                 context.Writer.WritePropertyName("StartedAfter");
-                context.Writer.Write(requestObject.StartedAfter.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartedAfter.Value)));
             }
 
             if(requestObject.IsSetStartedBefore())
             {
                 context.Writer.WritePropertyName("StartedBefore");
-                context.Writer.Write(requestObject.StartedBefore.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.StartedBefore.Value)));
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CacheSecurityGroupAlreadyExistsException operation
     /// </summary>  
-    public class CacheSecurityGroupAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<CacheSecurityGroupAlreadyExistsException, XmlUnmarshallerContext>
+    public class CacheSecurityGroupAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CacheSecurityGroupAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

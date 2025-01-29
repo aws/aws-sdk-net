@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
@@ -61,53 +64,58 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/graph/members";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccounts())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Accounts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAccountsListValue in publicRequest.Accounts)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccounts())
-                    {
-                        context.Writer.WritePropertyName("Accounts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAccountsListValue in publicRequest.Accounts)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AccountMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAccountsListValue, context);
+                    var marshaller = AccountMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAccountsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDisableEmailNotification())
-                    {
-                        context.Writer.WritePropertyName("DisableEmailNotification");
-                        context.Writer.Write(publicRequest.DisableEmailNotification.Value);
-                    }
-
-                    if(publicRequest.IsSetGraphArn())
-                    {
-                        context.Writer.WritePropertyName("GraphArn");
-                        context.Writer.Write(publicRequest.GraphArn);
-                    }
-
-                    if(publicRequest.IsSetMessage())
-                    {
-                        context.Writer.WritePropertyName("Message");
-                        context.Writer.Write(publicRequest.Message);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDisableEmailNotification())
+            {
+                context.Writer.WritePropertyName("DisableEmailNotification");
+                context.Writer.WriteBooleanValue(publicRequest.DisableEmailNotification.Value);
+            }
+
+            if(publicRequest.IsSetGraphArn())
+            {
+                context.Writer.WritePropertyName("GraphArn");
+                context.Writer.WriteStringValue(publicRequest.GraphArn);
+            }
+
+            if(publicRequest.IsSetMessage())
+            {
+                context.Writer.WritePropertyName("Message");
+                context.Writer.WriteStringValue(publicRequest.Message);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

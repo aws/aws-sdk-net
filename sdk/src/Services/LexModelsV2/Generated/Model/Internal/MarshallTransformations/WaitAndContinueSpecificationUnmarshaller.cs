@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WaitAndContinueSpecification Object
     /// </summary>  
-    public class WaitAndContinueSpecificationUnmarshaller : IUnmarshaller<WaitAndContinueSpecification, XmlUnmarshallerContext>, IUnmarshaller<WaitAndContinueSpecification, JsonUnmarshallerContext>
+    public class WaitAndContinueSpecificationUnmarshaller : IJsonUnmarshaller<WaitAndContinueSpecification, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WaitAndContinueSpecification IUnmarshaller<WaitAndContinueSpecification, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WaitAndContinueSpecification Unmarshall(JsonUnmarshallerContext context)
+        public WaitAndContinueSpecification Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WaitAndContinueSpecification unmarshalledObject = new WaitAndContinueSpecification();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("active", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("continueResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.ContinueResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContinueResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stillWaitingResponse", targetDepth))
                 {
                     var unmarshaller = StillWaitingResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.StillWaitingResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StillWaitingResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("waitingResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.WaitingResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WaitingResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

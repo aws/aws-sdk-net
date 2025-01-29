@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,161 +49,161 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBindingProperties())
             {
                 context.Writer.WritePropertyName("bindingProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectBindingPropertiesKvp in requestObject.BindingProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectBindingPropertiesKvp.Key);
                     var requestObjectBindingPropertiesValue = requestObjectBindingPropertiesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentBindingPropertiesValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectBindingPropertiesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetChildren())
             {
                 context.Writer.WritePropertyName("children");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChildrenListValue in requestObject.Children)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentChildMarshaller.Instance;
                     marshaller.Marshall(requestObjectChildrenListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCollectionProperties())
             {
                 context.Writer.WritePropertyName("collectionProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCollectionPropertiesKvp in requestObject.CollectionProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectCollectionPropertiesKvp.Key);
                     var requestObjectCollectionPropertiesValue = requestObjectCollectionPropertiesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentDataConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectCollectionPropertiesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComponentType())
             {
                 context.Writer.WritePropertyName("componentType");
-                context.Writer.Write(requestObject.ComponentType);
+                context.Writer.WriteStringValue(requestObject.ComponentType);
             }
 
             if(requestObject.IsSetEvents())
             {
                 context.Writer.WritePropertyName("events");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEventsKvp in requestObject.Events)
                 {
                     context.Writer.WritePropertyName(requestObjectEventsKvp.Key);
                     var requestObjectEventsValue = requestObjectEventsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentEventMarshaller.Instance;
                     marshaller.Marshall(requestObjectEventsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOverrides())
             {
                 context.Writer.WritePropertyName("overrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectOverridesKvp in requestObject.Overrides)
                 {
                     context.Writer.WritePropertyName(requestObjectOverridesKvp.Key);
                     var requestObjectOverridesValue = requestObjectOverridesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectOverridesValueKvp in requestObjectOverridesValue)
                     {
                         context.Writer.WritePropertyName(requestObjectOverridesValueKvp.Key);
                         var requestObjectOverridesValueValue = requestObjectOverridesValueKvp.Value;
 
-                            context.Writer.Write(requestObjectOverridesValueValue);
+                            context.Writer.WriteStringValue(requestObjectOverridesValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectPropertiesKvp in requestObject.Properties)
                 {
                     context.Writer.WritePropertyName(requestObjectPropertiesKvp.Key);
                     var requestObjectPropertiesValue = requestObjectPropertiesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentPropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectPropertiesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchemaVersion())
             {
                 context.Writer.WritePropertyName("schemaVersion");
-                context.Writer.Write(requestObject.SchemaVersion);
+                context.Writer.WriteStringValue(requestObject.SchemaVersion);
             }
 
             if(requestObject.IsSetSourceId())
             {
                 context.Writer.WritePropertyName("sourceId");
-                context.Writer.Write(requestObject.SourceId);
+                context.Writer.WriteStringValue(requestObject.SourceId);
             }
 
             if(requestObject.IsSetVariants())
             {
                 context.Writer.WritePropertyName("variants");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVariantsListValue in requestObject.Variants)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentVariantMarshaller.Instance;
                     marshaller.Marshall(requestObjectVariantsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

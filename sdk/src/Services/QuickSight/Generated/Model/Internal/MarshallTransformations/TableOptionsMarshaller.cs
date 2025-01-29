@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCellStyle())
             {
                 context.Writer.WritePropertyName("CellStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.CellStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeaderStyle())
             {
                 context.Writer.WritePropertyName("HeaderStyle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TableCellStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.HeaderStyle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOrientation())
             {
                 context.Writer.WritePropertyName("Orientation");
-                context.Writer.Write(requestObject.Orientation);
+                context.Writer.WriteStringValue(requestObject.Orientation);
             }
 
             if(requestObject.IsSetRowAlternateColorOptions())
             {
                 context.Writer.WritePropertyName("RowAlternateColorOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RowAlternateColorOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RowAlternateColorOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

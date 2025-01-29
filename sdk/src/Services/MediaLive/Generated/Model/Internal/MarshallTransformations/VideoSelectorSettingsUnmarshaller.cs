@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VideoSelectorSettings Object
     /// </summary>  
-    public class VideoSelectorSettingsUnmarshaller : IUnmarshaller<VideoSelectorSettings, XmlUnmarshallerContext>, IUnmarshaller<VideoSelectorSettings, JsonUnmarshallerContext>
+    public class VideoSelectorSettingsUnmarshaller : IJsonUnmarshaller<VideoSelectorSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VideoSelectorSettings IUnmarshaller<VideoSelectorSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VideoSelectorSettings Unmarshall(JsonUnmarshallerContext context)
+        public VideoSelectorSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VideoSelectorSettings unmarshalledObject = new VideoSelectorSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("videoSelectorPid", targetDepth))
                 {
                     var unmarshaller = VideoSelectorPidUnmarshaller.Instance;
-                    unmarshalledObject.VideoSelectorPid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoSelectorPid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoSelectorProgramId", targetDepth))
                 {
                     var unmarshaller = VideoSelectorProgramIdUnmarshaller.Instance;
-                    unmarshalledObject.VideoSelectorProgramId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VideoSelectorProgramId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

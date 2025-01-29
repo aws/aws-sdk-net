@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PostLaunchActions Object
     /// </summary>  
-    public class PostLaunchActionsUnmarshaller : IUnmarshaller<PostLaunchActions, XmlUnmarshallerContext>, IUnmarshaller<PostLaunchActions, JsonUnmarshallerContext>
+    public class PostLaunchActionsUnmarshaller : IJsonUnmarshaller<PostLaunchActions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PostLaunchActions IUnmarshaller<PostLaunchActions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PostLaunchActions Unmarshall(JsonUnmarshallerContext context)
+        public PostLaunchActions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PostLaunchActions unmarshalledObject = new PostLaunchActions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cloudWatchLogGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudWatchLogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deployment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Deployment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Deployment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3LogBucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3LogBucket = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3LogBucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3OutputKeyPrefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3OutputKeyPrefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3OutputKeyPrefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ssmDocuments", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SsmDocument, SsmDocumentUnmarshaller>(SsmDocumentUnmarshaller.Instance);
-                    unmarshalledObject.SsmDocuments = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SsmDocument, SsmDocumentUnmarshaller>(SsmDocumentUnmarshaller.Instance);
+                    unmarshalledObject.SsmDocuments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

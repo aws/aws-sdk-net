@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BackupGateway.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BandwidthRateLimitInterval Object
     /// </summary>  
-    public class BandwidthRateLimitIntervalUnmarshaller : IUnmarshaller<BandwidthRateLimitInterval, XmlUnmarshallerContext>, IUnmarshaller<BandwidthRateLimitInterval, JsonUnmarshallerContext>
+    public class BandwidthRateLimitIntervalUnmarshaller : IJsonUnmarshaller<BandwidthRateLimitInterval, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BandwidthRateLimitInterval IUnmarshaller<BandwidthRateLimitInterval, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BandwidthRateLimitInterval Unmarshall(JsonUnmarshallerContext context)
+        public BandwidthRateLimitInterval Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BandwidthRateLimitInterval unmarshalledObject = new BandwidthRateLimitInterval();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AverageUploadRateLimitInBitsPerSec", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AverageUploadRateLimitInBitsPerSec = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DaysOfWeek", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
-                    unmarshalledObject.DaysOfWeek = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.DaysOfWeek = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndHourOfDay", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndHourOfDay = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndHourOfDay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndMinuteOfHour", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndMinuteOfHour = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndMinuteOfHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartHourOfDay", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StartHourOfDay = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartHourOfDay = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartMinuteOfHour", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StartMinuteOfHour = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartMinuteOfHour = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

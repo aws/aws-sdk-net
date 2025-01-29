@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
@@ -67,55 +70,60 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field BranchName set");
             request.AddPathResource("{branchName}", StringUtils.FromString(publicRequest.BranchName));
             request.ResourcePath = "/apps/{appId}/branches/{branchName}/jobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCommitId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCommitId())
-                    {
-                        context.Writer.WritePropertyName("commitId");
-                        context.Writer.Write(publicRequest.CommitId);
-                    }
-
-                    if(publicRequest.IsSetCommitMessage())
-                    {
-                        context.Writer.WritePropertyName("commitMessage");
-                        context.Writer.Write(publicRequest.CommitMessage);
-                    }
-
-                    if(publicRequest.IsSetCommitTime())
-                    {
-                        context.Writer.WritePropertyName("commitTime");
-                        context.Writer.Write(publicRequest.CommitTime.Value);
-                    }
-
-                    if(publicRequest.IsSetJobId())
-                    {
-                        context.Writer.WritePropertyName("jobId");
-                        context.Writer.Write(publicRequest.JobId);
-                    }
-
-                    if(publicRequest.IsSetJobReason())
-                    {
-                        context.Writer.WritePropertyName("jobReason");
-                        context.Writer.Write(publicRequest.JobReason);
-                    }
-
-                    if(publicRequest.IsSetJobType())
-                    {
-                        context.Writer.WritePropertyName("jobType");
-                        context.Writer.Write(publicRequest.JobType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("commitId");
+                context.Writer.WriteStringValue(publicRequest.CommitId);
             }
+
+            if(publicRequest.IsSetCommitMessage())
+            {
+                context.Writer.WritePropertyName("commitMessage");
+                context.Writer.WriteStringValue(publicRequest.CommitMessage);
+            }
+
+            if(publicRequest.IsSetCommitTime())
+            {
+                context.Writer.WritePropertyName("commitTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.CommitTime.Value)));
+            }
+
+            if(publicRequest.IsSetJobId())
+            {
+                context.Writer.WritePropertyName("jobId");
+                context.Writer.WriteStringValue(publicRequest.JobId);
+            }
+
+            if(publicRequest.IsSetJobReason())
+            {
+                context.Writer.WritePropertyName("jobReason");
+                context.Writer.WriteStringValue(publicRequest.JobReason);
+            }
+
+            if(publicRequest.IsSetJobType())
+            {
+                context.Writer.WritePropertyName("jobType");
+                context.Writer.WriteStringValue(publicRequest.JobType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

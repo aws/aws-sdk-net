@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventTriggerDimensions())
             {
                 context.Writer.WritePropertyName("EventTriggerDimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventTriggerDimensionsListValue in requestObject.EventTriggerDimensions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EventTriggerDimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectEventTriggerDimensionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLogicalOperator())
             {
                 context.Writer.WritePropertyName("LogicalOperator");
-                context.Writer.Write(requestObject.LogicalOperator);
+                context.Writer.WriteStringValue(requestObject.LogicalOperator);
             }
 
         }

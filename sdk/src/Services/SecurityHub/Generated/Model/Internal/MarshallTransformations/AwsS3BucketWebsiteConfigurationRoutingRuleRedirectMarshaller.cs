@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHostname())
             {
                 context.Writer.WritePropertyName("Hostname");
-                context.Writer.Write(requestObject.Hostname);
+                context.Writer.WriteStringValue(requestObject.Hostname);
             }
 
             if(requestObject.IsSetHttpRedirectCode())
             {
                 context.Writer.WritePropertyName("HttpRedirectCode");
-                context.Writer.Write(requestObject.HttpRedirectCode);
+                context.Writer.WriteStringValue(requestObject.HttpRedirectCode);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("Protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetReplaceKeyPrefixWith())
             {
                 context.Writer.WritePropertyName("ReplaceKeyPrefixWith");
-                context.Writer.Write(requestObject.ReplaceKeyPrefixWith);
+                context.Writer.WriteStringValue(requestObject.ReplaceKeyPrefixWith);
             }
 
             if(requestObject.IsSetReplaceKeyWith())
             {
                 context.Writer.WritePropertyName("ReplaceKeyWith");
-                context.Writer.Write(requestObject.ReplaceKeyWith);
+                context.Writer.WriteStringValue(requestObject.ReplaceKeyWith);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DLM.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.DLM.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcludeBootVolumes())
             {
                 context.Writer.WritePropertyName("ExcludeBootVolumes");
-                context.Writer.Write(requestObject.ExcludeBootVolumes.Value);
+                context.Writer.WriteBooleanValue(requestObject.ExcludeBootVolumes.Value);
             }
 
             if(requestObject.IsSetExcludeTags())
             {
                 context.Writer.WritePropertyName("ExcludeTags");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeTagsListValue in requestObject.ExcludeTags)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TagMarshaller.Instance;
                     marshaller.Marshall(requestObjectExcludeTagsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludeVolumeTypes())
             {
                 context.Writer.WritePropertyName("ExcludeVolumeTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeVolumeTypesListValue in requestObject.ExcludeVolumeTypes)
                 {
-                        context.Writer.Write(requestObjectExcludeVolumeTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeVolumeTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

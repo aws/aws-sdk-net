@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EndpointConfig Object
     /// </summary>  
-    public class EndpointConfigUnmarshaller : IUnmarshaller<EndpointConfig, XmlUnmarshallerContext>, IUnmarshaller<EndpointConfig, JsonUnmarshallerContext>
+    public class EndpointConfigUnmarshaller : IJsonUnmarshaller<EndpointConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EndpointConfig IUnmarshaller<EndpointConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EndpointConfig Unmarshall(JsonUnmarshallerContext context)
+        public EndpointConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EndpointConfig unmarshalledObject = new EndpointConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("sageMaker", targetDepth))
                 {
                     var unmarshaller = SageMakerEndpointUnmarshaller.Instance;
-                    unmarshalledObject.SageMaker = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SageMaker = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

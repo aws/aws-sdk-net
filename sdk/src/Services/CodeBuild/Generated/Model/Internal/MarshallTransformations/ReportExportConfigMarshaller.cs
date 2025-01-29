@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExportConfigType())
             {
                 context.Writer.WritePropertyName("exportConfigType");
-                context.Writer.Write(requestObject.ExportConfigType);
+                context.Writer.WriteStringValue(requestObject.ExportConfigType);
             }
 
             if(requestObject.IsSetS3Destination())
             {
                 context.Writer.WritePropertyName("s3Destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ReportExportConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

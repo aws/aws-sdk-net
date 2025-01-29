@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseCanaryRunId())
             {
                 context.Writer.WritePropertyName("BaseCanaryRunId");
-                context.Writer.Write(requestObject.BaseCanaryRunId);
+                context.Writer.WriteStringValue(requestObject.BaseCanaryRunId);
             }
 
             if(requestObject.IsSetBaseScreenshots())
             {
                 context.Writer.WritePropertyName("BaseScreenshots");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBaseScreenshotsListValue in requestObject.BaseScreenshots)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = BaseScreenshotMarshaller.Instance;
                     marshaller.Marshall(requestObjectBaseScreenshotsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

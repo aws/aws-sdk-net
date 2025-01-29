@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ModuleInfo Object
     /// </summary>  
-    public class ModuleInfoUnmarshaller : IUnmarshaller<ModuleInfo, XmlUnmarshallerContext>, IUnmarshaller<ModuleInfo, JsonUnmarshallerContext>
+    public class ModuleInfoUnmarshaller : IXmlUnmarshaller<ModuleInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ModuleInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ModuleInfoUnmarshaller _instance = new ModuleInfoUnmarshaller();        
 

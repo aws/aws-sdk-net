@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFloorplanCount())
             {
                 context.Writer.WritePropertyName("floorplanCount");
-                context.Writer.Write(requestObject.FloorplanCount.Value);
+                context.Writer.WriteNumberValue(requestObject.FloorplanCount.Value);
             }
 
             if(requestObject.IsSetInteriorCountPerFloorplan())
             {
                 context.Writer.WritePropertyName("interiorCountPerFloorplan");
-                context.Writer.Write(requestObject.InteriorCountPerFloorplan.Value);
+                context.Writer.WriteNumberValue(requestObject.InteriorCountPerFloorplan.Value);
             }
 
         }

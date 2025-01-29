@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -63,49 +66,54 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCluster())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCluster())
-                    {
-                        context.Writer.WritePropertyName("cluster");
-                        context.Writer.Write(publicRequest.Cluster);
-                    }
-
-                    if(publicRequest.IsSetCommand())
-                    {
-                        context.Writer.WritePropertyName("command");
-                        context.Writer.Write(publicRequest.Command);
-                    }
-
-                    if(publicRequest.IsSetContainer())
-                    {
-                        context.Writer.WritePropertyName("container");
-                        context.Writer.Write(publicRequest.Container);
-                    }
-
-                    if(publicRequest.IsSetInteractive())
-                    {
-                        context.Writer.WritePropertyName("interactive");
-                        context.Writer.Write(publicRequest.Interactive.Value);
-                    }
-
-                    if(publicRequest.IsSetTask())
-                    {
-                        context.Writer.WritePropertyName("task");
-                        context.Writer.Write(publicRequest.Task);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("cluster");
+                context.Writer.WriteStringValue(publicRequest.Cluster);
             }
+
+            if(publicRequest.IsSetCommand())
+            {
+                context.Writer.WritePropertyName("command");
+                context.Writer.WriteStringValue(publicRequest.Command);
+            }
+
+            if(publicRequest.IsSetContainer())
+            {
+                context.Writer.WritePropertyName("container");
+                context.Writer.WriteStringValue(publicRequest.Container);
+            }
+
+            if(publicRequest.IsSetInteractive())
+            {
+                context.Writer.WritePropertyName("interactive");
+                context.Writer.WriteBooleanValue(publicRequest.Interactive.Value);
+            }
+
+            if(publicRequest.IsSetTask())
+            {
+                context.Writer.WritePropertyName("task");
+                context.Writer.WriteStringValue(publicRequest.Task);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

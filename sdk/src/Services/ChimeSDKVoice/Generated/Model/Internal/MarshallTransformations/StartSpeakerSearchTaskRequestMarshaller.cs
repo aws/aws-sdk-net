@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
@@ -64,43 +67,48 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 throw new AmazonChimeSDKVoiceException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{VoiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{VoiceConnectorId}/speaker-search-tasks";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCallLeg())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCallLeg())
-                    {
-                        context.Writer.WritePropertyName("CallLeg");
-                        context.Writer.Write(publicRequest.CallLeg);
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    if(publicRequest.IsSetTransactionId())
-                    {
-                        context.Writer.WritePropertyName("TransactionId");
-                        context.Writer.Write(publicRequest.TransactionId);
-                    }
-
-                    if(publicRequest.IsSetVoiceProfileDomainId())
-                    {
-                        context.Writer.WritePropertyName("VoiceProfileDomainId");
-                        context.Writer.Write(publicRequest.VoiceProfileDomainId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("CallLeg");
+                context.Writer.WriteStringValue(publicRequest.CallLeg);
             }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            if(publicRequest.IsSetTransactionId())
+            {
+                context.Writer.WritePropertyName("TransactionId");
+                context.Writer.WriteStringValue(publicRequest.TransactionId);
+            }
+
+            if(publicRequest.IsSetVoiceProfileDomainId())
+            {
+                context.Writer.WritePropertyName("VoiceProfileDomainId");
+                context.Writer.WriteStringValue(publicRequest.VoiceProfileDomainId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

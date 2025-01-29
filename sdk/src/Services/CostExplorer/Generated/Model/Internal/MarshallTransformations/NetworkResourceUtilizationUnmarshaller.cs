@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NetworkResourceUtilization Object
     /// </summary>  
-    public class NetworkResourceUtilizationUnmarshaller : IUnmarshaller<NetworkResourceUtilization, XmlUnmarshallerContext>, IUnmarshaller<NetworkResourceUtilization, JsonUnmarshallerContext>
+    public class NetworkResourceUtilizationUnmarshaller : IJsonUnmarshaller<NetworkResourceUtilization, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NetworkResourceUtilization IUnmarshaller<NetworkResourceUtilization, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NetworkResourceUtilization Unmarshall(JsonUnmarshallerContext context)
+        public NetworkResourceUtilization Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NetworkResourceUtilization unmarshalledObject = new NetworkResourceUtilization();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("NetworkInBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkInBytesPerSecond = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkInBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkOutBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkOutBytesPerSecond = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkOutBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkPacketsInPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkPacketsInPerSecond = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkPacketsInPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NetworkPacketsOutPerSecond", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkPacketsOutPerSecond = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkPacketsOutPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

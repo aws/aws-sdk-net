@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CloudWatchEvidently.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationId())
             {
                 context.Writer.WritePropertyName("applicationId");
-                context.Writer.Write(requestObject.ApplicationId);
+                context.Writer.WriteStringValue(requestObject.ApplicationId);
             }
 
             if(requestObject.IsSetEnvironmentId())
             {
                 context.Writer.WritePropertyName("environmentId");
-                context.Writer.Write(requestObject.EnvironmentId);
+                context.Writer.WriteStringValue(requestObject.EnvironmentId);
             }
 
         }

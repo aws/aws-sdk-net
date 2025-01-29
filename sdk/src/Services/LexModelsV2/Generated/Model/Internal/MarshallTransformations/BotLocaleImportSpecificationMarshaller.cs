@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBotId())
             {
                 context.Writer.WritePropertyName("botId");
-                context.Writer.Write(requestObject.BotId);
+                context.Writer.WriteStringValue(requestObject.BotId);
             }
 
             if(requestObject.IsSetBotVersion())
             {
                 context.Writer.WritePropertyName("botVersion");
-                context.Writer.Write(requestObject.BotVersion);
+                context.Writer.WriteStringValue(requestObject.BotVersion);
             }
 
             if(requestObject.IsSetLocaleId())
             {
                 context.Writer.WritePropertyName("localeId");
-                context.Writer.Write(requestObject.LocaleId);
+                context.Writer.WriteStringValue(requestObject.LocaleId);
             }
 
             if(requestObject.IsSetNluIntentConfidenceThreshold())
@@ -71,23 +69,23 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("nluIntentConfidenceThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.NluIntentConfidenceThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.NluIntentConfidenceThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.NluIntentConfidenceThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.NluIntentConfidenceThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.NluIntentConfidenceThreshold.Value);
                 }
             }
 
             if(requestObject.IsSetVoiceSettings())
             {
                 context.Writer.WritePropertyName("voiceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VoiceSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VoiceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

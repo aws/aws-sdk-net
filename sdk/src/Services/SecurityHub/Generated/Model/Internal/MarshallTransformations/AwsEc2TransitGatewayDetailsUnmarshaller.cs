@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2TransitGatewayDetails Object
     /// </summary>  
-    public class AwsEc2TransitGatewayDetailsUnmarshaller : IUnmarshaller<AwsEc2TransitGatewayDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2TransitGatewayDetails, JsonUnmarshallerContext>
+    public class AwsEc2TransitGatewayDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2TransitGatewayDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2TransitGatewayDetails IUnmarshaller<AwsEc2TransitGatewayDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2TransitGatewayDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2TransitGatewayDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2TransitGatewayDetails unmarshalledObject = new AwsEc2TransitGatewayDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AmazonSideAsn", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AmazonSideAsn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AmazonSideAsn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AssociationDefaultRouteTableId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AssociationDefaultRouteTableId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AssociationDefaultRouteTableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoAcceptSharedAttachments", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoAcceptSharedAttachments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoAcceptSharedAttachments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultRouteTableAssociation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultRouteTableAssociation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultRouteTableAssociation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DefaultRouteTablePropagation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultRouteTablePropagation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultRouteTablePropagation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DnsSupport", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DnsSupport = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsSupport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MulticastSupport", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MulticastSupport = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MulticastSupport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PropagationDefaultRouteTableId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PropagationDefaultRouteTableId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PropagationDefaultRouteTableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransitGatewayCidrBlocks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.TransitGatewayCidrBlocks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.TransitGatewayCidrBlocks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpnEcmpSupport", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpnEcmpSupport = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpnEcmpSupport = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

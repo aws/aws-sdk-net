@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBotExportSpecification())
             {
                 context.Writer.WritePropertyName("botExportSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BotExportSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BotExportSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBotLocaleExportSpecification())
             {
                 context.Writer.WritePropertyName("botLocaleExportSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BotLocaleExportSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BotLocaleExportSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomVocabularyExportSpecification())
             {
                 context.Writer.WritePropertyName("customVocabularyExportSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomVocabularyExportSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomVocabularyExportSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTestSetExportSpecification())
             {
                 context.Writer.WritePropertyName("testSetExportSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TestSetExportSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TestSetExportSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

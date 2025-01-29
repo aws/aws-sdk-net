@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BillEstimateCostSummary Object
     /// </summary>  
-    public class BillEstimateCostSummaryUnmarshaller : IUnmarshaller<BillEstimateCostSummary, XmlUnmarshallerContext>, IUnmarshaller<BillEstimateCostSummary, JsonUnmarshallerContext>
+    public class BillEstimateCostSummaryUnmarshaller : IJsonUnmarshaller<BillEstimateCostSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BillEstimateCostSummary IUnmarshaller<BillEstimateCostSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BillEstimateCostSummary Unmarshall(JsonUnmarshallerContext context)
+        public BillEstimateCostSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BillEstimateCostSummary unmarshalledObject = new BillEstimateCostSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("serviceCostDifferences", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, CostDifference, StringUnmarshaller, CostDifferenceUnmarshaller>(StringUnmarshaller.Instance, CostDifferenceUnmarshaller.Instance);
-                    unmarshalledObject.ServiceCostDifferences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, CostDifference, StringUnmarshaller, CostDifferenceUnmarshaller>(StringUnmarshaller.Instance, CostDifferenceUnmarshaller.Instance);
+                    unmarshalledObject.ServiceCostDifferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalCostDifference", targetDepth))
                 {
                     var unmarshaller = CostDifferenceUnmarshaller.Instance;
-                    unmarshalledObject.TotalCostDifference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalCostDifference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AuthProvider Object
     /// </summary>  
-    public class AuthProviderUnmarshaller : IUnmarshaller<AuthProvider, XmlUnmarshallerContext>, IUnmarshaller<AuthProvider, JsonUnmarshallerContext>
+    public class AuthProviderUnmarshaller : IJsonUnmarshaller<AuthProvider, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AuthProvider IUnmarshaller<AuthProvider, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AuthProvider Unmarshall(JsonUnmarshallerContext context)
+        public AuthProvider Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AuthProvider unmarshalledObject = new AuthProvider();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("authType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cognitoConfig", targetDepth))
                 {
                     var unmarshaller = CognitoConfigUnmarshaller.Instance;
-                    unmarshalledObject.CognitoConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CognitoConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lambdaAuthorizerConfig", targetDepth))
                 {
                     var unmarshaller = LambdaAuthorizerConfigUnmarshaller.Instance;
-                    unmarshalledObject.LambdaAuthorizerConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LambdaAuthorizerConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("openIDConnectConfig", targetDepth))
                 {
                     var unmarshaller = OpenIDConnectConfigUnmarshaller.Instance;
-                    unmarshalledObject.OpenIDConnectConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenIDConnectConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

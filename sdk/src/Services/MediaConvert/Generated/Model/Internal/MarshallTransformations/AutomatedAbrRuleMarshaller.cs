@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedRenditions())
             {
                 context.Writer.WritePropertyName("allowedRenditions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedRenditionsListValue in requestObject.AllowedRenditions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AllowedRenditionSizeMarshaller.Instance;
                     marshaller.Marshall(requestObjectAllowedRenditionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetForceIncludeRenditions())
             {
                 context.Writer.WritePropertyName("forceIncludeRenditions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectForceIncludeRenditionsListValue in requestObject.ForceIncludeRenditions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ForceIncludeRenditionSizeMarshaller.Instance;
                     marshaller.Marshall(requestObjectForceIncludeRenditionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMinBottomRenditionSize())
             {
                 context.Writer.WritePropertyName("minBottomRenditionSize");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MinBottomRenditionSizeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MinBottomRenditionSize, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMinTopRenditionSize())
             {
                 context.Writer.WritePropertyName("minTopRenditionSize");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MinTopRenditionSizeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MinTopRenditionSize, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

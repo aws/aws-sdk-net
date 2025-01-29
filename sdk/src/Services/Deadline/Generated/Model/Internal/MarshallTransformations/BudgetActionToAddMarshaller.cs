@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetThresholdPercentage())
@@ -59,18 +57,18 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("thresholdPercentage");
                 if(StringUtils.IsSpecialFloatValue(requestObject.ThresholdPercentage.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.ThresholdPercentage.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.ThresholdPercentage.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThresholdPercentage.Value);
+                    context.Writer.WriteNumberValue(requestObject.ThresholdPercentage.Value);
                 }
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

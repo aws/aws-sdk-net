@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AddHeaderAction Object
     /// </summary>  
-    public class AddHeaderActionUnmarshaller : IUnmarshaller<AddHeaderAction, XmlUnmarshallerContext>, IUnmarshaller<AddHeaderAction, JsonUnmarshallerContext>
+    public class AddHeaderActionUnmarshaller : IXmlUnmarshaller<AddHeaderAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AddHeaderAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AddHeaderActionUnmarshaller _instance = new AddHeaderActionUnmarshaller();        
 

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MembershipPaymentConfiguration Object
     /// </summary>  
-    public class MembershipPaymentConfigurationUnmarshaller : IUnmarshaller<MembershipPaymentConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MembershipPaymentConfiguration, JsonUnmarshallerContext>
+    public class MembershipPaymentConfigurationUnmarshaller : IJsonUnmarshaller<MembershipPaymentConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MembershipPaymentConfiguration IUnmarshaller<MembershipPaymentConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MembershipPaymentConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MembershipPaymentConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MembershipPaymentConfiguration unmarshalledObject = new MembershipPaymentConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("machineLearning", targetDepth))
                 {
                     var unmarshaller = MembershipMLPaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.MachineLearning = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MachineLearning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("queryCompute", targetDepth))
                 {
                     var unmarshaller = MembershipQueryComputePaymentConfigUnmarshaller.Instance;
-                    unmarshalledObject.QueryCompute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryCompute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

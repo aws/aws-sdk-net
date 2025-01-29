@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,104 +49,104 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalOptions())
             {
                 context.Writer.WritePropertyName("AdditionalOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3DirectSourceAdditionalOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCompressionType())
             {
                 context.Writer.WritePropertyName("CompressionType");
-                context.Writer.Write(requestObject.CompressionType);
+                context.Writer.WriteStringValue(requestObject.CompressionType);
             }
 
             if(requestObject.IsSetExclusions())
             {
                 context.Writer.WritePropertyName("Exclusions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionsListValue in requestObject.Exclusions)
                 {
-                        context.Writer.Write(requestObjectExclusionsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGroupFiles())
             {
                 context.Writer.WritePropertyName("GroupFiles");
-                context.Writer.Write(requestObject.GroupFiles);
+                context.Writer.WriteStringValue(requestObject.GroupFiles);
             }
 
             if(requestObject.IsSetGroupSize())
             {
                 context.Writer.WritePropertyName("GroupSize");
-                context.Writer.Write(requestObject.GroupSize);
+                context.Writer.WriteStringValue(requestObject.GroupSize);
             }
 
             if(requestObject.IsSetJsonPath())
             {
                 context.Writer.WritePropertyName("JsonPath");
-                context.Writer.Write(requestObject.JsonPath);
+                context.Writer.WriteStringValue(requestObject.JsonPath);
             }
 
             if(requestObject.IsSetMaxBand())
             {
                 context.Writer.WritePropertyName("MaxBand");
-                context.Writer.Write(requestObject.MaxBand.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxBand.Value);
             }
 
             if(requestObject.IsSetMaxFilesInBand())
             {
                 context.Writer.WritePropertyName("MaxFilesInBand");
-                context.Writer.Write(requestObject.MaxFilesInBand.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFilesInBand.Value);
             }
 
             if(requestObject.IsSetMultiline())
             {
                 context.Writer.WritePropertyName("Multiline");
-                context.Writer.Write(requestObject.Multiline.Value);
+                context.Writer.WriteBooleanValue(requestObject.Multiline.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOutputSchemas())
             {
                 context.Writer.WritePropertyName("OutputSchemas");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutputSchemasListValue in requestObject.OutputSchemas)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GlueSchemaMarshaller.Instance;
                     marshaller.Marshall(requestObjectOutputSchemasListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPaths())
             {
                 context.Writer.WritePropertyName("Paths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPathsListValue in requestObject.Paths)
                 {
-                        context.Writer.Write(requestObjectPathsListValue);
+                        context.Writer.WriteStringValue(requestObjectPathsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRecurse())
             {
                 context.Writer.WritePropertyName("Recurse");
-                context.Writer.Write(requestObject.Recurse.Value);
+                context.Writer.WriteBooleanValue(requestObject.Recurse.Value);
             }
 
         }

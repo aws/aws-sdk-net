@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
@@ -64,59 +67,64 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                 throw new AmazonGuardDutyException("Request object does not have required field DetectorId set");
             request.AddPathResource("{detectorId}", StringUtils.FromString(publicRequest.DetectorId));
             request.ResourcePath = "/detector/{detectorId}/findings/statistics";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFindingCriteria())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFindingCriteria())
-                    {
-                        context.Writer.WritePropertyName("findingCriteria");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("findingCriteria");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = FindingCriteriaMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FindingCriteria, context);
+                var marshaller = FindingCriteriaMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FindingCriteria, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFindingStatisticTypes())
-                    {
-                        context.Writer.WritePropertyName("findingStatisticTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFindingStatisticTypesListValue in publicRequest.FindingStatisticTypes)
-                        {
-                                context.Writer.Write(publicRequestFindingStatisticTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetGroupBy())
-                    {
-                        context.Writer.WritePropertyName("groupBy");
-                        context.Writer.Write(publicRequest.GroupBy);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetOrderBy())
-                    {
-                        context.Writer.WritePropertyName("orderBy");
-                        context.Writer.Write(publicRequest.OrderBy);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetFindingStatisticTypes())
+            {
+                context.Writer.WritePropertyName("findingStatisticTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFindingStatisticTypesListValue in publicRequest.FindingStatisticTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestFindingStatisticTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetGroupBy())
+            {
+                context.Writer.WritePropertyName("groupBy");
+                context.Writer.WriteStringValue(publicRequest.GroupBy);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetOrderBy())
+            {
+                context.Writer.WritePropertyName("orderBy");
+                context.Writer.WriteStringValue(publicRequest.OrderBy);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -61,152 +64,157 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/recipeJobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDatabaseOutputs())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DatabaseOutputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDatabaseOutputsListValue in publicRequest.DatabaseOutputs)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDatabaseOutputs())
-                    {
-                        context.Writer.WritePropertyName("DatabaseOutputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDatabaseOutputsListValue in publicRequest.DatabaseOutputs)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = DatabaseOutputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDatabaseOutputsListValue, context);
+                    var marshaller = DatabaseOutputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDatabaseOutputsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDataCatalogOutputs())
-                    {
-                        context.Writer.WritePropertyName("DataCatalogOutputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDataCatalogOutputsListValue in publicRequest.DataCatalogOutputs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DataCatalogOutputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestDataCatalogOutputsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDatasetName())
-                    {
-                        context.Writer.WritePropertyName("DatasetName");
-                        context.Writer.Write(publicRequest.DatasetName);
-                    }
-
-                    if(publicRequest.IsSetEncryptionKeyArn())
-                    {
-                        context.Writer.WritePropertyName("EncryptionKeyArn");
-                        context.Writer.Write(publicRequest.EncryptionKeyArn);
-                    }
-
-                    if(publicRequest.IsSetEncryptionMode())
-                    {
-                        context.Writer.WritePropertyName("EncryptionMode");
-                        context.Writer.Write(publicRequest.EncryptionMode);
-                    }
-
-                    if(publicRequest.IsSetLogSubscription())
-                    {
-                        context.Writer.WritePropertyName("LogSubscription");
-                        context.Writer.Write(publicRequest.LogSubscription);
-                    }
-
-                    if(publicRequest.IsSetMaxCapacity())
-                    {
-                        context.Writer.WritePropertyName("MaxCapacity");
-                        context.Writer.Write(publicRequest.MaxCapacity.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxRetries())
-                    {
-                        context.Writer.WritePropertyName("MaxRetries");
-                        context.Writer.Write(publicRequest.MaxRetries.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOutputs())
-                    {
-                        context.Writer.WritePropertyName("Outputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = OutputMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetProjectName())
-                    {
-                        context.Writer.WritePropertyName("ProjectName");
-                        context.Writer.Write(publicRequest.ProjectName);
-                    }
-
-                    if(publicRequest.IsSetRecipeReference())
-                    {
-                        context.Writer.WritePropertyName("RecipeReference");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RecipeReferenceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RecipeReference, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTimeout())
-                    {
-                        context.Writer.WritePropertyName("Timeout");
-                        context.Writer.Write(publicRequest.Timeout.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetDataCatalogOutputs())
+            {
+                context.Writer.WritePropertyName("DataCatalogOutputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDataCatalogOutputsListValue in publicRequest.DataCatalogOutputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DataCatalogOutputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestDataCatalogOutputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDatasetName())
+            {
+                context.Writer.WritePropertyName("DatasetName");
+                context.Writer.WriteStringValue(publicRequest.DatasetName);
+            }
+
+            if(publicRequest.IsSetEncryptionKeyArn())
+            {
+                context.Writer.WritePropertyName("EncryptionKeyArn");
+                context.Writer.WriteStringValue(publicRequest.EncryptionKeyArn);
+            }
+
+            if(publicRequest.IsSetEncryptionMode())
+            {
+                context.Writer.WritePropertyName("EncryptionMode");
+                context.Writer.WriteStringValue(publicRequest.EncryptionMode);
+            }
+
+            if(publicRequest.IsSetLogSubscription())
+            {
+                context.Writer.WritePropertyName("LogSubscription");
+                context.Writer.WriteStringValue(publicRequest.LogSubscription);
+            }
+
+            if(publicRequest.IsSetMaxCapacity())
+            {
+                context.Writer.WritePropertyName("MaxCapacity");
+                context.Writer.WriteNumberValue(publicRequest.MaxCapacity.Value);
+            }
+
+            if(publicRequest.IsSetMaxRetries())
+            {
+                context.Writer.WritePropertyName("MaxRetries");
+                context.Writer.WriteNumberValue(publicRequest.MaxRetries.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOutputs())
+            {
+                context.Writer.WritePropertyName("Outputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OutputMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetProjectName())
+            {
+                context.Writer.WritePropertyName("ProjectName");
+                context.Writer.WriteStringValue(publicRequest.ProjectName);
+            }
+
+            if(publicRequest.IsSetRecipeReference())
+            {
+                context.Writer.WritePropertyName("RecipeReference");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RecipeReferenceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RecipeReference, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("Timeout");
+                context.Writer.WriteNumberValue(publicRequest.Timeout.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

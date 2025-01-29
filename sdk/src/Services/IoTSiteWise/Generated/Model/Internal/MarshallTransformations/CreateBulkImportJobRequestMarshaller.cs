@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -61,81 +64,86 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/jobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdaptiveIngestion())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdaptiveIngestion())
-                    {
-                        context.Writer.WritePropertyName("adaptiveIngestion");
-                        context.Writer.Write(publicRequest.AdaptiveIngestion.Value);
-                    }
-
-                    if(publicRequest.IsSetDeleteFilesAfterImport())
-                    {
-                        context.Writer.WritePropertyName("deleteFilesAfterImport");
-                        context.Writer.Write(publicRequest.DeleteFilesAfterImport.Value);
-                    }
-
-                    if(publicRequest.IsSetErrorReportLocation())
-                    {
-                        context.Writer.WritePropertyName("errorReportLocation");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ErrorReportLocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ErrorReportLocation, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFiles())
-                    {
-                        context.Writer.WritePropertyName("files");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFilesListValue in publicRequest.Files)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FileMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFilesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetJobConfiguration())
-                    {
-                        context.Writer.WritePropertyName("jobConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobName())
-                    {
-                        context.Writer.WritePropertyName("jobName");
-                        context.Writer.Write(publicRequest.JobName);
-                    }
-
-                    if(publicRequest.IsSetJobRoleArn())
-                    {
-                        context.Writer.WritePropertyName("jobRoleArn");
-                        context.Writer.Write(publicRequest.JobRoleArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("adaptiveIngestion");
+                context.Writer.WriteBooleanValue(publicRequest.AdaptiveIngestion.Value);
             }
+
+            if(publicRequest.IsSetDeleteFilesAfterImport())
+            {
+                context.Writer.WritePropertyName("deleteFilesAfterImport");
+                context.Writer.WriteBooleanValue(publicRequest.DeleteFilesAfterImport.Value);
+            }
+
+            if(publicRequest.IsSetErrorReportLocation())
+            {
+                context.Writer.WritePropertyName("errorReportLocation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ErrorReportLocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ErrorReportLocation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFiles())
+            {
+                context.Writer.WritePropertyName("files");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFilesListValue in publicRequest.Files)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FileMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFilesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetJobConfiguration())
+            {
+                context.Writer.WritePropertyName("jobConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobName())
+            {
+                context.Writer.WritePropertyName("jobName");
+                context.Writer.WriteStringValue(publicRequest.JobName);
+            }
+
+            if(publicRequest.IsSetJobRoleArn())
+            {
+                context.Writer.WritePropertyName("jobRoleArn");
+                context.Writer.WriteStringValue(publicRequest.JobRoleArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"data.";

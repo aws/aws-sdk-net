@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubnetIpPrefixes Object
     /// </summary>  
-    public class SubnetIpPrefixesUnmarshaller : IUnmarshaller<SubnetIpPrefixes, XmlUnmarshallerContext>, IUnmarshaller<SubnetIpPrefixes, JsonUnmarshallerContext>
+    public class SubnetIpPrefixesUnmarshaller : IXmlUnmarshaller<SubnetIpPrefixes, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SubnetIpPrefixes Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SubnetIpPrefixesUnmarshaller _instance = new SubnetIpPrefixesUnmarshaller();        
 

@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SearchRecord Object
     /// </summary>  
-    public class SearchRecordUnmarshaller : IUnmarshaller<SearchRecord, XmlUnmarshallerContext>, IUnmarshaller<SearchRecord, JsonUnmarshallerContext>
+    public class SearchRecordUnmarshaller : IJsonUnmarshaller<SearchRecord, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SearchRecord IUnmarshaller<SearchRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SearchRecord Unmarshall(JsonUnmarshallerContext context)
+        public SearchRecord Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SearchRecord unmarshalledObject = new SearchRecord();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Endpoint", targetDepth))
                 {
                     var unmarshaller = EndpointUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Experiment", targetDepth))
                 {
                     var unmarshaller = ExperimentUnmarshaller.Instance;
-                    unmarshalledObject.Experiment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Experiment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureGroup", targetDepth))
                 {
                     var unmarshaller = FeatureGroupUnmarshaller.Instance;
-                    unmarshalledObject.FeatureGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureMetadata", targetDepth))
                 {
                     var unmarshaller = FeatureMetadataUnmarshaller.Instance;
-                    unmarshalledObject.FeatureMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HyperParameterTuningJob", targetDepth))
                 {
                     var unmarshaller = HyperParameterTuningJobSearchEntityUnmarshaller.Instance;
-                    unmarshalledObject.HyperParameterTuningJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HyperParameterTuningJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Model", targetDepth))
                 {
                     var unmarshaller = ModelDashboardModelUnmarshaller.Instance;
-                    unmarshalledObject.Model = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelCard", targetDepth))
                 {
                     var unmarshaller = ModelCardUnmarshaller.Instance;
-                    unmarshalledObject.ModelCard = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelCard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackage", targetDepth))
                 {
                     var unmarshaller = ModelPackageUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageGroup", targetDepth))
                 {
                     var unmarshaller = ModelPackageGroupUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Pipeline", targetDepth))
                 {
                     var unmarshaller = PipelineUnmarshaller.Instance;
-                    unmarshalledObject.Pipeline = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pipeline = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PipelineExecution", targetDepth))
                 {
                     var unmarshaller = PipelineExecutionUnmarshaller.Instance;
-                    unmarshalledObject.PipelineExecution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineExecution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Project", targetDepth))
                 {
                     var unmarshaller = ProjectUnmarshaller.Instance;
-                    unmarshalledObject.Project = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Project = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingJob", targetDepth))
                 {
                     var unmarshaller = TrainingJobUnmarshaller.Instance;
-                    unmarshalledObject.TrainingJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Trial", targetDepth))
                 {
                     var unmarshaller = TrialUnmarshaller.Instance;
-                    unmarshalledObject.Trial = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Trial = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrialComponent", targetDepth))
                 {
                     var unmarshaller = TrialComponentUnmarshaller.Instance;
-                    unmarshalledObject.TrialComponent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrialComponent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

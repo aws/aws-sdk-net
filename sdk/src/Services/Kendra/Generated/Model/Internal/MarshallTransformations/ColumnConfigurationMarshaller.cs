@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChangeDetectingColumns())
             {
                 context.Writer.WritePropertyName("ChangeDetectingColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChangeDetectingColumnsListValue in requestObject.ChangeDetectingColumns)
                 {
-                        context.Writer.Write(requestObjectChangeDetectingColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectChangeDetectingColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDocumentDataColumnName())
             {
                 context.Writer.WritePropertyName("DocumentDataColumnName");
-                context.Writer.Write(requestObject.DocumentDataColumnName);
+                context.Writer.WriteStringValue(requestObject.DocumentDataColumnName);
             }
 
             if(requestObject.IsSetDocumentIdColumnName())
             {
                 context.Writer.WritePropertyName("DocumentIdColumnName");
-                context.Writer.Write(requestObject.DocumentIdColumnName);
+                context.Writer.WriteStringValue(requestObject.DocumentIdColumnName);
             }
 
             if(requestObject.IsSetDocumentTitleColumnName())
             {
                 context.Writer.WritePropertyName("DocumentTitleColumnName");
-                context.Writer.Write(requestObject.DocumentTitleColumnName);
+                context.Writer.WriteStringValue(requestObject.DocumentTitleColumnName);
             }
 
             if(requestObject.IsSetFieldMappings())
             {
                 context.Writer.WritePropertyName("FieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFieldMappingsListValue in requestObject.FieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

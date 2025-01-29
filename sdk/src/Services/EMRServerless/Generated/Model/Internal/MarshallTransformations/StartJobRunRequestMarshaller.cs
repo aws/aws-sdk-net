@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -64,101 +67,106 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 throw new AmazonEMRServerlessException("Request object does not have required field ApplicationId set");
             request.AddPathResource("{applicationId}", StringUtils.FromString(publicRequest.ApplicationId));
             request.ResourcePath = "/applications/{applicationId}/jobruns";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetConfigurationOverrides())
-                    {
-                        context.Writer.WritePropertyName("configurationOverrides");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ConfigurationOverridesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExecutionRoleArn())
-                    {
-                        context.Writer.WritePropertyName("executionRoleArn");
-                        context.Writer.Write(publicRequest.ExecutionRoleArn);
-                    }
-
-                    if(publicRequest.IsSetExecutionTimeoutMinutes())
-                    {
-                        context.Writer.WritePropertyName("executionTimeoutMinutes");
-                        context.Writer.Write(publicRequest.ExecutionTimeoutMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetJobDriver())
-                    {
-                        context.Writer.WritePropertyName("jobDriver");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobDriverMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobDriver, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMode())
-                    {
-                        context.Writer.WritePropertyName("mode");
-                        context.Writer.Write(publicRequest.Mode);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRetryPolicy())
-                    {
-                        context.Writer.WritePropertyName("retryPolicy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RetryPolicyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RetryPolicy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetConfigurationOverrides())
+            {
+                context.Writer.WritePropertyName("configurationOverrides");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ConfigurationOverridesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConfigurationOverrides, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("executionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.ExecutionRoleArn);
+            }
+
+            if(publicRequest.IsSetExecutionTimeoutMinutes())
+            {
+                context.Writer.WritePropertyName("executionTimeoutMinutes");
+                context.Writer.WriteNumberValue(publicRequest.ExecutionTimeoutMinutes.Value);
+            }
+
+            if(publicRequest.IsSetJobDriver())
+            {
+                context.Writer.WritePropertyName("jobDriver");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobDriverMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobDriver, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMode())
+            {
+                context.Writer.WritePropertyName("mode");
+                context.Writer.WriteStringValue(publicRequest.Mode);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRetryPolicy())
+            {
+                context.Writer.WritePropertyName("retryPolicy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RetryPolicyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RetryPolicy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

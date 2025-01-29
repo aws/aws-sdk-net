@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirectoryId())
             {
                 context.Writer.WritePropertyName("DirectoryId");
-                context.Writer.Write(requestObject.DirectoryId);
+                context.Writer.WriteStringValue(requestObject.DirectoryId);
             }
 
             if(requestObject.IsSetFunction())
             {
                 context.Writer.WritePropertyName("Function");
-                context.Writer.Write(requestObject.Function);
+                context.Writer.WriteStringValue(requestObject.Function);
             }
 
             if(requestObject.IsSetInvocationRole())
             {
                 context.Writer.WritePropertyName("InvocationRole");
-                context.Writer.Write(requestObject.InvocationRole);
+                context.Writer.WriteStringValue(requestObject.InvocationRole);
             }
 
             if(requestObject.IsSetSftpAuthenticationMethods())
             {
                 context.Writer.WritePropertyName("SftpAuthenticationMethods");
-                context.Writer.Write(requestObject.SftpAuthenticationMethods);
+                context.Writer.WriteStringValue(requestObject.SftpAuthenticationMethods);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

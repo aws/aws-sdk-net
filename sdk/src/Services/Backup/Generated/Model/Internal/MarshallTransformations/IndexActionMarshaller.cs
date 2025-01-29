@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("ResourceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypesListValue in requestObject.ResourceTypes)
                 {
-                        context.Writer.Write(requestObjectResourceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

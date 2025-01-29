@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExecutionControls Object
     /// </summary>  
-    public class ExecutionControlsUnmarshaller : IUnmarshaller<ExecutionControls, XmlUnmarshallerContext>, IUnmarshaller<ExecutionControls, JsonUnmarshallerContext>
+    public class ExecutionControlsUnmarshaller : IJsonUnmarshaller<ExecutionControls, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExecutionControls IUnmarshaller<ExecutionControls, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExecutionControls Unmarshall(JsonUnmarshallerContext context)
+        public ExecutionControls Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExecutionControls unmarshalledObject = new ExecutionControls();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("SsmControls", targetDepth))
                 {
                     var unmarshaller = SsmControlsUnmarshaller.Instance;
-                    unmarshalledObject.SsmControls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SsmControls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

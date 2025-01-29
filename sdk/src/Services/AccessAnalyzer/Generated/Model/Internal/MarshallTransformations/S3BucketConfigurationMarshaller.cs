@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessPoints())
             {
                 context.Writer.WritePropertyName("accessPoints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAccessPointsKvp in requestObject.AccessPoints)
                 {
                     context.Writer.WritePropertyName(requestObjectAccessPointsKvp.Key);
                     var requestObjectAccessPointsValue = requestObjectAccessPointsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = S3AccessPointConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectAccessPointsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBucketAclGrants())
             {
                 context.Writer.WritePropertyName("bucketAclGrants");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBucketAclGrantsListValue in requestObject.BucketAclGrants)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = S3BucketAclGrantConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectBucketAclGrantsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBucketPolicy())
             {
                 context.Writer.WritePropertyName("bucketPolicy");
-                context.Writer.Write(requestObject.BucketPolicy);
+                context.Writer.WriteStringValue(requestObject.BucketPolicy);
             }
 
             if(requestObject.IsSetBucketPublicAccessBlock())
             {
                 context.Writer.WritePropertyName("bucketPublicAccessBlock");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3PublicAccessBlockConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.BucketPublicAccessBlock, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

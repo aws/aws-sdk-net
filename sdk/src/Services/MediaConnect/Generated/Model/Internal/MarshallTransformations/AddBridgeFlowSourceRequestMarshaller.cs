@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFlowArn())
             {
                 context.Writer.WritePropertyName("flowArn");
-                context.Writer.Write(requestObject.FlowArn);
+                context.Writer.WriteStringValue(requestObject.FlowArn);
             }
 
             if(requestObject.IsSetFlowVpcInterfaceAttachment())
             {
                 context.Writer.WritePropertyName("flowVpcInterfaceAttachment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcInterfaceAttachmentMarshaller.Instance;
                 marshaller.Marshall(requestObject.FlowVpcInterfaceAttachment, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

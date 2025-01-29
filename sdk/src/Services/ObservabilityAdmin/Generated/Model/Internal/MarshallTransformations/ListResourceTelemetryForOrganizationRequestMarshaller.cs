@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
 {
@@ -61,87 +64,92 @@ namespace Amazon.ObservabilityAdmin.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/ListResourceTelemetryForOrganization";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountIdentifiers())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AccountIdentifiers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAccountIdentifiersListValue in publicRequest.AccountIdentifiers)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccountIdentifiers())
-                    {
-                        context.Writer.WritePropertyName("AccountIdentifiers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAccountIdentifiersListValue in publicRequest.AccountIdentifiers)
-                        {
-                                context.Writer.Write(publicRequestAccountIdentifiersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetResourceIdentifierPrefix())
-                    {
-                        context.Writer.WritePropertyName("ResourceIdentifierPrefix");
-                        context.Writer.Write(publicRequest.ResourceIdentifierPrefix);
-                    }
-
-                    if(publicRequest.IsSetResourceTags())
-                    {
-                        context.Writer.WritePropertyName("ResourceTags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestResourceTagsKvp.Key);
-                            var publicRequestResourceTagsValue = publicRequestResourceTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestResourceTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResourceTypes())
-                    {
-                        context.Writer.WritePropertyName("ResourceTypes");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
-                        {
-                                context.Writer.Write(publicRequestResourceTypesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTelemetryConfigurationState())
-                    {
-                        context.Writer.WritePropertyName("TelemetryConfigurationState");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTelemetryConfigurationStateKvp in publicRequest.TelemetryConfigurationState)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTelemetryConfigurationStateKvp.Key);
-                            var publicRequestTelemetryConfigurationStateValue = publicRequestTelemetryConfigurationStateKvp.Value;
-
-                                context.Writer.Write(publicRequestTelemetryConfigurationStateValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAccountIdentifiersListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetResourceIdentifierPrefix())
+            {
+                context.Writer.WritePropertyName("ResourceIdentifierPrefix");
+                context.Writer.WriteStringValue(publicRequest.ResourceIdentifierPrefix);
+            }
+
+            if(publicRequest.IsSetResourceTags())
+            {
+                context.Writer.WritePropertyName("ResourceTags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestResourceTagsKvp in publicRequest.ResourceTags)
+                {
+                    context.Writer.WritePropertyName(publicRequestResourceTagsKvp.Key);
+                    var publicRequestResourceTagsValue = publicRequestResourceTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestResourceTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResourceTypes())
+            {
+                context.Writer.WritePropertyName("ResourceTypes");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourceTypesListValue in publicRequest.ResourceTypes)
+                {
+                        context.Writer.WriteStringValue(publicRequestResourceTypesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTelemetryConfigurationState())
+            {
+                context.Writer.WritePropertyName("TelemetryConfigurationState");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTelemetryConfigurationStateKvp in publicRequest.TelemetryConfigurationState)
+                {
+                    context.Writer.WritePropertyName(publicRequestTelemetryConfigurationStateKvp.Key);
+                    var publicRequestTelemetryConfigurationStateValue = publicRequestTelemetryConfigurationStateKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTelemetryConfigurationStateValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPointInTimeRecoveryEnabled())
             {
                 context.Writer.WritePropertyName("PointInTimeRecoveryEnabled");
-                context.Writer.Write(requestObject.PointInTimeRecoveryEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.PointInTimeRecoveryEnabled.Value);
             }
 
         }

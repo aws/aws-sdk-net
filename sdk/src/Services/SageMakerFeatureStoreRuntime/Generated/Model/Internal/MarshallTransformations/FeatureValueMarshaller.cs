@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
             if(requestObject.IsSetFeatureName())
             {
                 context.Writer.WritePropertyName("FeatureName");
-                context.Writer.Write(requestObject.FeatureName);
+                context.Writer.WriteStringValue(requestObject.FeatureName);
             }
 
             if(requestObject.IsSetValueAsString())
             {
                 context.Writer.WritePropertyName("ValueAsString");
-                context.Writer.Write(requestObject.ValueAsString);
+                context.Writer.WriteStringValue(requestObject.ValueAsString);
             }
 
             if(requestObject.IsSetValueAsStringList())
             {
                 context.Writer.WritePropertyName("ValueAsStringList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectValueAsStringListListValue in requestObject.ValueAsStringList)
                 {
-                        context.Writer.Write(requestObjectValueAsStringListListValue);
+                        context.Writer.WriteStringValue(requestObjectValueAsStringListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

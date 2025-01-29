@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientId())
             {
                 context.Writer.WritePropertyName("clientId");
-                context.Writer.Write(requestObject.ClientId);
+                context.Writer.WriteStringValue(requestObject.ClientId);
             }
 
             if(requestObject.IsSetGroupsClaim())
             {
                 context.Writer.WritePropertyName("groupsClaim");
-                context.Writer.Write(requestObject.GroupsClaim);
+                context.Writer.WriteStringValue(requestObject.GroupsClaim);
             }
 
             if(requestObject.IsSetGroupsPrefix())
             {
                 context.Writer.WritePropertyName("groupsPrefix");
-                context.Writer.Write(requestObject.GroupsPrefix);
+                context.Writer.WriteStringValue(requestObject.GroupsPrefix);
             }
 
             if(requestObject.IsSetIdentityProviderConfigName())
             {
                 context.Writer.WritePropertyName("identityProviderConfigName");
-                context.Writer.Write(requestObject.IdentityProviderConfigName);
+                context.Writer.WriteStringValue(requestObject.IdentityProviderConfigName);
             }
 
             if(requestObject.IsSetIssuerUrl())
             {
                 context.Writer.WritePropertyName("issuerUrl");
-                context.Writer.Write(requestObject.IssuerUrl);
+                context.Writer.WriteStringValue(requestObject.IssuerUrl);
             }
 
             if(requestObject.IsSetRequiredClaims())
             {
                 context.Writer.WritePropertyName("requiredClaims");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRequiredClaimsKvp in requestObject.RequiredClaims)
                 {
                     context.Writer.WritePropertyName(requestObjectRequiredClaimsKvp.Key);
                     var requestObjectRequiredClaimsValue = requestObjectRequiredClaimsKvp.Value;
 
-                        context.Writer.Write(requestObjectRequiredClaimsValue);
+                        context.Writer.WriteStringValue(requestObjectRequiredClaimsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUsernameClaim())
             {
                 context.Writer.WritePropertyName("usernameClaim");
-                context.Writer.Write(requestObject.UsernameClaim);
+                context.Writer.WriteStringValue(requestObject.UsernameClaim);
             }
 
             if(requestObject.IsSetUsernamePrefix())
             {
                 context.Writer.WritePropertyName("usernamePrefix");
-                context.Writer.Write(requestObject.UsernamePrefix);
+                context.Writer.WriteStringValue(requestObject.UsernamePrefix);
             }
 
         }

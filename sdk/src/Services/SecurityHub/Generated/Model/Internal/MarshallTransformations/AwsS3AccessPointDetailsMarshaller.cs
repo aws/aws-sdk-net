@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessPointArn())
             {
                 context.Writer.WritePropertyName("AccessPointArn");
-                context.Writer.Write(requestObject.AccessPointArn);
+                context.Writer.WriteStringValue(requestObject.AccessPointArn);
             }
 
             if(requestObject.IsSetAlias())
             {
                 context.Writer.WritePropertyName("Alias");
-                context.Writer.Write(requestObject.Alias);
+                context.Writer.WriteStringValue(requestObject.Alias);
             }
 
             if(requestObject.IsSetBucket())
             {
                 context.Writer.WritePropertyName("Bucket");
-                context.Writer.Write(requestObject.Bucket);
+                context.Writer.WriteStringValue(requestObject.Bucket);
             }
 
             if(requestObject.IsSetBucketAccountId())
             {
                 context.Writer.WritePropertyName("BucketAccountId");
-                context.Writer.Write(requestObject.BucketAccountId);
+                context.Writer.WriteStringValue(requestObject.BucketAccountId);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetNetworkOrigin())
             {
                 context.Writer.WritePropertyName("NetworkOrigin");
-                context.Writer.Write(requestObject.NetworkOrigin);
+                context.Writer.WriteStringValue(requestObject.NetworkOrigin);
             }
 
             if(requestObject.IsSetPublicAccessBlockConfiguration())
             {
                 context.Writer.WritePropertyName("PublicAccessBlockConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3AccountPublicAccessBlockDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PublicAccessBlockConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsS3AccessPointVpcConfigurationDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

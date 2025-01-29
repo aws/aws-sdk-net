@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsFundingUsed())
             {
                 context.Writer.WritePropertyName("AwsFundingUsed");
-                context.Writer.Write(requestObject.AwsFundingUsed);
+                context.Writer.WriteStringValue(requestObject.AwsFundingUsed);
             }
 
             if(requestObject.IsSetCampaignName())
             {
                 context.Writer.WritePropertyName("CampaignName");
-                context.Writer.Write(requestObject.CampaignName);
+                context.Writer.WriteStringValue(requestObject.CampaignName);
             }
 
             if(requestObject.IsSetChannels())
             {
                 context.Writer.WritePropertyName("Channels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChannelsListValue in requestObject.Channels)
                 {
-                        context.Writer.Write(requestObjectChannelsListValue);
+                        context.Writer.WriteStringValue(requestObjectChannelsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetUseCases())
             {
                 context.Writer.WritePropertyName("UseCases");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUseCasesListValue in requestObject.UseCases)
                 {
-                        context.Writer.Write(requestObjectUseCasesListValue);
+                        context.Writer.WriteStringValue(requestObjectUseCasesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

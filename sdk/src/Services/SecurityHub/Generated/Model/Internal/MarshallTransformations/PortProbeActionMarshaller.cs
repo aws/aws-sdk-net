@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlocked())
             {
                 context.Writer.WritePropertyName("Blocked");
-                context.Writer.Write(requestObject.Blocked.Value);
+                context.Writer.WriteBooleanValue(requestObject.Blocked.Value);
             }
 
             if(requestObject.IsSetPortProbeDetails())
             {
                 context.Writer.WritePropertyName("PortProbeDetails");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPortProbeDetailsListValue in requestObject.PortProbeDetails)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PortProbeDetailMarshaller.Instance;
                     marshaller.Marshall(requestObjectPortProbeDetailsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

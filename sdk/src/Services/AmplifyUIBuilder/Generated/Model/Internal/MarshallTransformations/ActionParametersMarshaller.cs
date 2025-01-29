@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,103 +49,103 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnchor())
             {
                 context.Writer.WritePropertyName("anchor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Anchor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFields())
             {
                 context.Writer.WritePropertyName("fields");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFieldsKvp in requestObject.Fields)
                 {
                     context.Writer.WritePropertyName(requestObjectFieldsKvp.Key);
                     var requestObjectFieldsValue = requestObjectFieldsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ComponentPropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGlobal())
             {
                 context.Writer.WritePropertyName("global");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Global, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Id, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModel())
             {
                 context.Writer.WritePropertyName("model");
-                context.Writer.Write(requestObject.Model);
+                context.Writer.WriteStringValue(requestObject.Model);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("state");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MutationActionSetStateParameterMarshaller.Instance;
                 marshaller.Marshall(requestObject.State, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTarget())
             {
                 context.Writer.WritePropertyName("target");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Target, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Type, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("url");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ComponentPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Url, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

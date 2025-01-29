@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QueryExecutionStatistics Object
     /// </summary>  
-    public class QueryExecutionStatisticsUnmarshaller : IUnmarshaller<QueryExecutionStatistics, XmlUnmarshallerContext>, IUnmarshaller<QueryExecutionStatistics, JsonUnmarshallerContext>
+    public class QueryExecutionStatisticsUnmarshaller : IJsonUnmarshaller<QueryExecutionStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QueryExecutionStatistics IUnmarshaller<QueryExecutionStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QueryExecutionStatistics Unmarshall(JsonUnmarshallerContext context)
+        public QueryExecutionStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QueryExecutionStatistics unmarshalledObject = new QueryExecutionStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataManifestLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataManifestLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataManifestLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataScannedInBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DataScannedInBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataScannedInBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EngineExecutionTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EngineExecutionTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineExecutionTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryPlanningTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.QueryPlanningTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryPlanningTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryQueueTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResultReuseInformation", targetDepth))
                 {
                     var unmarshaller = ResultReuseInformationUnmarshaller.Instance;
-                    unmarshalledObject.ResultReuseInformation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResultReuseInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServicePreProcessingTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ServicePreProcessingTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServicePreProcessingTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ServiceProcessingTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceProcessingTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalExecutionTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalExecutionTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalExecutionTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

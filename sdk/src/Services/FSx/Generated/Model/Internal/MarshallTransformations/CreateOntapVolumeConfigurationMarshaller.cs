@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,94 +49,94 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregateConfiguration())
             {
                 context.Writer.WritePropertyName("AggregateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateAggregateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AggregateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCopyTagsToBackups())
             {
                 context.Writer.WritePropertyName("CopyTagsToBackups");
-                context.Writer.Write(requestObject.CopyTagsToBackups.Value);
+                context.Writer.WriteBooleanValue(requestObject.CopyTagsToBackups.Value);
             }
 
             if(requestObject.IsSetJunctionPath())
             {
                 context.Writer.WritePropertyName("JunctionPath");
-                context.Writer.Write(requestObject.JunctionPath);
+                context.Writer.WriteStringValue(requestObject.JunctionPath);
             }
 
             if(requestObject.IsSetOntapVolumeType())
             {
                 context.Writer.WritePropertyName("OntapVolumeType");
-                context.Writer.Write(requestObject.OntapVolumeType);
+                context.Writer.WriteStringValue(requestObject.OntapVolumeType);
             }
 
             if(requestObject.IsSetSecurityStyle())
             {
                 context.Writer.WritePropertyName("SecurityStyle");
-                context.Writer.Write(requestObject.SecurityStyle);
+                context.Writer.WriteStringValue(requestObject.SecurityStyle);
             }
 
             if(requestObject.IsSetSizeInBytes())
             {
                 context.Writer.WritePropertyName("SizeInBytes");
-                context.Writer.Write(requestObject.SizeInBytes.Value);
+                context.Writer.WriteNumberValue(requestObject.SizeInBytes.Value);
             }
 
             if(requestObject.IsSetSizeInMegabytes())
             {
                 context.Writer.WritePropertyName("SizeInMegabytes");
-                context.Writer.Write(requestObject.SizeInMegabytes.Value);
+                context.Writer.WriteNumberValue(requestObject.SizeInMegabytes.Value);
             }
 
             if(requestObject.IsSetSnaplockConfiguration())
             {
                 context.Writer.WritePropertyName("SnaplockConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CreateSnaplockConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SnaplockConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSnapshotPolicy())
             {
                 context.Writer.WritePropertyName("SnapshotPolicy");
-                context.Writer.Write(requestObject.SnapshotPolicy);
+                context.Writer.WriteStringValue(requestObject.SnapshotPolicy);
             }
 
             if(requestObject.IsSetStorageEfficiencyEnabled())
             {
                 context.Writer.WritePropertyName("StorageEfficiencyEnabled");
-                context.Writer.Write(requestObject.StorageEfficiencyEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.StorageEfficiencyEnabled.Value);
             }
 
             if(requestObject.IsSetStorageVirtualMachineId())
             {
                 context.Writer.WritePropertyName("StorageVirtualMachineId");
-                context.Writer.Write(requestObject.StorageVirtualMachineId);
+                context.Writer.WriteStringValue(requestObject.StorageVirtualMachineId);
             }
 
             if(requestObject.IsSetTieringPolicy())
             {
                 context.Writer.WritePropertyName("TieringPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TieringPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.TieringPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVolumeStyle())
             {
                 context.Writer.WritePropertyName("VolumeStyle");
-                context.Writer.Write(requestObject.VolumeStyle);
+                context.Writer.WriteStringValue(requestObject.VolumeStyle);
             }
 
         }

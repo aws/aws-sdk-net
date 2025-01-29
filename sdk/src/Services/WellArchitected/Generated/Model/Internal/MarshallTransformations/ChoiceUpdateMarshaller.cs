@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotes())
             {
                 context.Writer.WritePropertyName("Notes");
-                context.Writer.Write(requestObject.Notes);
+                context.Writer.WriteStringValue(requestObject.Notes);
             }
 
             if(requestObject.IsSetReason())
             {
                 context.Writer.WritePropertyName("Reason");
-                context.Writer.Write(requestObject.Reason);
+                context.Writer.WriteStringValue(requestObject.Reason);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

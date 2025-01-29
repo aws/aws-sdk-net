@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NeighborConnectionDetail Object
     /// </summary>  
-    public class NeighborConnectionDetailUnmarshaller : IUnmarshaller<NeighborConnectionDetail, XmlUnmarshallerContext>, IUnmarshaller<NeighborConnectionDetail, JsonUnmarshallerContext>
+    public class NeighborConnectionDetailUnmarshaller : IJsonUnmarshaller<NeighborConnectionDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NeighborConnectionDetail IUnmarshaller<NeighborConnectionDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NeighborConnectionDetail Unmarshall(JsonUnmarshallerContext context)
+        public NeighborConnectionDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NeighborConnectionDetail unmarshalledObject = new NeighborConnectionDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("connectionsCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionsCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionsCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationPort", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("destinationServerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationServerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationServerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceServerId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceServerId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceServerId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transportProtocol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransportProtocol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransportProtocol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

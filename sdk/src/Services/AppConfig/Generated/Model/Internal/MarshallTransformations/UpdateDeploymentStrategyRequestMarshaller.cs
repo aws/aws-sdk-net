@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
 {
@@ -64,56 +67,61 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
                 throw new AmazonAppConfigException("Request object does not have required field DeploymentStrategyId set");
             request.AddPathResource("{DeploymentStrategyId}", StringUtils.FromString(publicRequest.DeploymentStrategyId));
             request.ResourcePath = "/deploymentstrategies/{DeploymentStrategyId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDeploymentDurationInMinutes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDeploymentDurationInMinutes())
-                    {
-                        context.Writer.WritePropertyName("DeploymentDurationInMinutes");
-                        context.Writer.Write(publicRequest.DeploymentDurationInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFinalBakeTimeInMinutes())
-                    {
-                        context.Writer.WritePropertyName("FinalBakeTimeInMinutes");
-                        context.Writer.Write(publicRequest.FinalBakeTimeInMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetGrowthFactor())
-                    {
-                        context.Writer.WritePropertyName("GrowthFactor");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.GrowthFactor.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetGrowthType())
-                    {
-                        context.Writer.WritePropertyName("GrowthType");
-                        context.Writer.Write(publicRequest.GrowthType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DeploymentDurationInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.DeploymentDurationInMinutes.Value);
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetFinalBakeTimeInMinutes())
+            {
+                context.Writer.WritePropertyName("FinalBakeTimeInMinutes");
+                context.Writer.WriteNumberValue(publicRequest.FinalBakeTimeInMinutes.Value);
+            }
+
+            if(publicRequest.IsSetGrowthFactor())
+            {
+                context.Writer.WritePropertyName("GrowthFactor");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.GrowthFactor.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.GrowthFactor.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.GrowthFactor.Value);
+                }
+            }
+
+            if(publicRequest.IsSetGrowthType())
+            {
+                context.Writer.WritePropertyName("GrowthType");
+                context.Writer.WriteStringValue(publicRequest.GrowthType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

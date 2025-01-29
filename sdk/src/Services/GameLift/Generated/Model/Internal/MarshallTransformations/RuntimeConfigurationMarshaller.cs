@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGameSessionActivationTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("GameSessionActivationTimeoutSeconds");
-                context.Writer.Write(requestObject.GameSessionActivationTimeoutSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.GameSessionActivationTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetMaxConcurrentGameSessionActivations())
             {
                 context.Writer.WritePropertyName("MaxConcurrentGameSessionActivations");
-                context.Writer.Write(requestObject.MaxConcurrentGameSessionActivations.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxConcurrentGameSessionActivations.Value);
             }
 
             if(requestObject.IsSetServerProcesses())
             {
                 context.Writer.WritePropertyName("ServerProcesses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServerProcessesListValue in requestObject.ServerProcesses)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ServerProcessMarshaller.Instance;
                     marshaller.Marshall(requestObjectServerProcessesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

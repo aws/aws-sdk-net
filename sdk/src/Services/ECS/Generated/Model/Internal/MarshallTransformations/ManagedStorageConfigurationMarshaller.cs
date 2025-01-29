@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFargateEphemeralStorageKmsKeyId())
             {
                 context.Writer.WritePropertyName("fargateEphemeralStorageKmsKeyId");
-                context.Writer.Write(requestObject.FargateEphemeralStorageKmsKeyId);
+                context.Writer.WriteStringValue(requestObject.FargateEphemeralStorageKmsKeyId);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
         }

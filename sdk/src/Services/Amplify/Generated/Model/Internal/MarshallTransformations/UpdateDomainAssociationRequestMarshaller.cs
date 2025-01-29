@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Amplify.Model.Internal.MarshallTransformations
 {
@@ -67,69 +70,74 @@ namespace Amazon.Amplify.Model.Internal.MarshallTransformations
                 throw new AmazonAmplifyException("Request object does not have required field DomainName set");
             request.AddPathResource("{domainName}", StringUtils.FromString(publicRequest.DomainName));
             request.ResourcePath = "/apps/{appId}/domains/{domainName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoSubDomainCreationPatterns())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("autoSubDomainCreationPatterns");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAutoSubDomainCreationPatternsListValue in publicRequest.AutoSubDomainCreationPatterns)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAutoSubDomainCreationPatterns())
-                    {
-                        context.Writer.WritePropertyName("autoSubDomainCreationPatterns");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAutoSubDomainCreationPatternsListValue in publicRequest.AutoSubDomainCreationPatterns)
-                        {
-                                context.Writer.Write(publicRequestAutoSubDomainCreationPatternsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAutoSubDomainIAMRole())
-                    {
-                        context.Writer.WritePropertyName("autoSubDomainIAMRole");
-                        context.Writer.Write(publicRequest.AutoSubDomainIAMRole);
-                    }
-
-                    if(publicRequest.IsSetCertificateSettings())
-                    {
-                        context.Writer.WritePropertyName("certificateSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CertificateSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CertificateSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEnableAutoSubDomain())
-                    {
-                        context.Writer.WritePropertyName("enableAutoSubDomain");
-                        context.Writer.Write(publicRequest.EnableAutoSubDomain.Value);
-                    }
-
-                    if(publicRequest.IsSetSubDomainSettings())
-                    {
-                        context.Writer.WritePropertyName("subDomainSettings");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubDomainSettingsListValue in publicRequest.SubDomainSettings)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SubDomainSettingMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSubDomainSettingsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAutoSubDomainCreationPatternsListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetAutoSubDomainIAMRole())
+            {
+                context.Writer.WritePropertyName("autoSubDomainIAMRole");
+                context.Writer.WriteStringValue(publicRequest.AutoSubDomainIAMRole);
+            }
+
+            if(publicRequest.IsSetCertificateSettings())
+            {
+                context.Writer.WritePropertyName("certificateSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CertificateSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CertificateSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEnableAutoSubDomain())
+            {
+                context.Writer.WritePropertyName("enableAutoSubDomain");
+                context.Writer.WriteBooleanValue(publicRequest.EnableAutoSubDomain.Value);
+            }
+
+            if(publicRequest.IsSetSubDomainSettings())
+            {
+                context.Writer.WritePropertyName("subDomainSettings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubDomainSettingsListValue in publicRequest.SubDomainSettings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SubDomainSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSubDomainSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

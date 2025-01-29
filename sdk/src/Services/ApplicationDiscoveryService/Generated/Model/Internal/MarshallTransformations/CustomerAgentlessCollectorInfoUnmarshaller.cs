@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationDiscoveryService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomerAgentlessCollectorInfo Object
     /// </summary>  
-    public class CustomerAgentlessCollectorInfoUnmarshaller : IUnmarshaller<CustomerAgentlessCollectorInfo, XmlUnmarshallerContext>, IUnmarshaller<CustomerAgentlessCollectorInfo, JsonUnmarshallerContext>
+    public class CustomerAgentlessCollectorInfoUnmarshaller : IJsonUnmarshaller<CustomerAgentlessCollectorInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomerAgentlessCollectorInfo IUnmarshaller<CustomerAgentlessCollectorInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerAgentlessCollectorInfo Unmarshall(JsonUnmarshallerContext context)
+        public CustomerAgentlessCollectorInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomerAgentlessCollectorInfo unmarshalledObject = new CustomerAgentlessCollectorInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("activeAgentlessCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActiveAgentlessCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("denyListedAgentlessCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DenyListedAgentlessCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DenyListedAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthyAgentlessCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HealthyAgentlessCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthyAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shutdownAgentlessCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ShutdownAgentlessCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShutdownAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalAgentlessCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalAgentlessCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unhealthyAgentlessCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnhealthyAgentlessCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnhealthyAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("unknownAgentlessCollectors", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UnknownAgentlessCollectors = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnknownAgentlessCollectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCharset())
             {
                 context.Writer.WritePropertyName("Charset");
-                context.Writer.Write(requestObject.Charset);
+                context.Writer.WriteStringValue(requestObject.Charset);
             }
 
             if(requestObject.IsSetFileCompression())
             {
                 context.Writer.WritePropertyName("FileCompression");
-                context.Writer.Write(requestObject.FileCompression);
+                context.Writer.WriteStringValue(requestObject.FileCompression);
             }
 
         }

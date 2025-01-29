@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ThreatDetectedByName Object
     /// </summary>  
-    public class ThreatDetectedByNameUnmarshaller : IUnmarshaller<ThreatDetectedByName, XmlUnmarshallerContext>, IUnmarshaller<ThreatDetectedByName, JsonUnmarshallerContext>
+    public class ThreatDetectedByNameUnmarshaller : IJsonUnmarshaller<ThreatDetectedByName, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ThreatDetectedByName IUnmarshaller<ThreatDetectedByName, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ThreatDetectedByName Unmarshall(JsonUnmarshallerContext context)
+        public ThreatDetectedByName Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ThreatDetectedByName unmarshalledObject = new ThreatDetectedByName();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("itemCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ItemCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shortened", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Shortened = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Shortened = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("threatNames", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ScanThreatName, ScanThreatNameUnmarshaller>(ScanThreatNameUnmarshaller.Instance);
-                    unmarshalledObject.ThreatNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ScanThreatName, ScanThreatNameUnmarshaller>(ScanThreatNameUnmarshaller.Instance);
+                    unmarshalledObject.ThreatNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("uniqueThreatNameCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UniqueThreatNameCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UniqueThreatNameCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

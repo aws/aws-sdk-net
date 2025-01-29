@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TaskOverride Object
     /// </summary>  
-    public class TaskOverrideUnmarshaller : IUnmarshaller<TaskOverride, XmlUnmarshallerContext>, IUnmarshaller<TaskOverride, JsonUnmarshallerContext>
+    public class TaskOverrideUnmarshaller : IJsonUnmarshaller<TaskOverride, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TaskOverride IUnmarshaller<TaskOverride, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaskOverride Unmarshall(JsonUnmarshallerContext context)
+        public TaskOverride Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TaskOverride unmarshalledObject = new TaskOverride();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("containerOverrides", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ContainerOverride, ContainerOverrideUnmarshaller>(ContainerOverrideUnmarshaller.Instance);
-                    unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ContainerOverride, ContainerOverrideUnmarshaller>(ContainerOverrideUnmarshaller.Instance);
+                    unmarshalledObject.ContainerOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cpu", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Cpu = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cpu = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ephemeralStorage", targetDepth))
                 {
                     var unmarshaller = EphemeralStorageUnmarshaller.Instance;
-                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EphemeralStorage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inferenceAcceleratorOverrides", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InferenceAcceleratorOverride, InferenceAcceleratorOverrideUnmarshaller>(InferenceAcceleratorOverrideUnmarshaller.Instance);
-                    unmarshalledObject.InferenceAcceleratorOverrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InferenceAcceleratorOverride, InferenceAcceleratorOverrideUnmarshaller>(InferenceAcceleratorOverrideUnmarshaller.Instance);
+                    unmarshalledObject.InferenceAcceleratorOverrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("memory", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Memory = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

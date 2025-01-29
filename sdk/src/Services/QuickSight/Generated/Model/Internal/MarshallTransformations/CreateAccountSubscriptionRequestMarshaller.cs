@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -64,157 +67,162 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field AwsAccountId set");
             request.AddPathResource("{AwsAccountId}", StringUtils.FromString(publicRequest.AwsAccountId));
             request.ResourcePath = "/account/{AwsAccountId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAccountName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAccountName())
-                    {
-                        context.Writer.WritePropertyName("AccountName");
-                        context.Writer.Write(publicRequest.AccountName);
-                    }
-
-                    if(publicRequest.IsSetActiveDirectoryName())
-                    {
-                        context.Writer.WritePropertyName("ActiveDirectoryName");
-                        context.Writer.Write(publicRequest.ActiveDirectoryName);
-                    }
-
-                    if(publicRequest.IsSetAdminGroup())
-                    {
-                        context.Writer.WritePropertyName("AdminGroup");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdminGroupListValue in publicRequest.AdminGroup)
-                        {
-                                context.Writer.Write(publicRequestAdminGroupListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAdminProGroup())
-                    {
-                        context.Writer.WritePropertyName("AdminProGroup");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdminProGroupListValue in publicRequest.AdminProGroup)
-                        {
-                                context.Writer.Write(publicRequestAdminProGroupListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthenticationMethod())
-                    {
-                        context.Writer.WritePropertyName("AuthenticationMethod");
-                        context.Writer.Write(publicRequest.AuthenticationMethod);
-                    }
-
-                    if(publicRequest.IsSetAuthorGroup())
-                    {
-                        context.Writer.WritePropertyName("AuthorGroup");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAuthorGroupListValue in publicRequest.AuthorGroup)
-                        {
-                                context.Writer.Write(publicRequestAuthorGroupListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetAuthorProGroup())
-                    {
-                        context.Writer.WritePropertyName("AuthorProGroup");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAuthorProGroupListValue in publicRequest.AuthorProGroup)
-                        {
-                                context.Writer.Write(publicRequestAuthorProGroupListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetContactNumber())
-                    {
-                        context.Writer.WritePropertyName("ContactNumber");
-                        context.Writer.Write(publicRequest.ContactNumber);
-                    }
-
-                    if(publicRequest.IsSetDirectoryId())
-                    {
-                        context.Writer.WritePropertyName("DirectoryId");
-                        context.Writer.Write(publicRequest.DirectoryId);
-                    }
-
-                    if(publicRequest.IsSetEdition())
-                    {
-                        context.Writer.WritePropertyName("Edition");
-                        context.Writer.Write(publicRequest.Edition);
-                    }
-
-                    if(publicRequest.IsSetEmailAddress())
-                    {
-                        context.Writer.WritePropertyName("EmailAddress");
-                        context.Writer.Write(publicRequest.EmailAddress);
-                    }
-
-                    if(publicRequest.IsSetFirstName())
-                    {
-                        context.Writer.WritePropertyName("FirstName");
-                        context.Writer.Write(publicRequest.FirstName);
-                    }
-
-                    if(publicRequest.IsSetIAMIdentityCenterInstanceArn())
-                    {
-                        context.Writer.WritePropertyName("IAMIdentityCenterInstanceArn");
-                        context.Writer.Write(publicRequest.IAMIdentityCenterInstanceArn);
-                    }
-
-                    if(publicRequest.IsSetLastName())
-                    {
-                        context.Writer.WritePropertyName("LastName");
-                        context.Writer.Write(publicRequest.LastName);
-                    }
-
-                    if(publicRequest.IsSetNotificationEmail())
-                    {
-                        context.Writer.WritePropertyName("NotificationEmail");
-                        context.Writer.Write(publicRequest.NotificationEmail);
-                    }
-
-                    if(publicRequest.IsSetReaderGroup())
-                    {
-                        context.Writer.WritePropertyName("ReaderGroup");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReaderGroupListValue in publicRequest.ReaderGroup)
-                        {
-                                context.Writer.Write(publicRequestReaderGroupListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetReaderProGroup())
-                    {
-                        context.Writer.WritePropertyName("ReaderProGroup");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReaderProGroupListValue in publicRequest.ReaderProGroup)
-                        {
-                                context.Writer.Write(publicRequestReaderProGroupListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRealm())
-                    {
-                        context.Writer.WritePropertyName("Realm");
-                        context.Writer.Write(publicRequest.Realm);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AccountName");
+                context.Writer.WriteStringValue(publicRequest.AccountName);
             }
+
+            if(publicRequest.IsSetActiveDirectoryName())
+            {
+                context.Writer.WritePropertyName("ActiveDirectoryName");
+                context.Writer.WriteStringValue(publicRequest.ActiveDirectoryName);
+            }
+
+            if(publicRequest.IsSetAdminGroup())
+            {
+                context.Writer.WritePropertyName("AdminGroup");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdminGroupListValue in publicRequest.AdminGroup)
+                {
+                        context.Writer.WriteStringValue(publicRequestAdminGroupListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAdminProGroup())
+            {
+                context.Writer.WritePropertyName("AdminProGroup");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdminProGroupListValue in publicRequest.AdminProGroup)
+                {
+                        context.Writer.WriteStringValue(publicRequestAdminProGroupListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAuthenticationMethod())
+            {
+                context.Writer.WritePropertyName("AuthenticationMethod");
+                context.Writer.WriteStringValue(publicRequest.AuthenticationMethod);
+            }
+
+            if(publicRequest.IsSetAuthorGroup())
+            {
+                context.Writer.WritePropertyName("AuthorGroup");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAuthorGroupListValue in publicRequest.AuthorGroup)
+                {
+                        context.Writer.WriteStringValue(publicRequestAuthorGroupListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetAuthorProGroup())
+            {
+                context.Writer.WritePropertyName("AuthorProGroup");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAuthorProGroupListValue in publicRequest.AuthorProGroup)
+                {
+                        context.Writer.WriteStringValue(publicRequestAuthorProGroupListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetContactNumber())
+            {
+                context.Writer.WritePropertyName("ContactNumber");
+                context.Writer.WriteStringValue(publicRequest.ContactNumber);
+            }
+
+            if(publicRequest.IsSetDirectoryId())
+            {
+                context.Writer.WritePropertyName("DirectoryId");
+                context.Writer.WriteStringValue(publicRequest.DirectoryId);
+            }
+
+            if(publicRequest.IsSetEdition())
+            {
+                context.Writer.WritePropertyName("Edition");
+                context.Writer.WriteStringValue(publicRequest.Edition);
+            }
+
+            if(publicRequest.IsSetEmailAddress())
+            {
+                context.Writer.WritePropertyName("EmailAddress");
+                context.Writer.WriteStringValue(publicRequest.EmailAddress);
+            }
+
+            if(publicRequest.IsSetFirstName())
+            {
+                context.Writer.WritePropertyName("FirstName");
+                context.Writer.WriteStringValue(publicRequest.FirstName);
+            }
+
+            if(publicRequest.IsSetIAMIdentityCenterInstanceArn())
+            {
+                context.Writer.WritePropertyName("IAMIdentityCenterInstanceArn");
+                context.Writer.WriteStringValue(publicRequest.IAMIdentityCenterInstanceArn);
+            }
+
+            if(publicRequest.IsSetLastName())
+            {
+                context.Writer.WritePropertyName("LastName");
+                context.Writer.WriteStringValue(publicRequest.LastName);
+            }
+
+            if(publicRequest.IsSetNotificationEmail())
+            {
+                context.Writer.WritePropertyName("NotificationEmail");
+                context.Writer.WriteStringValue(publicRequest.NotificationEmail);
+            }
+
+            if(publicRequest.IsSetReaderGroup())
+            {
+                context.Writer.WritePropertyName("ReaderGroup");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReaderGroupListValue in publicRequest.ReaderGroup)
+                {
+                        context.Writer.WriteStringValue(publicRequestReaderGroupListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetReaderProGroup())
+            {
+                context.Writer.WritePropertyName("ReaderProGroup");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReaderProGroupListValue in publicRequest.ReaderProGroup)
+                {
+                        context.Writer.WriteStringValue(publicRequestReaderProGroupListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRealm())
+            {
+                context.Writer.WritePropertyName("Realm");
+                context.Writer.WriteStringValue(publicRequest.Realm);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

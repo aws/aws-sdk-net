@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
@@ -63,54 +66,59 @@ namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComputeStatistics())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComputeStatistics())
-                    {
-                        context.Writer.WritePropertyName("ComputeStatistics");
-                        context.Writer.Write(publicRequest.ComputeStatistics.Value);
-                    }
-
-                    if(publicRequest.IsSetDataSourceId())
-                    {
-                        context.Writer.WritePropertyName("DataSourceId");
-                        context.Writer.Write(publicRequest.DataSourceId);
-                    }
-
-                    if(publicRequest.IsSetDataSourceName())
-                    {
-                        context.Writer.WritePropertyName("DataSourceName");
-                        context.Writer.Write(publicRequest.DataSourceName);
-                    }
-
-                    if(publicRequest.IsSetDataSpec())
-                    {
-                        context.Writer.WritePropertyName("DataSpec");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RedshiftDataSpecMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataSpec, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleARN())
-                    {
-                        context.Writer.WritePropertyName("RoleARN");
-                        context.Writer.Write(publicRequest.RoleARN);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ComputeStatistics");
+                context.Writer.WriteBooleanValue(publicRequest.ComputeStatistics.Value);
             }
+
+            if(publicRequest.IsSetDataSourceId())
+            {
+                context.Writer.WritePropertyName("DataSourceId");
+                context.Writer.WriteStringValue(publicRequest.DataSourceId);
+            }
+
+            if(publicRequest.IsSetDataSourceName())
+            {
+                context.Writer.WritePropertyName("DataSourceName");
+                context.Writer.WriteStringValue(publicRequest.DataSourceName);
+            }
+
+            if(publicRequest.IsSetDataSpec())
+            {
+                context.Writer.WritePropertyName("DataSpec");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RedshiftDataSpecMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataSpec, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleARN())
+            {
+                context.Writer.WritePropertyName("RoleARN");
+                context.Writer.WriteStringValue(publicRequest.RoleARN);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

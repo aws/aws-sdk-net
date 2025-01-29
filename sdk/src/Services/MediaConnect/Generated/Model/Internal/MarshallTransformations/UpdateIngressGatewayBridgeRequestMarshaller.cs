@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetMaxOutputs())
             {
                 context.Writer.WritePropertyName("maxOutputs");
-                context.Writer.Write(requestObject.MaxOutputs.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxOutputs.Value);
             }
 
         }

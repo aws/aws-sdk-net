@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelDefinitions())
             {
                 context.Writer.WritePropertyName("ChannelDefinitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChannelDefinitionsListValue in requestObject.ChannelDefinitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ChannelDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectChannelDefinitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNumberOfChannels())
             {
                 context.Writer.WritePropertyName("NumberOfChannels");
-                context.Writer.Write(requestObject.NumberOfChannels.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfChannels.Value);
             }
 
         }

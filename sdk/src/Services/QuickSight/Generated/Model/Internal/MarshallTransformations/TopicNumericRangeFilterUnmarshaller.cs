@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TopicNumericRangeFilter Object
     /// </summary>  
-    public class TopicNumericRangeFilterUnmarshaller : IUnmarshaller<TopicNumericRangeFilter, XmlUnmarshallerContext>, IUnmarshaller<TopicNumericRangeFilter, JsonUnmarshallerContext>
+    public class TopicNumericRangeFilterUnmarshaller : IJsonUnmarshaller<TopicNumericRangeFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TopicNumericRangeFilter IUnmarshaller<TopicNumericRangeFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TopicNumericRangeFilter Unmarshall(JsonUnmarshallerContext context)
+        public TopicNumericRangeFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TopicNumericRangeFilter unmarshalledObject = new TopicNumericRangeFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Aggregation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Aggregation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Constant", targetDepth))
                 {
                     var unmarshaller = TopicRangeFilterConstantUnmarshaller.Instance;
-                    unmarshalledObject.Constant = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Constant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Inclusive", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Inclusive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Inclusive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PlatformVersionStillReferencedException operation
     /// </summary>  
-    public class PlatformVersionStillReferencedExceptionUnmarshaller : IErrorResponseUnmarshaller<PlatformVersionStillReferencedException, XmlUnmarshallerContext>
+    public class PlatformVersionStillReferencedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PlatformVersionStillReferencedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

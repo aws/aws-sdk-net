@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetFormatVersion())
             {
                 context.Writer.WritePropertyName("FormatVersion");
-                context.Writer.Write(requestObject.FormatVersion);
+                context.Writer.WriteStringValue(requestObject.FormatVersion);
             }
 
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");
-                context.Writer.Write(requestObject.Namespace);
+                context.Writer.WriteStringValue(requestObject.Namespace);
             }
 
             if(requestObject.IsSetPermissionPolicy())
             {
                 context.Writer.WritePropertyName("PermissionPolicy");
-                context.Writer.Write(requestObject.PermissionPolicy);
+                context.Writer.WriteStringValue(requestObject.PermissionPolicy);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("DisplayName");
-                context.Writer.Write(requestObject.DisplayName);
+                context.Writer.WriteStringValue(requestObject.DisplayName);
             }
 
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("EmailAddress");
-                context.Writer.Write(requestObject.EmailAddress);
+                context.Writer.WriteStringValue(requestObject.EmailAddress);
             }
 
             if(requestObject.IsSetID())
             {
                 context.Writer.WritePropertyName("ID");
-                context.Writer.Write(requestObject.ID);
+                context.Writer.WriteStringValue(requestObject.ID);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetURI())
             {
                 context.Writer.WritePropertyName("URI");
-                context.Writer.Write(requestObject.URI);
+                context.Writer.WriteStringValue(requestObject.URI);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetProcessingConfig())
             {
                 context.Writer.WritePropertyName("processingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricProcessingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProcessingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVariables())
             {
                 context.Writer.WritePropertyName("variables");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectVariablesListValue in requestObject.Variables)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ExpressionVariableMarshaller.Instance;
                     marshaller.Marshall(requestObjectVariablesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetWindow())
             {
                 context.Writer.WritePropertyName("window");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MetricWindowMarshaller.Instance;
                 marshaller.Marshall(requestObject.Window, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

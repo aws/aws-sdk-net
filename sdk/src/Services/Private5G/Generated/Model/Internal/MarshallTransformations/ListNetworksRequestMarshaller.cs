@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 {
@@ -61,50 +64,55 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/networks/list";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetFilters())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("filters");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestFiltersKvp in publicRequest.Filters)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetFilters())
+                    context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
+                    var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
+
+                    context.Writer.WriteStartArray();
+                    foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
                     {
-                        context.Writer.WritePropertyName("filters");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestFiltersKvp in publicRequest.Filters)
-                        {
-                            context.Writer.WritePropertyName(publicRequestFiltersKvp.Key);
-                            var publicRequestFiltersValue = publicRequestFiltersKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestFiltersValueListValue in publicRequestFiltersValue)
-                            {
-                                    context.Writer.Write(publicRequestFiltersValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
+                            context.Writer.WriteStringValue(publicRequestFiltersValueListValue);
                     }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetStartToken())
-                    {
-                        context.Writer.WritePropertyName("startToken");
-                        context.Writer.Write(publicRequest.StartToken);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndArray();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetStartToken())
+            {
+                context.Writer.WritePropertyName("startToken");
+                context.Writer.WriteStringValue(publicRequest.StartToken);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

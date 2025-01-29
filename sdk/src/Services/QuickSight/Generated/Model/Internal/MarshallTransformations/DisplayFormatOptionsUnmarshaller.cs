@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DisplayFormatOptions Object
     /// </summary>  
-    public class DisplayFormatOptionsUnmarshaller : IUnmarshaller<DisplayFormatOptions, XmlUnmarshallerContext>, IUnmarshaller<DisplayFormatOptions, JsonUnmarshallerContext>
+    public class DisplayFormatOptionsUnmarshaller : IJsonUnmarshaller<DisplayFormatOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DisplayFormatOptions IUnmarshaller<DisplayFormatOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DisplayFormatOptions Unmarshall(JsonUnmarshallerContext context)
+        public DisplayFormatOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DisplayFormatOptions unmarshalledObject = new DisplayFormatOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BlankCellFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BlankCellFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlankCellFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrencySymbol", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrencySymbol = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrencySymbol = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DateFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DateFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DateFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DecimalSeparator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DecimalSeparator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DecimalSeparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FractionDigits", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FractionDigits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FractionDigits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GroupingSeparator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupingSeparator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupingSeparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NegativeFormat", targetDepth))
                 {
                     var unmarshaller = NegativeFormatUnmarshaller.Instance;
-                    unmarshalledObject.NegativeFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NegativeFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Suffix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Suffix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UnitScaler", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UnitScaler = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UnitScaler = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UseBlankCellFormat", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseBlankCellFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UseBlankCellFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UseGrouping", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseGrouping = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UseGrouping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConsolidatedReportMetric Object
     /// </summary>  
-    public class ConsolidatedReportMetricUnmarshaller : IUnmarshaller<ConsolidatedReportMetric, XmlUnmarshallerContext>, IUnmarshaller<ConsolidatedReportMetric, JsonUnmarshallerContext>
+    public class ConsolidatedReportMetricUnmarshaller : IJsonUnmarshaller<ConsolidatedReportMetric, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConsolidatedReportMetric IUnmarshaller<ConsolidatedReportMetric, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConsolidatedReportMetric Unmarshall(JsonUnmarshallerContext context)
+        public ConsolidatedReportMetric Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConsolidatedReportMetric unmarshalledObject = new ConsolidatedReportMetric();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Lenses", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LensMetric, LensMetricUnmarshaller>(LensMetricUnmarshaller.Instance);
-                    unmarshalledObject.Lenses = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LensMetric, LensMetricUnmarshaller>(LensMetricUnmarshaller.Instance);
+                    unmarshalledObject.Lenses = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LensesAppliedCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.LensesAppliedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LensesAppliedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MetricType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RiskCounts", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
-                    unmarshalledObject.RiskCounts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, int, StringUnmarshaller, IntUnmarshaller>(StringUnmarshaller.Instance, IntUnmarshaller.Instance);
+                    unmarshalledObject.RiskCounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpdatedAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdatedAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkloadArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkloadArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkloadArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkloadId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkloadId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkloadId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WorkloadName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkloadName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkloadName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

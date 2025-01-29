@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.ServiceDiscovery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFailureThreshold())
             {
                 context.Writer.WritePropertyName("FailureThreshold");
-                context.Writer.Write(requestObject.FailureThreshold.Value);
+                context.Writer.WriteNumberValue(requestObject.FailureThreshold.Value);
             }
 
         }

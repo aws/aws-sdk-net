@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfiguration())
             {
                 context.Writer.WritePropertyName("configuration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectConfigurationKvp in requestObject.Configuration)
                 {
                     context.Writer.WritePropertyName(requestObjectConfigurationKvp.Key);
                     var requestObjectConfigurationValue = requestObjectConfigurationKvp.Value;
 
-                        context.Writer.Write(requestObjectConfigurationValue);
+                        context.Writer.WriteStringValue(requestObjectConfigurationValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("defaultValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("displayName");
-                context.Writer.Write(requestObject.DisplayName);
+                context.Writer.WriteStringValue(requestObject.DisplayName);
             }
 
             if(requestObject.IsSetIsExternalId())
             {
                 context.Writer.WritePropertyName("isExternalId");
-                context.Writer.Write(requestObject.IsExternalId.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsExternalId.Value);
             }
 
             if(requestObject.IsSetIsRequiredInEntity())
             {
                 context.Writer.WritePropertyName("isRequiredInEntity");
-                context.Writer.Write(requestObject.IsRequiredInEntity.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsRequiredInEntity.Value);
             }
 
             if(requestObject.IsSetIsStoredExternally())
             {
                 context.Writer.WritePropertyName("isStoredExternally");
-                context.Writer.Write(requestObject.IsStoredExternally.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsStoredExternally.Value);
             }
 
             if(requestObject.IsSetIsTimeSeries())
             {
                 context.Writer.WritePropertyName("isTimeSeries");
-                context.Writer.Write(requestObject.IsTimeSeries.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsTimeSeries.Value);
             }
 
         }

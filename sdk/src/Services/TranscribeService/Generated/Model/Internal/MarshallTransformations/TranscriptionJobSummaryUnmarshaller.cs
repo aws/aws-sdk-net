@@ -29,131 +29,121 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TranscriptionJobSummary Object
     /// </summary>  
-    public class TranscriptionJobSummaryUnmarshaller : IUnmarshaller<TranscriptionJobSummary, XmlUnmarshallerContext>, IUnmarshaller<TranscriptionJobSummary, JsonUnmarshallerContext>
+    public class TranscriptionJobSummaryUnmarshaller : IJsonUnmarshaller<TranscriptionJobSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TranscriptionJobSummary IUnmarshaller<TranscriptionJobSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TranscriptionJobSummary Unmarshall(JsonUnmarshallerContext context)
+        public TranscriptionJobSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TranscriptionJobSummary unmarshalledObject = new TranscriptionJobSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CompletionTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompletionTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContentRedaction", targetDepth))
                 {
                     var unmarshaller = ContentRedactionUnmarshaller.Instance;
-                    unmarshalledObject.ContentRedaction = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentRedaction = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IdentifiedLanguageScore", targetDepth))
                 {
                     var unmarshaller = NullableFloatUnmarshaller.Instance;
-                    unmarshalledObject.IdentifiedLanguageScore = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentifiedLanguageScore = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IdentifyLanguage", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentifyLanguage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IdentifyMultipleLanguages", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdentifyMultipleLanguages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LanguageCodes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<LanguageCodeItem, LanguageCodeItemUnmarshaller>(LanguageCodeItemUnmarshaller.Instance);
-                    unmarshalledObject.LanguageCodes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<LanguageCodeItem, LanguageCodeItemUnmarshaller>(LanguageCodeItemUnmarshaller.Instance);
+                    unmarshalledObject.LanguageCodes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelSettings", targetDepth))
                 {
                     var unmarshaller = ModelSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ModelSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OutputLocationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutputLocationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputLocationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ToxicityDetection", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ToxicityDetectionSettings, ToxicityDetectionSettingsUnmarshaller>(ToxicityDetectionSettingsUnmarshaller.Instance);
-                    unmarshalledObject.ToxicityDetection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ToxicityDetectionSettings, ToxicityDetectionSettingsUnmarshaller>(ToxicityDetectionSettingsUnmarshaller.Instance);
+                    unmarshalledObject.ToxicityDetection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TranscriptionJobName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptionJobName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TranscriptionJobName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TranscriptionJobStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TranscriptionJobStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TranscriptionJobStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
 {
@@ -51,135 +49,135 @@ namespace Amazon.CustomerProfiles.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountNumber())
             {
                 context.Writer.WritePropertyName("AccountNumber");
-                context.Writer.Write(requestObject.AccountNumber);
+                context.Writer.WriteStringValue(requestObject.AccountNumber);
             }
 
             if(requestObject.IsSetAdditionalInformation())
             {
                 context.Writer.WritePropertyName("AdditionalInformation");
-                context.Writer.Write(requestObject.AdditionalInformation);
+                context.Writer.WriteStringValue(requestObject.AdditionalInformation);
             }
 
             if(requestObject.IsSetAddress())
             {
                 context.Writer.WritePropertyName("Address");
-                context.Writer.Write(requestObject.Address);
+                context.Writer.WriteStringValue(requestObject.Address);
             }
 
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBillingAddress())
             {
                 context.Writer.WritePropertyName("BillingAddress");
-                context.Writer.Write(requestObject.BillingAddress);
+                context.Writer.WriteStringValue(requestObject.BillingAddress);
             }
 
             if(requestObject.IsSetBirthDate())
             {
                 context.Writer.WritePropertyName("BirthDate");
-                context.Writer.Write(requestObject.BirthDate);
+                context.Writer.WriteStringValue(requestObject.BirthDate);
             }
 
             if(requestObject.IsSetBusinessEmailAddress())
             {
                 context.Writer.WritePropertyName("BusinessEmailAddress");
-                context.Writer.Write(requestObject.BusinessEmailAddress);
+                context.Writer.WriteStringValue(requestObject.BusinessEmailAddress);
             }
 
             if(requestObject.IsSetBusinessName())
             {
                 context.Writer.WritePropertyName("BusinessName");
-                context.Writer.Write(requestObject.BusinessName);
+                context.Writer.WriteStringValue(requestObject.BusinessName);
             }
 
             if(requestObject.IsSetBusinessPhoneNumber())
             {
                 context.Writer.WritePropertyName("BusinessPhoneNumber");
-                context.Writer.Write(requestObject.BusinessPhoneNumber);
+                context.Writer.WriteStringValue(requestObject.BusinessPhoneNumber);
             }
 
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("EmailAddress");
-                context.Writer.Write(requestObject.EmailAddress);
+                context.Writer.WriteStringValue(requestObject.EmailAddress);
             }
 
             if(requestObject.IsSetFirstName())
             {
                 context.Writer.WritePropertyName("FirstName");
-                context.Writer.Write(requestObject.FirstName);
+                context.Writer.WriteStringValue(requestObject.FirstName);
             }
 
             if(requestObject.IsSetGender())
             {
                 context.Writer.WritePropertyName("Gender");
-                context.Writer.Write(requestObject.Gender);
+                context.Writer.WriteStringValue(requestObject.Gender);
             }
 
             if(requestObject.IsSetHomePhoneNumber())
             {
                 context.Writer.WritePropertyName("HomePhoneNumber");
-                context.Writer.Write(requestObject.HomePhoneNumber);
+                context.Writer.WriteStringValue(requestObject.HomePhoneNumber);
             }
 
             if(requestObject.IsSetLastName())
             {
                 context.Writer.WritePropertyName("LastName");
-                context.Writer.Write(requestObject.LastName);
+                context.Writer.WriteStringValue(requestObject.LastName);
             }
 
             if(requestObject.IsSetMailingAddress())
             {
                 context.Writer.WritePropertyName("MailingAddress");
-                context.Writer.Write(requestObject.MailingAddress);
+                context.Writer.WriteStringValue(requestObject.MailingAddress);
             }
 
             if(requestObject.IsSetMiddleName())
             {
                 context.Writer.WritePropertyName("MiddleName");
-                context.Writer.Write(requestObject.MiddleName);
+                context.Writer.WriteStringValue(requestObject.MiddleName);
             }
 
             if(requestObject.IsSetMobilePhoneNumber())
             {
                 context.Writer.WritePropertyName("MobilePhoneNumber");
-                context.Writer.Write(requestObject.MobilePhoneNumber);
+                context.Writer.WriteStringValue(requestObject.MobilePhoneNumber);
             }
 
             if(requestObject.IsSetPartyType())
             {
                 context.Writer.WritePropertyName("PartyType");
-                context.Writer.Write(requestObject.PartyType);
+                context.Writer.WriteStringValue(requestObject.PartyType);
             }
 
             if(requestObject.IsSetPersonalEmailAddress())
             {
                 context.Writer.WritePropertyName("PersonalEmailAddress");
-                context.Writer.Write(requestObject.PersonalEmailAddress);
+                context.Writer.WriteStringValue(requestObject.PersonalEmailAddress);
             }
 
             if(requestObject.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.Write(requestObject.PhoneNumber);
+                context.Writer.WriteStringValue(requestObject.PhoneNumber);
             }
 
             if(requestObject.IsSetShippingAddress())
             {
                 context.Writer.WritePropertyName("ShippingAddress");
-                context.Writer.Write(requestObject.ShippingAddress);
+                context.Writer.WriteStringValue(requestObject.ShippingAddress);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetImageClassificationJobConfig())
             {
                 context.Writer.WritePropertyName("ImageClassificationJobConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageClassificationJobConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageClassificationJobConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTabularJobConfig())
             {
                 context.Writer.WritePropertyName("TabularJobConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TabularJobConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TabularJobConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextClassificationJobConfig())
             {
                 context.Writer.WritePropertyName("TextClassificationJobConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TextClassificationJobConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextClassificationJobConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextGenerationJobConfig())
             {
                 context.Writer.WritePropertyName("TextGenerationJobConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TextGenerationJobConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextGenerationJobConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimeSeriesForecastingJobConfig())
             {
                 context.Writer.WritePropertyName("TimeSeriesForecastingJobConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeSeriesForecastingJobConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeSeriesForecastingJobConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

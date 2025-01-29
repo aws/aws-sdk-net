@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TooltipOptions Object
     /// </summary>  
-    public class TooltipOptionsUnmarshaller : IUnmarshaller<TooltipOptions, XmlUnmarshallerContext>, IUnmarshaller<TooltipOptions, JsonUnmarshallerContext>
+    public class TooltipOptionsUnmarshaller : IJsonUnmarshaller<TooltipOptions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TooltipOptions IUnmarshaller<TooltipOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TooltipOptions Unmarshall(JsonUnmarshallerContext context)
+        public TooltipOptions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TooltipOptions unmarshalledObject = new TooltipOptions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("FieldBasedTooltip", targetDepth))
                 {
                     var unmarshaller = FieldBasedTooltipUnmarshaller.Instance;
-                    unmarshalledObject.FieldBasedTooltip = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldBasedTooltip = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectedTooltipType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectedTooltipType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectedTooltipType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TooltipVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TooltipVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TooltipVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

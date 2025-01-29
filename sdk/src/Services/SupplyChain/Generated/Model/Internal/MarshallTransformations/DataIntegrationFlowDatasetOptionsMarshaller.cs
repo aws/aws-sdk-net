@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDedupeRecords())
             {
                 context.Writer.WritePropertyName("dedupeRecords");
-                context.Writer.Write(requestObject.DedupeRecords.Value);
+                context.Writer.WriteBooleanValue(requestObject.DedupeRecords.Value);
             }
 
             if(requestObject.IsSetLoadType())
             {
                 context.Writer.WritePropertyName("loadType");
-                context.Writer.Write(requestObject.LoadType);
+                context.Writer.WriteStringValue(requestObject.LoadType);
             }
 
         }

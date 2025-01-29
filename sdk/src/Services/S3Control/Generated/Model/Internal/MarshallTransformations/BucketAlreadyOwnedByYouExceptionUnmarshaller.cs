@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BucketAlreadyOwnedByYouException operation
     /// </summary>  
-    public class BucketAlreadyOwnedByYouExceptionUnmarshaller : IErrorResponseUnmarshaller<BucketAlreadyOwnedByYouException, XmlUnmarshallerContext>
+    public class BucketAlreadyOwnedByYouExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BucketAlreadyOwnedByYouException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

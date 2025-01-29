@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,117 +49,117 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditionalSplit())
             {
                 context.Writer.WritePropertyName("ConditionalSplit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionalSplitActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConditionalSplit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContactCenter())
             {
                 context.Writer.WritePropertyName("ContactCenter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContactCenterActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContactCenter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCUSTOM())
             {
                 context.Writer.WritePropertyName("CUSTOM");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomMessageActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.CUSTOM, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEMAIL())
             {
                 context.Writer.WritePropertyName("EMAIL");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmailMessageActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.EMAIL, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHoldout())
             {
                 context.Writer.WritePropertyName("Holdout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HoldoutActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Holdout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMultiCondition())
             {
                 context.Writer.WritePropertyName("MultiCondition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiConditionalSplitActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.MultiCondition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPUSH())
             {
                 context.Writer.WritePropertyName("PUSH");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PushMessageActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.PUSH, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRandomSplit())
             {
                 context.Writer.WritePropertyName("RandomSplit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RandomSplitActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.RandomSplit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSMS())
             {
                 context.Writer.WritePropertyName("SMS");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SMSMessageActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.SMS, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWait())
             {
                 context.Writer.WritePropertyName("Wait");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaitActivityMarshaller.Instance;
                 marshaller.Marshall(requestObject.Wait, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.IoT1ClickProjects.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCallbackOverrides())
             {
                 context.Writer.WritePropertyName("callbackOverrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCallbackOverridesKvp in requestObject.CallbackOverrides)
                 {
                     context.Writer.WritePropertyName(requestObjectCallbackOverridesKvp.Key);
                     var requestObjectCallbackOverridesValue = requestObjectCallbackOverridesKvp.Value;
 
-                        context.Writer.Write(requestObjectCallbackOverridesValue);
+                        context.Writer.WriteStringValue(requestObjectCallbackOverridesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeviceType())
             {
                 context.Writer.WritePropertyName("deviceType");
-                context.Writer.Write(requestObject.DeviceType);
+                context.Writer.WriteStringValue(requestObject.DeviceType);
             }
 
         }

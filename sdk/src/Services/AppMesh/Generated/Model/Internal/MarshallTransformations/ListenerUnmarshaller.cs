@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Listener Object
     /// </summary>  
-    public class ListenerUnmarshaller : IUnmarshaller<Listener, XmlUnmarshallerContext>, IUnmarshaller<Listener, JsonUnmarshallerContext>
+    public class ListenerUnmarshaller : IJsonUnmarshaller<Listener, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Listener IUnmarshaller<Listener, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Listener Unmarshall(JsonUnmarshallerContext context)
+        public Listener Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Listener unmarshalledObject = new Listener();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("connectionPool", targetDepth))
                 {
                     var unmarshaller = VirtualNodeConnectionPoolUnmarshaller.Instance;
-                    unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectionPool = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("healthCheck", targetDepth))
                 {
                     var unmarshaller = HealthCheckPolicyUnmarshaller.Instance;
-                    unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HealthCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outlierDetection", targetDepth))
                 {
                     var unmarshaller = OutlierDetectionUnmarshaller.Instance;
-                    unmarshalledObject.OutlierDetection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutlierDetection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("portMapping", targetDepth))
                 {
                     var unmarshaller = PortMappingUnmarshaller.Instance;
-                    unmarshalledObject.PortMapping = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PortMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeout", targetDepth))
                 {
                     var unmarshaller = ListenerTimeoutUnmarshaller.Instance;
-                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Timeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tls", targetDepth))
                 {
                     var unmarshaller = ListenerTlsUnmarshaller.Instance;
-                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

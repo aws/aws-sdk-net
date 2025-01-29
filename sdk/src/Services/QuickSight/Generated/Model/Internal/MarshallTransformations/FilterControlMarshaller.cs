@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCrossSheet())
             {
                 context.Writer.WritePropertyName("CrossSheet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterCrossSheetControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.CrossSheet, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDateTimePicker())
             {
                 context.Writer.WritePropertyName("DateTimePicker");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterDateTimePickerControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.DateTimePicker, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDropdown())
             {
                 context.Writer.WritePropertyName("Dropdown");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterDropDownControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dropdown, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetList())
             {
                 context.Writer.WritePropertyName("List");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterListControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.List, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRelativeDateTime())
             {
                 context.Writer.WritePropertyName("RelativeDateTime");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterRelativeDateTimeControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.RelativeDateTime, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSlider())
             {
                 context.Writer.WritePropertyName("Slider");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterSliderControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.Slider, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextArea())
             {
                 context.Writer.WritePropertyName("TextArea");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterTextAreaControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextArea, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextField())
             {
                 context.Writer.WritePropertyName("TextField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FilterTextFieldControlMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

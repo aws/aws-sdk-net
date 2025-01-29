@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxWorkerCount())
             {
                 context.Writer.WritePropertyName("maxWorkerCount");
-                context.Writer.Write(requestObject.MaxWorkerCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxWorkerCount.Value);
             }
 
             if(requestObject.IsSetMcuCount())
             {
                 context.Writer.WritePropertyName("mcuCount");
-                context.Writer.Write(requestObject.McuCount.Value);
+                context.Writer.WriteNumberValue(requestObject.McuCount.Value);
             }
 
             if(requestObject.IsSetMinWorkerCount())
             {
                 context.Writer.WritePropertyName("minWorkerCount");
-                context.Writer.Write(requestObject.MinWorkerCount.Value);
+                context.Writer.WriteNumberValue(requestObject.MinWorkerCount.Value);
             }
 
             if(requestObject.IsSetScaleInPolicy())
             {
                 context.Writer.WritePropertyName("scaleInPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScaleInPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScaleInPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScaleOutPolicy())
             {
                 context.Writer.WritePropertyName("scaleOutPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScaleOutPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScaleOutPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

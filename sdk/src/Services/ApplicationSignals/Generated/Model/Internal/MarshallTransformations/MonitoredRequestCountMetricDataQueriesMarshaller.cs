@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
 {
@@ -51,33 +49,33 @@ namespace Amazon.ApplicationSignals.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBadCountMetric())
             {
                 context.Writer.WritePropertyName("BadCountMetric");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBadCountMetricListValue in requestObject.BadCountMetric)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MetricDataQueryMarshaller.Instance;
                     marshaller.Marshall(requestObjectBadCountMetricListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGoodCountMetric())
             {
                 context.Writer.WritePropertyName("GoodCountMetric");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGoodCountMetricListValue in requestObject.GoodCountMetric)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MetricDataQueryMarshaller.Instance;
                     marshaller.Marshall(requestObjectGoodCountMetricListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

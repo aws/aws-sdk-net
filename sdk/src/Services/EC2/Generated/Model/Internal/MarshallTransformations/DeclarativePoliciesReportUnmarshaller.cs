@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeclarativePoliciesReport Object
     /// </summary>  
-    public class DeclarativePoliciesReportUnmarshaller : IUnmarshaller<DeclarativePoliciesReport, XmlUnmarshallerContext>, IUnmarshaller<DeclarativePoliciesReport, JsonUnmarshallerContext>
+    public class DeclarativePoliciesReportUnmarshaller : IXmlUnmarshaller<DeclarativePoliciesReport, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -117,17 +117,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DeclarativePoliciesReport Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DeclarativePoliciesReportUnmarshaller _instance = new DeclarativePoliciesReportUnmarshaller();        
 

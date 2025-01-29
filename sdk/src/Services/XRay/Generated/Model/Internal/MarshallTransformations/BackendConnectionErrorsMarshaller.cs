@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionRefusedCount())
             {
                 context.Writer.WritePropertyName("ConnectionRefusedCount");
-                context.Writer.Write(requestObject.ConnectionRefusedCount.Value);
+                context.Writer.WriteNumberValue(requestObject.ConnectionRefusedCount.Value);
             }
 
             if(requestObject.IsSetHTTPCode4XXCount())
             {
                 context.Writer.WritePropertyName("HTTPCode4XXCount");
-                context.Writer.Write(requestObject.HTTPCode4XXCount.Value);
+                context.Writer.WriteNumberValue(requestObject.HTTPCode4XXCount.Value);
             }
 
             if(requestObject.IsSetHTTPCode5XXCount())
             {
                 context.Writer.WritePropertyName("HTTPCode5XXCount");
-                context.Writer.Write(requestObject.HTTPCode5XXCount.Value);
+                context.Writer.WriteNumberValue(requestObject.HTTPCode5XXCount.Value);
             }
 
             if(requestObject.IsSetOtherCount())
             {
                 context.Writer.WritePropertyName("OtherCount");
-                context.Writer.Write(requestObject.OtherCount.Value);
+                context.Writer.WriteNumberValue(requestObject.OtherCount.Value);
             }
 
             if(requestObject.IsSetTimeoutCount())
             {
                 context.Writer.WritePropertyName("TimeoutCount");
-                context.Writer.Write(requestObject.TimeoutCount.Value);
+                context.Writer.WriteNumberValue(requestObject.TimeoutCount.Value);
             }
 
             if(requestObject.IsSetUnknownHostCount())
             {
                 context.Writer.WritePropertyName("UnknownHostCount");
-                context.Writer.Write(requestObject.UnknownHostCount.Value);
+                context.Writer.WriteNumberValue(requestObject.UnknownHostCount.Value);
             }
 
         }

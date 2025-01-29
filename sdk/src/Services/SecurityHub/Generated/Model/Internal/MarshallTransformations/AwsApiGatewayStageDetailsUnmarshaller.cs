@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsApiGatewayStageDetails Object
     /// </summary>  
-    public class AwsApiGatewayStageDetailsUnmarshaller : IUnmarshaller<AwsApiGatewayStageDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsApiGatewayStageDetails, JsonUnmarshallerContext>
+    public class AwsApiGatewayStageDetailsUnmarshaller : IJsonUnmarshaller<AwsApiGatewayStageDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsApiGatewayStageDetails IUnmarshaller<AwsApiGatewayStageDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsApiGatewayStageDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsApiGatewayStageDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsApiGatewayStageDetails unmarshalledObject = new AwsApiGatewayStageDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccessLogSettings", targetDepth))
                 {
                     var unmarshaller = AwsApiGatewayAccessLogSettingsUnmarshaller.Instance;
-                    unmarshalledObject.AccessLogSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccessLogSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CacheClusterEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CacheClusterEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CacheClusterEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CacheClusterSize", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CacheClusterSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CacheClusterSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CacheClusterStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CacheClusterStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CacheClusterStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CanarySettings", targetDepth))
                 {
                     var unmarshaller = AwsApiGatewayCanarySettingsUnmarshaller.Instance;
-                    unmarshalledObject.CanarySettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CanarySettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClientCertificateId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientCertificateId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientCertificateId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocumentationVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DocumentationVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentationVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdatedDate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MethodSettings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsApiGatewayMethodSettings, AwsApiGatewayMethodSettingsUnmarshaller>(AwsApiGatewayMethodSettingsUnmarshaller.Instance);
-                    unmarshalledObject.MethodSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsApiGatewayMethodSettings, AwsApiGatewayMethodSettingsUnmarshaller>(AwsApiGatewayMethodSettingsUnmarshaller.Instance);
+                    unmarshalledObject.MethodSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StageName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StageName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StageName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TracingEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.TracingEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TracingEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Variables", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Variables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WebAclArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WebAclArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WebAclArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

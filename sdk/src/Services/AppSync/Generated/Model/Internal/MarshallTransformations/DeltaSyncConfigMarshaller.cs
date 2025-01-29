@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBaseTableTTL())
             {
                 context.Writer.WritePropertyName("baseTableTTL");
-                context.Writer.Write(requestObject.BaseTableTTL.Value);
+                context.Writer.WriteNumberValue(requestObject.BaseTableTTL.Value);
             }
 
             if(requestObject.IsSetDeltaSyncTableName())
             {
                 context.Writer.WritePropertyName("deltaSyncTableName");
-                context.Writer.Write(requestObject.DeltaSyncTableName);
+                context.Writer.WriteStringValue(requestObject.DeltaSyncTableName);
             }
 
             if(requestObject.IsSetDeltaSyncTableTTL())
             {
                 context.Writer.WritePropertyName("deltaSyncTableTTL");
-                context.Writer.Write(requestObject.DeltaSyncTableTTL.Value);
+                context.Writer.WriteNumberValue(requestObject.DeltaSyncTableTTL.Value);
             }
 
         }

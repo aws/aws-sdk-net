@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Trigger Object
     /// </summary>  
-    public class TriggerUnmarshaller : IUnmarshaller<Trigger, XmlUnmarshallerContext>, IUnmarshaller<Trigger, JsonUnmarshallerContext>
+    public class TriggerUnmarshaller : IXmlUnmarshaller<Trigger, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Trigger Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TriggerUnmarshaller _instance = new TriggerUnmarshaller();        
 

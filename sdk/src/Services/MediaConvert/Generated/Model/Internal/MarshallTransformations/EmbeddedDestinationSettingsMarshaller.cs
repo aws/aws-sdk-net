@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestination608ChannelNumber())
             {
                 context.Writer.WritePropertyName("destination608ChannelNumber");
-                context.Writer.Write(requestObject.Destination608ChannelNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.Destination608ChannelNumber.Value);
             }
 
             if(requestObject.IsSetDestination708ServiceNumber())
             {
                 context.Writer.WritePropertyName("destination708ServiceNumber");
-                context.Writer.Write(requestObject.Destination708ServiceNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.Destination708ServiceNumber.Value);
             }
 
         }

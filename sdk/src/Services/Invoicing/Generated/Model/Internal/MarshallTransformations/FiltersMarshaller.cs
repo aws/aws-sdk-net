@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Invoicing.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccounts())
             {
                 context.Writer.WritePropertyName("Accounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountsListValue in requestObject.Accounts)
                 {
-                        context.Writer.Write(requestObjectAccountsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInvoiceReceivers())
             {
                 context.Writer.WritePropertyName("InvoiceReceivers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInvoiceReceiversListValue in requestObject.InvoiceReceivers)
                 {
-                        context.Writer.Write(requestObjectInvoiceReceiversListValue);
+                        context.Writer.WriteStringValue(requestObjectInvoiceReceiversListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNames())
             {
                 context.Writer.WritePropertyName("Names");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNamesListValue in requestObject.Names)
                 {
-                        context.Writer.Write(requestObjectNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

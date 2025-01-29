@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MatchObjectAge Object
     /// </summary>  
-    public class MatchObjectAgeUnmarshaller : IUnmarshaller<MatchObjectAge, XmlUnmarshallerContext>, IUnmarshaller<MatchObjectAge, JsonUnmarshallerContext>
+    public class MatchObjectAgeUnmarshaller : IXmlUnmarshaller<MatchObjectAge, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MatchObjectAge Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static MatchObjectAgeUnmarshaller _instance = new MatchObjectAgeUnmarshaller();        
 
         /// <summary>

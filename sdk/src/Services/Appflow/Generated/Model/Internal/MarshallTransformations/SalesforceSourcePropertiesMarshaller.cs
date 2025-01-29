@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataTransferApi())
             {
                 context.Writer.WritePropertyName("dataTransferApi");
-                context.Writer.Write(requestObject.DataTransferApi);
+                context.Writer.WriteStringValue(requestObject.DataTransferApi);
             }
 
             if(requestObject.IsSetEnableDynamicFieldUpdate())
             {
                 context.Writer.WritePropertyName("enableDynamicFieldUpdate");
-                context.Writer.Write(requestObject.EnableDynamicFieldUpdate.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableDynamicFieldUpdate.Value);
             }
 
             if(requestObject.IsSetIncludeDeletedRecords())
             {
                 context.Writer.WritePropertyName("includeDeletedRecords");
-                context.Writer.Write(requestObject.IncludeDeletedRecords.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeDeletedRecords.Value);
             }
 
             if(requestObject.IsSetObject())
             {
                 context.Writer.WritePropertyName("object");
-                context.Writer.Write(requestObject.Object);
+                context.Writer.WriteStringValue(requestObject.Object);
             }
 
         }

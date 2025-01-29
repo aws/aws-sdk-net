@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceMapping Object
     /// </summary>  
-    public class ResourceMappingUnmarshaller : IUnmarshaller<ResourceMapping, XmlUnmarshallerContext>, IUnmarshaller<ResourceMapping, JsonUnmarshallerContext>
+    public class ResourceMappingUnmarshaller : IJsonUnmarshaller<ResourceMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceMapping IUnmarshaller<ResourceMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceMapping Unmarshall(JsonUnmarshallerContext context)
+        public ResourceMapping Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceMapping unmarshalledObject = new ResourceMapping();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("appRegistryAppName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AppRegistryAppName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AppRegistryAppName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("eksSourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EksSourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EksSourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logicalStackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogicalStackName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogicalStackName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mappingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MappingType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MappingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("physicalResourceId", targetDepth))
                 {
                     var unmarshaller = PhysicalResourceIdUnmarshaller.Instance;
-                    unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PhysicalResourceId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("terraformSourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TerraformSourceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TerraformSourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

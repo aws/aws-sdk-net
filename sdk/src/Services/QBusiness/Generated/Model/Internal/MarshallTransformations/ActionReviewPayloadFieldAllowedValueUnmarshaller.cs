@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ActionReviewPayloadFieldAllowedValue Object
     /// </summary>  
-    public class ActionReviewPayloadFieldAllowedValueUnmarshaller : IUnmarshaller<ActionReviewPayloadFieldAllowedValue, XmlUnmarshallerContext>, IUnmarshaller<ActionReviewPayloadFieldAllowedValue, JsonUnmarshallerContext>
+    public class ActionReviewPayloadFieldAllowedValueUnmarshaller : IJsonUnmarshaller<ActionReviewPayloadFieldAllowedValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ActionReviewPayloadFieldAllowedValue IUnmarshaller<ActionReviewPayloadFieldAllowedValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionReviewPayloadFieldAllowedValue Unmarshall(JsonUnmarshallerContext context)
+        public ActionReviewPayloadFieldAllowedValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ActionReviewPayloadFieldAllowedValue unmarshalledObject = new ActionReviewPayloadFieldAllowedValue();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("displayValue", targetDepth))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.DisplayValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DisplayValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("value", targetDepth))
                 {
                     var unmarshaller = Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Value = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

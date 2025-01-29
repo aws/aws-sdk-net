@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for S3DataAccessAssetSourceEntry Object
     /// </summary>  
-    public class S3DataAccessAssetSourceEntryUnmarshaller : IUnmarshaller<S3DataAccessAssetSourceEntry, XmlUnmarshallerContext>, IUnmarshaller<S3DataAccessAssetSourceEntry, JsonUnmarshallerContext>
+    public class S3DataAccessAssetSourceEntryUnmarshaller : IJsonUnmarshaller<S3DataAccessAssetSourceEntry, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        S3DataAccessAssetSourceEntry IUnmarshaller<S3DataAccessAssetSourceEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public S3DataAccessAssetSourceEntry Unmarshall(JsonUnmarshallerContext context)
+        public S3DataAccessAssetSourceEntry Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             S3DataAccessAssetSourceEntry unmarshalledObject = new S3DataAccessAssetSourceEntry();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KeyPrefixes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.KeyPrefixes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.KeyPrefixes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Keys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Keys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Keys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsKeysToGrant", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KmsKeyToGrant, KmsKeyToGrantUnmarshaller>(KmsKeyToGrantUnmarshaller.Instance);
-                    unmarshalledObject.KmsKeysToGrant = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KmsKeyToGrant, KmsKeyToGrantUnmarshaller>(KmsKeyToGrantUnmarshaller.Instance);
+                    unmarshalledObject.KmsKeysToGrant = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

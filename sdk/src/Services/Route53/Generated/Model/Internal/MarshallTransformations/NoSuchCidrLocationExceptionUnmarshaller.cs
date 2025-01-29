@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchCidrLocationException operation
     /// </summary>  
-    public class NoSuchCidrLocationExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchCidrLocationException, XmlUnmarshallerContext>
+    public class NoSuchCidrLocationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchCidrLocationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

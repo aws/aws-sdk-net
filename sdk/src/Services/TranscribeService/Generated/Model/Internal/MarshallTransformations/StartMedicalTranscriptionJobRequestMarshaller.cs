@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -63,131 +66,136 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContentIdentificationType())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContentIdentificationType())
-                    {
-                        context.Writer.WritePropertyName("ContentIdentificationType");
-                        context.Writer.Write(publicRequest.ContentIdentificationType);
-                    }
-
-                    if(publicRequest.IsSetKMSEncryptionContext())
-                    {
-                        context.Writer.WritePropertyName("KMSEncryptionContext");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestKMSEncryptionContextKvp in publicRequest.KMSEncryptionContext)
-                        {
-                            context.Writer.WritePropertyName(publicRequestKMSEncryptionContextKvp.Key);
-                            var publicRequestKMSEncryptionContextValue = publicRequestKMSEncryptionContextKvp.Value;
-
-                                context.Writer.Write(publicRequestKMSEncryptionContextValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLanguageCode())
-                    {
-                        context.Writer.WritePropertyName("LanguageCode");
-                        context.Writer.Write(publicRequest.LanguageCode);
-                    }
-
-                    if(publicRequest.IsSetMedia())
-                    {
-                        context.Writer.WritePropertyName("Media");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MediaMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Media, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMediaFormat())
-                    {
-                        context.Writer.WritePropertyName("MediaFormat");
-                        context.Writer.Write(publicRequest.MediaFormat);
-                    }
-
-                    if(publicRequest.IsSetMediaSampleRateHertz())
-                    {
-                        context.Writer.WritePropertyName("MediaSampleRateHertz");
-                        context.Writer.Write(publicRequest.MediaSampleRateHertz.Value);
-                    }
-
-                    if(publicRequest.IsSetMedicalTranscriptionJobName())
-                    {
-                        context.Writer.WritePropertyName("MedicalTranscriptionJobName");
-                        context.Writer.Write(publicRequest.MedicalTranscriptionJobName);
-                    }
-
-                    if(publicRequest.IsSetOutputBucketName())
-                    {
-                        context.Writer.WritePropertyName("OutputBucketName");
-                        context.Writer.Write(publicRequest.OutputBucketName);
-                    }
-
-                    if(publicRequest.IsSetOutputEncryptionKMSKeyId())
-                    {
-                        context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
-                        context.Writer.Write(publicRequest.OutputEncryptionKMSKeyId);
-                    }
-
-                    if(publicRequest.IsSetOutputKey())
-                    {
-                        context.Writer.WritePropertyName("OutputKey");
-                        context.Writer.Write(publicRequest.OutputKey);
-                    }
-
-                    if(publicRequest.IsSetSettings())
-                    {
-                        context.Writer.WritePropertyName("Settings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MedicalTranscriptionSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Settings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSpecialty())
-                    {
-                        context.Writer.WritePropertyName("Specialty");
-                        context.Writer.Write(publicRequest.Specialty);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("Type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ContentIdentificationType");
+                context.Writer.WriteStringValue(publicRequest.ContentIdentificationType);
             }
+
+            if(publicRequest.IsSetKMSEncryptionContext())
+            {
+                context.Writer.WritePropertyName("KMSEncryptionContext");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestKMSEncryptionContextKvp in publicRequest.KMSEncryptionContext)
+                {
+                    context.Writer.WritePropertyName(publicRequestKMSEncryptionContextKvp.Key);
+                    var publicRequestKMSEncryptionContextValue = publicRequestKMSEncryptionContextKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestKMSEncryptionContextValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLanguageCode())
+            {
+                context.Writer.WritePropertyName("LanguageCode");
+                context.Writer.WriteStringValue(publicRequest.LanguageCode);
+            }
+
+            if(publicRequest.IsSetMedia())
+            {
+                context.Writer.WritePropertyName("Media");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MediaMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Media, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMediaFormat())
+            {
+                context.Writer.WritePropertyName("MediaFormat");
+                context.Writer.WriteStringValue(publicRequest.MediaFormat);
+            }
+
+            if(publicRequest.IsSetMediaSampleRateHertz())
+            {
+                context.Writer.WritePropertyName("MediaSampleRateHertz");
+                context.Writer.WriteNumberValue(publicRequest.MediaSampleRateHertz.Value);
+            }
+
+            if(publicRequest.IsSetMedicalTranscriptionJobName())
+            {
+                context.Writer.WritePropertyName("MedicalTranscriptionJobName");
+                context.Writer.WriteStringValue(publicRequest.MedicalTranscriptionJobName);
+            }
+
+            if(publicRequest.IsSetOutputBucketName())
+            {
+                context.Writer.WritePropertyName("OutputBucketName");
+                context.Writer.WriteStringValue(publicRequest.OutputBucketName);
+            }
+
+            if(publicRequest.IsSetOutputEncryptionKMSKeyId())
+            {
+                context.Writer.WritePropertyName("OutputEncryptionKMSKeyId");
+                context.Writer.WriteStringValue(publicRequest.OutputEncryptionKMSKeyId);
+            }
+
+            if(publicRequest.IsSetOutputKey())
+            {
+                context.Writer.WritePropertyName("OutputKey");
+                context.Writer.WriteStringValue(publicRequest.OutputKey);
+            }
+
+            if(publicRequest.IsSetSettings())
+            {
+                context.Writer.WritePropertyName("Settings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MedicalTranscriptionSettingMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Settings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSpecialty())
+            {
+                context.Writer.WritePropertyName("Specialty");
+                context.Writer.WriteStringValue(publicRequest.Specialty);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

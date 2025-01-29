@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("regionName");
-                context.Writer.Write(requestObject.RegionName);
+                context.Writer.WriteStringValue(requestObject.RegionName);
             }
 
             if(requestObject.IsSetRegionNamePath())
             {
                 context.Writer.WritePropertyName("regionNamePath");
-                context.Writer.Write(requestObject.RegionNamePath);
+                context.Writer.WriteStringValue(requestObject.RegionNamePath);
             }
 
         }

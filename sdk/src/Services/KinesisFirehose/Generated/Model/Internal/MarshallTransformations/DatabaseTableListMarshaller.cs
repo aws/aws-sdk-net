@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExclude())
             {
                 context.Writer.WritePropertyName("Exclude");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeListValue in requestObject.Exclude)
                 {
-                        context.Writer.Write(requestObjectExcludeListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclude())
             {
                 context.Writer.WritePropertyName("Include");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIncludeListValue in requestObject.Include)
                 {
-                        context.Writer.Write(requestObjectIncludeListValue);
+                        context.Writer.WriteStringValue(requestObjectIncludeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

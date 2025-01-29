@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdMarkers())
             {
                 context.Writer.WritePropertyName("adMarkers");
-                context.Writer.Write(requestObject.AdMarkers);
+                context.Writer.WriteStringValue(requestObject.AdMarkers);
             }
 
             if(requestObject.IsSetIncludeIframeOnlyStream())
             {
                 context.Writer.WritePropertyName("includeIframeOnlyStream");
-                context.Writer.Write(requestObject.IncludeIframeOnlyStream.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeIframeOnlyStream.Value);
             }
 
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("manifestName");
-                context.Writer.Write(requestObject.ManifestName);
+                context.Writer.WriteStringValue(requestObject.ManifestName);
             }
 
             if(requestObject.IsSetProgramDateTimeIntervalSeconds())
             {
                 context.Writer.WritePropertyName("programDateTimeIntervalSeconds");
-                context.Writer.Write(requestObject.ProgramDateTimeIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ProgramDateTimeIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetRepeatExtXKey())
             {
                 context.Writer.WritePropertyName("repeatExtXKey");
-                context.Writer.Write(requestObject.RepeatExtXKey.Value);
+                context.Writer.WriteBooleanValue(requestObject.RepeatExtXKey.Value);
             }
 
             if(requestObject.IsSetStreamSelection())
             {
                 context.Writer.WritePropertyName("streamSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StreamSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StreamSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

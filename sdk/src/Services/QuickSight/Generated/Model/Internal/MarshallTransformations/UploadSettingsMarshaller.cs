@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainsHeader())
             {
                 context.Writer.WritePropertyName("ContainsHeader");
-                context.Writer.Write(requestObject.ContainsHeader.Value);
+                context.Writer.WriteBooleanValue(requestObject.ContainsHeader.Value);
             }
 
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");
-                context.Writer.Write(requestObject.Delimiter);
+                context.Writer.WriteStringValue(requestObject.Delimiter);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetStartFromRow())
             {
                 context.Writer.WritePropertyName("StartFromRow");
-                context.Writer.Write(requestObject.StartFromRow.Value);
+                context.Writer.WriteNumberValue(requestObject.StartFromRow.Value);
             }
 
             if(requestObject.IsSetTextQualifier())
             {
                 context.Writer.WritePropertyName("TextQualifier");
-                context.Writer.Write(requestObject.TextQualifier);
+                context.Writer.WriteStringValue(requestObject.TextQualifier);
             }
 
         }

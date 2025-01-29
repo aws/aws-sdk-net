@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -61,96 +64,101 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/bridges";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEgressGatewayBridge())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEgressGatewayBridge())
-                    {
-                        context.Writer.WritePropertyName("egressGatewayBridge");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("egressGatewayBridge");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AddEgressGatewayBridgeRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EgressGatewayBridge, context);
+                var marshaller = AddEgressGatewayBridgeRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EgressGatewayBridge, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIngressGatewayBridge())
-                    {
-                        context.Writer.WritePropertyName("ingressGatewayBridge");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AddIngressGatewayBridgeRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.IngressGatewayBridge, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetOutputs())
-                    {
-                        context.Writer.WritePropertyName("outputs");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AddBridgeOutputRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOutputsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPlacementArn())
-                    {
-                        context.Writer.WritePropertyName("placementArn");
-                        context.Writer.Write(publicRequest.PlacementArn);
-                    }
-
-                    if(publicRequest.IsSetSourceFailoverConfig())
-                    {
-                        context.Writer.WritePropertyName("sourceFailoverConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FailoverConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSources())
-                    {
-                        context.Writer.WritePropertyName("sources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AddBridgeSourceRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetIngressGatewayBridge())
+            {
+                context.Writer.WritePropertyName("ingressGatewayBridge");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AddIngressGatewayBridgeRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.IngressGatewayBridge, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetOutputs())
+            {
+                context.Writer.WritePropertyName("outputs");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOutputsListValue in publicRequest.Outputs)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AddBridgeOutputRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOutputsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPlacementArn())
+            {
+                context.Writer.WritePropertyName("placementArn");
+                context.Writer.WriteStringValue(publicRequest.PlacementArn);
+            }
+
+            if(publicRequest.IsSetSourceFailoverConfig())
+            {
+                context.Writer.WritePropertyName("sourceFailoverConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FailoverConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSources())
+            {
+                context.Writer.WritePropertyName("sources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AddBridgeSourceRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

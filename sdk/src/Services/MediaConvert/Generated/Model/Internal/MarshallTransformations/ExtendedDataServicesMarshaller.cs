@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyProtectionAction())
             {
                 context.Writer.WritePropertyName("copyProtectionAction");
-                context.Writer.Write(requestObject.CopyProtectionAction);
+                context.Writer.WriteStringValue(requestObject.CopyProtectionAction);
             }
 
             if(requestObject.IsSetVchipAction())
             {
                 context.Writer.WritePropertyName("vchipAction");
-                context.Writer.Write(requestObject.VchipAction);
+                context.Writer.WriteStringValue(requestObject.VchipAction);
             }
 
         }

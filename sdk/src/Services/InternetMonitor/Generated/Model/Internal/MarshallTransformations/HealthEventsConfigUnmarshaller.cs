@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for HealthEventsConfig Object
     /// </summary>  
-    public class HealthEventsConfigUnmarshaller : IUnmarshaller<HealthEventsConfig, XmlUnmarshallerContext>, IUnmarshaller<HealthEventsConfig, JsonUnmarshallerContext>
+    public class HealthEventsConfigUnmarshaller : IJsonUnmarshaller<HealthEventsConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        HealthEventsConfig IUnmarshaller<HealthEventsConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public HealthEventsConfig Unmarshall(JsonUnmarshallerContext context)
+        public HealthEventsConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             HealthEventsConfig unmarshalledObject = new HealthEventsConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AvailabilityLocalHealthEventsConfig", targetDepth))
                 {
                     var unmarshaller = LocalHealthEventsConfigUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityLocalHealthEventsConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityLocalHealthEventsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailabilityScoreThreshold", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityScoreThreshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityScoreThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PerformanceLocalHealthEventsConfig", targetDepth))
                 {
                     var unmarshaller = LocalHealthEventsConfigUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceLocalHealthEventsConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PerformanceLocalHealthEventsConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PerformanceScoreThreshold", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.PerformanceScoreThreshold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PerformanceScoreThreshold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

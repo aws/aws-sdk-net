@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlankCellFormat())
             {
                 context.Writer.WritePropertyName("BlankCellFormat");
-                context.Writer.Write(requestObject.BlankCellFormat);
+                context.Writer.WriteStringValue(requestObject.BlankCellFormat);
             }
 
             if(requestObject.IsSetCurrencySymbol())
             {
                 context.Writer.WritePropertyName("CurrencySymbol");
-                context.Writer.Write(requestObject.CurrencySymbol);
+                context.Writer.WriteStringValue(requestObject.CurrencySymbol);
             }
 
             if(requestObject.IsSetDateFormat())
             {
                 context.Writer.WritePropertyName("DateFormat");
-                context.Writer.Write(requestObject.DateFormat);
+                context.Writer.WriteStringValue(requestObject.DateFormat);
             }
 
             if(requestObject.IsSetDecimalSeparator())
             {
                 context.Writer.WritePropertyName("DecimalSeparator");
-                context.Writer.Write(requestObject.DecimalSeparator);
+                context.Writer.WriteStringValue(requestObject.DecimalSeparator);
             }
 
             if(requestObject.IsSetFractionDigits())
             {
                 context.Writer.WritePropertyName("FractionDigits");
-                context.Writer.Write(requestObject.FractionDigits.Value);
+                context.Writer.WriteNumberValue(requestObject.FractionDigits.Value);
             }
 
             if(requestObject.IsSetGroupingSeparator())
             {
                 context.Writer.WritePropertyName("GroupingSeparator");
-                context.Writer.Write(requestObject.GroupingSeparator);
+                context.Writer.WriteStringValue(requestObject.GroupingSeparator);
             }
 
             if(requestObject.IsSetNegativeFormat())
             {
                 context.Writer.WritePropertyName("NegativeFormat");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NegativeFormatMarshaller.Instance;
                 marshaller.Marshall(requestObject.NegativeFormat, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetSuffix())
             {
                 context.Writer.WritePropertyName("Suffix");
-                context.Writer.Write(requestObject.Suffix);
+                context.Writer.WriteStringValue(requestObject.Suffix);
             }
 
             if(requestObject.IsSetUnitScaler())
             {
                 context.Writer.WritePropertyName("UnitScaler");
-                context.Writer.Write(requestObject.UnitScaler);
+                context.Writer.WriteStringValue(requestObject.UnitScaler);
             }
 
             if(requestObject.IsSetUseBlankCellFormat())
             {
                 context.Writer.WritePropertyName("UseBlankCellFormat");
-                context.Writer.Write(requestObject.UseBlankCellFormat.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseBlankCellFormat.Value);
             }
 
             if(requestObject.IsSetUseGrouping())
             {
                 context.Writer.WritePropertyName("UseGrouping");
-                context.Writer.Write(requestObject.UseGrouping.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseGrouping.Value);
             }
 
         }

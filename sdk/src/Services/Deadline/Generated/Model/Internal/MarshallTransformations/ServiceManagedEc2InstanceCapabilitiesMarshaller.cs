@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Deadline.Model.Internal.MarshallTransformations
 {
@@ -51,111 +49,111 @@ namespace Amazon.Deadline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceleratorCapabilities())
             {
                 context.Writer.WritePropertyName("acceleratorCapabilities");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AcceleratorCapabilitiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.AcceleratorCapabilities, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAllowedInstanceTypes())
             {
                 context.Writer.WritePropertyName("allowedInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedInstanceTypesListValue in requestObject.AllowedInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectAllowedInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCpuArchitectureType())
             {
                 context.Writer.WritePropertyName("cpuArchitectureType");
-                context.Writer.Write(requestObject.CpuArchitectureType);
+                context.Writer.WriteStringValue(requestObject.CpuArchitectureType);
             }
 
             if(requestObject.IsSetCustomAmounts())
             {
                 context.Writer.WritePropertyName("customAmounts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomAmountsListValue in requestObject.CustomAmounts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FleetAmountCapabilityMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomAmountsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomAttributes())
             {
                 context.Writer.WritePropertyName("customAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCustomAttributesListValue in requestObject.CustomAttributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FleetAttributeCapabilityMarshaller.Instance;
                     marshaller.Marshall(requestObjectCustomAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludedInstanceTypes())
             {
                 context.Writer.WritePropertyName("excludedInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludedInstanceTypesListValue in requestObject.ExcludedInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectExcludedInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludedInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMemoryMiB())
             {
                 context.Writer.WritePropertyName("memoryMiB");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MemoryMiBRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.MemoryMiB, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOsFamily())
             {
                 context.Writer.WritePropertyName("osFamily");
-                context.Writer.Write(requestObject.OsFamily);
+                context.Writer.WriteStringValue(requestObject.OsFamily);
             }
 
             if(requestObject.IsSetRootEbsVolume())
             {
                 context.Writer.WritePropertyName("rootEbsVolume");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ec2EbsVolumeMarshaller.Instance;
                 marshaller.Marshall(requestObject.RootEbsVolume, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVCpuCount())
             {
                 context.Writer.WritePropertyName("vCpuCount");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VCpuCountRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.VCpuCount, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

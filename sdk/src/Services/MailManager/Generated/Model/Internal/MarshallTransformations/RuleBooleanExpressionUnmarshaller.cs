@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuleBooleanExpression Object
     /// </summary>  
-    public class RuleBooleanExpressionUnmarshaller : IUnmarshaller<RuleBooleanExpression, XmlUnmarshallerContext>, IUnmarshaller<RuleBooleanExpression, JsonUnmarshallerContext>
+    public class RuleBooleanExpressionUnmarshaller : IJsonUnmarshaller<RuleBooleanExpression, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RuleBooleanExpression IUnmarshaller<RuleBooleanExpression, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleBooleanExpression Unmarshall(JsonUnmarshallerContext context)
+        public RuleBooleanExpression Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RuleBooleanExpression unmarshalledObject = new RuleBooleanExpression();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Evaluate", targetDepth))
                 {
                     var unmarshaller = RuleBooleanToEvaluateUnmarshaller.Instance;
-                    unmarshalledObject.Evaluate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Evaluate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Operator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Operator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Operator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

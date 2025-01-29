@@ -29,209 +29,199 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConnectorConfiguration Object
     /// </summary>  
-    public class ConnectorConfigurationUnmarshaller : IUnmarshaller<ConnectorConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ConnectorConfiguration, JsonUnmarshallerContext>
+    public class ConnectorConfigurationUnmarshaller : IJsonUnmarshaller<ConnectorConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConnectorConfiguration IUnmarshaller<ConnectorConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConnectorConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ConnectorConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConnectorConfiguration unmarshalledObject = new ConnectorConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("authenticationConfig", targetDepth))
                 {
                     var unmarshaller = AuthenticationConfigUnmarshaller.Instance;
-                    unmarshalledObject.AuthenticationConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthenticationConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("canUseAsDestination", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CanUseAsDestination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CanUseAsDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("canUseAsSource", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CanUseAsSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CanUseAsSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorLabel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorMetadata", targetDepth))
                 {
                     var unmarshaller = ConnectorMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorModes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ConnectorModes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ConnectorModes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorOwner", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorOwner = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorOwner = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorProvisioningConfig", targetDepth))
                 {
                     var unmarshaller = ConnectorProvisioningConfigUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorProvisioningConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorProvisioningConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorProvisioningType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorProvisioningType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorProvisioningType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorRuntimeSettings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ConnectorRuntimeSetting, ConnectorRuntimeSettingUnmarshaller>(ConnectorRuntimeSettingUnmarshaller.Instance);
-                    unmarshalledObject.ConnectorRuntimeSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ConnectorRuntimeSetting, ConnectorRuntimeSettingUnmarshaller>(ConnectorRuntimeSettingUnmarshaller.Instance);
+                    unmarshalledObject.ConnectorRuntimeSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("connectorVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConnectorVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConnectorVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isPrivateLinkEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsPrivateLinkEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsPrivateLinkEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("isPrivateLinkEndpointUrlRequired", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IsPrivateLinkEndpointUrlRequired = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IsPrivateLinkEndpointUrlRequired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logoURL", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogoURL = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogoURL = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("registeredAt", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RegisteredAt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegisteredAt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("registeredBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RegisteredBy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegisteredBy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedApiVersions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedApiVersions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedApiVersions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedDataTransferApis", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataTransferApi, DataTransferApiUnmarshaller>(DataTransferApiUnmarshaller.Instance);
-                    unmarshalledObject.SupportedDataTransferApis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DataTransferApi, DataTransferApiUnmarshaller>(DataTransferApiUnmarshaller.Instance);
+                    unmarshalledObject.SupportedDataTransferApis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedDataTransferTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedDataTransferTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedDataTransferTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedDestinationConnectors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedDestinationConnectors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedDestinationConnectors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedOperators", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedOperators = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedOperators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedSchedulingFrequencies", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedSchedulingFrequencies = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedSchedulingFrequencies = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedTriggerTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedTriggerTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedTriggerTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("supportedWriteOperations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupportedWriteOperations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedWriteOperations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

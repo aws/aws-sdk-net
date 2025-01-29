@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioRenditionSets())
             {
                 context.Writer.WritePropertyName("audioRenditionSets");
-                context.Writer.Write(requestObject.AudioRenditionSets);
+                context.Writer.WriteStringValue(requestObject.AudioRenditionSets);
             }
 
             if(requestObject.IsSetNielsenId3Behavior())
             {
                 context.Writer.WritePropertyName("nielsenId3Behavior");
-                context.Writer.Write(requestObject.NielsenId3Behavior);
+                context.Writer.WriteStringValue(requestObject.NielsenId3Behavior);
             }
 
             if(requestObject.IsSetTimedMetadataBehavior())
             {
                 context.Writer.WritePropertyName("timedMetadataBehavior");
-                context.Writer.Write(requestObject.TimedMetadataBehavior);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataBehavior);
             }
 
         }

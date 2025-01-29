@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIndividualRegistrationNumber())
             {
                 context.Writer.WritePropertyName("individualRegistrationNumber");
-                context.Writer.Write(requestObject.IndividualRegistrationNumber);
+                context.Writer.WriteStringValue(requestObject.IndividualRegistrationNumber);
             }
 
             if(requestObject.IsSetIsGroupVatEnabled())
             {
                 context.Writer.WritePropertyName("isGroupVatEnabled");
-                context.Writer.Write(requestObject.IsGroupVatEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsGroupVatEnabled.Value);
             }
 
         }

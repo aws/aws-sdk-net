@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for NodeInterfaceMapping Object
     /// </summary>  
-    public class NodeInterfaceMappingUnmarshaller : IUnmarshaller<NodeInterfaceMapping, XmlUnmarshallerContext>, IUnmarshaller<NodeInterfaceMapping, JsonUnmarshallerContext>
+    public class NodeInterfaceMappingUnmarshaller : IJsonUnmarshaller<NodeInterfaceMapping, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        NodeInterfaceMapping IUnmarshaller<NodeInterfaceMapping, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public NodeInterfaceMapping Unmarshall(JsonUnmarshallerContext context)
+        public NodeInterfaceMapping Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             NodeInterfaceMapping unmarshalledObject = new NodeInterfaceMapping();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("logicalInterfaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogicalInterfaceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogicalInterfaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("networkInterfaceMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NetworkInterfaceMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NetworkInterfaceMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("physicalInterfaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhysicalInterfaceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PhysicalInterfaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

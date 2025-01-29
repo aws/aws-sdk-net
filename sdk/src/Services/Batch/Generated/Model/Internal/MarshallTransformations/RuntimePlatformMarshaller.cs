@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCpuArchitecture())
             {
                 context.Writer.WritePropertyName("cpuArchitecture");
-                context.Writer.Write(requestObject.CpuArchitecture);
+                context.Writer.WriteStringValue(requestObject.CpuArchitecture);
             }
 
             if(requestObject.IsSetOperatingSystemFamily())
             {
                 context.Writer.WritePropertyName("operatingSystemFamily");
-                context.Writer.Write(requestObject.OperatingSystemFamily);
+                context.Writer.WriteStringValue(requestObject.OperatingSystemFamily);
             }
 
         }

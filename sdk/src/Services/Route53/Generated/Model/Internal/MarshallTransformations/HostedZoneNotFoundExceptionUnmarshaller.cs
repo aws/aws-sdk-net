@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostedZoneNotFoundException operation
     /// </summary>  
-    public class HostedZoneNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<HostedZoneNotFoundException, XmlUnmarshallerContext>
+    public class HostedZoneNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HostedZoneNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

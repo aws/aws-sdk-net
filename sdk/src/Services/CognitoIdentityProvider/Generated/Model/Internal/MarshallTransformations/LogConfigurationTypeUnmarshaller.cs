@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LogConfigurationType Object
     /// </summary>  
-    public class LogConfigurationTypeUnmarshaller : IUnmarshaller<LogConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<LogConfigurationType, JsonUnmarshallerContext>
+    public class LogConfigurationTypeUnmarshaller : IJsonUnmarshaller<LogConfigurationType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LogConfigurationType IUnmarshaller<LogConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LogConfigurationType Unmarshall(JsonUnmarshallerContext context)
+        public LogConfigurationType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LogConfigurationType unmarshalledObject = new LogConfigurationType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CloudWatchLogsConfiguration", targetDepth))
                 {
                     var unmarshaller = CloudWatchLogsConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchLogsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudWatchLogsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EventSource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EventSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirehoseConfiguration", targetDepth))
                 {
                     var unmarshaller = FirehoseConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.FirehoseConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirehoseConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3Configuration", targetDepth))
                 {
                     var unmarshaller = S3ConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

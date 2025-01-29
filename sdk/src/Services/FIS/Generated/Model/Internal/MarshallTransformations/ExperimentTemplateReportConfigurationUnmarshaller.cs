@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FIS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExperimentTemplateReportConfiguration Object
     /// </summary>  
-    public class ExperimentTemplateReportConfigurationUnmarshaller : IUnmarshaller<ExperimentTemplateReportConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ExperimentTemplateReportConfiguration, JsonUnmarshallerContext>
+    public class ExperimentTemplateReportConfigurationUnmarshaller : IJsonUnmarshaller<ExperimentTemplateReportConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExperimentTemplateReportConfiguration IUnmarshaller<ExperimentTemplateReportConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExperimentTemplateReportConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ExperimentTemplateReportConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExperimentTemplateReportConfiguration unmarshalledObject = new ExperimentTemplateReportConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("dataSources", targetDepth))
                 {
                     var unmarshaller = ExperimentTemplateReportConfigurationDataSourcesUnmarshaller.Instance;
-                    unmarshalledObject.DataSources = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputs", targetDepth))
                 {
                     var unmarshaller = ExperimentTemplateReportConfigurationOutputsUnmarshaller.Instance;
-                    unmarshalledObject.Outputs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Outputs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("postExperimentDuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PostExperimentDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostExperimentDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("preExperimentDuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PreExperimentDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreExperimentDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

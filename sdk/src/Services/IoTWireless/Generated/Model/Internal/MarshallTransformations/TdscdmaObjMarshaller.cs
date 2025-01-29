@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,70 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLac())
             {
                 context.Writer.WritePropertyName("Lac");
-                context.Writer.Write(requestObject.Lac.Value);
+                context.Writer.WriteNumberValue(requestObject.Lac.Value);
             }
 
             if(requestObject.IsSetMcc())
             {
                 context.Writer.WritePropertyName("Mcc");
-                context.Writer.Write(requestObject.Mcc.Value);
+                context.Writer.WriteNumberValue(requestObject.Mcc.Value);
             }
 
             if(requestObject.IsSetMnc())
             {
                 context.Writer.WritePropertyName("Mnc");
-                context.Writer.Write(requestObject.Mnc.Value);
+                context.Writer.WriteNumberValue(requestObject.Mnc.Value);
             }
 
             if(requestObject.IsSetPathLoss())
             {
                 context.Writer.WritePropertyName("PathLoss");
-                context.Writer.Write(requestObject.PathLoss.Value);
+                context.Writer.WriteNumberValue(requestObject.PathLoss.Value);
             }
 
             if(requestObject.IsSetRscp())
             {
                 context.Writer.WritePropertyName("Rscp");
-                context.Writer.Write(requestObject.Rscp.Value);
+                context.Writer.WriteNumberValue(requestObject.Rscp.Value);
             }
 
             if(requestObject.IsSetTdscdmaLocalId())
             {
                 context.Writer.WritePropertyName("TdscdmaLocalId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TdscdmaLocalIdMarshaller.Instance;
                 marshaller.Marshall(requestObject.TdscdmaLocalId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTdscdmaNmr())
             {
                 context.Writer.WritePropertyName("TdscdmaNmr");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTdscdmaNmrListValue in requestObject.TdscdmaNmr)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TdscdmaNmrObjMarshaller.Instance;
                     marshaller.Marshall(requestObjectTdscdmaNmrListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTdscdmaTimingAdvance())
             {
                 context.Writer.WritePropertyName("TdscdmaTimingAdvance");
-                context.Writer.Write(requestObject.TdscdmaTimingAdvance.Value);
+                context.Writer.WriteNumberValue(requestObject.TdscdmaTimingAdvance.Value);
             }
 
             if(requestObject.IsSetUtranCid())
             {
                 context.Writer.WritePropertyName("UtranCid");
-                context.Writer.Write(requestObject.UtranCid.Value);
+                context.Writer.WriteNumberValue(requestObject.UtranCid.Value);
             }
 
         }

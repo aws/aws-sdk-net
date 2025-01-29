@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAntennaDownlinkConfig())
             {
                 context.Writer.WritePropertyName("antennaDownlinkConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AntennaDownlinkConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AntennaDownlinkConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAntennaDownlinkDemodDecodeConfig())
             {
                 context.Writer.WritePropertyName("antennaDownlinkDemodDecodeConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AntennaDownlinkDemodDecodeConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AntennaDownlinkDemodDecodeConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAntennaUplinkConfig())
             {
                 context.Writer.WritePropertyName("antennaUplinkConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AntennaUplinkConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AntennaUplinkConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataflowEndpointConfig())
             {
                 context.Writer.WritePropertyName("dataflowEndpointConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataflowEndpointConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataflowEndpointConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3RecordingConfig())
             {
                 context.Writer.WritePropertyName("s3RecordingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3RecordingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3RecordingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrackingConfig())
             {
                 context.Writer.WritePropertyName("trackingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrackingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrackingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUplinkEchoConfig())
             {
                 context.Writer.WritePropertyName("uplinkEchoConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UplinkEchoConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.UplinkEchoConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

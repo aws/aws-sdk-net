@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGatewayList())
             {
                 context.Writer.WritePropertyName("GatewayList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGatewayListListValue in requestObject.GatewayList)
                 {
-                        context.Writer.Write(requestObjectGatewayListListValue);
+                        context.Writer.WriteStringValue(requestObjectGatewayListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTransmissionInterval())
             {
                 context.Writer.WritePropertyName("TransmissionInterval");
-                context.Writer.Write(requestObject.TransmissionInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.TransmissionInterval.Value);
             }
 
         }

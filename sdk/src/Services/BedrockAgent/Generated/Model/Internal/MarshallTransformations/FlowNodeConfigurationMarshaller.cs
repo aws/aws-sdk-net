@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,133 +49,133 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgent())
             {
                 context.Writer.WritePropertyName("agent");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AgentFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Agent, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCollector())
             {
                 context.Writer.WritePropertyName("collector");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CollectorFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Collector, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCondition())
             {
                 context.Writer.WritePropertyName("condition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Condition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Input, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIterator())
             {
                 context.Writer.WritePropertyName("iterator");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IteratorFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Iterator, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKnowledgeBase())
             {
                 context.Writer.WritePropertyName("knowledgeBase");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KnowledgeBaseFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.KnowledgeBase, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLambdaFunction())
             {
                 context.Writer.WritePropertyName("lambdaFunction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LambdaFunctionFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LambdaFunction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLex())
             {
                 context.Writer.WritePropertyName("lex");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LexFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lex, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutput())
             {
                 context.Writer.WritePropertyName("output");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Output, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrompt())
             {
                 context.Writer.WritePropertyName("prompt");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Prompt, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRetrieval())
             {
                 context.Writer.WritePropertyName("retrieval");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RetrievalFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Retrieval, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStorage())
             {
                 context.Writer.WritePropertyName("storage");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StorageFlowNodeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Storage, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

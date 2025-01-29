@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpirationCriterion())
             {
                 context.Writer.WritePropertyName("ExpirationCriterion");
-                context.Writer.Write(requestObject.ExpirationCriterion);
+                context.Writer.WriteStringValue(requestObject.ExpirationCriterion);
             }
 
             if(requestObject.IsSetExpirationDays())
             {
                 context.Writer.WritePropertyName("ExpirationDays");
-                context.Writer.Write(requestObject.ExpirationDays.Value);
+                context.Writer.WriteNumberValue(requestObject.ExpirationDays.Value);
             }
 
         }

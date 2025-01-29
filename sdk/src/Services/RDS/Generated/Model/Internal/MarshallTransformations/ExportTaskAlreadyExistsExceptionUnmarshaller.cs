@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ExportTaskAlreadyExistsException operation
     /// </summary>  
-    public class ExportTaskAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ExportTaskAlreadyExistsException, XmlUnmarshallerContext>
+    public class ExportTaskAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ExportTaskAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

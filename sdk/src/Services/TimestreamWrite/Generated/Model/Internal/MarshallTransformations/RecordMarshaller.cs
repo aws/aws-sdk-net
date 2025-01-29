@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
@@ -51,69 +49,69 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionsListValue in requestObject.Dimensions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DimensionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMeasureName())
             {
                 context.Writer.WritePropertyName("MeasureName");
-                context.Writer.Write(requestObject.MeasureName);
+                context.Writer.WriteStringValue(requestObject.MeasureName);
             }
 
             if(requestObject.IsSetMeasureValue())
             {
                 context.Writer.WritePropertyName("MeasureValue");
-                context.Writer.Write(requestObject.MeasureValue);
+                context.Writer.WriteStringValue(requestObject.MeasureValue);
             }
 
             if(requestObject.IsSetMeasureValues())
             {
                 context.Writer.WritePropertyName("MeasureValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMeasureValuesListValue in requestObject.MeasureValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MeasureValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectMeasureValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMeasureValueType())
             {
                 context.Writer.WritePropertyName("MeasureValueType");
-                context.Writer.Write(requestObject.MeasureValueType);
+                context.Writer.WriteStringValue(requestObject.MeasureValueType);
             }
 
             if(requestObject.IsSetTime())
             {
                 context.Writer.WritePropertyName("Time");
-                context.Writer.Write(requestObject.Time);
+                context.Writer.WriteStringValue(requestObject.Time);
             }
 
             if(requestObject.IsSetTimeUnit())
             {
                 context.Writer.WritePropertyName("TimeUnit");
-                context.Writer.Write(requestObject.TimeUnit);
+                context.Writer.WriteStringValue(requestObject.TimeUnit);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version.Value);
+                context.Writer.WriteNumberValue(requestObject.Version.Value);
             }
 
         }

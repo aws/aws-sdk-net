@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotCopyGrantAlreadyExistsException operation
     /// </summary>  
-    public class SnapshotCopyGrantAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotCopyGrantAlreadyExistsException, XmlUnmarshallerContext>
+    public class SnapshotCopyGrantAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotCopyGrantAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

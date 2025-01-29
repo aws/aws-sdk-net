@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnStatisticsConfigurations())
             {
                 context.Writer.WritePropertyName("ColumnStatisticsConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnStatisticsConfigurationsListValue in requestObject.ColumnStatisticsConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnStatisticsConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectColumnStatisticsConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDatasetStatisticsConfiguration())
             {
                 context.Writer.WritePropertyName("DatasetStatisticsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StatisticsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatasetStatisticsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEntityDetectorConfiguration())
             {
                 context.Writer.WritePropertyName("EntityDetectorConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EntityDetectorConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EntityDetectorConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProfileColumns())
             {
                 context.Writer.WritePropertyName("ProfileColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProfileColumnsListValue in requestObject.ProfileColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnSelectorMarshaller.Instance;
                     marshaller.Marshall(requestObjectProfileColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

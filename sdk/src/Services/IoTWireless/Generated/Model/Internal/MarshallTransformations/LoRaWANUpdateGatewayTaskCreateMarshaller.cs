@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCurrentVersion())
             {
                 context.Writer.WritePropertyName("CurrentVersion");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LoRaWANGatewayVersionMarshaller.Instance;
                 marshaller.Marshall(requestObject.CurrentVersion, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSigKeyCrc())
             {
                 context.Writer.WritePropertyName("SigKeyCrc");
-                context.Writer.Write(requestObject.SigKeyCrc.Value);
+                context.Writer.WriteNumberValue(requestObject.SigKeyCrc.Value);
             }
 
             if(requestObject.IsSetUpdateSignature())
             {
                 context.Writer.WritePropertyName("UpdateSignature");
-                context.Writer.Write(requestObject.UpdateSignature);
+                context.Writer.WriteStringValue(requestObject.UpdateSignature);
             }
 
             if(requestObject.IsSetUpdateVersion())
             {
                 context.Writer.WritePropertyName("UpdateVersion");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LoRaWANGatewayVersionMarshaller.Instance;
                 marshaller.Marshall(requestObject.UpdateVersion, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

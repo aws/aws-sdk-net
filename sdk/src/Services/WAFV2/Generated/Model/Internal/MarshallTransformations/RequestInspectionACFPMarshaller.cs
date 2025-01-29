@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,72 +49,72 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddressFields())
             {
                 context.Writer.WritePropertyName("AddressFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAddressFieldsListValue in requestObject.AddressFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AddressFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectAddressFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEmailField())
             {
                 context.Writer.WritePropertyName("EmailField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmailFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmailField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPasswordField())
             {
                 context.Writer.WritePropertyName("PasswordField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PasswordFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.PasswordField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPayloadType())
             {
                 context.Writer.WritePropertyName("PayloadType");
-                context.Writer.Write(requestObject.PayloadType);
+                context.Writer.WriteStringValue(requestObject.PayloadType);
             }
 
             if(requestObject.IsSetPhoneNumberFields())
             {
                 context.Writer.WritePropertyName("PhoneNumberFields");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPhoneNumberFieldsListValue in requestObject.PhoneNumberFields)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PhoneNumberFieldMarshaller.Instance;
                     marshaller.Marshall(requestObjectPhoneNumberFieldsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUsernameField())
             {
                 context.Writer.WritePropertyName("UsernameField");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UsernameFieldMarshaller.Instance;
                 marshaller.Marshall(requestObject.UsernameField, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

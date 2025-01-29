@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IntentConfirmationSetting Object
     /// </summary>  
-    public class IntentConfirmationSettingUnmarshaller : IUnmarshaller<IntentConfirmationSetting, XmlUnmarshallerContext>, IUnmarshaller<IntentConfirmationSetting, JsonUnmarshallerContext>
+    public class IntentConfirmationSettingUnmarshaller : IJsonUnmarshaller<IntentConfirmationSetting, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IntentConfirmationSetting IUnmarshaller<IntentConfirmationSetting, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IntentConfirmationSetting Unmarshall(JsonUnmarshallerContext context)
+        public IntentConfirmationSetting Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IntentConfirmationSetting unmarshalledObject = new IntentConfirmationSetting();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("active", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.Active = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Active = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("codeHook", targetDepth))
                 {
                     var unmarshaller = DialogCodeHookInvocationSettingUnmarshaller.Instance;
-                    unmarshalledObject.CodeHook = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("confirmationConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.ConfirmationConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfirmationConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("confirmationNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.ConfirmationNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfirmationNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("confirmationResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.ConfirmationResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfirmationResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("declinationConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.DeclinationConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeclinationConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("declinationNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.DeclinationNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeclinationNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("declinationResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.DeclinationResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeclinationResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("elicitationCodeHook", targetDepth))
                 {
                     var unmarshaller = ElicitationCodeHookInvocationSettingUnmarshaller.Instance;
-                    unmarshalledObject.ElicitationCodeHook = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElicitationCodeHook = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureConditional", targetDepth))
                 {
                     var unmarshaller = ConditionalSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureConditional = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureNextStep", targetDepth))
                 {
                     var unmarshaller = DialogStateUnmarshaller.Instance;
-                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureNextStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureResponse", targetDepth))
                 {
                     var unmarshaller = ResponseSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureResponse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("promptSpecification", targetDepth))
                 {
                     var unmarshaller = PromptSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.PromptSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PromptSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

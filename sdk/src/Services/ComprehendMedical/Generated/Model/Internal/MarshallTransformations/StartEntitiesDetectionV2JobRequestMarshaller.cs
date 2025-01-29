@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
@@ -63,76 +66,81 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientRequestToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDataAccessRoleArn())
-                    {
-                        context.Writer.WritePropertyName("DataAccessRoleArn");
-                        context.Writer.Write(publicRequest.DataAccessRoleArn);
-                    }
-
-                    if(publicRequest.IsSetInputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("InputDataConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = InputDataConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.InputDataConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetJobName())
-                    {
-                        context.Writer.WritePropertyName("JobName");
-                        context.Writer.Write(publicRequest.JobName);
-                    }
-
-                    if(publicRequest.IsSetKMSKey())
-                    {
-                        context.Writer.WritePropertyName("KMSKey");
-                        context.Writer.Write(publicRequest.KMSKey);
-                    }
-
-                    if(publicRequest.IsSetLanguageCode())
-                    {
-                        context.Writer.WritePropertyName("LanguageCode");
-                        context.Writer.Write(publicRequest.LanguageCode);
-                    }
-
-                    if(publicRequest.IsSetOutputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputDataConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OutputDataConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
             }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDataAccessRoleArn())
+            {
+                context.Writer.WritePropertyName("DataAccessRoleArn");
+                context.Writer.WriteStringValue(publicRequest.DataAccessRoleArn);
+            }
+
+            if(publicRequest.IsSetInputDataConfig())
+            {
+                context.Writer.WritePropertyName("InputDataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = InputDataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.InputDataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetJobName())
+            {
+                context.Writer.WritePropertyName("JobName");
+                context.Writer.WriteStringValue(publicRequest.JobName);
+            }
+
+            if(publicRequest.IsSetKMSKey())
+            {
+                context.Writer.WritePropertyName("KMSKey");
+                context.Writer.WriteStringValue(publicRequest.KMSKey);
+            }
+
+            if(publicRequest.IsSetLanguageCode())
+            {
+                context.Writer.WritePropertyName("LanguageCode");
+                context.Writer.WriteStringValue(publicRequest.LanguageCode);
+            }
+
+            if(publicRequest.IsSetOutputDataConfig())
+            {
+                context.Writer.WritePropertyName("OutputDataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OutputDataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConnectionNotification Object
     /// </summary>  
-    public class ConnectionNotificationUnmarshaller : IUnmarshaller<ConnectionNotification, XmlUnmarshallerContext>, IUnmarshaller<ConnectionNotification, JsonUnmarshallerContext>
+    public class ConnectionNotificationUnmarshaller : IXmlUnmarshaller<ConnectionNotification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -117,17 +117,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConnectionNotification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ConnectionNotificationUnmarshaller _instance = new ConnectionNotificationUnmarshaller();        
 

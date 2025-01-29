@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PlacementGroupInfo Object
     /// </summary>  
-    public class PlacementGroupInfoUnmarshaller : IUnmarshaller<PlacementGroupInfo, XmlUnmarshallerContext>, IUnmarshaller<PlacementGroupInfo, JsonUnmarshallerContext>
+    public class PlacementGroupInfoUnmarshaller : IXmlUnmarshaller<PlacementGroupInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PlacementGroupInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PlacementGroupInfoUnmarshaller _instance = new PlacementGroupInfoUnmarshaller();        
 

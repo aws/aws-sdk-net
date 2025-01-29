@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActive())
             {
                 context.Writer.WritePropertyName("active");
-                context.Writer.Write(requestObject.Active.Value);
+                context.Writer.WriteBooleanValue(requestObject.Active.Value);
             }
 
             if(requestObject.IsSetClosingResponse())
             {
                 context.Writer.WritePropertyName("closingResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClosingResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConditional())
             {
                 context.Writer.WritePropertyName("conditional");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionalSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Conditional, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNextStep())
             {
                 context.Writer.WritePropertyName("nextStep");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DialogStateMarshaller.Instance;
                 marshaller.Marshall(requestObject.NextStep, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

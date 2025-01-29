@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PI.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.PI.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilter())
             {
                 context.Writer.WritePropertyName("Filter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFilterKvp in requestObject.Filter)
                 {
                     context.Writer.WritePropertyName(requestObjectFilterKvp.Key);
                     var requestObjectFilterValue = requestObjectFilterKvp.Value;
 
-                        context.Writer.Write(requestObjectFilterValue);
+                        context.Writer.WriteStringValue(requestObjectFilterValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGroupBy())
             {
                 context.Writer.WritePropertyName("GroupBy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DimensionGroupMarshaller.Instance;
                 marshaller.Marshall(requestObject.GroupBy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetric())
             {
                 context.Writer.WritePropertyName("Metric");
-                context.Writer.Write(requestObject.Metric);
+                context.Writer.WriteStringValue(requestObject.Metric);
             }
 
         }

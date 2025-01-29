@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -64,110 +67,115 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
                 throw new AmazonGlueDataBrewException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/profileJobs/{name}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("Configuration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Configuration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ProfileConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Configuration, context);
+                var marshaller = ProfileConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEncryptionKeyArn())
-                    {
-                        context.Writer.WritePropertyName("EncryptionKeyArn");
-                        context.Writer.Write(publicRequest.EncryptionKeyArn);
-                    }
-
-                    if(publicRequest.IsSetEncryptionMode())
-                    {
-                        context.Writer.WritePropertyName("EncryptionMode");
-                        context.Writer.Write(publicRequest.EncryptionMode);
-                    }
-
-                    if(publicRequest.IsSetJobSample())
-                    {
-                        context.Writer.WritePropertyName("JobSample");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = JobSampleMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.JobSample, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLogSubscription())
-                    {
-                        context.Writer.WritePropertyName("LogSubscription");
-                        context.Writer.Write(publicRequest.LogSubscription);
-                    }
-
-                    if(publicRequest.IsSetMaxCapacity())
-                    {
-                        context.Writer.WritePropertyName("MaxCapacity");
-                        context.Writer.Write(publicRequest.MaxCapacity.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxRetries())
-                    {
-                        context.Writer.WritePropertyName("MaxRetries");
-                        context.Writer.Write(publicRequest.MaxRetries.Value);
-                    }
-
-                    if(publicRequest.IsSetOutputLocation())
-                    {
-                        context.Writer.WritePropertyName("OutputLocation");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = S3LocationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputLocation, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTimeout())
-                    {
-                        context.Writer.WritePropertyName("Timeout");
-                        context.Writer.Write(publicRequest.Timeout.Value);
-                    }
-
-                    if(publicRequest.IsSetValidationConfigurations())
-                    {
-                        context.Writer.WritePropertyName("ValidationConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestValidationConfigurationsListValue in publicRequest.ValidationConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ValidationConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestValidationConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetEncryptionKeyArn())
+            {
+                context.Writer.WritePropertyName("EncryptionKeyArn");
+                context.Writer.WriteStringValue(publicRequest.EncryptionKeyArn);
+            }
+
+            if(publicRequest.IsSetEncryptionMode())
+            {
+                context.Writer.WritePropertyName("EncryptionMode");
+                context.Writer.WriteStringValue(publicRequest.EncryptionMode);
+            }
+
+            if(publicRequest.IsSetJobSample())
+            {
+                context.Writer.WritePropertyName("JobSample");
+                context.Writer.WriteStartObject();
+
+                var marshaller = JobSampleMarshaller.Instance;
+                marshaller.Marshall(publicRequest.JobSample, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLogSubscription())
+            {
+                context.Writer.WritePropertyName("LogSubscription");
+                context.Writer.WriteStringValue(publicRequest.LogSubscription);
+            }
+
+            if(publicRequest.IsSetMaxCapacity())
+            {
+                context.Writer.WritePropertyName("MaxCapacity");
+                context.Writer.WriteNumberValue(publicRequest.MaxCapacity.Value);
+            }
+
+            if(publicRequest.IsSetMaxRetries())
+            {
+                context.Writer.WritePropertyName("MaxRetries");
+                context.Writer.WriteNumberValue(publicRequest.MaxRetries.Value);
+            }
+
+            if(publicRequest.IsSetOutputLocation())
+            {
+                context.Writer.WritePropertyName("OutputLocation");
+                context.Writer.WriteStartObject();
+
+                var marshaller = S3LocationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputLocation, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("Timeout");
+                context.Writer.WriteNumberValue(publicRequest.Timeout.Value);
+            }
+
+            if(publicRequest.IsSetValidationConfigurations())
+            {
+                context.Writer.WritePropertyName("ValidationConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestValidationConfigurationsListValue in publicRequest.ValidationConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ValidationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestValidationConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

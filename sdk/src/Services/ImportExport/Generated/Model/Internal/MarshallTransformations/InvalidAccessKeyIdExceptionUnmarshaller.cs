@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidAccessKeyIdException operation
     /// </summary>  
-    public class InvalidAccessKeyIdExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidAccessKeyIdException, XmlUnmarshallerContext>
+    public class InvalidAccessKeyIdExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidAccessKeyIdException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

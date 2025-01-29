@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ReplicationConfiguration Object
     /// </summary>  
-    public class ReplicationConfigurationUnmarshaller : IUnmarshaller<ReplicationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ReplicationConfiguration, JsonUnmarshallerContext>
+    public class ReplicationConfigurationUnmarshaller : IJsonUnmarshaller<ReplicationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ReplicationConfiguration IUnmarshaller<ReplicationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ReplicationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ReplicationConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ReplicationConfiguration unmarshalledObject = new ReplicationConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("GlobalSignInEndpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GlobalSignInEndpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlobalSignInEndpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReplicationStatusSummaryList", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ReplicationStatusSummary, ReplicationStatusSummaryUnmarshaller>(ReplicationStatusSummaryUnmarshaller.Instance);
-                    unmarshalledObject.ReplicationStatusSummaryList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ReplicationStatusSummary, ReplicationStatusSummaryUnmarshaller>(ReplicationStatusSummaryUnmarshaller.Instance);
+                    unmarshalledObject.ReplicationStatusSummaryList = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

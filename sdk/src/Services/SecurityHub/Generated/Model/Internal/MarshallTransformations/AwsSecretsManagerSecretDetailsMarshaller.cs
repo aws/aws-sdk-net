@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeleted())
             {
                 context.Writer.WritePropertyName("Deleted");
-                context.Writer.Write(requestObject.Deleted.Value);
+                context.Writer.WriteBooleanValue(requestObject.Deleted.Value);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRotationEnabled())
             {
                 context.Writer.WritePropertyName("RotationEnabled");
-                context.Writer.Write(requestObject.RotationEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.RotationEnabled.Value);
             }
 
             if(requestObject.IsSetRotationLambdaArn())
             {
                 context.Writer.WritePropertyName("RotationLambdaArn");
-                context.Writer.Write(requestObject.RotationLambdaArn);
+                context.Writer.WriteStringValue(requestObject.RotationLambdaArn);
             }
 
             if(requestObject.IsSetRotationOccurredWithinFrequency())
             {
                 context.Writer.WritePropertyName("RotationOccurredWithinFrequency");
-                context.Writer.Write(requestObject.RotationOccurredWithinFrequency.Value);
+                context.Writer.WriteBooleanValue(requestObject.RotationOccurredWithinFrequency.Value);
             }
 
             if(requestObject.IsSetRotationRules())
             {
                 context.Writer.WritePropertyName("RotationRules");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsSecretsManagerSecretRotationRulesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RotationRules, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

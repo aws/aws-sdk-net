@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalConstraints())
             {
                 context.Writer.WritePropertyName("additionalConstraints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalConstraintsListValue in requestObject.AdditionalConstraints)
                 {
-                        context.Writer.Write(requestObjectAdditionalConstraintsListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalConstraintsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMinimumLength())
@@ -64,11 +62,11 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("minimumLength");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.MinimumLength.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.MinimumLength.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.MinimumLength.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinimumLength.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinimumLength.Value);
                 }
             }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,132 +49,132 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthenticationOptions())
             {
                 context.Writer.WritePropertyName("AuthenticationOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAuthenticationOptionsListValue in requestObject.AuthenticationOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2ClientVpnEndpointAuthenticationOptionsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectAuthenticationOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetClientCidrBlock())
             {
                 context.Writer.WritePropertyName("ClientCidrBlock");
-                context.Writer.Write(requestObject.ClientCidrBlock);
+                context.Writer.WriteStringValue(requestObject.ClientCidrBlock);
             }
 
             if(requestObject.IsSetClientConnectOptions())
             {
                 context.Writer.WritePropertyName("ClientConnectOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2ClientVpnEndpointClientConnectOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClientConnectOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClientLoginBannerOptions())
             {
                 context.Writer.WritePropertyName("ClientLoginBannerOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2ClientVpnEndpointClientLoginBannerOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClientLoginBannerOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetClientVpnEndpointId())
             {
                 context.Writer.WritePropertyName("ClientVpnEndpointId");
-                context.Writer.Write(requestObject.ClientVpnEndpointId);
+                context.Writer.WriteStringValue(requestObject.ClientVpnEndpointId);
             }
 
             if(requestObject.IsSetConnectionLogOptions())
             {
                 context.Writer.WritePropertyName("ConnectionLogOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEc2ClientVpnEndpointConnectionLogOptionsDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectionLogOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDnsServer())
             {
                 context.Writer.WritePropertyName("DnsServer");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDnsServerListValue in requestObject.DnsServer)
                 {
-                        context.Writer.Write(requestObjectDnsServerListValue);
+                        context.Writer.WriteStringValue(requestObjectDnsServerListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecurityGroupIdSet())
             {
                 context.Writer.WritePropertyName("SecurityGroupIdSet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdSetListValue in requestObject.SecurityGroupIdSet)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdSetListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdSetListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSelfServicePortalUrl())
             {
                 context.Writer.WritePropertyName("SelfServicePortalUrl");
-                context.Writer.Write(requestObject.SelfServicePortalUrl);
+                context.Writer.WriteStringValue(requestObject.SelfServicePortalUrl);
             }
 
             if(requestObject.IsSetServerCertificateArn())
             {
                 context.Writer.WritePropertyName("ServerCertificateArn");
-                context.Writer.Write(requestObject.ServerCertificateArn);
+                context.Writer.WriteStringValue(requestObject.ServerCertificateArn);
             }
 
             if(requestObject.IsSetSessionTimeoutHours())
             {
                 context.Writer.WritePropertyName("SessionTimeoutHours");
-                context.Writer.Write(requestObject.SessionTimeoutHours.Value);
+                context.Writer.WriteNumberValue(requestObject.SessionTimeoutHours.Value);
             }
 
             if(requestObject.IsSetSplitTunnel())
             {
                 context.Writer.WritePropertyName("SplitTunnel");
-                context.Writer.Write(requestObject.SplitTunnel.Value);
+                context.Writer.WriteBooleanValue(requestObject.SplitTunnel.Value);
             }
 
             if(requestObject.IsSetTransportProtocol())
             {
                 context.Writer.WritePropertyName("TransportProtocol");
-                context.Writer.Write(requestObject.TransportProtocol);
+                context.Writer.WriteStringValue(requestObject.TransportProtocol);
             }
 
             if(requestObject.IsSetVpcId())
             {
                 context.Writer.WritePropertyName("VpcId");
-                context.Writer.Write(requestObject.VpcId);
+                context.Writer.WriteStringValue(requestObject.VpcId);
             }
 
             if(requestObject.IsSetVpnPort())
             {
                 context.Writer.WritePropertyName("VpnPort");
-                context.Writer.Write(requestObject.VpnPort.Value);
+                context.Writer.WriteNumberValue(requestObject.VpnPort.Value);
             }
 
         }

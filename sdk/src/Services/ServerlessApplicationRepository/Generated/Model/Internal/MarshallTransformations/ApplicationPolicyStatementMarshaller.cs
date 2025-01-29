@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.ServerlessApplicationRepository.Model.Internal.MarshallTransfor
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                        context.Writer.Write(requestObjectActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrincipalOrgIDs())
             {
                 context.Writer.WritePropertyName("principalOrgIDs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrincipalOrgIDsListValue in requestObject.PrincipalOrgIDs)
                 {
-                        context.Writer.Write(requestObjectPrincipalOrgIDsListValue);
+                        context.Writer.WriteStringValue(requestObjectPrincipalOrgIDsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPrincipals())
             {
                 context.Writer.WritePropertyName("principals");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPrincipalsListValue in requestObject.Principals)
                 {
-                        context.Writer.Write(requestObjectPrincipalsListValue);
+                        context.Writer.WriteStringValue(requestObjectPrincipalsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatementId())
             {
                 context.Writer.WritePropertyName("statementId");
-                context.Writer.Write(requestObject.StatementId);
+                context.Writer.WriteStringValue(requestObject.StatementId);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioSilenceSettings())
             {
                 context.Writer.WritePropertyName("audioSilenceSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioSilenceFailoverSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioSilenceSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputLossSettings())
             {
                 context.Writer.WritePropertyName("inputLossSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputLossFailoverSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputLossSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideoBlackSettings())
             {
                 context.Writer.WritePropertyName("videoBlackSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoBlackFailoverSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoBlackSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

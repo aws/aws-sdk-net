@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetFailureType())
             {
                 context.Writer.WritePropertyName("failureType");
-                context.Writer.Write(requestObject.FailureType);
+                context.Writer.WriteStringValue(requestObject.FailureType);
             }
 
             if(requestObject.IsSetMinNumberOfExecutedThings())
             {
                 context.Writer.WritePropertyName("minNumberOfExecutedThings");
-                context.Writer.Write(requestObject.MinNumberOfExecutedThings.Value);
+                context.Writer.WriteNumberValue(requestObject.MinNumberOfExecutedThings.Value);
             }
 
             if(requestObject.IsSetThresholdPercentage())
@@ -71,11 +69,11 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("thresholdPercentage");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.ThresholdPercentage.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.ThresholdPercentage.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.ThresholdPercentage.Value);
+                    context.Writer.WriteNumberValue(requestObject.ThresholdPercentage.Value);
                 }
             }
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetModelCardContent())
             {
                 context.Writer.WritePropertyName("ModelCardContent");
-                context.Writer.Write(requestObject.ModelCardContent);
+                context.Writer.WriteStringValue(requestObject.ModelCardContent);
             }
 
             if(requestObject.IsSetModelCardStatus())
             {
                 context.Writer.WritePropertyName("ModelCardStatus");
-                context.Writer.Write(requestObject.ModelCardStatus);
+                context.Writer.WriteStringValue(requestObject.ModelCardStatus);
             }
 
         }

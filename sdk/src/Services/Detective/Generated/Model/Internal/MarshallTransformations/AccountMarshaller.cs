@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Detective.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountId())
             {
                 context.Writer.WritePropertyName("AccountId");
-                context.Writer.Write(requestObject.AccountId);
+                context.Writer.WriteStringValue(requestObject.AccountId);
             }
 
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("EmailAddress");
-                context.Writer.Write(requestObject.EmailAddress);
+                context.Writer.WriteStringValue(requestObject.EmailAddress);
             }
 
         }

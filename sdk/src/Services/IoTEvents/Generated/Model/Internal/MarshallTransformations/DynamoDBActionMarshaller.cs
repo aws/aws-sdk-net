@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -51,66 +49,66 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHashKeyField())
             {
                 context.Writer.WritePropertyName("hashKeyField");
-                context.Writer.Write(requestObject.HashKeyField);
+                context.Writer.WriteStringValue(requestObject.HashKeyField);
             }
 
             if(requestObject.IsSetHashKeyType())
             {
                 context.Writer.WritePropertyName("hashKeyType");
-                context.Writer.Write(requestObject.HashKeyType);
+                context.Writer.WriteStringValue(requestObject.HashKeyType);
             }
 
             if(requestObject.IsSetHashKeyValue())
             {
                 context.Writer.WritePropertyName("hashKeyValue");
-                context.Writer.Write(requestObject.HashKeyValue);
+                context.Writer.WriteStringValue(requestObject.HashKeyValue);
             }
 
             if(requestObject.IsSetOperation())
             {
                 context.Writer.WritePropertyName("operation");
-                context.Writer.Write(requestObject.Operation);
+                context.Writer.WriteStringValue(requestObject.Operation);
             }
 
             if(requestObject.IsSetPayload())
             {
                 context.Writer.WritePropertyName("payload");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PayloadMarshaller.Instance;
                 marshaller.Marshall(requestObject.Payload, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPayloadField())
             {
                 context.Writer.WritePropertyName("payloadField");
-                context.Writer.Write(requestObject.PayloadField);
+                context.Writer.WriteStringValue(requestObject.PayloadField);
             }
 
             if(requestObject.IsSetRangeKeyField())
             {
                 context.Writer.WritePropertyName("rangeKeyField");
-                context.Writer.Write(requestObject.RangeKeyField);
+                context.Writer.WriteStringValue(requestObject.RangeKeyField);
             }
 
             if(requestObject.IsSetRangeKeyType())
             {
                 context.Writer.WritePropertyName("rangeKeyType");
-                context.Writer.Write(requestObject.RangeKeyType);
+                context.Writer.WriteStringValue(requestObject.RangeKeyType);
             }
 
             if(requestObject.IsSetRangeKeyValue())
             {
                 context.Writer.WritePropertyName("rangeKeyValue");
-                context.Writer.Write(requestObject.RangeKeyValue);
+                context.Writer.WriteStringValue(requestObject.RangeKeyValue);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("tableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
         }

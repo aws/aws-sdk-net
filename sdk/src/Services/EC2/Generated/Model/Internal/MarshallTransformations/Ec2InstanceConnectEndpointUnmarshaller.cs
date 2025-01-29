@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ec2InstanceConnectEndpoint Object
     /// </summary>  
-    public class Ec2InstanceConnectEndpointUnmarshaller : IUnmarshaller<Ec2InstanceConnectEndpoint, XmlUnmarshallerContext>, IUnmarshaller<Ec2InstanceConnectEndpoint, JsonUnmarshallerContext>
+    public class Ec2InstanceConnectEndpointUnmarshaller : IXmlUnmarshaller<Ec2InstanceConnectEndpoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -169,17 +169,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Ec2InstanceConnectEndpoint Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static Ec2InstanceConnectEndpointUnmarshaller _instance = new Ec2InstanceConnectEndpointUnmarshaller();        
 

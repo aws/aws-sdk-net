@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceHealthSummary Object
     /// </summary>  
-    public class InstanceHealthSummaryUnmarshaller : IUnmarshaller<InstanceHealthSummary, XmlUnmarshallerContext>, IUnmarshaller<InstanceHealthSummary, JsonUnmarshallerContext>
+    public class InstanceHealthSummaryUnmarshaller : IXmlUnmarshaller<InstanceHealthSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceHealthSummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceHealthSummaryUnmarshaller _instance = new InstanceHealthSummaryUnmarshaller();        
 

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
@@ -64,66 +67,71 @@ namespace Amazon.AppTest.Model.Internal.MarshallTransformations
                 throw new AmazonAppTestException("Request object does not have required field TestConfigurationId set");
             request.AddPathResource("{testConfigurationId}", StringUtils.FromString(publicRequest.TestConfigurationId));
             request.ResourcePath = "/testconfigurations/{testConfigurationId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetProperties())
-                    {
-                        context.Writer.WritePropertyName("properties");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
-                        {
-                            context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
-                            var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
-
-                                context.Writer.Write(publicRequestPropertiesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetResources())
-                    {
-                        context.Writer.WritePropertyName("resources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestResourcesListValue in publicRequest.Resources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ResourceMarshaller.Instance;
-                            marshaller.Marshall(publicRequestResourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetServiceSettings())
-                    {
-                        context.Writer.WritePropertyName("serviceSettings");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ServiceSettingsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ServiceSettings, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetProperties())
+            {
+                context.Writer.WritePropertyName("properties");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPropertiesKvp in publicRequest.Properties)
+                {
+                    context.Writer.WritePropertyName(publicRequestPropertiesKvp.Key);
+                    var publicRequestPropertiesValue = publicRequestPropertiesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestPropertiesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetResources())
+            {
+                context.Writer.WritePropertyName("resources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestResourcesListValue in publicRequest.Resources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ResourceMarshaller.Instance;
+                    marshaller.Marshall(publicRequestResourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetServiceSettings())
+            {
+                context.Writer.WritePropertyName("serviceSettings");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ServiceSettingsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ServiceSettings, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

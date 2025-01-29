@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancing.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidEndPointException operation
     /// </summary>  
-    public class InvalidEndPointExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidEndPointException, XmlUnmarshallerContext>
+    public class InvalidEndPointExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidEndPointException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

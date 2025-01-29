@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetProtocolPolicy())
             {
                 context.Writer.WritePropertyName("protocolPolicy");
-                context.Writer.Write(requestObject.ProtocolPolicy);
+                context.Writer.WriteStringValue(requestObject.ProtocolPolicy);
             }
 
             if(requestObject.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("regionName");
-                context.Writer.Write(requestObject.RegionName);
+                context.Writer.WriteStringValue(requestObject.RegionName);
             }
 
             if(requestObject.IsSetResponseTimeout())
             {
                 context.Writer.WritePropertyName("responseTimeout");
-                context.Writer.Write(requestObject.ResponseTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.ResponseTimeout.Value);
             }
 
         }

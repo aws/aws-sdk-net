@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIbm3624NaturalPin())
             {
                 context.Writer.WritePropertyName("Ibm3624NaturalPin");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ibm3624NaturalPinMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ibm3624NaturalPin, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIbm3624PinFromOffset())
             {
                 context.Writer.WritePropertyName("Ibm3624PinFromOffset");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ibm3624PinFromOffsetMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ibm3624PinFromOffset, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIbm3624PinOffset())
             {
                 context.Writer.WritePropertyName("Ibm3624PinOffset");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ibm3624PinOffsetMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ibm3624PinOffset, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIbm3624RandomPin())
             {
                 context.Writer.WritePropertyName("Ibm3624RandomPin");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Ibm3624RandomPinMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ibm3624RandomPin, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisaPin())
             {
                 context.Writer.WritePropertyName("VisaPin");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisaPinMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisaPin, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisaPinVerificationValue())
             {
                 context.Writer.WritePropertyName("VisaPinVerificationValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisaPinVerificationValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisaPinVerificationValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

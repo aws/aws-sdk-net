@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlueprintArn())
             {
                 context.Writer.WritePropertyName("blueprintArn");
-                context.Writer.Write(requestObject.BlueprintArn);
+                context.Writer.WriteStringValue(requestObject.BlueprintArn);
             }
 
             if(requestObject.IsSetBlueprintStage())
             {
                 context.Writer.WritePropertyName("blueprintStage");
-                context.Writer.Write(requestObject.BlueprintStage);
+                context.Writer.WriteStringValue(requestObject.BlueprintStage);
             }
 
             if(requestObject.IsSetBlueprintVersion())
             {
                 context.Writer.WritePropertyName("blueprintVersion");
-                context.Writer.Write(requestObject.BlueprintVersion);
+                context.Writer.WriteStringValue(requestObject.BlueprintVersion);
             }
 
         }

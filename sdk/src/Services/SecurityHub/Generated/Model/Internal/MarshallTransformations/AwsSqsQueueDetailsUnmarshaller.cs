@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsSqsQueueDetails Object
     /// </summary>  
-    public class AwsSqsQueueDetailsUnmarshaller : IUnmarshaller<AwsSqsQueueDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsSqsQueueDetails, JsonUnmarshallerContext>
+    public class AwsSqsQueueDetailsUnmarshaller : IJsonUnmarshaller<AwsSqsQueueDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsSqsQueueDetails IUnmarshaller<AwsSqsQueueDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsSqsQueueDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsSqsQueueDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsSqsQueueDetails unmarshalledObject = new AwsSqsQueueDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DeadLetterTargetArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeadLetterTargetArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeadLetterTargetArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsDataKeyReusePeriodSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.KmsDataKeyReusePeriodSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsDataKeyReusePeriodSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsMasterKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsMasterKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsMasterKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueueName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.QueueName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueueName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

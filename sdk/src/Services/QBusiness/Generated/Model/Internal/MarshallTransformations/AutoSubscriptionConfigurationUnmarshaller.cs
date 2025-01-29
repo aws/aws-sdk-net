@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoSubscriptionConfiguration Object
     /// </summary>  
-    public class AutoSubscriptionConfigurationUnmarshaller : IUnmarshaller<AutoSubscriptionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AutoSubscriptionConfiguration, JsonUnmarshallerContext>
+    public class AutoSubscriptionConfigurationUnmarshaller : IJsonUnmarshaller<AutoSubscriptionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoSubscriptionConfiguration IUnmarshaller<AutoSubscriptionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoSubscriptionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AutoSubscriptionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoSubscriptionConfiguration unmarshalledObject = new AutoSubscriptionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("autoSubscribe", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AutoSubscribe = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoSubscribe = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultSubscriptionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultSubscriptionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultSubscriptionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

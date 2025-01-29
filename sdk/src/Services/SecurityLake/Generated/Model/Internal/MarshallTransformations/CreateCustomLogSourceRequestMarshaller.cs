@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
@@ -61,53 +64,58 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/v1/datalake/logsources/custom";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConfiguration())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("configuration");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("configuration");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = CustomLogSourceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Configuration, context);
+                var marshaller = CustomLogSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEventClasses())
-                    {
-                        context.Writer.WritePropertyName("eventClasses");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEventClassesListValue in publicRequest.EventClasses)
-                        {
-                                context.Writer.Write(publicRequestEventClassesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceName())
-                    {
-                        context.Writer.WritePropertyName("sourceName");
-                        context.Writer.Write(publicRequest.SourceName);
-                    }
-
-                    if(publicRequest.IsSetSourceVersion())
-                    {
-                        context.Writer.WritePropertyName("sourceVersion");
-                        context.Writer.Write(publicRequest.SourceVersion);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetEventClasses())
+            {
+                context.Writer.WritePropertyName("eventClasses");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEventClassesListValue in publicRequest.EventClasses)
+                {
+                        context.Writer.WriteStringValue(publicRequestEventClassesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSourceName())
+            {
+                context.Writer.WritePropertyName("sourceName");
+                context.Writer.WriteStringValue(publicRequest.SourceName);
+            }
+
+            if(publicRequest.IsSetSourceVersion())
+            {
+                context.Writer.WritePropertyName("sourceVersion");
+                context.Writer.WriteStringValue(publicRequest.SourceVersion);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

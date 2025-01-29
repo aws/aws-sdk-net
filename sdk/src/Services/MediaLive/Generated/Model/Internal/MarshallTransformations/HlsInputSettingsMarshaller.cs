@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandwidth())
             {
                 context.Writer.WritePropertyName("bandwidth");
-                context.Writer.Write(requestObject.Bandwidth.Value);
+                context.Writer.WriteNumberValue(requestObject.Bandwidth.Value);
             }
 
             if(requestObject.IsSetBufferSegments())
             {
                 context.Writer.WritePropertyName("bufferSegments");
-                context.Writer.Write(requestObject.BufferSegments.Value);
+                context.Writer.WriteNumberValue(requestObject.BufferSegments.Value);
             }
 
             if(requestObject.IsSetRetries())
             {
                 context.Writer.WritePropertyName("retries");
-                context.Writer.Write(requestObject.Retries.Value);
+                context.Writer.WriteNumberValue(requestObject.Retries.Value);
             }
 
             if(requestObject.IsSetRetryInterval())
             {
                 context.Writer.WritePropertyName("retryInterval");
-                context.Writer.Write(requestObject.RetryInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.RetryInterval.Value);
             }
 
             if(requestObject.IsSetScte35Source())
             {
                 context.Writer.WritePropertyName("scte35Source");
-                context.Writer.Write(requestObject.Scte35Source);
+                context.Writer.WriteStringValue(requestObject.Scte35Source);
             }
 
         }

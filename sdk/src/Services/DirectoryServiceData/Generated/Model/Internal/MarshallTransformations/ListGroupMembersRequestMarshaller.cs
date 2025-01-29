@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
 {
@@ -64,49 +67,54 @@ namespace Amazon.DirectoryServiceData.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDirectoryId())
                 request.Parameters.Add("DirectoryId", StringUtils.FromString(publicRequest.DirectoryId));
             request.ResourcePath = "/GroupMemberships/ListGroupMembers";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMaxResults())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetMemberRealm())
-                    {
-                        context.Writer.WritePropertyName("MemberRealm");
-                        context.Writer.Write(publicRequest.MemberRealm);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetRealm())
-                    {
-                        context.Writer.WritePropertyName("Realm");
-                        context.Writer.Write(publicRequest.Realm);
-                    }
-
-                    if(publicRequest.IsSetSAMAccountName())
-                    {
-                        context.Writer.WritePropertyName("SAMAccountName");
-                        context.Writer.Write(publicRequest.SAMAccountName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
             }
+
+            if(publicRequest.IsSetMemberRealm())
+            {
+                context.Writer.WritePropertyName("MemberRealm");
+                context.Writer.WriteStringValue(publicRequest.MemberRealm);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetRealm())
+            {
+                context.Writer.WritePropertyName("Realm");
+                context.Writer.WriteStringValue(publicRequest.Realm);
+            }
+
+            if(publicRequest.IsSetSAMAccountName())
+            {
+                context.Writer.WritePropertyName("SAMAccountName");
+                context.Writer.WriteStringValue(publicRequest.SAMAccountName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColorCorrector())
             {
                 context.Writer.WritePropertyName("colorCorrector");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColorCorrectorMarshaller.Instance;
                 marshaller.Marshall(requestObject.ColorCorrector, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeinterlacer())
             {
                 context.Writer.WritePropertyName("deinterlacer");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeinterlacerMarshaller.Instance;
                 marshaller.Marshall(requestObject.Deinterlacer, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDolbyVision())
             {
                 context.Writer.WritePropertyName("dolbyVision");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DolbyVisionMarshaller.Instance;
                 marshaller.Marshall(requestObject.DolbyVision, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHdr10Plus())
             {
                 context.Writer.WritePropertyName("hdr10Plus");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Hdr10PlusMarshaller.Instance;
                 marshaller.Marshall(requestObject.Hdr10Plus, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageInserter())
             {
                 context.Writer.WritePropertyName("imageInserter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ImageInserterMarshaller.Instance;
                 marshaller.Marshall(requestObject.ImageInserter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNoiseReducer())
             {
                 context.Writer.WritePropertyName("noiseReducer");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NoiseReducerMarshaller.Instance;
                 marshaller.Marshall(requestObject.NoiseReducer, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPartnerWatermarking())
             {
                 context.Writer.WritePropertyName("partnerWatermarking");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PartnerWatermarkingMarshaller.Instance;
                 marshaller.Marshall(requestObject.PartnerWatermarking, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTimecodeBurnin())
             {
                 context.Writer.WritePropertyName("timecodeBurnin");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimecodeBurninMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimecodeBurnin, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCampaignId())
             {
                 context.Writer.WritePropertyName("CampaignId");
-                context.Writer.Write(requestObject.CampaignId);
+                context.Writer.WriteStringValue(requestObject.CampaignId);
             }
 
             if(requestObject.IsSetOutboundRequestId())
             {
                 context.Writer.WritePropertyName("OutboundRequestId");
-                context.Writer.Write(requestObject.OutboundRequestId);
+                context.Writer.WriteStringValue(requestObject.OutboundRequestId);
             }
 
         }

@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GenerationConfiguration Object
     /// </summary>  
-    public class GenerationConfigurationUnmarshaller : IUnmarshaller<GenerationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GenerationConfiguration, JsonUnmarshallerContext>
+    public class GenerationConfigurationUnmarshaller : IJsonUnmarshaller<GenerationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GenerationConfiguration IUnmarshaller<GenerationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GenerationConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public GenerationConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GenerationConfiguration unmarshalledObject = new GenerationConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("additionalModelRequestFields", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, Amazon.Runtime.Documents.Document, StringUnmarshaller, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller>(StringUnmarshaller.Instance, Amazon.Runtime.Documents.Internal.Transform.DocumentUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalModelRequestFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("guardrailConfiguration", targetDepth))
                 {
                     var unmarshaller = GuardrailConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GuardrailConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("kbInferenceConfig", targetDepth))
                 {
                     var unmarshaller = KbInferenceConfigUnmarshaller.Instance;
-                    unmarshalledObject.KbInferenceConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KbInferenceConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("promptTemplate", targetDepth))
                 {
                     var unmarshaller = PromptTemplateUnmarshaller.Instance;
-                    unmarshalledObject.PromptTemplate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PromptTemplate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

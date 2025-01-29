@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPortName())
             {
                 context.Writer.WritePropertyName("portName");
-                context.Writer.Write(requestObject.PortName);
+                context.Writer.WriteStringValue(requestObject.PortName);
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("roleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetTargetGroupArn())
             {
                 context.Writer.WritePropertyName("targetGroupArn");
-                context.Writer.Write(requestObject.TargetGroupArn);
+                context.Writer.WriteStringValue(requestObject.TargetGroupArn);
             }
 
         }

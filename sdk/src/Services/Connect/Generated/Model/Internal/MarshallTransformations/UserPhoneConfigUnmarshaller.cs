@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UserPhoneConfig Object
     /// </summary>  
-    public class UserPhoneConfigUnmarshaller : IUnmarshaller<UserPhoneConfig, XmlUnmarshallerContext>, IUnmarshaller<UserPhoneConfig, JsonUnmarshallerContext>
+    public class UserPhoneConfigUnmarshaller : IJsonUnmarshaller<UserPhoneConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UserPhoneConfig IUnmarshaller<UserPhoneConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UserPhoneConfig Unmarshall(JsonUnmarshallerContext context)
+        public UserPhoneConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UserPhoneConfig unmarshalledObject = new UserPhoneConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AfterContactWorkTimeLimit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AfterContactWorkTimeLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AfterContactWorkTimeLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AutoAccept", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AutoAccept = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoAccept = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeskPhoneNumber", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeskPhoneNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeskPhoneNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PhoneType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PhoneType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PhoneType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

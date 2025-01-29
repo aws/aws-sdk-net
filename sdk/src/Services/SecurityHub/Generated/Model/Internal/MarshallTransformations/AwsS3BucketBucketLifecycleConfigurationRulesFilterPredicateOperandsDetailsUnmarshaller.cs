@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails Object
     /// </summary>  
-    public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsUnmarshaller : IUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails, JsonUnmarshallerContext>
+    public class AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetailsUnmarshaller : IJsonUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails IUnmarshaller<AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails unmarshalledObject = new AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tag", targetDepth))
                 {
                     var unmarshaller = AwsS3BucketBucketLifecycleConfigurationRulesFilterPredicateOperandsTagDetailsUnmarshaller.Instance;
-                    unmarshalledObject.Tag = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tag = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmount())
             {
                 context.Writer.WritePropertyName("Amount");
-                context.Writer.Write(requestObject.Amount);
+                context.Writer.WriteStringValue(requestObject.Amount);
             }
 
             if(requestObject.IsSetCurrencyCode())
             {
                 context.Writer.WritePropertyName("CurrencyCode");
-                context.Writer.Write(requestObject.CurrencyCode);
+                context.Writer.WriteStringValue(requestObject.CurrencyCode);
             }
 
         }

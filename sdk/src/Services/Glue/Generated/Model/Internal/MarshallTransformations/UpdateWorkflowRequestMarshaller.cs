@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,51 +66,56 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDefaultRunProperties())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("DefaultRunProperties");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestDefaultRunPropertiesKvp in publicRequest.DefaultRunProperties)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDefaultRunProperties())
-                    {
-                        context.Writer.WritePropertyName("DefaultRunProperties");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDefaultRunPropertiesKvp in publicRequest.DefaultRunProperties)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDefaultRunPropertiesKvp.Key);
-                            var publicRequestDefaultRunPropertiesValue = publicRequestDefaultRunPropertiesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestDefaultRunPropertiesKvp.Key);
+                    var publicRequestDefaultRunPropertiesValue = publicRequestDefaultRunPropertiesKvp.Value;
 
-                                context.Writer.Write(publicRequestDefaultRunPropertiesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetMaxConcurrentRuns())
-                    {
-                        context.Writer.WritePropertyName("MaxConcurrentRuns");
-                        context.Writer.Write(publicRequest.MaxConcurrentRuns.Value);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestDefaultRunPropertiesValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetMaxConcurrentRuns())
+            {
+                context.Writer.WritePropertyName("MaxConcurrentRuns");
+                context.Writer.WriteNumberValue(publicRequest.MaxConcurrentRuns.Value);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

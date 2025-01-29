@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidArgumentException operation
     /// </summary>  
-    public class InvalidArgumentExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidArgumentException, XmlUnmarshallerContext>
+    public class InvalidArgumentExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidArgumentException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackgroundColor())
             {
                 context.Writer.WritePropertyName("BackgroundColor");
-                context.Writer.Write(requestObject.BackgroundColor);
+                context.Writer.WriteStringValue(requestObject.BackgroundColor);
             }
 
             if(requestObject.IsSetBorderRadius())
             {
                 context.Writer.WritePropertyName("BorderRadius");
-                context.Writer.Write(requestObject.BorderRadius.Value);
+                context.Writer.WriteNumberValue(requestObject.BorderRadius.Value);
             }
 
             if(requestObject.IsSetButtonAction())
             {
                 context.Writer.WritePropertyName("ButtonAction");
-                context.Writer.Write(requestObject.ButtonAction);
+                context.Writer.WriteStringValue(requestObject.ButtonAction);
             }
 
             if(requestObject.IsSetLink())
             {
                 context.Writer.WritePropertyName("Link");
-                context.Writer.Write(requestObject.Link);
+                context.Writer.WriteStringValue(requestObject.Link);
             }
 
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("Text");
-                context.Writer.Write(requestObject.Text);
+                context.Writer.WriteStringValue(requestObject.Text);
             }
 
             if(requestObject.IsSetTextColor())
             {
                 context.Writer.WritePropertyName("TextColor");
-                context.Writer.Write(requestObject.TextColor);
+                context.Writer.WriteStringValue(requestObject.TextColor);
             }
 
         }

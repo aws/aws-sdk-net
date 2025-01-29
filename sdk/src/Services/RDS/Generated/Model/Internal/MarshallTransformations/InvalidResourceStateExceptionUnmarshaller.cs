@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidResourceStateException operation
     /// </summary>  
-    public class InvalidResourceStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidResourceStateException, XmlUnmarshallerContext>
+    public class InvalidResourceStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidResourceStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

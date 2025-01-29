@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,133 +49,133 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllQueryArguments())
             {
                 context.Writer.WritePropertyName("AllQueryArguments");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AllQueryArgumentsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AllQueryArguments, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BodyMarshaller.Instance;
                 marshaller.Marshall(requestObject.Body, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCookies())
             {
                 context.Writer.WritePropertyName("Cookies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CookiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Cookies, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeaderOrder())
             {
                 context.Writer.WritePropertyName("HeaderOrder");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HeaderOrderMarshaller.Instance;
                 marshaller.Marshall(requestObject.HeaderOrder, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("Headers");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HeadersMarshaller.Instance;
                 marshaller.Marshall(requestObject.Headers, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJA3Fingerprint())
             {
                 context.Writer.WritePropertyName("JA3Fingerprint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JA3FingerprintMarshaller.Instance;
                 marshaller.Marshall(requestObject.JA3Fingerprint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJsonBody())
             {
                 context.Writer.WritePropertyName("JsonBody");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JsonBodyMarshaller.Instance;
                 marshaller.Marshall(requestObject.JsonBody, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMethod())
             {
                 context.Writer.WritePropertyName("Method");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MethodMarshaller.Instance;
                 marshaller.Marshall(requestObject.Method, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueryString())
             {
                 context.Writer.WritePropertyName("QueryString");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = QueryStringMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueryString, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSingleHeader())
             {
                 context.Writer.WritePropertyName("SingleHeader");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SingleHeaderMarshaller.Instance;
                 marshaller.Marshall(requestObject.SingleHeader, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSingleQueryArgument())
             {
                 context.Writer.WritePropertyName("SingleQueryArgument");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SingleQueryArgumentMarshaller.Instance;
                 marshaller.Marshall(requestObject.SingleQueryArgument, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUriPath())
             {
                 context.Writer.WritePropertyName("UriPath");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UriPathMarshaller.Instance;
                 marshaller.Marshall(requestObject.UriPath, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

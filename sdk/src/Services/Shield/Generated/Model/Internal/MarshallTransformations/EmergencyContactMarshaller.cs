@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Shield.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Shield.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContactNotes())
             {
                 context.Writer.WritePropertyName("ContactNotes");
-                context.Writer.Write(requestObject.ContactNotes);
+                context.Writer.WriteStringValue(requestObject.ContactNotes);
             }
 
             if(requestObject.IsSetEmailAddress())
             {
                 context.Writer.WritePropertyName("EmailAddress");
-                context.Writer.Write(requestObject.EmailAddress);
+                context.Writer.WriteStringValue(requestObject.EmailAddress);
             }
 
             if(requestObject.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.Write(requestObject.PhoneNumber);
+                context.Writer.WriteStringValue(requestObject.PhoneNumber);
             }
 
         }

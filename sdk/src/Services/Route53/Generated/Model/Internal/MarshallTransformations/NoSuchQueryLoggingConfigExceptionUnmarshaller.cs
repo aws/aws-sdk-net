@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchQueryLoggingConfigException operation
     /// </summary>  
-    public class NoSuchQueryLoggingConfigExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchQueryLoggingConfigException, XmlUnmarshallerContext>
+    public class NoSuchQueryLoggingConfigExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchQueryLoggingConfigException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

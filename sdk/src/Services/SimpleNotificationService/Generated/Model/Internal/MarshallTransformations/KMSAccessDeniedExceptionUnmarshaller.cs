@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for KMSAccessDeniedException operation
     /// </summary>  
-    public class KMSAccessDeniedExceptionUnmarshaller : IErrorResponseUnmarshaller<KMSAccessDeniedException, XmlUnmarshallerContext>
+    public class KMSAccessDeniedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<KMSAccessDeniedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

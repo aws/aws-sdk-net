@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuditLogVolume())
             {
                 context.Writer.WritePropertyName("AuditLogVolume");
-                context.Writer.Write(requestObject.AuditLogVolume.Value);
+                context.Writer.WriteBooleanValue(requestObject.AuditLogVolume.Value);
             }
 
             if(requestObject.IsSetAutocommitPeriod())
             {
                 context.Writer.WritePropertyName("AutocommitPeriod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutocommitPeriodMarshaller.Instance;
                 marshaller.Marshall(requestObject.AutocommitPeriod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrivilegedDelete())
             {
                 context.Writer.WritePropertyName("PrivilegedDelete");
-                context.Writer.Write(requestObject.PrivilegedDelete);
+                context.Writer.WriteStringValue(requestObject.PrivilegedDelete);
             }
 
             if(requestObject.IsSetRetentionPeriod())
             {
                 context.Writer.WritePropertyName("RetentionPeriod");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnaplockRetentionPeriodMarshaller.Instance;
                 marshaller.Marshall(requestObject.RetentionPeriod, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSnaplockType())
             {
                 context.Writer.WritePropertyName("SnaplockType");
-                context.Writer.Write(requestObject.SnaplockType);
+                context.Writer.WriteStringValue(requestObject.SnaplockType);
             }
 
             if(requestObject.IsSetVolumeAppendModeEnabled())
             {
                 context.Writer.WritePropertyName("VolumeAppendModeEnabled");
-                context.Writer.Write(requestObject.VolumeAppendModeEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.VolumeAppendModeEnabled.Value);
             }
 
         }

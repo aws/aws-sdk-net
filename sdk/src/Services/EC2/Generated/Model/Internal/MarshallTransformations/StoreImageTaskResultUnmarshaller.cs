@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StoreImageTaskResult Object
     /// </summary>  
-    public class StoreImageTaskResultUnmarshaller : IUnmarshaller<StoreImageTaskResult, XmlUnmarshallerContext>, IUnmarshaller<StoreImageTaskResult, JsonUnmarshallerContext>
+    public class StoreImageTaskResultUnmarshaller : IXmlUnmarshaller<StoreImageTaskResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -106,17 +106,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StoreImageTaskResult Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StoreImageTaskResultUnmarshaller _instance = new StoreImageTaskResultUnmarshaller();        
 

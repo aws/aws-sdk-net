@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeKey())
             {
                 context.Writer.WritePropertyName("AttributeKey");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeKey, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRange())
             {
                 context.Writer.WritePropertyName("Range");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TypedAttributeValueRangeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Range, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

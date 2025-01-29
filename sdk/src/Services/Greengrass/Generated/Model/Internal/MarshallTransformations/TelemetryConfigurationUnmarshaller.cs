@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TelemetryConfiguration Object
     /// </summary>  
-    public class TelemetryConfigurationUnmarshaller : IUnmarshaller<TelemetryConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TelemetryConfiguration, JsonUnmarshallerContext>
+    public class TelemetryConfigurationUnmarshaller : IJsonUnmarshaller<TelemetryConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TelemetryConfiguration IUnmarshaller<TelemetryConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TelemetryConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TelemetryConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TelemetryConfiguration unmarshalledObject = new TelemetryConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ConfigurationSyncStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationSyncStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationSyncStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Telemetry", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Telemetry = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Telemetry = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

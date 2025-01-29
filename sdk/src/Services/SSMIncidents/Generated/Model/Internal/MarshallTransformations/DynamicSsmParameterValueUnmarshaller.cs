@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DynamicSsmParameterValue Object
     /// </summary>  
-    public class DynamicSsmParameterValueUnmarshaller : IUnmarshaller<DynamicSsmParameterValue, XmlUnmarshallerContext>, IUnmarshaller<DynamicSsmParameterValue, JsonUnmarshallerContext>
+    public class DynamicSsmParameterValueUnmarshaller : IJsonUnmarshaller<DynamicSsmParameterValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DynamicSsmParameterValue IUnmarshaller<DynamicSsmParameterValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DynamicSsmParameterValue Unmarshall(JsonUnmarshallerContext context)
+        public DynamicSsmParameterValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DynamicSsmParameterValue unmarshalledObject = new DynamicSsmParameterValue();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("variable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Variable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Variable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

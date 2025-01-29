@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInstanceSizingType())
             {
                 context.Writer.WritePropertyName("InstanceSizingType");
-                context.Writer.Write(requestObject.InstanceSizingType);
+                context.Writer.WriteStringValue(requestObject.InstanceSizingType);
             }
 
             if(requestObject.IsSetWorkloadType())
             {
                 context.Writer.WritePropertyName("WorkloadType");
-                context.Writer.Write(requestObject.WorkloadType);
+                context.Writer.WriteStringValue(requestObject.WorkloadType);
             }
 
         }

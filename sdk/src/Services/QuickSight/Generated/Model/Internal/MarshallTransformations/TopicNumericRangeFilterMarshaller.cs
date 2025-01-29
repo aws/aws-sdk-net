@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregation())
             {
                 context.Writer.WritePropertyName("Aggregation");
-                context.Writer.Write(requestObject.Aggregation);
+                context.Writer.WriteStringValue(requestObject.Aggregation);
             }
 
             if(requestObject.IsSetConstant())
             {
                 context.Writer.WritePropertyName("Constant");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicRangeFilterConstantMarshaller.Instance;
                 marshaller.Marshall(requestObject.Constant, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInclusive())
             {
                 context.Writer.WritePropertyName("Inclusive");
-                context.Writer.Write(requestObject.Inclusive.Value);
+                context.Writer.WriteBooleanValue(requestObject.Inclusive.Value);
             }
 
         }

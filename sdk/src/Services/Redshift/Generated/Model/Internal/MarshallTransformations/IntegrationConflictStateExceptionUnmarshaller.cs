@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IntegrationConflictStateException operation
     /// </summary>  
-    public class IntegrationConflictStateExceptionUnmarshaller : IErrorResponseUnmarshaller<IntegrationConflictStateException, XmlUnmarshallerContext>
+    public class IntegrationConflictStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IntegrationConflictStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

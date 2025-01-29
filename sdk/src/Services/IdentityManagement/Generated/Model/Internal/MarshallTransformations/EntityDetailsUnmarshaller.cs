@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EntityDetails Object
     /// </summary>  
-    public class EntityDetailsUnmarshaller : IUnmarshaller<EntityDetails, XmlUnmarshallerContext>, IUnmarshaller<EntityDetails, JsonUnmarshallerContext>
+    public class EntityDetailsUnmarshaller : IXmlUnmarshaller<EntityDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EntityDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EntityDetailsUnmarshaller _instance = new EntityDetailsUnmarshaller();        
 

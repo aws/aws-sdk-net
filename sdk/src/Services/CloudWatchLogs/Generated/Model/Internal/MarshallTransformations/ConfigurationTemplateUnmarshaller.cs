@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ConfigurationTemplate Object
     /// </summary>  
-    public class ConfigurationTemplateUnmarshaller : IUnmarshaller<ConfigurationTemplate, XmlUnmarshallerContext>, IUnmarshaller<ConfigurationTemplate, JsonUnmarshallerContext>
+    public class ConfigurationTemplateUnmarshaller : IJsonUnmarshaller<ConfigurationTemplate, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ConfigurationTemplate IUnmarshaller<ConfigurationTemplate, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ConfigurationTemplate Unmarshall(JsonUnmarshallerContext context)
+        public ConfigurationTemplate Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ConfigurationTemplate unmarshalledObject = new ConfigurationTemplate();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("allowedActionForAllowVendedLogsDeliveryForResource", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AllowedActionForAllowVendedLogsDeliveryForResource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowedActionForAllowVendedLogsDeliveryForResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("allowedFieldDelimiters", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedFieldDelimiters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedFieldDelimiters = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("allowedFields", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RecordField, RecordFieldUnmarshaller>(RecordFieldUnmarshaller.Instance);
-                    unmarshalledObject.AllowedFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RecordField, RecordFieldUnmarshaller>(RecordFieldUnmarshaller.Instance);
+                    unmarshalledObject.AllowedFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("allowedOutputFormats", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedOutputFormats = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedOutputFormats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("allowedSuffixPathFields", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AllowedSuffixPathFields = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AllowedSuffixPathFields = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("defaultDeliveryConfigValues", targetDepth))
                 {
                     var unmarshaller = ConfigurationTemplateDeliveryConfigValuesUnmarshaller.Instance;
-                    unmarshalledObject.DefaultDeliveryConfigValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultDeliveryConfigValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deliveryDestinationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeliveryDestinationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeliveryDestinationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("logType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("service", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Service = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Service = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

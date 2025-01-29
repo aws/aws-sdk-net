@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAcceleratorType())
             {
                 context.Writer.WritePropertyName("AcceleratorType");
-                context.Writer.Write(requestObject.AcceleratorType);
+                context.Writer.WriteStringValue(requestObject.AcceleratorType);
             }
 
             if(requestObject.IsSetContainerStartupHealthCheckTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ContainerStartupHealthCheckTimeoutInSeconds");
-                context.Writer.Write(requestObject.ContainerStartupHealthCheckTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ContainerStartupHealthCheckTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetCoreDumpConfig())
             {
                 context.Writer.WritePropertyName("CoreDumpConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProductionVariantCoreDumpConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CoreDumpConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEnableSSMAccess())
             {
                 context.Writer.WritePropertyName("EnableSSMAccess");
-                context.Writer.Write(requestObject.EnableSSMAccess.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableSSMAccess.Value);
             }
 
             if(requestObject.IsSetInferenceAmiVersion())
             {
                 context.Writer.WritePropertyName("InferenceAmiVersion");
-                context.Writer.Write(requestObject.InferenceAmiVersion);
+                context.Writer.WriteStringValue(requestObject.InferenceAmiVersion);
             }
 
             if(requestObject.IsSetInitialInstanceCount())
             {
                 context.Writer.WritePropertyName("InitialInstanceCount");
-                context.Writer.Write(requestObject.InitialInstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InitialInstanceCount.Value);
             }
 
             if(requestObject.IsSetInitialVariantWeight())
@@ -94,75 +92,75 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("InitialVariantWeight");
                 if(StringUtils.IsSpecialFloatValue(requestObject.InitialVariantWeight.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.InitialVariantWeight.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.InitialVariantWeight.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.InitialVariantWeight.Value);
+                    context.Writer.WriteNumberValue(requestObject.InitialVariantWeight.Value);
                 }
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetManagedInstanceScaling())
             {
                 context.Writer.WritePropertyName("ManagedInstanceScaling");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProductionVariantManagedInstanceScalingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManagedInstanceScaling, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelDataDownloadTimeoutInSeconds())
             {
                 context.Writer.WritePropertyName("ModelDataDownloadTimeoutInSeconds");
-                context.Writer.Write(requestObject.ModelDataDownloadTimeoutInSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.ModelDataDownloadTimeoutInSeconds.Value);
             }
 
             if(requestObject.IsSetModelName())
             {
                 context.Writer.WritePropertyName("ModelName");
-                context.Writer.Write(requestObject.ModelName);
+                context.Writer.WriteStringValue(requestObject.ModelName);
             }
 
             if(requestObject.IsSetRoutingConfig())
             {
                 context.Writer.WritePropertyName("RoutingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProductionVariantRoutingConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RoutingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServerlessConfig())
             {
                 context.Writer.WritePropertyName("ServerlessConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProductionVariantServerlessConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServerlessConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVariantName())
             {
                 context.Writer.WritePropertyName("VariantName");
-                context.Writer.Write(requestObject.VariantName);
+                context.Writer.WriteStringValue(requestObject.VariantName);
             }
 
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("VolumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSizeInGB.Value);
             }
 
         }

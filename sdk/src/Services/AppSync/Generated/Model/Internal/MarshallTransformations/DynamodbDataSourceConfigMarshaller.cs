@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsRegion())
             {
                 context.Writer.WritePropertyName("awsRegion");
-                context.Writer.Write(requestObject.AwsRegion);
+                context.Writer.WriteStringValue(requestObject.AwsRegion);
             }
 
             if(requestObject.IsSetDeltaSyncConfig())
             {
                 context.Writer.WritePropertyName("deltaSyncConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeltaSyncConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeltaSyncConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("tableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
             if(requestObject.IsSetUseCallerCredentials())
             {
                 context.Writer.WritePropertyName("useCallerCredentials");
-                context.Writer.Write(requestObject.UseCallerCredentials.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseCallerCredentials.Value);
             }
 
             if(requestObject.IsSetVersioned())
             {
                 context.Writer.WritePropertyName("versioned");
-                context.Writer.Write(requestObject.Versioned.Value);
+                context.Writer.WriteBooleanValue(requestObject.Versioned.Value);
             }
 
         }

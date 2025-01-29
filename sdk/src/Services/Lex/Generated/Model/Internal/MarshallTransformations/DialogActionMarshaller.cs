@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lex.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.Lex.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFulfillmentState())
             {
                 context.Writer.WritePropertyName("fulfillmentState");
-                context.Writer.Write(requestObject.FulfillmentState);
+                context.Writer.WriteStringValue(requestObject.FulfillmentState);
             }
 
             if(requestObject.IsSetIntentName())
             {
                 context.Writer.WritePropertyName("intentName");
-                context.Writer.Write(requestObject.IntentName);
+                context.Writer.WriteStringValue(requestObject.IntentName);
             }
 
             if(requestObject.IsSetMessage())
             {
                 context.Writer.WritePropertyName("message");
-                context.Writer.Write(requestObject.Message);
+                context.Writer.WriteStringValue(requestObject.Message);
             }
 
             if(requestObject.IsSetMessageFormat())
             {
                 context.Writer.WritePropertyName("messageFormat");
-                context.Writer.Write(requestObject.MessageFormat);
+                context.Writer.WriteStringValue(requestObject.MessageFormat);
             }
 
             if(requestObject.IsSetSlots())
             {
                 context.Writer.WritePropertyName("slots");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSlotsKvp in requestObject.Slots)
                 {
                     context.Writer.WritePropertyName(requestObjectSlotsKvp.Key);
                     var requestObjectSlotsValue = requestObjectSlotsKvp.Value;
 
-                        context.Writer.Write(requestObjectSlotsValue);
+                        context.Writer.WriteStringValue(requestObjectSlotsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSlotToElicit())
             {
                 context.Writer.WritePropertyName("slotToElicit");
-                context.Writer.Write(requestObject.SlotToElicit);
+                context.Writer.WriteStringValue(requestObject.SlotToElicit);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

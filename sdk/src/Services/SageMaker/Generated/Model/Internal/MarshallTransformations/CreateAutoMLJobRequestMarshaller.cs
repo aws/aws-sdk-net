@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,119 +66,124 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoMLJobConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAutoMLJobConfig())
-                    {
-                        context.Writer.WritePropertyName("AutoMLJobConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AutoMLJobConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AutoMLJobConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoMLJobConfig, context);
+                var marshaller = AutoMLJobConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoMLJobConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetAutoMLJobName())
-                    {
-                        context.Writer.WritePropertyName("AutoMLJobName");
-                        context.Writer.Write(publicRequest.AutoMLJobName);
-                    }
-
-                    if(publicRequest.IsSetAutoMLJobObjective())
-                    {
-                        context.Writer.WritePropertyName("AutoMLJobObjective");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoMLJobObjectiveMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoMLJobObjective, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGenerateCandidateDefinitionsOnly())
-                    {
-                        context.Writer.WritePropertyName("GenerateCandidateDefinitionsOnly");
-                        context.Writer.Write(publicRequest.GenerateCandidateDefinitionsOnly.Value);
-                    }
-
-                    if(publicRequest.IsSetInputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("InputDataConfig");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputDataConfigListValue in publicRequest.InputDataConfig)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AutoMLChannelMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInputDataConfigListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetModelDeployConfig())
-                    {
-                        context.Writer.WritePropertyName("ModelDeployConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ModelDeployConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ModelDeployConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputDataConfig())
-                    {
-                        context.Writer.WritePropertyName("OutputDataConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoMLOutputDataConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.OutputDataConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetProblemType())
-                    {
-                        context.Writer.WritePropertyName("ProblemType");
-                        context.Writer.Write(publicRequest.ProblemType);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetAutoMLJobName())
+            {
+                context.Writer.WritePropertyName("AutoMLJobName");
+                context.Writer.WriteStringValue(publicRequest.AutoMLJobName);
+            }
+
+            if(publicRequest.IsSetAutoMLJobObjective())
+            {
+                context.Writer.WritePropertyName("AutoMLJobObjective");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoMLJobObjectiveMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoMLJobObjective, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGenerateCandidateDefinitionsOnly())
+            {
+                context.Writer.WritePropertyName("GenerateCandidateDefinitionsOnly");
+                context.Writer.WriteBooleanValue(publicRequest.GenerateCandidateDefinitionsOnly.Value);
+            }
+
+            if(publicRequest.IsSetInputDataConfig())
+            {
+                context.Writer.WritePropertyName("InputDataConfig");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputDataConfigListValue in publicRequest.InputDataConfig)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AutoMLChannelMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInputDataConfigListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetModelDeployConfig())
+            {
+                context.Writer.WritePropertyName("ModelDeployConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ModelDeployConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ModelDeployConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutputDataConfig())
+            {
+                context.Writer.WritePropertyName("OutputDataConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoMLOutputDataConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.OutputDataConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetProblemType())
+            {
+                context.Writer.WritePropertyName("ProblemType");
+                context.Writer.WriteStringValue(publicRequest.ProblemType);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

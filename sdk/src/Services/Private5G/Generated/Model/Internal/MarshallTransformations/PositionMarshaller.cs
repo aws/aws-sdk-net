@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Private5G.Model.Internal.MarshallTransformations
 {
@@ -53,24 +51,24 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("elevation");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Elevation.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Elevation.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Elevation.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Elevation.Value);
+                    context.Writer.WriteNumberValue(requestObject.Elevation.Value);
                 }
             }
 
             if(requestObject.IsSetElevationReference())
             {
                 context.Writer.WritePropertyName("elevationReference");
-                context.Writer.Write(requestObject.ElevationReference);
+                context.Writer.WriteStringValue(requestObject.ElevationReference);
             }
 
             if(requestObject.IsSetElevationUnit())
             {
                 context.Writer.WritePropertyName("elevationUnit");
-                context.Writer.Write(requestObject.ElevationUnit);
+                context.Writer.WriteStringValue(requestObject.ElevationUnit);
             }
 
             if(requestObject.IsSetLatitude())
@@ -78,11 +76,11 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("latitude");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Latitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Latitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Latitude.Value);
+                    context.Writer.WriteNumberValue(requestObject.Latitude.Value);
                 }
             }
 
@@ -91,11 +89,11 @@ namespace Amazon.Private5G.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("longitude");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Longitude.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Longitude.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Longitude.Value);
+                    context.Writer.WriteNumberValue(requestObject.Longitude.Value);
                 }
             }
 

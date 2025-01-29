@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiId())
             {
                 context.Writer.WritePropertyName("apiId");
-                context.Writer.Write(requestObject.ApiId);
+                context.Writer.WriteStringValue(requestObject.ApiId);
             }
 
             if(requestObject.IsSetStage())
             {
                 context.Writer.WritePropertyName("stage");
-                context.Writer.Write(requestObject.Stage);
+                context.Writer.WriteStringValue(requestObject.Stage);
             }
 
             if(requestObject.IsSetThrottle())
             {
                 context.Writer.WritePropertyName("throttle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectThrottleKvp in requestObject.Throttle)
                 {
                     context.Writer.WritePropertyName(requestObjectThrottleKvp.Key);
                     var requestObjectThrottleValue = requestObjectThrottleKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ThrottleSettingsMarshaller.Instance;
                     marshaller.Marshall(requestObjectThrottleValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

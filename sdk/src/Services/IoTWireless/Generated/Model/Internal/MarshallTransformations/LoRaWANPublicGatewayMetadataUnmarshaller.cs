@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LoRaWANPublicGatewayMetadata Object
     /// </summary>  
-    public class LoRaWANPublicGatewayMetadataUnmarshaller : IUnmarshaller<LoRaWANPublicGatewayMetadata, XmlUnmarshallerContext>, IUnmarshaller<LoRaWANPublicGatewayMetadata, JsonUnmarshallerContext>
+    public class LoRaWANPublicGatewayMetadataUnmarshaller : IJsonUnmarshaller<LoRaWANPublicGatewayMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LoRaWANPublicGatewayMetadata IUnmarshaller<LoRaWANPublicGatewayMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoRaWANPublicGatewayMetadata Unmarshall(JsonUnmarshallerContext context)
+        public LoRaWANPublicGatewayMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LoRaWANPublicGatewayMetadata unmarshalledObject = new LoRaWANPublicGatewayMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DlAllowed", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DlAllowed = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DlAllowed = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProviderNetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ProviderNetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProviderNetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RfRegion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RfRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Rssi", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Rssi = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Rssi = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Snr", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Snr = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Snr = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

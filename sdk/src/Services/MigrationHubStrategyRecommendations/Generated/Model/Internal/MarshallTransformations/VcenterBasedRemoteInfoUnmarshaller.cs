@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubStrategyRecommendations.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VcenterBasedRemoteInfo Object
     /// </summary>  
-    public class VcenterBasedRemoteInfoUnmarshaller : IUnmarshaller<VcenterBasedRemoteInfo, XmlUnmarshallerContext>, IUnmarshaller<VcenterBasedRemoteInfo, JsonUnmarshallerContext>
+    public class VcenterBasedRemoteInfoUnmarshaller : IJsonUnmarshaller<VcenterBasedRemoteInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VcenterBasedRemoteInfo IUnmarshaller<VcenterBasedRemoteInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VcenterBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context)
+        public VcenterBasedRemoteInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VcenterBasedRemoteInfo unmarshalledObject = new VcenterBasedRemoteInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("osType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OsType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OsType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vcenterConfigurationTimeStamp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VcenterConfigurationTimeStamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VcenterConfigurationTimeStamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

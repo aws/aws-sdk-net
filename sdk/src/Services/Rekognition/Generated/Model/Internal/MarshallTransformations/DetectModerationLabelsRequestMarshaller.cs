@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -63,60 +66,65 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetHumanLoopConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetHumanLoopConfig())
-                    {
-                        context.Writer.WritePropertyName("HumanLoopConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("HumanLoopConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = HumanLoopConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HumanLoopConfig, context);
+                var marshaller = HumanLoopConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HumanLoopConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetImage())
-                    {
-                        context.Writer.WritePropertyName("Image");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ImageMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Image, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMinConfidence())
-                    {
-                        context.Writer.WritePropertyName("MinConfidence");
-                        if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.MinConfidence.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetProjectVersion())
-                    {
-                        context.Writer.WritePropertyName("ProjectVersion");
-                        context.Writer.Write(publicRequest.ProjectVersion);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetImage())
+            {
+                context.Writer.WritePropertyName("Image");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImageMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Image, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMinConfidence())
+            {
+                context.Writer.WritePropertyName("MinConfidence");
+                if(StringUtils.IsSpecialFloatValue(publicRequest.MinConfidence.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(publicRequest.MinConfidence.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.MinConfidence.Value);
+                }
+            }
+
+            if(publicRequest.IsSetProjectVersion())
+            {
+                context.Writer.WritePropertyName("ProjectVersion");
+                context.Writer.WriteStringValue(publicRequest.ProjectVersion);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

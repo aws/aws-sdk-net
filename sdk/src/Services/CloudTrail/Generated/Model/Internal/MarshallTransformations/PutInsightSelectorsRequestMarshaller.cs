@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -63,53 +66,58 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetEventDataStore())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetEventDataStore())
-                    {
-                        context.Writer.WritePropertyName("EventDataStore");
-                        context.Writer.Write(publicRequest.EventDataStore);
-                    }
-
-                    if(publicRequest.IsSetInsightsDestination())
-                    {
-                        context.Writer.WritePropertyName("InsightsDestination");
-                        context.Writer.Write(publicRequest.InsightsDestination);
-                    }
-
-                    if(publicRequest.IsSetInsightSelectors())
-                    {
-                        context.Writer.WritePropertyName("InsightSelectors");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInsightSelectorsListValue in publicRequest.InsightSelectors)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InsightSelectorMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInsightSelectorsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTrailName())
-                    {
-                        context.Writer.WritePropertyName("TrailName");
-                        context.Writer.Write(publicRequest.TrailName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("EventDataStore");
+                context.Writer.WriteStringValue(publicRequest.EventDataStore);
             }
+
+            if(publicRequest.IsSetInsightsDestination())
+            {
+                context.Writer.WritePropertyName("InsightsDestination");
+                context.Writer.WriteStringValue(publicRequest.InsightsDestination);
+            }
+
+            if(publicRequest.IsSetInsightSelectors())
+            {
+                context.Writer.WritePropertyName("InsightSelectors");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInsightSelectorsListValue in publicRequest.InsightSelectors)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InsightSelectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInsightSelectorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTrailName())
+            {
+                context.Writer.WritePropertyName("TrailName");
+                context.Writer.WriteStringValue(publicRequest.TrailName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

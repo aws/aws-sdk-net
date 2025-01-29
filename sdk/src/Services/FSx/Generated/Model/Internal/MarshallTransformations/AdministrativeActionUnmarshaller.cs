@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AdministrativeAction Object
     /// </summary>  
-    public class AdministrativeActionUnmarshaller : IUnmarshaller<AdministrativeAction, XmlUnmarshallerContext>, IUnmarshaller<AdministrativeAction, JsonUnmarshallerContext>
+    public class AdministrativeActionUnmarshaller : IJsonUnmarshaller<AdministrativeAction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AdministrativeAction IUnmarshaller<AdministrativeAction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AdministrativeAction Unmarshall(JsonUnmarshallerContext context)
+        public AdministrativeAction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AdministrativeAction unmarshalledObject = new AdministrativeAction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdministrativeActionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdministrativeActionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdministrativeActionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FailureDetails", targetDepth))
                 {
                     var unmarshaller = AdministrativeActionFailureDetailsUnmarshaller.Instance;
-                    unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProgressPercent", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgressPercent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RemainingTransferBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RemainingTransferBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemainingTransferBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequestTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RequestTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequestTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetFileSystemValues", targetDepth))
                 {
                     var unmarshaller = FileSystemUnmarshaller.Instance;
-                    unmarshalledObject.TargetFileSystemValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetFileSystemValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetSnapshotValues", targetDepth))
                 {
                     var unmarshaller = SnapshotUnmarshaller.Instance;
-                    unmarshalledObject.TargetSnapshotValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetSnapshotValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetVolumeValues", targetDepth))
                 {
                     var unmarshaller = VolumeUnmarshaller.Instance;
-                    unmarshalledObject.TargetVolumeValues = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetVolumeValues = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalTransferBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalTransferBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalTransferBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

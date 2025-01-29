@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Queue Object
     /// </summary>  
-    public class QueueUnmarshaller : IUnmarshaller<Queue, XmlUnmarshallerContext>, IUnmarshaller<Queue, JsonUnmarshallerContext>
+    public class QueueUnmarshaller : IXmlUnmarshaller<Queue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Queue Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static QueueUnmarshaller _instance = new QueueUnmarshaller();        
 

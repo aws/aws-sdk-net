@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHours())
             {
                 context.Writer.WritePropertyName("Hours");
-                context.Writer.Write(requestObject.Hours.Value);
+                context.Writer.WriteNumberValue(requestObject.Hours.Value);
             }
 
             if(requestObject.IsSetMinutes())
             {
                 context.Writer.WritePropertyName("Minutes");
-                context.Writer.Write(requestObject.Minutes.Value);
+                context.Writer.WriteNumberValue(requestObject.Minutes.Value);
             }
 
         }

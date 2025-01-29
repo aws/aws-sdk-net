@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PinpointEmail.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DomainDeliverabilityTrackingOption Object
     /// </summary>  
-    public class DomainDeliverabilityTrackingOptionUnmarshaller : IUnmarshaller<DomainDeliverabilityTrackingOption, XmlUnmarshallerContext>, IUnmarshaller<DomainDeliverabilityTrackingOption, JsonUnmarshallerContext>
+    public class DomainDeliverabilityTrackingOptionUnmarshaller : IJsonUnmarshaller<DomainDeliverabilityTrackingOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DomainDeliverabilityTrackingOption IUnmarshaller<DomainDeliverabilityTrackingOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DomainDeliverabilityTrackingOption Unmarshall(JsonUnmarshallerContext context)
+        public DomainDeliverabilityTrackingOption Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DomainDeliverabilityTrackingOption unmarshalledObject = new DomainDeliverabilityTrackingOption();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Domain", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Domain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InboxPlacementTrackingOption", targetDepth))
                 {
                     var unmarshaller = InboxPlacementTrackingOptionUnmarshaller.Instance;
-                    unmarshalledObject.InboxPlacementTrackingOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InboxPlacementTrackingOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubscriptionStartDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionStartDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriptionStartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

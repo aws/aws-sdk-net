@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelMappings())
             {
                 context.Writer.WritePropertyName("channelMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectChannelMappingsListValue in requestObject.ChannelMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AudioChannelMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectChannelMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetChannelsIn())
             {
                 context.Writer.WritePropertyName("channelsIn");
-                context.Writer.Write(requestObject.ChannelsIn.Value);
+                context.Writer.WriteNumberValue(requestObject.ChannelsIn.Value);
             }
 
             if(requestObject.IsSetChannelsOut())
             {
                 context.Writer.WritePropertyName("channelsOut");
-                context.Writer.Write(requestObject.ChannelsOut.Value);
+                context.Writer.WriteNumberValue(requestObject.ChannelsOut.Value);
             }
 
         }

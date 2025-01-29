@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ParameterRange Object
     /// </summary>  
-    public class ParameterRangeUnmarshaller : IUnmarshaller<ParameterRange, XmlUnmarshallerContext>, IUnmarshaller<ParameterRange, JsonUnmarshallerContext>
+    public class ParameterRangeUnmarshaller : IJsonUnmarshaller<ParameterRange, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ParameterRange IUnmarshaller<ParameterRange, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ParameterRange Unmarshall(JsonUnmarshallerContext context)
+        public ParameterRange Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ParameterRange unmarshalledObject = new ParameterRange();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CategoricalParameterRangeSpecification", targetDepth))
                 {
                     var unmarshaller = CategoricalParameterRangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.CategoricalParameterRangeSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CategoricalParameterRangeSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContinuousParameterRangeSpecification", targetDepth))
                 {
                     var unmarshaller = ContinuousParameterRangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.ContinuousParameterRangeSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContinuousParameterRangeSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IntegerParameterRangeSpecification", targetDepth))
                 {
                     var unmarshaller = IntegerParameterRangeSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.IntegerParameterRangeSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IntegerParameterRangeSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

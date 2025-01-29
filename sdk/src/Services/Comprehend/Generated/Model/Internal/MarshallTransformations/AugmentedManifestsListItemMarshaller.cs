@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnnotationDataS3Uri())
             {
                 context.Writer.WritePropertyName("AnnotationDataS3Uri");
-                context.Writer.Write(requestObject.AnnotationDataS3Uri);
+                context.Writer.WriteStringValue(requestObject.AnnotationDataS3Uri);
             }
 
             if(requestObject.IsSetAttributeNames())
             {
                 context.Writer.WritePropertyName("AttributeNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributeNamesListValue in requestObject.AttributeNames)
                 {
-                        context.Writer.Write(requestObjectAttributeNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectAttributeNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDocumentType())
             {
                 context.Writer.WritePropertyName("DocumentType");
-                context.Writer.Write(requestObject.DocumentType);
+                context.Writer.WriteStringValue(requestObject.DocumentType);
             }
 
             if(requestObject.IsSetS3Uri())
             {
                 context.Writer.WritePropertyName("S3Uri");
-                context.Writer.Write(requestObject.S3Uri);
+                context.Writer.WriteStringValue(requestObject.S3Uri);
             }
 
             if(requestObject.IsSetSourceDocumentsS3Uri())
             {
                 context.Writer.WritePropertyName("SourceDocumentsS3Uri");
-                context.Writer.Write(requestObject.SourceDocumentsS3Uri);
+                context.Writer.WriteStringValue(requestObject.SourceDocumentsS3Uri);
             }
 
             if(requestObject.IsSetSplit())
             {
                 context.Writer.WritePropertyName("Split");
-                context.Writer.Write(requestObject.Split);
+                context.Writer.WriteStringValue(requestObject.Split);
             }
 
         }

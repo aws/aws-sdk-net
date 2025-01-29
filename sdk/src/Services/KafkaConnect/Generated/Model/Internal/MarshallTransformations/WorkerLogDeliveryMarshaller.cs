@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogs())
             {
                 context.Writer.WritePropertyName("cloudWatchLogs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CloudWatchLogsLogDeliveryMarshaller.Instance;
                 marshaller.Marshall(requestObject.CloudWatchLogs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFirehose())
             {
                 context.Writer.WritePropertyName("firehose");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FirehoseLogDeliveryMarshaller.Instance;
                 marshaller.Marshall(requestObject.Firehose, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3())
             {
                 context.Writer.WritePropertyName("s3");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3LogDeliveryMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

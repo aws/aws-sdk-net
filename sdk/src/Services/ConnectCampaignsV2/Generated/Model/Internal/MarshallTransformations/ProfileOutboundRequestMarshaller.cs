@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClientToken())
             {
                 context.Writer.WritePropertyName("clientToken");
-                context.Writer.Write(requestObject.ClientToken);
+                context.Writer.WriteStringValue(requestObject.ClientToken);
             }
 
             if(requestObject.IsSetExpirationTime())
             {
                 context.Writer.WritePropertyName("expirationTime");
-                context.Writer.Write(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.ExpirationTime));
+                context.Writer.WriteStringValue(StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.ExpirationTime));
             }
 
             if(requestObject.IsSetProfileId())
             {
                 context.Writer.WritePropertyName("profileId");
-                context.Writer.Write(requestObject.ProfileId);
+                context.Writer.WriteStringValue(requestObject.ProfileId);
             }
 
         }

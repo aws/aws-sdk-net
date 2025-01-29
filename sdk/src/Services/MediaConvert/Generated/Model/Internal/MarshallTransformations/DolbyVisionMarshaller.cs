@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetL6Metadata())
             {
                 context.Writer.WritePropertyName("l6Metadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DolbyVisionLevel6MetadataMarshaller.Instance;
                 marshaller.Marshall(requestObject.L6Metadata, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetL6Mode())
             {
                 context.Writer.WritePropertyName("l6Mode");
-                context.Writer.Write(requestObject.L6Mode);
+                context.Writer.WriteStringValue(requestObject.L6Mode);
             }
 
             if(requestObject.IsSetMapping())
             {
                 context.Writer.WritePropertyName("mapping");
-                context.Writer.Write(requestObject.Mapping);
+                context.Writer.WriteStringValue(requestObject.Mapping);
             }
 
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WriteStringValue(requestObject.Profile);
             }
 
         }

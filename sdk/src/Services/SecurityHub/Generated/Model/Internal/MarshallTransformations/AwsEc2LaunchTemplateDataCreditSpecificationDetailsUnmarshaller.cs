@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2LaunchTemplateDataCreditSpecificationDetails Object
     /// </summary>  
-    public class AwsEc2LaunchTemplateDataCreditSpecificationDetailsUnmarshaller : IUnmarshaller<AwsEc2LaunchTemplateDataCreditSpecificationDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2LaunchTemplateDataCreditSpecificationDetails, JsonUnmarshallerContext>
+    public class AwsEc2LaunchTemplateDataCreditSpecificationDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2LaunchTemplateDataCreditSpecificationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2LaunchTemplateDataCreditSpecificationDetails IUnmarshaller<AwsEc2LaunchTemplateDataCreditSpecificationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2LaunchTemplateDataCreditSpecificationDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2LaunchTemplateDataCreditSpecificationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2LaunchTemplateDataCreditSpecificationDetails unmarshalledObject = new AwsEc2LaunchTemplateDataCreditSpecificationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CpuCredits", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CpuCredits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CpuCredits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

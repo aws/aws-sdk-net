@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetQueryParameters())
             {
                 context.Writer.WritePropertyName("QueryParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueryParametersListValue in requestObject.QueryParameters)
                 {
-                        context.Writer.Write(requestObjectQueryParametersListValue);
+                        context.Writer.WriteStringValue(requestObjectQueryParametersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQueryStatement())
             {
                 context.Writer.WritePropertyName("QueryStatement");
-                context.Writer.Write(requestObject.QueryStatement);
+                context.Writer.WriteStringValue(requestObject.QueryStatement);
             }
 
             if(requestObject.IsSetViewProperties())
             {
                 context.Writer.WritePropertyName("ViewProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectViewPropertiesKvp in requestObject.ViewProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectViewPropertiesKvp.Key);
                     var requestObjectViewPropertiesValue = requestObjectViewPropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectViewPropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectViewPropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

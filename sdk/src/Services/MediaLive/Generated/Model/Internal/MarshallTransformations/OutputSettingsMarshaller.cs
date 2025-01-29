@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,111 +49,111 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchiveOutputSettings())
             {
                 context.Writer.WritePropertyName("archiveOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ArchiveOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ArchiveOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCmafIngestOutputSettings())
             {
                 context.Writer.WritePropertyName("cmafIngestOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CmafIngestOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CmafIngestOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrameCaptureOutputSettings())
             {
                 context.Writer.WritePropertyName("frameCaptureOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrameCaptureOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FrameCaptureOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHlsOutputSettings())
             {
                 context.Writer.WritePropertyName("hlsOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMediaPackageOutputSettings())
             {
                 context.Writer.WritePropertyName("mediaPackageOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MediaPackageOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MediaPackageOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMsSmoothOutputSettings())
             {
                 context.Writer.WritePropertyName("msSmoothOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MsSmoothOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MsSmoothOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMultiplexOutputSettings())
             {
                 context.Writer.WritePropertyName("multiplexOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiplexOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MultiplexOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRtmpOutputSettings())
             {
                 context.Writer.WritePropertyName("rtmpOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RtmpOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RtmpOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSrtOutputSettings())
             {
                 context.Writer.WritePropertyName("srtOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SrtOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SrtOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUdpOutputSettings())
             {
                 context.Writer.WritePropertyName("udpOutputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UdpOutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UdpOutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

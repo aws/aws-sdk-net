@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,105 +49,105 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalS3DataSource())
             {
                 context.Writer.WritePropertyName("AdditionalS3DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AdditionalS3DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.AdditionalS3DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMetricDefinitions())
             {
                 context.Writer.WritePropertyName("MetricDefinitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricDefinitionsListValue in requestObject.MetricDefinitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MetricDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetricDefinitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedHyperParameters())
             {
                 context.Writer.WritePropertyName("SupportedHyperParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedHyperParametersListValue in requestObject.SupportedHyperParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HyperParameterSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectSupportedHyperParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedTrainingInstanceTypes())
             {
                 context.Writer.WritePropertyName("SupportedTrainingInstanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedTrainingInstanceTypesListValue in requestObject.SupportedTrainingInstanceTypes)
                 {
-                        context.Writer.Write(requestObjectSupportedTrainingInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectSupportedTrainingInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportedTuningJobObjectiveMetrics())
             {
                 context.Writer.WritePropertyName("SupportedTuningJobObjectiveMetrics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSupportedTuningJobObjectiveMetricsListValue in requestObject.SupportedTuningJobObjectiveMetrics)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = HyperParameterTuningJobObjectiveMarshaller.Instance;
                     marshaller.Marshall(requestObjectSupportedTuningJobObjectiveMetricsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSupportsDistributedTraining())
             {
                 context.Writer.WritePropertyName("SupportsDistributedTraining");
-                context.Writer.Write(requestObject.SupportsDistributedTraining.Value);
+                context.Writer.WriteBooleanValue(requestObject.SupportsDistributedTraining.Value);
             }
 
             if(requestObject.IsSetTrainingChannels())
             {
                 context.Writer.WritePropertyName("TrainingChannels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTrainingChannelsListValue in requestObject.TrainingChannels)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ChannelSpecificationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTrainingChannelsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTrainingImage())
             {
                 context.Writer.WritePropertyName("TrainingImage");
-                context.Writer.Write(requestObject.TrainingImage);
+                context.Writer.WriteStringValue(requestObject.TrainingImage);
             }
 
             if(requestObject.IsSetTrainingImageDigest())
             {
                 context.Writer.WritePropertyName("TrainingImageDigest");
-                context.Writer.Write(requestObject.TrainingImageDigest);
+                context.Writer.WriteStringValue(requestObject.TrainingImageDigest);
             }
 
         }

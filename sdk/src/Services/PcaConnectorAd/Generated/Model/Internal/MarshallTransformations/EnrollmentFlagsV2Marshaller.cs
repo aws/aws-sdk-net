@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableKeyReuseOnNtTokenKeysetStorageFull())
             {
                 context.Writer.WritePropertyName("EnableKeyReuseOnNtTokenKeysetStorageFull");
-                context.Writer.Write(requestObject.EnableKeyReuseOnNtTokenKeysetStorageFull.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableKeyReuseOnNtTokenKeysetStorageFull.Value);
             }
 
             if(requestObject.IsSetIncludeSymmetricAlgorithms())
             {
                 context.Writer.WritePropertyName("IncludeSymmetricAlgorithms");
-                context.Writer.Write(requestObject.IncludeSymmetricAlgorithms.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeSymmetricAlgorithms.Value);
             }
 
             if(requestObject.IsSetNoSecurityExtension())
             {
                 context.Writer.WritePropertyName("NoSecurityExtension");
-                context.Writer.Write(requestObject.NoSecurityExtension.Value);
+                context.Writer.WriteBooleanValue(requestObject.NoSecurityExtension.Value);
             }
 
             if(requestObject.IsSetRemoveInvalidCertificateFromPersonalStore())
             {
                 context.Writer.WritePropertyName("RemoveInvalidCertificateFromPersonalStore");
-                context.Writer.Write(requestObject.RemoveInvalidCertificateFromPersonalStore.Value);
+                context.Writer.WriteBooleanValue(requestObject.RemoveInvalidCertificateFromPersonalStore.Value);
             }
 
             if(requestObject.IsSetUserInteractionRequired())
             {
                 context.Writer.WritePropertyName("UserInteractionRequired");
-                context.Writer.Write(requestObject.UserInteractionRequired.Value);
+                context.Writer.WriteBooleanValue(requestObject.UserInteractionRequired.Value);
             }
 
         }

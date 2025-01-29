@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBClusterStateException operation
     /// </summary>  
-    public class InvalidDBClusterStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBClusterStateException, XmlUnmarshallerContext>
+    public class InvalidDBClusterStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBClusterStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

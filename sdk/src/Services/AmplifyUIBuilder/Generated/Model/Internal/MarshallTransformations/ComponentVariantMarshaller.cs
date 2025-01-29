@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOverrides())
             {
                 context.Writer.WritePropertyName("overrides");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectOverridesKvp in requestObject.Overrides)
                 {
                     context.Writer.WritePropertyName(requestObjectOverridesKvp.Key);
                     var requestObjectOverridesValue = requestObjectOverridesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectOverridesValueKvp in requestObjectOverridesValue)
                     {
                         context.Writer.WritePropertyName(requestObjectOverridesValueKvp.Key);
                         var requestObjectOverridesValueValue = requestObjectOverridesValueKvp.Value;
 
-                            context.Writer.Write(requestObjectOverridesValueValue);
+                            context.Writer.WriteStringValue(requestObjectOverridesValueValue);
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVariantValues())
             {
                 context.Writer.WritePropertyName("variantValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectVariantValuesKvp in requestObject.VariantValues)
                 {
                     context.Writer.WritePropertyName(requestObjectVariantValuesKvp.Key);
                     var requestObjectVariantValuesValue = requestObjectVariantValuesKvp.Value;
 
-                        context.Writer.Write(requestObjectVariantValuesValue);
+                        context.Writer.WriteStringValue(requestObjectVariantValuesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

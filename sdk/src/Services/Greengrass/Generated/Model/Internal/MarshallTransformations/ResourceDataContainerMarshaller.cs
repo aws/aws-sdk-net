@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLocalDeviceResourceData())
             {
                 context.Writer.WritePropertyName("LocalDeviceResourceData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocalDeviceResourceDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.LocalDeviceResourceData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLocalVolumeResourceData())
             {
                 context.Writer.WritePropertyName("LocalVolumeResourceData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocalVolumeResourceDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.LocalVolumeResourceData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3MachineLearningModelResourceData())
             {
                 context.Writer.WritePropertyName("S3MachineLearningModelResourceData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3MachineLearningModelResourceDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3MachineLearningModelResourceData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSageMakerMachineLearningModelResourceData())
             {
                 context.Writer.WritePropertyName("SageMakerMachineLearningModelResourceData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SageMakerMachineLearningModelResourceDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.SageMakerMachineLearningModelResourceData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecretsManagerSecretResourceData())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecretResourceData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SecretsManagerSecretResourceDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecretsManagerSecretResourceData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

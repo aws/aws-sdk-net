@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidLambdaFunctionAssociationException operation
     /// </summary>  
-    public class InvalidLambdaFunctionAssociationExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidLambdaFunctionAssociationException, XmlUnmarshallerContext>
+    public class InvalidLambdaFunctionAssociationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidLambdaFunctionAssociationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

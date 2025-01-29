@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SuggestAddressHighlights Object
     /// </summary>  
-    public class SuggestAddressHighlightsUnmarshaller : IUnmarshaller<SuggestAddressHighlights, XmlUnmarshallerContext>, IUnmarshaller<SuggestAddressHighlights, JsonUnmarshallerContext>
+    public class SuggestAddressHighlightsUnmarshaller : IJsonUnmarshaller<SuggestAddressHighlights, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SuggestAddressHighlights IUnmarshaller<SuggestAddressHighlights, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SuggestAddressHighlights Unmarshall(JsonUnmarshallerContext context)
+        public SuggestAddressHighlights Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SuggestAddressHighlights unmarshalledObject = new SuggestAddressHighlights();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Label", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

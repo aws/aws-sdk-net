@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -67,80 +70,85 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetExpectedRevisionId())
                 request.Parameters.Add("expectedRevisionId", StringUtils.FromString(publicRequest.ExpectedRevisionId));
             request.ResourcePath = "/policy/{resourceArn}/statements/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAction())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("action");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestActionListValue in publicRequest.Action)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAction())
-                    {
-                        context.Writer.WritePropertyName("action");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActionListValue in publicRequest.Action)
-                        {
-                                context.Writer.Write(publicRequestActionListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCondition())
-                    {
-                        context.Writer.WritePropertyName("condition");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestConditionKvp in publicRequest.Condition)
-                        {
-                            context.Writer.WritePropertyName(publicRequestConditionKvp.Key);
-                            var publicRequestConditionValue = publicRequestConditionKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-                            foreach (var publicRequestConditionValueKvp in publicRequestConditionValue)
-                            {
-                                context.Writer.WritePropertyName(publicRequestConditionValueKvp.Key);
-                                var publicRequestConditionValueValue = publicRequestConditionValueKvp.Value;
-
-                                    context.Writer.Write(publicRequestConditionValueValue);
-                            }
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEffect())
-                    {
-                        context.Writer.WritePropertyName("effect");
-                        context.Writer.Write(publicRequest.Effect);
-                    }
-
-                    if(publicRequest.IsSetPrincipal())
-                    {
-                        context.Writer.WritePropertyName("principal");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PrincipalMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPrincipalListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetStatementId())
-                    {
-                        context.Writer.WritePropertyName("statementId");
-                        context.Writer.Write(publicRequest.StatementId);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestActionListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetCondition())
+            {
+                context.Writer.WritePropertyName("condition");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestConditionKvp in publicRequest.Condition)
+                {
+                    context.Writer.WritePropertyName(publicRequestConditionKvp.Key);
+                    var publicRequestConditionValue = publicRequestConditionKvp.Value;
+
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestConditionValueKvp in publicRequestConditionValue)
+                    {
+                        context.Writer.WritePropertyName(publicRequestConditionValueKvp.Key);
+                        var publicRequestConditionValueValue = publicRequestConditionValueKvp.Value;
+
+                            context.Writer.WriteStringValue(publicRequestConditionValueValue);
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEffect())
+            {
+                context.Writer.WritePropertyName("effect");
+                context.Writer.WriteStringValue(publicRequest.Effect);
+            }
+
+            if(publicRequest.IsSetPrincipal())
+            {
+                context.Writer.WritePropertyName("principal");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPrincipalListValue in publicRequest.Principal)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PrincipalMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPrincipalListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetStatementId())
+            {
+                context.Writer.WritePropertyName("statementId");
+                context.Writer.WriteStringValue(publicRequest.StatementId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

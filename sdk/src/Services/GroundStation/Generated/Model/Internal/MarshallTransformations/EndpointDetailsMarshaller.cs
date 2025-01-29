@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAwsGroundStationAgentEndpoint())
             {
                 context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataflowEndpointMarshaller.Instance;
                 marshaller.Marshall(requestObject.Endpoint, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHealthReasons())
             {
                 context.Writer.WritePropertyName("healthReasons");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHealthReasonsListValue in requestObject.HealthReasons)
                 {
-                        context.Writer.Write(requestObjectHealthReasonsListValue);
+                        context.Writer.WriteStringValue(requestObjectHealthReasonsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHealthStatus())
             {
                 context.Writer.WritePropertyName("healthStatus");
-                context.Writer.Write(requestObject.HealthStatus);
+                context.Writer.WriteStringValue(requestObject.HealthStatus);
             }
 
             if(requestObject.IsSetSecurityDetails())
             {
                 context.Writer.WritePropertyName("securityDetails");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SecurityDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecurityDetails, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

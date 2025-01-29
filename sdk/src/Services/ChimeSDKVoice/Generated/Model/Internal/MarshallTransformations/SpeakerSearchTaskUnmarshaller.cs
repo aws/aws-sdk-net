@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SpeakerSearchTask Object
     /// </summary>  
-    public class SpeakerSearchTaskUnmarshaller : IUnmarshaller<SpeakerSearchTask, XmlUnmarshallerContext>, IUnmarshaller<SpeakerSearchTask, JsonUnmarshallerContext>
+    public class SpeakerSearchTaskUnmarshaller : IJsonUnmarshaller<SpeakerSearchTask, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SpeakerSearchTask IUnmarshaller<SpeakerSearchTask, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SpeakerSearchTask Unmarshall(JsonUnmarshallerContext context)
+        public SpeakerSearchTask Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SpeakerSearchTask unmarshalledObject = new SpeakerSearchTask();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CallDetails", targetDepth))
                 {
                     var unmarshaller = CallDetailsUnmarshaller.Instance;
-                    unmarshalledObject.CallDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CallDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreatedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpeakerSearchDetails", targetDepth))
                 {
                     var unmarshaller = SpeakerSearchDetailsUnmarshaller.Instance;
-                    unmarshalledObject.SpeakerSearchDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpeakerSearchDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpeakerSearchTaskId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SpeakerSearchTaskId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpeakerSearchTaskId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SpeakerSearchTaskStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SpeakerSearchTaskStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SpeakerSearchTaskStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UpdatedTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.UpdatedTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdatedTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsApiGatewayV2RouteSettings Object
     /// </summary>  
-    public class AwsApiGatewayV2RouteSettingsUnmarshaller : IUnmarshaller<AwsApiGatewayV2RouteSettings, XmlUnmarshallerContext>, IUnmarshaller<AwsApiGatewayV2RouteSettings, JsonUnmarshallerContext>
+    public class AwsApiGatewayV2RouteSettingsUnmarshaller : IJsonUnmarshaller<AwsApiGatewayV2RouteSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsApiGatewayV2RouteSettings IUnmarshaller<AwsApiGatewayV2RouteSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsApiGatewayV2RouteSettings Unmarshall(JsonUnmarshallerContext context)
+        public AwsApiGatewayV2RouteSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsApiGatewayV2RouteSettings unmarshalledObject = new AwsApiGatewayV2RouteSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DataTraceEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DataTraceEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataTraceEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DetailedMetricsEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DetailedMetricsEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DetailedMetricsEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LoggingLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoggingLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoggingLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThrottlingBurstLimit", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ThrottlingBurstLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThrottlingBurstLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ThrottlingRateLimit", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.ThrottlingRateLimit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ThrottlingRateLimit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHttpPort())
             {
                 context.Writer.WritePropertyName("HttpPort");
-                context.Writer.Write(requestObject.HttpPort.Value);
+                context.Writer.WriteNumberValue(requestObject.HttpPort.Value);
             }
 
             if(requestObject.IsSetHttpsPort())
             {
                 context.Writer.WritePropertyName("HttpsPort");
-                context.Writer.Write(requestObject.HttpsPort.Value);
+                context.Writer.WriteNumberValue(requestObject.HttpsPort.Value);
             }
 
             if(requestObject.IsSetOriginKeepaliveTimeout())
             {
                 context.Writer.WritePropertyName("OriginKeepaliveTimeout");
-                context.Writer.Write(requestObject.OriginKeepaliveTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.OriginKeepaliveTimeout.Value);
             }
 
             if(requestObject.IsSetOriginProtocolPolicy())
             {
                 context.Writer.WritePropertyName("OriginProtocolPolicy");
-                context.Writer.Write(requestObject.OriginProtocolPolicy);
+                context.Writer.WriteStringValue(requestObject.OriginProtocolPolicy);
             }
 
             if(requestObject.IsSetOriginReadTimeout())
             {
                 context.Writer.WritePropertyName("OriginReadTimeout");
-                context.Writer.Write(requestObject.OriginReadTimeout.Value);
+                context.Writer.WriteNumberValue(requestObject.OriginReadTimeout.Value);
             }
 
             if(requestObject.IsSetOriginSslProtocols())
             {
                 context.Writer.WritePropertyName("OriginSslProtocols");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCloudFrontDistributionOriginSslProtocolsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OriginSslProtocols, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

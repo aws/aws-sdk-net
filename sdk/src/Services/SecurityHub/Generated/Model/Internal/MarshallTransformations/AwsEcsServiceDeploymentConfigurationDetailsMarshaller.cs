@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeploymentCircuitBreaker())
             {
                 context.Writer.WritePropertyName("DeploymentCircuitBreaker");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeploymentCircuitBreaker, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaximumPercent())
             {
                 context.Writer.WritePropertyName("MaximumPercent");
-                context.Writer.Write(requestObject.MaximumPercent.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumPercent.Value);
             }
 
             if(requestObject.IsSetMinimumHealthyPercent())
             {
                 context.Writer.WritePropertyName("MinimumHealthyPercent");
-                context.Writer.Write(requestObject.MinimumHealthyPercent.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumHealthyPercent.Value);
             }
 
         }

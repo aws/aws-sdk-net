@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAsn())
             {
                 context.Writer.WritePropertyName("Asn");
-                context.Writer.Write(requestObject.Asn.Value);
+                context.Writer.WriteNumberValue(requestObject.Asn.Value);
             }
 
             if(requestObject.IsSetAsnOrg())
             {
                 context.Writer.WritePropertyName("AsnOrg");
-                context.Writer.Write(requestObject.AsnOrg);
+                context.Writer.WriteStringValue(requestObject.AsnOrg);
             }
 
             if(requestObject.IsSetIsp())
             {
                 context.Writer.WritePropertyName("Isp");
-                context.Writer.Write(requestObject.Isp);
+                context.Writer.WriteStringValue(requestObject.Isp);
             }
 
             if(requestObject.IsSetOrg())
             {
                 context.Writer.WritePropertyName("Org");
-                context.Writer.Write(requestObject.Org);
+                context.Writer.WriteStringValue(requestObject.Org);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeKey())
             {
                 context.Writer.WritePropertyName("AttributeKey");
-                context.Writer.Write(requestObject.AttributeKey);
+                context.Writer.WriteStringValue(requestObject.AttributeKey);
             }
 
             if(requestObject.IsSetAttributeValue())
             {
                 context.Writer.WritePropertyName("AttributeValue");
-                context.Writer.Write(requestObject.AttributeValue);
+                context.Writer.WriteStringValue(requestObject.AttributeValue);
             }
 
         }

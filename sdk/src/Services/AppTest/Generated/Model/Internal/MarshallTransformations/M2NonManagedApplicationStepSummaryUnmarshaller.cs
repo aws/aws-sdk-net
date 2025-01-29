@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppTest.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for M2NonManagedApplicationStepSummary Object
     /// </summary>  
-    public class M2NonManagedApplicationStepSummaryUnmarshaller : IUnmarshaller<M2NonManagedApplicationStepSummary, XmlUnmarshallerContext>, IUnmarshaller<M2NonManagedApplicationStepSummary, JsonUnmarshallerContext>
+    public class M2NonManagedApplicationStepSummaryUnmarshaller : IJsonUnmarshaller<M2NonManagedApplicationStepSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        M2NonManagedApplicationStepSummary IUnmarshaller<M2NonManagedApplicationStepSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public M2NonManagedApplicationStepSummary Unmarshall(JsonUnmarshallerContext context)
+        public M2NonManagedApplicationStepSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             M2NonManagedApplicationStepSummary unmarshalledObject = new M2NonManagedApplicationStepSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("stepInput", targetDepth))
                 {
                     var unmarshaller = M2NonManagedApplicationStepInputUnmarshaller.Instance;
-                    unmarshalledObject.StepInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stepOutput", targetDepth))
                 {
                     var unmarshaller = M2NonManagedApplicationStepOutputUnmarshaller.Instance;
-                    unmarshalledObject.StepOutput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StepOutput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

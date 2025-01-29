@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ActionExecutionOutput Object
     /// </summary>  
-    public class ActionExecutionOutputUnmarshaller : IUnmarshaller<ActionExecutionOutput, XmlUnmarshallerContext>, IUnmarshaller<ActionExecutionOutput, JsonUnmarshallerContext>
+    public class ActionExecutionOutputUnmarshaller : IJsonUnmarshaller<ActionExecutionOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ActionExecutionOutput IUnmarshaller<ActionExecutionOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionExecutionOutput Unmarshall(JsonUnmarshallerContext context)
+        public ActionExecutionOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ActionExecutionOutput unmarshalledObject = new ActionExecutionOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("executionResult", targetDepth))
                 {
                     var unmarshaller = ActionExecutionResultUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionResult = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionResult = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputArtifacts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ArtifactDetail, ArtifactDetailUnmarshaller>(ArtifactDetailUnmarshaller.Instance);
-                    unmarshalledObject.OutputArtifacts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ArtifactDetail, ArtifactDetailUnmarshaller>(ArtifactDetailUnmarshaller.Instance);
+                    unmarshalledObject.OutputArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputVariables", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.OutputVariables = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.OutputVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

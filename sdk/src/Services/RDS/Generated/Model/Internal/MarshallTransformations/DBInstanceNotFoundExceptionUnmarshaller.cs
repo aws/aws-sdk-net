@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceNotFoundException operation
     /// </summary>  
-    public class DBInstanceNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DBInstanceNotFoundException, XmlUnmarshallerContext>
+    public class DBInstanceNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBInstanceNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

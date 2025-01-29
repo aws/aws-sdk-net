@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Synthetics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ArtifactConfigOutput Object
     /// </summary>  
-    public class ArtifactConfigOutputUnmarshaller : IUnmarshaller<ArtifactConfigOutput, XmlUnmarshallerContext>, IUnmarshaller<ArtifactConfigOutput, JsonUnmarshallerContext>
+    public class ArtifactConfigOutputUnmarshaller : IJsonUnmarshaller<ArtifactConfigOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ArtifactConfigOutput IUnmarshaller<ArtifactConfigOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ArtifactConfigOutput Unmarshall(JsonUnmarshallerContext context)
+        public ArtifactConfigOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ArtifactConfigOutput unmarshalledObject = new ArtifactConfigOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("S3Encryption", targetDepth))
                 {
                     var unmarshaller = S3EncryptionConfigUnmarshaller.Instance;
-                    unmarshalledObject.S3Encryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

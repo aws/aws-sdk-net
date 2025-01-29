@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SmsMfaConfigType Object
     /// </summary>  
-    public class SmsMfaConfigTypeUnmarshaller : IUnmarshaller<SmsMfaConfigType, XmlUnmarshallerContext>, IUnmarshaller<SmsMfaConfigType, JsonUnmarshallerContext>
+    public class SmsMfaConfigTypeUnmarshaller : IJsonUnmarshaller<SmsMfaConfigType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SmsMfaConfigType IUnmarshaller<SmsMfaConfigType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SmsMfaConfigType Unmarshall(JsonUnmarshallerContext context)
+        public SmsMfaConfigType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SmsMfaConfigType unmarshalledObject = new SmsMfaConfigType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("SmsAuthenticationMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SmsAuthenticationMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SmsAuthenticationMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SmsConfiguration", targetDepth))
                 {
                     var unmarshaller = SmsConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.SmsConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SmsConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

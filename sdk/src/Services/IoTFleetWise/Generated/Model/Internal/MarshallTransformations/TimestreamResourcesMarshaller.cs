@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimestreamDatabaseName())
             {
                 context.Writer.WritePropertyName("timestreamDatabaseName");
-                context.Writer.Write(requestObject.TimestreamDatabaseName);
+                context.Writer.WriteStringValue(requestObject.TimestreamDatabaseName);
             }
 
             if(requestObject.IsSetTimestreamTableName())
             {
                 context.Writer.WritePropertyName("timestreamTableName");
-                context.Writer.Write(requestObject.TimestreamTableName);
+                context.Writer.WriteStringValue(requestObject.TimestreamTableName);
             }
 
         }

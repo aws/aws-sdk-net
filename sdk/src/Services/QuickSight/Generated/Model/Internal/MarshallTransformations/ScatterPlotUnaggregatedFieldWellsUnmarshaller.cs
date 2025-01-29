@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ScatterPlotUnaggregatedFieldWells Object
     /// </summary>  
-    public class ScatterPlotUnaggregatedFieldWellsUnmarshaller : IUnmarshaller<ScatterPlotUnaggregatedFieldWells, XmlUnmarshallerContext>, IUnmarshaller<ScatterPlotUnaggregatedFieldWells, JsonUnmarshallerContext>
+    public class ScatterPlotUnaggregatedFieldWellsUnmarshaller : IJsonUnmarshaller<ScatterPlotUnaggregatedFieldWells, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ScatterPlotUnaggregatedFieldWells IUnmarshaller<ScatterPlotUnaggregatedFieldWells, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ScatterPlotUnaggregatedFieldWells Unmarshall(JsonUnmarshallerContext context)
+        public ScatterPlotUnaggregatedFieldWells Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ScatterPlotUnaggregatedFieldWells unmarshalledObject = new ScatterPlotUnaggregatedFieldWells();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Category", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
-                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Label", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
+                    unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Size", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MeasureField, MeasureFieldUnmarshaller>(MeasureFieldUnmarshaller.Instance);
-                    unmarshalledObject.Size = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MeasureField, MeasureFieldUnmarshaller>(MeasureFieldUnmarshaller.Instance);
+                    unmarshalledObject.Size = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("XAxis", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
-                    unmarshalledObject.XAxis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
+                    unmarshalledObject.XAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("YAxis", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
-                    unmarshalledObject.YAxis = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
+                    unmarshalledObject.YAxis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

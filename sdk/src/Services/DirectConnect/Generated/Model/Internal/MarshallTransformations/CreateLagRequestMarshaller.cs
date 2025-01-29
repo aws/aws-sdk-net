@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
 {
@@ -63,93 +66,98 @@ namespace Amazon.DirectConnect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChildConnectionTags())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("childConnectionTags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestChildConnectionTagsListValue in publicRequest.ChildConnectionTags)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChildConnectionTags())
-                    {
-                        context.Writer.WritePropertyName("childConnectionTags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestChildConnectionTagsListValue in publicRequest.ChildConnectionTags)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestChildConnectionTagsListValue, context);
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestChildConnectionTagsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetConnectionId())
-                    {
-                        context.Writer.WritePropertyName("connectionId");
-                        context.Writer.Write(publicRequest.ConnectionId);
-                    }
-
-                    if(publicRequest.IsSetConnectionsBandwidth())
-                    {
-                        context.Writer.WritePropertyName("connectionsBandwidth");
-                        context.Writer.Write(publicRequest.ConnectionsBandwidth);
-                    }
-
-                    if(publicRequest.IsSetLagName())
-                    {
-                        context.Writer.WritePropertyName("lagName");
-                        context.Writer.Write(publicRequest.LagName);
-                    }
-
-                    if(publicRequest.IsSetLocation())
-                    {
-                        context.Writer.WritePropertyName("location");
-                        context.Writer.Write(publicRequest.Location);
-                    }
-
-                    if(publicRequest.IsSetNumberOfConnections())
-                    {
-                        context.Writer.WritePropertyName("numberOfConnections");
-                        context.Writer.Write(publicRequest.NumberOfConnections.Value);
-                    }
-
-                    if(publicRequest.IsSetProviderName())
-                    {
-                        context.Writer.WritePropertyName("providerName");
-                        context.Writer.Write(publicRequest.ProviderName);
-                    }
-
-                    if(publicRequest.IsSetRequestMACSec())
-                    {
-                        context.Writer.WritePropertyName("requestMACSec");
-                        context.Writer.Write(publicRequest.RequestMACSec.Value);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetConnectionId())
+            {
+                context.Writer.WritePropertyName("connectionId");
+                context.Writer.WriteStringValue(publicRequest.ConnectionId);
+            }
+
+            if(publicRequest.IsSetConnectionsBandwidth())
+            {
+                context.Writer.WritePropertyName("connectionsBandwidth");
+                context.Writer.WriteStringValue(publicRequest.ConnectionsBandwidth);
+            }
+
+            if(publicRequest.IsSetLagName())
+            {
+                context.Writer.WritePropertyName("lagName");
+                context.Writer.WriteStringValue(publicRequest.LagName);
+            }
+
+            if(publicRequest.IsSetLocation())
+            {
+                context.Writer.WritePropertyName("location");
+                context.Writer.WriteStringValue(publicRequest.Location);
+            }
+
+            if(publicRequest.IsSetNumberOfConnections())
+            {
+                context.Writer.WritePropertyName("numberOfConnections");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfConnections.Value);
+            }
+
+            if(publicRequest.IsSetProviderName())
+            {
+                context.Writer.WritePropertyName("providerName");
+                context.Writer.WriteStringValue(publicRequest.ProviderName);
+            }
+
+            if(publicRequest.IsSetRequestMACSec())
+            {
+                context.Writer.WritePropertyName("requestMACSec");
+                context.Writer.WriteBooleanValue(publicRequest.RequestMACSec.Value);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

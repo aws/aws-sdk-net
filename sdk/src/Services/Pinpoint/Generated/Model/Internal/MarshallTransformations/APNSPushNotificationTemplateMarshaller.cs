@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.Write(requestObject.Action);
+                context.Writer.WriteStringValue(requestObject.Action);
             }
 
             if(requestObject.IsSetBody())
             {
                 context.Writer.WritePropertyName("Body");
-                context.Writer.Write(requestObject.Body);
+                context.Writer.WriteStringValue(requestObject.Body);
             }
 
             if(requestObject.IsSetMediaUrl())
             {
                 context.Writer.WritePropertyName("MediaUrl");
-                context.Writer.Write(requestObject.MediaUrl);
+                context.Writer.WriteStringValue(requestObject.MediaUrl);
             }
 
             if(requestObject.IsSetRawContent())
             {
                 context.Writer.WritePropertyName("RawContent");
-                context.Writer.Write(requestObject.RawContent);
+                context.Writer.WriteStringValue(requestObject.RawContent);
             }
 
             if(requestObject.IsSetSound())
             {
                 context.Writer.WritePropertyName("Sound");
-                context.Writer.Write(requestObject.Sound);
+                context.Writer.WriteStringValue(requestObject.Sound);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("Title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");
-                context.Writer.Write(requestObject.Url);
+                context.Writer.WriteStringValue(requestObject.Url);
             }
 
         }

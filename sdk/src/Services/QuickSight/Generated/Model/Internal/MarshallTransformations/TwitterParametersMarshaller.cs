@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxRows())
             {
                 context.Writer.WritePropertyName("MaxRows");
-                context.Writer.Write(requestObject.MaxRows.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRows.Value);
             }
 
             if(requestObject.IsSetQuery())
             {
                 context.Writer.WritePropertyName("Query");
-                context.Writer.Write(requestObject.Query);
+                context.Writer.WriteStringValue(requestObject.Query);
             }
 
         }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ChannelModeratorSummary Object
     /// </summary>  
-    public class ChannelModeratorSummaryUnmarshaller : IUnmarshaller<ChannelModeratorSummary, XmlUnmarshallerContext>, IUnmarshaller<ChannelModeratorSummary, JsonUnmarshallerContext>
+    public class ChannelModeratorSummaryUnmarshaller : IJsonUnmarshaller<ChannelModeratorSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ChannelModeratorSummary IUnmarshaller<ChannelModeratorSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ChannelModeratorSummary Unmarshall(JsonUnmarshallerContext context)
+        public ChannelModeratorSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ChannelModeratorSummary unmarshalledObject = new ChannelModeratorSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Moderator", targetDepth))
                 {
                     var unmarshaller = IdentityUnmarshaller.Instance;
-                    unmarshalledObject.Moderator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Moderator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

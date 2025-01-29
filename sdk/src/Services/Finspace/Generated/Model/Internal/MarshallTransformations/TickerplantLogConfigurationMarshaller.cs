@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTickerplantLogVolumes())
             {
                 context.Writer.WritePropertyName("tickerplantLogVolumes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTickerplantLogVolumesListValue in requestObject.TickerplantLogVolumes)
                 {
-                        context.Writer.Write(requestObjectTickerplantLogVolumesListValue);
+                        context.Writer.WriteStringValue(requestObjectTickerplantLogVolumesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

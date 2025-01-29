@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecommendationPreferencesDetail Object
     /// </summary>  
-    public class RecommendationPreferencesDetailUnmarshaller : IUnmarshaller<RecommendationPreferencesDetail, XmlUnmarshallerContext>, IUnmarshaller<RecommendationPreferencesDetail, JsonUnmarshallerContext>
+    public class RecommendationPreferencesDetailUnmarshaller : IJsonUnmarshaller<RecommendationPreferencesDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RecommendationPreferencesDetail IUnmarshaller<RecommendationPreferencesDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecommendationPreferencesDetail Unmarshall(JsonUnmarshallerContext context)
+        public RecommendationPreferencesDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RecommendationPreferencesDetail unmarshalledObject = new RecommendationPreferencesDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("enhancedInfrastructureMetrics", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EnhancedInfrastructureMetrics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnhancedInfrastructureMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("externalMetricsPreference", targetDepth))
                 {
                     var unmarshaller = ExternalMetricsPreferenceUnmarshaller.Instance;
-                    unmarshalledObject.ExternalMetricsPreference = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalMetricsPreference = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("inferredWorkloadTypes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InferredWorkloadTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lookBackPeriod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LookBackPeriod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LookBackPeriod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("preferredResources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EffectivePreferredResource, EffectivePreferredResourceUnmarshaller>(EffectivePreferredResourceUnmarshaller.Instance);
-                    unmarshalledObject.PreferredResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EffectivePreferredResource, EffectivePreferredResourceUnmarshaller>(EffectivePreferredResourceUnmarshaller.Instance);
+                    unmarshalledObject.PreferredResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("savingsEstimationMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SavingsEstimationMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SavingsEstimationMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scope", targetDepth))
                 {
                     var unmarshaller = ScopeUnmarshaller.Instance;
-                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utilizationPreferences", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UtilizationPreference, UtilizationPreferenceUnmarshaller>(UtilizationPreferenceUnmarshaller.Instance);
-                    unmarshalledObject.UtilizationPreferences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UtilizationPreference, UtilizationPreferenceUnmarshaller>(UtilizationPreferenceUnmarshaller.Instance);
+                    unmarshalledObject.UtilizationPreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

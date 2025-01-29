@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAclConfiguration())
             {
                 context.Writer.WritePropertyName("AclConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AclConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AclConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryptionConfiguration())
             {
                 context.Writer.WritePropertyName("EncryptionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncryptionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExpectedBucketOwner())
             {
                 context.Writer.WritePropertyName("ExpectedBucketOwner");
-                context.Writer.Write(requestObject.ExpectedBucketOwner);
+                context.Writer.WriteStringValue(requestObject.ExpectedBucketOwner);
             }
 
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("OutputLocation");
-                context.Writer.Write(requestObject.OutputLocation);
+                context.Writer.WriteStringValue(requestObject.OutputLocation);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                        context.Writer.Write(requestObjectActionsListValue);
+                        context.Writer.WriteStringValue(requestObjectActionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConditionLanguageVersion())
             {
                 context.Writer.WritePropertyName("conditionLanguageVersion");
-                context.Writer.Write(requestObject.ConditionLanguageVersion.Value);
+                context.Writer.WriteNumberValue(requestObject.ConditionLanguageVersion.Value);
             }
 
             if(requestObject.IsSetFullyQualifiedName())
             {
                 context.Writer.WritePropertyName("fullyQualifiedName");
-                context.Writer.Write(requestObject.FullyQualifiedName);
+                context.Writer.WriteStringValue(requestObject.FullyQualifiedName);
             }
 
             if(requestObject.IsSetSignalFetchConfig())
             {
                 context.Writer.WritePropertyName("signalFetchConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SignalFetchConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.SignalFetchConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

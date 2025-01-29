@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IVSRealTime.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMediaTypes())
             {
                 context.Writer.WritePropertyName("mediaTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMediaTypesListValue in requestObject.MediaTypes)
                 {
-                        context.Writer.Write(requestObjectMediaTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectMediaTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStorageConfigurationArn())
             {
                 context.Writer.WritePropertyName("storageConfigurationArn");
-                context.Writer.Write(requestObject.StorageConfigurationArn);
+                context.Writer.WriteStringValue(requestObject.StorageConfigurationArn);
             }
 
             if(requestObject.IsSetThumbnailConfiguration())
             {
                 context.Writer.WritePropertyName("thumbnailConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ParticipantThumbnailConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ThumbnailConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

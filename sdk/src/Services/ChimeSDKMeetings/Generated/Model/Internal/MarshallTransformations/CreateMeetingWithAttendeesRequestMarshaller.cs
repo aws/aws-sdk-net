@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 {
@@ -62,119 +65,124 @@ namespace Amazon.ChimeSDKMeetings.Model.Internal.MarshallTransformations
 
             request.AddSubResource("operation", "create-attendees");
             request.ResourcePath = "/meetings";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAttendees())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Attendees");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttendeesListValue in publicRequest.Attendees)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAttendees())
-                    {
-                        context.Writer.WritePropertyName("Attendees");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAttendeesListValue in publicRequest.Attendees)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = CreateAttendeeRequestItemMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAttendeesListValue, context);
+                    var marshaller = CreateAttendeeRequestItemMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttendeesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetExternalMeetingId())
-                    {
-                        context.Writer.WritePropertyName("ExternalMeetingId");
-                        context.Writer.Write(publicRequest.ExternalMeetingId);
-                    }
-
-                    if(publicRequest.IsSetMediaRegion())
-                    {
-                        context.Writer.WritePropertyName("MediaRegion");
-                        context.Writer.Write(publicRequest.MediaRegion);
-                    }
-
-                    if(publicRequest.IsSetMeetingFeatures())
-                    {
-                        context.Writer.WritePropertyName("MeetingFeatures");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MeetingFeaturesConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MeetingFeatures, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMeetingHostId())
-                    {
-                        context.Writer.WritePropertyName("MeetingHostId");
-                        context.Writer.Write(publicRequest.MeetingHostId);
-                    }
-
-                    if(publicRequest.IsSetNotificationsConfiguration())
-                    {
-                        context.Writer.WritePropertyName("NotificationsConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NotificationsConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NotificationsConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPrimaryMeetingId())
-                    {
-                        context.Writer.WritePropertyName("PrimaryMeetingId");
-                        context.Writer.Write(publicRequest.PrimaryMeetingId);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTenantIds())
-                    {
-                        context.Writer.WritePropertyName("TenantIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTenantIdsListValue in publicRequest.TenantIds)
-                        {
-                                context.Writer.Write(publicRequestTenantIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetClientRequestToken())
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
+            }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("ClientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetExternalMeetingId())
+            {
+                context.Writer.WritePropertyName("ExternalMeetingId");
+                context.Writer.WriteStringValue(publicRequest.ExternalMeetingId);
+            }
+
+            if(publicRequest.IsSetMediaRegion())
+            {
+                context.Writer.WritePropertyName("MediaRegion");
+                context.Writer.WriteStringValue(publicRequest.MediaRegion);
+            }
+
+            if(publicRequest.IsSetMeetingFeatures())
+            {
+                context.Writer.WritePropertyName("MeetingFeatures");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MeetingFeaturesConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MeetingFeatures, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMeetingHostId())
+            {
+                context.Writer.WritePropertyName("MeetingHostId");
+                context.Writer.WriteStringValue(publicRequest.MeetingHostId);
+            }
+
+            if(publicRequest.IsSetNotificationsConfiguration())
+            {
+                context.Writer.WritePropertyName("NotificationsConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NotificationsConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NotificationsConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPrimaryMeetingId())
+            {
+                context.Writer.WritePropertyName("PrimaryMeetingId");
+                context.Writer.WriteStringValue(publicRequest.PrimaryMeetingId);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTenantIds())
+            {
+                context.Writer.WritePropertyName("TenantIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTenantIdsListValue in publicRequest.TenantIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestTenantIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

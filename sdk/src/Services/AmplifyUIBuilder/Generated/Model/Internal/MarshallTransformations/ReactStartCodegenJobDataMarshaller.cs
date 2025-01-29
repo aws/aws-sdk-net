@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiConfiguration())
             {
                 context.Writer.WritePropertyName("apiConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ApiConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApiConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDependencies())
             {
                 context.Writer.WritePropertyName("dependencies");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectDependenciesKvp in requestObject.Dependencies)
                 {
                     context.Writer.WritePropertyName(requestObjectDependenciesKvp.Key);
                     var requestObjectDependenciesValue = requestObjectDependenciesKvp.Value;
 
-                        context.Writer.Write(requestObjectDependenciesValue);
+                        context.Writer.WriteStringValue(requestObjectDependenciesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInlineSourceMap())
             {
                 context.Writer.WritePropertyName("inlineSourceMap");
-                context.Writer.Write(requestObject.InlineSourceMap.Value);
+                context.Writer.WriteBooleanValue(requestObject.InlineSourceMap.Value);
             }
 
             if(requestObject.IsSetModule())
             {
                 context.Writer.WritePropertyName("module");
-                context.Writer.Write(requestObject.Module);
+                context.Writer.WriteStringValue(requestObject.Module);
             }
 
             if(requestObject.IsSetRenderTypeDeclarations())
             {
                 context.Writer.WritePropertyName("renderTypeDeclarations");
-                context.Writer.Write(requestObject.RenderTypeDeclarations.Value);
+                context.Writer.WriteBooleanValue(requestObject.RenderTypeDeclarations.Value);
             }
 
             if(requestObject.IsSetScript())
             {
                 context.Writer.WritePropertyName("script");
-                context.Writer.Write(requestObject.Script);
+                context.Writer.WriteStringValue(requestObject.Script);
             }
 
             if(requestObject.IsSetTarget())
             {
                 context.Writer.WritePropertyName("target");
-                context.Writer.Write(requestObject.Target);
+                context.Writer.WriteStringValue(requestObject.Target);
             }
 
         }

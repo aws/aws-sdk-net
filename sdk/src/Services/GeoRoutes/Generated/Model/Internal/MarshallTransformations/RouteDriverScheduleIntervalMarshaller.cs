@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDriveDuration())
             {
                 context.Writer.WritePropertyName("DriveDuration");
-                context.Writer.Write(requestObject.DriveDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.DriveDuration.Value);
             }
 
             if(requestObject.IsSetRestDuration())
             {
                 context.Writer.WritePropertyName("RestDuration");
-                context.Writer.Write(requestObject.RestDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.RestDuration.Value);
             }
 
         }

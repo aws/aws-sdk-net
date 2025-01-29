@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenZFSOriginSnapshotConfiguration Object
     /// </summary>  
-    public class OpenZFSOriginSnapshotConfigurationUnmarshaller : IUnmarshaller<OpenZFSOriginSnapshotConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OpenZFSOriginSnapshotConfiguration, JsonUnmarshallerContext>
+    public class OpenZFSOriginSnapshotConfigurationUnmarshaller : IJsonUnmarshaller<OpenZFSOriginSnapshotConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpenZFSOriginSnapshotConfiguration IUnmarshaller<OpenZFSOriginSnapshotConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenZFSOriginSnapshotConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OpenZFSOriginSnapshotConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpenZFSOriginSnapshotConfiguration unmarshalledObject = new OpenZFSOriginSnapshotConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CopyStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CopyStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CopyStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnapshotARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

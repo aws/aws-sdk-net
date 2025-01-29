@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EC2InstanceCounts Object
     /// </summary>  
-    public class EC2InstanceCountsUnmarshaller : IUnmarshaller<EC2InstanceCounts, XmlUnmarshallerContext>, IUnmarshaller<EC2InstanceCounts, JsonUnmarshallerContext>
+    public class EC2InstanceCountsUnmarshaller : IJsonUnmarshaller<EC2InstanceCounts, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EC2InstanceCounts IUnmarshaller<EC2InstanceCounts, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EC2InstanceCounts Unmarshall(JsonUnmarshallerContext context)
+        public EC2InstanceCounts Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EC2InstanceCounts unmarshalledObject = new EC2InstanceCounts();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ACTIVE", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ACTIVE = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ACTIVE = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DESIRED", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DESIRED = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DESIRED = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IDLE", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.IDLE = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IDLE = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MAXIMUM", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MAXIMUM = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MAXIMUM = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MINIMUM", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MINIMUM = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MINIMUM = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PENDING", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PENDING = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PENDING = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TERMINATING", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TERMINATING = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TERMINATING = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

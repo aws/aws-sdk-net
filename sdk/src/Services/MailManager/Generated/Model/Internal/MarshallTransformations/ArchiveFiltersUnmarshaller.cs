@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MailManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ArchiveFilters Object
     /// </summary>  
-    public class ArchiveFiltersUnmarshaller : IUnmarshaller<ArchiveFilters, XmlUnmarshallerContext>, IUnmarshaller<ArchiveFilters, JsonUnmarshallerContext>
+    public class ArchiveFiltersUnmarshaller : IJsonUnmarshaller<ArchiveFilters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ArchiveFilters IUnmarshaller<ArchiveFilters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ArchiveFilters Unmarshall(JsonUnmarshallerContext context)
+        public ArchiveFilters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ArchiveFilters unmarshalledObject = new ArchiveFilters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Include", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ArchiveFilterCondition, ArchiveFilterConditionUnmarshaller>(ArchiveFilterConditionUnmarshaller.Instance);
-                    unmarshalledObject.Include = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ArchiveFilterCondition, ArchiveFilterConditionUnmarshaller>(ArchiveFilterConditionUnmarshaller.Instance);
+                    unmarshalledObject.Include = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Unless", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<ArchiveFilterCondition, ArchiveFilterConditionUnmarshaller>(ArchiveFilterConditionUnmarshaller.Instance);
-                    unmarshalledObject.Unless = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<ArchiveFilterCondition, ArchiveFilterConditionUnmarshaller>(ArchiveFilterConditionUnmarshaller.Instance);
+                    unmarshalledObject.Unless = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFieldBasedTooltip())
             {
                 context.Writer.WritePropertyName("FieldBasedTooltip");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FieldBasedTooltipMarshaller.Instance;
                 marshaller.Marshall(requestObject.FieldBasedTooltip, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectedTooltipType())
             {
                 context.Writer.WritePropertyName("SelectedTooltipType");
-                context.Writer.Write(requestObject.SelectedTooltipType);
+                context.Writer.WriteStringValue(requestObject.SelectedTooltipType);
             }
 
             if(requestObject.IsSetTooltipVisibility())
             {
                 context.Writer.WritePropertyName("TooltipVisibility");
-                context.Writer.Write(requestObject.TooltipVisibility);
+                context.Writer.WriteStringValue(requestObject.TooltipVisibility);
             }
 
         }

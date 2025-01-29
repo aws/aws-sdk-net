@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ApiResult Object
     /// </summary>  
-    public class ApiResultUnmarshaller : IUnmarshaller<ApiResult, XmlUnmarshallerContext>, IUnmarshaller<ApiResult, JsonUnmarshallerContext>
+    public class ApiResultUnmarshaller : IJsonUnmarshaller<ApiResult, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ApiResult IUnmarshaller<ApiResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ApiResult Unmarshall(JsonUnmarshallerContext context)
+        public ApiResult Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ApiResult unmarshalledObject = new ApiResult();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actionGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("agentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AgentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("apiPath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApiPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApiPath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("confirmationState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfirmationState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfirmationState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("httpMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HttpMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HttpMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("httpStatusCode", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.HttpStatusCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HttpStatusCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("responseBody", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ContentBody, StringUnmarshaller, ContentBodyUnmarshaller>(StringUnmarshaller.Instance, ContentBodyUnmarshaller.Instance);
-                    unmarshalledObject.ResponseBody = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ContentBody, StringUnmarshaller, ContentBodyUnmarshaller>(StringUnmarshaller.Instance, ContentBodyUnmarshaller.Instance);
+                    unmarshalledObject.ResponseBody = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("responseState", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResponseState = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResponseState = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PipelineExecutionStepMetadata Object
     /// </summary>  
-    public class PipelineExecutionStepMetadataUnmarshaller : IUnmarshaller<PipelineExecutionStepMetadata, XmlUnmarshallerContext>, IUnmarshaller<PipelineExecutionStepMetadata, JsonUnmarshallerContext>
+    public class PipelineExecutionStepMetadataUnmarshaller : IJsonUnmarshaller<PipelineExecutionStepMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PipelineExecutionStepMetadata IUnmarshaller<PipelineExecutionStepMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipelineExecutionStepMetadata Unmarshall(JsonUnmarshallerContext context)
+        public PipelineExecutionStepMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PipelineExecutionStepMetadata unmarshalledObject = new PipelineExecutionStepMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AutoMLJob", targetDepth))
                 {
                     var unmarshaller = AutoMLJobStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.AutoMLJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoMLJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Callback", targetDepth))
                 {
                     var unmarshaller = CallbackStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Callback = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Callback = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClarifyCheck", targetDepth))
                 {
                     var unmarshaller = ClarifyCheckStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ClarifyCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClarifyCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Condition", targetDepth))
                 {
                     var unmarshaller = ConditionStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Condition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EMR", targetDepth))
                 {
                     var unmarshaller = EMRStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.EMR = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EMR = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Endpoint", targetDepth))
                 {
                     var unmarshaller = EndpointStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointConfig", targetDepth))
                 {
                     var unmarshaller = EndpointConfigStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.EndpointConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Fail", targetDepth))
                 {
                     var unmarshaller = FailStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Fail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Fail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Lambda", targetDepth))
                 {
                     var unmarshaller = LambdaStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Lambda = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Lambda = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Model", targetDepth))
                 {
                     var unmarshaller = ModelStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.Model = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Model = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProcessingJob", targetDepth))
                 {
                     var unmarshaller = ProcessingJobStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ProcessingJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProcessingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QualityCheck", targetDepth))
                 {
                     var unmarshaller = QualityCheckStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.QualityCheck = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QualityCheck = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RegisterModel", targetDepth))
                 {
                     var unmarshaller = RegisterModelStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.RegisterModel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegisterModel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainingJob", targetDepth))
                 {
                     var unmarshaller = TrainingJobStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.TrainingJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainingJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TransformJob", targetDepth))
                 {
                     var unmarshaller = TransformJobStepMetadataUnmarshaller.Instance;
-                    unmarshalledObject.TransformJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransformJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TuningJob", targetDepth))
                 {
                     var unmarshaller = TuningJobStepMetaDataUnmarshaller.Instance;
-                    unmarshalledObject.TuningJob = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TuningJob = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

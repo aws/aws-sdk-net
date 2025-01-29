@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaderParameters())
             {
                 context.Writer.WritePropertyName("HeaderParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectHeaderParametersKvp in requestObject.HeaderParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectHeaderParametersKvp.Key);
                     var requestObjectHeaderParametersValue = requestObjectHeaderParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectHeaderParametersValue);
+                        context.Writer.WriteStringValue(requestObjectHeaderParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPathParameterValues())
             {
                 context.Writer.WritePropertyName("PathParameterValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPathParameterValuesListValue in requestObject.PathParameterValues)
                 {
-                        context.Writer.Write(requestObjectPathParameterValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectPathParameterValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQueryStringParameters())
             {
                 context.Writer.WritePropertyName("QueryStringParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectQueryStringParametersKvp in requestObject.QueryStringParameters)
                 {
                     context.Writer.WritePropertyName(requestObjectQueryStringParametersKvp.Key);
                     var requestObjectQueryStringParametersValue = requestObjectQueryStringParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectQueryStringParametersValue);
+                        context.Writer.WriteStringValue(requestObjectQueryStringParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

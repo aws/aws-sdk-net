@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPeriod())
             {
                 context.Writer.WritePropertyName("Period");
-                context.Writer.Write(requestObject.Period.Value);
+                context.Writer.WriteNumberValue(requestObject.Period.Value);
             }
 
             if(requestObject.IsSetPeriodType())
             {
                 context.Writer.WritePropertyName("PeriodType");
-                context.Writer.Write(requestObject.PeriodType);
+                context.Writer.WriteStringValue(requestObject.PeriodType);
             }
 
         }

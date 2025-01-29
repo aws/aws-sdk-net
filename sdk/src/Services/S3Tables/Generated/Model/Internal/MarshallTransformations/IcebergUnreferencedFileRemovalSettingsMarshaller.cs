@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNonCurrentDays())
             {
                 context.Writer.WritePropertyName("nonCurrentDays");
-                context.Writer.Write(requestObject.NonCurrentDays.Value);
+                context.Writer.WriteNumberValue(requestObject.NonCurrentDays.Value);
             }
 
             if(requestObject.IsSetUnreferencedDays())
             {
                 context.Writer.WritePropertyName("unreferencedDays");
-                context.Writer.Write(requestObject.UnreferencedDays.Value);
+                context.Writer.WriteNumberValue(requestObject.UnreferencedDays.Value);
             }
 
         }

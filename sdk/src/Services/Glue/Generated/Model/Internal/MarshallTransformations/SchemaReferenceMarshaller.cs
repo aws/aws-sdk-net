@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSchemaId())
             {
                 context.Writer.WritePropertyName("SchemaId");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SchemaIdMarshaller.Instance;
                 marshaller.Marshall(requestObject.SchemaId, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchemaVersionId())
             {
                 context.Writer.WritePropertyName("SchemaVersionId");
-                context.Writer.Write(requestObject.SchemaVersionId);
+                context.Writer.WriteStringValue(requestObject.SchemaVersionId);
             }
 
             if(requestObject.IsSetSchemaVersionNumber())
             {
                 context.Writer.WritePropertyName("SchemaVersionNumber");
-                context.Writer.Write(requestObject.SchemaVersionNumber.Value);
+                context.Writer.WriteNumberValue(requestObject.SchemaVersionNumber.Value);
             }
 
         }

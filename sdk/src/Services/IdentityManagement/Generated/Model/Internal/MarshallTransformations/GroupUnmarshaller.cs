@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Group Object
     /// </summary>  
-    public class GroupUnmarshaller : IUnmarshaller<Group, XmlUnmarshallerContext>, IUnmarshaller<Group, JsonUnmarshallerContext>
+    public class GroupUnmarshaller : IXmlUnmarshaller<Group, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Group Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static GroupUnmarshaller _instance = new GroupUnmarshaller();        
 

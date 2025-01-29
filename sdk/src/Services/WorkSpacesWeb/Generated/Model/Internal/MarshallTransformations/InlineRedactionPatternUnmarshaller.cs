@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InlineRedactionPattern Object
     /// </summary>  
-    public class InlineRedactionPatternUnmarshaller : IUnmarshaller<InlineRedactionPattern, XmlUnmarshallerContext>, IUnmarshaller<InlineRedactionPattern, JsonUnmarshallerContext>
+    public class InlineRedactionPatternUnmarshaller : IJsonUnmarshaller<InlineRedactionPattern, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InlineRedactionPattern IUnmarshaller<InlineRedactionPattern, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InlineRedactionPattern Unmarshall(JsonUnmarshallerContext context)
+        public InlineRedactionPattern Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InlineRedactionPattern unmarshalledObject = new InlineRedactionPattern();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("builtInPatternId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BuiltInPatternId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BuiltInPatternId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("confidenceLevel", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ConfidenceLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfidenceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("customPattern", targetDepth))
                 {
                     var unmarshaller = CustomPatternUnmarshaller.Instance;
-                    unmarshalledObject.CustomPattern = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("enforcedUrls", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.EnforcedUrls = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.EnforcedUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("exemptUrls", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExemptUrls = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExemptUrls = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("redactionPlaceHolder", targetDepth))
                 {
                     var unmarshaller = RedactionPlaceHolderUnmarshaller.Instance;
-                    unmarshalledObject.RedactionPlaceHolder = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedactionPlaceHolder = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

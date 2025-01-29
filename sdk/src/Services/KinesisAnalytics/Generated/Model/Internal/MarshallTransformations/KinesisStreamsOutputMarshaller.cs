@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourceARN())
             {
                 context.Writer.WritePropertyName("ResourceARN");
-                context.Writer.Write(requestObject.ResourceARN);
+                context.Writer.WriteStringValue(requestObject.ResourceARN);
             }
 
             if(requestObject.IsSetRoleARN())
             {
                 context.Writer.WritePropertyName("RoleARN");
-                context.Writer.Write(requestObject.RoleARN);
+                context.Writer.WriteStringValue(requestObject.RoleARN);
             }
 
         }

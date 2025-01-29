@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AudioOnlyHlsSettings Object
     /// </summary>  
-    public class AudioOnlyHlsSettingsUnmarshaller : IUnmarshaller<AudioOnlyHlsSettings, XmlUnmarshallerContext>, IUnmarshaller<AudioOnlyHlsSettings, JsonUnmarshallerContext>
+    public class AudioOnlyHlsSettingsUnmarshaller : IJsonUnmarshaller<AudioOnlyHlsSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AudioOnlyHlsSettings IUnmarshaller<AudioOnlyHlsSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioOnlyHlsSettings Unmarshall(JsonUnmarshallerContext context)
+        public AudioOnlyHlsSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AudioOnlyHlsSettings unmarshalledObject = new AudioOnlyHlsSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioGroupId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioGroupId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioOnlyImage", targetDepth))
                 {
                     var unmarshaller = InputLocationUnmarshaller.Instance;
-                    unmarshalledObject.AudioOnlyImage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioOnlyImage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("audioTrackType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioTrackType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("segmentType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SegmentType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SegmentType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

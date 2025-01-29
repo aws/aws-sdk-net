@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMeasureName())
             {
                 context.Writer.WritePropertyName("MeasureName");
-                context.Writer.Write(requestObject.MeasureName);
+                context.Writer.WriteStringValue(requestObject.MeasureName);
             }
 
             if(requestObject.IsSetMeasureValueType())
             {
                 context.Writer.WritePropertyName("MeasureValueType");
-                context.Writer.Write(requestObject.MeasureValueType);
+                context.Writer.WriteStringValue(requestObject.MeasureValueType);
             }
 
             if(requestObject.IsSetMultiMeasureAttributeMappings())
             {
                 context.Writer.WritePropertyName("MultiMeasureAttributeMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMultiMeasureAttributeMappingsListValue in requestObject.MultiMeasureAttributeMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MultiMeasureAttributeMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectMultiMeasureAttributeMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceColumn())
             {
                 context.Writer.WritePropertyName("SourceColumn");
-                context.Writer.Write(requestObject.SourceColumn);
+                context.Writer.WriteStringValue(requestObject.SourceColumn);
             }
 
             if(requestObject.IsSetTargetMeasureName())
             {
                 context.Writer.WritePropertyName("TargetMeasureName");
-                context.Writer.Write(requestObject.TargetMeasureName);
+                context.Writer.WriteStringValue(requestObject.TargetMeasureName);
             }
 
         }

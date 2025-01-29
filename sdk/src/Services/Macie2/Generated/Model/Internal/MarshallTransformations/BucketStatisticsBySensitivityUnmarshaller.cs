@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BucketStatisticsBySensitivity Object
     /// </summary>  
-    public class BucketStatisticsBySensitivityUnmarshaller : IUnmarshaller<BucketStatisticsBySensitivity, XmlUnmarshallerContext>, IUnmarshaller<BucketStatisticsBySensitivity, JsonUnmarshallerContext>
+    public class BucketStatisticsBySensitivityUnmarshaller : IJsonUnmarshaller<BucketStatisticsBySensitivity, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BucketStatisticsBySensitivity IUnmarshaller<BucketStatisticsBySensitivity, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BucketStatisticsBySensitivity Unmarshall(JsonUnmarshallerContext context)
+        public BucketStatisticsBySensitivity Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BucketStatisticsBySensitivity unmarshalledObject = new BucketStatisticsBySensitivity();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("classificationError", targetDepth))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
-                    unmarshalledObject.ClassificationError = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClassificationError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notClassified", targetDepth))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
-                    unmarshalledObject.NotClassified = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotClassified = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("notSensitive", targetDepth))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
-                    unmarshalledObject.NotSensitive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NotSensitive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sensitive", targetDepth))
                 {
                     var unmarshaller = SensitivityAggregationsUnmarshaller.Instance;
-                    unmarshalledObject.Sensitive = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Sensitive = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

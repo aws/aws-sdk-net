@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchReferenceName())
             {
                 context.Writer.WritePropertyName("BatchReferenceName");
-                context.Writer.Write(requestObject.BatchReferenceName);
+                context.Writer.WriteStringValue(requestObject.BatchReferenceName);
             }
 
             if(requestObject.IsSetLinkName())
             {
                 context.Writer.WritePropertyName("LinkName");
-                context.Writer.Write(requestObject.LinkName);
+                context.Writer.WriteStringValue(requestObject.LinkName);
             }
 
             if(requestObject.IsSetObjectAttributeList())
             {
                 context.Writer.WritePropertyName("ObjectAttributeList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectObjectAttributeListListValue in requestObject.ObjectAttributeList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeKeyAndValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectObjectAttributeListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetParentReference())
             {
                 context.Writer.WritePropertyName("ParentReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ObjectReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.ParentReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchemaFacet())
             {
                 context.Writer.WritePropertyName("SchemaFacet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSchemaFacetListValue in requestObject.SchemaFacet)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SchemaFacetMarshaller.Instance;
                     marshaller.Marshall(requestObjectSchemaFacetListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

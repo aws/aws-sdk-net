@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateMode())
             {
                 context.Writer.WritePropertyName("certificateMode");
-                context.Writer.Write(requestObject.CertificateMode);
+                context.Writer.WriteStringValue(requestObject.CertificateMode);
             }
 
             if(requestObject.IsSetConnectionRetryInterval())
             {
                 context.Writer.WritePropertyName("connectionRetryInterval");
-                context.Writer.Write(requestObject.ConnectionRetryInterval.Value);
+                context.Writer.WriteNumberValue(requestObject.ConnectionRetryInterval.Value);
             }
 
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputLocationRefMarshaller.Instance;
                 marshaller.Marshall(requestObject.Destination, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNumRetries())
             {
                 context.Writer.WritePropertyName("numRetries");
-                context.Writer.Write(requestObject.NumRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.NumRetries.Value);
             }
 
         }

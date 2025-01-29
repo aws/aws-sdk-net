@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
 {
@@ -61,53 +64,58 @@ namespace Amazon.AugmentedAIRuntime.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/human-loops";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDataAttributes())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDataAttributes())
-                    {
-                        context.Writer.WritePropertyName("DataAttributes");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("DataAttributes");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = HumanLoopDataAttributesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DataAttributes, context);
+                var marshaller = HumanLoopDataAttributesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DataAttributes, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFlowDefinitionArn())
-                    {
-                        context.Writer.WritePropertyName("FlowDefinitionArn");
-                        context.Writer.Write(publicRequest.FlowDefinitionArn);
-                    }
-
-                    if(publicRequest.IsSetHumanLoopInput())
-                    {
-                        context.Writer.WritePropertyName("HumanLoopInput");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HumanLoopInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HumanLoopInput, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHumanLoopName())
-                    {
-                        context.Writer.WritePropertyName("HumanLoopName");
-                        context.Writer.Write(publicRequest.HumanLoopName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetFlowDefinitionArn())
+            {
+                context.Writer.WritePropertyName("FlowDefinitionArn");
+                context.Writer.WriteStringValue(publicRequest.FlowDefinitionArn);
+            }
+
+            if(publicRequest.IsSetHumanLoopInput())
+            {
+                context.Writer.WritePropertyName("HumanLoopInput");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HumanLoopInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HumanLoopInput, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHumanLoopName())
+            {
+                context.Writer.WritePropertyName("HumanLoopName");
+                context.Writer.WriteStringValue(publicRequest.HumanLoopName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

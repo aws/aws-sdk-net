@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConsumerGroupReplication())
             {
                 context.Writer.WritePropertyName("consumerGroupReplication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConsumerGroupReplicationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConsumerGroupReplication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceKafkaClusterArn())
             {
                 context.Writer.WritePropertyName("sourceKafkaClusterArn");
-                context.Writer.Write(requestObject.SourceKafkaClusterArn);
+                context.Writer.WriteStringValue(requestObject.SourceKafkaClusterArn);
             }
 
             if(requestObject.IsSetTargetCompressionType())
             {
                 context.Writer.WritePropertyName("targetCompressionType");
-                context.Writer.Write(requestObject.TargetCompressionType);
+                context.Writer.WriteStringValue(requestObject.TargetCompressionType);
             }
 
             if(requestObject.IsSetTargetKafkaClusterArn())
             {
                 context.Writer.WritePropertyName("targetKafkaClusterArn");
-                context.Writer.Write(requestObject.TargetKafkaClusterArn);
+                context.Writer.WriteStringValue(requestObject.TargetKafkaClusterArn);
             }
 
             if(requestObject.IsSetTopicReplication())
             {
                 context.Writer.WritePropertyName("topicReplication");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicReplicationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TopicReplication, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

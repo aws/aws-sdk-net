@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             if(requestObject.IsSetDomainCredentialsProvider())
             {
                 context.Writer.WritePropertyName("DomainCredentialsProvider");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CredentialsProviderMarshaller.Instance;
                 marshaller.Marshall(requestObject.DomainCredentialsProvider, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDomainIpv4List())
             {
                 context.Writer.WritePropertyName("DomainIpv4List");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDomainIpv4ListListValue in requestObject.DomainIpv4List)
                 {
-                        context.Writer.Write(requestObjectDomainIpv4ListListValue);
+                        context.Writer.WriteStringValue(requestObjectDomainIpv4ListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDomainName())
             {
                 context.Writer.WritePropertyName("DomainName");
-                context.Writer.Write(requestObject.DomainName);
+                context.Writer.WriteStringValue(requestObject.DomainName);
             }
 
             if(requestObject.IsSetDomainNetworkSettings())
             {
                 context.Writer.WritePropertyName("DomainNetworkSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DomainNetworkSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DomainNetworkSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

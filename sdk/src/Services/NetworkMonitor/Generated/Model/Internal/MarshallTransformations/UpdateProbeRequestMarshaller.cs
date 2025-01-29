@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
 {
@@ -67,49 +70,54 @@ namespace Amazon.NetworkMonitor.Model.Internal.MarshallTransformations
                 throw new AmazonNetworkMonitorException("Request object does not have required field ProbeId set");
             request.AddPathResource("{probeId}", StringUtils.FromString(publicRequest.ProbeId));
             request.ResourcePath = "/monitors/{monitorName}/probes/{probeId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestination())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestination())
-                    {
-                        context.Writer.WritePropertyName("destination");
-                        context.Writer.Write(publicRequest.Destination);
-                    }
-
-                    if(publicRequest.IsSetDestinationPort())
-                    {
-                        context.Writer.WritePropertyName("destinationPort");
-                        context.Writer.Write(publicRequest.DestinationPort.Value);
-                    }
-
-                    if(publicRequest.IsSetPacketSize())
-                    {
-                        context.Writer.WritePropertyName("packetSize");
-                        context.Writer.Write(publicRequest.PacketSize.Value);
-                    }
-
-                    if(publicRequest.IsSetProtocol())
-                    {
-                        context.Writer.WritePropertyName("protocol");
-                        context.Writer.Write(publicRequest.Protocol);
-                    }
-
-                    if(publicRequest.IsSetState())
-                    {
-                        context.Writer.WritePropertyName("state");
-                        context.Writer.Write(publicRequest.State);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("destination");
+                context.Writer.WriteStringValue(publicRequest.Destination);
             }
+
+            if(publicRequest.IsSetDestinationPort())
+            {
+                context.Writer.WritePropertyName("destinationPort");
+                context.Writer.WriteNumberValue(publicRequest.DestinationPort.Value);
+            }
+
+            if(publicRequest.IsSetPacketSize())
+            {
+                context.Writer.WritePropertyName("packetSize");
+                context.Writer.WriteNumberValue(publicRequest.PacketSize.Value);
+            }
+
+            if(publicRequest.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("protocol");
+                context.Writer.WriteStringValue(publicRequest.Protocol);
+            }
+
+            if(publicRequest.IsSetState())
+            {
+                context.Writer.WritePropertyName("state");
+                context.Writer.WriteStringValue(publicRequest.State);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

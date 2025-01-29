@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UsageStatistics Object
     /// </summary>  
-    public class UsageStatisticsUnmarshaller : IUnmarshaller<UsageStatistics, XmlUnmarshallerContext>, IUnmarshaller<UsageStatistics, JsonUnmarshallerContext>
+    public class UsageStatisticsUnmarshaller : IJsonUnmarshaller<UsageStatistics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UsageStatistics IUnmarshaller<UsageStatistics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UsageStatistics Unmarshall(JsonUnmarshallerContext context)
+        public UsageStatistics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UsageStatistics unmarshalledObject = new UsageStatistics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("sumByAccount", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageAccountResult, UsageAccountResultUnmarshaller>(UsageAccountResultUnmarshaller.Instance);
-                    unmarshalledObject.SumByAccount = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UsageAccountResult, UsageAccountResultUnmarshaller>(UsageAccountResultUnmarshaller.Instance);
+                    unmarshalledObject.SumByAccount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sumByDataSource", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageDataSourceResult, UsageDataSourceResultUnmarshaller>(UsageDataSourceResultUnmarshaller.Instance);
-                    unmarshalledObject.SumByDataSource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UsageDataSourceResult, UsageDataSourceResultUnmarshaller>(UsageDataSourceResultUnmarshaller.Instance);
+                    unmarshalledObject.SumByDataSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sumByFeature", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageFeatureResult, UsageFeatureResultUnmarshaller>(UsageFeatureResultUnmarshaller.Instance);
-                    unmarshalledObject.SumByFeature = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UsageFeatureResult, UsageFeatureResultUnmarshaller>(UsageFeatureResultUnmarshaller.Instance);
+                    unmarshalledObject.SumByFeature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sumByResource", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageResourceResult, UsageResourceResultUnmarshaller>(UsageResourceResultUnmarshaller.Instance);
-                    unmarshalledObject.SumByResource = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UsageResourceResult, UsageResourceResultUnmarshaller>(UsageResourceResultUnmarshaller.Instance);
+                    unmarshalledObject.SumByResource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("topAccountsByFeature", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageTopAccountsResult, UsageTopAccountsResultUnmarshaller>(UsageTopAccountsResultUnmarshaller.Instance);
-                    unmarshalledObject.TopAccountsByFeature = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UsageTopAccountsResult, UsageTopAccountsResultUnmarshaller>(UsageTopAccountsResultUnmarshaller.Instance);
+                    unmarshalledObject.TopAccountsByFeature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("topResources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<UsageResourceResult, UsageResourceResultUnmarshaller>(UsageResourceResultUnmarshaller.Instance);
-                    unmarshalledObject.TopResources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<UsageResourceResult, UsageResourceResultUnmarshaller>(UsageResourceResultUnmarshaller.Instance);
+                    unmarshalledObject.TopResources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

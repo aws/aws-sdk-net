@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("Filters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFiltersKvp in requestObject.Filters)
                 {
                     context.Writer.WritePropertyName(requestObjectFiltersKvp.Key);
                     var requestObjectFiltersValue = requestObjectFiltersKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectFiltersValueListValue in requestObjectFiltersValue)
                     {
-                            context.Writer.Write(requestObjectFiltersValueListValue);
+                            context.Writer.WriteStringValue(requestObjectFiltersValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFolders())
             {
                 context.Writer.WritePropertyName("Folders");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFoldersListValue in requestObject.Folders)
                 {
-                        context.Writer.Write(requestObjectFoldersListValue);
+                        context.Writer.WriteStringValue(requestObjectFoldersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

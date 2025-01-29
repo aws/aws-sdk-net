@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnmodifiableEntityException operation
     /// </summary>  
-    public class UnmodifiableEntityExceptionUnmarshaller : IErrorResponseUnmarshaller<UnmodifiableEntityException, XmlUnmarshallerContext>
+    public class UnmodifiableEntityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UnmodifiableEntityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudWatchLogGroupName())
             {
                 context.Writer.WritePropertyName("CloudWatchLogGroupName");
-                context.Writer.Write(requestObject.CloudWatchLogGroupName);
+                context.Writer.WriteStringValue(requestObject.CloudWatchLogGroupName);
             }
 
             if(requestObject.IsSetCloudWatchOutputEnabled())
             {
                 context.Writer.WritePropertyName("CloudWatchOutputEnabled");
-                context.Writer.Write(requestObject.CloudWatchOutputEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.CloudWatchOutputEnabled.Value);
             }
 
         }

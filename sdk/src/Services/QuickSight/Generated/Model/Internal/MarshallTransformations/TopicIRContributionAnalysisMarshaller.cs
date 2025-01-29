@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDirection())
             {
                 context.Writer.WritePropertyName("Direction");
-                context.Writer.Write(requestObject.Direction);
+                context.Writer.WriteStringValue(requestObject.Direction);
             }
 
             if(requestObject.IsSetFactors())
             {
                 context.Writer.WritePropertyName("Factors");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFactorsListValue in requestObject.Factors)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContributionAnalysisFactorMarshaller.Instance;
                     marshaller.Marshall(requestObjectFactorsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSortType())
             {
                 context.Writer.WritePropertyName("SortType");
-                context.Writer.Write(requestObject.SortType);
+                context.Writer.WriteStringValue(requestObject.SortType);
             }
 
             if(requestObject.IsSetTimeRanges())
             {
                 context.Writer.WritePropertyName("TimeRanges");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContributionAnalysisTimeRangesMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeRanges, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

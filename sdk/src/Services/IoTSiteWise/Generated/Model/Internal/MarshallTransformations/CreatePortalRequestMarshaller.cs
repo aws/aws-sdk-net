@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
 {
@@ -61,127 +64,132 @@ namespace Amazon.IoTSiteWise.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/portals";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAlarms())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAlarms())
-                    {
-                        context.Writer.WritePropertyName("alarms");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("alarms");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AlarmsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Alarms, context);
+                var marshaller = AlarmsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Alarms, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetNotificationSenderEmail())
-                    {
-                        context.Writer.WritePropertyName("notificationSenderEmail");
-                        context.Writer.Write(publicRequest.NotificationSenderEmail);
-                    }
-
-                    if(publicRequest.IsSetPortalAuthMode())
-                    {
-                        context.Writer.WritePropertyName("portalAuthMode");
-                        context.Writer.Write(publicRequest.PortalAuthMode);
-                    }
-
-                    if(publicRequest.IsSetPortalContactEmail())
-                    {
-                        context.Writer.WritePropertyName("portalContactEmail");
-                        context.Writer.Write(publicRequest.PortalContactEmail);
-                    }
-
-                    if(publicRequest.IsSetPortalDescription())
-                    {
-                        context.Writer.WritePropertyName("portalDescription");
-                        context.Writer.Write(publicRequest.PortalDescription);
-                    }
-
-                    if(publicRequest.IsSetPortalLogoImageFile())
-                    {
-                        context.Writer.WritePropertyName("portalLogoImageFile");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ImageFileMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PortalLogoImageFile, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPortalName())
-                    {
-                        context.Writer.WritePropertyName("portalName");
-                        context.Writer.Write(publicRequest.PortalName);
-                    }
-
-                    if(publicRequest.IsSetPortalType())
-                    {
-                        context.Writer.WritePropertyName("portalType");
-                        context.Writer.Write(publicRequest.PortalType);
-                    }
-
-                    if(publicRequest.IsSetPortalTypeConfiguration())
-                    {
-                        context.Writer.WritePropertyName("portalTypeConfiguration");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestPortalTypeConfigurationKvp in publicRequest.PortalTypeConfiguration)
-                        {
-                            context.Writer.WritePropertyName(publicRequestPortalTypeConfigurationKvp.Key);
-                            var publicRequestPortalTypeConfigurationValue = publicRequestPortalTypeConfigurationKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = PortalTypeEntryMarshaller.Instance;
-                            marshaller.Marshall(publicRequestPortalTypeConfigurationValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("roleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetNotificationSenderEmail())
+            {
+                context.Writer.WritePropertyName("notificationSenderEmail");
+                context.Writer.WriteStringValue(publicRequest.NotificationSenderEmail);
+            }
+
+            if(publicRequest.IsSetPortalAuthMode())
+            {
+                context.Writer.WritePropertyName("portalAuthMode");
+                context.Writer.WriteStringValue(publicRequest.PortalAuthMode);
+            }
+
+            if(publicRequest.IsSetPortalContactEmail())
+            {
+                context.Writer.WritePropertyName("portalContactEmail");
+                context.Writer.WriteStringValue(publicRequest.PortalContactEmail);
+            }
+
+            if(publicRequest.IsSetPortalDescription())
+            {
+                context.Writer.WritePropertyName("portalDescription");
+                context.Writer.WriteStringValue(publicRequest.PortalDescription);
+            }
+
+            if(publicRequest.IsSetPortalLogoImageFile())
+            {
+                context.Writer.WritePropertyName("portalLogoImageFile");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ImageFileMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PortalLogoImageFile, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetPortalName())
+            {
+                context.Writer.WritePropertyName("portalName");
+                context.Writer.WriteStringValue(publicRequest.PortalName);
+            }
+
+            if(publicRequest.IsSetPortalType())
+            {
+                context.Writer.WritePropertyName("portalType");
+                context.Writer.WriteStringValue(publicRequest.PortalType);
+            }
+
+            if(publicRequest.IsSetPortalTypeConfiguration())
+            {
+                context.Writer.WritePropertyName("portalTypeConfiguration");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestPortalTypeConfigurationKvp in publicRequest.PortalTypeConfiguration)
+                {
+                    context.Writer.WritePropertyName(publicRequestPortalTypeConfigurationKvp.Key);
+                    var publicRequestPortalTypeConfigurationValue = publicRequestPortalTypeConfigurationKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = PortalTypeEntryMarshaller.Instance;
+                    marshaller.Marshall(publicRequestPortalTypeConfigurationValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("roleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"monitor.";

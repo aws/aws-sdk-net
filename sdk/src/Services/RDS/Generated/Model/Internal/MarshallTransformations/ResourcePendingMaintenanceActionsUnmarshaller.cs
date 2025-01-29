@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourcePendingMaintenanceActions Object
     /// </summary>  
-    public class ResourcePendingMaintenanceActionsUnmarshaller : IUnmarshaller<ResourcePendingMaintenanceActions, XmlUnmarshallerContext>, IUnmarshaller<ResourcePendingMaintenanceActions, JsonUnmarshallerContext>
+    public class ResourcePendingMaintenanceActionsUnmarshaller : IXmlUnmarshaller<ResourcePendingMaintenanceActions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResourcePendingMaintenanceActions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ResourcePendingMaintenanceActionsUnmarshaller _instance = new ResourcePendingMaintenanceActionsUnmarshaller();        
 

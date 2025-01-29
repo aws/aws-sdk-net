@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MedicalImaging.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRemovableAttributes())
             {
                 context.Writer.WritePropertyName("removableAttributes");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.RemovableAttributes));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.RemovableAttributes));
             }
 
             if(requestObject.IsSetUpdatableAttributes())
             {
                 context.Writer.WritePropertyName("updatableAttributes");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.UpdatableAttributes));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.UpdatableAttributes));
             }
 
         }

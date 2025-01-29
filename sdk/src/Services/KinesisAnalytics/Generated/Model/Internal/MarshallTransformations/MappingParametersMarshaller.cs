@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.KinesisAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCSVMappingParameters())
             {
                 context.Writer.WritePropertyName("CSVMappingParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CSVMappingParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.CSVMappingParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJSONMappingParameters())
             {
                 context.Writer.WritePropertyName("JSONMappingParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JSONMappingParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.JSONMappingParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

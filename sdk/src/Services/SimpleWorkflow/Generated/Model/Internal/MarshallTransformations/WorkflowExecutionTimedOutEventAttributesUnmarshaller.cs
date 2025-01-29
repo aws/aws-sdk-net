@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WorkflowExecutionTimedOutEventAttributes Object
     /// </summary>  
-    public class WorkflowExecutionTimedOutEventAttributesUnmarshaller : IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, XmlUnmarshallerContext>, IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, JsonUnmarshallerContext>
+    public class WorkflowExecutionTimedOutEventAttributesUnmarshaller : IJsonUnmarshaller<WorkflowExecutionTimedOutEventAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WorkflowExecutionTimedOutEventAttributes IUnmarshaller<WorkflowExecutionTimedOutEventAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WorkflowExecutionTimedOutEventAttributes Unmarshall(JsonUnmarshallerContext context)
+        public WorkflowExecutionTimedOutEventAttributes Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WorkflowExecutionTimedOutEventAttributes unmarshalledObject = new WorkflowExecutionTimedOutEventAttributes();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("childPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChildPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChildPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeoutType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

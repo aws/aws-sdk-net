@@ -29,149 +29,139 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsSsmComplianceSummary Object
     /// </summary>  
-    public class AwsSsmComplianceSummaryUnmarshaller : IUnmarshaller<AwsSsmComplianceSummary, XmlUnmarshallerContext>, IUnmarshaller<AwsSsmComplianceSummary, JsonUnmarshallerContext>
+    public class AwsSsmComplianceSummaryUnmarshaller : IJsonUnmarshaller<AwsSsmComplianceSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsSsmComplianceSummary IUnmarshaller<AwsSsmComplianceSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsSsmComplianceSummary Unmarshall(JsonUnmarshallerContext context)
+        public AwsSsmComplianceSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsSsmComplianceSummary unmarshalledObject = new AwsSsmComplianceSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ComplianceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComplianceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantCriticalCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantCriticalCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantCriticalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantHighCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantHighCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantHighCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantInformationalCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantInformationalCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantInformationalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantLowCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantLowCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantLowCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantMediumCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantMediumCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantMediumCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompliantUnspecifiedCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CompliantUnspecifiedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompliantUnspecifiedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExecutionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantCriticalCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantCriticalCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantCriticalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantHighCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantHighCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantHighCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantInformationalCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantInformationalCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantInformationalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantLowCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantLowCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantLowCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantMediumCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantMediumCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantMediumCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NonCompliantUnspecifiedCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NonCompliantUnspecifiedCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NonCompliantUnspecifiedCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OverallSeverity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OverallSeverity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OverallSeverity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PatchBaselineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PatchBaselineId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PatchBaselineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PatchGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PatchGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PatchGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

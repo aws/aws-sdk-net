@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PCS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ClusterSlurmConfiguration Object
     /// </summary>  
-    public class ClusterSlurmConfigurationUnmarshaller : IUnmarshaller<ClusterSlurmConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ClusterSlurmConfiguration, JsonUnmarshallerContext>
+    public class ClusterSlurmConfigurationUnmarshaller : IJsonUnmarshaller<ClusterSlurmConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ClusterSlurmConfiguration IUnmarshaller<ClusterSlurmConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ClusterSlurmConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ClusterSlurmConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ClusterSlurmConfiguration unmarshalledObject = new ClusterSlurmConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("authKey", targetDepth))
                 {
                     var unmarshaller = SlurmAuthKeyUnmarshaller.Instance;
-                    unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AuthKey = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("scaleDownIdleTimeInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScaleDownIdleTimeInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScaleDownIdleTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("slurmCustomSettings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
-                    unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SlurmCustomSetting, SlurmCustomSettingUnmarshaller>(SlurmCustomSettingUnmarshaller.Instance);
+                    unmarshalledObject.SlurmCustomSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

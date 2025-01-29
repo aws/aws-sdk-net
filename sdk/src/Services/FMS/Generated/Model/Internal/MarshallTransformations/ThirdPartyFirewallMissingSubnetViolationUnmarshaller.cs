@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ThirdPartyFirewallMissingSubnetViolation Object
     /// </summary>  
-    public class ThirdPartyFirewallMissingSubnetViolationUnmarshaller : IUnmarshaller<ThirdPartyFirewallMissingSubnetViolation, XmlUnmarshallerContext>, IUnmarshaller<ThirdPartyFirewallMissingSubnetViolation, JsonUnmarshallerContext>
+    public class ThirdPartyFirewallMissingSubnetViolationUnmarshaller : IJsonUnmarshaller<ThirdPartyFirewallMissingSubnetViolation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ThirdPartyFirewallMissingSubnetViolation IUnmarshaller<ThirdPartyFirewallMissingSubnetViolation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ThirdPartyFirewallMissingSubnetViolation Unmarshall(JsonUnmarshallerContext context)
+        public ThirdPartyFirewallMissingSubnetViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ThirdPartyFirewallMissingSubnetViolation unmarshalledObject = new ThirdPartyFirewallMissingSubnetViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TargetViolationReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TargetViolationReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetViolationReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ViolationTarget", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ViolationTarget = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VPC", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VPC = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VPC = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

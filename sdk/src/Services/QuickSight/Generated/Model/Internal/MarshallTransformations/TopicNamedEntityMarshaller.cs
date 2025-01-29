@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefinition())
             {
                 context.Writer.WritePropertyName("Definition");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDefinitionListValue in requestObject.Definition)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NamedEntityDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectDefinitionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEntityDescription())
             {
                 context.Writer.WritePropertyName("EntityDescription");
-                context.Writer.Write(requestObject.EntityDescription);
+                context.Writer.WriteStringValue(requestObject.EntityDescription);
             }
 
             if(requestObject.IsSetEntityName())
             {
                 context.Writer.WritePropertyName("EntityName");
-                context.Writer.Write(requestObject.EntityName);
+                context.Writer.WriteStringValue(requestObject.EntityName);
             }
 
             if(requestObject.IsSetEntitySynonyms())
             {
                 context.Writer.WritePropertyName("EntitySynonyms");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEntitySynonymsListValue in requestObject.EntitySynonyms)
                 {
-                        context.Writer.Write(requestObjectEntitySynonymsListValue);
+                        context.Writer.WriteStringValue(requestObjectEntitySynonymsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSemanticEntityType())
             {
                 context.Writer.WritePropertyName("SemanticEntityType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SemanticEntityTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.SemanticEntityType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

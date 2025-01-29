@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LineChartMarkerStyleSettings Object
     /// </summary>  
-    public class LineChartMarkerStyleSettingsUnmarshaller : IUnmarshaller<LineChartMarkerStyleSettings, XmlUnmarshallerContext>, IUnmarshaller<LineChartMarkerStyleSettings, JsonUnmarshallerContext>
+    public class LineChartMarkerStyleSettingsUnmarshaller : IJsonUnmarshaller<LineChartMarkerStyleSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LineChartMarkerStyleSettings IUnmarshaller<LineChartMarkerStyleSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LineChartMarkerStyleSettings Unmarshall(JsonUnmarshallerContext context)
+        public LineChartMarkerStyleSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LineChartMarkerStyleSettings unmarshalledObject = new LineChartMarkerStyleSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MarkerColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MarkerColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MarkerColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MarkerShape", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MarkerShape = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MarkerShape = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MarkerSize", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MarkerSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MarkerSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MarkerVisibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MarkerVisibility = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MarkerVisibility = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

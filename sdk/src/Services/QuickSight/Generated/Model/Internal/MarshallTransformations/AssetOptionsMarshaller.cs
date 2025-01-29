@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTimezone())
             {
                 context.Writer.WritePropertyName("Timezone");
-                context.Writer.Write(requestObject.Timezone);
+                context.Writer.WriteStringValue(requestObject.Timezone);
             }
 
             if(requestObject.IsSetWeekStart())
             {
                 context.Writer.WritePropertyName("WeekStart");
-                context.Writer.Write(requestObject.WeekStart);
+                context.Writer.WriteStringValue(requestObject.WeekStart);
             }
 
         }

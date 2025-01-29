@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PipeTargetTimestreamParameters Object
     /// </summary>  
-    public class PipeTargetTimestreamParametersUnmarshaller : IUnmarshaller<PipeTargetTimestreamParameters, XmlUnmarshallerContext>, IUnmarshaller<PipeTargetTimestreamParameters, JsonUnmarshallerContext>
+    public class PipeTargetTimestreamParametersUnmarshaller : IJsonUnmarshaller<PipeTargetTimestreamParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PipeTargetTimestreamParameters IUnmarshaller<PipeTargetTimestreamParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipeTargetTimestreamParameters Unmarshall(JsonUnmarshallerContext context)
+        public PipeTargetTimestreamParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PipeTargetTimestreamParameters unmarshalledObject = new PipeTargetTimestreamParameters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DimensionMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DimensionMapping, DimensionMappingUnmarshaller>(DimensionMappingUnmarshaller.Instance);
-                    unmarshalledObject.DimensionMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DimensionMapping, DimensionMappingUnmarshaller>(DimensionMappingUnmarshaller.Instance);
+                    unmarshalledObject.DimensionMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EpochTimeUnit", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EpochTimeUnit = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EpochTimeUnit = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MultiMeasureMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<MultiMeasureMapping, MultiMeasureMappingUnmarshaller>(MultiMeasureMappingUnmarshaller.Instance);
-                    unmarshalledObject.MultiMeasureMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<MultiMeasureMapping, MultiMeasureMappingUnmarshaller>(MultiMeasureMappingUnmarshaller.Instance);
+                    unmarshalledObject.MultiMeasureMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SingleMeasureMappings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SingleMeasureMapping, SingleMeasureMappingUnmarshaller>(SingleMeasureMappingUnmarshaller.Instance);
-                    unmarshalledObject.SingleMeasureMappings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SingleMeasureMapping, SingleMeasureMappingUnmarshaller>(SingleMeasureMappingUnmarshaller.Instance);
+                    unmarshalledObject.SingleMeasureMappings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeFieldType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeFieldType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeFieldType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimestampFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimestampFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimestampFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VersionValue", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VersionValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VersionValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

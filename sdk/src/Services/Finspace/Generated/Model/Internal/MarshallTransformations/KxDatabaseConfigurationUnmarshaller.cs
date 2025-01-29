@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KxDatabaseConfiguration Object
     /// </summary>  
-    public class KxDatabaseConfigurationUnmarshaller : IUnmarshaller<KxDatabaseConfiguration, XmlUnmarshallerContext>, IUnmarshaller<KxDatabaseConfiguration, JsonUnmarshallerContext>
+    public class KxDatabaseConfigurationUnmarshaller : IJsonUnmarshaller<KxDatabaseConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KxDatabaseConfiguration IUnmarshaller<KxDatabaseConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KxDatabaseConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public KxDatabaseConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KxDatabaseConfiguration unmarshalledObject = new KxDatabaseConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cacheConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<KxDatabaseCacheConfiguration, KxDatabaseCacheConfigurationUnmarshaller>(KxDatabaseCacheConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.CacheConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<KxDatabaseCacheConfiguration, KxDatabaseCacheConfigurationUnmarshaller>(KxDatabaseCacheConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.CacheConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("changesetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ChangesetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChangesetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("databaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataviewConfiguration", targetDepth))
                 {
                     var unmarshaller = KxDataviewConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DataviewConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataviewConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataviewName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataviewName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataviewName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

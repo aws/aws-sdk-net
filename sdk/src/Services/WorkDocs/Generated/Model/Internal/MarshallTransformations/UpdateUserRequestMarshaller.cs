@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
 {
@@ -64,66 +67,71 @@ namespace Amazon.WorkDocs.Model.Internal.MarshallTransformations
                 throw new AmazonWorkDocsException("Request object does not have required field UserId set");
             request.AddPathResource("{UserId}", StringUtils.FromString(publicRequest.UserId));
             request.ResourcePath = "/api/v1/users/{UserId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetGivenName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetGivenName())
-                    {
-                        context.Writer.WritePropertyName("GivenName");
-                        context.Writer.Write(publicRequest.GivenName);
-                    }
-
-                    if(publicRequest.IsSetGrantPoweruserPrivileges())
-                    {
-                        context.Writer.WritePropertyName("GrantPoweruserPrivileges");
-                        context.Writer.Write(publicRequest.GrantPoweruserPrivileges);
-                    }
-
-                    if(publicRequest.IsSetLocale())
-                    {
-                        context.Writer.WritePropertyName("Locale");
-                        context.Writer.Write(publicRequest.Locale);
-                    }
-
-                    if(publicRequest.IsSetStorageRule())
-                    {
-                        context.Writer.WritePropertyName("StorageRule");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StorageRuleTypeMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.StorageRule, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSurname())
-                    {
-                        context.Writer.WritePropertyName("Surname");
-                        context.Writer.Write(publicRequest.Surname);
-                    }
-
-                    if(publicRequest.IsSetTimeZoneId())
-                    {
-                        context.Writer.WritePropertyName("TimeZoneId");
-                        context.Writer.Write(publicRequest.TimeZoneId);
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("Type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("GivenName");
+                context.Writer.WriteStringValue(publicRequest.GivenName);
             }
+
+            if(publicRequest.IsSetGrantPoweruserPrivileges())
+            {
+                context.Writer.WritePropertyName("GrantPoweruserPrivileges");
+                context.Writer.WriteStringValue(publicRequest.GrantPoweruserPrivileges);
+            }
+
+            if(publicRequest.IsSetLocale())
+            {
+                context.Writer.WritePropertyName("Locale");
+                context.Writer.WriteStringValue(publicRequest.Locale);
+            }
+
+            if(publicRequest.IsSetStorageRule())
+            {
+                context.Writer.WritePropertyName("StorageRule");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StorageRuleTypeMarshaller.Instance;
+                marshaller.Marshall(publicRequest.StorageRule, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSurname())
+            {
+                context.Writer.WritePropertyName("Surname");
+                context.Writer.WriteStringValue(publicRequest.Surname);
+            }
+
+            if(publicRequest.IsSetTimeZoneId())
+            {
+                context.Writer.WritePropertyName("TimeZoneId");
+                context.Writer.WriteStringValue(publicRequest.TimeZoneId);
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetAuthenticationToken()) 

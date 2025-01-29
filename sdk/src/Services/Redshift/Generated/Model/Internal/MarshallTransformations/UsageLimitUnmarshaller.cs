@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UsageLimit Object
     /// </summary>  
-    public class UsageLimitUnmarshaller : IUnmarshaller<UsageLimit, XmlUnmarshallerContext>, IUnmarshaller<UsageLimit, JsonUnmarshallerContext>
+    public class UsageLimitUnmarshaller : IXmlUnmarshaller<UsageLimit, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -117,17 +117,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public UsageLimit Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static UsageLimitUnmarshaller _instance = new UsageLimitUnmarshaller();        
 

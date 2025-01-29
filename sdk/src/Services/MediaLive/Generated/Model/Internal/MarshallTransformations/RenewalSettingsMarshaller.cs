@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticRenewal())
             {
                 context.Writer.WritePropertyName("automaticRenewal");
-                context.Writer.Write(requestObject.AutomaticRenewal);
+                context.Writer.WriteStringValue(requestObject.AutomaticRenewal);
             }
 
             if(requestObject.IsSetRenewalCount())
             {
                 context.Writer.WritePropertyName("renewalCount");
-                context.Writer.Write(requestObject.RenewalCount.Value);
+                context.Writer.WriteNumberValue(requestObject.RenewalCount.Value);
             }
 
         }

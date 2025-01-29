@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StackSetNotEmptyException operation
     /// </summary>  
-    public class StackSetNotEmptyExceptionUnmarshaller : IErrorResponseUnmarshaller<StackSetNotEmptyException, XmlUnmarshallerContext>
+    public class StackSetNotEmptyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StackSetNotEmptyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

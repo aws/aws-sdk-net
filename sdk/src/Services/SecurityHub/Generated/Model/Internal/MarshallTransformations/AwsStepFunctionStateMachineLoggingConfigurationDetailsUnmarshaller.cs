@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsStepFunctionStateMachineLoggingConfigurationDetails Object
     /// </summary>  
-    public class AwsStepFunctionStateMachineLoggingConfigurationDetailsUnmarshaller : IUnmarshaller<AwsStepFunctionStateMachineLoggingConfigurationDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsStepFunctionStateMachineLoggingConfigurationDetails, JsonUnmarshallerContext>
+    public class AwsStepFunctionStateMachineLoggingConfigurationDetailsUnmarshaller : IJsonUnmarshaller<AwsStepFunctionStateMachineLoggingConfigurationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsStepFunctionStateMachineLoggingConfigurationDetails IUnmarshaller<AwsStepFunctionStateMachineLoggingConfigurationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsStepFunctionStateMachineLoggingConfigurationDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsStepFunctionStateMachineLoggingConfigurationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsStepFunctionStateMachineLoggingConfigurationDetails unmarshalledObject = new AwsStepFunctionStateMachineLoggingConfigurationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Destinations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails, AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetailsUnmarshaller>(AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails, AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetailsUnmarshaller>(AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Destinations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IncludeExecutionData", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IncludeExecutionData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IncludeExecutionData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Level", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Level = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Level = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

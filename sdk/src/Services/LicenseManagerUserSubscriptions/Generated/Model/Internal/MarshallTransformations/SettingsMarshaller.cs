@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.LicenseManagerUserSubscriptions.Model.Internal.MarshallTransfor
             if(requestObject.IsSetSecurityGroupId())
             {
                 context.Writer.WritePropertyName("SecurityGroupId");
-                context.Writer.Write(requestObject.SecurityGroupId);
+                context.Writer.WriteStringValue(requestObject.SecurityGroupId);
             }
 
             if(requestObject.IsSetSubnets())
             {
                 context.Writer.WritePropertyName("Subnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
                 {
-                        context.Writer.Write(requestObjectSubnetsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

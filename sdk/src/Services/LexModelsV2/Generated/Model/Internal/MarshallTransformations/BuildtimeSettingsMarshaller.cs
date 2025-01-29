@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDescriptiveBotBuilder())
             {
                 context.Writer.WritePropertyName("descriptiveBotBuilder");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DescriptiveBotBuilderSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DescriptiveBotBuilder, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSampleUtteranceGeneration())
             {
                 context.Writer.WritePropertyName("sampleUtteranceGeneration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SampleUtteranceGenerationSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SampleUtteranceGeneration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

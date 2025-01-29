@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.StorageGateway.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGatewayAdmins())
             {
                 context.Writer.WritePropertyName("GatewayAdmins");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGatewayAdminsListValue in requestObject.GatewayAdmins)
                 {
-                        context.Writer.Write(requestObjectGatewayAdminsListValue);
+                        context.Writer.WriteStringValue(requestObjectGatewayAdminsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

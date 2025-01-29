@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllRegionsEnabled())
             {
                 context.Writer.WritePropertyName("AllRegionsEnabled");
-                context.Writer.Write(requestObject.AllRegionsEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllRegionsEnabled.Value);
             }
 
             if(requestObject.IsSetRegions())
             {
                 context.Writer.WritePropertyName("Regions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRegionsListValue in requestObject.Regions)
                 {
-                        context.Writer.Write(requestObjectRegionsListValue);
+                        context.Writer.WriteStringValue(requestObjectRegionsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

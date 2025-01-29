@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDestinationConfigurations())
             {
                 context.Writer.WritePropertyName("destinationConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDestinationConfigurationsListValue in requestObject.DestinationConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DestinationConfigurationRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectDestinationConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEncodingName())
             {
                 context.Writer.WritePropertyName("encodingName");
-                context.Writer.Write(requestObject.EncodingName);
+                context.Writer.WriteStringValue(requestObject.EncodingName);
             }
 
             if(requestObject.IsSetEncodingParameters())
             {
                 context.Writer.WritePropertyName("encodingParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncodingParametersRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.EncodingParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMediaStreamName())
             {
                 context.Writer.WritePropertyName("mediaStreamName");
-                context.Writer.Write(requestObject.MediaStreamName);
+                context.Writer.WriteStringValue(requestObject.MediaStreamName);
             }
 
         }

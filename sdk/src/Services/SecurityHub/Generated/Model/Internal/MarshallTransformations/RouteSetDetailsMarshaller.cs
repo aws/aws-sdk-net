@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,97 +49,97 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCarrierGatewayId())
             {
                 context.Writer.WritePropertyName("CarrierGatewayId");
-                context.Writer.Write(requestObject.CarrierGatewayId);
+                context.Writer.WriteStringValue(requestObject.CarrierGatewayId);
             }
 
             if(requestObject.IsSetCoreNetworkArn())
             {
                 context.Writer.WritePropertyName("CoreNetworkArn");
-                context.Writer.Write(requestObject.CoreNetworkArn);
+                context.Writer.WriteStringValue(requestObject.CoreNetworkArn);
             }
 
             if(requestObject.IsSetDestinationCidrBlock())
             {
                 context.Writer.WritePropertyName("DestinationCidrBlock");
-                context.Writer.Write(requestObject.DestinationCidrBlock);
+                context.Writer.WriteStringValue(requestObject.DestinationCidrBlock);
             }
 
             if(requestObject.IsSetDestinationIpv6CidrBlock())
             {
                 context.Writer.WritePropertyName("DestinationIpv6CidrBlock");
-                context.Writer.Write(requestObject.DestinationIpv6CidrBlock);
+                context.Writer.WriteStringValue(requestObject.DestinationIpv6CidrBlock);
             }
 
             if(requestObject.IsSetDestinationPrefixListId())
             {
                 context.Writer.WritePropertyName("DestinationPrefixListId");
-                context.Writer.Write(requestObject.DestinationPrefixListId);
+                context.Writer.WriteStringValue(requestObject.DestinationPrefixListId);
             }
 
             if(requestObject.IsSetEgressOnlyInternetGatewayId())
             {
                 context.Writer.WritePropertyName("EgressOnlyInternetGatewayId");
-                context.Writer.Write(requestObject.EgressOnlyInternetGatewayId);
+                context.Writer.WriteStringValue(requestObject.EgressOnlyInternetGatewayId);
             }
 
             if(requestObject.IsSetGatewayId())
             {
                 context.Writer.WritePropertyName("GatewayId");
-                context.Writer.Write(requestObject.GatewayId);
+                context.Writer.WriteStringValue(requestObject.GatewayId);
             }
 
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("InstanceId");
-                context.Writer.Write(requestObject.InstanceId);
+                context.Writer.WriteStringValue(requestObject.InstanceId);
             }
 
             if(requestObject.IsSetInstanceOwnerId())
             {
                 context.Writer.WritePropertyName("InstanceOwnerId");
-                context.Writer.Write(requestObject.InstanceOwnerId);
+                context.Writer.WriteStringValue(requestObject.InstanceOwnerId);
             }
 
             if(requestObject.IsSetLocalGatewayId())
             {
                 context.Writer.WritePropertyName("LocalGatewayId");
-                context.Writer.Write(requestObject.LocalGatewayId);
+                context.Writer.WriteStringValue(requestObject.LocalGatewayId);
             }
 
             if(requestObject.IsSetNatGatewayId())
             {
                 context.Writer.WritePropertyName("NatGatewayId");
-                context.Writer.Write(requestObject.NatGatewayId);
+                context.Writer.WriteStringValue(requestObject.NatGatewayId);
             }
 
             if(requestObject.IsSetNetworkInterfaceId())
             {
                 context.Writer.WritePropertyName("NetworkInterfaceId");
-                context.Writer.Write(requestObject.NetworkInterfaceId);
+                context.Writer.WriteStringValue(requestObject.NetworkInterfaceId);
             }
 
             if(requestObject.IsSetOrigin())
             {
                 context.Writer.WritePropertyName("Origin");
-                context.Writer.Write(requestObject.Origin);
+                context.Writer.WriteStringValue(requestObject.Origin);
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetTransitGatewayId())
             {
                 context.Writer.WritePropertyName("TransitGatewayId");
-                context.Writer.Write(requestObject.TransitGatewayId);
+                context.Writer.WriteStringValue(requestObject.TransitGatewayId);
             }
 
             if(requestObject.IsSetVpcPeeringConnectionId())
             {
                 context.Writer.WritePropertyName("VpcPeeringConnectionId");
-                context.Writer.Write(requestObject.VpcPeeringConnectionId);
+                context.Writer.WriteStringValue(requestObject.VpcPeeringConnectionId);
             }
 
         }

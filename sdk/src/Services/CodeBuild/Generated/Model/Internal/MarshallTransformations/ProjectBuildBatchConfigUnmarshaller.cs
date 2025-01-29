@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProjectBuildBatchConfig Object
     /// </summary>  
-    public class ProjectBuildBatchConfigUnmarshaller : IUnmarshaller<ProjectBuildBatchConfig, XmlUnmarshallerContext>, IUnmarshaller<ProjectBuildBatchConfig, JsonUnmarshallerContext>
+    public class ProjectBuildBatchConfigUnmarshaller : IJsonUnmarshaller<ProjectBuildBatchConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProjectBuildBatchConfig IUnmarshaller<ProjectBuildBatchConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProjectBuildBatchConfig Unmarshall(JsonUnmarshallerContext context)
+        public ProjectBuildBatchConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProjectBuildBatchConfig unmarshalledObject = new ProjectBuildBatchConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("batchReportMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BatchReportMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BatchReportMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("combineArtifacts", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CombineArtifacts = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CombineArtifacts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("restrictions", targetDepth))
                 {
                     var unmarshaller = BatchRestrictionsUnmarshaller.Instance;
-                    unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Restrictions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("serviceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timeoutInMins", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TimeoutInMins = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeoutInMins = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

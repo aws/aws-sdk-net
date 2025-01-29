@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OrganizationConfigRule Object
     /// </summary>  
-    public class OrganizationConfigRuleUnmarshaller : IUnmarshaller<OrganizationConfigRule, XmlUnmarshallerContext>, IUnmarshaller<OrganizationConfigRule, JsonUnmarshallerContext>
+    public class OrganizationConfigRuleUnmarshaller : IJsonUnmarshaller<OrganizationConfigRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OrganizationConfigRule IUnmarshaller<OrganizationConfigRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OrganizationConfigRule Unmarshall(JsonUnmarshallerContext context)
+        public OrganizationConfigRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OrganizationConfigRule unmarshalledObject = new OrganizationConfigRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ExcludedAccounts", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ExcludedAccounts = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ExcludedAccounts = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastUpdateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationConfigRuleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationConfigRuleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationConfigRuleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationConfigRuleName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationConfigRuleName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationConfigRuleName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationCustomPolicyRuleMetadata", targetDepth))
                 {
                     var unmarshaller = OrganizationCustomPolicyRuleMetadataNoPolicyUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationCustomPolicyRuleMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationCustomPolicyRuleMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationCustomRuleMetadata", targetDepth))
                 {
                     var unmarshaller = OrganizationCustomRuleMetadataUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationCustomRuleMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationCustomRuleMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OrganizationManagedRuleMetadata", targetDepth))
                 {
                     var unmarshaller = OrganizationManagedRuleMetadataUnmarshaller.Instance;
-                    unmarshalledObject.OrganizationManagedRuleMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrganizationManagedRuleMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

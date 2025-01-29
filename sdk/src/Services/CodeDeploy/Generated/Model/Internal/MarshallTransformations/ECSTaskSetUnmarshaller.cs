@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ECSTaskSet Object
     /// </summary>  
-    public class ECSTaskSetUnmarshaller : IUnmarshaller<ECSTaskSet, XmlUnmarshallerContext>, IUnmarshaller<ECSTaskSet, JsonUnmarshallerContext>
+    public class ECSTaskSetUnmarshaller : IJsonUnmarshaller<ECSTaskSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ECSTaskSet IUnmarshaller<ECSTaskSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ECSTaskSet Unmarshall(JsonUnmarshallerContext context)
+        public ECSTaskSet Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ECSTaskSet unmarshalledObject = new ECSTaskSet();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("desiredCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.DesiredCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DesiredCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("identifer", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Identifer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Identifer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pendingCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.PendingCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PendingCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("runningCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RunningCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunningCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetGroup", targetDepth))
                 {
                     var unmarshaller = TargetGroupInfoUnmarshaller.Instance;
-                    unmarshalledObject.TargetGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taskSetLabel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TaskSetLabel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TaskSetLabel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trafficWeight", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TrafficWeight = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrafficWeight = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

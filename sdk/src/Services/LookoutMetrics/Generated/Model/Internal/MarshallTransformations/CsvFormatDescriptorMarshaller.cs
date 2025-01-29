@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCharset())
             {
                 context.Writer.WritePropertyName("Charset");
-                context.Writer.Write(requestObject.Charset);
+                context.Writer.WriteStringValue(requestObject.Charset);
             }
 
             if(requestObject.IsSetContainsHeader())
             {
                 context.Writer.WritePropertyName("ContainsHeader");
-                context.Writer.Write(requestObject.ContainsHeader.Value);
+                context.Writer.WriteBooleanValue(requestObject.ContainsHeader.Value);
             }
 
             if(requestObject.IsSetDelimiter())
             {
                 context.Writer.WritePropertyName("Delimiter");
-                context.Writer.Write(requestObject.Delimiter);
+                context.Writer.WriteStringValue(requestObject.Delimiter);
             }
 
             if(requestObject.IsSetFileCompression())
             {
                 context.Writer.WritePropertyName("FileCompression");
-                context.Writer.Write(requestObject.FileCompression);
+                context.Writer.WriteStringValue(requestObject.FileCompression);
             }
 
             if(requestObject.IsSetHeaderList())
             {
                 context.Writer.WritePropertyName("HeaderList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeaderListListValue in requestObject.HeaderList)
                 {
-                        context.Writer.Write(requestObjectHeaderListListValue);
+                        context.Writer.WriteStringValue(requestObjectHeaderListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQuoteSymbol())
             {
                 context.Writer.WritePropertyName("QuoteSymbol");
-                context.Writer.Write(requestObject.QuoteSymbol);
+                context.Writer.WriteStringValue(requestObject.QuoteSymbol);
             }
 
         }

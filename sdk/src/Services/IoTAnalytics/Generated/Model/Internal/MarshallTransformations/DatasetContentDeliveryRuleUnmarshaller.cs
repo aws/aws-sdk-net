@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DatasetContentDeliveryRule Object
     /// </summary>  
-    public class DatasetContentDeliveryRuleUnmarshaller : IUnmarshaller<DatasetContentDeliveryRule, XmlUnmarshallerContext>, IUnmarshaller<DatasetContentDeliveryRule, JsonUnmarshallerContext>
+    public class DatasetContentDeliveryRuleUnmarshaller : IJsonUnmarshaller<DatasetContentDeliveryRule, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DatasetContentDeliveryRule IUnmarshaller<DatasetContentDeliveryRule, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DatasetContentDeliveryRule Unmarshall(JsonUnmarshallerContext context)
+        public DatasetContentDeliveryRule Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DatasetContentDeliveryRule unmarshalledObject = new DatasetContentDeliveryRule();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = DatasetContentDeliveryDestinationUnmarshaller.Instance;
-                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("entryName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntryName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EntryName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

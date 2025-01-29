@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.LexRuntimeV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSlotElicitationStyle())
             {
                 context.Writer.WritePropertyName("slotElicitationStyle");
-                context.Writer.Write(requestObject.SlotElicitationStyle);
+                context.Writer.WriteStringValue(requestObject.SlotElicitationStyle);
             }
 
             if(requestObject.IsSetSlotToElicit())
             {
                 context.Writer.WritePropertyName("slotToElicit");
-                context.Writer.Write(requestObject.SlotToElicit);
+                context.Writer.WriteStringValue(requestObject.SlotToElicit);
             }
 
             if(requestObject.IsSetSubSlotToElicit())
             {
                 context.Writer.WritePropertyName("subSlotToElicit");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ElicitSubSlotMarshaller.Instance;
                 marshaller.Marshall(requestObject.SubSlotToElicit, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

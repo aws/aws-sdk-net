@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
 {
@@ -64,179 +67,184 @@ namespace Amazon.LexModelBuildingService.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelBuildingServiceException("Request object does not have required field Name set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.Name));
             request.ResourcePath = "/intents/{name}/versions/$LATEST";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetChecksum())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetChecksum())
-                    {
-                        context.Writer.WritePropertyName("checksum");
-                        context.Writer.Write(publicRequest.Checksum);
-                    }
-
-                    if(publicRequest.IsSetConclusionStatement())
-                    {
-                        context.Writer.WritePropertyName("conclusionStatement");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StatementMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ConclusionStatement, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetConfirmationPrompt())
-                    {
-                        context.Writer.WritePropertyName("confirmationPrompt");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PromptMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ConfirmationPrompt, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCreateVersion())
-                    {
-                        context.Writer.WritePropertyName("createVersion");
-                        context.Writer.Write(publicRequest.CreateVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDialogCodeHook())
-                    {
-                        context.Writer.WritePropertyName("dialogCodeHook");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CodeHookMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DialogCodeHook, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFollowUpPrompt())
-                    {
-                        context.Writer.WritePropertyName("followUpPrompt");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FollowUpPromptMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FollowUpPrompt, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetFulfillmentActivity())
-                    {
-                        context.Writer.WritePropertyName("fulfillmentActivity");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = FulfillmentActivityMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.FulfillmentActivity, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInputContexts())
-                    {
-                        context.Writer.WritePropertyName("inputContexts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestInputContextsListValue in publicRequest.InputContexts)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = InputContextMarshaller.Instance;
-                            marshaller.Marshall(publicRequestInputContextsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetKendraConfiguration())
-                    {
-                        context.Writer.WritePropertyName("kendraConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = KendraConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.KendraConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOutputContexts())
-                    {
-                        context.Writer.WritePropertyName("outputContexts");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestOutputContextsListValue in publicRequest.OutputContexts)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = OutputContextMarshaller.Instance;
-                            marshaller.Marshall(publicRequestOutputContextsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetParentIntentSignature())
-                    {
-                        context.Writer.WritePropertyName("parentIntentSignature");
-                        context.Writer.Write(publicRequest.ParentIntentSignature);
-                    }
-
-                    if(publicRequest.IsSetRejectionStatement())
-                    {
-                        context.Writer.WritePropertyName("rejectionStatement");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = StatementMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RejectionStatement, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSampleUtterances())
-                    {
-                        context.Writer.WritePropertyName("sampleUtterances");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSampleUtterancesListValue in publicRequest.SampleUtterances)
-                        {
-                                context.Writer.Write(publicRequestSampleUtterancesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSlots())
-                    {
-                        context.Writer.WritePropertyName("slots");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSlotsListValue in publicRequest.Slots)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SlotMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSlotsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("checksum");
+                context.Writer.WriteStringValue(publicRequest.Checksum);
             }
+
+            if(publicRequest.IsSetConclusionStatement())
+            {
+                context.Writer.WritePropertyName("conclusionStatement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StatementMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConclusionStatement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetConfirmationPrompt())
+            {
+                context.Writer.WritePropertyName("confirmationPrompt");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PromptMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ConfirmationPrompt, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCreateVersion())
+            {
+                context.Writer.WritePropertyName("createVersion");
+                context.Writer.WriteBooleanValue(publicRequest.CreateVersion.Value);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetDialogCodeHook())
+            {
+                context.Writer.WritePropertyName("dialogCodeHook");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CodeHookMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DialogCodeHook, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFollowUpPrompt())
+            {
+                context.Writer.WritePropertyName("followUpPrompt");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FollowUpPromptMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FollowUpPrompt, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetFulfillmentActivity())
+            {
+                context.Writer.WritePropertyName("fulfillmentActivity");
+                context.Writer.WriteStartObject();
+
+                var marshaller = FulfillmentActivityMarshaller.Instance;
+                marshaller.Marshall(publicRequest.FulfillmentActivity, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInputContexts())
+            {
+                context.Writer.WritePropertyName("inputContexts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestInputContextsListValue in publicRequest.InputContexts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = InputContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequestInputContextsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetKendraConfiguration())
+            {
+                context.Writer.WritePropertyName("kendraConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = KendraConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.KendraConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOutputContexts())
+            {
+                context.Writer.WritePropertyName("outputContexts");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestOutputContextsListValue in publicRequest.OutputContexts)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = OutputContextMarshaller.Instance;
+                    marshaller.Marshall(publicRequestOutputContextsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetParentIntentSignature())
+            {
+                context.Writer.WritePropertyName("parentIntentSignature");
+                context.Writer.WriteStringValue(publicRequest.ParentIntentSignature);
+            }
+
+            if(publicRequest.IsSetRejectionStatement())
+            {
+                context.Writer.WritePropertyName("rejectionStatement");
+                context.Writer.WriteStartObject();
+
+                var marshaller = StatementMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RejectionStatement, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSampleUtterances())
+            {
+                context.Writer.WritePropertyName("sampleUtterances");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSampleUtterancesListValue in publicRequest.SampleUtterances)
+                {
+                        context.Writer.WriteStringValue(publicRequestSampleUtterancesListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSlots())
+            {
+                context.Writer.WritePropertyName("slots");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSlotsListValue in publicRequest.Slots)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SlotMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSlotsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

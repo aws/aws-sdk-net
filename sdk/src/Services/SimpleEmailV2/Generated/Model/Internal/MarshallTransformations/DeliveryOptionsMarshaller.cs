@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxDeliverySeconds())
             {
                 context.Writer.WritePropertyName("MaxDeliverySeconds");
-                context.Writer.Write(requestObject.MaxDeliverySeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxDeliverySeconds.Value);
             }
 
             if(requestObject.IsSetSendingPoolName())
             {
                 context.Writer.WritePropertyName("SendingPoolName");
-                context.Writer.Write(requestObject.SendingPoolName);
+                context.Writer.WriteStringValue(requestObject.SendingPoolName);
             }
 
             if(requestObject.IsSetTlsPolicy())
             {
                 context.Writer.WritePropertyName("TlsPolicy");
-                context.Writer.Write(requestObject.TlsPolicy);
+                context.Writer.WriteStringValue(requestObject.TlsPolicy);
             }
 
         }

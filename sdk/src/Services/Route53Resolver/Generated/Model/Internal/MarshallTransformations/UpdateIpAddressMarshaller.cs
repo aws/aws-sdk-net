@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Route53Resolver.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIpId())
             {
                 context.Writer.WritePropertyName("IpId");
-                context.Writer.Write(requestObject.IpId);
+                context.Writer.WriteStringValue(requestObject.IpId);
             }
 
             if(requestObject.IsSetIpv6())
             {
                 context.Writer.WritePropertyName("Ipv6");
-                context.Writer.Write(requestObject.Ipv6);
+                context.Writer.WriteStringValue(requestObject.Ipv6);
             }
 
         }

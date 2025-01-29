@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHlsInputSettings())
             {
                 context.Writer.WritePropertyName("hlsInputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HlsInputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.HlsInputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMulticastInputSettings())
             {
                 context.Writer.WritePropertyName("multicastInputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MulticastInputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MulticastInputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServerValidation())
             {
                 context.Writer.WritePropertyName("serverValidation");
-                context.Writer.Write(requestObject.ServerValidation);
+                context.Writer.WriteStringValue(requestObject.ServerValidation);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
 {
@@ -61,58 +64,63 @@ namespace Amazon.Chatbot.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/update-custom-action";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAliasName())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAliasName())
-                    {
-                        context.Writer.WritePropertyName("AliasName");
-                        context.Writer.Write(publicRequest.AliasName);
-                    }
-
-                    if(publicRequest.IsSetAttachments())
-                    {
-                        context.Writer.WritePropertyName("Attachments");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = CustomActionAttachmentMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAttachmentsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetCustomActionArn())
-                    {
-                        context.Writer.WritePropertyName("CustomActionArn");
-                        context.Writer.Write(publicRequest.CustomActionArn);
-                    }
-
-                    if(publicRequest.IsSetDefinition())
-                    {
-                        context.Writer.WritePropertyName("Definition");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CustomActionDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Definition, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AliasName");
+                context.Writer.WriteStringValue(publicRequest.AliasName);
             }
+
+            if(publicRequest.IsSetAttachments())
+            {
+                context.Writer.WritePropertyName("Attachments");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAttachmentsListValue in publicRequest.Attachments)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = CustomActionAttachmentMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAttachmentsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetCustomActionArn())
+            {
+                context.Writer.WritePropertyName("CustomActionArn");
+                context.Writer.WriteStringValue(publicRequest.CustomActionArn);
+            }
+
+            if(publicRequest.IsSetDefinition())
+            {
+                context.Writer.WritePropertyName("Definition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomActionDefinitionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Definition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

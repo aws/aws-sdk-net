@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConcurrentExecutionRatePercentage())
             {
                 context.Writer.WritePropertyName("ConcurrentExecutionRatePercentage");
-                context.Writer.Write(requestObject.ConcurrentExecutionRatePercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.ConcurrentExecutionRatePercentage.Value);
             }
 
             if(requestObject.IsSetErrorPercentage())
             {
                 context.Writer.WritePropertyName("ErrorPercentage");
-                context.Writer.Write(requestObject.ErrorPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.ErrorPercentage.Value);
             }
 
         }

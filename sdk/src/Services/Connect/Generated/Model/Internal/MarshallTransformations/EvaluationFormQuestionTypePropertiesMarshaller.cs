@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumeric())
             {
                 context.Writer.WritePropertyName("Numeric");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationFormNumericQuestionPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Numeric, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSingleSelect())
             {
                 context.Writer.WritePropertyName("SingleSelect");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EvaluationFormSingleSelectQuestionPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SingleSelect, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

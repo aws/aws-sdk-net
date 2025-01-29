@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glacier.Model.Internal.MarshallTransformations
 {
@@ -51,80 +49,80 @@ namespace Amazon.Glacier.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessControlList())
             {
                 context.Writer.WritePropertyName("AccessControlList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccessControlListListValue in requestObject.AccessControlList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GrantMarshaller.Instance;
                     marshaller.Marshall(requestObjectAccessControlListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("BucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetCannedACL())
             {
                 context.Writer.WritePropertyName("CannedACL");
-                context.Writer.Write(requestObject.CannedACL);
+                context.Writer.WriteStringValue(requestObject.CannedACL);
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("Encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrefix())
             {
                 context.Writer.WritePropertyName("Prefix");
-                context.Writer.Write(requestObject.Prefix);
+                context.Writer.WriteStringValue(requestObject.Prefix);
             }
 
             if(requestObject.IsSetStorageClass())
             {
                 context.Writer.WritePropertyName("StorageClass");
-                context.Writer.Write(requestObject.StorageClass);
+                context.Writer.WriteStringValue(requestObject.StorageClass);
             }
 
             if(requestObject.IsSetTagging())
             {
                 context.Writer.WritePropertyName("Tagging");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTaggingKvp in requestObject.Tagging)
                 {
                     context.Writer.WritePropertyName(requestObjectTaggingKvp.Key);
                     var requestObjectTaggingValue = requestObjectTaggingKvp.Value;
 
-                        context.Writer.Write(requestObjectTaggingValue);
+                        context.Writer.WriteStringValue(requestObjectTaggingValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserMetadata())
             {
                 context.Writer.WritePropertyName("UserMetadata");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectUserMetadataKvp in requestObject.UserMetadata)
                 {
                     context.Writer.WritePropertyName(requestObjectUserMetadataKvp.Key);
                     var requestObjectUserMetadataValue = requestObjectUserMetadataKvp.Value;
 
-                        context.Writer.Write(requestObjectUserMetadataValue);
+                        context.Writer.WriteStringValue(requestObjectUserMetadataValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

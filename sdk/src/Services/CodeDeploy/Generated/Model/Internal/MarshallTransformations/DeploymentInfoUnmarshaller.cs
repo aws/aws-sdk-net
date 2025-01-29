@@ -29,221 +29,211 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeDeploy.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeploymentInfo Object
     /// </summary>  
-    public class DeploymentInfoUnmarshaller : IUnmarshaller<DeploymentInfo, XmlUnmarshallerContext>, IUnmarshaller<DeploymentInfo, JsonUnmarshallerContext>
+    public class DeploymentInfoUnmarshaller : IJsonUnmarshaller<DeploymentInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeploymentInfo IUnmarshaller<DeploymentInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentInfo Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeploymentInfo unmarshalledObject = new DeploymentInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("additionalDeploymentStatusInfo", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AdditionalDeploymentStatusInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdditionalDeploymentStatusInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("applicationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplicationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("autoRollbackConfiguration", targetDepth))
                 {
                     var unmarshaller = AutoRollbackConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoRollbackConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("blueGreenDeploymentConfiguration", targetDepth))
                 {
                     var unmarshaller = BlueGreenDeploymentConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.BlueGreenDeploymentConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BlueGreenDeploymentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("completeTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CompleteTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompleteTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("computePlatform", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComputePlatform = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("createTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("creator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Creator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Creator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentConfigName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentConfigName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentConfigName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentOverview", targetDepth))
                 {
                     var unmarshaller = DeploymentOverviewUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentOverview = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentOverview = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentStatusMessages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.DeploymentStatusMessages = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.DeploymentStatusMessages = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deploymentStyle", targetDepth))
                 {
                     var unmarshaller = DeploymentStyleUnmarshaller.Instance;
-                    unmarshalledObject.DeploymentStyle = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeploymentStyle = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Description = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("errorInformation", targetDepth))
                 {
                     var unmarshaller = ErrorInformationUnmarshaller.Instance;
-                    unmarshalledObject.ErrorInformation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ErrorInformation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("externalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fileExistsBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileExistsBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileExistsBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ignoreApplicationStopFailures", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.IgnoreApplicationStopFailures = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IgnoreApplicationStopFailures = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("instanceTerminationWaitTimeStarted", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.InstanceTerminationWaitTimeStarted = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceTerminationWaitTimeStarted = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("loadBalancerInfo", targetDepth))
                 {
                     var unmarshaller = LoadBalancerInfoUnmarshaller.Instance;
-                    unmarshalledObject.LoadBalancerInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoadBalancerInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("overrideAlarmConfiguration", targetDepth))
                 {
                     var unmarshaller = AlarmConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OverrideAlarmConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OverrideAlarmConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("previousRevision", targetDepth))
                 {
                     var unmarshaller = RevisionLocationUnmarshaller.Instance;
-                    unmarshalledObject.PreviousRevision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreviousRevision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("relatedDeployments", targetDepth))
                 {
                     var unmarshaller = RelatedDeploymentsUnmarshaller.Instance;
-                    unmarshalledObject.RelatedDeployments = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RelatedDeployments = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("revision", targetDepth))
                 {
                     var unmarshaller = RevisionLocationUnmarshaller.Instance;
-                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Revision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("rollbackInfo", targetDepth))
                 {
                     var unmarshaller = RollbackInfoUnmarshaller.Instance;
-                    unmarshalledObject.RollbackInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RollbackInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("targetInstances", targetDepth))
                 {
                     var unmarshaller = TargetInstancesUnmarshaller.Instance;
-                    unmarshalledObject.TargetInstances = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TargetInstances = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("updateOutdatedInstancesOnly", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UpdateOutdatedInstancesOnly = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpdateOutdatedInstancesOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBodyParameters())
             {
                 context.Writer.WritePropertyName("BodyParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBodyParametersListValue in requestObject.BodyParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConnectionBodyParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectBodyParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHeaderParameters())
             {
                 context.Writer.WritePropertyName("HeaderParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHeaderParametersListValue in requestObject.HeaderParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConnectionHeaderParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectHeaderParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetQueryStringParameters())
             {
                 context.Writer.WritePropertyName("QueryStringParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectQueryStringParametersListValue in requestObject.QueryStringParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConnectionQueryStringParameterMarshaller.Instance;
                     marshaller.Marshall(requestObjectQueryStringParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

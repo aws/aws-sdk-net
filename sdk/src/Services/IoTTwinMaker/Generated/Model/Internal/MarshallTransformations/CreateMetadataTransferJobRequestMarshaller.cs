@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
 {
@@ -61,58 +64,63 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/metadata-transfer-jobs";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetDestination())
-                    {
-                        context.Writer.WritePropertyName("destination");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DestinationConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Destination, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMetadataTransferJobId())
-                    {
-                        context.Writer.WritePropertyName("metadataTransferJobId");
-                        context.Writer.Write(publicRequest.MetadataTransferJobId);
-                    }
-
-                    if(publicRequest.IsSetSources())
-                    {
-                        context.Writer.WritePropertyName("sources");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSourcesListValue in publicRequest.Sources)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = SourceConfigurationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSourcesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetDestination())
+            {
+                context.Writer.WritePropertyName("destination");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DestinationConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Destination, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMetadataTransferJobId())
+            {
+                context.Writer.WritePropertyName("metadataTransferJobId");
+                context.Writer.WriteStringValue(publicRequest.MetadataTransferJobId);
+            }
+
+            if(publicRequest.IsSetSources())
+            {
+                context.Writer.WritePropertyName("sources");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = SourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"api.";

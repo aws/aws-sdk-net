@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetadataKey())
             {
                 context.Writer.WritePropertyName("MetadataKey");
-                context.Writer.Write(requestObject.MetadataKey);
+                context.Writer.WriteStringValue(requestObject.MetadataKey);
             }
 
             if(requestObject.IsSetMetadataValue())
             {
                 context.Writer.WritePropertyName("MetadataValue");
-                context.Writer.Write(requestObject.MetadataValue);
+                context.Writer.WriteStringValue(requestObject.MetadataValue);
             }
 
         }

@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CidrCollectionVersionMismatchException operation
     /// </summary>  
-    public class CidrCollectionVersionMismatchExceptionUnmarshaller : IErrorResponseUnmarshaller<CidrCollectionVersionMismatchException, XmlUnmarshallerContext>
+    public class CidrCollectionVersionMismatchExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CidrCollectionVersionMismatchException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,66 +49,66 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoundingBox())
             {
                 context.Writer.WritePropertyName("BoundingBox");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBoundingBoxListValue in requestObject.BoundingBox)
                 {
-                        context.Writer.Write(requestObjectBoundingBoxListValue);
+                        context.Writer.WriteNumberValue(requestObjectBoundingBoxListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCorridor())
             {
                 context.Writer.WritePropertyName("Corridor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CorridorMarshaller.Instance;
                 marshaller.Marshall(requestObject.Corridor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPolygon())
             {
                 context.Writer.WritePropertyName("Polygon");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPolygonListValue in requestObject.Polygon)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectPolygonListValueListValue in requestObjectPolygonListValue)
                     {
-                        context.Writer.WriteArrayStart();
+                        context.Writer.WriteStartArray();
                         foreach(var requestObjectPolygonListValueListValueListValue in requestObjectPolygonListValueListValue)
                         {
-                                context.Writer.Write(requestObjectPolygonListValueListValueListValue);
+                                context.Writer.WriteNumberValue(requestObjectPolygonListValueListValueListValue);
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteEndArray();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPolylineCorridor())
             {
                 context.Writer.WritePropertyName("PolylineCorridor");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PolylineCorridorMarshaller.Instance;
                 marshaller.Marshall(requestObject.PolylineCorridor, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPolylinePolygon())
             {
                 context.Writer.WritePropertyName("PolylinePolygon");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPolylinePolygonListValue in requestObject.PolylinePolygon)
                 {
-                        context.Writer.Write(requestObjectPolylinePolygonListValue);
+                        context.Writer.WriteStringValue(requestObjectPolylinePolygonListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

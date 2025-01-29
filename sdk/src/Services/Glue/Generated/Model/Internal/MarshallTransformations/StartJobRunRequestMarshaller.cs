@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -63,111 +66,116 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAllocatedCapacity())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAllocatedCapacity())
-                    {
-                        context.Writer.WritePropertyName("AllocatedCapacity");
-                        context.Writer.Write(publicRequest.AllocatedCapacity.Value);
-                    }
-
-                    if(publicRequest.IsSetArguments())
-                    {
-                        context.Writer.WritePropertyName("Arguments");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestArgumentsKvp in publicRequest.Arguments)
-                        {
-                            context.Writer.WritePropertyName(publicRequestArgumentsKvp.Key);
-                            var publicRequestArgumentsValue = publicRequestArgumentsKvp.Value;
-
-                                context.Writer.Write(publicRequestArgumentsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetExecutionClass())
-                    {
-                        context.Writer.WritePropertyName("ExecutionClass");
-                        context.Writer.Write(publicRequest.ExecutionClass);
-                    }
-
-                    if(publicRequest.IsSetJobName())
-                    {
-                        context.Writer.WritePropertyName("JobName");
-                        context.Writer.Write(publicRequest.JobName);
-                    }
-
-                    if(publicRequest.IsSetJobRunId())
-                    {
-                        context.Writer.WritePropertyName("JobRunId");
-                        context.Writer.Write(publicRequest.JobRunId);
-                    }
-
-                    if(publicRequest.IsSetJobRunQueuingEnabled())
-                    {
-                        context.Writer.WritePropertyName("JobRunQueuingEnabled");
-                        context.Writer.Write(publicRequest.JobRunQueuingEnabled.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxCapacity())
-                    {
-                        context.Writer.WritePropertyName("MaxCapacity");
-                        if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
-                        {
-                            context.Writer.Write(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
-                        }
-                        else
-                        {
-                            context.Writer.Write(publicRequest.MaxCapacity.Value);
-                        }
-                    }
-
-                    if(publicRequest.IsSetNotificationProperty())
-                    {
-                        context.Writer.WritePropertyName("NotificationProperty");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NotificationPropertyMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NotificationProperty, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNumberOfWorkers())
-                    {
-                        context.Writer.WritePropertyName("NumberOfWorkers");
-                        context.Writer.Write(publicRequest.NumberOfWorkers.Value);
-                    }
-
-                    if(publicRequest.IsSetSecurityConfiguration())
-                    {
-                        context.Writer.WritePropertyName("SecurityConfiguration");
-                        context.Writer.Write(publicRequest.SecurityConfiguration);
-                    }
-
-                    if(publicRequest.IsSetTimeout())
-                    {
-                        context.Writer.WritePropertyName("Timeout");
-                        context.Writer.Write(publicRequest.Timeout.Value);
-                    }
-
-                    if(publicRequest.IsSetWorkerType())
-                    {
-                        context.Writer.WritePropertyName("WorkerType");
-                        context.Writer.Write(publicRequest.WorkerType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AllocatedCapacity");
+                context.Writer.WriteNumberValue(publicRequest.AllocatedCapacity.Value);
             }
+
+            if(publicRequest.IsSetArguments())
+            {
+                context.Writer.WritePropertyName("Arguments");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestArgumentsKvp in publicRequest.Arguments)
+                {
+                    context.Writer.WritePropertyName(publicRequestArgumentsKvp.Key);
+                    var publicRequestArgumentsValue = publicRequestArgumentsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestArgumentsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetExecutionClass())
+            {
+                context.Writer.WritePropertyName("ExecutionClass");
+                context.Writer.WriteStringValue(publicRequest.ExecutionClass);
+            }
+
+            if(publicRequest.IsSetJobName())
+            {
+                context.Writer.WritePropertyName("JobName");
+                context.Writer.WriteStringValue(publicRequest.JobName);
+            }
+
+            if(publicRequest.IsSetJobRunId())
+            {
+                context.Writer.WritePropertyName("JobRunId");
+                context.Writer.WriteStringValue(publicRequest.JobRunId);
+            }
+
+            if(publicRequest.IsSetJobRunQueuingEnabled())
+            {
+                context.Writer.WritePropertyName("JobRunQueuingEnabled");
+                context.Writer.WriteBooleanValue(publicRequest.JobRunQueuingEnabled.Value);
+            }
+
+            if(publicRequest.IsSetMaxCapacity())
+            {
+                context.Writer.WritePropertyName("MaxCapacity");
+                if(StringUtils.IsSpecialDoubleValue(publicRequest.MaxCapacity.Value))
+                {
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(publicRequest.MaxCapacity.Value));
+                }
+                else
+                {
+                    context.Writer.WriteNumberValue(publicRequest.MaxCapacity.Value);
+                }
+            }
+
+            if(publicRequest.IsSetNotificationProperty())
+            {
+                context.Writer.WritePropertyName("NotificationProperty");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NotificationPropertyMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NotificationProperty, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNumberOfWorkers())
+            {
+                context.Writer.WritePropertyName("NumberOfWorkers");
+                context.Writer.WriteNumberValue(publicRequest.NumberOfWorkers.Value);
+            }
+
+            if(publicRequest.IsSetSecurityConfiguration())
+            {
+                context.Writer.WritePropertyName("SecurityConfiguration");
+                context.Writer.WriteStringValue(publicRequest.SecurityConfiguration);
+            }
+
+            if(publicRequest.IsSetTimeout())
+            {
+                context.Writer.WritePropertyName("Timeout");
+                context.Writer.WriteNumberValue(publicRequest.Timeout.Value);
+            }
+
+            if(publicRequest.IsSetWorkerType())
+            {
+                context.Writer.WritePropertyName("WorkerType");
+                context.Writer.WriteStringValue(publicRequest.WorkerType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

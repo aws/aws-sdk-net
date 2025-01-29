@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -63,121 +66,126 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("Configuration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSourceConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Configuration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCustomDocumentEnrichmentConfiguration())
-                    {
-                        context.Writer.WritePropertyName("CustomDocumentEnrichmentConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CustomDocumentEnrichmentConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CustomDocumentEnrichmentConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetIndexId())
-                    {
-                        context.Writer.WritePropertyName("IndexId");
-                        context.Writer.Write(publicRequest.IndexId);
-                    }
-
-                    if(publicRequest.IsSetLanguageCode())
-                    {
-                        context.Writer.WritePropertyName("LanguageCode");
-                        context.Writer.Write(publicRequest.LanguageCode);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RoleArn");
-                        context.Writer.Write(publicRequest.RoleArn);
-                    }
-
-                    if(publicRequest.IsSetSchedule())
-                    {
-                        context.Writer.WritePropertyName("Schedule");
-                        context.Writer.Write(publicRequest.Schedule);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("Type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    if(publicRequest.IsSetVpcConfiguration())
-                    {
-                        context.Writer.WritePropertyName("VpcConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VpcConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetConfiguration())
+            {
+                context.Writer.WritePropertyName("Configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSourceConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCustomDocumentEnrichmentConfiguration())
+            {
+                context.Writer.WritePropertyName("CustomDocumentEnrichmentConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CustomDocumentEnrichmentConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CustomDocumentEnrichmentConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetIndexId())
+            {
+                context.Writer.WritePropertyName("IndexId");
+                context.Writer.WriteStringValue(publicRequest.IndexId);
+            }
+
+            if(publicRequest.IsSetLanguageCode())
+            {
+                context.Writer.WritePropertyName("LanguageCode");
+                context.Writer.WriteStringValue(publicRequest.LanguageCode);
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRoleArn())
+            {
+                context.Writer.WritePropertyName("RoleArn");
+                context.Writer.WriteStringValue(publicRequest.RoleArn);
+            }
+
+            if(publicRequest.IsSetSchedule())
+            {
+                context.Writer.WritePropertyName("Schedule");
+                context.Writer.WriteStringValue(publicRequest.Schedule);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("Type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            if(publicRequest.IsSetVpcConfiguration())
+            {
+                context.Writer.WritePropertyName("VpcConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VpcConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

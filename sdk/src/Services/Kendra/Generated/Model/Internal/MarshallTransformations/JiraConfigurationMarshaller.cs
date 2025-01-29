@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,176 +49,176 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttachmentFieldMappings())
             {
                 context.Writer.WritePropertyName("AttachmentFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttachmentFieldMappingsListValue in requestObject.AttachmentFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttachmentFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCommentFieldMappings())
             {
                 context.Writer.WritePropertyName("CommentFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommentFieldMappingsListValue in requestObject.CommentFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectCommentFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExclusionPatterns())
             {
                 context.Writer.WritePropertyName("ExclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExclusionPatternsListValue in requestObject.ExclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectExclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectExclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInclusionPatterns())
             {
                 context.Writer.WritePropertyName("InclusionPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInclusionPatternsListValue in requestObject.InclusionPatterns)
                 {
-                        context.Writer.Write(requestObjectInclusionPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectInclusionPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIssueFieldMappings())
             {
                 context.Writer.WritePropertyName("IssueFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIssueFieldMappingsListValue in requestObject.IssueFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectIssueFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIssueSubEntityFilter())
             {
                 context.Writer.WritePropertyName("IssueSubEntityFilter");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIssueSubEntityFilterListValue in requestObject.IssueSubEntityFilter)
                 {
-                        context.Writer.Write(requestObjectIssueSubEntityFilterListValue);
+                        context.Writer.WriteStringValue(requestObjectIssueSubEntityFilterListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIssueType())
             {
                 context.Writer.WritePropertyName("IssueType");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectIssueTypeListValue in requestObject.IssueType)
                 {
-                        context.Writer.Write(requestObjectIssueTypeListValue);
+                        context.Writer.WriteStringValue(requestObjectIssueTypeListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJiraAccountUrl())
             {
                 context.Writer.WritePropertyName("JiraAccountUrl");
-                context.Writer.Write(requestObject.JiraAccountUrl);
+                context.Writer.WriteStringValue(requestObject.JiraAccountUrl);
             }
 
             if(requestObject.IsSetProject())
             {
                 context.Writer.WritePropertyName("Project");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProjectListValue in requestObject.Project)
                 {
-                        context.Writer.Write(requestObjectProjectListValue);
+                        context.Writer.WriteStringValue(requestObjectProjectListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProjectFieldMappings())
             {
                 context.Writer.WritePropertyName("ProjectFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectProjectFieldMappingsListValue in requestObject.ProjectFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectProjectFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusListValue in requestObject.Status)
                 {
-                        context.Writer.Write(requestObjectStatusListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUseChangeLog())
             {
                 context.Writer.WritePropertyName("UseChangeLog");
-                context.Writer.Write(requestObject.UseChangeLog.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseChangeLog.Value);
             }
 
             if(requestObject.IsSetVpcConfiguration())
             {
                 context.Writer.WritePropertyName("VpcConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceVpcConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWorkLogFieldMappings())
             {
                 context.Writer.WritePropertyName("WorkLogFieldMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWorkLogFieldMappingsListValue in requestObject.WorkLogFieldMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceToIndexFieldMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectWorkLogFieldMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

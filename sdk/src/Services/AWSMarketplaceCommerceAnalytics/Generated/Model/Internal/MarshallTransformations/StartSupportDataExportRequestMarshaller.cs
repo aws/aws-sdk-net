@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransformations
 {
@@ -63,69 +66,74 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics.Model.Internal.MarshallTransfor
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCustomerDefinedValues())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("customerDefinedValues");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestCustomerDefinedValuesKvp in publicRequest.CustomerDefinedValues)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCustomerDefinedValues())
-                    {
-                        context.Writer.WritePropertyName("customerDefinedValues");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestCustomerDefinedValuesKvp in publicRequest.CustomerDefinedValues)
-                        {
-                            context.Writer.WritePropertyName(publicRequestCustomerDefinedValuesKvp.Key);
-                            var publicRequestCustomerDefinedValuesValue = publicRequestCustomerDefinedValuesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestCustomerDefinedValuesKvp.Key);
+                    var publicRequestCustomerDefinedValuesValue = publicRequestCustomerDefinedValuesKvp.Value;
 
-                                context.Writer.Write(publicRequestCustomerDefinedValuesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDataSetType())
-                    {
-                        context.Writer.WritePropertyName("dataSetType");
-                        context.Writer.Write(publicRequest.DataSetType);
-                    }
-
-                    if(publicRequest.IsSetDestinationS3BucketName())
-                    {
-                        context.Writer.WritePropertyName("destinationS3BucketName");
-                        context.Writer.Write(publicRequest.DestinationS3BucketName);
-                    }
-
-                    if(publicRequest.IsSetDestinationS3Prefix())
-                    {
-                        context.Writer.WritePropertyName("destinationS3Prefix");
-                        context.Writer.Write(publicRequest.DestinationS3Prefix);
-                    }
-
-                    if(publicRequest.IsSetFromDate())
-                    {
-                        context.Writer.WritePropertyName("fromDate");
-                        context.Writer.Write(publicRequest.FromDate.Value);
-                    }
-
-                    if(publicRequest.IsSetRoleNameArn())
-                    {
-                        context.Writer.WritePropertyName("roleNameArn");
-                        context.Writer.Write(publicRequest.RoleNameArn);
-                    }
-
-                    if(publicRequest.IsSetSnsTopicArn())
-                    {
-                        context.Writer.WritePropertyName("snsTopicArn");
-                        context.Writer.Write(publicRequest.SnsTopicArn);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestCustomerDefinedValuesValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDataSetType())
+            {
+                context.Writer.WritePropertyName("dataSetType");
+                context.Writer.WriteStringValue(publicRequest.DataSetType);
+            }
+
+            if(publicRequest.IsSetDestinationS3BucketName())
+            {
+                context.Writer.WritePropertyName("destinationS3BucketName");
+                context.Writer.WriteStringValue(publicRequest.DestinationS3BucketName);
+            }
+
+            if(publicRequest.IsSetDestinationS3Prefix())
+            {
+                context.Writer.WritePropertyName("destinationS3Prefix");
+                context.Writer.WriteStringValue(publicRequest.DestinationS3Prefix);
+            }
+
+            if(publicRequest.IsSetFromDate())
+            {
+                context.Writer.WritePropertyName("fromDate");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.FromDate.Value)));
+            }
+
+            if(publicRequest.IsSetRoleNameArn())
+            {
+                context.Writer.WritePropertyName("roleNameArn");
+                context.Writer.WriteStringValue(publicRequest.RoleNameArn);
+            }
+
+            if(publicRequest.IsSetSnsTopicArn())
+            {
+                context.Writer.WritePropertyName("snsTopicArn");
+                context.Writer.WriteStringValue(publicRequest.SnsTopicArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

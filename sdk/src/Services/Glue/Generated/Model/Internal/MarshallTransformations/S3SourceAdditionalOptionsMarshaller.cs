@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoundedFiles())
             {
                 context.Writer.WritePropertyName("BoundedFiles");
-                context.Writer.Write(requestObject.BoundedFiles.Value);
+                context.Writer.WriteNumberValue(requestObject.BoundedFiles.Value);
             }
 
             if(requestObject.IsSetBoundedSize())
             {
                 context.Writer.WritePropertyName("BoundedSize");
-                context.Writer.Write(requestObject.BoundedSize.Value);
+                context.Writer.WriteNumberValue(requestObject.BoundedSize.Value);
             }
 
         }

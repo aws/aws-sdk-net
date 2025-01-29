@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLaunchTemplateId())
             {
                 context.Writer.WritePropertyName("LaunchTemplateId");
-                context.Writer.Write(requestObject.LaunchTemplateId);
+                context.Writer.WriteStringValue(requestObject.LaunchTemplateId);
             }
 
             if(requestObject.IsSetLaunchTemplateName())
             {
                 context.Writer.WritePropertyName("LaunchTemplateName");
-                context.Writer.Write(requestObject.LaunchTemplateName);
+                context.Writer.WriteStringValue(requestObject.LaunchTemplateName);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

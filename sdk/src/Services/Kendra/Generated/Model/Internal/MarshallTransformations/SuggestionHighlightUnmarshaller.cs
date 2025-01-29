@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SuggestionHighlight Object
     /// </summary>  
-    public class SuggestionHighlightUnmarshaller : IUnmarshaller<SuggestionHighlight, XmlUnmarshallerContext>, IUnmarshaller<SuggestionHighlight, JsonUnmarshallerContext>
+    public class SuggestionHighlightUnmarshaller : IJsonUnmarshaller<SuggestionHighlight, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SuggestionHighlight IUnmarshaller<SuggestionHighlight, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SuggestionHighlight Unmarshall(JsonUnmarshallerContext context)
+        public SuggestionHighlight Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SuggestionHighlight unmarshalledObject = new SuggestionHighlight();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BeginOffset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BeginOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndOffset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

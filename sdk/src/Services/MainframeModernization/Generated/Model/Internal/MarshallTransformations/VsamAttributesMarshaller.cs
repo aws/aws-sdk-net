@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlternateKeys())
             {
                 context.Writer.WritePropertyName("alternateKeys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAlternateKeysListValue in requestObject.AlternateKeys)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AlternateKeyMarshaller.Instance;
                     marshaller.Marshall(requestObjectAlternateKeysListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCompressed())
             {
                 context.Writer.WritePropertyName("compressed");
-                context.Writer.Write(requestObject.Compressed.Value);
+                context.Writer.WriteBooleanValue(requestObject.Compressed.Value);
             }
 
             if(requestObject.IsSetEncoding())
             {
                 context.Writer.WritePropertyName("encoding");
-                context.Writer.Write(requestObject.Encoding);
+                context.Writer.WriteStringValue(requestObject.Encoding);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetPrimaryKey())
             {
                 context.Writer.WritePropertyName("primaryKey");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PrimaryKeyMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimaryKey, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNotificationArn())
             {
                 context.Writer.WritePropertyName("NotificationArn");
-                context.Writer.Write(requestObject.NotificationArn);
+                context.Writer.WriteStringValue(requestObject.NotificationArn);
             }
 
             if(requestObject.IsSetNotificationEvents())
             {
                 context.Writer.WritePropertyName("NotificationEvents");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNotificationEventsListValue in requestObject.NotificationEvents)
                 {
-                        context.Writer.Write(requestObjectNotificationEventsListValue);
+                        context.Writer.WriteStringValue(requestObjectNotificationEventsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNotificationType())
             {
                 context.Writer.WritePropertyName("NotificationType");
-                context.Writer.Write(requestObject.NotificationType);
+                context.Writer.WriteStringValue(requestObject.NotificationType);
             }
 
         }

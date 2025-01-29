@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,81 +49,81 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddresses())
             {
                 context.Writer.WritePropertyName("Addresses");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAddressesKvp in requestObject.Addresses)
                 {
                     context.Writer.WritePropertyName(requestObjectAddressesKvp.Key);
                     var requestObjectAddressesValue = requestObjectAddressesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AddressConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectAddressesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetContext())
             {
                 context.Writer.WritePropertyName("Context");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectContextKvp in requestObject.Context)
                 {
                     context.Writer.WritePropertyName(requestObjectContextKvp.Key);
                     var requestObjectContextValue = requestObjectContextKvp.Value;
 
-                        context.Writer.Write(requestObjectContextValue);
+                        context.Writer.WriteStringValue(requestObjectContextValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndpoints())
             {
                 context.Writer.WritePropertyName("Endpoints");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectEndpointsKvp in requestObject.Endpoints)
                 {
                     context.Writer.WritePropertyName(requestObjectEndpointsKvp.Key);
                     var requestObjectEndpointsValue = requestObjectEndpointsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = EndpointSendConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectEndpointsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMessageConfiguration())
             {
                 context.Writer.WritePropertyName("MessageConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DirectMessageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MessageConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("TemplateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTraceId())
             {
                 context.Writer.WritePropertyName("TraceId");
-                context.Writer.Write(requestObject.TraceId);
+                context.Writer.WriteStringValue(requestObject.TraceId);
             }
 
         }

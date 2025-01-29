@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutoExportRevisionToS3RequestDetails Object
     /// </summary>  
-    public class AutoExportRevisionToS3RequestDetailsUnmarshaller : IUnmarshaller<AutoExportRevisionToS3RequestDetails, XmlUnmarshallerContext>, IUnmarshaller<AutoExportRevisionToS3RequestDetails, JsonUnmarshallerContext>
+    public class AutoExportRevisionToS3RequestDetailsUnmarshaller : IJsonUnmarshaller<AutoExportRevisionToS3RequestDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutoExportRevisionToS3RequestDetails IUnmarshaller<AutoExportRevisionToS3RequestDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutoExportRevisionToS3RequestDetails Unmarshall(JsonUnmarshallerContext context)
+        public AutoExportRevisionToS3RequestDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutoExportRevisionToS3RequestDetails unmarshalledObject = new AutoExportRevisionToS3RequestDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Encryption", targetDepth))
                 {
                     var unmarshaller = ExportServerSideEncryptionUnmarshaller.Instance;
-                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encryption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RevisionDestination", targetDepth))
                 {
                     var unmarshaller = AutoExportRevisionDestinationEntryUnmarshaller.Instance;
-                    unmarshalledObject.RevisionDestination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RevisionDestination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

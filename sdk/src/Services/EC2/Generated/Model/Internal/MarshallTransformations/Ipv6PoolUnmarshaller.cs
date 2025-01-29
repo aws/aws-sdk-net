@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ipv6Pool Object
     /// </summary>  
-    public class Ipv6PoolUnmarshaller : IUnmarshaller<Ipv6Pool, XmlUnmarshallerContext>, IUnmarshaller<Ipv6Pool, JsonUnmarshallerContext>
+    public class Ipv6PoolUnmarshaller : IXmlUnmarshaller<Ipv6Pool, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,17 +98,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Ipv6Pool Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static Ipv6PoolUnmarshaller _instance = new Ipv6PoolUnmarshaller();        
 

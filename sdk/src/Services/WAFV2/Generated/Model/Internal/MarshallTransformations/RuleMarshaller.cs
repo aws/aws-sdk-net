@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAction())
             {
                 context.Writer.WritePropertyName("Action");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RuleActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Action, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCaptchaConfig())
             {
                 context.Writer.WritePropertyName("CaptchaConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CaptchaConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CaptchaConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetChallengeConfig())
             {
                 context.Writer.WritePropertyName("ChallengeConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ChallengeConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ChallengeConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOverrideAction())
             {
                 context.Writer.WritePropertyName("OverrideAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OverrideActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.OverrideAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetRuleLabels())
             {
                 context.Writer.WritePropertyName("RuleLabels");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRuleLabelsListValue in requestObject.RuleLabels)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LabelMarshaller.Instance;
                     marshaller.Marshall(requestObjectRuleLabelsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatement())
             {
                 context.Writer.WritePropertyName("Statement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StatementMarshaller.Instance;
                 marshaller.Marshall(requestObject.Statement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisibilityConfig())
             {
                 context.Writer.WritePropertyName("VisibilityConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisibilityConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisibilityConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

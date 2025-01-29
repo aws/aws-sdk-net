@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IDPCommunicationErrorException operation
     /// </summary>  
-    public class IDPCommunicationErrorExceptionUnmarshaller : IErrorResponseUnmarshaller<IDPCommunicationErrorException, XmlUnmarshallerContext>
+    public class IDPCommunicationErrorExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IDPCommunicationErrorException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

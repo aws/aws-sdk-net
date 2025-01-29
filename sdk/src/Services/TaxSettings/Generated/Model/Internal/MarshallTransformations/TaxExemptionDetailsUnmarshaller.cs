@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TaxSettings.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TaxExemptionDetails Object
     /// </summary>  
-    public class TaxExemptionDetailsUnmarshaller : IUnmarshaller<TaxExemptionDetails, XmlUnmarshallerContext>, IUnmarshaller<TaxExemptionDetails, JsonUnmarshallerContext>
+    public class TaxExemptionDetailsUnmarshaller : IJsonUnmarshaller<TaxExemptionDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TaxExemptionDetails IUnmarshaller<TaxExemptionDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TaxExemptionDetails Unmarshall(JsonUnmarshallerContext context)
+        public TaxExemptionDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TaxExemptionDetails unmarshalledObject = new TaxExemptionDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("heritageObtainedDetails", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.HeritageObtainedDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HeritageObtainedDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("heritageObtainedParentEntity", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HeritageObtainedParentEntity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HeritageObtainedParentEntity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("heritageObtainedReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HeritageObtainedReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HeritageObtainedReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("taxExemptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TaxExemption, TaxExemptionUnmarshaller>(TaxExemptionUnmarshaller.Instance);
-                    unmarshalledObject.TaxExemptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TaxExemption, TaxExemptionUnmarshaller>(TaxExemptionUnmarshaller.Instance);
+                    unmarshalledObject.TaxExemptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

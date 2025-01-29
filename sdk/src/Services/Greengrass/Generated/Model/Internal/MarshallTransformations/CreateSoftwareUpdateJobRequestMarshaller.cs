@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -61,60 +64,65 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/greengrass/updates";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetS3UrlSignerRole())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetS3UrlSignerRole())
-                    {
-                        context.Writer.WritePropertyName("S3UrlSignerRole");
-                        context.Writer.Write(publicRequest.S3UrlSignerRole);
-                    }
-
-                    if(publicRequest.IsSetSoftwareToUpdate())
-                    {
-                        context.Writer.WritePropertyName("SoftwareToUpdate");
-                        context.Writer.Write(publicRequest.SoftwareToUpdate);
-                    }
-
-                    if(publicRequest.IsSetUpdateAgentLogLevel())
-                    {
-                        context.Writer.WritePropertyName("UpdateAgentLogLevel");
-                        context.Writer.Write(publicRequest.UpdateAgentLogLevel);
-                    }
-
-                    if(publicRequest.IsSetUpdateTargets())
-                    {
-                        context.Writer.WritePropertyName("UpdateTargets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestUpdateTargetsListValue in publicRequest.UpdateTargets)
-                        {
-                                context.Writer.Write(publicRequestUpdateTargetsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetUpdateTargetsArchitecture())
-                    {
-                        context.Writer.WritePropertyName("UpdateTargetsArchitecture");
-                        context.Writer.Write(publicRequest.UpdateTargetsArchitecture);
-                    }
-
-                    if(publicRequest.IsSetUpdateTargetsOperatingSystem())
-                    {
-                        context.Writer.WritePropertyName("UpdateTargetsOperatingSystem");
-                        context.Writer.Write(publicRequest.UpdateTargetsOperatingSystem);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("S3UrlSignerRole");
+                context.Writer.WriteStringValue(publicRequest.S3UrlSignerRole);
             }
+
+            if(publicRequest.IsSetSoftwareToUpdate())
+            {
+                context.Writer.WritePropertyName("SoftwareToUpdate");
+                context.Writer.WriteStringValue(publicRequest.SoftwareToUpdate);
+            }
+
+            if(publicRequest.IsSetUpdateAgentLogLevel())
+            {
+                context.Writer.WritePropertyName("UpdateAgentLogLevel");
+                context.Writer.WriteStringValue(publicRequest.UpdateAgentLogLevel);
+            }
+
+            if(publicRequest.IsSetUpdateTargets())
+            {
+                context.Writer.WritePropertyName("UpdateTargets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestUpdateTargetsListValue in publicRequest.UpdateTargets)
+                {
+                        context.Writer.WriteStringValue(publicRequestUpdateTargetsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetUpdateTargetsArchitecture())
+            {
+                context.Writer.WritePropertyName("UpdateTargetsArchitecture");
+                context.Writer.WriteStringValue(publicRequest.UpdateTargetsArchitecture);
+            }
+
+            if(publicRequest.IsSetUpdateTargetsOperatingSystem())
+            {
+                context.Writer.WritePropertyName("UpdateTargetsOperatingSystem");
+                context.Writer.WriteStringValue(publicRequest.UpdateTargetsOperatingSystem);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
         
             if (publicRequest.IsSetAmznClientToken()) 

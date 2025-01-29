@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EntitySizeLimitExceededException operation
     /// </summary>  
-    public class EntitySizeLimitExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<EntitySizeLimitExceededException, XmlUnmarshallerContext>
+    public class EntitySizeLimitExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EntitySizeLimitExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

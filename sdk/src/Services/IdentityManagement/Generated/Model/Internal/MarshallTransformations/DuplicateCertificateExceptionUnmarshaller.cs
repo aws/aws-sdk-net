@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DuplicateCertificateException operation
     /// </summary>  
-    public class DuplicateCertificateExceptionUnmarshaller : IErrorResponseUnmarshaller<DuplicateCertificateException, XmlUnmarshallerContext>
+    public class DuplicateCertificateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DuplicateCertificateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

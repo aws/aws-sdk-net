@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCommand())
             {
                 context.Writer.WritePropertyName("command");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCommandListValue in requestObject.Command)
                 {
-                        context.Writer.Write(requestObjectCommandListValue);
+                        context.Writer.WriteStringValue(requestObjectCommandListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("interval");
-                context.Writer.Write(requestObject.Interval.Value);
+                context.Writer.WriteNumberValue(requestObject.Interval.Value);
             }
 
             if(requestObject.IsSetRetries())
             {
                 context.Writer.WritePropertyName("retries");
-                context.Writer.Write(requestObject.Retries.Value);
+                context.Writer.WriteNumberValue(requestObject.Retries.Value);
             }
 
             if(requestObject.IsSetStartPeriod())
             {
                 context.Writer.WritePropertyName("startPeriod");
-                context.Writer.Write(requestObject.StartPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.StartPeriod.Value);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("timeout");
-                context.Writer.Write(requestObject.Timeout.Value);
+                context.Writer.WriteNumberValue(requestObject.Timeout.Value);
             }
 
         }

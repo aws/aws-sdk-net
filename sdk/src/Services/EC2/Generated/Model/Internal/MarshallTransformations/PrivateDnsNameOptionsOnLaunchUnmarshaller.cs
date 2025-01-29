@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PrivateDnsNameOptionsOnLaunch Object
     /// </summary>  
-    public class PrivateDnsNameOptionsOnLaunchUnmarshaller : IUnmarshaller<PrivateDnsNameOptionsOnLaunch, XmlUnmarshallerContext>, IUnmarshaller<PrivateDnsNameOptionsOnLaunch, JsonUnmarshallerContext>
+    public class PrivateDnsNameOptionsOnLaunchUnmarshaller : IXmlUnmarshaller<PrivateDnsNameOptionsOnLaunch, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PrivateDnsNameOptionsOnLaunch Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PrivateDnsNameOptionsOnLaunchUnmarshaller _instance = new PrivateDnsNameOptionsOnLaunchUnmarshaller();        
 

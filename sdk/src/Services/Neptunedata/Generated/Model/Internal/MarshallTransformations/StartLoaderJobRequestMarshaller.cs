@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
 {
@@ -61,104 +64,109 @@ namespace Amazon.Neptunedata.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/loader";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDependencies())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("dependencies");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestDependenciesListValue in publicRequest.Dependencies)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDependencies())
-                    {
-                        context.Writer.WritePropertyName("dependencies");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDependenciesListValue in publicRequest.Dependencies)
-                        {
-                                context.Writer.Write(publicRequestDependenciesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFailOnError())
-                    {
-                        context.Writer.WritePropertyName("failOnError");
-                        context.Writer.Write(publicRequest.FailOnError.Value);
-                    }
-
-                    if(publicRequest.IsSetFormat())
-                    {
-                        context.Writer.WritePropertyName("format");
-                        context.Writer.Write(publicRequest.Format);
-                    }
-
-                    if(publicRequest.IsSetIamRoleArn())
-                    {
-                        context.Writer.WritePropertyName("iamRoleArn");
-                        context.Writer.Write(publicRequest.IamRoleArn);
-                    }
-
-                    if(publicRequest.IsSetMode())
-                    {
-                        context.Writer.WritePropertyName("mode");
-                        context.Writer.Write(publicRequest.Mode);
-                    }
-
-                    if(publicRequest.IsSetParallelism())
-                    {
-                        context.Writer.WritePropertyName("parallelism");
-                        context.Writer.Write(publicRequest.Parallelism);
-                    }
-
-                    if(publicRequest.IsSetParserConfiguration())
-                    {
-                        context.Writer.WritePropertyName("parserConfiguration");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestParserConfigurationKvp in publicRequest.ParserConfiguration)
-                        {
-                            context.Writer.WritePropertyName(publicRequestParserConfigurationKvp.Key);
-                            var publicRequestParserConfigurationValue = publicRequestParserConfigurationKvp.Value;
-
-                                context.Writer.Write(publicRequestParserConfigurationValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetQueueRequest())
-                    {
-                        context.Writer.WritePropertyName("queueRequest");
-                        context.Writer.Write(publicRequest.QueueRequest.Value);
-                    }
-
-                    if(publicRequest.IsSetS3BucketRegion())
-                    {
-                        context.Writer.WritePropertyName("region");
-                        context.Writer.Write(publicRequest.S3BucketRegion);
-                    }
-
-                    if(publicRequest.IsSetSource())
-                    {
-                        context.Writer.WritePropertyName("source");
-                        context.Writer.Write(publicRequest.Source);
-                    }
-
-                    if(publicRequest.IsSetUpdateSingleCardinalityProperties())
-                    {
-                        context.Writer.WritePropertyName("updateSingleCardinalityProperties");
-                        context.Writer.Write(publicRequest.UpdateSingleCardinalityProperties.Value);
-                    }
-
-                    if(publicRequest.IsSetUserProvidedEdgeIds())
-                    {
-                        context.Writer.WritePropertyName("userProvidedEdgeIds");
-                        context.Writer.Write(publicRequest.UserProvidedEdgeIds.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestDependenciesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFailOnError())
+            {
+                context.Writer.WritePropertyName("failOnError");
+                context.Writer.WriteBooleanValue(publicRequest.FailOnError.Value);
+            }
+
+            if(publicRequest.IsSetFormat())
+            {
+                context.Writer.WritePropertyName("format");
+                context.Writer.WriteStringValue(publicRequest.Format);
+            }
+
+            if(publicRequest.IsSetIamRoleArn())
+            {
+                context.Writer.WritePropertyName("iamRoleArn");
+                context.Writer.WriteStringValue(publicRequest.IamRoleArn);
+            }
+
+            if(publicRequest.IsSetMode())
+            {
+                context.Writer.WritePropertyName("mode");
+                context.Writer.WriteStringValue(publicRequest.Mode);
+            }
+
+            if(publicRequest.IsSetParallelism())
+            {
+                context.Writer.WritePropertyName("parallelism");
+                context.Writer.WriteStringValue(publicRequest.Parallelism);
+            }
+
+            if(publicRequest.IsSetParserConfiguration())
+            {
+                context.Writer.WritePropertyName("parserConfiguration");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestParserConfigurationKvp in publicRequest.ParserConfiguration)
+                {
+                    context.Writer.WritePropertyName(publicRequestParserConfigurationKvp.Key);
+                    var publicRequestParserConfigurationValue = publicRequestParserConfigurationKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestParserConfigurationValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetQueueRequest())
+            {
+                context.Writer.WritePropertyName("queueRequest");
+                context.Writer.WriteBooleanValue(publicRequest.QueueRequest.Value);
+            }
+
+            if(publicRequest.IsSetS3BucketRegion())
+            {
+                context.Writer.WritePropertyName("region");
+                context.Writer.WriteStringValue(publicRequest.S3BucketRegion);
+            }
+
+            if(publicRequest.IsSetSource())
+            {
+                context.Writer.WritePropertyName("source");
+                context.Writer.WriteStringValue(publicRequest.Source);
+            }
+
+            if(publicRequest.IsSetUpdateSingleCardinalityProperties())
+            {
+                context.Writer.WritePropertyName("updateSingleCardinalityProperties");
+                context.Writer.WriteBooleanValue(publicRequest.UpdateSingleCardinalityProperties.Value);
+            }
+
+            if(publicRequest.IsSetUserProvidedEdgeIds())
+            {
+                context.Writer.WritePropertyName("userProvidedEdgeIds");
+                context.Writer.WriteBooleanValue(publicRequest.UserProvidedEdgeIds.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

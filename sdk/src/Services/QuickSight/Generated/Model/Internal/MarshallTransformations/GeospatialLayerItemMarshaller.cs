@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,85 +49,85 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActions())
             {
                 context.Writer.WritePropertyName("Actions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectActionsListValue in requestObject.Actions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = LayerCustomActionMarshaller.Instance;
                     marshaller.Marshall(requestObjectActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("DataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeospatialDataSourceItemMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJoinDefinition())
             {
                 context.Writer.WritePropertyName("JoinDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeospatialLayerJoinDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.JoinDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLabel())
             {
                 context.Writer.WritePropertyName("Label");
-                context.Writer.Write(requestObject.Label);
+                context.Writer.WriteStringValue(requestObject.Label);
             }
 
             if(requestObject.IsSetLayerDefinition())
             {
                 context.Writer.WritePropertyName("LayerDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeospatialLayerDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.LayerDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLayerId())
             {
                 context.Writer.WritePropertyName("LayerId");
-                context.Writer.Write(requestObject.LayerId);
+                context.Writer.WriteStringValue(requestObject.LayerId);
             }
 
             if(requestObject.IsSetLayerType())
             {
                 context.Writer.WritePropertyName("LayerType");
-                context.Writer.Write(requestObject.LayerType);
+                context.Writer.WriteStringValue(requestObject.LayerType);
             }
 
             if(requestObject.IsSetTooltip())
             {
                 context.Writer.WritePropertyName("Tooltip");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TooltipOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Tooltip, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");
-                context.Writer.Write(requestObject.Visibility);
+                context.Writer.WriteStringValue(requestObject.Visibility);
             }
 
         }

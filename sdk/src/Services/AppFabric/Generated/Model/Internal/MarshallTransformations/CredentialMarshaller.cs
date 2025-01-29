@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.AppFabric.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApiKeyCredential())
             {
                 context.Writer.WritePropertyName("apiKeyCredential");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ApiKeyCredentialMarshaller.Instance;
                 marshaller.Marshall(requestObject.ApiKeyCredential, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOauth2Credential())
             {
                 context.Writer.WritePropertyName("oauth2Credential");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Oauth2CredentialMarshaller.Instance;
                 marshaller.Marshall(requestObject.Oauth2Credential, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

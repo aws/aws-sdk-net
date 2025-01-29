@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PasswordPolicyType Object
     /// </summary>  
-    public class PasswordPolicyTypeUnmarshaller : IUnmarshaller<PasswordPolicyType, XmlUnmarshallerContext>, IUnmarshaller<PasswordPolicyType, JsonUnmarshallerContext>
+    public class PasswordPolicyTypeUnmarshaller : IJsonUnmarshaller<PasswordPolicyType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PasswordPolicyType IUnmarshaller<PasswordPolicyType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PasswordPolicyType Unmarshall(JsonUnmarshallerContext context)
+        public PasswordPolicyType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PasswordPolicyType unmarshalledObject = new PasswordPolicyType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MinimumLength", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MinimumLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MinimumLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PasswordHistorySize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.PasswordHistorySize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PasswordHistorySize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireLowercase", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireLowercase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireLowercase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireNumbers", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireNumbers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireNumbers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireSymbols", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireSymbols = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireSymbols = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RequireUppercase", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RequireUppercase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RequireUppercase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TemporaryPasswordValidityDays", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TemporaryPasswordValidityDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TemporaryPasswordValidityDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

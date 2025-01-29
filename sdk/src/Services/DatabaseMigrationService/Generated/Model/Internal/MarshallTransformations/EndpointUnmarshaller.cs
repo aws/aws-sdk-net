@@ -29,257 +29,247 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Endpoint Object
     /// </summary>  
-    public class EndpointUnmarshaller : IUnmarshaller<Endpoint, XmlUnmarshallerContext>, IUnmarshaller<Endpoint, JsonUnmarshallerContext>
+    public class EndpointUnmarshaller : IJsonUnmarshaller<Endpoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Endpoint IUnmarshaller<Endpoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Endpoint Unmarshall(JsonUnmarshallerContext context)
+        public Endpoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Endpoint unmarshalledObject = new Endpoint();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CertificateArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatabaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DmsTransferSettings", targetDepth))
                 {
                     var unmarshaller = DmsTransferSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DmsTransferSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DmsTransferSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DocDbSettings", targetDepth))
                 {
                     var unmarshaller = DocDbSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DocDbSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DynamoDbSettings", targetDepth))
                 {
                     var unmarshaller = DynamoDbSettingsUnmarshaller.Instance;
-                    unmarshalledObject.DynamoDbSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DynamoDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElasticsearchSettings", targetDepth))
                 {
                     var unmarshaller = ElasticsearchSettingsUnmarshaller.Instance;
-                    unmarshalledObject.ElasticsearchSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElasticsearchSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointIdentifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointIdentifier = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointIdentifier = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndpointType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EngineDisplayName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineDisplayName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineDisplayName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EngineName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EngineName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExternalId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExternalTableDefinition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalTableDefinition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExternalTableDefinition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExtraConnectionAttributes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExtraConnectionAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExtraConnectionAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GcpMySQLSettings", targetDepth))
                 {
                     var unmarshaller = GcpMySQLSettingsUnmarshaller.Instance;
-                    unmarshalledObject.GcpMySQLSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GcpMySQLSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IBMDb2Settings", targetDepth))
                 {
                     var unmarshaller = IBMDb2SettingsUnmarshaller.Instance;
-                    unmarshalledObject.IBMDb2Settings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IBMDb2Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KafkaSettings", targetDepth))
                 {
                     var unmarshaller = KafkaSettingsUnmarshaller.Instance;
-                    unmarshalledObject.KafkaSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KafkaSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KinesisSettings", targetDepth))
                 {
                     var unmarshaller = KinesisSettingsUnmarshaller.Instance;
-                    unmarshalledObject.KinesisSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KinesisSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MicrosoftSQLServerSettings", targetDepth))
                 {
                     var unmarshaller = MicrosoftSQLServerSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MicrosoftSQLServerSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MicrosoftSQLServerSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MongoDbSettings", targetDepth))
                 {
                     var unmarshaller = MongoDbSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MongoDbSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MySQLSettings", targetDepth))
                 {
                     var unmarshaller = MySQLSettingsUnmarshaller.Instance;
-                    unmarshalledObject.MySQLSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MySQLSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NeptuneSettings", targetDepth))
                 {
                     var unmarshaller = NeptuneSettingsUnmarshaller.Instance;
-                    unmarshalledObject.NeptuneSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NeptuneSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OracleSettings", targetDepth))
                 {
                     var unmarshaller = OracleSettingsUnmarshaller.Instance;
-                    unmarshalledObject.OracleSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OracleSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Port", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostgreSQLSettings", targetDepth))
                 {
                     var unmarshaller = PostgreSQLSettingsUnmarshaller.Instance;
-                    unmarshalledObject.PostgreSQLSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostgreSQLSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RedisSettings", targetDepth))
                 {
                     var unmarshaller = RedisSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RedisSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedisSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RedshiftSettings", targetDepth))
                 {
                     var unmarshaller = RedshiftSettingsUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3Settings", targetDepth))
                 {
                     var unmarshaller = S3SettingsUnmarshaller.Instance;
-                    unmarshalledObject.S3Settings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceAccessRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServiceAccessRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceAccessRoleArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SslMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SslMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SslMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SybaseSettings", targetDepth))
                 {
                     var unmarshaller = SybaseSettingsUnmarshaller.Instance;
-                    unmarshalledObject.SybaseSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SybaseSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimestreamSettings", targetDepth))
                 {
                     var unmarshaller = TimestreamSettingsUnmarshaller.Instance;
-                    unmarshalledObject.TimestreamSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimestreamSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Username", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Username = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Username = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

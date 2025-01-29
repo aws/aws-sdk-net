@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssetName())
             {
                 context.Writer.WritePropertyName("AssetName");
-                context.Writer.Write(requestObject.AssetName);
+                context.Writer.WriteStringValue(requestObject.AssetName);
             }
 
             if(requestObject.IsSetDataSetId())
             {
                 context.Writer.WritePropertyName("DataSetId");
-                context.Writer.Write(requestObject.DataSetId);
+                context.Writer.WriteStringValue(requestObject.DataSetId);
             }
 
             if(requestObject.IsSetMd5Hash())
             {
                 context.Writer.WritePropertyName("Md5Hash");
-                context.Writer.Write(requestObject.Md5Hash);
+                context.Writer.WriteStringValue(requestObject.Md5Hash);
             }
 
             if(requestObject.IsSetRevisionId())
             {
                 context.Writer.WritePropertyName("RevisionId");
-                context.Writer.Write(requestObject.RevisionId);
+                context.Writer.WriteStringValue(requestObject.RevisionId);
             }
 
         }

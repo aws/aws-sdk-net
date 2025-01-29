@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomizationFeatureConfig Object
     /// </summary>  
-    public class CustomizationFeatureConfigUnmarshaller : IUnmarshaller<CustomizationFeatureConfig, XmlUnmarshallerContext>, IUnmarshaller<CustomizationFeatureConfig, JsonUnmarshallerContext>
+    public class CustomizationFeatureConfigUnmarshaller : IJsonUnmarshaller<CustomizationFeatureConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomizationFeatureConfig IUnmarshaller<CustomizationFeatureConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomizationFeatureConfig Unmarshall(JsonUnmarshallerContext context)
+        public CustomizationFeatureConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomizationFeatureConfig unmarshalledObject = new CustomizationFeatureConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ContentModeration", targetDepth))
                 {
                     var unmarshaller = CustomizationFeatureContentModerationConfigUnmarshaller.Instance;
-                    unmarshalledObject.ContentModeration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentModeration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

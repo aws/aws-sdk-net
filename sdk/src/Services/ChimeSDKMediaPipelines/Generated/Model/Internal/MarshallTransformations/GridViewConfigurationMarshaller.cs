@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActiveSpeakerOnlyConfiguration())
             {
                 context.Writer.WritePropertyName("ActiveSpeakerOnlyConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ActiveSpeakerOnlyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ActiveSpeakerOnlyConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCanvasOrientation())
             {
                 context.Writer.WritePropertyName("CanvasOrientation");
-                context.Writer.Write(requestObject.CanvasOrientation);
+                context.Writer.WriteStringValue(requestObject.CanvasOrientation);
             }
 
             if(requestObject.IsSetContentShareLayout())
             {
                 context.Writer.WritePropertyName("ContentShareLayout");
-                context.Writer.Write(requestObject.ContentShareLayout);
+                context.Writer.WriteStringValue(requestObject.ContentShareLayout);
             }
 
             if(requestObject.IsSetHorizontalLayoutConfiguration())
             {
                 context.Writer.WritePropertyName("HorizontalLayoutConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HorizontalLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HorizontalLayoutConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPresenterOnlyConfiguration())
             {
                 context.Writer.WritePropertyName("PresenterOnlyConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PresenterOnlyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PresenterOnlyConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVerticalLayoutConfiguration())
             {
                 context.Writer.WritePropertyName("VerticalLayoutConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VerticalLayoutConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.VerticalLayoutConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideoAttribute())
             {
                 context.Writer.WritePropertyName("VideoAttribute");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoAttributeMarshaller.Instance;
                 marshaller.Marshall(requestObject.VideoAttribute, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

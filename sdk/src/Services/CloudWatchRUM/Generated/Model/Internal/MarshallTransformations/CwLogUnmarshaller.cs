@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchRUM.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CwLog Object
     /// </summary>  
-    public class CwLogUnmarshaller : IUnmarshaller<CwLog, XmlUnmarshallerContext>, IUnmarshaller<CwLog, JsonUnmarshallerContext>
+    public class CwLogUnmarshaller : IJsonUnmarshaller<CwLog, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CwLog IUnmarshaller<CwLog, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CwLog Unmarshall(JsonUnmarshallerContext context)
+        public CwLog Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CwLog unmarshalledObject = new CwLog();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CwLogEnabled", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CwLogEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CwLogEnabled = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CwLogGroup", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CwLogGroup = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CwLogGroup = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

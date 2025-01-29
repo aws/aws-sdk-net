@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -48,7 +48,6 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         {
             PutDeliveryChannelResponse response = new PutDeliveryChannelResponse();
 
-
             return response;
         }
 
@@ -61,46 +60,48 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientDeliveryPolicyException"))
                 {
-                    return InsufficientDeliveryPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InsufficientDeliveryPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidDeliveryChannelNameException"))
                 {
-                    return InvalidDeliveryChannelNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidDeliveryChannelNameExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3KeyPrefixException"))
                 {
-                    return InvalidS3KeyPrefixExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidS3KeyPrefixExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidS3KmsKeyArnException"))
                 {
-                    return InvalidS3KmsKeyArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidS3KmsKeyArnExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSNSTopicARNException"))
                 {
-                    return InvalidSNSTopicARNExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return InvalidSNSTopicARNExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("MaxNumberOfDeliveryChannelsExceededException"))
                 {
-                    return MaxNumberOfDeliveryChannelsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return MaxNumberOfDeliveryChannelsExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoAvailableConfigurationRecorderException"))
                 {
-                    return NoAvailableConfigurationRecorderExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NoAvailableConfigurationRecorderExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("NoSuchBucketException"))
                 {
-                    return NoSuchBucketExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return NoSuchBucketExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse, ref readerCopy);
                 }
             }
             return new AmazonConfigServiceException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

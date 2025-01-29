@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobStepRestartMarker Object
     /// </summary>  
-    public class JobStepRestartMarkerUnmarshaller : IUnmarshaller<JobStepRestartMarker, XmlUnmarshallerContext>, IUnmarshaller<JobStepRestartMarker, JsonUnmarshallerContext>
+    public class JobStepRestartMarkerUnmarshaller : IJsonUnmarshaller<JobStepRestartMarker, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        JobStepRestartMarker IUnmarshaller<JobStepRestartMarker, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobStepRestartMarker Unmarshall(JsonUnmarshallerContext context)
+        public JobStepRestartMarker Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             JobStepRestartMarker unmarshalledObject = new JobStepRestartMarker();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("fromProcStep", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromProcStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FromProcStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fromStep", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FromStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FromStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("toProcStep", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToProcStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ToProcStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("toStep", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ToStep = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ToStep = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

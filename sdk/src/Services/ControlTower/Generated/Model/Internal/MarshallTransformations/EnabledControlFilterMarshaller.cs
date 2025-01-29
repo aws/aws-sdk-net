@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.ControlTower.Model.Internal.MarshallTransformations
             if(requestObject.IsSetControlIdentifiers())
             {
                 context.Writer.WritePropertyName("controlIdentifiers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectControlIdentifiersListValue in requestObject.ControlIdentifiers)
                 {
-                        context.Writer.Write(requestObjectControlIdentifiersListValue);
+                        context.Writer.WriteStringValue(requestObjectControlIdentifiersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDriftStatuses())
             {
                 context.Writer.WritePropertyName("driftStatuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDriftStatusesListValue in requestObject.DriftStatuses)
                 {
-                        context.Writer.Write(requestObjectDriftStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectDriftStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("statuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusesListValue in requestObject.Statuses)
                 {
-                        context.Writer.Write(requestObjectStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudLayout())
             {
                 context.Writer.WritePropertyName("CloudLayout");
-                context.Writer.Write(requestObject.CloudLayout);
+                context.Writer.WriteStringValue(requestObject.CloudLayout);
             }
 
             if(requestObject.IsSetMaximumStringLength())
             {
                 context.Writer.WritePropertyName("MaximumStringLength");
-                context.Writer.Write(requestObject.MaximumStringLength.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumStringLength.Value);
             }
 
             if(requestObject.IsSetWordCasing())
             {
                 context.Writer.WritePropertyName("WordCasing");
-                context.Writer.Write(requestObject.WordCasing);
+                context.Writer.WriteStringValue(requestObject.WordCasing);
             }
 
             if(requestObject.IsSetWordOrientation())
             {
                 context.Writer.WritePropertyName("WordOrientation");
-                context.Writer.Write(requestObject.WordOrientation);
+                context.Writer.WriteStringValue(requestObject.WordOrientation);
             }
 
             if(requestObject.IsSetWordPadding())
             {
                 context.Writer.WritePropertyName("WordPadding");
-                context.Writer.Write(requestObject.WordPadding);
+                context.Writer.WriteStringValue(requestObject.WordPadding);
             }
 
             if(requestObject.IsSetWordScaling())
             {
                 context.Writer.WritePropertyName("WordScaling");
-                context.Writer.Write(requestObject.WordScaling);
+                context.Writer.WriteStringValue(requestObject.WordScaling);
             }
 
         }

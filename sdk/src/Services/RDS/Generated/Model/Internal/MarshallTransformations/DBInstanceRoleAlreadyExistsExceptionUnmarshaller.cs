@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DBInstanceRoleAlreadyExistsException operation
     /// </summary>  
-    public class DBInstanceRoleAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DBInstanceRoleAlreadyExistsException, XmlUnmarshallerContext>
+    public class DBInstanceRoleAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DBInstanceRoleAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

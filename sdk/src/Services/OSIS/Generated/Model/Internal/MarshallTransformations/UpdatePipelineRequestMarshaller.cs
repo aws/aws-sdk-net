@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OSIS.Model.Internal.MarshallTransformations
 {
@@ -64,70 +67,75 @@ namespace Amazon.OSIS.Model.Internal.MarshallTransformations
                 throw new AmazonOSISException("Request object does not have required field PipelineName set");
             request.AddPathResource("{PipelineName}", StringUtils.FromString(publicRequest.PipelineName));
             request.ResourcePath = "/2022-01-01/osis/updatePipeline/{PipelineName}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBufferOptions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBufferOptions())
-                    {
-                        context.Writer.WritePropertyName("BufferOptions");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("BufferOptions");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = BufferOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.BufferOptions, context);
+                var marshaller = BufferOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.BufferOptions, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEncryptionAtRestOptions())
-                    {
-                        context.Writer.WritePropertyName("EncryptionAtRestOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetLogPublishingOptions())
-                    {
-                        context.Writer.WritePropertyName("LogPublishingOptions");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LogPublishingOptionsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LogPublishingOptions, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxUnits())
-                    {
-                        context.Writer.WritePropertyName("MaxUnits");
-                        context.Writer.Write(publicRequest.MaxUnits.Value);
-                    }
-
-                    if(publicRequest.IsSetMinUnits())
-                    {
-                        context.Writer.WritePropertyName("MinUnits");
-                        context.Writer.Write(publicRequest.MinUnits.Value);
-                    }
-
-                    if(publicRequest.IsSetPipelineConfigurationBody())
-                    {
-                        context.Writer.WritePropertyName("PipelineConfigurationBody");
-                        context.Writer.Write(publicRequest.PipelineConfigurationBody);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetEncryptionAtRestOptions())
+            {
+                context.Writer.WritePropertyName("EncryptionAtRestOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionAtRestOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionAtRestOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetLogPublishingOptions())
+            {
+                context.Writer.WritePropertyName("LogPublishingOptions");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LogPublishingOptionsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LogPublishingOptions, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMaxUnits())
+            {
+                context.Writer.WritePropertyName("MaxUnits");
+                context.Writer.WriteNumberValue(publicRequest.MaxUnits.Value);
+            }
+
+            if(publicRequest.IsSetMinUnits())
+            {
+                context.Writer.WritePropertyName("MinUnits");
+                context.Writer.WriteNumberValue(publicRequest.MinUnits.Value);
+            }
+
+            if(publicRequest.IsSetPipelineConfigurationBody())
+            {
+                context.Writer.WritePropertyName("PipelineConfigurationBody");
+                context.Writer.WriteStringValue(publicRequest.PipelineConfigurationBody);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

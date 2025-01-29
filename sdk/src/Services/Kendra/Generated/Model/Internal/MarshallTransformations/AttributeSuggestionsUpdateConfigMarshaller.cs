@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeSuggestionsMode())
             {
                 context.Writer.WritePropertyName("AttributeSuggestionsMode");
-                context.Writer.Write(requestObject.AttributeSuggestionsMode);
+                context.Writer.WriteStringValue(requestObject.AttributeSuggestionsMode);
             }
 
             if(requestObject.IsSetSuggestableConfigList())
             {
                 context.Writer.WritePropertyName("SuggestableConfigList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSuggestableConfigListListValue in requestObject.SuggestableConfigList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SuggestableConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectSuggestableConfigListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

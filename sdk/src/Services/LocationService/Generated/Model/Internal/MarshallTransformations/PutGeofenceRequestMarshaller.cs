@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -67,44 +70,49 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 throw new AmazonLocationServiceException("Request object does not have required field GeofenceId set");
             request.AddPathResource("{GeofenceId}", StringUtils.FromString(publicRequest.GeofenceId));
             request.ResourcePath = "/geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetGeofenceProperties())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("GeofenceProperties");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestGeofencePropertiesKvp in publicRequest.GeofenceProperties)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetGeofenceProperties())
-                    {
-                        context.Writer.WritePropertyName("GeofenceProperties");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestGeofencePropertiesKvp in publicRequest.GeofenceProperties)
-                        {
-                            context.Writer.WritePropertyName(publicRequestGeofencePropertiesKvp.Key);
-                            var publicRequestGeofencePropertiesValue = publicRequestGeofencePropertiesKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestGeofencePropertiesKvp.Key);
+                    var publicRequestGeofencePropertiesValue = publicRequestGeofencePropertiesKvp.Value;
 
-                                context.Writer.Write(publicRequestGeofencePropertiesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGeometry())
-                    {
-                        context.Writer.WritePropertyName("Geometry");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GeofenceGeometryMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Geometry, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestGeofencePropertiesValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetGeometry())
+            {
+                context.Writer.WritePropertyName("Geometry");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GeofenceGeometryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Geometry, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             
             request.HostPrefix = $"geofencing.";

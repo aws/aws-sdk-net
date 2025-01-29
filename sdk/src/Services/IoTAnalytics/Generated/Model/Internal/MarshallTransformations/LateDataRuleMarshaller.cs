@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRuleConfiguration())
             {
                 context.Writer.WritePropertyName("ruleConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LateDataRuleConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RuleConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("ruleName");
-                context.Writer.Write(requestObject.RuleName);
+                context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
         }

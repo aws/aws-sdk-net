@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Sequence Object
     /// </summary>  
-    public class SequenceUnmarshaller : IUnmarshaller<Sequence, XmlUnmarshallerContext>, IUnmarshaller<Sequence, JsonUnmarshallerContext>
+    public class SequenceUnmarshaller : IJsonUnmarshaller<Sequence, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Sequence IUnmarshaller<Sequence, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Sequence Unmarshall(JsonUnmarshallerContext context)
+        public Sequence Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Sequence unmarshalledObject = new Sequence();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Actors", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Actor, ActorUnmarshaller>(ActorUnmarshaller.Instance);
-                    unmarshalledObject.Actors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Actor, ActorUnmarshaller>(ActorUnmarshaller.Instance);
+                    unmarshalledObject.Actors = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Endpoints", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<NetworkEndpoint, NetworkEndpointUnmarshaller>(NetworkEndpointUnmarshaller.Instance);
-                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<NetworkEndpoint, NetworkEndpointUnmarshaller>(NetworkEndpointUnmarshaller.Instance);
+                    unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SequenceIndicators", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Indicator, IndicatorUnmarshaller>(IndicatorUnmarshaller.Instance);
-                    unmarshalledObject.SequenceIndicators = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Indicator, IndicatorUnmarshaller>(IndicatorUnmarshaller.Instance);
+                    unmarshalledObject.SequenceIndicators = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Signals", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Signal, SignalUnmarshaller>(SignalUnmarshaller.Instance);
-                    unmarshalledObject.Signals = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Signal, SignalUnmarshaller>(SignalUnmarshaller.Instance);
+                    unmarshalledObject.Signals = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Uid", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Uid = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Uid = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

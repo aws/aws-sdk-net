@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,56 +49,56 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmex())
             {
                 context.Writer.WritePropertyName("Amex");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmexAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Amex, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmv2000())
             {
                 context.Writer.WritePropertyName("Emv2000");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Emv2000AttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Emv2000, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEmvCommon())
             {
                 context.Writer.WritePropertyName("EmvCommon");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EmvCommonAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.EmvCommon, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMastercard())
             {
                 context.Writer.WritePropertyName("Mastercard");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MasterCardAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mastercard, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisa())
             {
                 context.Writer.WritePropertyName("Visa");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisaAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.Visa, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

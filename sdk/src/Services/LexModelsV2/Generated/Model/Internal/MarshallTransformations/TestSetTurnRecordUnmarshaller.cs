@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TestSetTurnRecord Object
     /// </summary>  
-    public class TestSetTurnRecordUnmarshaller : IUnmarshaller<TestSetTurnRecord, XmlUnmarshallerContext>, IUnmarshaller<TestSetTurnRecord, JsonUnmarshallerContext>
+    public class TestSetTurnRecordUnmarshaller : IJsonUnmarshaller<TestSetTurnRecord, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TestSetTurnRecord IUnmarshaller<TestSetTurnRecord, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TestSetTurnRecord Unmarshall(JsonUnmarshallerContext context)
+        public TestSetTurnRecord Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TestSetTurnRecord unmarshalledObject = new TestSetTurnRecord();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("conversationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConversationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConversationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recordNumber", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RecordNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("turnNumber", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TurnNumber = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TurnNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("turnSpecification", targetDepth))
                 {
                     var unmarshaller = TurnSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.TurnSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TurnSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

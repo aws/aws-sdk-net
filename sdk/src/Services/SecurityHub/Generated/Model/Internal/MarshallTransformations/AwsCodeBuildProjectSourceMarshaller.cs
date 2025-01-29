@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGitCloneDepth())
             {
                 context.Writer.WritePropertyName("GitCloneDepth");
-                context.Writer.Write(requestObject.GitCloneDepth.Value);
+                context.Writer.WriteNumberValue(requestObject.GitCloneDepth.Value);
             }
 
             if(requestObject.IsSetInsecureSsl())
             {
                 context.Writer.WritePropertyName("InsecureSsl");
-                context.Writer.Write(requestObject.InsecureSsl.Value);
+                context.Writer.WriteBooleanValue(requestObject.InsecureSsl.Value);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

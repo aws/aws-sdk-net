@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.XRay.Model.Internal.MarshallTransformations
 {
@@ -51,15 +49,15 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributes())
             {
                 context.Writer.WritePropertyName("Attributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAttributesKvp in requestObject.Attributes)
                 {
                     context.Writer.WritePropertyName(requestObjectAttributesKvp.Key);
                     var requestObjectAttributesValue = requestObjectAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFixedRate())
@@ -67,72 +65,72 @@ namespace Amazon.XRay.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("FixedRate");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.FixedRate.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.FixedRate.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.FixedRate.Value);
+                    context.Writer.WriteNumberValue(requestObject.FixedRate.Value);
                 }
             }
 
             if(requestObject.IsSetHost())
             {
                 context.Writer.WritePropertyName("Host");
-                context.Writer.Write(requestObject.Host);
+                context.Writer.WriteStringValue(requestObject.Host);
             }
 
             if(requestObject.IsSetHTTPMethod())
             {
                 context.Writer.WritePropertyName("HTTPMethod");
-                context.Writer.Write(requestObject.HTTPMethod);
+                context.Writer.WriteStringValue(requestObject.HTTPMethod);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetReservoirSize())
             {
                 context.Writer.WritePropertyName("ReservoirSize");
-                context.Writer.Write(requestObject.ReservoirSize.Value);
+                context.Writer.WriteNumberValue(requestObject.ReservoirSize.Value);
             }
 
             if(requestObject.IsSetResourceARN())
             {
                 context.Writer.WritePropertyName("ResourceARN");
-                context.Writer.Write(requestObject.ResourceARN);
+                context.Writer.WriteStringValue(requestObject.ResourceARN);
             }
 
             if(requestObject.IsSetRuleARN())
             {
                 context.Writer.WritePropertyName("RuleARN");
-                context.Writer.Write(requestObject.RuleARN);
+                context.Writer.WriteStringValue(requestObject.RuleARN);
             }
 
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("RuleName");
-                context.Writer.Write(requestObject.RuleName);
+                context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
             if(requestObject.IsSetServiceName())
             {
                 context.Writer.WritePropertyName("ServiceName");
-                context.Writer.Write(requestObject.ServiceName);
+                context.Writer.WriteStringValue(requestObject.ServiceName);
             }
 
             if(requestObject.IsSetServiceType())
             {
                 context.Writer.WritePropertyName("ServiceType");
-                context.Writer.Write(requestObject.ServiceType);
+                context.Writer.WriteStringValue(requestObject.ServiceType);
             }
 
             if(requestObject.IsSetURLPath())
             {
                 context.Writer.WritePropertyName("URLPath");
-                context.Writer.Write(requestObject.URLPath);
+                context.Writer.WriteStringValue(requestObject.URLPath);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
 {
@@ -63,122 +66,127 @@ namespace Amazon.WorkSpaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActiveDirectoryConfig())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActiveDirectoryConfig())
-                    {
-                        context.Writer.WritePropertyName("ActiveDirectoryConfig");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("ActiveDirectoryConfig");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = ActiveDirectoryConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ActiveDirectoryConfig, context);
+                var marshaller = ActiveDirectoryConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ActiveDirectoryConfig, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDirectoryId())
-                    {
-                        context.Writer.WritePropertyName("DirectoryId");
-                        context.Writer.Write(publicRequest.DirectoryId);
-                    }
-
-                    if(publicRequest.IsSetEnableSelfService())
-                    {
-                        context.Writer.WritePropertyName("EnableSelfService");
-                        context.Writer.Write(publicRequest.EnableSelfService.Value);
-                    }
-
-                    if(publicRequest.IsSetEnableWorkDocs())
-                    {
-                        context.Writer.WritePropertyName("EnableWorkDocs");
-                        context.Writer.Write(publicRequest.EnableWorkDocs.Value);
-                    }
-
-                    if(publicRequest.IsSetIdcInstanceArn())
-                    {
-                        context.Writer.WritePropertyName("IdcInstanceArn");
-                        context.Writer.Write(publicRequest.IdcInstanceArn);
-                    }
-
-                    if(publicRequest.IsSetMicrosoftEntraConfig())
-                    {
-                        context.Writer.WritePropertyName("MicrosoftEntraConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MicrosoftEntraConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MicrosoftEntraConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnetIds())
-                    {
-                        context.Writer.WritePropertyName("SubnetIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
-                        {
-                                context.Writer.Write(publicRequestSubnetIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTenancy())
-                    {
-                        context.Writer.WritePropertyName("Tenancy");
-                        context.Writer.Write(publicRequest.Tenancy);
-                    }
-
-                    if(publicRequest.IsSetUserIdentityType())
-                    {
-                        context.Writer.WritePropertyName("UserIdentityType");
-                        context.Writer.Write(publicRequest.UserIdentityType);
-                    }
-
-                    if(publicRequest.IsSetWorkspaceDirectoryDescription())
-                    {
-                        context.Writer.WritePropertyName("WorkspaceDirectoryDescription");
-                        context.Writer.Write(publicRequest.WorkspaceDirectoryDescription);
-                    }
-
-                    if(publicRequest.IsSetWorkspaceDirectoryName())
-                    {
-                        context.Writer.WritePropertyName("WorkspaceDirectoryName");
-                        context.Writer.Write(publicRequest.WorkspaceDirectoryName);
-                    }
-
-                    if(publicRequest.IsSetWorkspaceType())
-                    {
-                        context.Writer.WritePropertyName("WorkspaceType");
-                        context.Writer.Write(publicRequest.WorkspaceType);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDirectoryId())
+            {
+                context.Writer.WritePropertyName("DirectoryId");
+                context.Writer.WriteStringValue(publicRequest.DirectoryId);
+            }
+
+            if(publicRequest.IsSetEnableSelfService())
+            {
+                context.Writer.WritePropertyName("EnableSelfService");
+                context.Writer.WriteBooleanValue(publicRequest.EnableSelfService.Value);
+            }
+
+            if(publicRequest.IsSetEnableWorkDocs())
+            {
+                context.Writer.WritePropertyName("EnableWorkDocs");
+                context.Writer.WriteBooleanValue(publicRequest.EnableWorkDocs.Value);
+            }
+
+            if(publicRequest.IsSetIdcInstanceArn())
+            {
+                context.Writer.WritePropertyName("IdcInstanceArn");
+                context.Writer.WriteStringValue(publicRequest.IdcInstanceArn);
+            }
+
+            if(publicRequest.IsSetMicrosoftEntraConfig())
+            {
+                context.Writer.WritePropertyName("MicrosoftEntraConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MicrosoftEntraConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MicrosoftEntraConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSubnetIds())
+            {
+                context.Writer.WritePropertyName("SubnetIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetIdsListValue in publicRequest.SubnetIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTenancy())
+            {
+                context.Writer.WritePropertyName("Tenancy");
+                context.Writer.WriteStringValue(publicRequest.Tenancy);
+            }
+
+            if(publicRequest.IsSetUserIdentityType())
+            {
+                context.Writer.WritePropertyName("UserIdentityType");
+                context.Writer.WriteStringValue(publicRequest.UserIdentityType);
+            }
+
+            if(publicRequest.IsSetWorkspaceDirectoryDescription())
+            {
+                context.Writer.WritePropertyName("WorkspaceDirectoryDescription");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceDirectoryDescription);
+            }
+
+            if(publicRequest.IsSetWorkspaceDirectoryName())
+            {
+                context.Writer.WritePropertyName("WorkspaceDirectoryName");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceDirectoryName);
+            }
+
+            if(publicRequest.IsSetWorkspaceType())
+            {
+                context.Writer.WritePropertyName("WorkspaceType");
+                context.Writer.WriteStringValue(publicRequest.WorkspaceType);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MismatchedNodeOutputTypeFlowValidationDetails Object
     /// </summary>  
-    public class MismatchedNodeOutputTypeFlowValidationDetailsUnmarshaller : IUnmarshaller<MismatchedNodeOutputTypeFlowValidationDetails, XmlUnmarshallerContext>, IUnmarshaller<MismatchedNodeOutputTypeFlowValidationDetails, JsonUnmarshallerContext>
+    public class MismatchedNodeOutputTypeFlowValidationDetailsUnmarshaller : IJsonUnmarshaller<MismatchedNodeOutputTypeFlowValidationDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MismatchedNodeOutputTypeFlowValidationDetails IUnmarshaller<MismatchedNodeOutputTypeFlowValidationDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MismatchedNodeOutputTypeFlowValidationDetails Unmarshall(JsonUnmarshallerContext context)
+        public MismatchedNodeOutputTypeFlowValidationDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MismatchedNodeOutputTypeFlowValidationDetails unmarshalledObject = new MismatchedNodeOutputTypeFlowValidationDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("expectedType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExpectedType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExpectedType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("node", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Node = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Node = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("output", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Output = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Output = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

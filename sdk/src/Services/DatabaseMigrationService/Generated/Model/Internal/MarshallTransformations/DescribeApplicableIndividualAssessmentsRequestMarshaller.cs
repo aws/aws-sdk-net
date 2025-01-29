@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -63,61 +66,66 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMarker())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMarker())
-                    {
-                        context.Writer.WritePropertyName("Marker");
-                        context.Writer.Write(publicRequest.Marker);
-                    }
-
-                    if(publicRequest.IsSetMaxRecords())
-                    {
-                        context.Writer.WritePropertyName("MaxRecords");
-                        context.Writer.Write(publicRequest.MaxRecords.Value);
-                    }
-
-                    if(publicRequest.IsSetMigrationType())
-                    {
-                        context.Writer.WritePropertyName("MigrationType");
-                        context.Writer.Write(publicRequest.MigrationType);
-                    }
-
-                    if(publicRequest.IsSetReplicationInstanceArn())
-                    {
-                        context.Writer.WritePropertyName("ReplicationInstanceArn");
-                        context.Writer.Write(publicRequest.ReplicationInstanceArn);
-                    }
-
-                    if(publicRequest.IsSetReplicationTaskArn())
-                    {
-                        context.Writer.WritePropertyName("ReplicationTaskArn");
-                        context.Writer.Write(publicRequest.ReplicationTaskArn);
-                    }
-
-                    if(publicRequest.IsSetSourceEngineName())
-                    {
-                        context.Writer.WritePropertyName("SourceEngineName");
-                        context.Writer.Write(publicRequest.SourceEngineName);
-                    }
-
-                    if(publicRequest.IsSetTargetEngineName())
-                    {
-                        context.Writer.WritePropertyName("TargetEngineName");
-                        context.Writer.Write(publicRequest.TargetEngineName);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Marker");
+                context.Writer.WriteStringValue(publicRequest.Marker);
             }
+
+            if(publicRequest.IsSetMaxRecords())
+            {
+                context.Writer.WritePropertyName("MaxRecords");
+                context.Writer.WriteNumberValue(publicRequest.MaxRecords.Value);
+            }
+
+            if(publicRequest.IsSetMigrationType())
+            {
+                context.Writer.WritePropertyName("MigrationType");
+                context.Writer.WriteStringValue(publicRequest.MigrationType);
+            }
+
+            if(publicRequest.IsSetReplicationInstanceArn())
+            {
+                context.Writer.WritePropertyName("ReplicationInstanceArn");
+                context.Writer.WriteStringValue(publicRequest.ReplicationInstanceArn);
+            }
+
+            if(publicRequest.IsSetReplicationTaskArn())
+            {
+                context.Writer.WritePropertyName("ReplicationTaskArn");
+                context.Writer.WriteStringValue(publicRequest.ReplicationTaskArn);
+            }
+
+            if(publicRequest.IsSetSourceEngineName())
+            {
+                context.Writer.WritePropertyName("SourceEngineName");
+                context.Writer.WriteStringValue(publicRequest.SourceEngineName);
+            }
+
+            if(publicRequest.IsSetTargetEngineName())
+            {
+                context.Writer.WritePropertyName("TargetEngineName");
+                context.Writer.WriteStringValue(publicRequest.TargetEngineName);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

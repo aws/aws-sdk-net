@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MachineLearning.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RedshiftMetadata Object
     /// </summary>  
-    public class RedshiftMetadataUnmarshaller : IUnmarshaller<RedshiftMetadata, XmlUnmarshallerContext>, IUnmarshaller<RedshiftMetadata, JsonUnmarshallerContext>
+    public class RedshiftMetadataUnmarshaller : IJsonUnmarshaller<RedshiftMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RedshiftMetadata IUnmarshaller<RedshiftMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RedshiftMetadata Unmarshall(JsonUnmarshallerContext context)
+        public RedshiftMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RedshiftMetadata unmarshalledObject = new RedshiftMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DatabaseUserName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseUserName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseUserName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RedshiftDatabase", targetDepth))
                 {
                     var unmarshaller = RedshiftDatabaseUnmarshaller.Instance;
-                    unmarshalledObject.RedshiftDatabase = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RedshiftDatabase = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SelectSqlQuery", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SelectSqlQuery = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SelectSqlQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

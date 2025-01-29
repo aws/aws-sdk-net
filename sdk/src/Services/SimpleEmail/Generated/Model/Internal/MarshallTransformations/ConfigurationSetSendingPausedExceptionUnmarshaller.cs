@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConfigurationSetSendingPausedException operation
     /// </summary>  
-    public class ConfigurationSetSendingPausedExceptionUnmarshaller : IErrorResponseUnmarshaller<ConfigurationSetSendingPausedException, XmlUnmarshallerContext>
+    public class ConfigurationSetSendingPausedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConfigurationSetSendingPausedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

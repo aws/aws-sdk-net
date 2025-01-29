@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAt())
             {
                 context.Writer.WritePropertyName("at");
-                context.Writer.Write(requestObject.At.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.At.Value)));
             }
 
             if(requestObject.IsSetCron())
             {
                 context.Writer.WritePropertyName("cron");
-                context.Writer.Write(requestObject.Cron);
+                context.Writer.WriteStringValue(requestObject.Cron);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBlackFrame())
             {
                 context.Writer.WritePropertyName("BlackFrame");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BlackFrameMarshaller.Instance;
                 marshaller.Marshall(requestObject.BlackFrame, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMinSegmentConfidence())
@@ -64,11 +62,11 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("MinSegmentConfidence");
                 if(StringUtils.IsSpecialFloatValue(requestObject.MinSegmentConfidence.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialFloatValue(requestObject.MinSegmentConfidence.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialFloatValue(requestObject.MinSegmentConfidence.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.MinSegmentConfidence.Value);
+                    context.Writer.WriteNumberValue(requestObject.MinSegmentConfidence.Value);
                 }
             }
 

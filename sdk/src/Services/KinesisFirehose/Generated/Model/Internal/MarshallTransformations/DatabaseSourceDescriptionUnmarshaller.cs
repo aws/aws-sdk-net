@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisFirehose.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DatabaseSourceDescription Object
     /// </summary>  
-    public class DatabaseSourceDescriptionUnmarshaller : IUnmarshaller<DatabaseSourceDescription, XmlUnmarshallerContext>, IUnmarshaller<DatabaseSourceDescription, JsonUnmarshallerContext>
+    public class DatabaseSourceDescriptionUnmarshaller : IJsonUnmarshaller<DatabaseSourceDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DatabaseSourceDescription IUnmarshaller<DatabaseSourceDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DatabaseSourceDescription Unmarshall(JsonUnmarshallerContext context)
+        public DatabaseSourceDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DatabaseSourceDescription unmarshalledObject = new DatabaseSourceDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Columns", targetDepth))
                 {
                     var unmarshaller = DatabaseColumnListUnmarshaller.Instance;
-                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Columns = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Databases", targetDepth))
                 {
                     var unmarshaller = DatabaseListUnmarshaller.Instance;
-                    unmarshalledObject.Databases = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Databases = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatabaseSourceAuthenticationConfiguration", targetDepth))
                 {
                     var unmarshaller = DatabaseSourceAuthenticationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseSourceAuthenticationConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseSourceAuthenticationConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatabaseSourceVPCConfiguration", targetDepth))
                 {
                     var unmarshaller = DatabaseSourceVPCConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseSourceVPCConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseSourceVPCConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Endpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Port", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Port = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Port = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnapshotInfo", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DatabaseSnapshotInfo, DatabaseSnapshotInfoUnmarshaller>(DatabaseSnapshotInfoUnmarshaller.Instance);
-                    unmarshalledObject.SnapshotInfo = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DatabaseSnapshotInfo, DatabaseSnapshotInfoUnmarshaller>(DatabaseSnapshotInfoUnmarshaller.Instance);
+                    unmarshalledObject.SnapshotInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnapshotWatermarkTable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotWatermarkTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotWatermarkTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SSLMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SSLMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SSLMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SurrogateKeys", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SurrogateKeys = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SurrogateKeys = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tables", targetDepth))
                 {
                     var unmarshaller = DatabaseTableListUnmarshaller.Instance;
-                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Type", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

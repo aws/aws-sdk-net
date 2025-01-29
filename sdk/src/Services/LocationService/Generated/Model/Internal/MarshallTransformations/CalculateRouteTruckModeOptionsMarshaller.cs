@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvoidFerries())
             {
                 context.Writer.WritePropertyName("AvoidFerries");
-                context.Writer.Write(requestObject.AvoidFerries.Value);
+                context.Writer.WriteBooleanValue(requestObject.AvoidFerries.Value);
             }
 
             if(requestObject.IsSetAvoidTolls())
             {
                 context.Writer.WritePropertyName("AvoidTolls");
-                context.Writer.Write(requestObject.AvoidTolls.Value);
+                context.Writer.WriteBooleanValue(requestObject.AvoidTolls.Value);
             }
 
             if(requestObject.IsSetDimensions())
             {
                 context.Writer.WritePropertyName("Dimensions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TruckDimensionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Dimensions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWeight())
             {
                 context.Writer.WritePropertyName("Weight");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TruckWeightMarshaller.Instance;
                 marshaller.Marshall(requestObject.Weight, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

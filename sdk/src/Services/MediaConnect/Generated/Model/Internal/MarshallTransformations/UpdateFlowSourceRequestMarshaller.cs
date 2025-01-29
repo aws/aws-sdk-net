@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -67,147 +70,152 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field SourceArn set");
             request.AddPathResource("{sourceArn}", StringUtils.FromString(publicRequest.SourceArn));
             request.ResourcePath = "/v1/flows/{flowArn}/source/{sourceArn}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDecryption())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDecryption())
-                    {
-                        context.Writer.WritePropertyName("decryption");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("decryption");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = UpdateEncryptionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Decryption, context);
+                var marshaller = UpdateEncryptionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Decryption, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetEntitlementArn())
-                    {
-                        context.Writer.WritePropertyName("entitlementArn");
-                        context.Writer.Write(publicRequest.EntitlementArn);
-                    }
-
-                    if(publicRequest.IsSetGatewayBridgeSource())
-                    {
-                        context.Writer.WritePropertyName("gatewayBridgeSource");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateGatewayBridgeSourceRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GatewayBridgeSource, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIngestPort())
-                    {
-                        context.Writer.WritePropertyName("ingestPort");
-                        context.Writer.Write(publicRequest.IngestPort.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxBitrate())
-                    {
-                        context.Writer.WritePropertyName("maxBitrate");
-                        context.Writer.Write(publicRequest.MaxBitrate.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxLatency())
-                    {
-                        context.Writer.WritePropertyName("maxLatency");
-                        context.Writer.Write(publicRequest.MaxLatency.Value);
-                    }
-
-                    if(publicRequest.IsSetMaxSyncBuffer())
-                    {
-                        context.Writer.WritePropertyName("maxSyncBuffer");
-                        context.Writer.Write(publicRequest.MaxSyncBuffer.Value);
-                    }
-
-                    if(publicRequest.IsSetMediaStreamSourceConfigurations())
-                    {
-                        context.Writer.WritePropertyName("mediaStreamSourceConfigurations");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMediaStreamSourceConfigurationsListValue in publicRequest.MediaStreamSourceConfigurations)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = MediaStreamSourceConfigurationRequestMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMediaStreamSourceConfigurationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMinLatency())
-                    {
-                        context.Writer.WritePropertyName("minLatency");
-                        context.Writer.Write(publicRequest.MinLatency.Value);
-                    }
-
-                    if(publicRequest.IsSetProtocol())
-                    {
-                        context.Writer.WritePropertyName("protocol");
-                        context.Writer.Write(publicRequest.Protocol);
-                    }
-
-                    if(publicRequest.IsSetSenderControlPort())
-                    {
-                        context.Writer.WritePropertyName("senderControlPort");
-                        context.Writer.Write(publicRequest.SenderControlPort.Value);
-                    }
-
-                    if(publicRequest.IsSetSenderIpAddress())
-                    {
-                        context.Writer.WritePropertyName("senderIpAddress");
-                        context.Writer.Write(publicRequest.SenderIpAddress);
-                    }
-
-                    if(publicRequest.IsSetSourceListenerAddress())
-                    {
-                        context.Writer.WritePropertyName("sourceListenerAddress");
-                        context.Writer.Write(publicRequest.SourceListenerAddress);
-                    }
-
-                    if(publicRequest.IsSetSourceListenerPort())
-                    {
-                        context.Writer.WritePropertyName("sourceListenerPort");
-                        context.Writer.Write(publicRequest.SourceListenerPort.Value);
-                    }
-
-                    if(publicRequest.IsSetStreamId())
-                    {
-                        context.Writer.WritePropertyName("streamId");
-                        context.Writer.Write(publicRequest.StreamId);
-                    }
-
-                    if(publicRequest.IsSetVpcInterfaceName())
-                    {
-                        context.Writer.WritePropertyName("vpcInterfaceName");
-                        context.Writer.Write(publicRequest.VpcInterfaceName);
-                    }
-
-                    if(publicRequest.IsSetWhitelistCidr())
-                    {
-                        context.Writer.WritePropertyName("whitelistCidr");
-                        context.Writer.Write(publicRequest.WhitelistCidr);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetEntitlementArn())
+            {
+                context.Writer.WritePropertyName("entitlementArn");
+                context.Writer.WriteStringValue(publicRequest.EntitlementArn);
+            }
+
+            if(publicRequest.IsSetGatewayBridgeSource())
+            {
+                context.Writer.WritePropertyName("gatewayBridgeSource");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateGatewayBridgeSourceRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GatewayBridgeSource, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIngestPort())
+            {
+                context.Writer.WritePropertyName("ingestPort");
+                context.Writer.WriteNumberValue(publicRequest.IngestPort.Value);
+            }
+
+            if(publicRequest.IsSetMaxBitrate())
+            {
+                context.Writer.WritePropertyName("maxBitrate");
+                context.Writer.WriteNumberValue(publicRequest.MaxBitrate.Value);
+            }
+
+            if(publicRequest.IsSetMaxLatency())
+            {
+                context.Writer.WritePropertyName("maxLatency");
+                context.Writer.WriteNumberValue(publicRequest.MaxLatency.Value);
+            }
+
+            if(publicRequest.IsSetMaxSyncBuffer())
+            {
+                context.Writer.WritePropertyName("maxSyncBuffer");
+                context.Writer.WriteNumberValue(publicRequest.MaxSyncBuffer.Value);
+            }
+
+            if(publicRequest.IsSetMediaStreamSourceConfigurations())
+            {
+                context.Writer.WritePropertyName("mediaStreamSourceConfigurations");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMediaStreamSourceConfigurationsListValue in publicRequest.MediaStreamSourceConfigurations)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = MediaStreamSourceConfigurationRequestMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMediaStreamSourceConfigurationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMinLatency())
+            {
+                context.Writer.WritePropertyName("minLatency");
+                context.Writer.WriteNumberValue(publicRequest.MinLatency.Value);
+            }
+
+            if(publicRequest.IsSetProtocol())
+            {
+                context.Writer.WritePropertyName("protocol");
+                context.Writer.WriteStringValue(publicRequest.Protocol);
+            }
+
+            if(publicRequest.IsSetSenderControlPort())
+            {
+                context.Writer.WritePropertyName("senderControlPort");
+                context.Writer.WriteNumberValue(publicRequest.SenderControlPort.Value);
+            }
+
+            if(publicRequest.IsSetSenderIpAddress())
+            {
+                context.Writer.WritePropertyName("senderIpAddress");
+                context.Writer.WriteStringValue(publicRequest.SenderIpAddress);
+            }
+
+            if(publicRequest.IsSetSourceListenerAddress())
+            {
+                context.Writer.WritePropertyName("sourceListenerAddress");
+                context.Writer.WriteStringValue(publicRequest.SourceListenerAddress);
+            }
+
+            if(publicRequest.IsSetSourceListenerPort())
+            {
+                context.Writer.WritePropertyName("sourceListenerPort");
+                context.Writer.WriteNumberValue(publicRequest.SourceListenerPort.Value);
+            }
+
+            if(publicRequest.IsSetStreamId())
+            {
+                context.Writer.WritePropertyName("streamId");
+                context.Writer.WriteStringValue(publicRequest.StreamId);
+            }
+
+            if(publicRequest.IsSetVpcInterfaceName())
+            {
+                context.Writer.WritePropertyName("vpcInterfaceName");
+                context.Writer.WriteStringValue(publicRequest.VpcInterfaceName);
+            }
+
+            if(publicRequest.IsSetWhitelistCidr())
+            {
+                context.Writer.WritePropertyName("whitelistCidr");
+                context.Writer.WriteStringValue(publicRequest.WhitelistCidr);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

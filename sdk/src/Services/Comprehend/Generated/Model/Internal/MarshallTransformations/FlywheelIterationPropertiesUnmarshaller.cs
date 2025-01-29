@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FlywheelIterationProperties Object
     /// </summary>  
-    public class FlywheelIterationPropertiesUnmarshaller : IUnmarshaller<FlywheelIterationProperties, XmlUnmarshallerContext>, IUnmarshaller<FlywheelIterationProperties, JsonUnmarshallerContext>
+    public class FlywheelIterationPropertiesUnmarshaller : IJsonUnmarshaller<FlywheelIterationProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FlywheelIterationProperties IUnmarshaller<FlywheelIterationProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FlywheelIterationProperties Unmarshall(JsonUnmarshallerContext context)
+        public FlywheelIterationProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FlywheelIterationProperties unmarshalledObject = new FlywheelIterationProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EndTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluatedModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvaluatedModelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluatedModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluatedModelMetrics", targetDepth))
                 {
                     var unmarshaller = FlywheelModelEvaluationMetricsUnmarshaller.Instance;
-                    unmarshalledObject.EvaluatedModelMetrics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluatedModelMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EvaluationManifestS3Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationManifestS3Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EvaluationManifestS3Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FlywheelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlywheelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlywheelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FlywheelIterationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FlywheelIterationId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlywheelIterationId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Message", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Message = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Message = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainedModelArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TrainedModelArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainedModelArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TrainedModelMetrics", targetDepth))
                 {
                     var unmarshaller = FlywheelModelEvaluationMetricsUnmarshaller.Instance;
-                    unmarshalledObject.TrainedModelMetrics = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainedModelMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

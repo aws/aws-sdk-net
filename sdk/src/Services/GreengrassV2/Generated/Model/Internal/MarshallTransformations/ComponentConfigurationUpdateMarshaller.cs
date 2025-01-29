@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMerge())
             {
                 context.Writer.WritePropertyName("merge");
-                context.Writer.Write(requestObject.Merge);
+                context.Writer.WriteStringValue(requestObject.Merge);
             }
 
             if(requestObject.IsSetReset())
             {
                 context.Writer.WritePropertyName("reset");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResetListValue in requestObject.Reset)
                 {
-                        context.Writer.Write(requestObjectResetListValue);
+                        context.Writer.WriteStringValue(requestObjectResetListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

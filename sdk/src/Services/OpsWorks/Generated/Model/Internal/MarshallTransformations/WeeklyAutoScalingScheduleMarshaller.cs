@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,99 +49,99 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFriday())
             {
                 context.Writer.WritePropertyName("Friday");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFridayKvp in requestObject.Friday)
                 {
                     context.Writer.WritePropertyName(requestObjectFridayKvp.Key);
                     var requestObjectFridayValue = requestObjectFridayKvp.Value;
 
-                        context.Writer.Write(requestObjectFridayValue);
+                        context.Writer.WriteStringValue(requestObjectFridayValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMonday())
             {
                 context.Writer.WritePropertyName("Monday");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectMondayKvp in requestObject.Monday)
                 {
                     context.Writer.WritePropertyName(requestObjectMondayKvp.Key);
                     var requestObjectMondayValue = requestObjectMondayKvp.Value;
 
-                        context.Writer.Write(requestObjectMondayValue);
+                        context.Writer.WriteStringValue(requestObjectMondayValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSaturday())
             {
                 context.Writer.WritePropertyName("Saturday");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSaturdayKvp in requestObject.Saturday)
                 {
                     context.Writer.WritePropertyName(requestObjectSaturdayKvp.Key);
                     var requestObjectSaturdayValue = requestObjectSaturdayKvp.Value;
 
-                        context.Writer.Write(requestObjectSaturdayValue);
+                        context.Writer.WriteStringValue(requestObjectSaturdayValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSunday())
             {
                 context.Writer.WritePropertyName("Sunday");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSundayKvp in requestObject.Sunday)
                 {
                     context.Writer.WritePropertyName(requestObjectSundayKvp.Key);
                     var requestObjectSundayValue = requestObjectSundayKvp.Value;
 
-                        context.Writer.Write(requestObjectSundayValue);
+                        context.Writer.WriteStringValue(requestObjectSundayValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThursday())
             {
                 context.Writer.WritePropertyName("Thursday");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectThursdayKvp in requestObject.Thursday)
                 {
                     context.Writer.WritePropertyName(requestObjectThursdayKvp.Key);
                     var requestObjectThursdayValue = requestObjectThursdayKvp.Value;
 
-                        context.Writer.Write(requestObjectThursdayValue);
+                        context.Writer.WriteStringValue(requestObjectThursdayValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTuesday())
             {
                 context.Writer.WritePropertyName("Tuesday");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTuesdayKvp in requestObject.Tuesday)
                 {
                     context.Writer.WritePropertyName(requestObjectTuesdayKvp.Key);
                     var requestObjectTuesdayValue = requestObjectTuesdayKvp.Value;
 
-                        context.Writer.Write(requestObjectTuesdayValue);
+                        context.Writer.WriteStringValue(requestObjectTuesdayValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWednesday())
             {
                 context.Writer.WritePropertyName("Wednesday");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectWednesdayKvp in requestObject.Wednesday)
                 {
                     context.Writer.WritePropertyName(requestObjectWednesdayKvp.Key);
                     var requestObjectWednesdayValue = requestObjectWednesdayKvp.Value;
 
-                        context.Writer.Write(requestObjectWednesdayValue);
+                        context.Writer.WriteStringValue(requestObjectWednesdayValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBandwidth())
             {
                 context.Writer.WritePropertyName("bandwidth");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrequencyBandwidthMarshaller.Instance;
                 marshaller.Marshall(requestObject.Bandwidth, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCenterFrequency())
             {
                 context.Writer.WritePropertyName("centerFrequency");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrequencyMarshaller.Instance;
                 marshaller.Marshall(requestObject.CenterFrequency, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPolarization())
             {
                 context.Writer.WritePropertyName("polarization");
-                context.Writer.Write(requestObject.Polarization);
+                context.Writer.WriteStringValue(requestObject.Polarization);
             }
 
         }

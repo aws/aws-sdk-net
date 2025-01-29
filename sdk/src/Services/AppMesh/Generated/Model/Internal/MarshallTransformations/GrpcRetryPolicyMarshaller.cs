@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.AppMesh.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGrpcRetryEvents())
             {
                 context.Writer.WritePropertyName("grpcRetryEvents");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGrpcRetryEventsListValue in requestObject.GrpcRetryEvents)
                 {
-                        context.Writer.Write(requestObjectGrpcRetryEventsListValue);
+                        context.Writer.WriteStringValue(requestObjectGrpcRetryEventsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetHttpRetryEvents())
             {
                 context.Writer.WritePropertyName("httpRetryEvents");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectHttpRetryEventsListValue in requestObject.HttpRetryEvents)
                 {
-                        context.Writer.Write(requestObjectHttpRetryEventsListValue);
+                        context.Writer.WriteStringValue(requestObjectHttpRetryEventsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMaxRetries())
             {
                 context.Writer.WritePropertyName("maxRetries");
-                context.Writer.Write(requestObject.MaxRetries.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxRetries.Value);
             }
 
             if(requestObject.IsSetPerRetryTimeout())
             {
                 context.Writer.WritePropertyName("perRetryTimeout");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PerRetryTimeout, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTcpRetryEvents())
             {
                 context.Writer.WritePropertyName("tcpRetryEvents");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTcpRetryEventsListValue in requestObject.TcpRetryEvents)
                 {
-                        context.Writer.Write(requestObjectTcpRetryEventsListValue);
+                        context.Writer.WriteStringValue(requestObjectTcpRetryEventsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

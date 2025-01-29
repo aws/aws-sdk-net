@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAssetSources())
             {
                 context.Writer.WritePropertyName("AssetSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAssetSourcesListValue in requestObject.AssetSources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AssetSourceEntryMarshaller.Instance;
                     marshaller.Marshall(requestObjectAssetSourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDataSetId())
             {
                 context.Writer.WritePropertyName("DataSetId");
-                context.Writer.Write(requestObject.DataSetId);
+                context.Writer.WriteStringValue(requestObject.DataSetId);
             }
 
             if(requestObject.IsSetRevisionId())
             {
                 context.Writer.WritePropertyName("RevisionId");
-                context.Writer.Write(requestObject.RevisionId);
+                context.Writer.WriteStringValue(requestObject.RevisionId);
             }
 
         }

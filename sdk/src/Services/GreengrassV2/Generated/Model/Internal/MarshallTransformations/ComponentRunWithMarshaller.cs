@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPosixUser())
             {
                 context.Writer.WritePropertyName("posixUser");
-                context.Writer.Write(requestObject.PosixUser);
+                context.Writer.WriteStringValue(requestObject.PosixUser);
             }
 
             if(requestObject.IsSetSystemResourceLimits())
             {
                 context.Writer.WritePropertyName("systemResourceLimits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SystemResourceLimitsMarshaller.Instance;
                 marshaller.Marshall(requestObject.SystemResourceLimits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetWindowsUser())
             {
                 context.Writer.WritePropertyName("windowsUser");
-                context.Writer.Write(requestObject.WindowsUser);
+                context.Writer.WriteStringValue(requestObject.WindowsUser);
             }
 
         }

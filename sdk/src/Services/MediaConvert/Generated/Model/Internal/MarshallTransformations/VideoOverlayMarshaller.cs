@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEndTimecode())
             {
                 context.Writer.WritePropertyName("endTimecode");
-                context.Writer.Write(requestObject.EndTimecode);
+                context.Writer.WriteStringValue(requestObject.EndTimecode);
             }
 
             if(requestObject.IsSetInitialPosition())
             {
                 context.Writer.WritePropertyName("initialPosition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoOverlayPositionMarshaller.Instance;
                 marshaller.Marshall(requestObject.InitialPosition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInput())
             {
                 context.Writer.WritePropertyName("input");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VideoOverlayInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.Input, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPlayback())
             {
                 context.Writer.WritePropertyName("playback");
-                context.Writer.Write(requestObject.Playback);
+                context.Writer.WriteStringValue(requestObject.Playback);
             }
 
             if(requestObject.IsSetStartTimecode())
             {
                 context.Writer.WritePropertyName("startTimecode");
-                context.Writer.Write(requestObject.StartTimecode);
+                context.Writer.WriteStringValue(requestObject.StartTimecode);
             }
 
             if(requestObject.IsSetTransitions())
             {
                 context.Writer.WritePropertyName("transitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTransitionsListValue in requestObject.Transitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = VideoOverlayTransitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectTransitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

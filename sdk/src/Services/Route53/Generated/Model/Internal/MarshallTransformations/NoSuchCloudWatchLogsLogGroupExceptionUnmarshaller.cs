@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchCloudWatchLogsLogGroupException operation
     /// </summary>  
-    public class NoSuchCloudWatchLogsLogGroupExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchCloudWatchLogsLogGroupException, XmlUnmarshallerContext>
+    public class NoSuchCloudWatchLogsLogGroupExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchCloudWatchLogsLogGroupException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

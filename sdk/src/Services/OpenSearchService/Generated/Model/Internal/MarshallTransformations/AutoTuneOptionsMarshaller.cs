@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDesiredState())
             {
                 context.Writer.WritePropertyName("DesiredState");
-                context.Writer.Write(requestObject.DesiredState);
+                context.Writer.WriteStringValue(requestObject.DesiredState);
             }
 
             if(requestObject.IsSetMaintenanceSchedules())
             {
                 context.Writer.WritePropertyName("MaintenanceSchedules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMaintenanceSchedulesListValue in requestObject.MaintenanceSchedules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AutoTuneMaintenanceScheduleMarshaller.Instance;
                     marshaller.Marshall(requestObjectMaintenanceSchedulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetRollbackOnDisable())
             {
                 context.Writer.WritePropertyName("RollbackOnDisable");
-                context.Writer.Write(requestObject.RollbackOnDisable);
+                context.Writer.WriteStringValue(requestObject.RollbackOnDisable);
             }
 
             if(requestObject.IsSetUseOffPeakWindow())
             {
                 context.Writer.WritePropertyName("UseOffPeakWindow");
-                context.Writer.Write(requestObject.UseOffPeakWindow.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseOffPeakWindow.Value);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProjectMember Object
     /// </summary>  
-    public class ProjectMemberUnmarshaller : IUnmarshaller<ProjectMember, XmlUnmarshallerContext>, IUnmarshaller<ProjectMember, JsonUnmarshallerContext>
+    public class ProjectMemberUnmarshaller : IJsonUnmarshaller<ProjectMember, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProjectMember IUnmarshaller<ProjectMember, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProjectMember Unmarshall(JsonUnmarshallerContext context)
+        public ProjectMember Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProjectMember unmarshalledObject = new ProjectMember();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("designation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Designation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Designation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("memberDetails", targetDepth))
                 {
                     var unmarshaller = MemberDetailsUnmarshaller.Instance;
-                    unmarshalledObject.MemberDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MemberDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

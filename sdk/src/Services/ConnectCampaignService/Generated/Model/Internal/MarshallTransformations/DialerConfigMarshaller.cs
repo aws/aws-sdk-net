@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.ConnectCampaignService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentlessDialerConfig())
             {
                 context.Writer.WritePropertyName("agentlessDialerConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AgentlessDialerConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AgentlessDialerConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPredictiveDialerConfig())
             {
                 context.Writer.WritePropertyName("predictiveDialerConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PredictiveDialerConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PredictiveDialerConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProgressiveDialerConfig())
             {
                 context.Writer.WritePropertyName("progressiveDialerConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProgressiveDialerConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProgressiveDialerConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

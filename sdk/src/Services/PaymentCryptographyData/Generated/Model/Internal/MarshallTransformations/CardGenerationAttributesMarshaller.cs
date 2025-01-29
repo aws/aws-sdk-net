@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,78 +49,78 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmexCardSecurityCodeVersion1())
             {
                 context.Writer.WritePropertyName("AmexCardSecurityCodeVersion1");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmexCardSecurityCodeVersion1Marshaller.Instance;
                 marshaller.Marshall(requestObject.AmexCardSecurityCodeVersion1, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAmexCardSecurityCodeVersion2())
             {
                 context.Writer.WritePropertyName("AmexCardSecurityCodeVersion2");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmexCardSecurityCodeVersion2Marshaller.Instance;
                 marshaller.Marshall(requestObject.AmexCardSecurityCodeVersion2, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCardHolderVerificationValue())
             {
                 context.Writer.WritePropertyName("CardHolderVerificationValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CardHolderVerificationValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.CardHolderVerificationValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCardVerificationValue1())
             {
                 context.Writer.WritePropertyName("CardVerificationValue1");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CardVerificationValue1Marshaller.Instance;
                 marshaller.Marshall(requestObject.CardVerificationValue1, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCardVerificationValue2())
             {
                 context.Writer.WritePropertyName("CardVerificationValue2");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CardVerificationValue2Marshaller.Instance;
                 marshaller.Marshall(requestObject.CardVerificationValue2, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamicCardVerificationCode())
             {
                 context.Writer.WritePropertyName("DynamicCardVerificationCode");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamicCardVerificationCodeMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamicCardVerificationCode, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDynamicCardVerificationValue())
             {
                 context.Writer.WritePropertyName("DynamicCardVerificationValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DynamicCardVerificationValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.DynamicCardVerificationValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.DocDB.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CertificateNotFoundException operation
     /// </summary>  
-    public class CertificateNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<CertificateNotFoundException, XmlUnmarshallerContext>
+    public class CertificateNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CertificateNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

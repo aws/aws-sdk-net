@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuleGroup Object
     /// </summary>  
-    public class RuleGroupUnmarshaller : IUnmarshaller<RuleGroup, XmlUnmarshallerContext>, IUnmarshaller<RuleGroup, JsonUnmarshallerContext>
+    public class RuleGroupUnmarshaller : IJsonUnmarshaller<RuleGroup, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RuleGroup IUnmarshaller<RuleGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleGroup Unmarshall(JsonUnmarshallerContext context)
+        public RuleGroup Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RuleGroup unmarshalledObject = new RuleGroup();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ReferenceSets", targetDepth))
                 {
                     var unmarshaller = ReferenceSetsUnmarshaller.Instance;
-                    unmarshalledObject.ReferenceSets = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReferenceSets = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RulesSource", targetDepth))
                 {
                     var unmarshaller = RulesSourceUnmarshaller.Instance;
-                    unmarshalledObject.RulesSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RulesSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RuleVariables", targetDepth))
                 {
                     var unmarshaller = RuleVariablesUnmarshaller.Instance;
-                    unmarshalledObject.RuleVariables = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RuleVariables = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StatefulRuleOptions", targetDepth))
                 {
                     var unmarshaller = StatefulRuleOptionsUnmarshaller.Instance;
-                    unmarshalledObject.StatefulRuleOptions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StatefulRuleOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

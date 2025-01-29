@@ -29,8 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using Amazon.Util;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -47,81 +47,81 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             UpdateProgramResponse response = new UpdateProgramResponse();
-
-            context.Read();
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            context.Read(ref reader);
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdBreaks", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AdBreak, AdBreakUnmarshaller>(AdBreakUnmarshaller.Instance);
-                    response.AdBreaks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AdBreak, AdBreakUnmarshaller>(AdBreakUnmarshaller.Instance);
+                    response.AdBreaks = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.Arn = unmarshaller.Unmarshall(context);
+                    response.Arn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AudienceMedia", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudienceMedia, AudienceMediaUnmarshaller>(AudienceMediaUnmarshaller.Instance);
-                    response.AudienceMedia = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AudienceMedia, AudienceMediaUnmarshaller>(AudienceMediaUnmarshaller.Instance);
+                    response.AudienceMedia = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ChannelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ChannelName = unmarshaller.Unmarshall(context);
+                    response.ChannelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClipRange", targetDepth))
                 {
                     var unmarshaller = ClipRangeUnmarshaller.Instance;
-                    response.ClipRange = unmarshaller.Unmarshall(context);
+                    response.ClipRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.CreationTime = unmarshaller.Unmarshall(context);
+                    response.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DurationMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    response.DurationMillis = unmarshaller.Unmarshall(context);
+                    response.DurationMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LiveSourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.LiveSourceName = unmarshaller.Unmarshall(context);
+                    response.LiveSourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProgramName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.ProgramName = unmarshaller.Unmarshall(context);
+                    response.ProgramName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduledStartTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    response.ScheduledStartTime = unmarshaller.Unmarshall(context);
+                    response.ScheduledStartTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceLocationName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.SourceLocationName = unmarshaller.Unmarshall(context);
+                    response.SourceLocationName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VodSourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    response.VodSourceName = unmarshaller.Unmarshall(context);
+                    response.VodSourceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }
@@ -138,15 +138,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            StreamingUtf8JsonReader reader = new StreamingUtf8JsonReader(context.Stream);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context, ref reader);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, null))
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, false, context.ResponseData))
             {
+                StreamingUtf8JsonReader readerCopy = new StreamingUtf8JsonReader(streamCopy);
             }
             return new AmazonMediaTailorException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }

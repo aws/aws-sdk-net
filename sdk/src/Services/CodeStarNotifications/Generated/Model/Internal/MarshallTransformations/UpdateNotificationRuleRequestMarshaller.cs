@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
 {
@@ -61,70 +64,75 @@ namespace Amazon.CodeStarNotifications.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/updateNotificationRule";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetArn())
-                    {
-                        context.Writer.WritePropertyName("Arn");
-                        context.Writer.Write(publicRequest.Arn);
-                    }
-
-                    if(publicRequest.IsSetDetailType())
-                    {
-                        context.Writer.WritePropertyName("DetailType");
-                        context.Writer.Write(publicRequest.DetailType);
-                    }
-
-                    if(publicRequest.IsSetEventTypeIds())
-                    {
-                        context.Writer.WritePropertyName("EventTypeIds");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEventTypeIdsListValue in publicRequest.EventTypeIds)
-                        {
-                                context.Writer.Write(publicRequestEventTypeIdsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    if(publicRequest.IsSetTargets())
-                    {
-                        context.Writer.WritePropertyName("Targets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTargetsListValue in publicRequest.Targets)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TargetMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTargetsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Arn");
+                context.Writer.WriteStringValue(publicRequest.Arn);
             }
+
+            if(publicRequest.IsSetDetailType())
+            {
+                context.Writer.WritePropertyName("DetailType");
+                context.Writer.WriteStringValue(publicRequest.DetailType);
+            }
+
+            if(publicRequest.IsSetEventTypeIds())
+            {
+                context.Writer.WritePropertyName("EventTypeIds");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEventTypeIdsListValue in publicRequest.EventTypeIds)
+                {
+                        context.Writer.WriteStringValue(publicRequestEventTypeIdsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            if(publicRequest.IsSetTargets())
+            {
+                context.Writer.WritePropertyName("Targets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTargetsListValue in publicRequest.Targets)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TargetMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTargetsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

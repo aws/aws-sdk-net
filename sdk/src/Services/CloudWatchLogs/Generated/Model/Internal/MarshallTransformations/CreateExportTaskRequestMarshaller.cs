@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -63,61 +66,66 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestination())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestination())
-                    {
-                        context.Writer.WritePropertyName("destination");
-                        context.Writer.Write(publicRequest.Destination);
-                    }
-
-                    if(publicRequest.IsSetDestinationPrefix())
-                    {
-                        context.Writer.WritePropertyName("destinationPrefix");
-                        context.Writer.Write(publicRequest.DestinationPrefix);
-                    }
-
-                    if(publicRequest.IsSetFrom())
-                    {
-                        context.Writer.WritePropertyName("from");
-                        context.Writer.Write(publicRequest.From.Value);
-                    }
-
-                    if(publicRequest.IsSetLogGroupName())
-                    {
-                        context.Writer.WritePropertyName("logGroupName");
-                        context.Writer.Write(publicRequest.LogGroupName);
-                    }
-
-                    if(publicRequest.IsSetLogStreamNamePrefix())
-                    {
-                        context.Writer.WritePropertyName("logStreamNamePrefix");
-                        context.Writer.Write(publicRequest.LogStreamNamePrefix);
-                    }
-
-                    if(publicRequest.IsSetTaskName())
-                    {
-                        context.Writer.WritePropertyName("taskName");
-                        context.Writer.Write(publicRequest.TaskName);
-                    }
-
-                    if(publicRequest.IsSetTo())
-                    {
-                        context.Writer.WritePropertyName("to");
-                        context.Writer.Write(publicRequest.To.Value);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("destination");
+                context.Writer.WriteStringValue(publicRequest.Destination);
             }
+
+            if(publicRequest.IsSetDestinationPrefix())
+            {
+                context.Writer.WritePropertyName("destinationPrefix");
+                context.Writer.WriteStringValue(publicRequest.DestinationPrefix);
+            }
+
+            if(publicRequest.IsSetFrom())
+            {
+                context.Writer.WritePropertyName("from");
+                context.Writer.WriteNumberValue(publicRequest.From.Value);
+            }
+
+            if(publicRequest.IsSetLogGroupName())
+            {
+                context.Writer.WritePropertyName("logGroupName");
+                context.Writer.WriteStringValue(publicRequest.LogGroupName);
+            }
+
+            if(publicRequest.IsSetLogStreamNamePrefix())
+            {
+                context.Writer.WritePropertyName("logStreamNamePrefix");
+                context.Writer.WriteStringValue(publicRequest.LogStreamNamePrefix);
+            }
+
+            if(publicRequest.IsSetTaskName())
+            {
+                context.Writer.WritePropertyName("taskName");
+                context.Writer.WriteStringValue(publicRequest.TaskName);
+            }
+
+            if(publicRequest.IsSetTo())
+            {
+                context.Writer.WritePropertyName("to");
+                context.Writer.WriteNumberValue(publicRequest.To.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

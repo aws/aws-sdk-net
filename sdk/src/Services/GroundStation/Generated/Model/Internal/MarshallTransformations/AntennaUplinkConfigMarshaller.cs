@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSpectrumConfig())
             {
                 context.Writer.WritePropertyName("spectrumConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UplinkSpectrumConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpectrumConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTargetEirp())
             {
                 context.Writer.WritePropertyName("targetEirp");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EirpMarshaller.Instance;
                 marshaller.Marshall(requestObject.TargetEirp, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTransmitDisabled())
             {
                 context.Writer.WritePropertyName("transmitDisabled");
-                context.Writer.Write(requestObject.TransmitDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.TransmitDisabled.Value);
             }
 
         }

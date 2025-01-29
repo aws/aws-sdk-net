@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateArn())
             {
                 context.Writer.WritePropertyName("certificateArn");
-                context.Writer.Write(requestObject.CertificateArn);
+                context.Writer.WriteStringValue(requestObject.CertificateArn);
             }
 
             if(requestObject.IsSetDeviceRoleArn())
             {
                 context.Writer.WritePropertyName("deviceRoleArn");
-                context.Writer.Write(requestObject.DeviceRoleArn);
+                context.Writer.WriteStringValue(requestObject.DeviceRoleArn);
             }
 
             if(requestObject.IsSetThingArn())
             {
                 context.Writer.WritePropertyName("thingArn");
-                context.Writer.Write(requestObject.ThingArn);
+                context.Writer.WriteStringValue(requestObject.ThingArn);
             }
 
         }

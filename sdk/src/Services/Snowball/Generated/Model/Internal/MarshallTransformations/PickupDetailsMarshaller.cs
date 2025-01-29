@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Snowball.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDevicePickupId())
             {
                 context.Writer.WritePropertyName("DevicePickupId");
-                context.Writer.Write(requestObject.DevicePickupId);
+                context.Writer.WriteStringValue(requestObject.DevicePickupId);
             }
 
             if(requestObject.IsSetEmail())
             {
                 context.Writer.WritePropertyName("Email");
-                context.Writer.Write(requestObject.Email);
+                context.Writer.WriteStringValue(requestObject.Email);
             }
 
             if(requestObject.IsSetIdentificationExpirationDate())
             {
                 context.Writer.WritePropertyName("IdentificationExpirationDate");
-                context.Writer.Write(requestObject.IdentificationExpirationDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.IdentificationExpirationDate.Value)));
             }
 
             if(requestObject.IsSetIdentificationIssuingOrg())
             {
                 context.Writer.WritePropertyName("IdentificationIssuingOrg");
-                context.Writer.Write(requestObject.IdentificationIssuingOrg);
+                context.Writer.WriteStringValue(requestObject.IdentificationIssuingOrg);
             }
 
             if(requestObject.IsSetIdentificationNumber())
             {
                 context.Writer.WritePropertyName("IdentificationNumber");
-                context.Writer.Write(requestObject.IdentificationNumber);
+                context.Writer.WriteStringValue(requestObject.IdentificationNumber);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPhoneNumber())
             {
                 context.Writer.WritePropertyName("PhoneNumber");
-                context.Writer.Write(requestObject.PhoneNumber);
+                context.Writer.WriteStringValue(requestObject.PhoneNumber);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MemoryMiBRequest Object
     /// </summary>  
-    public class MemoryMiBRequestUnmarshaller : IUnmarshaller<MemoryMiBRequest, XmlUnmarshallerContext>, IUnmarshaller<MemoryMiBRequest, JsonUnmarshallerContext>
+    public class MemoryMiBRequestUnmarshaller : IXmlUnmarshaller<MemoryMiBRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MemoryMiBRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MemoryMiBRequestUnmarshaller _instance = new MemoryMiBRequestUnmarshaller();        
 

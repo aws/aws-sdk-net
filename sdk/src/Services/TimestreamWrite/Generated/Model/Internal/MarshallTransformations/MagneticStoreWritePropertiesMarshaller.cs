@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnableMagneticStoreWrites())
             {
                 context.Writer.WritePropertyName("EnableMagneticStoreWrites");
-                context.Writer.Write(requestObject.EnableMagneticStoreWrites.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableMagneticStoreWrites.Value);
             }
 
             if(requestObject.IsSetMagneticStoreRejectedDataLocation())
             {
                 context.Writer.WritePropertyName("MagneticStoreRejectedDataLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MagneticStoreRejectedDataLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MagneticStoreRejectedDataLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

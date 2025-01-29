@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.B2bi.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.B2bi.Model.Internal.MarshallTransformations
             if(requestObject.IsSetApplicationReceiverCode())
             {
                 context.Writer.WritePropertyName("applicationReceiverCode");
-                context.Writer.Write(requestObject.ApplicationReceiverCode);
+                context.Writer.WriteStringValue(requestObject.ApplicationReceiverCode);
             }
 
             if(requestObject.IsSetApplicationSenderCode())
             {
                 context.Writer.WritePropertyName("applicationSenderCode");
-                context.Writer.Write(requestObject.ApplicationSenderCode);
+                context.Writer.WriteStringValue(requestObject.ApplicationSenderCode);
             }
 
             if(requestObject.IsSetResponsibleAgencyCode())
             {
                 context.Writer.WritePropertyName("responsibleAgencyCode");
-                context.Writer.Write(requestObject.ResponsibleAgencyCode);
+                context.Writer.WriteStringValue(requestObject.ResponsibleAgencyCode);
             }
 
         }

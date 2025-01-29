@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AccessAnalyzer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ValidatePolicyFinding Object
     /// </summary>  
-    public class ValidatePolicyFindingUnmarshaller : IUnmarshaller<ValidatePolicyFinding, XmlUnmarshallerContext>, IUnmarshaller<ValidatePolicyFinding, JsonUnmarshallerContext>
+    public class ValidatePolicyFindingUnmarshaller : IJsonUnmarshaller<ValidatePolicyFinding, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ValidatePolicyFinding IUnmarshaller<ValidatePolicyFinding, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ValidatePolicyFinding Unmarshall(JsonUnmarshallerContext context)
+        public ValidatePolicyFinding Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ValidatePolicyFinding unmarshalledObject = new ValidatePolicyFinding();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("findingDetails", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FindingDetails = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FindingDetails = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("findingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FindingType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FindingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("issueCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IssueCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IssueCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("learnMoreLink", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LearnMoreLink = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LearnMoreLink = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("locations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Location, LocationUnmarshaller>(LocationUnmarshaller.Instance);
-                    unmarshalledObject.Locations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Location, LocationUnmarshaller>(LocationUnmarshaller.Instance);
+                    unmarshalledObject.Locations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

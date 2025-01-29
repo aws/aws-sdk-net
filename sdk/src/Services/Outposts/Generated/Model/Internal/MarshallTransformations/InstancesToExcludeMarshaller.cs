@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Outposts.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.Outposts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountIds())
             {
                 context.Writer.WritePropertyName("AccountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
                 {
-                        context.Writer.Write(requestObjectAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstances())
             {
                 context.Writer.WritePropertyName("Instances");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstancesListValue in requestObject.Instances)
                 {
-                        context.Writer.Write(requestObjectInstancesListValue);
+                        context.Writer.WriteStringValue(requestObjectInstancesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetServices())
             {
                 context.Writer.WritePropertyName("Services");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectServicesListValue in requestObject.Services)
                 {
-                        context.Writer.Write(requestObjectServicesListValue);
+                        context.Writer.WriteStringValue(requestObjectServicesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

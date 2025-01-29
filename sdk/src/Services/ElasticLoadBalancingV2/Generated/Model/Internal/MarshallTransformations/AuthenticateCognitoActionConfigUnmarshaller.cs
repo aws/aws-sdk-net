@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AuthenticateCognitoActionConfig Object
     /// </summary>  
-    public class AuthenticateCognitoActionConfigUnmarshaller : IUnmarshaller<AuthenticateCognitoActionConfig, XmlUnmarshallerContext>, IUnmarshaller<AuthenticateCognitoActionConfig, JsonUnmarshallerContext>
+    public class AuthenticateCognitoActionConfigUnmarshaller : IXmlUnmarshaller<AuthenticateCognitoActionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -57,7 +57,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
                 {
                     if (context.TestExpression("AuthenticationRequestExtraParams/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                         if (unmarshalledObject.AuthenticationRequestExtraParams == null)
                         {
                             unmarshalledObject.AuthenticationRequestExtraParams = new Dictionary<string, string>();
@@ -117,17 +117,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AuthenticateCognitoActionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AuthenticateCognitoActionConfigUnmarshaller _instance = new AuthenticateCognitoActionConfigUnmarshaller();        
 

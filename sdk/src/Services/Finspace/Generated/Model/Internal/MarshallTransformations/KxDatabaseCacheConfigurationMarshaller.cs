@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Finspace.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Finspace.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCacheType())
             {
                 context.Writer.WritePropertyName("cacheType");
-                context.Writer.Write(requestObject.CacheType);
+                context.Writer.WriteStringValue(requestObject.CacheType);
             }
 
             if(requestObject.IsSetDataviewName())
             {
                 context.Writer.WritePropertyName("dataviewName");
-                context.Writer.Write(requestObject.DataviewName);
+                context.Writer.WriteStringValue(requestObject.DataviewName);
             }
 
             if(requestObject.IsSetDbPaths())
             {
                 context.Writer.WritePropertyName("dbPaths");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDbPathsListValue in requestObject.DbPaths)
                 {
-                        context.Writer.Write(requestObjectDbPathsListValue);
+                        context.Writer.WriteStringValue(requestObjectDbPathsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

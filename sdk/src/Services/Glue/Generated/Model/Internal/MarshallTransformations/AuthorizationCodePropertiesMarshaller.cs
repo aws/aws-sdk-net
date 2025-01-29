@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationCode())
             {
                 context.Writer.WritePropertyName("AuthorizationCode");
-                context.Writer.Write(requestObject.AuthorizationCode);
+                context.Writer.WriteStringValue(requestObject.AuthorizationCode);
             }
 
             if(requestObject.IsSetRedirectUri())
             {
                 context.Writer.WritePropertyName("RedirectUri");
-                context.Writer.Write(requestObject.RedirectUri);
+                context.Writer.WriteStringValue(requestObject.RedirectUri);
             }
 
         }

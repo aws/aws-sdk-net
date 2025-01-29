@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeType())
             {
                 context.Writer.WritePropertyName("computeType");
-                context.Writer.Write(requestObject.ComputeType);
+                context.Writer.WriteStringValue(requestObject.ComputeType);
             }
 
             if(requestObject.IsSetVolumeSizeInGB())
             {
                 context.Writer.WritePropertyName("volumeSizeInGB");
-                context.Writer.Write(requestObject.VolumeSizeInGB.Value);
+                context.Writer.WriteNumberValue(requestObject.VolumeSizeInGB.Value);
             }
 
         }

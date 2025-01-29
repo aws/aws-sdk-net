@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SSMIncidents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoResolve())
             {
                 context.Writer.WritePropertyName("autoResolve");
-                context.Writer.Write(requestObject.AutoResolve.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoResolve.Value);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetSecretId())
             {
                 context.Writer.WritePropertyName("secretId");
-                context.Writer.Write(requestObject.SecretId);
+                context.Writer.WriteStringValue(requestObject.SecretId);
             }
 
         }

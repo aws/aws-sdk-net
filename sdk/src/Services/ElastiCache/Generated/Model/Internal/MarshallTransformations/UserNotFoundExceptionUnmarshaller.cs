@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UserNotFoundException operation
     /// </summary>  
-    public class UserNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<UserNotFoundException, XmlUnmarshallerContext>
+    public class UserNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UserNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

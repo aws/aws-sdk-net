@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecretsManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticallyAfterDays())
             {
                 context.Writer.WritePropertyName("AutomaticallyAfterDays");
-                context.Writer.Write(requestObject.AutomaticallyAfterDays.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomaticallyAfterDays.Value);
             }
 
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("Duration");
-                context.Writer.Write(requestObject.Duration);
+                context.Writer.WriteStringValue(requestObject.Duration);
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
         }

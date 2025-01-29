@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
 {
@@ -63,157 +66,162 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutoScalingSpecification())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAutoScalingSpecification())
-                    {
-                        context.Writer.WritePropertyName("autoScalingSpecification");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("autoScalingSpecification");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AutoScalingSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
+                var marshaller = AutoScalingSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AutoScalingSpecification, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCapacitySpecification())
-                    {
-                        context.Writer.WritePropertyName("capacitySpecification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CapacitySpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CapacitySpecification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientSideTimestamps())
-                    {
-                        context.Writer.WritePropertyName("clientSideTimestamps");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ClientSideTimestampsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ClientSideTimestamps, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetComment())
-                    {
-                        context.Writer.WritePropertyName("comment");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CommentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Comment, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDefaultTimeToLive())
-                    {
-                        context.Writer.WritePropertyName("defaultTimeToLive");
-                        context.Writer.Write(publicRequest.DefaultTimeToLive.Value);
-                    }
-
-                    if(publicRequest.IsSetEncryptionSpecification())
-                    {
-                        context.Writer.WritePropertyName("encryptionSpecification");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EncryptionSpecificationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EncryptionSpecification, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetKeyspaceName())
-                    {
-                        context.Writer.WritePropertyName("keyspaceName");
-                        context.Writer.Write(publicRequest.KeyspaceName);
-                    }
-
-                    if(publicRequest.IsSetPointInTimeRecovery())
-                    {
-                        context.Writer.WritePropertyName("pointInTimeRecovery");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = PointInTimeRecoveryMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PointInTimeRecovery, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetReplicaSpecifications())
-                    {
-                        context.Writer.WritePropertyName("replicaSpecifications");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ReplicaSpecificationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSchemaDefinition())
-                    {
-                        context.Writer.WritePropertyName("schemaDefinition");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = SchemaDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SchemaDefinition, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTableName())
-                    {
-                        context.Writer.WritePropertyName("tableName");
-                        context.Writer.Write(publicRequest.TableName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTtl())
-                    {
-                        context.Writer.WritePropertyName("ttl");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TimeToLiveMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Ttl, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetCapacitySpecification())
+            {
+                context.Writer.WritePropertyName("capacitySpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CapacitySpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CapacitySpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetClientSideTimestamps())
+            {
+                context.Writer.WritePropertyName("clientSideTimestamps");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClientSideTimestampsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ClientSideTimestamps, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetComment())
+            {
+                context.Writer.WritePropertyName("comment");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CommentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Comment, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDefaultTimeToLive())
+            {
+                context.Writer.WritePropertyName("defaultTimeToLive");
+                context.Writer.WriteNumberValue(publicRequest.DefaultTimeToLive.Value);
+            }
+
+            if(publicRequest.IsSetEncryptionSpecification())
+            {
+                context.Writer.WritePropertyName("encryptionSpecification");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EncryptionSpecificationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EncryptionSpecification, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetKeyspaceName())
+            {
+                context.Writer.WritePropertyName("keyspaceName");
+                context.Writer.WriteStringValue(publicRequest.KeyspaceName);
+            }
+
+            if(publicRequest.IsSetPointInTimeRecovery())
+            {
+                context.Writer.WritePropertyName("pointInTimeRecovery");
+                context.Writer.WriteStartObject();
+
+                var marshaller = PointInTimeRecoveryMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PointInTimeRecovery, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetReplicaSpecifications())
+            {
+                context.Writer.WritePropertyName("replicaSpecifications");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReplicaSpecificationsListValue in publicRequest.ReplicaSpecifications)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ReplicaSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestReplicaSpecificationsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSchemaDefinition())
+            {
+                context.Writer.WritePropertyName("schemaDefinition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = SchemaDefinitionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SchemaDefinition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTableName())
+            {
+                context.Writer.WritePropertyName("tableName");
+                context.Writer.WriteStringValue(publicRequest.TableName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTtl())
+            {
+                context.Writer.WritePropertyName("ttl");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TimeToLiveMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Ttl, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

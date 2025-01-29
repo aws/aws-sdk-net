@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPollingTime())
             {
                 context.Writer.WritePropertyName("PollingTime");
-                context.Writer.Write(requestObject.PollingTime.Value);
+                context.Writer.WriteNumberValue(requestObject.PollingTime.Value);
             }
 
             if(requestObject.IsSetRecordPollingLimit())
             {
                 context.Writer.WritePropertyName("RecordPollingLimit");
-                context.Writer.Write(requestObject.RecordPollingLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.RecordPollingLimit.Value);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RAM.Model.Internal.MarshallTransformations
 {
@@ -61,49 +64,54 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/associateresourcesharepermission";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("clientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetPermissionArn())
-                    {
-                        context.Writer.WritePropertyName("permissionArn");
-                        context.Writer.Write(publicRequest.PermissionArn);
-                    }
-
-                    if(publicRequest.IsSetPermissionVersion())
-                    {
-                        context.Writer.WritePropertyName("permissionVersion");
-                        context.Writer.Write(publicRequest.PermissionVersion.Value);
-                    }
-
-                    if(publicRequest.IsSetReplace())
-                    {
-                        context.Writer.WritePropertyName("replace");
-                        context.Writer.Write(publicRequest.Replace.Value);
-                    }
-
-                    if(publicRequest.IsSetResourceShareArn())
-                    {
-                        context.Writer.WritePropertyName("resourceShareArn");
-                        context.Writer.Write(publicRequest.ResourceShareArn);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            if(publicRequest.IsSetPermissionArn())
+            {
+                context.Writer.WritePropertyName("permissionArn");
+                context.Writer.WriteStringValue(publicRequest.PermissionArn);
+            }
+
+            if(publicRequest.IsSetPermissionVersion())
+            {
+                context.Writer.WritePropertyName("permissionVersion");
+                context.Writer.WriteNumberValue(publicRequest.PermissionVersion.Value);
+            }
+
+            if(publicRequest.IsSetReplace())
+            {
+                context.Writer.WritePropertyName("replace");
+                context.Writer.WriteBooleanValue(publicRequest.Replace.Value);
+            }
+
+            if(publicRequest.IsSetResourceShareArn())
+            {
+                context.Writer.WritePropertyName("resourceShareArn");
+                context.Writer.WriteStringValue(publicRequest.ResourceShareArn);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

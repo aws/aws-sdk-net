@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetJobConfiguration())
             {
                 context.Writer.WritePropertyName("JobConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectJobConfigurationKvp in requestObject.JobConfiguration)
                 {
                     context.Writer.WritePropertyName(requestObjectJobConfigurationKvp.Key);
                     var requestObjectJobConfigurationValue = requestObjectJobConfigurationKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfigurationObjectMarshaller.Instance;
                     marshaller.Marshall(requestObjectJobConfigurationValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSessionConfiguration())
             {
                 context.Writer.WritePropertyName("SessionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSessionConfigurationKvp in requestObject.SessionConfiguration)
                 {
                     context.Writer.WritePropertyName(requestObjectSessionConfigurationKvp.Key);
                     var requestObjectSessionConfigurationValue = requestObjectSessionConfigurationKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfigurationObjectMarshaller.Instance;
                     marshaller.Marshall(requestObjectSessionConfigurationValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

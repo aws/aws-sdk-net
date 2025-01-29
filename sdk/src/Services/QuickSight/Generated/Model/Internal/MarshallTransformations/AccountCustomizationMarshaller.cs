@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultEmailCustomizationTemplate())
             {
                 context.Writer.WritePropertyName("DefaultEmailCustomizationTemplate");
-                context.Writer.Write(requestObject.DefaultEmailCustomizationTemplate);
+                context.Writer.WriteStringValue(requestObject.DefaultEmailCustomizationTemplate);
             }
 
             if(requestObject.IsSetDefaultTheme())
             {
                 context.Writer.WritePropertyName("DefaultTheme");
-                context.Writer.Write(requestObject.DefaultTheme);
+                context.Writer.WriteStringValue(requestObject.DefaultTheme);
             }
 
         }

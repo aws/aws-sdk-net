@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScalarReferenceDetails Object
     /// </summary>  
-    public class ScalarReferenceDetailsUnmarshaller : IUnmarshaller<ScalarReferenceDetails, XmlUnmarshallerContext>, IUnmarshaller<ScalarReferenceDetails, JsonUnmarshallerContext>
+    public class ScalarReferenceDetailsUnmarshaller : IXmlUnmarshaller<ScalarReferenceDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ScalarReferenceDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ScalarReferenceDetailsUnmarshaller _instance = new ScalarReferenceDetailsUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateAuthorityPublicKeyIdentifier())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityPublicKeyIdentifier");
-                context.Writer.Write(requestObject.CertificateAuthorityPublicKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityPublicKeyIdentifier);
             }
 
             if(requestObject.IsSetKeyAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyAlgorithm");
-                context.Writer.Write(requestObject.KeyAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyAlgorithm);
             }
 
             if(requestObject.IsSetKeyDerivationFunction())
             {
                 context.Writer.WritePropertyName("KeyDerivationFunction");
-                context.Writer.Write(requestObject.KeyDerivationFunction);
+                context.Writer.WriteStringValue(requestObject.KeyDerivationFunction);
             }
 
             if(requestObject.IsSetKeyDerivationHashAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyDerivationHashAlgorithm");
-                context.Writer.Write(requestObject.KeyDerivationHashAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyDerivationHashAlgorithm);
             }
 
             if(requestObject.IsSetPublicKeyCertificate())
             {
                 context.Writer.WritePropertyName("PublicKeyCertificate");
-                context.Writer.Write(requestObject.PublicKeyCertificate);
+                context.Writer.WriteStringValue(requestObject.PublicKeyCertificate);
             }
 
             if(requestObject.IsSetSharedInformation())
             {
                 context.Writer.WritePropertyName("SharedInformation");
-                context.Writer.Write(requestObject.SharedInformation);
+                context.Writer.WriteStringValue(requestObject.SharedInformation);
             }
 
         }

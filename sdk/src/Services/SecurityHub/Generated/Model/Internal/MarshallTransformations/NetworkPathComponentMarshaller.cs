@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComponentId())
             {
                 context.Writer.WritePropertyName("ComponentId");
-                context.Writer.Write(requestObject.ComponentId);
+                context.Writer.WriteStringValue(requestObject.ComponentId);
             }
 
             if(requestObject.IsSetComponentType())
             {
                 context.Writer.WritePropertyName("ComponentType");
-                context.Writer.Write(requestObject.ComponentType);
+                context.Writer.WriteStringValue(requestObject.ComponentType);
             }
 
             if(requestObject.IsSetEgress())
             {
                 context.Writer.WritePropertyName("Egress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkHeaderMarshaller.Instance;
                 marshaller.Marshall(requestObject.Egress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIngress())
             {
                 context.Writer.WritePropertyName("Ingress");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NetworkHeaderMarshaller.Instance;
                 marshaller.Marshall(requestObject.Ingress, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

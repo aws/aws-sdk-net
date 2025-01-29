@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DeviceFarm.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OfferingTransaction Object
     /// </summary>  
-    public class OfferingTransactionUnmarshaller : IUnmarshaller<OfferingTransaction, XmlUnmarshallerContext>, IUnmarshaller<OfferingTransaction, JsonUnmarshallerContext>
+    public class OfferingTransactionUnmarshaller : IJsonUnmarshaller<OfferingTransaction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OfferingTransaction IUnmarshaller<OfferingTransaction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OfferingTransaction Unmarshall(JsonUnmarshallerContext context)
+        public OfferingTransaction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OfferingTransaction unmarshalledObject = new OfferingTransaction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cost", targetDepth))
                 {
                     var unmarshaller = MonetaryAmountUnmarshaller.Instance;
-                    unmarshalledObject.Cost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Cost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("createdOn", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreatedOn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreatedOn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("offeringPromotionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferingPromotionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OfferingPromotionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("offeringStatus", targetDepth))
                 {
                     var unmarshaller = OfferingStatusUnmarshaller.Instance;
-                    unmarshalledObject.OfferingStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OfferingStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("transactionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransactionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TransactionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

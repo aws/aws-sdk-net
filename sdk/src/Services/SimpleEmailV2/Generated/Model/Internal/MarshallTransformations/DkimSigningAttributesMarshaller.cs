@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDomainSigningAttributesOrigin())
             {
                 context.Writer.WritePropertyName("DomainSigningAttributesOrigin");
-                context.Writer.Write(requestObject.DomainSigningAttributesOrigin);
+                context.Writer.WriteStringValue(requestObject.DomainSigningAttributesOrigin);
             }
 
             if(requestObject.IsSetDomainSigningPrivateKey())
             {
                 context.Writer.WritePropertyName("DomainSigningPrivateKey");
-                context.Writer.Write(requestObject.DomainSigningPrivateKey);
+                context.Writer.WriteStringValue(requestObject.DomainSigningPrivateKey);
             }
 
             if(requestObject.IsSetDomainSigningSelector())
             {
                 context.Writer.WritePropertyName("DomainSigningSelector");
-                context.Writer.Write(requestObject.DomainSigningSelector);
+                context.Writer.WriteStringValue(requestObject.DomainSigningSelector);
             }
 
             if(requestObject.IsSetNextSigningKeyLength())
             {
                 context.Writer.WritePropertyName("NextSigningKeyLength");
-                context.Writer.Write(requestObject.NextSigningKeyLength);
+                context.Writer.WriteStringValue(requestObject.NextSigningKeyLength);
             }
 
         }

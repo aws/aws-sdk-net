@@ -29,227 +29,217 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DvbSubDestinationSettings Object
     /// </summary>  
-    public class DvbSubDestinationSettingsUnmarshaller : IUnmarshaller<DvbSubDestinationSettings, XmlUnmarshallerContext>, IUnmarshaller<DvbSubDestinationSettings, JsonUnmarshallerContext>
+    public class DvbSubDestinationSettingsUnmarshaller : IJsonUnmarshaller<DvbSubDestinationSettings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DvbSubDestinationSettings IUnmarshaller<DvbSubDestinationSettings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DvbSubDestinationSettings Unmarshall(JsonUnmarshallerContext context)
+        public DvbSubDestinationSettings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DvbSubDestinationSettings unmarshalledObject = new DvbSubDestinationSettings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("alignment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Alignment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Alignment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("applyFontColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ApplyFontColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ApplyFontColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("backgroundColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BackgroundColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackgroundColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("backgroundOpacity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BackgroundOpacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BackgroundOpacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ddsHandling", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DdsHandling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DdsHandling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ddsXCoordinate", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DdsXCoordinate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DdsXCoordinate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ddsYCoordinate", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DdsYCoordinate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DdsYCoordinate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fallbackFont", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FallbackFont = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FallbackFont = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontFileBold", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontFileBold = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontFileBold = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontFileBoldItalic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontFileBoldItalic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontFileBoldItalic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontFileItalic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontFileItalic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontFileItalic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontFileRegular", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontFileRegular = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontFileRegular = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontOpacity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FontOpacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontOpacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontResolution", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FontResolution = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontResolution = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontScript", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FontScript = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontScript = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fontSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.FontSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FontSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("height", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Height = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Height = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hexFontColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HexFontColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HexFontColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outlineColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OutlineColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutlineColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outlineSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.OutlineSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutlineSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shadowColor", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ShadowColor = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShadowColor = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shadowOpacity", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ShadowOpacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShadowOpacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shadowXOffset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ShadowXOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShadowXOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("shadowYOffset", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ShadowYOffset = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ShadowYOffset = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("stylePassthrough", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StylePassthrough = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StylePassthrough = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("subtitlingType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubtitlingType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubtitlingType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("teletextSpacing", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TeletextSpacing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TeletextSpacing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("width", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Width = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Width = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("xPosition", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.XPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.XPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("yPosition", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.YPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.YPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeadroom())
             {
                 context.Writer.WritePropertyName("headroom");
-                context.Writer.Write(requestObject.Headroom);
+                context.Writer.WriteStringValue(requestObject.Headroom);
             }
 
             if(requestObject.IsSetThreshold())
             {
                 context.Writer.WritePropertyName("threshold");
-                context.Writer.Write(requestObject.Threshold);
+                context.Writer.WriteStringValue(requestObject.Threshold);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("maxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCapacity.Value);
             }
 
             if(requestObject.IsSetScalingType())
             {
                 context.Writer.WritePropertyName("scalingType");
-                context.Writer.Write(requestObject.ScalingType);
+                context.Writer.WriteStringValue(requestObject.ScalingType);
             }
 
             if(requestObject.IsSetTargetTrackingScalingConfigs())
             {
                 context.Writer.WritePropertyName("targetTrackingScalingConfigs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetTrackingScalingConfigsListValue in requestObject.TargetTrackingScalingConfigs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetTrackingScalingConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetTrackingScalingConfigsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

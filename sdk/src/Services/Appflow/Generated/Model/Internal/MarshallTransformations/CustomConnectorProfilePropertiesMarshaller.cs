@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOAuth2Properties())
             {
                 context.Writer.WritePropertyName("oAuth2Properties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuth2PropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuth2Properties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProfileProperties())
             {
                 context.Writer.WritePropertyName("profileProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectProfilePropertiesKvp in requestObject.ProfileProperties)
                 {
                     context.Writer.WritePropertyName(requestObjectProfilePropertiesKvp.Key);
                     var requestObjectProfilePropertiesValue = requestObjectProfilePropertiesKvp.Value;
 
-                        context.Writer.Write(requestObjectProfilePropertiesValue);
+                        context.Writer.WriteStringValue(requestObjectProfilePropertiesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

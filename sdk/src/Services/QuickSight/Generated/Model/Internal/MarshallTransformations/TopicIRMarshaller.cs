@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,87 +49,87 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContributionAnalysis())
             {
                 context.Writer.WritePropertyName("ContributionAnalysis");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicIRContributionAnalysisMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContributionAnalysis, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("Filters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFiltersListValue in requestObject.Filters)
                 {
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectFiltersListValueListValue in requestObjectFiltersListValue)
                     {
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = TopicIRFilterOptionMarshaller.Instance;
                         marshaller.Marshall(requestObjectFiltersListValueListValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGroupByList())
             {
                 context.Writer.WritePropertyName("GroupByList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGroupByListListValue in requestObject.GroupByList)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TopicIRGroupByMarshaller.Instance;
                     marshaller.Marshall(requestObjectGroupByListListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMetrics())
             {
                 context.Writer.WritePropertyName("Metrics");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMetricsListValue in requestObject.Metrics)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TopicIRMetricMarshaller.Instance;
                     marshaller.Marshall(requestObjectMetricsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSort())
             {
                 context.Writer.WritePropertyName("Sort");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TopicSortClauseMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sort, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVisual())
             {
                 context.Writer.WritePropertyName("Visual");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VisualOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Visual, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

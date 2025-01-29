@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,86 +49,86 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetCapacity())
             {
                 context.Writer.WritePropertyName("Capacity");
-                context.Writer.Write(requestObject.Capacity.Value);
+                context.Writer.WriteNumberValue(requestObject.Capacity.Value);
             }
 
             if(requestObject.IsSetCaptchaConfig())
             {
                 context.Writer.WritePropertyName("CaptchaConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsWafv2WebAclCaptchaConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CaptchaConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDefaultAction())
             {
                 context.Writer.WritePropertyName("DefaultAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsWafv2WebAclActionDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetManagedbyFirewallManager())
             {
                 context.Writer.WritePropertyName("ManagedbyFirewallManager");
-                context.Writer.Write(requestObject.ManagedbyFirewallManager.Value);
+                context.Writer.WriteBooleanValue(requestObject.ManagedbyFirewallManager.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("Rules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRulesListValue in requestObject.Rules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsWafv2RulesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetVisibilityConfig())
             {
                 context.Writer.WritePropertyName("VisibilityConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsWafv2VisibilityConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.VisibilityConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

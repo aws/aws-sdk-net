@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IndexingFilter Object
     /// </summary>  
-    public class IndexingFilterUnmarshaller : IUnmarshaller<IndexingFilter, XmlUnmarshallerContext>, IUnmarshaller<IndexingFilter, JsonUnmarshallerContext>
+    public class IndexingFilterUnmarshaller : IJsonUnmarshaller<IndexingFilter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IndexingFilter IUnmarshaller<IndexingFilter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IndexingFilter Unmarshall(JsonUnmarshallerContext context)
+        public IndexingFilter Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IndexingFilter unmarshalledObject = new IndexingFilter();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("geoLocations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GeoLocationTarget, GeoLocationTargetUnmarshaller>(GeoLocationTargetUnmarshaller.Instance);
-                    unmarshalledObject.GeoLocations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GeoLocationTarget, GeoLocationTargetUnmarshaller>(GeoLocationTargetUnmarshaller.Instance);
+                    unmarshalledObject.GeoLocations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("namedShadowNames", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NamedShadowNames = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NamedShadowNames = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

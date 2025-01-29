@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Mgn.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LaunchTemplateDiskConf Object
     /// </summary>  
-    public class LaunchTemplateDiskConfUnmarshaller : IUnmarshaller<LaunchTemplateDiskConf, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateDiskConf, JsonUnmarshallerContext>
+    public class LaunchTemplateDiskConfUnmarshaller : IJsonUnmarshaller<LaunchTemplateDiskConf, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LaunchTemplateDiskConf IUnmarshaller<LaunchTemplateDiskConf, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LaunchTemplateDiskConf Unmarshall(JsonUnmarshallerContext context)
+        public LaunchTemplateDiskConf Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LaunchTemplateDiskConf unmarshalledObject = new LaunchTemplateDiskConf();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("iops", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Iops = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Iops = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("throughput", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Throughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumeType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

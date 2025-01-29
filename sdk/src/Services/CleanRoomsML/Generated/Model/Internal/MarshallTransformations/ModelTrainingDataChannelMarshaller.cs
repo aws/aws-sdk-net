@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelName())
             {
                 context.Writer.WritePropertyName("channelName");
-                context.Writer.Write(requestObject.ChannelName);
+                context.Writer.WriteStringValue(requestObject.ChannelName);
             }
 
             if(requestObject.IsSetMlInputChannelArn())
             {
                 context.Writer.WritePropertyName("mlInputChannelArn");
-                context.Writer.Write(requestObject.MlInputChannelArn);
+                context.Writer.WriteStringValue(requestObject.MlInputChannelArn);
             }
 
         }

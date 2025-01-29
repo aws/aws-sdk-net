@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FeatureDefinition Object
     /// </summary>  
-    public class FeatureDefinitionUnmarshaller : IUnmarshaller<FeatureDefinition, XmlUnmarshallerContext>, IUnmarshaller<FeatureDefinition, JsonUnmarshallerContext>
+    public class FeatureDefinitionUnmarshaller : IJsonUnmarshaller<FeatureDefinition, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FeatureDefinition IUnmarshaller<FeatureDefinition, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FeatureDefinition Unmarshall(JsonUnmarshallerContext context)
+        public FeatureDefinition Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FeatureDefinition unmarshalledObject = new FeatureDefinition();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CollectionConfig", targetDepth))
                 {
                     var unmarshaller = CollectionConfigUnmarshaller.Instance;
-                    unmarshalledObject.CollectionConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CollectionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CollectionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollectionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CollectionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FeatureType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FeatureType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FeatureType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

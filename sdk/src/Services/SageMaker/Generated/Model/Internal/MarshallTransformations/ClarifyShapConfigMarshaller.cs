@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberOfSamples())
             {
                 context.Writer.WritePropertyName("NumberOfSamples");
-                context.Writer.Write(requestObject.NumberOfSamples.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfSamples.Value);
             }
 
             if(requestObject.IsSetSeed())
             {
                 context.Writer.WritePropertyName("Seed");
-                context.Writer.Write(requestObject.Seed.Value);
+                context.Writer.WriteNumberValue(requestObject.Seed.Value);
             }
 
             if(requestObject.IsSetShapBaselineConfig())
             {
                 context.Writer.WritePropertyName("ShapBaselineConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClarifyShapBaselineConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.ShapBaselineConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTextConfig())
             {
                 context.Writer.WritePropertyName("TextConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClarifyTextConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.TextConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUseLogit())
             {
                 context.Writer.WritePropertyName("UseLogit");
-                context.Writer.Write(requestObject.UseLogit.Value);
+                context.Writer.WriteBooleanValue(requestObject.UseLogit.Value);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IdentityMailFromDomainAttributes Object
     /// </summary>  
-    public class IdentityMailFromDomainAttributesUnmarshaller : IUnmarshaller<IdentityMailFromDomainAttributes, XmlUnmarshallerContext>, IUnmarshaller<IdentityMailFromDomainAttributes, JsonUnmarshallerContext>
+    public class IdentityMailFromDomainAttributesUnmarshaller : IXmlUnmarshaller<IdentityMailFromDomainAttributes, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IdentityMailFromDomainAttributes Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IdentityMailFromDomainAttributesUnmarshaller _instance = new IdentityMailFromDomainAttributesUnmarshaller();        
 

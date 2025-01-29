@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomatedSnapshotRetentionPeriod())
             {
                 context.Writer.WritePropertyName("AutomatedSnapshotRetentionPeriod");
-                context.Writer.Write(requestObject.AutomatedSnapshotRetentionPeriod.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomatedSnapshotRetentionPeriod.Value);
             }
 
             if(requestObject.IsSetClusterIdentifier())
             {
                 context.Writer.WritePropertyName("ClusterIdentifier");
-                context.Writer.Write(requestObject.ClusterIdentifier);
+                context.Writer.WriteStringValue(requestObject.ClusterIdentifier);
             }
 
             if(requestObject.IsSetClusterType())
             {
                 context.Writer.WritePropertyName("ClusterType");
-                context.Writer.Write(requestObject.ClusterType);
+                context.Writer.WriteStringValue(requestObject.ClusterType);
             }
 
             if(requestObject.IsSetClusterVersion())
             {
                 context.Writer.WritePropertyName("ClusterVersion");
-                context.Writer.Write(requestObject.ClusterVersion);
+                context.Writer.WriteStringValue(requestObject.ClusterVersion);
             }
 
             if(requestObject.IsSetEncryptionType())
             {
                 context.Writer.WritePropertyName("EncryptionType");
-                context.Writer.Write(requestObject.EncryptionType);
+                context.Writer.WriteStringValue(requestObject.EncryptionType);
             }
 
             if(requestObject.IsSetEnhancedVpcRouting())
             {
                 context.Writer.WritePropertyName("EnhancedVpcRouting");
-                context.Writer.Write(requestObject.EnhancedVpcRouting.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnhancedVpcRouting.Value);
             }
 
             if(requestObject.IsSetMaintenanceTrackName())
             {
                 context.Writer.WritePropertyName("MaintenanceTrackName");
-                context.Writer.Write(requestObject.MaintenanceTrackName);
+                context.Writer.WriteStringValue(requestObject.MaintenanceTrackName);
             }
 
             if(requestObject.IsSetMasterUserPassword())
             {
                 context.Writer.WritePropertyName("MasterUserPassword");
-                context.Writer.Write(requestObject.MasterUserPassword);
+                context.Writer.WriteStringValue(requestObject.MasterUserPassword);
             }
 
             if(requestObject.IsSetNodeType())
             {
                 context.Writer.WritePropertyName("NodeType");
-                context.Writer.Write(requestObject.NodeType);
+                context.Writer.WriteStringValue(requestObject.NodeType);
             }
 
             if(requestObject.IsSetNumberOfNodes())
             {
                 context.Writer.WritePropertyName("NumberOfNodes");
-                context.Writer.Write(requestObject.NumberOfNodes.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfNodes.Value);
             }
 
             if(requestObject.IsSetPubliclyAccessible())
             {
                 context.Writer.WritePropertyName("PubliclyAccessible");
-                context.Writer.Write(requestObject.PubliclyAccessible.Value);
+                context.Writer.WriteBooleanValue(requestObject.PubliclyAccessible.Value);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.SupplyChain.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatasetSource())
             {
                 context.Writer.WritePropertyName("datasetSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataIntegrationFlowDatasetSourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatasetSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Source())
             {
                 context.Writer.WritePropertyName("s3Source");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataIntegrationFlowS3SourceConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Source, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceName())
             {
                 context.Writer.WritePropertyName("sourceName");
-                context.Writer.Write(requestObject.SourceName);
+                context.Writer.WriteStringValue(requestObject.SourceName);
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("sourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
         }

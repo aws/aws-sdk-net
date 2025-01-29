@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CIDRSummary Object
     /// </summary>  
-    public class CIDRSummaryUnmarshaller : IUnmarshaller<CIDRSummary, XmlUnmarshallerContext>, IUnmarshaller<CIDRSummary, JsonUnmarshallerContext>
+    public class CIDRSummaryUnmarshaller : IJsonUnmarshaller<CIDRSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CIDRSummary IUnmarshaller<CIDRSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CIDRSummary Unmarshall(JsonUnmarshallerContext context)
+        public CIDRSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CIDRSummary unmarshalledObject = new CIDRSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AvailableCIDRCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AvailableCIDRCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailableCIDRCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IPSetReferences", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, IPSetMetadata, StringUnmarshaller, IPSetMetadataUnmarshaller>(StringUnmarshaller.Instance, IPSetMetadataUnmarshaller.Instance);
-                    unmarshalledObject.IPSetReferences = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, IPSetMetadata, StringUnmarshaller, IPSetMetadataUnmarshaller>(StringUnmarshaller.Instance, IPSetMetadataUnmarshaller.Instance);
+                    unmarshalledObject.IPSetReferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UtilizedCIDRCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.UtilizedCIDRCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UtilizedCIDRCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RetryStageMetadata Object
     /// </summary>  
-    public class RetryStageMetadataUnmarshaller : IUnmarshaller<RetryStageMetadata, XmlUnmarshallerContext>, IUnmarshaller<RetryStageMetadata, JsonUnmarshallerContext>
+    public class RetryStageMetadataUnmarshaller : IJsonUnmarshaller<RetryStageMetadata, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RetryStageMetadata IUnmarshaller<RetryStageMetadata, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RetryStageMetadata Unmarshall(JsonUnmarshallerContext context)
+        public RetryStageMetadata Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RetryStageMetadata unmarshalledObject = new RetryStageMetadata();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("autoStageRetryAttempt", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AutoStageRetryAttempt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoStageRetryAttempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("latestRetryTrigger", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LatestRetryTrigger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestRetryTrigger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("manualStageRetryAttempt", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ManualStageRetryAttempt = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ManualStageRetryAttempt = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

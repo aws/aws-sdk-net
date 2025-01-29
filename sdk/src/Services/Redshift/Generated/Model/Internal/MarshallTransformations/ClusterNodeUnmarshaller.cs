@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterNode Object
     /// </summary>  
-    public class ClusterNodeUnmarshaller : IUnmarshaller<ClusterNode, XmlUnmarshallerContext>, IUnmarshaller<ClusterNode, JsonUnmarshallerContext>
+    public class ClusterNodeUnmarshaller : IXmlUnmarshaller<ClusterNode, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClusterNode Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClusterNodeUnmarshaller _instance = new ClusterNodeUnmarshaller();        
 

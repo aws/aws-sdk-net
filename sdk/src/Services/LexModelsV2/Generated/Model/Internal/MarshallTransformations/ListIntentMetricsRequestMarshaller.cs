@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -64,107 +67,112 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 throw new AmazonLexModelsV2Exception("Request object does not have required field BotId set");
             request.AddPathResource("{botId}", StringUtils.FromString(publicRequest.BotId));
             request.ResourcePath = "/bots/{botId}/analytics/intentmetrics";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetBinBy())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("binBy");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestBinByListValue in publicRequest.BinBy)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetBinBy())
-                    {
-                        context.Writer.WritePropertyName("binBy");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestBinByListValue in publicRequest.BinBy)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = AnalyticsBinBySpecificationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestBinByListValue, context);
+                    var marshaller = AnalyticsBinBySpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestBinByListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetEndDateTime())
-                    {
-                        context.Writer.WritePropertyName("endDateTime");
-                        context.Writer.Write(publicRequest.EndDateTime.Value);
-                    }
-
-                    if(publicRequest.IsSetFilters())
-                    {
-                        context.Writer.WritePropertyName("filters");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFiltersListValue in publicRequest.Filters)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AnalyticsIntentFilterMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFiltersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetGroupBy())
-                    {
-                        context.Writer.WritePropertyName("groupBy");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AnalyticsIntentGroupBySpecificationMarshaller.Instance;
-                            marshaller.Marshall(publicRequestGroupByListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetMetrics())
-                    {
-                        context.Writer.WritePropertyName("metrics");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = AnalyticsIntentMetricMarshaller.Instance;
-                            marshaller.Marshall(publicRequestMetricsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetStartDateTime())
-                    {
-                        context.Writer.WritePropertyName("startDateTime");
-                        context.Writer.Write(publicRequest.StartDateTime.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetEndDateTime())
+            {
+                context.Writer.WritePropertyName("endDateTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.EndDateTime.Value)));
+            }
+
+            if(publicRequest.IsSetFilters())
+            {
+                context.Writer.WritePropertyName("filters");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFiltersListValue in publicRequest.Filters)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AnalyticsIntentFilterMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFiltersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetGroupBy())
+            {
+                context.Writer.WritePropertyName("groupBy");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGroupByListValue in publicRequest.GroupBy)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AnalyticsIntentGroupBySpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGroupByListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetMetrics())
+            {
+                context.Writer.WritePropertyName("metrics");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestMetricsListValue in publicRequest.Metrics)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = AnalyticsIntentMetricMarshaller.Instance;
+                    marshaller.Marshall(publicRequestMetricsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetStartDateTime())
+            {
+                context.Writer.WritePropertyName("startDateTime");
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(publicRequest.StartDateTime.Value)));
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

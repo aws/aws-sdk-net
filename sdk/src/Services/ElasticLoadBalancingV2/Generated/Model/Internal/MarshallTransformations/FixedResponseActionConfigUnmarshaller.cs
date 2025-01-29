@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FixedResponseActionConfig Object
     /// </summary>  
-    public class FixedResponseActionConfigUnmarshaller : IUnmarshaller<FixedResponseActionConfig, XmlUnmarshallerContext>, IUnmarshaller<FixedResponseActionConfig, JsonUnmarshallerContext>
+    public class FixedResponseActionConfigUnmarshaller : IXmlUnmarshaller<FixedResponseActionConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FixedResponseActionConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FixedResponseActionConfigUnmarshaller _instance = new FixedResponseActionConfigUnmarshaller();        
 

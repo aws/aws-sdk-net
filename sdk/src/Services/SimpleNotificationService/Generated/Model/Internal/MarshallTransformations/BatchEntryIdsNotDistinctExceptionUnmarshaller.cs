@@ -35,7 +35,7 @@ namespace Amazon.SimpleNotificationService.Model.Internal.MarshallTransformation
     /// <summary>
     /// Response Unmarshaller for BatchEntryIdsNotDistinctException operation
     /// </summary>  
-    public class BatchEntryIdsNotDistinctExceptionUnmarshaller : IErrorResponseUnmarshaller<BatchEntryIdsNotDistinctException, XmlUnmarshallerContext>
+    public class BatchEntryIdsNotDistinctExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BatchEntryIdsNotDistinctException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

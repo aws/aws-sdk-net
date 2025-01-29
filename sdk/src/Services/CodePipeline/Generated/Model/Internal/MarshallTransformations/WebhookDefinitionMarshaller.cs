@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthentication())
             {
                 context.Writer.WritePropertyName("authentication");
-                context.Writer.Write(requestObject.Authentication);
+                context.Writer.WriteStringValue(requestObject.Authentication);
             }
 
             if(requestObject.IsSetAuthenticationConfiguration())
             {
                 context.Writer.WritePropertyName("authenticationConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WebhookAuthConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuthenticationConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilters())
             {
                 context.Writer.WritePropertyName("filters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectFiltersListValue in requestObject.Filters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = WebhookFilterRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectFiltersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetTargetAction())
             {
                 context.Writer.WritePropertyName("targetAction");
-                context.Writer.Write(requestObject.TargetAction);
+                context.Writer.WriteStringValue(requestObject.TargetAction);
             }
 
             if(requestObject.IsSetTargetPipeline())
             {
                 context.Writer.WritePropertyName("targetPipeline");
-                context.Writer.Write(requestObject.TargetPipeline);
+                context.Writer.WriteStringValue(requestObject.TargetPipeline);
             }
 
         }

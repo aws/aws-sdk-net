@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColor())
             {
                 context.Writer.WritePropertyName("Color");
-                context.Writer.Write(requestObject.Color);
+                context.Writer.WriteStringValue(requestObject.Color);
             }
 
             if(requestObject.IsSetDisplayConfiguration())
             {
                 context.Writer.WritePropertyName("DisplayConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionalFormattingIconDisplayConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DisplayConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetIconOptions())
             {
                 context.Writer.WritePropertyName("IconOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionalFormattingCustomIconOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.IconOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

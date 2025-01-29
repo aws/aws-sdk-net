@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Panorama.Model.Internal.MarshallTransformations
 {
@@ -61,85 +64,90 @@ namespace Amazon.Panorama.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/application-instances";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetApplicationInstanceIdToReplace())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetApplicationInstanceIdToReplace())
-                    {
-                        context.Writer.WritePropertyName("ApplicationInstanceIdToReplace");
-                        context.Writer.Write(publicRequest.ApplicationInstanceIdToReplace);
-                    }
-
-                    if(publicRequest.IsSetDefaultRuntimeContextDevice())
-                    {
-                        context.Writer.WritePropertyName("DefaultRuntimeContextDevice");
-                        context.Writer.Write(publicRequest.DefaultRuntimeContextDevice);
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetManifestOverridesPayload())
-                    {
-                        context.Writer.WritePropertyName("ManifestOverridesPayload");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ManifestOverridesPayloadMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ManifestOverridesPayload, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetManifestPayload())
-                    {
-                        context.Writer.WritePropertyName("ManifestPayload");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ManifestPayloadMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ManifestPayload, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetRuntimeRoleArn())
-                    {
-                        context.Writer.WritePropertyName("RuntimeRoleArn");
-                        context.Writer.Write(publicRequest.RuntimeRoleArn);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ApplicationInstanceIdToReplace");
+                context.Writer.WriteStringValue(publicRequest.ApplicationInstanceIdToReplace);
             }
+
+            if(publicRequest.IsSetDefaultRuntimeContextDevice())
+            {
+                context.Writer.WritePropertyName("DefaultRuntimeContextDevice");
+                context.Writer.WriteStringValue(publicRequest.DefaultRuntimeContextDevice);
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetManifestOverridesPayload())
+            {
+                context.Writer.WritePropertyName("ManifestOverridesPayload");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManifestOverridesPayloadMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ManifestOverridesPayload, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetManifestPayload())
+            {
+                context.Writer.WritePropertyName("ManifestPayload");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManifestPayloadMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ManifestPayload, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetRuntimeRoleArn())
+            {
+                context.Writer.WritePropertyName("RuntimeRoleArn");
+                context.Writer.WriteStringValue(publicRequest.RuntimeRoleArn);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IVS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for IngestConfigurations Object
     /// </summary>  
-    public class IngestConfigurationsUnmarshaller : IUnmarshaller<IngestConfigurations, XmlUnmarshallerContext>, IUnmarshaller<IngestConfigurations, JsonUnmarshallerContext>
+    public class IngestConfigurationsUnmarshaller : IJsonUnmarshaller<IngestConfigurations, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        IngestConfigurations IUnmarshaller<IngestConfigurations, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public IngestConfigurations Unmarshall(JsonUnmarshallerContext context)
+        public IngestConfigurations Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             IngestConfigurations unmarshalledObject = new IngestConfigurations();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AudioConfiguration, AudioConfigurationUnmarshaller>(AudioConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.AudioConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AudioConfiguration, AudioConfigurationUnmarshaller>(AudioConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.AudioConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("videoConfigurations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VideoConfiguration, VideoConfigurationUnmarshaller>(VideoConfigurationUnmarshaller.Instance);
-                    unmarshalledObject.VideoConfigurations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VideoConfiguration, VideoConfigurationUnmarshaller>(VideoConfigurationUnmarshaller.Instance);
+                    unmarshalledObject.VideoConfigurations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

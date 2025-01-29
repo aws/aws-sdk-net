@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.Pipes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabase())
             {
                 context.Writer.WritePropertyName("Database");
-                context.Writer.Write(requestObject.Database);
+                context.Writer.WriteStringValue(requestObject.Database);
             }
 
             if(requestObject.IsSetDbUser())
             {
                 context.Writer.WritePropertyName("DbUser");
-                context.Writer.Write(requestObject.DbUser);
+                context.Writer.WriteStringValue(requestObject.DbUser);
             }
 
             if(requestObject.IsSetSecretManagerArn())
             {
                 context.Writer.WritePropertyName("SecretManagerArn");
-                context.Writer.Write(requestObject.SecretManagerArn);
+                context.Writer.WriteStringValue(requestObject.SecretManagerArn);
             }
 
             if(requestObject.IsSetSqls())
             {
                 context.Writer.WritePropertyName("Sqls");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSqlsListValue in requestObject.Sqls)
                 {
-                        context.Writer.Write(requestObjectSqlsListValue);
+                        context.Writer.WriteStringValue(requestObjectSqlsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStatementName())
             {
                 context.Writer.WritePropertyName("StatementName");
-                context.Writer.Write(requestObject.StatementName);
+                context.Writer.WriteStringValue(requestObject.StatementName);
             }
 
             if(requestObject.IsSetWithEvent())
             {
                 context.Writer.WritePropertyName("WithEvent");
-                context.Writer.Write(requestObject.WithEvent.Value);
+                context.Writer.WriteBooleanValue(requestObject.WithEvent.Value);
             }
 
         }

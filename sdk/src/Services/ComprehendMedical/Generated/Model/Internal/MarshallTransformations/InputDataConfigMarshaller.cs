@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ComprehendMedical.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3Key())
             {
                 context.Writer.WritePropertyName("S3Key");
-                context.Writer.Write(requestObject.S3Key);
+                context.Writer.WriteStringValue(requestObject.S3Key);
             }
 
         }

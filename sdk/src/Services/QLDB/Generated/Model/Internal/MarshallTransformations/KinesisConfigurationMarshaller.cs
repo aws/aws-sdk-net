@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QLDB.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.QLDB.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAggregationEnabled())
             {
                 context.Writer.WritePropertyName("AggregationEnabled");
-                context.Writer.Write(requestObject.AggregationEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AggregationEnabled.Value);
             }
 
             if(requestObject.IsSetStreamArn())
             {
                 context.Writer.WritePropertyName("StreamArn");
-                context.Writer.Write(requestObject.StreamArn);
+                context.Writer.WriteStringValue(requestObject.StreamArn);
             }
 
         }

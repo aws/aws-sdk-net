@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
 {
@@ -51,66 +49,66 @@ namespace Amazon.VPCLattice.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetHealthCheckIntervalSeconds())
             {
                 context.Writer.WritePropertyName("healthCheckIntervalSeconds");
-                context.Writer.Write(requestObject.HealthCheckIntervalSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.HealthCheckIntervalSeconds.Value);
             }
 
             if(requestObject.IsSetHealthCheckTimeoutSeconds())
             {
                 context.Writer.WritePropertyName("healthCheckTimeoutSeconds");
-                context.Writer.Write(requestObject.HealthCheckTimeoutSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.HealthCheckTimeoutSeconds.Value);
             }
 
             if(requestObject.IsSetHealthyThresholdCount())
             {
                 context.Writer.WritePropertyName("healthyThresholdCount");
-                context.Writer.Write(requestObject.HealthyThresholdCount.Value);
+                context.Writer.WriteNumberValue(requestObject.HealthyThresholdCount.Value);
             }
 
             if(requestObject.IsSetMatcher())
             {
                 context.Writer.WritePropertyName("matcher");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MatcherMarshaller.Instance;
                 marshaller.Marshall(requestObject.Matcher, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPath())
             {
                 context.Writer.WritePropertyName("path");
-                context.Writer.Write(requestObject.Path);
+                context.Writer.WriteStringValue(requestObject.Path);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetProtocolVersion())
             {
                 context.Writer.WritePropertyName("protocolVersion");
-                context.Writer.Write(requestObject.ProtocolVersion);
+                context.Writer.WriteStringValue(requestObject.ProtocolVersion);
             }
 
             if(requestObject.IsSetUnhealthyThresholdCount())
             {
                 context.Writer.WritePropertyName("unhealthyThresholdCount");
-                context.Writer.Write(requestObject.UnhealthyThresholdCount.Value);
+                context.Writer.WriteNumberValue(requestObject.UnhealthyThresholdCount.Value);
             }
 
         }

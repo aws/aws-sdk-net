@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClusterMarkerConfiguration())
             {
                 context.Writer.WritePropertyName("ClusterMarkerConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ClusterMarkerConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ClusterMarkerConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeatmapConfiguration())
             {
                 context.Writer.WritePropertyName("HeatmapConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = GeospatialHeatmapConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.HeatmapConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectedPointStyle())
             {
                 context.Writer.WritePropertyName("SelectedPointStyle");
-                context.Writer.Write(requestObject.SelectedPointStyle);
+                context.Writer.WriteStringValue(requestObject.SelectedPointStyle);
             }
 
         }

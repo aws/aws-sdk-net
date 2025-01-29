@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMongoDbAtlasConfiguration())
             {
                 context.Writer.WritePropertyName("mongoDbAtlasConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MongoDbAtlasConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MongoDbAtlasConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOpensearchServerlessConfiguration())
             {
                 context.Writer.WritePropertyName("opensearchServerlessConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OpenSearchServerlessConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OpensearchServerlessConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPineconeConfiguration())
             {
                 context.Writer.WritePropertyName("pineconeConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PineconeConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PineconeConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRdsConfiguration())
             {
                 context.Writer.WritePropertyName("rdsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RdsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RdsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedisEnterpriseCloudConfiguration())
             {
                 context.Writer.WritePropertyName("redisEnterpriseCloudConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedisEnterpriseCloudConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedisEnterpriseCloudConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

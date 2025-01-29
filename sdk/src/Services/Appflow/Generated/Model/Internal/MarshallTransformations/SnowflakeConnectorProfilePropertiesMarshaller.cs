@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccountName())
             {
                 context.Writer.WritePropertyName("accountName");
-                context.Writer.Write(requestObject.AccountName);
+                context.Writer.WriteStringValue(requestObject.AccountName);
             }
 
             if(requestObject.IsSetBucketName())
             {
                 context.Writer.WritePropertyName("bucketName");
-                context.Writer.Write(requestObject.BucketName);
+                context.Writer.WriteStringValue(requestObject.BucketName);
             }
 
             if(requestObject.IsSetBucketPrefix())
             {
                 context.Writer.WritePropertyName("bucketPrefix");
-                context.Writer.Write(requestObject.BucketPrefix);
+                context.Writer.WriteStringValue(requestObject.BucketPrefix);
             }
 
             if(requestObject.IsSetPrivateLinkServiceName())
             {
                 context.Writer.WritePropertyName("privateLinkServiceName");
-                context.Writer.Write(requestObject.PrivateLinkServiceName);
+                context.Writer.WriteStringValue(requestObject.PrivateLinkServiceName);
             }
 
             if(requestObject.IsSetRegion())
             {
                 context.Writer.WritePropertyName("region");
-                context.Writer.Write(requestObject.Region);
+                context.Writer.WriteStringValue(requestObject.Region);
             }
 
             if(requestObject.IsSetStage())
             {
                 context.Writer.WritePropertyName("stage");
-                context.Writer.Write(requestObject.Stage);
+                context.Writer.WriteStringValue(requestObject.Stage);
             }
 
             if(requestObject.IsSetWarehouse())
             {
                 context.Writer.WritePropertyName("warehouse");
-                context.Writer.Write(requestObject.Warehouse);
+                context.Writer.WriteStringValue(requestObject.Warehouse);
             }
 
         }

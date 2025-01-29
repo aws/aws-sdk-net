@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PackedPolicyTooLargeException operation
     /// </summary>  
-    public class PackedPolicyTooLargeExceptionUnmarshaller : IErrorResponseUnmarshaller<PackedPolicyTooLargeException, XmlUnmarshallerContext>
+    public class PackedPolicyTooLargeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PackedPolicyTooLargeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

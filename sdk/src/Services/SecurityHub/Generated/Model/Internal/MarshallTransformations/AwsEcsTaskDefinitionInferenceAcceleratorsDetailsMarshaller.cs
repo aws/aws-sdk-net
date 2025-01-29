@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeviceName())
             {
                 context.Writer.WritePropertyName("DeviceName");
-                context.Writer.Write(requestObject.DeviceName);
+                context.Writer.WriteStringValue(requestObject.DeviceName);
             }
 
             if(requestObject.IsSetDeviceType())
             {
                 context.Writer.WritePropertyName("DeviceType");
-                context.Writer.Write(requestObject.DeviceType);
+                context.Writer.WriteStringValue(requestObject.DeviceType);
             }
 
         }

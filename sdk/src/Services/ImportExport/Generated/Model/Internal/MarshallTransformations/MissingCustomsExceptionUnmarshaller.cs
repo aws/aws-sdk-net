@@ -35,7 +35,7 @@ namespace Amazon.ImportExport.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MissingCustomsException operation
     /// </summary>  
-    public class MissingCustomsExceptionUnmarshaller : IErrorResponseUnmarshaller<MissingCustomsException, XmlUnmarshallerContext>
+    public class MissingCustomsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MissingCustomsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

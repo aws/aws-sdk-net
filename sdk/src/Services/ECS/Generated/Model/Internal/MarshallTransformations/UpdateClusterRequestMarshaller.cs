@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -63,63 +66,68 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCluster())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCluster())
-                    {
-                        context.Writer.WritePropertyName("cluster");
-                        context.Writer.Write(publicRequest.Cluster);
-                    }
-
-                    if(publicRequest.IsSetConfiguration())
-                    {
-                        context.Writer.WritePropertyName("configuration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ClusterConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Configuration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetServiceConnectDefaults())
-                    {
-                        context.Writer.WritePropertyName("serviceConnectDefaults");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ClusterServiceConnectDefaultsRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ServiceConnectDefaults, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSettings())
-                    {
-                        context.Writer.WritePropertyName("settings");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSettingsListValue in publicRequest.Settings)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ClusterSettingMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSettingsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("cluster");
+                context.Writer.WriteStringValue(publicRequest.Cluster);
             }
+
+            if(publicRequest.IsSetConfiguration())
+            {
+                context.Writer.WritePropertyName("configuration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Configuration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetServiceConnectDefaults())
+            {
+                context.Writer.WritePropertyName("serviceConnectDefaults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ClusterServiceConnectDefaultsRequestMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ServiceConnectDefaults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSettings())
+            {
+                context.Writer.WritePropertyName("settings");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSettingsListValue in publicRequest.Settings)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ClusterSettingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSettingsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

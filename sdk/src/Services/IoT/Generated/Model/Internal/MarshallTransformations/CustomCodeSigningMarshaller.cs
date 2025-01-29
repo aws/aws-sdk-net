@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateChain())
             {
                 context.Writer.WritePropertyName("certificateChain");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodeSigningCertificateChainMarshaller.Instance;
                 marshaller.Marshall(requestObject.CertificateChain, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHashAlgorithm())
             {
                 context.Writer.WritePropertyName("hashAlgorithm");
-                context.Writer.Write(requestObject.HashAlgorithm);
+                context.Writer.WriteStringValue(requestObject.HashAlgorithm);
             }
 
             if(requestObject.IsSetSignature())
             {
                 context.Writer.WritePropertyName("signature");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodeSigningSignatureMarshaller.Instance;
                 marshaller.Marshall(requestObject.Signature, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSignatureAlgorithm())
             {
                 context.Writer.WritePropertyName("signatureAlgorithm");
-                context.Writer.Write(requestObject.SignatureAlgorithm);
+                context.Writer.WriteStringValue(requestObject.SignatureAlgorithm);
             }
 
         }

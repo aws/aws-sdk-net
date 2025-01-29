@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FMS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RouteHasOutOfScopeEndpointViolation Object
     /// </summary>  
-    public class RouteHasOutOfScopeEndpointViolationUnmarshaller : IUnmarshaller<RouteHasOutOfScopeEndpointViolation, XmlUnmarshallerContext>, IUnmarshaller<RouteHasOutOfScopeEndpointViolation, JsonUnmarshallerContext>
+    public class RouteHasOutOfScopeEndpointViolationUnmarshaller : IJsonUnmarshaller<RouteHasOutOfScopeEndpointViolation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RouteHasOutOfScopeEndpointViolation IUnmarshaller<RouteHasOutOfScopeEndpointViolation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RouteHasOutOfScopeEndpointViolation Unmarshall(JsonUnmarshallerContext context)
+        public RouteHasOutOfScopeEndpointViolation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RouteHasOutOfScopeEndpointViolation unmarshalledObject = new RouteHasOutOfScopeEndpointViolation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CurrentFirewallSubnetRouteTable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentFirewallSubnetRouteTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentFirewallSubnetRouteTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CurrentInternetGatewayRouteTable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentInternetGatewayRouteTable = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentInternetGatewayRouteTable = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirewallSubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FirewallSubnetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FirewallSubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FirewallSubnetRoutes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
-                    unmarshalledObject.FirewallSubnetRoutes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
+                    unmarshalledObject.FirewallSubnetRoutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InternetGatewayId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InternetGatewayId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InternetGatewayId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InternetGatewayRoutes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
-                    unmarshalledObject.InternetGatewayRoutes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
+                    unmarshalledObject.InternetGatewayRoutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RouteTableId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RouteTableId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubnetAvailabilityZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubnetAvailabilityZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubnetAvailabilityZoneId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetAvailabilityZoneId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubnetAvailabilityZoneId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubnetId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ViolatingRoutes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
-                    unmarshalledObject.ViolatingRoutes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Route, RouteUnmarshaller>(RouteUnmarshaller.Instance);
+                    unmarshalledObject.ViolatingRoutes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VpcId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

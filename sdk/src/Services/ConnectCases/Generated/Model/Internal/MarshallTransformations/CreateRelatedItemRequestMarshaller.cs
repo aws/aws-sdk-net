@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
 {
@@ -67,47 +70,52 @@ namespace Amazon.ConnectCases.Model.Internal.MarshallTransformations
                 throw new AmazonConnectCasesException("Request object does not have required field DomainId set");
             request.AddPathResource("{domainId}", StringUtils.FromString(publicRequest.DomainId));
             request.ResourcePath = "/domains/{domainId}/cases/{caseId}/related-items/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetContent())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetContent())
-                    {
-                        context.Writer.WritePropertyName("content");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("content");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = RelatedItemInputContentMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Content, context);
+                var marshaller = RelatedItemInputContentMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Content, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetPerformedBy())
-                    {
-                        context.Writer.WritePropertyName("performedBy");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UserUnionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.PerformedBy, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetType())
-                    {
-                        context.Writer.WritePropertyName("type");
-                        context.Writer.Write(publicRequest.Type);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetPerformedBy())
+            {
+                context.Writer.WritePropertyName("performedBy");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UserUnionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.PerformedBy, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetType())
+            {
+                context.Writer.WritePropertyName("type");
+                context.Writer.WriteStringValue(publicRequest.Type);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

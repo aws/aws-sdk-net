@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBucketOwnerAccountId())
             {
                 context.Writer.WritePropertyName("bucketOwnerAccountId");
-                context.Writer.Write(requestObject.BucketOwnerAccountId);
+                context.Writer.WriteStringValue(requestObject.BucketOwnerAccountId);
             }
 
             if(requestObject.IsSetUri())
             {
                 context.Writer.WritePropertyName("uri");
-                context.Writer.Write(requestObject.Uri);
+                context.Writer.WriteStringValue(requestObject.Uri);
             }
 
         }

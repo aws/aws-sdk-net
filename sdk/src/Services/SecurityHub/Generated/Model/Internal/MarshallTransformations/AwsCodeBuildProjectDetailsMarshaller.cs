@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArtifacts())
             {
                 context.Writer.WritePropertyName("Artifacts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArtifactsListValue in requestObject.Artifacts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCodeBuildProjectArtifactsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectArtifactsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEncryptionKey())
             {
                 context.Writer.WritePropertyName("EncryptionKey");
-                context.Writer.Write(requestObject.EncryptionKey);
+                context.Writer.WriteStringValue(requestObject.EncryptionKey);
             }
 
             if(requestObject.IsSetEnvironment())
             {
                 context.Writer.WritePropertyName("Environment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCodeBuildProjectEnvironmentMarshaller.Instance;
                 marshaller.Marshall(requestObject.Environment, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLogsConfig())
             {
                 context.Writer.WritePropertyName("LogsConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCodeBuildProjectLogsConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogsConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSecondaryArtifacts())
             {
                 context.Writer.WritePropertyName("SecondaryArtifacts");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecondaryArtifactsListValue in requestObject.SecondaryArtifacts)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCodeBuildProjectArtifactsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectSecondaryArtifactsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetServiceRole())
             {
                 context.Writer.WritePropertyName("ServiceRole");
-                context.Writer.Write(requestObject.ServiceRole);
+                context.Writer.WriteStringValue(requestObject.ServiceRole);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCodeBuildProjectSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.Source, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVpcConfig())
             {
                 context.Writer.WritePropertyName("VpcConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCodeBuildProjectVpcConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

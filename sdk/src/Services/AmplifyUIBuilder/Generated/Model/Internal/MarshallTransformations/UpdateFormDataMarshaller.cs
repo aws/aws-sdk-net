@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,96 +49,96 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCta())
             {
                 context.Writer.WritePropertyName("cta");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FormCTAMarshaller.Instance;
                 marshaller.Marshall(requestObject.Cta, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FormDataTypeConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFields())
             {
                 context.Writer.WritePropertyName("fields");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectFieldsKvp in requestObject.Fields)
                 {
                     context.Writer.WritePropertyName(requestObjectFieldsKvp.Key);
                     var requestObjectFieldsValue = requestObjectFieldsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FieldConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectFieldsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFormActionType())
             {
                 context.Writer.WritePropertyName("formActionType");
-                context.Writer.Write(requestObject.FormActionType);
+                context.Writer.WriteStringValue(requestObject.FormActionType);
             }
 
             if(requestObject.IsSetLabelDecorator())
             {
                 context.Writer.WritePropertyName("labelDecorator");
-                context.Writer.Write(requestObject.LabelDecorator);
+                context.Writer.WriteStringValue(requestObject.LabelDecorator);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetSchemaVersion())
             {
                 context.Writer.WritePropertyName("schemaVersion");
-                context.Writer.Write(requestObject.SchemaVersion);
+                context.Writer.WriteStringValue(requestObject.SchemaVersion);
             }
 
             if(requestObject.IsSetSectionalElements())
             {
                 context.Writer.WritePropertyName("sectionalElements");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSectionalElementsKvp in requestObject.SectionalElements)
                 {
                     context.Writer.WritePropertyName(requestObjectSectionalElementsKvp.Key);
                     var requestObjectSectionalElementsValue = requestObjectSectionalElementsKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = SectionalElementMarshaller.Instance;
                     marshaller.Marshall(requestObjectSectionalElementsValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStyle())
             {
                 context.Writer.WritePropertyName("style");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FormStyleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Style, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

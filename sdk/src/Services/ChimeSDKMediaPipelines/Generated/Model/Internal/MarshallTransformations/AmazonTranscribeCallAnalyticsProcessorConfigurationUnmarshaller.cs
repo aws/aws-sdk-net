@@ -29,119 +29,109 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AmazonTranscribeCallAnalyticsProcessorConfiguration Object
     /// </summary>  
-    public class AmazonTranscribeCallAnalyticsProcessorConfigurationUnmarshaller : IUnmarshaller<AmazonTranscribeCallAnalyticsProcessorConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AmazonTranscribeCallAnalyticsProcessorConfiguration, JsonUnmarshallerContext>
+    public class AmazonTranscribeCallAnalyticsProcessorConfigurationUnmarshaller : IJsonUnmarshaller<AmazonTranscribeCallAnalyticsProcessorConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AmazonTranscribeCallAnalyticsProcessorConfiguration IUnmarshaller<AmazonTranscribeCallAnalyticsProcessorConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AmazonTranscribeCallAnalyticsProcessorConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public AmazonTranscribeCallAnalyticsProcessorConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AmazonTranscribeCallAnalyticsProcessorConfiguration unmarshalledObject = new AmazonTranscribeCallAnalyticsProcessorConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CallAnalyticsStreamCategories", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.CallAnalyticsStreamCategories = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.CallAnalyticsStreamCategories = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContentIdentificationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentIdentificationType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentIdentificationType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ContentRedactionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ContentRedactionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ContentRedactionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnablePartialResultsStabilization", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.EnablePartialResultsStabilization = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnablePartialResultsStabilization = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FilterPartialResults", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.FilterPartialResults = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FilterPartialResults = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LanguageCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LanguageModelName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LanguageModelName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LanguageModelName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PartialResultsStability", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PartialResultsStability = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PartialResultsStability = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PiiEntityTypes", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PiiEntityTypes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PiiEntityTypes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostCallAnalyticsSettings", targetDepth))
                 {
                     var unmarshaller = PostCallAnalyticsSettingsUnmarshaller.Instance;
-                    unmarshalledObject.PostCallAnalyticsSettings = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostCallAnalyticsSettings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VocabularyFilterMethod", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VocabularyFilterMethod = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VocabularyFilterName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VocabularyFilterName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VocabularyName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VocabularyName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMetricName())
             {
                 context.Writer.WritePropertyName("metricName");
-                context.Writer.Write(requestObject.MetricName);
+                context.Writer.WriteStringValue(requestObject.MetricName);
             }
 
             if(requestObject.IsSetRecipeList())
             {
                 context.Writer.WritePropertyName("recipeList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRecipeListListValue in requestObject.RecipeList)
                 {
-                        context.Writer.Write(requestObjectRecipeListListValue);
+                        context.Writer.WriteStringValue(requestObjectRecipeListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

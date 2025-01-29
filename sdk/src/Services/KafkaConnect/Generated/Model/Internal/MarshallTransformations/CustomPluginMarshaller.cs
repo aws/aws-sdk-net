@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomPluginArn())
             {
                 context.Writer.WritePropertyName("customPluginArn");
-                context.Writer.Write(requestObject.CustomPluginArn);
+                context.Writer.WriteStringValue(requestObject.CustomPluginArn);
             }
 
             if(requestObject.IsSetRevision())
             {
                 context.Writer.WritePropertyName("revision");
-                context.Writer.Write(requestObject.Revision.Value);
+                context.Writer.WriteNumberValue(requestObject.Revision.Value);
             }
 
         }

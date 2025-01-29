@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCloudwatchLogGroup())
             {
                 context.Writer.WritePropertyName("CloudwatchLogGroup");
-                context.Writer.Write(requestObject.CloudwatchLogGroup);
+                context.Writer.WriteStringValue(requestObject.CloudwatchLogGroup);
             }
 
             if(requestObject.IsSetCloudwatchLogStream())
             {
                 context.Writer.WritePropertyName("CloudwatchLogStream");
-                context.Writer.Write(requestObject.CloudwatchLogStream);
+                context.Writer.WriteStringValue(requestObject.CloudwatchLogStream);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
         }

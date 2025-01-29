@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,63 +49,63 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomDeliveryConfiguration())
             {
                 context.Writer.WritePropertyName("CustomDeliveryConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomDeliveryConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomDeliveryConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMessageConfiguration())
             {
                 context.Writer.WritePropertyName("MessageConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MessageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MessageConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchedule())
             {
                 context.Writer.WritePropertyName("Schedule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Schedule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSizePercent())
             {
                 context.Writer.WritePropertyName("SizePercent");
-                context.Writer.Write(requestObject.SizePercent.Value);
+                context.Writer.WriteNumberValue(requestObject.SizePercent.Value);
             }
 
             if(requestObject.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("TemplateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTreatmentDescription())
             {
                 context.Writer.WritePropertyName("TreatmentDescription");
-                context.Writer.Write(requestObject.TreatmentDescription);
+                context.Writer.WriteStringValue(requestObject.TreatmentDescription);
             }
 
             if(requestObject.IsSetTreatmentName())
             {
                 context.Writer.WritePropertyName("TreatmentName");
-                context.Writer.Write(requestObject.TreatmentName);
+                context.Writer.WriteStringValue(requestObject.TreatmentName);
             }
 
         }

@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DomainInfos Object
     /// </summary>  
-    public class DomainInfosUnmarshaller : IUnmarshaller<DomainInfos, XmlUnmarshallerContext>, IUnmarshaller<DomainInfos, JsonUnmarshallerContext>
+    public class DomainInfosUnmarshaller : IJsonUnmarshaller<DomainInfos, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DomainInfos IUnmarshaller<DomainInfos, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DomainInfos Unmarshall(JsonUnmarshallerContext context)
+        public DomainInfos Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DomainInfos unmarshalledObject = new DomainInfos();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("domainInfos", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DomainInfo, DomainInfoUnmarshaller>(DomainInfoUnmarshaller.Instance);
-                    unmarshalledObject.Infos = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DomainInfo, DomainInfoUnmarshaller>(DomainInfoUnmarshaller.Instance);
+                    unmarshalledObject.Infos = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("nextPageToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NextPageToken = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

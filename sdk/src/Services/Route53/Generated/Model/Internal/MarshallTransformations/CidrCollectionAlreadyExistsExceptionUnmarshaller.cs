@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CidrCollectionAlreadyExistsException operation
     /// </summary>  
-    public class CidrCollectionAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<CidrCollectionAlreadyExistsException, XmlUnmarshallerContext>
+    public class CidrCollectionAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CidrCollectionAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

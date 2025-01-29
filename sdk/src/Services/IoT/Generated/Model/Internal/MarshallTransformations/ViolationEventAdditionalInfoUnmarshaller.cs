@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ViolationEventAdditionalInfo Object
     /// </summary>  
-    public class ViolationEventAdditionalInfoUnmarshaller : IUnmarshaller<ViolationEventAdditionalInfo, XmlUnmarshallerContext>, IUnmarshaller<ViolationEventAdditionalInfo, JsonUnmarshallerContext>
+    public class ViolationEventAdditionalInfoUnmarshaller : IJsonUnmarshaller<ViolationEventAdditionalInfo, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ViolationEventAdditionalInfo IUnmarshaller<ViolationEventAdditionalInfo, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ViolationEventAdditionalInfo Unmarshall(JsonUnmarshallerContext context)
+        public ViolationEventAdditionalInfo Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ViolationEventAdditionalInfo unmarshalledObject = new ViolationEventAdditionalInfo();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("confidenceLevel", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConfidenceLevel = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfidenceLevel = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowPublicOverrides())
             {
                 context.Writer.WritePropertyName("allowPublicOverrides");
-                context.Writer.Write(requestObject.AllowPublicOverrides.Value);
+                context.Writer.WriteBooleanValue(requestObject.AllowPublicOverrides.Value);
             }
 
             if(requestObject.IsSetGetObject())
             {
                 context.Writer.WritePropertyName("getObject");
-                context.Writer.Write(requestObject.GetObject);
+                context.Writer.WriteStringValue(requestObject.GetObject);
             }
 
         }

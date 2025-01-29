@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomerQualityMetrics Object
     /// </summary>  
-    public class CustomerQualityMetricsUnmarshaller : IUnmarshaller<CustomerQualityMetrics, XmlUnmarshallerContext>, IUnmarshaller<CustomerQualityMetrics, JsonUnmarshallerContext>
+    public class CustomerQualityMetricsUnmarshaller : IJsonUnmarshaller<CustomerQualityMetrics, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomerQualityMetrics IUnmarshaller<CustomerQualityMetrics, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomerQualityMetrics Unmarshall(JsonUnmarshallerContext context)
+        public CustomerQualityMetrics Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomerQualityMetrics unmarshalledObject = new CustomerQualityMetrics();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Audio", targetDepth))
                 {
                     var unmarshaller = AudioQualityMetricsInfoUnmarshaller.Instance;
-                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Audio = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

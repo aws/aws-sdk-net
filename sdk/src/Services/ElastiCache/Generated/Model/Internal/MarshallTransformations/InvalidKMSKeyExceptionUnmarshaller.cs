@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidKMSKeyException operation
     /// </summary>  
-    public class InvalidKMSKeyExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidKMSKeyException, XmlUnmarshallerContext>
+    public class InvalidKMSKeyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidKMSKeyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

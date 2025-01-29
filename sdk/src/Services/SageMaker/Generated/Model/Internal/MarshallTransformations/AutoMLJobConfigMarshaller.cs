@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,51 +49,51 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCandidateGenerationConfig())
             {
                 context.Writer.WritePropertyName("CandidateGenerationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLCandidateGenerationConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.CandidateGenerationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCompletionCriteria())
             {
                 context.Writer.WritePropertyName("CompletionCriteria");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLJobCompletionCriteriaMarshaller.Instance;
                 marshaller.Marshall(requestObject.CompletionCriteria, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDataSplitConfig())
             {
                 context.Writer.WritePropertyName("DataSplitConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLDataSplitConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSplitConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");
-                context.Writer.Write(requestObject.Mode);
+                context.Writer.WriteStringValue(requestObject.Mode);
             }
 
             if(requestObject.IsSetSecurityConfig())
             {
                 context.Writer.WritePropertyName("SecurityConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoMLSecurityConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecurityConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

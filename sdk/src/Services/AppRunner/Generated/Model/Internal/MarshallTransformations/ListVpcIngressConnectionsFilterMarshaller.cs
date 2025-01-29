@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetServiceArn())
             {
                 context.Writer.WritePropertyName("ServiceArn");
-                context.Writer.Write(requestObject.ServiceArn);
+                context.Writer.WriteStringValue(requestObject.ServiceArn);
             }
 
             if(requestObject.IsSetVpcEndpointId())
             {
                 context.Writer.WritePropertyName("VpcEndpointId");
-                context.Writer.Write(requestObject.VpcEndpointId);
+                context.Writer.WriteStringValue(requestObject.VpcEndpointId);
             }
 
         }

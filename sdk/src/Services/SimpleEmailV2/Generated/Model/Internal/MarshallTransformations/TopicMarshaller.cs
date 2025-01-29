@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SimpleEmailV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultSubscriptionStatus())
             {
                 context.Writer.WritePropertyName("DefaultSubscriptionStatus");
-                context.Writer.Write(requestObject.DefaultSubscriptionStatus);
+                context.Writer.WriteStringValue(requestObject.DefaultSubscriptionStatus);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("DisplayName");
-                context.Writer.Write(requestObject.DisplayName);
+                context.Writer.WriteStringValue(requestObject.DisplayName);
             }
 
             if(requestObject.IsSetTopicName())
             {
                 context.Writer.WritePropertyName("TopicName");
-                context.Writer.Write(requestObject.TopicName);
+                context.Writer.WriteStringValue(requestObject.TopicName);
             }
 
         }

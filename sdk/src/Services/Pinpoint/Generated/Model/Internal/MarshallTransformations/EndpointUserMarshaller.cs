@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetUserAttributes())
             {
                 context.Writer.WritePropertyName("UserAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectUserAttributesKvp in requestObject.UserAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectUserAttributesKvp.Key);
                     var requestObjectUserAttributesValue = requestObjectUserAttributesKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectUserAttributesValueListValue in requestObjectUserAttributesValue)
                     {
-                            context.Writer.Write(requestObjectUserAttributesValueListValue);
+                            context.Writer.WriteStringValue(requestObjectUserAttributesValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserId())
             {
                 context.Writer.WritePropertyName("UserId");
-                context.Writer.Write(requestObject.UserId);
+                context.Writer.WriteStringValue(requestObject.UserId);
             }
 
         }

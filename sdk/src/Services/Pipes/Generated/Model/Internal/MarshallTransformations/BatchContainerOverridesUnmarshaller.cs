@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchContainerOverrides Object
     /// </summary>  
-    public class BatchContainerOverridesUnmarshaller : IUnmarshaller<BatchContainerOverrides, XmlUnmarshallerContext>, IUnmarshaller<BatchContainerOverrides, JsonUnmarshallerContext>
+    public class BatchContainerOverridesUnmarshaller : IJsonUnmarshaller<BatchContainerOverrides, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchContainerOverrides IUnmarshaller<BatchContainerOverrides, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchContainerOverrides Unmarshall(JsonUnmarshallerContext context)
+        public BatchContainerOverrides Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchContainerOverrides unmarshalledObject = new BatchContainerOverrides();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Command", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Command = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Command = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Environment", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchEnvironmentVariable, BatchEnvironmentVariableUnmarshaller>(BatchEnvironmentVariableUnmarshaller.Instance);
-                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BatchEnvironmentVariable, BatchEnvironmentVariableUnmarshaller>(BatchEnvironmentVariableUnmarshaller.Instance);
+                    unmarshalledObject.Environment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ResourceRequirements", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchResourceRequirement, BatchResourceRequirementUnmarshaller>(BatchResourceRequirementUnmarshaller.Instance);
-                    unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<BatchResourceRequirement, BatchResourceRequirementUnmarshaller>(BatchResourceRequirementUnmarshaller.Instance);
+                    unmarshalledObject.ResourceRequirements = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

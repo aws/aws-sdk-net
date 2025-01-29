@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BillEstimateCommitmentSummary Object
     /// </summary>  
-    public class BillEstimateCommitmentSummaryUnmarshaller : IUnmarshaller<BillEstimateCommitmentSummary, XmlUnmarshallerContext>, IUnmarshaller<BillEstimateCommitmentSummary, JsonUnmarshallerContext>
+    public class BillEstimateCommitmentSummaryUnmarshaller : IJsonUnmarshaller<BillEstimateCommitmentSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BillEstimateCommitmentSummary IUnmarshaller<BillEstimateCommitmentSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BillEstimateCommitmentSummary Unmarshall(JsonUnmarshallerContext context)
+        public BillEstimateCommitmentSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BillEstimateCommitmentSummary unmarshalledObject = new BillEstimateCommitmentSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("monthlyPayment", targetDepth))
                 {
                     var unmarshaller = CostAmountUnmarshaller.Instance;
-                    unmarshalledObject.MonthlyPayment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MonthlyPayment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("offeringId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.OfferingId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OfferingId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("paymentOption", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PaymentOption = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("purchaseAgreementType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PurchaseAgreementType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PurchaseAgreementType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("termLength", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TermLength = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TermLength = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("upfrontPayment", targetDepth))
                 {
                     var unmarshaller = CostAmountUnmarshaller.Instance;
-                    unmarshalledObject.UpfrontPayment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UpfrontPayment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("usageAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UsageAccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UsageAccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnycastIpListSummary Object
     /// </summary>  
-    public class AnycastIpListSummaryUnmarshaller : IUnmarshaller<AnycastIpListSummary, XmlUnmarshallerContext>, IUnmarshaller<AnycastIpListSummary, JsonUnmarshallerContext>
+    public class AnycastIpListSummaryUnmarshaller : IXmlUnmarshaller<AnycastIpListSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnycastIpListSummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static AnycastIpListSummaryUnmarshaller _instance = new AnycastIpListSummaryUnmarshaller();        
 
         /// <summary>

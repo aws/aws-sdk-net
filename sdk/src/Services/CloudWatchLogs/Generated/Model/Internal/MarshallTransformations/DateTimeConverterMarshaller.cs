@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLocale())
             {
                 context.Writer.WritePropertyName("locale");
-                context.Writer.Write(requestObject.Locale);
+                context.Writer.WriteStringValue(requestObject.Locale);
             }
 
             if(requestObject.IsSetMatchPatterns())
             {
                 context.Writer.WritePropertyName("matchPatterns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMatchPatternsListValue in requestObject.MatchPatterns)
                 {
-                        context.Writer.Write(requestObjectMatchPatternsListValue);
+                        context.Writer.WriteStringValue(requestObjectMatchPatternsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetSourceTimezone())
             {
                 context.Writer.WritePropertyName("sourceTimezone");
-                context.Writer.Write(requestObject.SourceTimezone);
+                context.Writer.WriteStringValue(requestObject.SourceTimezone);
             }
 
             if(requestObject.IsSetTarget())
             {
                 context.Writer.WritePropertyName("target");
-                context.Writer.Write(requestObject.Target);
+                context.Writer.WriteStringValue(requestObject.Target);
             }
 
             if(requestObject.IsSetTargetFormat())
             {
                 context.Writer.WritePropertyName("targetFormat");
-                context.Writer.Write(requestObject.TargetFormat);
+                context.Writer.WriteStringValue(requestObject.TargetFormat);
             }
 
             if(requestObject.IsSetTargetTimezone())
             {
                 context.Writer.WritePropertyName("targetTimezone");
-                context.Writer.Write(requestObject.TargetTimezone);
+                context.Writer.WriteStringValue(requestObject.TargetTimezone);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioChannelPairs())
             {
                 context.Writer.WritePropertyName("audioChannelPairs");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioChannelPairsListValue in requestObject.AudioChannelPairs)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InputDeviceConfigurableAudioChannelPairConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectAudioChannelPairsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCodec())
             {
                 context.Writer.WritePropertyName("codec");
-                context.Writer.Write(requestObject.Codec);
+                context.Writer.WriteStringValue(requestObject.Codec);
             }
 
             if(requestObject.IsSetConfiguredInput())
             {
                 context.Writer.WritePropertyName("configuredInput");
-                context.Writer.Write(requestObject.ConfiguredInput);
+                context.Writer.WriteStringValue(requestObject.ConfiguredInput);
             }
 
             if(requestObject.IsSetLatencyMs())
             {
                 context.Writer.WritePropertyName("latencyMs");
-                context.Writer.Write(requestObject.LatencyMs.Value);
+                context.Writer.WriteNumberValue(requestObject.LatencyMs.Value);
             }
 
             if(requestObject.IsSetMaxBitrate())
             {
                 context.Writer.WritePropertyName("maxBitrate");
-                context.Writer.Write(requestObject.MaxBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxBitrate.Value);
             }
 
             if(requestObject.IsSetMediaconnectSettings())
             {
                 context.Writer.WritePropertyName("mediaconnectSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputDeviceMediaConnectConfigurableSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MediaconnectSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

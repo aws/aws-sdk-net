@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
             if(requestObject.IsSetETag())
             {
                 context.Writer.WritePropertyName("ETag");
-                context.Writer.Write(requestObject.ETag);
+                context.Writer.WriteStringValue(requestObject.ETag);
             }
 
             if(requestObject.IsSetPartitionValues())
             {
                 context.Writer.WritePropertyName("PartitionValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPartitionValuesListValue in requestObject.PartitionValues)
                 {
-                        context.Writer.Write(requestObjectPartitionValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectPartitionValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");
-                context.Writer.Write(requestObject.Size.Value);
+                context.Writer.WriteNumberValue(requestObject.Size.Value);
             }
 
             if(requestObject.IsSetUri())
             {
                 context.Writer.WritePropertyName("Uri");
-                context.Writer.Write(requestObject.Uri);
+                context.Writer.WriteStringValue(requestObject.Uri);
             }
 
         }

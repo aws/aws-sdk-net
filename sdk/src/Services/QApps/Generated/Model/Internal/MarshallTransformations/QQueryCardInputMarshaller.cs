@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.QApps.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeFilter())
             {
                 context.Writer.WritePropertyName("attributeFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AttributeFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.AttributeFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetOutputSource())
             {
                 context.Writer.WritePropertyName("outputSource");
-                context.Writer.Write(requestObject.OutputSource);
+                context.Writer.WriteStringValue(requestObject.OutputSource);
             }
 
             if(requestObject.IsSetPrompt())
             {
                 context.Writer.WritePropertyName("prompt");
-                context.Writer.Write(requestObject.Prompt);
+                context.Writer.WriteStringValue(requestObject.Prompt);
             }
 
             if(requestObject.IsSetTitle())
             {
                 context.Writer.WritePropertyName("title");
-                context.Writer.Write(requestObject.Title);
+                context.Writer.WriteStringValue(requestObject.Title);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

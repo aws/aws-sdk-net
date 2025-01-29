@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Message Object
     /// </summary>  
-    public class MessageUnmarshaller : IUnmarshaller<Message, XmlUnmarshallerContext>, IUnmarshaller<Message, JsonUnmarshallerContext>
+    public class MessageUnmarshaller : IJsonUnmarshaller<Message, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Message IUnmarshaller<Message, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Message Unmarshall(JsonUnmarshallerContext context)
+        public Message Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Message unmarshalledObject = new Message();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customPayload", targetDepth))
                 {
                     var unmarshaller = CustomPayloadUnmarshaller.Instance;
-                    unmarshalledObject.CustomPayload = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomPayload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imageResponseCard", targetDepth))
                 {
                     var unmarshaller = ImageResponseCardUnmarshaller.Instance;
-                    unmarshalledObject.ImageResponseCard = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageResponseCard = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("plainTextMessage", targetDepth))
                 {
                     var unmarshaller = PlainTextMessageUnmarshaller.Instance;
-                    unmarshalledObject.PlainTextMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PlainTextMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ssmlMessage", targetDepth))
                 {
                     var unmarshaller = SSMLMessageUnmarshaller.Instance;
-                    unmarshalledObject.SsmlMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SsmlMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

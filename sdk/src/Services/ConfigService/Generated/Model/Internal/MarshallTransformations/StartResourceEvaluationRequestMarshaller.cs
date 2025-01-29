@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -63,59 +66,64 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    if(publicRequest.IsSetEvaluationContext())
-                    {
-                        context.Writer.WritePropertyName("EvaluationContext");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EvaluationContextMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EvaluationContext, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetEvaluationMode())
-                    {
-                        context.Writer.WritePropertyName("EvaluationMode");
-                        context.Writer.Write(publicRequest.EvaluationMode);
-                    }
-
-                    if(publicRequest.IsSetEvaluationTimeout())
-                    {
-                        context.Writer.WritePropertyName("EvaluationTimeout");
-                        context.Writer.Write(publicRequest.EvaluationTimeout.Value);
-                    }
-
-                    if(publicRequest.IsSetResourceDetails())
-                    {
-                        context.Writer.WritePropertyName("ResourceDetails");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ResourceDetailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ResourceDetails, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
             }
+
+            if(publicRequest.IsSetEvaluationContext())
+            {
+                context.Writer.WritePropertyName("EvaluationContext");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EvaluationContextMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EvaluationContext, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetEvaluationMode())
+            {
+                context.Writer.WritePropertyName("EvaluationMode");
+                context.Writer.WriteStringValue(publicRequest.EvaluationMode);
+            }
+
+            if(publicRequest.IsSetEvaluationTimeout())
+            {
+                context.Writer.WritePropertyName("EvaluationTimeout");
+                context.Writer.WriteNumberValue(publicRequest.EvaluationTimeout.Value);
+            }
+
+            if(publicRequest.IsSetResourceDetails())
+            {
+                context.Writer.WritePropertyName("ResourceDetails");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ResourceDetailsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ResourceDetails, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

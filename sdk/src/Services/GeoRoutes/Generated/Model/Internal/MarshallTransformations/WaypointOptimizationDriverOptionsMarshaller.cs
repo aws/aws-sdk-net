@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
             if(requestObject.IsSetRestCycles())
             {
                 context.Writer.WritePropertyName("RestCycles");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaypointOptimizationRestCyclesMarshaller.Instance;
                 marshaller.Marshall(requestObject.RestCycles, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRestProfile())
             {
                 context.Writer.WritePropertyName("RestProfile");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = WaypointOptimizationRestProfileMarshaller.Instance;
                 marshaller.Marshall(requestObject.RestProfile, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTreatServiceTimeAs())
             {
                 context.Writer.WritePropertyName("TreatServiceTimeAs");
-                context.Writer.Write(requestObject.TreatServiceTimeAs);
+                context.Writer.WriteStringValue(requestObject.TreatServiceTimeAs);
             }
 
         }

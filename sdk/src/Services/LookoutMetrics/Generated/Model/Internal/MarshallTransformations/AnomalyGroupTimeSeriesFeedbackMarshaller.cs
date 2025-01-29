@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnomalyGroupId())
             {
                 context.Writer.WritePropertyName("AnomalyGroupId");
-                context.Writer.Write(requestObject.AnomalyGroupId);
+                context.Writer.WriteStringValue(requestObject.AnomalyGroupId);
             }
 
             if(requestObject.IsSetIsAnomaly())
             {
                 context.Writer.WritePropertyName("IsAnomaly");
-                context.Writer.Write(requestObject.IsAnomaly.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsAnomaly.Value);
             }
 
             if(requestObject.IsSetTimeSeriesId())
             {
                 context.Writer.WritePropertyName("TimeSeriesId");
-                context.Writer.Write(requestObject.TimeSeriesId);
+                context.Writer.WriteStringValue(requestObject.TimeSeriesId);
             }
 
         }

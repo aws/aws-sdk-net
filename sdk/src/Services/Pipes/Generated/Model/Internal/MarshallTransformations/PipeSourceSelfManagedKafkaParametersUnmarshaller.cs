@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pipes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PipeSourceSelfManagedKafkaParameters Object
     /// </summary>  
-    public class PipeSourceSelfManagedKafkaParametersUnmarshaller : IUnmarshaller<PipeSourceSelfManagedKafkaParameters, XmlUnmarshallerContext>, IUnmarshaller<PipeSourceSelfManagedKafkaParameters, JsonUnmarshallerContext>
+    public class PipeSourceSelfManagedKafkaParametersUnmarshaller : IJsonUnmarshaller<PipeSourceSelfManagedKafkaParameters, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PipeSourceSelfManagedKafkaParameters IUnmarshaller<PipeSourceSelfManagedKafkaParameters, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipeSourceSelfManagedKafkaParameters Unmarshall(JsonUnmarshallerContext context)
+        public PipeSourceSelfManagedKafkaParameters Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PipeSourceSelfManagedKafkaParameters unmarshalledObject = new PipeSourceSelfManagedKafkaParameters();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AdditionalBootstrapServers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.AdditionalBootstrapServers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalBootstrapServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BatchSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ConsumerGroupID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ConsumerGroupID = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConsumerGroupID = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Credentials", targetDepth))
                 {
                     var unmarshaller = SelfManagedKafkaAccessConfigurationCredentialsUnmarshaller.Instance;
-                    unmarshalledObject.Credentials = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Credentials = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MaximumBatchingWindowInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaximumBatchingWindowInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServerRootCaCertificate", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ServerRootCaCertificate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServerRootCaCertificate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartingPosition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartingPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TopicName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TopicName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Vpc", targetDepth))
                 {
                     var unmarshaller = SelfManagedKafkaAccessConfigurationVpcUnmarshaller.Instance;
-                    unmarshalledObject.Vpc = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Vpc = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

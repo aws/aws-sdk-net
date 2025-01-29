@@ -29,71 +29,61 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QApps.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CardInput Object
     /// </summary>  
-    public class CardInputUnmarshaller : IUnmarshaller<CardInput, XmlUnmarshallerContext>, IUnmarshaller<CardInput, JsonUnmarshallerContext>
+    public class CardInputUnmarshaller : IJsonUnmarshaller<CardInput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CardInput IUnmarshaller<CardInput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CardInput Unmarshall(JsonUnmarshallerContext context)
+        public CardInput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CardInput unmarshalledObject = new CardInput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("fileUpload", targetDepth))
                 {
                     var unmarshaller = FileUploadCardInputUnmarshaller.Instance;
-                    unmarshalledObject.FileUpload = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("formInput", targetDepth))
                 {
                     var unmarshaller = FormInputCardInputUnmarshaller.Instance;
-                    unmarshalledObject.FormInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FormInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("qPlugin", targetDepth))
                 {
                     var unmarshaller = QPluginCardInputUnmarshaller.Instance;
-                    unmarshalledObject.QPlugin = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QPlugin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("qQuery", targetDepth))
                 {
                     var unmarshaller = QQueryCardInputUnmarshaller.Instance;
-                    unmarshalledObject.QQuery = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QQuery = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("textInput", targetDepth))
                 {
                     var unmarshaller = TextInputCardInputUnmarshaller.Instance;
-                    unmarshalledObject.TextInput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextInput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

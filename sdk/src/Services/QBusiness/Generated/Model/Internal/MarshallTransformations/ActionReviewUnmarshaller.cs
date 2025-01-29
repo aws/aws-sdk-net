@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ActionReview Object
     /// </summary>  
-    public class ActionReviewUnmarshaller : IUnmarshaller<ActionReview, XmlUnmarshallerContext>, IUnmarshaller<ActionReview, JsonUnmarshallerContext>
+    public class ActionReviewUnmarshaller : IJsonUnmarshaller<ActionReview, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ActionReview IUnmarshaller<ActionReview, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionReview Unmarshall(JsonUnmarshallerContext context)
+        public ActionReview Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ActionReview unmarshalledObject = new ActionReview();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("payload", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, ActionReviewPayloadField, StringUnmarshaller, ActionReviewPayloadFieldUnmarshaller>(StringUnmarshaller.Instance, ActionReviewPayloadFieldUnmarshaller.Instance);
-                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, ActionReviewPayloadField, StringUnmarshaller, ActionReviewPayloadFieldUnmarshaller>(StringUnmarshaller.Instance, ActionReviewPayloadFieldUnmarshaller.Instance);
+                    unmarshalledObject.Payload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("payloadFieldNameSeparator", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PayloadFieldNameSeparator = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PayloadFieldNameSeparator = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pluginId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PluginId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PluginId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pluginType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PluginType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PluginType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

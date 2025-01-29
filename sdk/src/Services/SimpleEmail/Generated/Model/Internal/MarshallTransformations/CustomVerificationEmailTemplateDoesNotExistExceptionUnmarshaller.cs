@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomVerificationEmailTemplateDoesNotExistException operation
     /// </summary>  
-    public class CustomVerificationEmailTemplateDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<CustomVerificationEmailTemplateDoesNotExistException, XmlUnmarshallerContext>
+    public class CustomVerificationEmailTemplateDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CustomVerificationEmailTemplateDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -29,113 +29,103 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SimulationJobRequest Object
     /// </summary>  
-    public class SimulationJobRequestUnmarshaller : IUnmarshaller<SimulationJobRequest, XmlUnmarshallerContext>, IUnmarshaller<SimulationJobRequest, JsonUnmarshallerContext>
+    public class SimulationJobRequestUnmarshaller : IJsonUnmarshaller<SimulationJobRequest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SimulationJobRequest IUnmarshaller<SimulationJobRequest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SimulationJobRequest Unmarshall(JsonUnmarshallerContext context)
+        public SimulationJobRequest Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SimulationJobRequest unmarshalledObject = new SimulationJobRequest();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("compute", targetDepth))
                 {
                     var unmarshaller = ComputeUnmarshaller.Instance;
-                    unmarshalledObject.Compute = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Compute = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dataSources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<DataSourceConfig, DataSourceConfigUnmarshaller>(DataSourceConfigUnmarshaller.Instance);
-                    unmarshalledObject.DataSources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<DataSourceConfig, DataSourceConfigUnmarshaller>(DataSourceConfigUnmarshaller.Instance);
+                    unmarshalledObject.DataSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("iamRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IamRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IamRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("loggingConfig", targetDepth))
                 {
                     var unmarshaller = LoggingConfigUnmarshaller.Instance;
-                    unmarshalledObject.LoggingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoggingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("maxJobDurationInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MaxJobDurationInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MaxJobDurationInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("outputLocation", targetDepth))
                 {
                     var unmarshaller = OutputLocationUnmarshaller.Instance;
-                    unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OutputLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("robotApplications", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<RobotApplicationConfig, RobotApplicationConfigUnmarshaller>(RobotApplicationConfigUnmarshaller.Instance);
-                    unmarshalledObject.RobotApplications = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<RobotApplicationConfig, RobotApplicationConfigUnmarshaller>(RobotApplicationConfigUnmarshaller.Instance);
+                    unmarshalledObject.RobotApplications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("simulationApplications", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SimulationApplicationConfig, SimulationApplicationConfigUnmarshaller>(SimulationApplicationConfigUnmarshaller.Instance);
-                    unmarshalledObject.SimulationApplications = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<SimulationApplicationConfig, SimulationApplicationConfigUnmarshaller>(SimulationApplicationConfigUnmarshaller.Instance);
+                    unmarshalledObject.SimulationApplications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonDictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("useDefaultApplications", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.UseDefaultApplications = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UseDefaultApplications = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vpcConfig", targetDepth))
                 {
                     var unmarshaller = VPCConfigUnmarshaller.Instance;
-                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VpcConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

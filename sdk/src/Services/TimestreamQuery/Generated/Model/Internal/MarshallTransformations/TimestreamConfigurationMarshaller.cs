@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.TimestreamQuery.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDimensionMappings())
             {
                 context.Writer.WritePropertyName("DimensionMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDimensionMappingsListValue in requestObject.DimensionMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DimensionMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectDimensionMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMeasureNameColumn())
             {
                 context.Writer.WritePropertyName("MeasureNameColumn");
-                context.Writer.Write(requestObject.MeasureNameColumn);
+                context.Writer.WriteStringValue(requestObject.MeasureNameColumn);
             }
 
             if(requestObject.IsSetMixedMeasureMappings())
             {
                 context.Writer.WritePropertyName("MixedMeasureMappings");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMixedMeasureMappingsListValue in requestObject.MixedMeasureMappings)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MixedMeasureMappingMarshaller.Instance;
                     marshaller.Marshall(requestObjectMixedMeasureMappingsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMultiMeasureMappings())
             {
                 context.Writer.WritePropertyName("MultiMeasureMappings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiMeasureMappingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MultiMeasureMappings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("TableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
             if(requestObject.IsSetTimeColumn())
             {
                 context.Writer.WritePropertyName("TimeColumn");
-                context.Writer.Write(requestObject.TimeColumn);
+                context.Writer.WriteStringValue(requestObject.TimeColumn);
             }
 
         }

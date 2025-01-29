@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Chime.Model.Internal.MarshallTransformations
 {
@@ -64,76 +67,81 @@ namespace Amazon.Chime.Model.Internal.MarshallTransformations
                 throw new AmazonChimeException("Request object does not have required field VoiceConnectorId set");
             request.AddPathResource("{voiceConnectorId}", StringUtils.FromString(publicRequest.VoiceConnectorId));
             request.ResourcePath = "/voice-connectors/{voiceConnectorId}/proxy-sessions";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCapabilities())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("Capabilities");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCapabilities())
-                    {
-                        context.Writer.WritePropertyName("Capabilities");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestCapabilitiesListValue in publicRequest.Capabilities)
-                        {
-                                context.Writer.Write(publicRequestCapabilitiesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetExpiryMinutes())
-                    {
-                        context.Writer.WritePropertyName("ExpiryMinutes");
-                        context.Writer.Write(publicRequest.ExpiryMinutes.Value);
-                    }
-
-                    if(publicRequest.IsSetGeoMatchLevel())
-                    {
-                        context.Writer.WritePropertyName("GeoMatchLevel");
-                        context.Writer.Write(publicRequest.GeoMatchLevel);
-                    }
-
-                    if(publicRequest.IsSetGeoMatchParams())
-                    {
-                        context.Writer.WritePropertyName("GeoMatchParams");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = GeoMatchParamsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GeoMatchParams, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNumberSelectionBehavior())
-                    {
-                        context.Writer.WritePropertyName("NumberSelectionBehavior");
-                        context.Writer.Write(publicRequest.NumberSelectionBehavior);
-                    }
-
-                    if(publicRequest.IsSetParticipantPhoneNumbers())
-                    {
-                        context.Writer.WritePropertyName("ParticipantPhoneNumbers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestParticipantPhoneNumbersListValue in publicRequest.ParticipantPhoneNumbers)
-                        {
-                                context.Writer.Write(publicRequestParticipantPhoneNumbersListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestCapabilitiesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetExpiryMinutes())
+            {
+                context.Writer.WritePropertyName("ExpiryMinutes");
+                context.Writer.WriteNumberValue(publicRequest.ExpiryMinutes.Value);
+            }
+
+            if(publicRequest.IsSetGeoMatchLevel())
+            {
+                context.Writer.WritePropertyName("GeoMatchLevel");
+                context.Writer.WriteStringValue(publicRequest.GeoMatchLevel);
+            }
+
+            if(publicRequest.IsSetGeoMatchParams())
+            {
+                context.Writer.WritePropertyName("GeoMatchParams");
+                context.Writer.WriteStartObject();
+
+                var marshaller = GeoMatchParamsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GeoMatchParams, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNumberSelectionBehavior())
+            {
+                context.Writer.WritePropertyName("NumberSelectionBehavior");
+                context.Writer.WriteStringValue(publicRequest.NumberSelectionBehavior);
+            }
+
+            if(publicRequest.IsSetParticipantPhoneNumbers())
+            {
+                context.Writer.WritePropertyName("ParticipantPhoneNumbers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestParticipantPhoneNumbersListValue in publicRequest.ParticipantPhoneNumbers)
+                {
+                        context.Writer.WriteStringValue(publicRequestParticipantPhoneNumbersListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.DataZone.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllUsersGrantFilter())
             {
                 context.Writer.WritePropertyName("allUsersGrantFilter");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AllUsersGrantFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.AllUsersGrantFilter, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUserIdentifier())
             {
                 context.Writer.WritePropertyName("userIdentifier");
-                context.Writer.Write(requestObject.UserIdentifier);
+                context.Writer.WriteStringValue(requestObject.UserIdentifier);
             }
 
         }

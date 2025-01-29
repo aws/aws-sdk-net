@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,37 +49,37 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCategory())
             {
                 context.Writer.WritePropertyName("Category");
-                context.Writer.Write(requestObject.Category);
+                context.Writer.WriteStringValue(requestObject.Category);
             }
 
             if(requestObject.IsSetLastObservedAt())
             {
                 context.Writer.WritePropertyName("LastObservedAt");
-                context.Writer.Write(requestObject.LastObservedAt);
+                context.Writer.WriteStringValue(requestObject.LastObservedAt);
             }
 
             if(requestObject.IsSetSource())
             {
                 context.Writer.WritePropertyName("Source");
-                context.Writer.Write(requestObject.Source);
+                context.Writer.WriteStringValue(requestObject.Source);
             }
 
             if(requestObject.IsSetSourceUrl())
             {
                 context.Writer.WritePropertyName("SourceUrl");
-                context.Writer.Write(requestObject.SourceUrl);
+                context.Writer.WriteStringValue(requestObject.SourceUrl);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("Value");
-                context.Writer.Write(requestObject.Value);
+                context.Writer.WriteStringValue(requestObject.Value);
             }
 
         }

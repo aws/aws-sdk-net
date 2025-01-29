@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
@@ -63,63 +66,68 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAddMetrics())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("addMetrics");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAddMetricsListValue in publicRequest.AddMetrics)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAddMetrics())
-                    {
-                        context.Writer.WritePropertyName("addMetrics");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAddMetricsListValue in publicRequest.AddMetrics)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = MetricAttributeMarshaller.Instance;
-                            marshaller.Marshall(publicRequestAddMetricsListValue, context);
+                    var marshaller = MetricAttributeMarshaller.Instance;
+                    marshaller.Marshall(publicRequestAddMetricsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMetricAttributionArn())
-                    {
-                        context.Writer.WritePropertyName("metricAttributionArn");
-                        context.Writer.Write(publicRequest.MetricAttributionArn);
-                    }
-
-                    if(publicRequest.IsSetMetricsOutputConfig())
-                    {
-                        context.Writer.WritePropertyName("metricsOutputConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MetricAttributionOutputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MetricsOutputConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRemoveMetrics())
-                    {
-                        context.Writer.WritePropertyName("removeMetrics");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestRemoveMetricsListValue in publicRequest.RemoveMetrics)
-                        {
-                                context.Writer.Write(publicRequestRemoveMetricsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetMetricAttributionArn())
+            {
+                context.Writer.WritePropertyName("metricAttributionArn");
+                context.Writer.WriteStringValue(publicRequest.MetricAttributionArn);
+            }
+
+            if(publicRequest.IsSetMetricsOutputConfig())
+            {
+                context.Writer.WritePropertyName("metricsOutputConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MetricAttributionOutputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MetricsOutputConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRemoveMetrics())
+            {
+                context.Writer.WritePropertyName("removeMetrics");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestRemoveMetricsListValue in publicRequest.RemoveMetrics)
+                {
+                        context.Writer.WriteStringValue(publicRequestRemoveMetricsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

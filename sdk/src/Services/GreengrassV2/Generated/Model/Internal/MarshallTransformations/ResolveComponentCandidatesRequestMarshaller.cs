@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
@@ -61,46 +64,51 @@ namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/greengrass/v2/resolveComponentCandidates";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetComponentCandidates())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("componentCandidates");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestComponentCandidatesListValue in publicRequest.ComponentCandidates)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetComponentCandidates())
-                    {
-                        context.Writer.WritePropertyName("componentCandidates");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestComponentCandidatesListValue in publicRequest.ComponentCandidates)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = ComponentCandidateMarshaller.Instance;
-                            marshaller.Marshall(publicRequestComponentCandidatesListValue, context);
+                    var marshaller = ComponentCandidateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestComponentCandidatesListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPlatform())
-                    {
-                        context.Writer.WritePropertyName("platform");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ComponentPlatformMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Platform, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetPlatform())
+            {
+                context.Writer.WritePropertyName("platform");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ComponentPlatformMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Platform, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

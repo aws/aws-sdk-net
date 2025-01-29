@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCapacity())
             {
                 context.Writer.WritePropertyName("capacity");
-                context.Writer.Write(requestObject.Capacity.Value);
+                context.Writer.WriteNumberValue(requestObject.Capacity.Value);
             }
 
             if(requestObject.IsSetListType())
             {
                 context.Writer.WritePropertyName("listType");
-                context.Writer.Write(requestObject.ListType);
+                context.Writer.WriteStringValue(requestObject.ListType);
             }
 
             if(requestObject.IsSetMemberType())
             {
                 context.Writer.WritePropertyName("memberType");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StructuredMessageMarshaller.Instance;
                 marshaller.Marshall(requestObject.MemberType, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
 {
@@ -63,58 +66,63 @@ namespace Amazon.CognitoIdentity.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetIdentityPoolId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetIdentityPoolId())
-                    {
-                        context.Writer.WritePropertyName("IdentityPoolId");
-                        context.Writer.Write(publicRequest.IdentityPoolId);
-                    }
-
-                    if(publicRequest.IsSetRoleMappings())
-                    {
-                        context.Writer.WritePropertyName("RoleMappings");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRoleMappingsKvp in publicRequest.RoleMappings)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRoleMappingsKvp.Key);
-                            var publicRequestRoleMappingsValue = publicRequestRoleMappingsKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = RoleMappingMarshaller.Instance;
-                            marshaller.Marshall(publicRequestRoleMappingsValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetRoles())
-                    {
-                        context.Writer.WritePropertyName("Roles");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestRolesKvp in publicRequest.Roles)
-                        {
-                            context.Writer.WritePropertyName(publicRequestRolesKvp.Key);
-                            var publicRequestRolesValue = publicRequestRolesKvp.Value;
-
-                                context.Writer.Write(publicRequestRolesValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("IdentityPoolId");
+                context.Writer.WriteStringValue(publicRequest.IdentityPoolId);
             }
+
+            if(publicRequest.IsSetRoleMappings())
+            {
+                context.Writer.WritePropertyName("RoleMappings");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRoleMappingsKvp in publicRequest.RoleMappings)
+                {
+                    context.Writer.WritePropertyName(publicRequestRoleMappingsKvp.Key);
+                    var publicRequestRoleMappingsValue = publicRequestRoleMappingsKvp.Value;
+
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = RoleMappingMarshaller.Instance;
+                    marshaller.Marshall(publicRequestRoleMappingsValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetRoles())
+            {
+                context.Writer.WritePropertyName("Roles");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestRolesKvp in publicRequest.Roles)
+                {
+                    context.Writer.WritePropertyName(publicRequestRolesKvp.Key);
+                    var publicRequestRolesValue = publicRequestRolesKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestRolesValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

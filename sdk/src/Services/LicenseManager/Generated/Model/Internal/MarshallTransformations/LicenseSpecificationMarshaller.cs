@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmiAssociationScope())
             {
                 context.Writer.WritePropertyName("AmiAssociationScope");
-                context.Writer.Write(requestObject.AmiAssociationScope);
+                context.Writer.WriteStringValue(requestObject.AmiAssociationScope);
             }
 
             if(requestObject.IsSetLicenseConfigurationArn())
             {
                 context.Writer.WritePropertyName("LicenseConfigurationArn");
-                context.Writer.Write(requestObject.LicenseConfigurationArn);
+                context.Writer.WriteStringValue(requestObject.LicenseConfigurationArn);
             }
 
         }

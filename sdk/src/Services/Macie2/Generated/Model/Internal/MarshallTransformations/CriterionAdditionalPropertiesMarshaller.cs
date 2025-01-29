@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Macie2.Model.Internal.MarshallTransformations
 {
@@ -51,58 +49,58 @@ namespace Amazon.Macie2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEq())
             {
                 context.Writer.WritePropertyName("eq");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEqListValue in requestObject.Eq)
                 {
-                        context.Writer.Write(requestObjectEqListValue);
+                        context.Writer.WriteStringValue(requestObjectEqListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEqExactMatch())
             {
                 context.Writer.WritePropertyName("eqExactMatch");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEqExactMatchListValue in requestObject.EqExactMatch)
                 {
-                        context.Writer.Write(requestObjectEqExactMatchListValue);
+                        context.Writer.WriteStringValue(requestObjectEqExactMatchListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGt())
             {
                 context.Writer.WritePropertyName("gt");
-                context.Writer.Write(requestObject.Gt.Value);
+                context.Writer.WriteNumberValue(requestObject.Gt.Value);
             }
 
             if(requestObject.IsSetGte())
             {
                 context.Writer.WritePropertyName("gte");
-                context.Writer.Write(requestObject.Gte.Value);
+                context.Writer.WriteNumberValue(requestObject.Gte.Value);
             }
 
             if(requestObject.IsSetLt())
             {
                 context.Writer.WritePropertyName("lt");
-                context.Writer.Write(requestObject.Lt.Value);
+                context.Writer.WriteNumberValue(requestObject.Lt.Value);
             }
 
             if(requestObject.IsSetLte())
             {
                 context.Writer.WritePropertyName("lte");
-                context.Writer.Write(requestObject.Lte.Value);
+                context.Writer.WriteNumberValue(requestObject.Lte.Value);
             }
 
             if(requestObject.IsSetNeq())
             {
                 context.Writer.WritePropertyName("neq");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNeqListValue in requestObject.Neq)
                 {
-                        context.Writer.Write(requestObjectNeqListValue);
+                        context.Writer.WriteStringValue(requestObjectNeqListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

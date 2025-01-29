@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails Object
     /// </summary>  
-    public class AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsUnmarshaller : IUnmarshaller<AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails, JsonUnmarshallerContext>
+    public class AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetailsUnmarshaller : IJsonUnmarshaller<AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails IUnmarshaller<AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails unmarshalledObject = new AwsEc2LaunchTemplateDataInstanceRequirementsMemoryGiBPerVCpuDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Max", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Max = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Max = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Min", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Min = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Min = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

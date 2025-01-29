@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.PaymentCryptographyData.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMajorKeyDerivationMode())
             {
                 context.Writer.WritePropertyName("MajorKeyDerivationMode");
-                context.Writer.Write(requestObject.MajorKeyDerivationMode);
+                context.Writer.WriteStringValue(requestObject.MajorKeyDerivationMode);
             }
 
             if(requestObject.IsSetPanSequenceNumber())
             {
                 context.Writer.WritePropertyName("PanSequenceNumber");
-                context.Writer.Write(requestObject.PanSequenceNumber);
+                context.Writer.WriteStringValue(requestObject.PanSequenceNumber);
             }
 
             if(requestObject.IsSetPrimaryAccountNumber())
             {
                 context.Writer.WritePropertyName("PrimaryAccountNumber");
-                context.Writer.Write(requestObject.PrimaryAccountNumber);
+                context.Writer.WriteStringValue(requestObject.PrimaryAccountNumber);
             }
 
             if(requestObject.IsSetSessionKeyDerivationMode())
             {
                 context.Writer.WritePropertyName("SessionKeyDerivationMode");
-                context.Writer.Write(requestObject.SessionKeyDerivationMode);
+                context.Writer.WriteStringValue(requestObject.SessionKeyDerivationMode);
             }
 
             if(requestObject.IsSetSessionKeyDerivationValue())
             {
                 context.Writer.WritePropertyName("SessionKeyDerivationValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SessionKeyDerivationValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.SessionKeyDerivationValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

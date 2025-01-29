@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
@@ -51,187 +49,187 @@ namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlarmConfiguration())
             {
                 context.Writer.WritePropertyName("AlarmConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AlarmConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.AlarmConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetApplyOnlyAtCronInterval())
             {
                 context.Writer.WritePropertyName("ApplyOnlyAtCronInterval");
-                context.Writer.Write(requestObject.ApplyOnlyAtCronInterval.Value);
+                context.Writer.WriteBooleanValue(requestObject.ApplyOnlyAtCronInterval.Value);
             }
 
             if(requestObject.IsSetAssociationName())
             {
                 context.Writer.WritePropertyName("AssociationName");
-                context.Writer.Write(requestObject.AssociationName);
+                context.Writer.WriteStringValue(requestObject.AssociationName);
             }
 
             if(requestObject.IsSetAutomationTargetParameterName())
             {
                 context.Writer.WritePropertyName("AutomationTargetParameterName");
-                context.Writer.Write(requestObject.AutomationTargetParameterName);
+                context.Writer.WriteStringValue(requestObject.AutomationTargetParameterName);
             }
 
             if(requestObject.IsSetCalendarNames())
             {
                 context.Writer.WritePropertyName("CalendarNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCalendarNamesListValue in requestObject.CalendarNames)
                 {
-                        context.Writer.Write(requestObjectCalendarNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectCalendarNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetComplianceSeverity())
             {
                 context.Writer.WritePropertyName("ComplianceSeverity");
-                context.Writer.Write(requestObject.ComplianceSeverity);
+                context.Writer.WriteStringValue(requestObject.ComplianceSeverity);
             }
 
             if(requestObject.IsSetDocumentVersion())
             {
                 context.Writer.WritePropertyName("DocumentVersion");
-                context.Writer.Write(requestObject.DocumentVersion);
+                context.Writer.WriteStringValue(requestObject.DocumentVersion);
             }
 
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("Duration");
-                context.Writer.Write(requestObject.Duration.Value);
+                context.Writer.WriteNumberValue(requestObject.Duration.Value);
             }
 
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("InstanceId");
-                context.Writer.Write(requestObject.InstanceId);
+                context.Writer.WriteStringValue(requestObject.InstanceId);
             }
 
             if(requestObject.IsSetMaxConcurrency())
             {
                 context.Writer.WritePropertyName("MaxConcurrency");
-                context.Writer.Write(requestObject.MaxConcurrency);
+                context.Writer.WriteStringValue(requestObject.MaxConcurrency);
             }
 
             if(requestObject.IsSetMaxErrors())
             {
                 context.Writer.WritePropertyName("MaxErrors");
-                context.Writer.Write(requestObject.MaxErrors);
+                context.Writer.WriteStringValue(requestObject.MaxErrors);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOutputLocation())
             {
                 context.Writer.WritePropertyName("OutputLocation");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InstanceAssociationOutputLocationMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputLocation, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                    context.Writer.WriteArrayStart();
+                    context.Writer.WriteStartArray();
                     foreach(var requestObjectParametersValueListValue in requestObjectParametersValue)
                     {
-                            context.Writer.Write(requestObjectParametersValueListValue);
+                            context.Writer.WriteStringValue(requestObjectParametersValueListValue);
                     }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WriteEndArray();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
             if(requestObject.IsSetScheduleOffset())
             {
                 context.Writer.WritePropertyName("ScheduleOffset");
-                context.Writer.Write(requestObject.ScheduleOffset.Value);
+                context.Writer.WriteNumberValue(requestObject.ScheduleOffset.Value);
             }
 
             if(requestObject.IsSetSyncCompliance())
             {
                 context.Writer.WritePropertyName("SyncCompliance");
-                context.Writer.Write(requestObject.SyncCompliance);
+                context.Writer.WriteStringValue(requestObject.SyncCompliance);
             }
 
             if(requestObject.IsSetTargetLocations())
             {
                 context.Writer.WritePropertyName("TargetLocations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetLocationsListValue in requestObject.TargetLocations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetLocationMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetLocationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargetMaps())
             {
                 context.Writer.WritePropertyName("TargetMaps");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetMapsListValue in requestObject.TargetMaps)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectTargetMapsListValueKvp in requestObjectTargetMapsListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectTargetMapsListValueKvp.Key);
                         var requestObjectTargetMapsListValueValue = requestObjectTargetMapsListValueKvp.Value;
 
-                        context.Writer.WriteArrayStart();
+                        context.Writer.WriteStartArray();
                         foreach(var requestObjectTargetMapsListValueValueListValue in requestObjectTargetMapsListValueValue)
                         {
-                                context.Writer.Write(requestObjectTargetMapsListValueValueListValue);
+                                context.Writer.WriteStringValue(requestObjectTargetMapsListValueValueListValue);
                         }
-                        context.Writer.WriteArrayEnd();
+                        context.Writer.WriteEndArray();
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTargets())
             {
                 context.Writer.WritePropertyName("Targets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetsListValue in requestObject.Targets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

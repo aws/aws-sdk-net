@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SwitchoverDetail Object
     /// </summary>  
-    public class SwitchoverDetailUnmarshaller : IUnmarshaller<SwitchoverDetail, XmlUnmarshallerContext>, IUnmarshaller<SwitchoverDetail, JsonUnmarshallerContext>
+    public class SwitchoverDetailUnmarshaller : IXmlUnmarshaller<SwitchoverDetail, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SwitchoverDetail Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SwitchoverDetailUnmarshaller _instance = new SwitchoverDetailUnmarshaller();        
 

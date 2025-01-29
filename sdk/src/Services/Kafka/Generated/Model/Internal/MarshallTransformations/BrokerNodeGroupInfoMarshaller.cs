@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kafka.Model.Internal.MarshallTransformations
 {
@@ -51,68 +49,68 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBrokerAZDistribution())
             {
                 context.Writer.WritePropertyName("brokerAZDistribution");
-                context.Writer.Write(requestObject.BrokerAZDistribution);
+                context.Writer.WriteStringValue(requestObject.BrokerAZDistribution);
             }
 
             if(requestObject.IsSetClientSubnets())
             {
                 context.Writer.WritePropertyName("clientSubnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectClientSubnetsListValue in requestObject.ClientSubnets)
                 {
-                        context.Writer.Write(requestObjectClientSubnetsListValue);
+                        context.Writer.WriteStringValue(requestObjectClientSubnetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConnectivityInfo())
             {
                 context.Writer.WritePropertyName("connectivityInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConnectivityInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectivityInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("instanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetSecurityGroups())
             {
                 context.Writer.WritePropertyName("securityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupsListValue in requestObject.SecurityGroups)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStorageInfo())
             {
                 context.Writer.WritePropertyName("storageInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StorageInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.StorageInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetZoneIds())
             {
                 context.Writer.WritePropertyName("zoneIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectZoneIdsListValue in requestObject.ZoneIds)
                 {
-                        context.Writer.Write(requestObjectZoneIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectZoneIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,104 +49,104 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDashRoles())
             {
                 context.Writer.WritePropertyName("audioDashRoles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioDashRolesListValue in requestObject.AudioDashRoles)
                 {
-                        context.Writer.Write(requestObjectAudioDashRolesListValue);
+                        context.Writer.WriteStringValue(requestObjectAudioDashRolesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAudioNormalizationSettings())
             {
                 context.Writer.WritePropertyName("audioNormalizationSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioNormalizationSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioNormalizationSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAudioSelectorName())
             {
                 context.Writer.WritePropertyName("audioSelectorName");
-                context.Writer.Write(requestObject.AudioSelectorName);
+                context.Writer.WriteStringValue(requestObject.AudioSelectorName);
             }
 
             if(requestObject.IsSetAudioType())
             {
                 context.Writer.WritePropertyName("audioType");
-                context.Writer.Write(requestObject.AudioType);
+                context.Writer.WriteStringValue(requestObject.AudioType);
             }
 
             if(requestObject.IsSetAudioTypeControl())
             {
                 context.Writer.WritePropertyName("audioTypeControl");
-                context.Writer.Write(requestObject.AudioTypeControl);
+                context.Writer.WriteStringValue(requestObject.AudioTypeControl);
             }
 
             if(requestObject.IsSetAudioWatermarkingSettings())
             {
                 context.Writer.WritePropertyName("audioWatermarkingSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioWatermarkSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AudioWatermarkingSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCodecSettings())
             {
                 context.Writer.WritePropertyName("codecSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AudioCodecSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodecSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDvbDashAccessibility())
             {
                 context.Writer.WritePropertyName("dvbDashAccessibility");
-                context.Writer.Write(requestObject.DvbDashAccessibility);
+                context.Writer.WriteStringValue(requestObject.DvbDashAccessibility);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("languageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetLanguageCodeControl())
             {
                 context.Writer.WritePropertyName("languageCodeControl");
-                context.Writer.Write(requestObject.LanguageCodeControl);
+                context.Writer.WriteStringValue(requestObject.LanguageCodeControl);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetRemixSettings())
             {
                 context.Writer.WritePropertyName("remixSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RemixSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RemixSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStreamName())
             {
                 context.Writer.WritePropertyName("streamName");
-                context.Writer.Write(requestObject.StreamName);
+                context.Writer.WriteStringValue(requestObject.StreamName);
             }
 
         }

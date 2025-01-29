@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyRequestsException operation
     /// </summary>  
-    public class TooManyRequestsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyRequestsException, XmlUnmarshallerContext>
+    public class TooManyRequestsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyRequestsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

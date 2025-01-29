@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.Bedrock.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("threshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Threshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Threshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Threshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.Threshold.Value);
                 }
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

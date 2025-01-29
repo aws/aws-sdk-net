@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFunctionArn())
             {
                 context.Writer.WritePropertyName("FunctionArn");
-                context.Writer.Write(requestObject.FunctionArn);
+                context.Writer.WriteStringValue(requestObject.FunctionArn);
             }
 
             if(requestObject.IsSetFunctionConfiguration())
             {
                 context.Writer.WritePropertyName("FunctionConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FunctionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FunctionConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
         }

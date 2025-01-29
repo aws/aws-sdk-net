@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,41 +49,41 @@ namespace Amazon.ServerMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetServer())
             {
                 context.Writer.WritePropertyName("server");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServerMarshaller.Instance;
                 marshaller.Marshall(requestObject.Server, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServerValidationStrategy())
             {
                 context.Writer.WritePropertyName("serverValidationStrategy");
-                context.Writer.Write(requestObject.ServerValidationStrategy);
+                context.Writer.WriteStringValue(requestObject.ServerValidationStrategy);
             }
 
             if(requestObject.IsSetUserDataValidationParameters())
             {
                 context.Writer.WritePropertyName("userDataValidationParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UserDataValidationParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.UserDataValidationParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetValidationId())
             {
                 context.Writer.WritePropertyName("validationId");
-                context.Writer.Write(requestObject.ValidationId);
+                context.Writer.WriteStringValue(requestObject.ValidationId);
             }
 
         }

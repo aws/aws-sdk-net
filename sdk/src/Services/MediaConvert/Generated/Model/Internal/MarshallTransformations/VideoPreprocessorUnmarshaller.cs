@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VideoPreprocessor Object
     /// </summary>  
-    public class VideoPreprocessorUnmarshaller : IUnmarshaller<VideoPreprocessor, XmlUnmarshallerContext>, IUnmarshaller<VideoPreprocessor, JsonUnmarshallerContext>
+    public class VideoPreprocessorUnmarshaller : IJsonUnmarshaller<VideoPreprocessor, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VideoPreprocessor IUnmarshaller<VideoPreprocessor, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VideoPreprocessor Unmarshall(JsonUnmarshallerContext context)
+        public VideoPreprocessor Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VideoPreprocessor unmarshalledObject = new VideoPreprocessor();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("colorCorrector", targetDepth))
                 {
                     var unmarshaller = ColorCorrectorUnmarshaller.Instance;
-                    unmarshalledObject.ColorCorrector = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ColorCorrector = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("deinterlacer", targetDepth))
                 {
                     var unmarshaller = DeinterlacerUnmarshaller.Instance;
-                    unmarshalledObject.Deinterlacer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Deinterlacer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dolbyVision", targetDepth))
                 {
                     var unmarshaller = DolbyVisionUnmarshaller.Instance;
-                    unmarshalledObject.DolbyVision = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DolbyVision = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hdr10Plus", targetDepth))
                 {
                     var unmarshaller = Hdr10PlusUnmarshaller.Instance;
-                    unmarshalledObject.Hdr10Plus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Hdr10Plus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("imageInserter", targetDepth))
                 {
                     var unmarshaller = ImageInserterUnmarshaller.Instance;
-                    unmarshalledObject.ImageInserter = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ImageInserter = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("noiseReducer", targetDepth))
                 {
                     var unmarshaller = NoiseReducerUnmarshaller.Instance;
-                    unmarshalledObject.NoiseReducer = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NoiseReducer = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("partnerWatermarking", targetDepth))
                 {
                     var unmarshaller = PartnerWatermarkingUnmarshaller.Instance;
-                    unmarshalledObject.PartnerWatermarking = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PartnerWatermarking = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("timecodeBurnin", targetDepth))
                 {
                     var unmarshaller = TimecodeBurninUnmarshaller.Instance;
-                    unmarshalledObject.TimecodeBurnin = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimecodeBurnin = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

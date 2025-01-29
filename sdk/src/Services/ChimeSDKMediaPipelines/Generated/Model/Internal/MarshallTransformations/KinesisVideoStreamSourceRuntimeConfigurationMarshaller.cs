@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMediaEncoding())
             {
                 context.Writer.WritePropertyName("MediaEncoding");
-                context.Writer.Write(requestObject.MediaEncoding);
+                context.Writer.WriteStringValue(requestObject.MediaEncoding);
             }
 
             if(requestObject.IsSetMediaSampleRate())
             {
                 context.Writer.WritePropertyName("MediaSampleRate");
-                context.Writer.Write(requestObject.MediaSampleRate.Value);
+                context.Writer.WriteNumberValue(requestObject.MediaSampleRate.Value);
             }
 
             if(requestObject.IsSetStreams())
             {
                 context.Writer.WritePropertyName("Streams");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStreamsListValue in requestObject.Streams)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StreamConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectStreamsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

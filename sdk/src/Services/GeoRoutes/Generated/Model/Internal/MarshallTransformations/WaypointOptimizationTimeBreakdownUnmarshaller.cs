@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WaypointOptimizationTimeBreakdown Object
     /// </summary>  
-    public class WaypointOptimizationTimeBreakdownUnmarshaller : IUnmarshaller<WaypointOptimizationTimeBreakdown, XmlUnmarshallerContext>, IUnmarshaller<WaypointOptimizationTimeBreakdown, JsonUnmarshallerContext>
+    public class WaypointOptimizationTimeBreakdownUnmarshaller : IJsonUnmarshaller<WaypointOptimizationTimeBreakdown, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WaypointOptimizationTimeBreakdown IUnmarshaller<WaypointOptimizationTimeBreakdown, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WaypointOptimizationTimeBreakdown Unmarshall(JsonUnmarshallerContext context)
+        public WaypointOptimizationTimeBreakdown Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WaypointOptimizationTimeBreakdown unmarshalledObject = new WaypointOptimizationTimeBreakdown();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("RestDuration", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.RestDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RestDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceDuration", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ServiceDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TravelDuration", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TravelDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TravelDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WaitDuration", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.WaitDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WaitDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

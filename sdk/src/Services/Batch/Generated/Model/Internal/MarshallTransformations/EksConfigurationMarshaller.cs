@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEksClusterArn())
             {
                 context.Writer.WritePropertyName("eksClusterArn");
-                context.Writer.Write(requestObject.EksClusterArn);
+                context.Writer.WriteStringValue(requestObject.EksClusterArn);
             }
 
             if(requestObject.IsSetKubernetesNamespace())
             {
                 context.Writer.WritePropertyName("kubernetesNamespace");
-                context.Writer.Write(requestObject.KubernetesNamespace);
+                context.Writer.WriteStringValue(requestObject.KubernetesNamespace);
             }
 
         }

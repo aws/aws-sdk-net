@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DataSourcesFreeTrial Object
     /// </summary>  
-    public class DataSourcesFreeTrialUnmarshaller : IUnmarshaller<DataSourcesFreeTrial, XmlUnmarshallerContext>, IUnmarshaller<DataSourcesFreeTrial, JsonUnmarshallerContext>
+    public class DataSourcesFreeTrialUnmarshaller : IJsonUnmarshaller<DataSourcesFreeTrial, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DataSourcesFreeTrial IUnmarshaller<DataSourcesFreeTrial, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DataSourcesFreeTrial Unmarshall(JsonUnmarshallerContext context)
+        public DataSourcesFreeTrial Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DataSourcesFreeTrial unmarshalledObject = new DataSourcesFreeTrial();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("cloudTrail", targetDepth))
                 {
                     var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
-                    unmarshalledObject.CloudTrail = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CloudTrail = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("dnsLogs", targetDepth))
                 {
                     var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
-                    unmarshalledObject.DnsLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DnsLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("flowLogs", targetDepth))
                 {
                     var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
-                    unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FlowLogs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("kubernetes", targetDepth))
                 {
                     var unmarshaller = KubernetesDataSourceFreeTrialUnmarshaller.Instance;
-                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Kubernetes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("malwareProtection", targetDepth))
                 {
                     var unmarshaller = MalwareProtectionDataSourceFreeTrialUnmarshaller.Instance;
-                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MalwareProtection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("s3Logs", targetDepth))
                 {
                     var unmarshaller = DataSourceFreeTrialUnmarshaller.Instance;
-                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Logs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

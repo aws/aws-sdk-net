@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DomainNotFoundException operation
     /// </summary>  
-    public class DomainNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<DomainNotFoundException, XmlUnmarshallerContext>
+    public class DomainNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DomainNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

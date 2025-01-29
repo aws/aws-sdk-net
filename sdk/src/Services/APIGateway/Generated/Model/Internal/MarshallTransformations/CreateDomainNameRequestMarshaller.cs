@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
 {
@@ -61,121 +64,126 @@ namespace Amazon.APIGateway.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/domainnames";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCertificateArn())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCertificateArn())
-                    {
-                        context.Writer.WritePropertyName("certificateArn");
-                        context.Writer.Write(publicRequest.CertificateArn);
-                    }
-
-                    if(publicRequest.IsSetCertificateBody())
-                    {
-                        context.Writer.WritePropertyName("certificateBody");
-                        context.Writer.Write(publicRequest.CertificateBody);
-                    }
-
-                    if(publicRequest.IsSetCertificateChain())
-                    {
-                        context.Writer.WritePropertyName("certificateChain");
-                        context.Writer.Write(publicRequest.CertificateChain);
-                    }
-
-                    if(publicRequest.IsSetCertificateName())
-                    {
-                        context.Writer.WritePropertyName("certificateName");
-                        context.Writer.Write(publicRequest.CertificateName);
-                    }
-
-                    if(publicRequest.IsSetCertificatePrivateKey())
-                    {
-                        context.Writer.WritePropertyName("certificatePrivateKey");
-                        context.Writer.Write(publicRequest.CertificatePrivateKey);
-                    }
-
-                    if(publicRequest.IsSetDomainName())
-                    {
-                        context.Writer.WritePropertyName("domainName");
-                        context.Writer.Write(publicRequest.DomainName);
-                    }
-
-                    if(publicRequest.IsSetEndpointConfiguration())
-                    {
-                        context.Writer.WritePropertyName("endpointConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = EndpointConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.EndpointConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetMutualTlsAuthentication())
-                    {
-                        context.Writer.WritePropertyName("mutualTlsAuthentication");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetOwnershipVerificationCertificateArn())
-                    {
-                        context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
-                        context.Writer.Write(publicRequest.OwnershipVerificationCertificateArn);
-                    }
-
-                    if(publicRequest.IsSetPolicy())
-                    {
-                        context.Writer.WritePropertyName("policy");
-                        context.Writer.Write(publicRequest.Policy);
-                    }
-
-                    if(publicRequest.IsSetRegionalCertificateArn())
-                    {
-                        context.Writer.WritePropertyName("regionalCertificateArn");
-                        context.Writer.Write(publicRequest.RegionalCertificateArn);
-                    }
-
-                    if(publicRequest.IsSetRegionalCertificateName())
-                    {
-                        context.Writer.WritePropertyName("regionalCertificateName");
-                        context.Writer.Write(publicRequest.RegionalCertificateName);
-                    }
-
-                    if(publicRequest.IsSetSecurityPolicy())
-                    {
-                        context.Writer.WritePropertyName("securityPolicy");
-                        context.Writer.Write(publicRequest.SecurityPolicy);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("certificateArn");
+                context.Writer.WriteStringValue(publicRequest.CertificateArn);
             }
+
+            if(publicRequest.IsSetCertificateBody())
+            {
+                context.Writer.WritePropertyName("certificateBody");
+                context.Writer.WriteStringValue(publicRequest.CertificateBody);
+            }
+
+            if(publicRequest.IsSetCertificateChain())
+            {
+                context.Writer.WritePropertyName("certificateChain");
+                context.Writer.WriteStringValue(publicRequest.CertificateChain);
+            }
+
+            if(publicRequest.IsSetCertificateName())
+            {
+                context.Writer.WritePropertyName("certificateName");
+                context.Writer.WriteStringValue(publicRequest.CertificateName);
+            }
+
+            if(publicRequest.IsSetCertificatePrivateKey())
+            {
+                context.Writer.WritePropertyName("certificatePrivateKey");
+                context.Writer.WriteStringValue(publicRequest.CertificatePrivateKey);
+            }
+
+            if(publicRequest.IsSetDomainName())
+            {
+                context.Writer.WritePropertyName("domainName");
+                context.Writer.WriteStringValue(publicRequest.DomainName);
+            }
+
+            if(publicRequest.IsSetEndpointConfiguration())
+            {
+                context.Writer.WritePropertyName("endpointConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = EndpointConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.EndpointConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetMutualTlsAuthentication())
+            {
+                context.Writer.WritePropertyName("mutualTlsAuthentication");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MutualTlsAuthenticationInputMarshaller.Instance;
+                marshaller.Marshall(publicRequest.MutualTlsAuthentication, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetOwnershipVerificationCertificateArn())
+            {
+                context.Writer.WritePropertyName("ownershipVerificationCertificateArn");
+                context.Writer.WriteStringValue(publicRequest.OwnershipVerificationCertificateArn);
+            }
+
+            if(publicRequest.IsSetPolicy())
+            {
+                context.Writer.WritePropertyName("policy");
+                context.Writer.WriteStringValue(publicRequest.Policy);
+            }
+
+            if(publicRequest.IsSetRegionalCertificateArn())
+            {
+                context.Writer.WritePropertyName("regionalCertificateArn");
+                context.Writer.WriteStringValue(publicRequest.RegionalCertificateArn);
+            }
+
+            if(publicRequest.IsSetRegionalCertificateName())
+            {
+                context.Writer.WritePropertyName("regionalCertificateName");
+                context.Writer.WriteStringValue(publicRequest.RegionalCertificateName);
+            }
+
+            if(publicRequest.IsSetSecurityPolicy())
+            {
+                context.Writer.WritePropertyName("securityPolicy");
+                context.Writer.WriteStringValue(publicRequest.SecurityPolicy);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,125 +29,115 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AutocompleteAddressHighlights Object
     /// </summary>  
-    public class AutocompleteAddressHighlightsUnmarshaller : IUnmarshaller<AutocompleteAddressHighlights, XmlUnmarshallerContext>, IUnmarshaller<AutocompleteAddressHighlights, JsonUnmarshallerContext>
+    public class AutocompleteAddressHighlightsUnmarshaller : IJsonUnmarshaller<AutocompleteAddressHighlights, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AutocompleteAddressHighlights IUnmarshaller<AutocompleteAddressHighlights, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AutocompleteAddressHighlights Unmarshall(JsonUnmarshallerContext context)
+        public AutocompleteAddressHighlights Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AutocompleteAddressHighlights unmarshalledObject = new AutocompleteAddressHighlights();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AddressNumber", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.AddressNumber = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.AddressNumber = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Block", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.Block = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.Block = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Building", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.Building = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.Building = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Country", targetDepth))
                 {
                     var unmarshaller = CountryHighlightsUnmarshaller.Instance;
-                    unmarshalledObject.Country = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Country = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("District", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.District = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.District = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Intersection", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<List<Highlight>, ListUnmarshaller<Highlight, HighlightUnmarshaller>>(new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance));
-                    unmarshalledObject.Intersection = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<List<Highlight>, JsonListUnmarshaller<Highlight,HighlightUnmarshaller>>(new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance));
+                    unmarshalledObject.Intersection = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Label", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.Label = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Locality", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.Locality = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.Locality = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PostalCode", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.PostalCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Region", targetDepth))
                 {
                     var unmarshaller = RegionHighlightsUnmarshaller.Instance;
-                    unmarshalledObject.Region = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Region = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Street", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.Street = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.Street = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubBlock", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.SubBlock = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.SubBlock = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubDistrict", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
-                    unmarshalledObject.SubDistrict = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Highlight, HighlightUnmarshaller>(HighlightUnmarshaller.Instance);
+                    unmarshalledObject.SubDistrict = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubRegion", targetDepth))
                 {
                     var unmarshaller = SubRegionHighlightsUnmarshaller.Instance;
-                    unmarshalledObject.SubRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AdditionalResultAttributeValue Object
     /// </summary>  
-    public class AdditionalResultAttributeValueUnmarshaller : IUnmarshaller<AdditionalResultAttributeValue, XmlUnmarshallerContext>, IUnmarshaller<AdditionalResultAttributeValue, JsonUnmarshallerContext>
+    public class AdditionalResultAttributeValueUnmarshaller : IJsonUnmarshaller<AdditionalResultAttributeValue, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AdditionalResultAttributeValue IUnmarshaller<AdditionalResultAttributeValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AdditionalResultAttributeValue Unmarshall(JsonUnmarshallerContext context)
+        public AdditionalResultAttributeValue Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AdditionalResultAttributeValue unmarshalledObject = new AdditionalResultAttributeValue();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("TextWithHighlightsValue", targetDepth))
                 {
                     var unmarshaller = TextWithHighlightsUnmarshaller.Instance;
-                    unmarshalledObject.TextWithHighlightsValue = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TextWithHighlightsValue = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ComputeCapacityStatus Object
     /// </summary>  
-    public class ComputeCapacityStatusUnmarshaller : IUnmarshaller<ComputeCapacityStatus, XmlUnmarshallerContext>, IUnmarshaller<ComputeCapacityStatus, JsonUnmarshallerContext>
+    public class ComputeCapacityStatusUnmarshaller : IJsonUnmarshaller<ComputeCapacityStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ComputeCapacityStatus IUnmarshaller<ComputeCapacityStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ComputeCapacityStatus Unmarshall(JsonUnmarshallerContext context)
+        public ComputeCapacityStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ComputeCapacityStatus unmarshalledObject = new ComputeCapacityStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ActiveUserSessions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActiveUserSessions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveUserSessions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ActualUserSessions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ActualUserSessions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActualUserSessions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Available", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Available = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Available = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AvailableUserSessions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.AvailableUserSessions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AvailableUserSessions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Desired", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Desired = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Desired = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DesiredUserSessions", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DesiredUserSessions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DesiredUserSessions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InUse", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.InUse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InUse = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Running", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.Running = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Running = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

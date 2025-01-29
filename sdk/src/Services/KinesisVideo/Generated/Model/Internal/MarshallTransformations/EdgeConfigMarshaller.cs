@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeletionConfig())
             {
                 context.Writer.WritePropertyName("DeletionConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DeletionConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeletionConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHubDeviceArn())
             {
                 context.Writer.WritePropertyName("HubDeviceArn");
-                context.Writer.Write(requestObject.HubDeviceArn);
+                context.Writer.WriteStringValue(requestObject.HubDeviceArn);
             }
 
             if(requestObject.IsSetRecorderConfig())
             {
                 context.Writer.WritePropertyName("RecorderConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RecorderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RecorderConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUploaderConfig())
             {
                 context.Writer.WritePropertyName("UploaderConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UploaderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.UploaderConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

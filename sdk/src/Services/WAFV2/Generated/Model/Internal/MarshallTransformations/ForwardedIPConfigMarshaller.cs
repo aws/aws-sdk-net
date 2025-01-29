@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFallbackBehavior())
             {
                 context.Writer.WritePropertyName("FallbackBehavior");
-                context.Writer.Write(requestObject.FallbackBehavior);
+                context.Writer.WriteStringValue(requestObject.FallbackBehavior);
             }
 
             if(requestObject.IsSetHeaderName())
             {
                 context.Writer.WritePropertyName("HeaderName");
-                context.Writer.Write(requestObject.HeaderName);
+                context.Writer.WriteStringValue(requestObject.HeaderName);
             }
 
         }

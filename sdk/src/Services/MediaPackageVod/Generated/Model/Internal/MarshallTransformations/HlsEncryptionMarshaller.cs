@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstantInitializationVector())
             {
                 context.Writer.WritePropertyName("constantInitializationVector");
-                context.Writer.Write(requestObject.ConstantInitializationVector);
+                context.Writer.WriteStringValue(requestObject.ConstantInitializationVector);
             }
 
             if(requestObject.IsSetEncryptionMethod())
             {
                 context.Writer.WritePropertyName("encryptionMethod");
-                context.Writer.Write(requestObject.EncryptionMethod);
+                context.Writer.WriteStringValue(requestObject.EncryptionMethod);
             }
 
             if(requestObject.IsSetSpekeKeyProvider())
             {
                 context.Writer.WritePropertyName("spekeKeyProvider");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpekeKeyProviderMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpekeKeyProvider, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

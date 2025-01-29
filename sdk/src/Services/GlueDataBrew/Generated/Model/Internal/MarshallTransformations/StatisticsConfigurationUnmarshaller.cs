@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StatisticsConfiguration Object
     /// </summary>  
-    public class StatisticsConfigurationUnmarshaller : IUnmarshaller<StatisticsConfiguration, XmlUnmarshallerContext>, IUnmarshaller<StatisticsConfiguration, JsonUnmarshallerContext>
+    public class StatisticsConfigurationUnmarshaller : IJsonUnmarshaller<StatisticsConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StatisticsConfiguration IUnmarshaller<StatisticsConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StatisticsConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public StatisticsConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StatisticsConfiguration unmarshalledObject = new StatisticsConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("IncludedStatistics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.IncludedStatistics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.IncludedStatistics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Overrides", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<StatisticOverride, StatisticOverrideUnmarshaller>(StatisticOverrideUnmarshaller.Instance);
-                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<StatisticOverride, StatisticOverrideUnmarshaller>(StatisticOverrideUnmarshaller.Instance);
+                    unmarshalledObject.Overrides = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

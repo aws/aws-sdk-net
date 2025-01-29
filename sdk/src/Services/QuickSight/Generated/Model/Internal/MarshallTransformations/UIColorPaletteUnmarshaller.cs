@@ -29,137 +29,127 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for UIColorPalette Object
     /// </summary>  
-    public class UIColorPaletteUnmarshaller : IUnmarshaller<UIColorPalette, XmlUnmarshallerContext>, IUnmarshaller<UIColorPalette, JsonUnmarshallerContext>
+    public class UIColorPaletteUnmarshaller : IJsonUnmarshaller<UIColorPalette, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        UIColorPalette IUnmarshaller<UIColorPalette, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public UIColorPalette Unmarshall(JsonUnmarshallerContext context)
+        public UIColorPalette Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             UIColorPalette unmarshalledObject = new UIColorPalette();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Accent", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Accent = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Accent = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("AccentForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccentForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccentForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Danger", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Danger = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Danger = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DangerForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DangerForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DangerForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Dimension", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Dimension = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Dimension = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DimensionForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DimensionForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DimensionForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Measure", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Measure = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Measure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MeasureForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MeasureForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeasureForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrimaryBackground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryBackground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrimaryBackground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrimaryForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrimaryForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrimaryForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecondaryBackground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecondaryBackground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecondaryBackground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SecondaryForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecondaryForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecondaryForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Success", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Success = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Success = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SuccessForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SuccessForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SuccessForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Warning", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Warning = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Warning = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("WarningForeground", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WarningForeground = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WarningForeground = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

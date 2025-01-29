@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -61,163 +64,168 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             request.HttpMethod = "PUT";
 
             request.ResourcePath = "/playbackConfiguration";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdDecisionServerUrl())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdDecisionServerUrl())
-                    {
-                        context.Writer.WritePropertyName("AdDecisionServerUrl");
-                        context.Writer.Write(publicRequest.AdDecisionServerUrl);
-                    }
-
-                    if(publicRequest.IsSetAvailSuppression())
-                    {
-                        context.Writer.WritePropertyName("AvailSuppression");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AvailSuppressionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.AvailSuppression, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetBumper())
-                    {
-                        context.Writer.WritePropertyName("Bumper");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = BumperMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Bumper, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetCdnConfiguration())
-                    {
-                        context.Writer.WritePropertyName("CdnConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = CdnConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.CdnConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetConfigurationAliases())
-                    {
-                        context.Writer.WritePropertyName("ConfigurationAliases");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestConfigurationAliasesKvp in publicRequest.ConfigurationAliases)
-                        {
-                            context.Writer.WritePropertyName(publicRequestConfigurationAliasesKvp.Key);
-                            var publicRequestConfigurationAliasesValue = publicRequestConfigurationAliasesKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-                            foreach (var publicRequestConfigurationAliasesValueKvp in publicRequestConfigurationAliasesValue)
-                            {
-                                context.Writer.WritePropertyName(publicRequestConfigurationAliasesValueKvp.Key);
-                                var publicRequestConfigurationAliasesValueValue = publicRequestConfigurationAliasesValueKvp.Value;
-
-                                    context.Writer.Write(publicRequestConfigurationAliasesValueValue);
-                            }
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDashConfiguration())
-                    {
-                        context.Writer.WritePropertyName("DashConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = DashConfigurationForPutMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.DashConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetInsertionMode())
-                    {
-                        context.Writer.WritePropertyName("InsertionMode");
-                        context.Writer.Write(publicRequest.InsertionMode);
-                    }
-
-                    if(publicRequest.IsSetLivePreRollConfiguration())
-                    {
-                        context.Writer.WritePropertyName("LivePreRollConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = LivePreRollConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.LivePreRollConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetManifestProcessingRules())
-                    {
-                        context.Writer.WritePropertyName("ManifestProcessingRules");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ManifestProcessingRulesMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ManifestProcessingRules, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetPersonalizationThresholdSeconds())
-                    {
-                        context.Writer.WritePropertyName("PersonalizationThresholdSeconds");
-                        context.Writer.Write(publicRequest.PersonalizationThresholdSeconds.Value);
-                    }
-
-                    if(publicRequest.IsSetSlateAdUrl())
-                    {
-                        context.Writer.WritePropertyName("SlateAdUrl");
-                        context.Writer.Write(publicRequest.SlateAdUrl);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTranscodeProfileName())
-                    {
-                        context.Writer.WritePropertyName("TranscodeProfileName");
-                        context.Writer.Write(publicRequest.TranscodeProfileName);
-                    }
-
-                    if(publicRequest.IsSetVideoContentSourceUrl())
-                    {
-                        context.Writer.WritePropertyName("VideoContentSourceUrl");
-                        context.Writer.Write(publicRequest.VideoContentSourceUrl);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("AdDecisionServerUrl");
+                context.Writer.WriteStringValue(publicRequest.AdDecisionServerUrl);
             }
+
+            if(publicRequest.IsSetAvailSuppression())
+            {
+                context.Writer.WritePropertyName("AvailSuppression");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AvailSuppressionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.AvailSuppression, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetBumper())
+            {
+                context.Writer.WritePropertyName("Bumper");
+                context.Writer.WriteStartObject();
+
+                var marshaller = BumperMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Bumper, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetCdnConfiguration())
+            {
+                context.Writer.WritePropertyName("CdnConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = CdnConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.CdnConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetConfigurationAliases())
+            {
+                context.Writer.WritePropertyName("ConfigurationAliases");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestConfigurationAliasesKvp in publicRequest.ConfigurationAliases)
+                {
+                    context.Writer.WritePropertyName(publicRequestConfigurationAliasesKvp.Key);
+                    var publicRequestConfigurationAliasesValue = publicRequestConfigurationAliasesKvp.Value;
+
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestConfigurationAliasesValueKvp in publicRequestConfigurationAliasesValue)
+                    {
+                        context.Writer.WritePropertyName(publicRequestConfigurationAliasesValueKvp.Key);
+                        var publicRequestConfigurationAliasesValueValue = publicRequestConfigurationAliasesValueKvp.Value;
+
+                            context.Writer.WriteStringValue(publicRequestConfigurationAliasesValueValue);
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDashConfiguration())
+            {
+                context.Writer.WritePropertyName("DashConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = DashConfigurationForPutMarshaller.Instance;
+                marshaller.Marshall(publicRequest.DashConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetInsertionMode())
+            {
+                context.Writer.WritePropertyName("InsertionMode");
+                context.Writer.WriteStringValue(publicRequest.InsertionMode);
+            }
+
+            if(publicRequest.IsSetLivePreRollConfiguration())
+            {
+                context.Writer.WritePropertyName("LivePreRollConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = LivePreRollConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.LivePreRollConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetManifestProcessingRules())
+            {
+                context.Writer.WritePropertyName("ManifestProcessingRules");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ManifestProcessingRulesMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ManifestProcessingRules, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetPersonalizationThresholdSeconds())
+            {
+                context.Writer.WritePropertyName("PersonalizationThresholdSeconds");
+                context.Writer.WriteNumberValue(publicRequest.PersonalizationThresholdSeconds.Value);
+            }
+
+            if(publicRequest.IsSetSlateAdUrl())
+            {
+                context.Writer.WritePropertyName("SlateAdUrl");
+                context.Writer.WriteStringValue(publicRequest.SlateAdUrl);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTranscodeProfileName())
+            {
+                context.Writer.WritePropertyName("TranscodeProfileName");
+                context.Writer.WriteStringValue(publicRequest.TranscodeProfileName);
+            }
+
+            if(publicRequest.IsSetVideoContentSourceUrl())
+            {
+                context.Writer.WritePropertyName("VideoContentSourceUrl");
+                context.Writer.WriteStringValue(publicRequest.VideoContentSourceUrl);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

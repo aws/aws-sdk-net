@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,42 +49,42 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExcluded())
             {
                 context.Writer.WritePropertyName("excluded");
-                context.Writer.Write(requestObject.Excluded.Value);
+                context.Writer.WriteBooleanValue(requestObject.Excluded.Value);
             }
 
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("level");
-                context.Writer.Write(requestObject.Level.Value);
+                context.Writer.WriteNumberValue(requestObject.Level.Value);
             }
 
             if(requestObject.IsSetOrientation())
             {
                 context.Writer.WritePropertyName("orientation");
-                context.Writer.Write(requestObject.Orientation);
+                context.Writer.WriteStringValue(requestObject.Orientation);
             }
 
             if(requestObject.IsSetPosition())
             {
                 context.Writer.WritePropertyName("position");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FieldPositionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Position, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetText())
             {
                 context.Writer.WritePropertyName("text");
-                context.Writer.Write(requestObject.Text);
+                context.Writer.WriteStringValue(requestObject.Text);
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

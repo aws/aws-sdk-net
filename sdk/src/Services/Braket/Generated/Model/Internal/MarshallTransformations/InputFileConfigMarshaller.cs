@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Braket.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Braket.Model.Internal.MarshallTransformations
             if(requestObject.IsSetChannelName())
             {
                 context.Writer.WritePropertyName("channelName");
-                context.Writer.Write(requestObject.ChannelName);
+                context.Writer.WriteStringValue(requestObject.ChannelName);
             }
 
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("contentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetDataSource())
             {
                 context.Writer.WritePropertyName("dataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.DataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

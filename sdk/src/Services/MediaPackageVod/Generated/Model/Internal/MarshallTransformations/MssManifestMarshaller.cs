@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
             if(requestObject.IsSetManifestName())
             {
                 context.Writer.WritePropertyName("manifestName");
-                context.Writer.Write(requestObject.ManifestName);
+                context.Writer.WriteStringValue(requestObject.ManifestName);
             }
 
             if(requestObject.IsSetStreamSelection())
             {
                 context.Writer.WritePropertyName("streamSelection");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StreamSelectionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StreamSelection, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

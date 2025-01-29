@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingGroupArn())
             {
                 context.Writer.WritePropertyName("autoScalingGroupArn");
-                context.Writer.Write(requestObject.AutoScalingGroupArn);
+                context.Writer.WriteStringValue(requestObject.AutoScalingGroupArn);
             }
 
             if(requestObject.IsSetManagedDraining())
             {
                 context.Writer.WritePropertyName("managedDraining");
-                context.Writer.Write(requestObject.ManagedDraining);
+                context.Writer.WriteStringValue(requestObject.ManagedDraining);
             }
 
             if(requestObject.IsSetManagedScaling())
             {
                 context.Writer.WritePropertyName("managedScaling");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ManagedScalingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ManagedScaling, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetManagedTerminationProtection())
             {
                 context.Writer.WritePropertyName("managedTerminationProtection");
-                context.Writer.Write(requestObject.ManagedTerminationProtection);
+                context.Writer.WriteStringValue(requestObject.ManagedTerminationProtection);
             }
 
         }

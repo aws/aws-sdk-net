@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostOptimizationHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SavingsPlansCostCalculation Object
     /// </summary>  
-    public class SavingsPlansCostCalculationUnmarshaller : IUnmarshaller<SavingsPlansCostCalculation, XmlUnmarshallerContext>, IUnmarshaller<SavingsPlansCostCalculation, JsonUnmarshallerContext>
+    public class SavingsPlansCostCalculationUnmarshaller : IJsonUnmarshaller<SavingsPlansCostCalculation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SavingsPlansCostCalculation IUnmarshaller<SavingsPlansCostCalculation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SavingsPlansCostCalculation Unmarshall(JsonUnmarshallerContext context)
+        public SavingsPlansCostCalculation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SavingsPlansCostCalculation unmarshalledObject = new SavingsPlansCostCalculation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("pricing", targetDepth))
                 {
                     var unmarshaller = SavingsPlansPricingUnmarshaller.Instance;
-                    unmarshalledObject.Pricing = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Pricing = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

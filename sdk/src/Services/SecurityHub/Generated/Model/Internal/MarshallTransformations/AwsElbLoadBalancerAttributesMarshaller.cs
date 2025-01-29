@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccessLog())
             {
                 context.Writer.WritePropertyName("AccessLog");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerAccessLogMarshaller.Instance;
                 marshaller.Marshall(requestObject.AccessLog, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAdditionalAttributes())
             {
                 context.Writer.WritePropertyName("AdditionalAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalAttributesListValue in requestObject.AdditionalAttributes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsElbLoadBalancerAdditionalAttributeMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalAttributesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConnectionDraining())
             {
                 context.Writer.WritePropertyName("ConnectionDraining");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerConnectionDrainingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectionDraining, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConnectionSettings())
             {
                 context.Writer.WritePropertyName("ConnectionSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerConnectionSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConnectionSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCrossZoneLoadBalancing())
             {
                 context.Writer.WritePropertyName("CrossZoneLoadBalancing");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsElbLoadBalancerCrossZoneLoadBalancingMarshaller.Instance;
                 marshaller.Marshall(requestObject.CrossZoneLoadBalancing, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

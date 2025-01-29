@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RedshiftServerless.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RecoveryPoint Object
     /// </summary>  
-    public class RecoveryPointUnmarshaller : IUnmarshaller<RecoveryPoint, XmlUnmarshallerContext>, IUnmarshaller<RecoveryPoint, JsonUnmarshallerContext>
+    public class RecoveryPointUnmarshaller : IJsonUnmarshaller<RecoveryPoint, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RecoveryPoint IUnmarshaller<RecoveryPoint, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RecoveryPoint Unmarshall(JsonUnmarshallerContext context)
+        public RecoveryPoint Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RecoveryPoint unmarshalledObject = new RecoveryPoint();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("namespaceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NamespaceArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("namespaceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NamespaceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recoveryPointCreateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryPointCreateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecoveryPointCreateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("recoveryPointId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RecoveryPointId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecoveryPointId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("totalSizeInMegaBytes", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TotalSizeInMegaBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalSizeInMegaBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workgroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkgroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkgroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TLSCertificateConfiguration Object
     /// </summary>  
-    public class TLSCertificateConfigurationUnmarshaller : IUnmarshaller<TLSCertificateConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TLSCertificateConfiguration, JsonUnmarshallerContext>
+    public class TLSCertificateConfigurationUnmarshaller : IJsonUnmarshaller<TLSCertificateConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TLSCertificateConfiguration IUnmarshaller<TLSCertificateConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TLSCertificateConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public TLSCertificateConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TLSCertificateConfiguration unmarshalledObject = new TLSCertificateConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("certificateProviderType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CertificateProviderType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateProviderType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("privateCertificateSecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PrivateCertificateSecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateCertificateSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("publicCertificateSecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PublicCertificateSecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PublicCertificateSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

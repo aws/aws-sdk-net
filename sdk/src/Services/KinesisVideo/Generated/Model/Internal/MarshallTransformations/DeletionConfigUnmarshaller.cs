@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KinesisVideo.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeletionConfig Object
     /// </summary>  
-    public class DeletionConfigUnmarshaller : IUnmarshaller<DeletionConfig, XmlUnmarshallerContext>, IUnmarshaller<DeletionConfig, JsonUnmarshallerContext>
+    public class DeletionConfigUnmarshaller : IJsonUnmarshaller<DeletionConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeletionConfig IUnmarshaller<DeletionConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeletionConfig Unmarshall(JsonUnmarshallerContext context)
+        public DeletionConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeletionConfig unmarshalledObject = new DeletionConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DeleteAfterUpload", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeleteAfterUpload = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeleteAfterUpload = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EdgeRetentionInHours", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.EdgeRetentionInHours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EdgeRetentionInHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LocalSizeConfig", targetDepth))
                 {
                     var unmarshaller = LocalSizeConfigUnmarshaller.Instance;
-                    unmarshalledObject.LocalSizeConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LocalSizeConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStrength())
             {
                 context.Writer.WritePropertyName("strength");
-                context.Writer.Write(requestObject.Strength.Value);
+                context.Writer.WriteNumberValue(requestObject.Strength.Value);
             }
 
         }

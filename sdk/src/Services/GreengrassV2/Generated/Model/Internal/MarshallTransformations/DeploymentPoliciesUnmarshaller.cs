@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GreengrassV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DeploymentPolicies Object
     /// </summary>  
-    public class DeploymentPoliciesUnmarshaller : IUnmarshaller<DeploymentPolicies, XmlUnmarshallerContext>, IUnmarshaller<DeploymentPolicies, JsonUnmarshallerContext>
+    public class DeploymentPoliciesUnmarshaller : IJsonUnmarshaller<DeploymentPolicies, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DeploymentPolicies IUnmarshaller<DeploymentPolicies, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DeploymentPolicies Unmarshall(JsonUnmarshallerContext context)
+        public DeploymentPolicies Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DeploymentPolicies unmarshalledObject = new DeploymentPolicies();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("componentUpdatePolicy", targetDepth))
                 {
                     var unmarshaller = DeploymentComponentUpdatePolicyUnmarshaller.Instance;
-                    unmarshalledObject.ComponentUpdatePolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ComponentUpdatePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("configurationValidationPolicy", targetDepth))
                 {
                     var unmarshaller = DeploymentConfigurationValidationPolicyUnmarshaller.Instance;
-                    unmarshalledObject.ConfigurationValidationPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ConfigurationValidationPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureHandlingPolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FailureHandlingPolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureHandlingPolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

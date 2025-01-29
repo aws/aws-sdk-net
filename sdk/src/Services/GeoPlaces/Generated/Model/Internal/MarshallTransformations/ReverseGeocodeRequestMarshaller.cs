@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
 {
@@ -64,82 +67,87 @@ namespace Amazon.GeoPlaces.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetKey())
                 request.Parameters.Add("key", StringUtils.FromString(publicRequest.Key));
             request.ResourcePath = "/reverse-geocode";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAdditionalFeatures())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("AdditionalFeatures");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestAdditionalFeaturesListValue in publicRequest.AdditionalFeatures)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAdditionalFeatures())
-                    {
-                        context.Writer.WritePropertyName("AdditionalFeatures");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestAdditionalFeaturesListValue in publicRequest.AdditionalFeatures)
-                        {
-                                context.Writer.Write(publicRequestAdditionalFeaturesListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetFilter())
-                    {
-                        context.Writer.WritePropertyName("Filter");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ReverseGeocodeFilterMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Filter, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetIntendedUse())
-                    {
-                        context.Writer.WritePropertyName("IntendedUse");
-                        context.Writer.Write(publicRequest.IntendedUse);
-                    }
-
-                    if(publicRequest.IsSetLanguage())
-                    {
-                        context.Writer.WritePropertyName("Language");
-                        context.Writer.Write(publicRequest.Language);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetPoliticalView())
-                    {
-                        context.Writer.WritePropertyName("PoliticalView");
-                        context.Writer.Write(publicRequest.PoliticalView);
-                    }
-
-                    if(publicRequest.IsSetQueryPosition())
-                    {
-                        context.Writer.WritePropertyName("QueryPosition");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestQueryPositionListValue in publicRequest.QueryPosition)
-                        {
-                                context.Writer.Write(publicRequestQueryPositionListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetQueryRadius())
-                    {
-                        context.Writer.WritePropertyName("QueryRadius");
-                        context.Writer.Write(publicRequest.QueryRadius.Value);
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestAdditionalFeaturesListValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetFilter())
+            {
+                context.Writer.WritePropertyName("Filter");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ReverseGeocodeFilterMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Filter, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetIntendedUse())
+            {
+                context.Writer.WritePropertyName("IntendedUse");
+                context.Writer.WriteStringValue(publicRequest.IntendedUse);
+            }
+
+            if(publicRequest.IsSetLanguage())
+            {
+                context.Writer.WritePropertyName("Language");
+                context.Writer.WriteStringValue(publicRequest.Language);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetPoliticalView())
+            {
+                context.Writer.WritePropertyName("PoliticalView");
+                context.Writer.WriteStringValue(publicRequest.PoliticalView);
+            }
+
+            if(publicRequest.IsSetQueryPosition())
+            {
+                context.Writer.WritePropertyName("QueryPosition");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestQueryPositionListValue in publicRequest.QueryPosition)
+                {
+                        context.Writer.WriteNumberValue(publicRequestQueryPositionListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetQueryRadius())
+            {
+                context.Writer.WritePropertyName("QueryRadius");
+                context.Writer.WriteNumberValue(publicRequest.QueryRadius.Value);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
             request.UseQueryString = true;
 

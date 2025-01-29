@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KafkaConnect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CapacityDescription Object
     /// </summary>  
-    public class CapacityDescriptionUnmarshaller : IUnmarshaller<CapacityDescription, XmlUnmarshallerContext>, IUnmarshaller<CapacityDescription, JsonUnmarshallerContext>
+    public class CapacityDescriptionUnmarshaller : IJsonUnmarshaller<CapacityDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CapacityDescription IUnmarshaller<CapacityDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CapacityDescription Unmarshall(JsonUnmarshallerContext context)
+        public CapacityDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CapacityDescription unmarshalledObject = new CapacityDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("autoScaling", targetDepth))
                 {
                     var unmarshaller = AutoScalingDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.AutoScaling = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AutoScaling = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("provisionedCapacity", targetDepth))
                 {
                     var unmarshaller = ProvisionedCapacityDescriptionUnmarshaller.Instance;
-                    unmarshalledObject.ProvisionedCapacity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProvisionedCapacity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

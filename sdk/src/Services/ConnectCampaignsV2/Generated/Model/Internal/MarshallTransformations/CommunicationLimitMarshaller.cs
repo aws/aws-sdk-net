@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ConnectCampaignsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFrequency())
             {
                 context.Writer.WritePropertyName("frequency");
-                context.Writer.Write(requestObject.Frequency.Value);
+                context.Writer.WriteNumberValue(requestObject.Frequency.Value);
             }
 
             if(requestObject.IsSetMaxCountPerRecipient())
             {
                 context.Writer.WritePropertyName("maxCountPerRecipient");
-                context.Writer.Write(requestObject.MaxCountPerRecipient.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCountPerRecipient.Value);
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

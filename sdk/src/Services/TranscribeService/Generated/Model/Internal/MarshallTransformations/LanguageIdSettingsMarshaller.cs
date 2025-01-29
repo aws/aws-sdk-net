@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLanguageModelName())
             {
                 context.Writer.WritePropertyName("LanguageModelName");
-                context.Writer.Write(requestObject.LanguageModelName);
+                context.Writer.WriteStringValue(requestObject.LanguageModelName);
             }
 
             if(requestObject.IsSetVocabularyFilterName())
             {
                 context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.Write(requestObject.VocabularyFilterName);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
             }
 
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.Write(requestObject.VocabularyName);
+                context.Writer.WriteStringValue(requestObject.VocabularyName);
             }
 
         }

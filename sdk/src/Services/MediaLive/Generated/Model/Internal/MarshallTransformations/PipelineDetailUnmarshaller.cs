@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PipelineDetail Object
     /// </summary>  
-    public class PipelineDetailUnmarshaller : IUnmarshaller<PipelineDetail, XmlUnmarshallerContext>, IUnmarshaller<PipelineDetail, JsonUnmarshallerContext>
+    public class PipelineDetailUnmarshaller : IJsonUnmarshaller<PipelineDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PipelineDetail IUnmarshaller<PipelineDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PipelineDetail Unmarshall(JsonUnmarshallerContext context)
+        public PipelineDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PipelineDetail unmarshalledObject = new PipelineDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("activeInputAttachmentName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveInputAttachmentName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveInputAttachmentName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("activeInputSwitchActionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveInputSwitchActionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveInputSwitchActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("activeMotionGraphicsActionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveMotionGraphicsActionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveMotionGraphicsActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("activeMotionGraphicsUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActiveMotionGraphicsUri = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActiveMotionGraphicsUri = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("channelEngineVersion", targetDepth))
                 {
                     var unmarshaller = ChannelEngineVersionResponseUnmarshaller.Instance;
-                    unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ChannelEngineVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pipelineId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PipelineId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

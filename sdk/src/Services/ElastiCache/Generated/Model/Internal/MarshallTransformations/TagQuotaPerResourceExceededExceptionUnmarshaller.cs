@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TagQuotaPerResourceExceededException operation
     /// </summary>  
-    public class TagQuotaPerResourceExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<TagQuotaPerResourceExceededException, XmlUnmarshallerContext>
+    public class TagQuotaPerResourceExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TagQuotaPerResourceExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

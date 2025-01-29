@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConnectionName())
             {
                 context.Writer.WritePropertyName("ConnectionName");
-                context.Writer.Write(requestObject.ConnectionName);
+                context.Writer.WriteStringValue(requestObject.ConnectionName);
             }
 
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetDlqEventQueueArn())
             {
                 context.Writer.WritePropertyName("DlqEventQueueArn");
-                context.Writer.Write(requestObject.DlqEventQueueArn);
+                context.Writer.WriteStringValue(requestObject.DlqEventQueueArn);
             }
 
             if(requestObject.IsSetEventQueueArn())
             {
                 context.Writer.WritePropertyName("EventQueueArn");
-                context.Writer.Write(requestObject.EventQueueArn);
+                context.Writer.WriteStringValue(requestObject.EventQueueArn);
             }
 
             if(requestObject.IsSetTables())
             {
                 context.Writer.WritePropertyName("Tables");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTablesListValue in requestObject.Tables)
                 {
-                        context.Writer.Write(requestObjectTablesListValue);
+                        context.Writer.WriteStringValue(requestObjectTablesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

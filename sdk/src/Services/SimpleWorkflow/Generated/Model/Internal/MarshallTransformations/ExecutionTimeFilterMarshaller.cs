@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLatestDate())
             {
                 context.Writer.WritePropertyName("latestDate");
-                context.Writer.Write(requestObject.LatestDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.LatestDate.Value)));
             }
 
             if(requestObject.IsSetOldestDate())
             {
                 context.Writer.WritePropertyName("oldestDate");
-                context.Writer.Write(requestObject.OldestDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.OldestDate.Value)));
             }
 
         }

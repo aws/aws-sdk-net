@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.AppRunner.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEgressConfiguration())
             {
                 context.Writer.WritePropertyName("EgressConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EgressConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EgressConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIngressConfiguration())
             {
                 context.Writer.WritePropertyName("IngressConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = IngressConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.IngressConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIpAddressType())
             {
                 context.Writer.WritePropertyName("IpAddressType");
-                context.Writer.Write(requestObject.IpAddressType);
+                context.Writer.WriteStringValue(requestObject.IpAddressType);
             }
 
         }

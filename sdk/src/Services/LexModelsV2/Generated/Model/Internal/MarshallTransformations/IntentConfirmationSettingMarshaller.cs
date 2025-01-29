@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
 {
@@ -51,139 +49,139 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActive())
             {
                 context.Writer.WritePropertyName("active");
-                context.Writer.Write(requestObject.Active.Value);
+                context.Writer.WriteBooleanValue(requestObject.Active.Value);
             }
 
             if(requestObject.IsSetCodeHook())
             {
                 context.Writer.WritePropertyName("codeHook");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DialogCodeHookInvocationSettingMarshaller.Instance;
                 marshaller.Marshall(requestObject.CodeHook, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfirmationConditional())
             {
                 context.Writer.WritePropertyName("confirmationConditional");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionalSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfirmationConditional, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfirmationNextStep())
             {
                 context.Writer.WritePropertyName("confirmationNextStep");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DialogStateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfirmationNextStep, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetConfirmationResponse())
             {
                 context.Writer.WritePropertyName("confirmationResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.ConfirmationResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeclinationConditional())
             {
                 context.Writer.WritePropertyName("declinationConditional");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionalSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeclinationConditional, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeclinationNextStep())
             {
                 context.Writer.WritePropertyName("declinationNextStep");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DialogStateMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeclinationNextStep, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDeclinationResponse())
             {
                 context.Writer.WritePropertyName("declinationResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DeclinationResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetElicitationCodeHook())
             {
                 context.Writer.WritePropertyName("elicitationCodeHook");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ElicitationCodeHookInvocationSettingMarshaller.Instance;
                 marshaller.Marshall(requestObject.ElicitationCodeHook, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFailureConditional())
             {
                 context.Writer.WritePropertyName("failureConditional");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ConditionalSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FailureConditional, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFailureNextStep())
             {
                 context.Writer.WritePropertyName("failureNextStep");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DialogStateMarshaller.Instance;
                 marshaller.Marshall(requestObject.FailureNextStep, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFailureResponse())
             {
                 context.Writer.WritePropertyName("failureResponse");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ResponseSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.FailureResponse, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPromptSpecification())
             {
                 context.Writer.WritePropertyName("promptSpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PromptSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PromptSpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

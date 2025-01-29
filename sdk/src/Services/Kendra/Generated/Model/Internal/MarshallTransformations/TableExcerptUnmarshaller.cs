@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TableExcerpt Object
     /// </summary>  
-    public class TableExcerptUnmarshaller : IUnmarshaller<TableExcerpt, XmlUnmarshallerContext>, IUnmarshaller<TableExcerpt, JsonUnmarshallerContext>
+    public class TableExcerptUnmarshaller : IJsonUnmarshaller<TableExcerpt, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TableExcerpt IUnmarshaller<TableExcerpt, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TableExcerpt Unmarshall(JsonUnmarshallerContext context)
+        public TableExcerpt Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TableExcerpt unmarshalledObject = new TableExcerpt();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Rows", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TableRow, TableRowUnmarshaller>(TableRowUnmarshaller.Instance);
-                    unmarshalledObject.Rows = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<TableRow, TableRowUnmarshaller>(TableRowUnmarshaller.Instance);
+                    unmarshalledObject.Rows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfRows", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfRows = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfRows = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsRedshiftClusterRestoreStatus Object
     /// </summary>  
-    public class AwsRedshiftClusterRestoreStatusUnmarshaller : IUnmarshaller<AwsRedshiftClusterRestoreStatus, XmlUnmarshallerContext>, IUnmarshaller<AwsRedshiftClusterRestoreStatus, JsonUnmarshallerContext>
+    public class AwsRedshiftClusterRestoreStatusUnmarshaller : IJsonUnmarshaller<AwsRedshiftClusterRestoreStatus, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsRedshiftClusterRestoreStatus IUnmarshaller<AwsRedshiftClusterRestoreStatus, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsRedshiftClusterRestoreStatus Unmarshall(JsonUnmarshallerContext context)
+        public AwsRedshiftClusterRestoreStatus Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsRedshiftClusterRestoreStatus unmarshalledObject = new AwsRedshiftClusterRestoreStatus();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CurrentRestoreRateInMegaBytesPerSecond", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.CurrentRestoreRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentRestoreRateInMegaBytesPerSecond = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ElapsedTimeInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ElapsedTimeInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EstimatedTimeToCompletionInSeconds", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EstimatedTimeToCompletionInSeconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EstimatedTimeToCompletionInSeconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ProgressInMegaBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ProgressInMegaBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SnapshotSizeInMegaBytes", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.SnapshotSizeInMegaBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SnapshotSizeInMegaBytes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

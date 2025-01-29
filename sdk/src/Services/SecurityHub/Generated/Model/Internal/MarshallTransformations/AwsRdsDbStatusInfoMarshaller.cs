@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMessage())
             {
                 context.Writer.WritePropertyName("Message");
-                context.Writer.Write(requestObject.Message);
+                context.Writer.WriteStringValue(requestObject.Message);
             }
 
             if(requestObject.IsSetNormal())
             {
                 context.Writer.WritePropertyName("Normal");
-                context.Writer.Write(requestObject.Normal.Value);
+                context.Writer.WriteBooleanValue(requestObject.Normal.Value);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetStatusType())
             {
                 context.Writer.WritePropertyName("StatusType");
-                context.Writer.Write(requestObject.StatusType);
+                context.Writer.WriteStringValue(requestObject.StatusType);
             }
 
         }

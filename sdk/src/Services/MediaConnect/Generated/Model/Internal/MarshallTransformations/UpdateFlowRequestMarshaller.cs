@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -64,52 +67,57 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                 throw new AmazonMediaConnectException("Request object does not have required field FlowArn set");
             request.AddPathResource("{flowArn}", StringUtils.FromString(publicRequest.FlowArn));
             request.ResourcePath = "/v1/flows/{flowArn}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetMaintenance())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetMaintenance())
-                    {
-                        context.Writer.WritePropertyName("maintenance");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("maintenance");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = UpdateMaintenanceMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Maintenance, context);
+                var marshaller = UpdateMaintenanceMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Maintenance, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceFailoverConfig())
-                    {
-                        context.Writer.WritePropertyName("sourceFailoverConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = UpdateFailoverConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceMonitoringConfig())
-                    {
-                        context.Writer.WritePropertyName("sourceMonitoringConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = MonitoringConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.SourceMonitoringConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetSourceFailoverConfig())
+            {
+                context.Writer.WritePropertyName("sourceFailoverConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = UpdateFailoverConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceFailoverConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceMonitoringConfig())
+            {
+                context.Writer.WritePropertyName("sourceMonitoringConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = MonitoringConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.SourceMonitoringConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

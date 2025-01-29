@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.MediaPackageV2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPresetSpeke20Audio())
             {
                 context.Writer.WritePropertyName("PresetSpeke20Audio");
-                context.Writer.Write(requestObject.PresetSpeke20Audio);
+                context.Writer.WriteStringValue(requestObject.PresetSpeke20Audio);
             }
 
             if(requestObject.IsSetPresetSpeke20Video())
             {
                 context.Writer.WritePropertyName("PresetSpeke20Video");
-                context.Writer.Write(requestObject.PresetSpeke20Video);
+                context.Writer.WriteStringValue(requestObject.PresetSpeke20Video);
             }
 
         }

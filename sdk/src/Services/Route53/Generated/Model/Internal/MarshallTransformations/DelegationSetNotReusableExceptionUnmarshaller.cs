@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DelegationSetNotReusableException operation
     /// </summary>  
-    public class DelegationSetNotReusableExceptionUnmarshaller : IErrorResponseUnmarshaller<DelegationSetNotReusableException, XmlUnmarshallerContext>
+    public class DelegationSetNotReusableExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DelegationSetNotReusableException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

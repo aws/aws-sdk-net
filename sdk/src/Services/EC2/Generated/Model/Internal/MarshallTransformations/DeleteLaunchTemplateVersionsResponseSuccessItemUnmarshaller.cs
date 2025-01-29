@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeleteLaunchTemplateVersionsResponseSuccessItem Object
     /// </summary>  
-    public class DeleteLaunchTemplateVersionsResponseSuccessItemUnmarshaller : IUnmarshaller<DeleteLaunchTemplateVersionsResponseSuccessItem, XmlUnmarshallerContext>, IUnmarshaller<DeleteLaunchTemplateVersionsResponseSuccessItem, JsonUnmarshallerContext>
+    public class DeleteLaunchTemplateVersionsResponseSuccessItemUnmarshaller : IXmlUnmarshaller<DeleteLaunchTemplateVersionsResponseSuccessItem, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DeleteLaunchTemplateVersionsResponseSuccessItem Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DeleteLaunchTemplateVersionsResponseSuccessItemUnmarshaller _instance = new DeleteLaunchTemplateVersionsResponseSuccessItemUnmarshaller();        
 

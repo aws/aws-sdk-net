@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DataTransferProgress Object
     /// </summary>  
-    public class DataTransferProgressUnmarshaller : IUnmarshaller<DataTransferProgress, XmlUnmarshallerContext>, IUnmarshaller<DataTransferProgress, JsonUnmarshallerContext>
+    public class DataTransferProgressUnmarshaller : IXmlUnmarshaller<DataTransferProgress, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DataTransferProgress Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DataTransferProgressUnmarshaller _instance = new DataTransferProgressUnmarshaller();        
 

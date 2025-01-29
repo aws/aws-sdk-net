@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TemplateSummary Object
     /// </summary>  
-    public class TemplateSummaryUnmarshaller : IUnmarshaller<TemplateSummary, XmlUnmarshallerContext>, IUnmarshaller<TemplateSummary, JsonUnmarshallerContext>
+    public class TemplateSummaryUnmarshaller : IXmlUnmarshaller<TemplateSummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -106,17 +106,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TemplateSummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TemplateSummaryUnmarshaller _instance = new TemplateSummaryUnmarshaller();        
 

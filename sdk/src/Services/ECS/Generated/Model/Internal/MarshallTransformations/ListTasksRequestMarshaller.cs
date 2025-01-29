@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ECS.Model.Internal.MarshallTransformations
 {
@@ -63,73 +66,78 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCluster())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCluster())
-                    {
-                        context.Writer.WritePropertyName("cluster");
-                        context.Writer.Write(publicRequest.Cluster);
-                    }
-
-                    if(publicRequest.IsSetContainerInstance())
-                    {
-                        context.Writer.WritePropertyName("containerInstance");
-                        context.Writer.Write(publicRequest.ContainerInstance);
-                    }
-
-                    if(publicRequest.IsSetDesiredStatus())
-                    {
-                        context.Writer.WritePropertyName("desiredStatus");
-                        context.Writer.Write(publicRequest.DesiredStatus);
-                    }
-
-                    if(publicRequest.IsSetFamily())
-                    {
-                        context.Writer.WritePropertyName("family");
-                        context.Writer.Write(publicRequest.Family);
-                    }
-
-                    if(publicRequest.IsSetLaunchType())
-                    {
-                        context.Writer.WritePropertyName("launchType");
-                        context.Writer.Write(publicRequest.LaunchType);
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("maxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("nextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetServiceName())
-                    {
-                        context.Writer.WritePropertyName("serviceName");
-                        context.Writer.Write(publicRequest.ServiceName);
-                    }
-
-                    if(publicRequest.IsSetStartedBy())
-                    {
-                        context.Writer.WritePropertyName("startedBy");
-                        context.Writer.Write(publicRequest.StartedBy);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("cluster");
+                context.Writer.WriteStringValue(publicRequest.Cluster);
             }
+
+            if(publicRequest.IsSetContainerInstance())
+            {
+                context.Writer.WritePropertyName("containerInstance");
+                context.Writer.WriteStringValue(publicRequest.ContainerInstance);
+            }
+
+            if(publicRequest.IsSetDesiredStatus())
+            {
+                context.Writer.WritePropertyName("desiredStatus");
+                context.Writer.WriteStringValue(publicRequest.DesiredStatus);
+            }
+
+            if(publicRequest.IsSetFamily())
+            {
+                context.Writer.WritePropertyName("family");
+                context.Writer.WriteStringValue(publicRequest.Family);
+            }
+
+            if(publicRequest.IsSetLaunchType())
+            {
+                context.Writer.WritePropertyName("launchType");
+                context.Writer.WriteStringValue(publicRequest.LaunchType);
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("maxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("nextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetServiceName())
+            {
+                context.Writer.WritePropertyName("serviceName");
+                context.Writer.WriteStringValue(publicRequest.ServiceName);
+            }
+
+            if(publicRequest.IsSetStartedBy())
+            {
+                context.Writer.WritePropertyName("startedBy");
+                context.Writer.WriteStringValue(publicRequest.StartedBy);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

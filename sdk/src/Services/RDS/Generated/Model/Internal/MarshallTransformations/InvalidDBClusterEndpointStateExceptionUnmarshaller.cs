@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBClusterEndpointStateException operation
     /// </summary>  
-    public class InvalidDBClusterEndpointStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBClusterEndpointStateException, XmlUnmarshallerContext>
+    public class InvalidDBClusterEndpointStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBClusterEndpointStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

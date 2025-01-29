@@ -35,7 +35,7 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IntOptions Object
     /// </summary>  
-    public class IntOptionsUnmarshaller : IUnmarshaller<IntOptions, XmlUnmarshallerContext>, IUnmarshaller<IntOptions, JsonUnmarshallerContext>
+    public class IntOptionsUnmarshaller : IXmlUnmarshaller<IntOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.CloudSearch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IntOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IntOptionsUnmarshaller _instance = new IntOptionsUnmarshaller();        
 

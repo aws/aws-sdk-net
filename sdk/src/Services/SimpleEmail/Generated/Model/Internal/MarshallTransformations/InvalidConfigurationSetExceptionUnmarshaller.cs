@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidConfigurationSetException operation
     /// </summary>  
-    public class InvalidConfigurationSetExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidConfigurationSetException, XmlUnmarshallerContext>
+    public class InvalidConfigurationSetExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidConfigurationSetException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContactId())
             {
                 context.Writer.WritePropertyName("ContactId");
-                context.Writer.Write(requestObject.ContactId);
+                context.Writer.WriteStringValue(requestObject.ContactId);
             }
 
             if(requestObject.IsSetIsEssential())
             {
                 context.Writer.WritePropertyName("IsEssential");
-                context.Writer.Write(requestObject.IsEssential.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsEssential.Value);
             }
 
         }

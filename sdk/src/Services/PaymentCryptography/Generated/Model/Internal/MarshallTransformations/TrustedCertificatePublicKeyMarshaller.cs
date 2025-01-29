@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.PaymentCryptography.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificateAuthorityPublicKeyIdentifier())
             {
                 context.Writer.WritePropertyName("CertificateAuthorityPublicKeyIdentifier");
-                context.Writer.Write(requestObject.CertificateAuthorityPublicKeyIdentifier);
+                context.Writer.WriteStringValue(requestObject.CertificateAuthorityPublicKeyIdentifier);
             }
 
             if(requestObject.IsSetKeyAttributes())
             {
                 context.Writer.WritePropertyName("KeyAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = KeyAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.KeyAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPublicKeyCertificate())
             {
                 context.Writer.WritePropertyName("PublicKeyCertificate");
-                context.Writer.Write(requestObject.PublicKeyCertificate);
+                context.Writer.WriteStringValue(requestObject.PublicKeyCertificate);
             }
 
         }

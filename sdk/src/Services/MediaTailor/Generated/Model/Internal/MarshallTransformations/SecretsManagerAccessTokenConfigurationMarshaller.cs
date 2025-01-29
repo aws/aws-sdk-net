@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetHeaderName())
             {
                 context.Writer.WritePropertyName("HeaderName");
-                context.Writer.Write(requestObject.HeaderName);
+                context.Writer.WriteStringValue(requestObject.HeaderName);
             }
 
             if(requestObject.IsSetSecretArn())
             {
                 context.Writer.WritePropertyName("SecretArn");
-                context.Writer.Write(requestObject.SecretArn);
+                context.Writer.WriteStringValue(requestObject.SecretArn);
             }
 
             if(requestObject.IsSetSecretStringKey())
             {
                 context.Writer.WritePropertyName("SecretStringKey");
-                context.Writer.Write(requestObject.SecretStringKey);
+                context.Writer.WriteStringValue(requestObject.SecretStringKey);
             }
 
         }

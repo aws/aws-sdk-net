@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CognitoIdentityProvider.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RiskConfigurationType Object
     /// </summary>  
-    public class RiskConfigurationTypeUnmarshaller : IUnmarshaller<RiskConfigurationType, XmlUnmarshallerContext>, IUnmarshaller<RiskConfigurationType, JsonUnmarshallerContext>
+    public class RiskConfigurationTypeUnmarshaller : IJsonUnmarshaller<RiskConfigurationType, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RiskConfigurationType IUnmarshaller<RiskConfigurationType, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RiskConfigurationType Unmarshall(JsonUnmarshallerContext context)
+        public RiskConfigurationType Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RiskConfigurationType unmarshalledObject = new RiskConfigurationType();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("AccountTakeoverRiskConfiguration", targetDepth))
                 {
                     var unmarshaller = AccountTakeoverRiskConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.AccountTakeoverRiskConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountTakeoverRiskConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ClientId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ClientId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CompromisedCredentialsRiskConfiguration", targetDepth))
                 {
                     var unmarshaller = CompromisedCredentialsRiskConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.CompromisedCredentialsRiskConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CompromisedCredentialsRiskConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastModifiedDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModifiedDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RiskExceptionConfiguration", targetDepth))
                 {
                     var unmarshaller = RiskExceptionConfigurationTypeUnmarshaller.Instance;
-                    unmarshalledObject.RiskExceptionConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RiskExceptionConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserPoolId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.UserPoolId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.UserPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

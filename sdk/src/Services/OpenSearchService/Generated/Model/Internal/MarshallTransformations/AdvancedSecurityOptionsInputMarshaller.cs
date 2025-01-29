@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnonymousAuthEnabled())
             {
                 context.Writer.WritePropertyName("AnonymousAuthEnabled");
-                context.Writer.Write(requestObject.AnonymousAuthEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AnonymousAuthEnabled.Value);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetInternalUserDatabaseEnabled())
             {
                 context.Writer.WritePropertyName("InternalUserDatabaseEnabled");
-                context.Writer.Write(requestObject.InternalUserDatabaseEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.InternalUserDatabaseEnabled.Value);
             }
 
             if(requestObject.IsSetJWTOptions())
             {
                 context.Writer.WritePropertyName("JWTOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JWTOptionsInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.JWTOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMasterUserOptions())
             {
                 context.Writer.WritePropertyName("MasterUserOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MasterUserOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.MasterUserOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSAMLOptions())
             {
                 context.Writer.WritePropertyName("SAMLOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SAMLOptionsInputMarshaller.Instance;
                 marshaller.Marshall(requestObject.SAMLOptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for WebExperienceAuthConfiguration Object
     /// </summary>  
-    public class WebExperienceAuthConfigurationUnmarshaller : IUnmarshaller<WebExperienceAuthConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WebExperienceAuthConfiguration, JsonUnmarshallerContext>
+    public class WebExperienceAuthConfigurationUnmarshaller : IJsonUnmarshaller<WebExperienceAuthConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        WebExperienceAuthConfiguration IUnmarshaller<WebExperienceAuthConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public WebExperienceAuthConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public WebExperienceAuthConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             WebExperienceAuthConfiguration unmarshalledObject = new WebExperienceAuthConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("samlConfiguration", targetDepth))
                 {
                     var unmarshaller = SamlConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.SamlConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SamlConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

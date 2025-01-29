@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -63,98 +66,103 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetCatalog())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetCatalog())
-                    {
-                        context.Writer.WritePropertyName("Catalog");
-                        context.Writer.Write(publicRequest.Catalog);
-                    }
-
-                    if(publicRequest.IsSetEngagementIdentifier())
-                    {
-                        context.Writer.WritePropertyName("EngagementIdentifier");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
-                        {
-                                context.Writer.Write(publicRequestEngagementIdentifierListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetMaxResults())
-                    {
-                        context.Writer.WritePropertyName("MaxResults");
-                        context.Writer.Write(publicRequest.MaxResults.Value);
-                    }
-
-                    if(publicRequest.IsSetNextToken())
-                    {
-                        context.Writer.WritePropertyName("NextToken");
-                        context.Writer.Write(publicRequest.NextToken);
-                    }
-
-                    if(publicRequest.IsSetParticipantType())
-                    {
-                        context.Writer.WritePropertyName("ParticipantType");
-                        context.Writer.Write(publicRequest.ParticipantType);
-                    }
-
-                    if(publicRequest.IsSetPayloadType())
-                    {
-                        context.Writer.WritePropertyName("PayloadType");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPayloadTypeListValue in publicRequest.PayloadType)
-                        {
-                                context.Writer.Write(publicRequestPayloadTypeListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSenderAwsAccountId())
-                    {
-                        context.Writer.WritePropertyName("SenderAwsAccountId");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSenderAwsAccountIdListValue in publicRequest.SenderAwsAccountId)
-                        {
-                                context.Writer.Write(publicRequestSenderAwsAccountIdListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSort())
-                    {
-                        context.Writer.WritePropertyName("Sort");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = OpportunityEngagementInvitationSortMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Sort, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestStatusListValue in publicRequest.Status)
-                        {
-                                context.Writer.Write(publicRequestStatusListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("Catalog");
+                context.Writer.WriteStringValue(publicRequest.Catalog);
             }
+
+            if(publicRequest.IsSetEngagementIdentifier())
+            {
+                context.Writer.WritePropertyName("EngagementIdentifier");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestEngagementIdentifierListValue in publicRequest.EngagementIdentifier)
+                {
+                        context.Writer.WriteStringValue(publicRequestEngagementIdentifierListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetMaxResults())
+            {
+                context.Writer.WritePropertyName("MaxResults");
+                context.Writer.WriteNumberValue(publicRequest.MaxResults.Value);
+            }
+
+            if(publicRequest.IsSetNextToken())
+            {
+                context.Writer.WritePropertyName("NextToken");
+                context.Writer.WriteStringValue(publicRequest.NextToken);
+            }
+
+            if(publicRequest.IsSetParticipantType())
+            {
+                context.Writer.WritePropertyName("ParticipantType");
+                context.Writer.WriteStringValue(publicRequest.ParticipantType);
+            }
+
+            if(publicRequest.IsSetPayloadType())
+            {
+                context.Writer.WritePropertyName("PayloadType");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPayloadTypeListValue in publicRequest.PayloadType)
+                {
+                        context.Writer.WriteStringValue(publicRequestPayloadTypeListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSenderAwsAccountId())
+            {
+                context.Writer.WritePropertyName("SenderAwsAccountId");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSenderAwsAccountIdListValue in publicRequest.SenderAwsAccountId)
+                {
+                        context.Writer.WriteStringValue(publicRequestSenderAwsAccountIdListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSort())
+            {
+                context.Writer.WritePropertyName("Sort");
+                context.Writer.WriteStartObject();
+
+                var marshaller = OpportunityEngagementInvitationSortMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Sort, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestStatusListValue in publicRequest.Status)
+                {
+                        context.Writer.WriteStringValue(publicRequestStatusListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

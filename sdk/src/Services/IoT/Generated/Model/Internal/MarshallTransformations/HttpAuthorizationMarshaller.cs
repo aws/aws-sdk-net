@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetSigv4())
             {
                 context.Writer.WritePropertyName("sigv4");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SigV4AuthorizationMarshaller.Instance;
                 marshaller.Marshall(requestObject.Sigv4, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

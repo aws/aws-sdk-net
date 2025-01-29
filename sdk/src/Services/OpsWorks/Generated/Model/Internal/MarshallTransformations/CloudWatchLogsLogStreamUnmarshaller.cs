@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CloudWatchLogsLogStream Object
     /// </summary>  
-    public class CloudWatchLogsLogStreamUnmarshaller : IUnmarshaller<CloudWatchLogsLogStream, XmlUnmarshallerContext>, IUnmarshaller<CloudWatchLogsLogStream, JsonUnmarshallerContext>
+    public class CloudWatchLogsLogStreamUnmarshaller : IJsonUnmarshaller<CloudWatchLogsLogStream, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CloudWatchLogsLogStream IUnmarshaller<CloudWatchLogsLogStream, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CloudWatchLogsLogStream Unmarshall(JsonUnmarshallerContext context)
+        public CloudWatchLogsLogStream Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CloudWatchLogsLogStream unmarshalledObject = new CloudWatchLogsLogStream();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("BatchCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BatchCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BatchCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BatchSize", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BatchSize = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("BufferDuration", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.BufferDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BufferDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DatetimeFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatetimeFormat = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatetimeFormat = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Encoding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Encoding = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Encoding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("File", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.File = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.File = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("FileFingerprintLines", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FileFingerprintLines = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FileFingerprintLines = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InitialPosition", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.InitialPosition = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InitialPosition = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LogGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MultiLineStartPattern", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MultiLineStartPattern = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MultiLineStartPattern = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TimeZone", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TimeZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimeZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

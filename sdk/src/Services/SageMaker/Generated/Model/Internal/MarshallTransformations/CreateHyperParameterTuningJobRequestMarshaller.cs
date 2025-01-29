@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -63,101 +66,106 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetAutotune())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetAutotune())
-                    {
-                        context.Writer.WritePropertyName("Autotune");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Autotune");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = AutotuneMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Autotune, context);
+                var marshaller = AutotuneMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Autotune, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHyperParameterTuningJobConfig())
-                    {
-                        context.Writer.WritePropertyName("HyperParameterTuningJobConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HyperParameterTuningJobConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.HyperParameterTuningJobConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetHyperParameterTuningJobName())
-                    {
-                        context.Writer.WritePropertyName("HyperParameterTuningJobName");
-                        context.Writer.Write(publicRequest.HyperParameterTuningJobName);
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("Tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTrainingJobDefinition())
-                    {
-                        context.Writer.WritePropertyName("TrainingJobDefinition");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.TrainingJobDefinition, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTrainingJobDefinitions())
-                    {
-                        context.Writer.WritePropertyName("TrainingJobDefinitions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTrainingJobDefinitionsListValue in publicRequest.TrainingJobDefinitions)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTrainingJobDefinitionsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWarmStartConfig())
-                    {
-                        context.Writer.WritePropertyName("WarmStartConfig");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = HyperParameterTuningJobWarmStartConfigMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.WarmStartConfig, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetHyperParameterTuningJobConfig())
+            {
+                context.Writer.WritePropertyName("HyperParameterTuningJobConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HyperParameterTuningJobConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.HyperParameterTuningJobConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetHyperParameterTuningJobName())
+            {
+                context.Writer.WritePropertyName("HyperParameterTuningJobName");
+                context.Writer.WriteStringValue(publicRequest.HyperParameterTuningJobName);
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("Tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTrainingJobDefinition())
+            {
+                context.Writer.WritePropertyName("TrainingJobDefinition");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
+                marshaller.Marshall(publicRequest.TrainingJobDefinition, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTrainingJobDefinitions())
+            {
+                context.Writer.WritePropertyName("TrainingJobDefinitions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTrainingJobDefinitionsListValue in publicRequest.TrainingJobDefinitions)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = HyperParameterTrainingJobDefinitionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTrainingJobDefinitionsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWarmStartConfig())
+            {
+                context.Writer.WritePropertyName("WarmStartConfig");
+                context.Writer.WriteStartObject();
+
+                var marshaller = HyperParameterTuningJobWarmStartConfigMarshaller.Instance;
+                marshaller.Marshall(publicRequest.WarmStartConfig, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

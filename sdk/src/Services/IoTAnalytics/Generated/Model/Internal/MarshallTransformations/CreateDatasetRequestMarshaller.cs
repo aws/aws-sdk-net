@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -61,127 +64,132 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/datasets";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetActions())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("actions");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestActionsListValue in publicRequest.Actions)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetActions())
-                    {
-                        context.Writer.WritePropertyName("actions");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestActionsListValue in publicRequest.Actions)
-                        {
-                            context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
-                            var marshaller = DatasetActionMarshaller.Instance;
-                            marshaller.Marshall(publicRequestActionsListValue, context);
+                    var marshaller = DatasetActionMarshaller.Instance;
+                    marshaller.Marshall(publicRequestActionsListValue, context);
 
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetContentDeliveryRules())
-                    {
-                        context.Writer.WritePropertyName("contentDeliveryRules");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestContentDeliveryRulesListValue in publicRequest.ContentDeliveryRules)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DatasetContentDeliveryRuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestContentDeliveryRulesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetDatasetName())
-                    {
-                        context.Writer.WritePropertyName("datasetName");
-                        context.Writer.Write(publicRequest.DatasetName);
-                    }
-
-                    if(publicRequest.IsSetLateDataRules())
-                    {
-                        context.Writer.WritePropertyName("lateDataRules");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestLateDataRulesListValue in publicRequest.LateDataRules)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = LateDataRuleMarshaller.Instance;
-                            marshaller.Marshall(publicRequestLateDataRulesListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetRetentionPeriod())
-                    {
-                        context.Writer.WritePropertyName("retentionPeriod");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = RetentionPeriodMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.RetentionPeriod, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TagMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTagsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTriggers())
-                    {
-                        context.Writer.WritePropertyName("triggers");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestTriggersListValue in publicRequest.Triggers)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = DatasetTriggerMarshaller.Instance;
-                            marshaller.Marshall(publicRequestTriggersListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetVersioningConfiguration())
-                    {
-                        context.Writer.WritePropertyName("versioningConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = VersioningConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.VersioningConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndArray();
             }
+
+            if(publicRequest.IsSetContentDeliveryRules())
+            {
+                context.Writer.WritePropertyName("contentDeliveryRules");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestContentDeliveryRulesListValue in publicRequest.ContentDeliveryRules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DatasetContentDeliveryRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestContentDeliveryRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetDatasetName())
+            {
+                context.Writer.WritePropertyName("datasetName");
+                context.Writer.WriteStringValue(publicRequest.DatasetName);
+            }
+
+            if(publicRequest.IsSetLateDataRules())
+            {
+                context.Writer.WritePropertyName("lateDataRules");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestLateDataRulesListValue in publicRequest.LateDataRules)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = LateDataRuleMarshaller.Instance;
+                    marshaller.Marshall(publicRequestLateDataRulesListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetRetentionPeriod())
+            {
+                context.Writer.WritePropertyName("retentionPeriod");
+                context.Writer.WriteStartObject();
+
+                var marshaller = RetentionPeriodMarshaller.Instance;
+                marshaller.Marshall(publicRequest.RetentionPeriod, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTagsListValue in publicRequest.Tags)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TagMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTagsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTriggers())
+            {
+                context.Writer.WritePropertyName("triggers");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestTriggersListValue in publicRequest.Triggers)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = DatasetTriggerMarshaller.Instance;
+                    marshaller.Marshall(publicRequestTriggersListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetVersioningConfiguration())
+            {
+                context.Writer.WritePropertyName("versioningConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = VersioningConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.VersioningConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
 {
@@ -51,21 +49,21 @@ namespace Amazon.GlueDataBrew.Model.Internal.MarshallTransformations
             if(requestObject.IsSetExpression())
             {
                 context.Writer.WritePropertyName("Expression");
-                context.Writer.Write(requestObject.Expression);
+                context.Writer.WriteStringValue(requestObject.Expression);
             }
 
             if(requestObject.IsSetValuesMap())
             {
                 context.Writer.WritePropertyName("ValuesMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectValuesMapKvp in requestObject.ValuesMap)
                 {
                     context.Writer.WritePropertyName(requestObjectValuesMapKvp.Key);
                     var requestObjectValuesMapValue = requestObjectValuesMapKvp.Value;
 
-                        context.Writer.Write(requestObjectValuesMapValue);
+                        context.Writer.WriteStringValue(requestObjectValuesMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

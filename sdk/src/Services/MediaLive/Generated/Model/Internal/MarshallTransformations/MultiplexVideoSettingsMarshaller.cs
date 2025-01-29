@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstantBitrate())
             {
                 context.Writer.WritePropertyName("constantBitrate");
-                context.Writer.Write(requestObject.ConstantBitrate.Value);
+                context.Writer.WriteNumberValue(requestObject.ConstantBitrate.Value);
             }
 
             if(requestObject.IsSetStatmuxSettings())
             {
                 context.Writer.WritePropertyName("statmuxSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MultiplexStatmuxVideoSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.StatmuxSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

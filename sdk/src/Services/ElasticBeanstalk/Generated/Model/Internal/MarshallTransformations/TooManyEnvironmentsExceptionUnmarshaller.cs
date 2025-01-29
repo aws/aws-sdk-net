@@ -35,7 +35,7 @@ namespace Amazon.ElasticBeanstalk.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyEnvironmentsException operation
     /// </summary>  
-    public class TooManyEnvironmentsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyEnvironmentsException, XmlUnmarshallerContext>
+    public class TooManyEnvironmentsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyEnvironmentsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

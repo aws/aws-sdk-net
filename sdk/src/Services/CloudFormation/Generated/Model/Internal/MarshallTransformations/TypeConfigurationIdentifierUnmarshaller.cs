@@ -35,7 +35,7 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TypeConfigurationIdentifier Object
     /// </summary>  
-    public class TypeConfigurationIdentifierUnmarshaller : IUnmarshaller<TypeConfigurationIdentifier, XmlUnmarshallerContext>, IUnmarshaller<TypeConfigurationIdentifier, JsonUnmarshallerContext>
+    public class TypeConfigurationIdentifierUnmarshaller : IXmlUnmarshaller<TypeConfigurationIdentifier, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TypeConfigurationIdentifier Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TypeConfigurationIdentifierUnmarshaller _instance = new TypeConfigurationIdentifierUnmarshaller();        
 

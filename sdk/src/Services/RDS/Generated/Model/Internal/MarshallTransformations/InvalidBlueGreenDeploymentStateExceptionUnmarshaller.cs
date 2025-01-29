@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidBlueGreenDeploymentStateException operation
     /// </summary>  
-    public class InvalidBlueGreenDeploymentStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidBlueGreenDeploymentStateException, XmlUnmarshallerContext>
+    public class InvalidBlueGreenDeploymentStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidBlueGreenDeploymentStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

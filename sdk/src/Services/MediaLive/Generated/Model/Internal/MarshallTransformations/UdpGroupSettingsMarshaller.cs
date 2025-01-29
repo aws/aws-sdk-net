@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInputLossAction())
             {
                 context.Writer.WritePropertyName("inputLossAction");
-                context.Writer.Write(requestObject.InputLossAction);
+                context.Writer.WriteStringValue(requestObject.InputLossAction);
             }
 
             if(requestObject.IsSetTimedMetadataId3Frame())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Frame");
-                context.Writer.Write(requestObject.TimedMetadataId3Frame);
+                context.Writer.WriteStringValue(requestObject.TimedMetadataId3Frame);
             }
 
             if(requestObject.IsSetTimedMetadataId3Period())
             {
                 context.Writer.WritePropertyName("timedMetadataId3Period");
-                context.Writer.Write(requestObject.TimedMetadataId3Period.Value);
+                context.Writer.WriteNumberValue(requestObject.TimedMetadataId3Period.Value);
             }
 
         }

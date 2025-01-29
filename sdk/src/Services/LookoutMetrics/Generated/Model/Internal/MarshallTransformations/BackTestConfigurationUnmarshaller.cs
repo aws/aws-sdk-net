@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LookoutMetrics.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BackTestConfiguration Object
     /// </summary>  
-    public class BackTestConfigurationUnmarshaller : IUnmarshaller<BackTestConfiguration, XmlUnmarshallerContext>, IUnmarshaller<BackTestConfiguration, JsonUnmarshallerContext>
+    public class BackTestConfigurationUnmarshaller : IJsonUnmarshaller<BackTestConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BackTestConfiguration IUnmarshaller<BackTestConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BackTestConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public BackTestConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BackTestConfiguration unmarshalledObject = new BackTestConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("RunBackTestMode", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.RunBackTestMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RunBackTestMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

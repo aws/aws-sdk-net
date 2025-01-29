@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GameLift.Model.Internal.MarshallTransformations
 {
@@ -51,95 +49,95 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerName())
             {
                 context.Writer.WritePropertyName("ContainerName");
-                context.Writer.Write(requestObject.ContainerName);
+                context.Writer.WriteStringValue(requestObject.ContainerName);
             }
 
             if(requestObject.IsSetDependsOn())
             {
                 context.Writer.WritePropertyName("DependsOn");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDependsOnListValue in requestObject.DependsOn)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContainerDependencyMarshaller.Instance;
                     marshaller.Marshall(requestObjectDependsOnListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnvironmentOverride())
             {
                 context.Writer.WritePropertyName("EnvironmentOverride");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentOverrideListValue in requestObject.EnvironmentOverride)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContainerEnvironmentMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentOverrideListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEssential())
             {
                 context.Writer.WritePropertyName("Essential");
-                context.Writer.Write(requestObject.Essential.Value);
+                context.Writer.WriteBooleanValue(requestObject.Essential.Value);
             }
 
             if(requestObject.IsSetHealthCheck())
             {
                 context.Writer.WritePropertyName("HealthCheck");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerHealthCheckMarshaller.Instance;
                 marshaller.Marshall(requestObject.HealthCheck, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageUri())
             {
                 context.Writer.WritePropertyName("ImageUri");
-                context.Writer.Write(requestObject.ImageUri);
+                context.Writer.WriteStringValue(requestObject.ImageUri);
             }
 
             if(requestObject.IsSetMemoryHardLimitMebibytes())
             {
                 context.Writer.WritePropertyName("MemoryHardLimitMebibytes");
-                context.Writer.Write(requestObject.MemoryHardLimitMebibytes.Value);
+                context.Writer.WriteNumberValue(requestObject.MemoryHardLimitMebibytes.Value);
             }
 
             if(requestObject.IsSetMountPoints())
             {
                 context.Writer.WritePropertyName("MountPoints");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMountPointsListValue in requestObject.MountPoints)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ContainerMountPointMarshaller.Instance;
                     marshaller.Marshall(requestObjectMountPointsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPortConfiguration())
             {
                 context.Writer.WritePropertyName("PortConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerPortConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PortConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVcpu())
@@ -147,11 +145,11 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Vcpu");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Vcpu.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Vcpu.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Vcpu.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Vcpu.Value);
+                    context.Writer.WriteNumberValue(requestObject.Vcpu.Value);
                 }
             }
 

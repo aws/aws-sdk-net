@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for LoginAuthConfigReqObj Object
     /// </summary>  
-    public class LoginAuthConfigReqObjUnmarshaller : IUnmarshaller<LoginAuthConfigReqObj, XmlUnmarshallerContext>, IUnmarshaller<LoginAuthConfigReqObj, JsonUnmarshallerContext>
+    public class LoginAuthConfigReqObjUnmarshaller : IJsonUnmarshaller<LoginAuthConfigReqObj, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        LoginAuthConfigReqObj IUnmarshaller<LoginAuthConfigReqObj, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public LoginAuthConfigReqObj Unmarshall(JsonUnmarshallerContext context)
+        public LoginAuthConfigReqObj Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             LoginAuthConfigReqObj unmarshalledObject = new LoginAuthConfigReqObj();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("aws_cognito_identity_pool_id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsCognitoIdentityPoolId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsCognitoIdentityPoolId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aws_cognito_region", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsCognitoRegion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsCognitoRegion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aws_user_pools_id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsUserPoolsId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsUserPoolsId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("aws_user_pools_web_client_id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AwsUserPoolsWebClientId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AwsUserPoolsWebClientId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

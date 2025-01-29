@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InsightHealth Object
     /// </summary>  
-    public class InsightHealthUnmarshaller : IUnmarshaller<InsightHealth, XmlUnmarshallerContext>, IUnmarshaller<InsightHealth, JsonUnmarshallerContext>
+    public class InsightHealthUnmarshaller : IJsonUnmarshaller<InsightHealth, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InsightHealth IUnmarshaller<InsightHealth, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InsightHealth Unmarshall(JsonUnmarshallerContext context)
+        public InsightHealth Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InsightHealth unmarshalledObject = new InsightHealth();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MeanTimeToRecoverInMilliseconds", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.MeanTimeToRecoverInMilliseconds = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MeanTimeToRecoverInMilliseconds = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OpenProactiveInsights", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.OpenProactiveInsights = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenProactiveInsights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OpenReactiveInsights", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.OpenReactiveInsights = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OpenReactiveInsights = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

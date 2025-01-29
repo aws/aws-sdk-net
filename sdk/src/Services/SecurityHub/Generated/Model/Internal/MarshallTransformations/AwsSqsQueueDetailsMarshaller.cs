@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDeadLetterTargetArn())
             {
                 context.Writer.WritePropertyName("DeadLetterTargetArn");
-                context.Writer.Write(requestObject.DeadLetterTargetArn);
+                context.Writer.WriteStringValue(requestObject.DeadLetterTargetArn);
             }
 
             if(requestObject.IsSetKmsDataKeyReusePeriodSeconds())
             {
                 context.Writer.WritePropertyName("KmsDataKeyReusePeriodSeconds");
-                context.Writer.Write(requestObject.KmsDataKeyReusePeriodSeconds.Value);
+                context.Writer.WriteNumberValue(requestObject.KmsDataKeyReusePeriodSeconds.Value);
             }
 
             if(requestObject.IsSetKmsMasterKeyId())
             {
                 context.Writer.WritePropertyName("KmsMasterKeyId");
-                context.Writer.Write(requestObject.KmsMasterKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsMasterKeyId);
             }
 
             if(requestObject.IsSetQueueName())
             {
                 context.Writer.WritePropertyName("QueueName");
-                context.Writer.Write(requestObject.QueueName);
+                context.Writer.WriteStringValue(requestObject.QueueName);
             }
 
         }

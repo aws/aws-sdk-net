@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
@@ -53,18 +51,18 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Total");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Total.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Total.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Total.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Total.Value);
+                    context.Writer.WriteNumberValue(requestObject.Total.Value);
                 }
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

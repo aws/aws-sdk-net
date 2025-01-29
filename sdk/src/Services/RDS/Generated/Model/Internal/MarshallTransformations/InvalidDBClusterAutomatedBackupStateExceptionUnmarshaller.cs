@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDBClusterAutomatedBackupStateException operation
     /// </summary>  
-    public class InvalidDBClusterAutomatedBackupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDBClusterAutomatedBackupStateException, XmlUnmarshallerContext>
+    public class InvalidDBClusterAutomatedBackupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDBClusterAutomatedBackupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

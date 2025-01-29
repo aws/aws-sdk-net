@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.ChimeSDKMediaPipelines.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCallAnalyticsStreamCategories())
             {
                 context.Writer.WritePropertyName("CallAnalyticsStreamCategories");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCallAnalyticsStreamCategoriesListValue in requestObject.CallAnalyticsStreamCategories)
                 {
-                        context.Writer.Write(requestObjectCallAnalyticsStreamCategoriesListValue);
+                        context.Writer.WriteStringValue(requestObjectCallAnalyticsStreamCategoriesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetContentIdentificationType())
             {
                 context.Writer.WritePropertyName("ContentIdentificationType");
-                context.Writer.Write(requestObject.ContentIdentificationType);
+                context.Writer.WriteStringValue(requestObject.ContentIdentificationType);
             }
 
             if(requestObject.IsSetContentRedactionType())
             {
                 context.Writer.WritePropertyName("ContentRedactionType");
-                context.Writer.Write(requestObject.ContentRedactionType);
+                context.Writer.WriteStringValue(requestObject.ContentRedactionType);
             }
 
             if(requestObject.IsSetEnablePartialResultsStabilization())
             {
                 context.Writer.WritePropertyName("EnablePartialResultsStabilization");
-                context.Writer.Write(requestObject.EnablePartialResultsStabilization.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnablePartialResultsStabilization.Value);
             }
 
             if(requestObject.IsSetFilterPartialResults())
             {
                 context.Writer.WritePropertyName("FilterPartialResults");
-                context.Writer.Write(requestObject.FilterPartialResults.Value);
+                context.Writer.WriteBooleanValue(requestObject.FilterPartialResults.Value);
             }
 
             if(requestObject.IsSetLanguageCode())
             {
                 context.Writer.WritePropertyName("LanguageCode");
-                context.Writer.Write(requestObject.LanguageCode);
+                context.Writer.WriteStringValue(requestObject.LanguageCode);
             }
 
             if(requestObject.IsSetLanguageModelName())
             {
                 context.Writer.WritePropertyName("LanguageModelName");
-                context.Writer.Write(requestObject.LanguageModelName);
+                context.Writer.WriteStringValue(requestObject.LanguageModelName);
             }
 
             if(requestObject.IsSetPartialResultsStability())
             {
                 context.Writer.WritePropertyName("PartialResultsStability");
-                context.Writer.Write(requestObject.PartialResultsStability);
+                context.Writer.WriteStringValue(requestObject.PartialResultsStability);
             }
 
             if(requestObject.IsSetPiiEntityTypes())
             {
                 context.Writer.WritePropertyName("PiiEntityTypes");
-                context.Writer.Write(requestObject.PiiEntityTypes);
+                context.Writer.WriteStringValue(requestObject.PiiEntityTypes);
             }
 
             if(requestObject.IsSetPostCallAnalyticsSettings())
             {
                 context.Writer.WritePropertyName("PostCallAnalyticsSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PostCallAnalyticsSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.PostCallAnalyticsSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVocabularyFilterMethod())
             {
                 context.Writer.WritePropertyName("VocabularyFilterMethod");
-                context.Writer.Write(requestObject.VocabularyFilterMethod);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterMethod);
             }
 
             if(requestObject.IsSetVocabularyFilterName())
             {
                 context.Writer.WritePropertyName("VocabularyFilterName");
-                context.Writer.Write(requestObject.VocabularyFilterName);
+                context.Writer.WriteStringValue(requestObject.VocabularyFilterName);
             }
 
             if(requestObject.IsSetVocabularyName())
             {
                 context.Writer.WritePropertyName("VocabularyName");
-                context.Writer.Write(requestObject.VocabularyName);
+                context.Writer.WriteStringValue(requestObject.VocabularyName);
             }
 
         }

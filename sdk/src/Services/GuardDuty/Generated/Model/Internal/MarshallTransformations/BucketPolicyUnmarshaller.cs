@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BucketPolicy Object
     /// </summary>  
-    public class BucketPolicyUnmarshaller : IUnmarshaller<BucketPolicy, XmlUnmarshallerContext>, IUnmarshaller<BucketPolicy, JsonUnmarshallerContext>
+    public class BucketPolicyUnmarshaller : IJsonUnmarshaller<BucketPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BucketPolicy IUnmarshaller<BucketPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BucketPolicy Unmarshall(JsonUnmarshallerContext context)
+        public BucketPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BucketPolicy unmarshalledObject = new BucketPolicy();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("allowsPublicReadAccess", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowsPublicReadAccess = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowsPublicReadAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("allowsPublicWriteAccess", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.AllowsPublicWriteAccess = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AllowsPublicWriteAccess = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,54 +49,54 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoGenerateForms())
             {
                 context.Writer.WritePropertyName("autoGenerateForms");
-                context.Writer.Write(requestObject.AutoGenerateForms.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoGenerateForms.Value);
             }
 
             if(requestObject.IsSetFeatures())
             {
                 context.Writer.WritePropertyName("features");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodegenFeatureFlagsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Features, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGenericDataSchema())
             {
                 context.Writer.WritePropertyName("genericDataSchema");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodegenJobGenericDataSchemaMarshaller.Instance;
                 marshaller.Marshall(requestObject.GenericDataSchema, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRenderConfig())
             {
                 context.Writer.WritePropertyName("renderConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CodegenJobRenderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.RenderConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

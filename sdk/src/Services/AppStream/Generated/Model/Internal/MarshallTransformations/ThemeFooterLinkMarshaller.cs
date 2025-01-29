@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppStream.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AppStream.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDisplayName())
             {
                 context.Writer.WritePropertyName("DisplayName");
-                context.Writer.Write(requestObject.DisplayName);
+                context.Writer.WriteStringValue(requestObject.DisplayName);
             }
 
             if(requestObject.IsSetFooterLinkURL())
             {
                 context.Writer.WritePropertyName("FooterLinkURL");
-                context.Writer.Write(requestObject.FooterLinkURL);
+                context.Writer.WriteStringValue(requestObject.FooterLinkURL);
             }
 
         }

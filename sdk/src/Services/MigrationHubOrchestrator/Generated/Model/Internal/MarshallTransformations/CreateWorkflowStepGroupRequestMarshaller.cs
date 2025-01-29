@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.MigrationHubOrchestrator.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/workflowstepgroups";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDescription())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetNext())
-                    {
-                        context.Writer.WritePropertyName("next");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestNextListValue in publicRequest.Next)
-                        {
-                                context.Writer.Write(publicRequestNextListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetPrevious())
-                    {
-                        context.Writer.WritePropertyName("previous");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestPreviousListValue in publicRequest.Previous)
-                        {
-                                context.Writer.Write(publicRequestPreviousListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetWorkflowId())
-                    {
-                        context.Writer.WritePropertyName("workflowId");
-                        context.Writer.Write(publicRequest.WorkflowId);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("description");
+                context.Writer.WriteStringValue(publicRequest.Description);
             }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetNext())
+            {
+                context.Writer.WritePropertyName("next");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestNextListValue in publicRequest.Next)
+                {
+                        context.Writer.WriteStringValue(publicRequestNextListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetPrevious())
+            {
+                context.Writer.WritePropertyName("previous");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestPreviousListValue in publicRequest.Previous)
+                {
+                        context.Writer.WriteStringValue(publicRequestPreviousListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetWorkflowId())
+            {
+                context.Writer.WritePropertyName("workflowId");
+                context.Writer.WriteStringValue(publicRequest.WorkflowId);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

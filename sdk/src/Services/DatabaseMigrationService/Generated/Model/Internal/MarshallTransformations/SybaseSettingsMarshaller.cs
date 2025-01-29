@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");
-                context.Writer.Write(requestObject.DatabaseName);
+                context.Writer.WriteStringValue(requestObject.DatabaseName);
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("Port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetSecretsManagerAccessRoleArn())
             {
                 context.Writer.WritePropertyName("SecretsManagerAccessRoleArn");
-                context.Writer.Write(requestObject.SecretsManagerAccessRoleArn);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerAccessRoleArn);
             }
 
             if(requestObject.IsSetSecretsManagerSecretId())
             {
                 context.Writer.WritePropertyName("SecretsManagerSecretId");
-                context.Writer.Write(requestObject.SecretsManagerSecretId);
+                context.Writer.WriteStringValue(requestObject.SecretsManagerSecretId);
             }
 
             if(requestObject.IsSetServerName())
             {
                 context.Writer.WritePropertyName("ServerName");
-                context.Writer.Write(requestObject.ServerName);
+                context.Writer.WriteStringValue(requestObject.ServerName);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

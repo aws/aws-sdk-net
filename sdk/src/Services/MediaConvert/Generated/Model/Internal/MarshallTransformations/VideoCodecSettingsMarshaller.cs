@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,139 +49,139 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAv1Settings())
             {
                 context.Writer.WritePropertyName("av1Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Av1SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Av1Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAvcIntraSettings())
             {
                 context.Writer.WritePropertyName("avcIntraSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AvcIntraSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AvcIntraSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCodec())
             {
                 context.Writer.WritePropertyName("codec");
-                context.Writer.Write(requestObject.Codec);
+                context.Writer.WriteStringValue(requestObject.Codec);
             }
 
             if(requestObject.IsSetFrameCaptureSettings())
             {
                 context.Writer.WritePropertyName("frameCaptureSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = FrameCaptureSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.FrameCaptureSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetH264Settings())
             {
                 context.Writer.WritePropertyName("h264Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = H264SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.H264Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetH265Settings())
             {
                 context.Writer.WritePropertyName("h265Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = H265SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.H265Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMpeg2Settings())
             {
                 context.Writer.WritePropertyName("mpeg2Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Mpeg2SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Mpeg2Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProresSettings())
             {
                 context.Writer.WritePropertyName("proresSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProresSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProresSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetUncompressedSettings())
             {
                 context.Writer.WritePropertyName("uncompressedSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = UncompressedSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.UncompressedSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVc3Settings())
             {
                 context.Writer.WritePropertyName("vc3Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Vc3SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Vc3Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVp8Settings())
             {
                 context.Writer.WritePropertyName("vp8Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Vp8SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Vp8Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVp9Settings())
             {
                 context.Writer.WritePropertyName("vp9Settings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = Vp9SettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Vp9Settings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetXavcSettings())
             {
                 context.Writer.WritePropertyName("xavcSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = XavcSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.XavcSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

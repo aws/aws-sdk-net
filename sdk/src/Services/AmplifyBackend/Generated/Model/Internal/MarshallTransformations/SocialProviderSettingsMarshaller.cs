@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.AmplifyBackend.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFacebook())
             {
                 context.Writer.WritePropertyName("Facebook");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackendAuthSocialProviderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.Facebook, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetGoogle())
             {
                 context.Writer.WritePropertyName("Google");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackendAuthSocialProviderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.Google, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetLoginWithAmazon())
             {
                 context.Writer.WritePropertyName("LoginWithAmazon");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackendAuthSocialProviderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LoginWithAmazon, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSignInWithApple())
             {
                 context.Writer.WritePropertyName("SignInWithApple");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BackendAuthAppleProviderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.SignInWithApple, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

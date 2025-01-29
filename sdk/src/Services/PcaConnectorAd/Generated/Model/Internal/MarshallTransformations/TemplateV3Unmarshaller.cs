@@ -29,95 +29,85 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PcaConnectorAd.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TemplateV3 Object
     /// </summary>  
-    public class TemplateV3Unmarshaller : IUnmarshaller<TemplateV3, XmlUnmarshallerContext>, IUnmarshaller<TemplateV3, JsonUnmarshallerContext>
+    public class TemplateV3Unmarshaller : IJsonUnmarshaller<TemplateV3, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TemplateV3 IUnmarshaller<TemplateV3, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TemplateV3 Unmarshall(JsonUnmarshallerContext context)
+        public TemplateV3 Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TemplateV3 unmarshalledObject = new TemplateV3();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CertificateValidity", targetDepth))
                 {
                     var unmarshaller = CertificateValidityUnmarshaller.Instance;
-                    unmarshalledObject.CertificateValidity = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateValidity = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("EnrollmentFlags", targetDepth))
                 {
                     var unmarshaller = EnrollmentFlagsV3Unmarshaller.Instance;
-                    unmarshalledObject.EnrollmentFlags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnrollmentFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Extensions", targetDepth))
                 {
                     var unmarshaller = ExtensionsV3Unmarshaller.Instance;
-                    unmarshalledObject.Extensions = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Extensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GeneralFlags", targetDepth))
                 {
                     var unmarshaller = GeneralFlagsV3Unmarshaller.Instance;
-                    unmarshalledObject.GeneralFlags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GeneralFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("HashAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrivateKeyAttributes", targetDepth))
                 {
                     var unmarshaller = PrivateKeyAttributesV3Unmarshaller.Instance;
-                    unmarshalledObject.PrivateKeyAttributes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateKeyAttributes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PrivateKeyFlags", targetDepth))
                 {
                     var unmarshaller = PrivateKeyFlagsV3Unmarshaller.Instance;
-                    unmarshalledObject.PrivateKeyFlags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PrivateKeyFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SubjectNameFlags", targetDepth))
                 {
                     var unmarshaller = SubjectNameFlagsV3Unmarshaller.Instance;
-                    unmarshalledObject.SubjectNameFlags = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubjectNameFlags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SupersededTemplates", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.SupersededTemplates = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupersededTemplates = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlgorithmName())
             {
                 context.Writer.WritePropertyName("AlgorithmName");
-                context.Writer.Write(requestObject.AlgorithmName);
+                context.Writer.WriteStringValue(requestObject.AlgorithmName);
             }
 
             if(requestObject.IsSetModelDataSource())
             {
                 context.Writer.WritePropertyName("ModelDataSource");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ModelDataSourceMarshaller.Instance;
                 marshaller.Marshall(requestObject.ModelDataSource, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetModelDataUrl())
             {
                 context.Writer.WritePropertyName("ModelDataUrl");
-                context.Writer.Write(requestObject.ModelDataUrl);
+                context.Writer.WriteStringValue(requestObject.ModelDataUrl);
             }
 
         }

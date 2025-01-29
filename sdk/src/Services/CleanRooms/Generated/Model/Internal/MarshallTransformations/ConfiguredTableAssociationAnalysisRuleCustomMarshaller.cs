@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CleanRooms.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllowedAdditionalAnalyses())
             {
                 context.Writer.WritePropertyName("allowedAdditionalAnalyses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedAdditionalAnalysesListValue in requestObject.AllowedAdditionalAnalyses)
                 {
-                        context.Writer.Write(requestObjectAllowedAdditionalAnalysesListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedAdditionalAnalysesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAllowedResultReceivers())
             {
                 context.Writer.WritePropertyName("allowedResultReceivers");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAllowedResultReceiversListValue in requestObject.AllowedResultReceivers)
                 {
-                        context.Writer.Write(requestObjectAllowedResultReceiversListValue);
+                        context.Writer.WriteStringValue(requestObjectAllowedResultReceiversListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumValues())
             {
                 context.Writer.WritePropertyName("numValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNumValuesListValue in requestObject.NumValues)
                 {
-                        context.Writer.Write(requestObjectNumValuesListValue);
+                        context.Writer.WriteNumberValue(requestObjectNumValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStrValues())
             {
                 context.Writer.WritePropertyName("strValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStrValuesListValue in requestObject.StrValues)
                 {
-                        context.Writer.Write(requestObjectStrValuesListValue);
+                        context.Writer.WriteStringValue(requestObjectStrValuesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetValidationMessage())
             {
                 context.Writer.WritePropertyName("validationMessage");
-                context.Writer.Write(requestObject.ValidationMessage);
+                context.Writer.WriteStringValue(requestObject.ValidationMessage);
             }
 
         }

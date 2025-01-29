@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DomainDetail Object
     /// </summary>  
-    public class DomainDetailUnmarshaller : IUnmarshaller<DomainDetail, XmlUnmarshallerContext>, IUnmarshaller<DomainDetail, JsonUnmarshallerContext>
+    public class DomainDetailUnmarshaller : IJsonUnmarshaller<DomainDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DomainDetail IUnmarshaller<DomainDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DomainDetail Unmarshall(JsonUnmarshallerContext context)
+        public DomainDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DomainDetail unmarshalledObject = new DomainDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("configuration", targetDepth))
                 {
                     var unmarshaller = DomainConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Configuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("domainInfo", targetDepth))
                 {
                     var unmarshaller = DomainInfoUnmarshaller.Instance;
-                    unmarshalledObject.DomainInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DomainInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArns())
             {
                 context.Writer.WritePropertyName("Arns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArnsListValue in requestObject.Arns)
                 {
-                        context.Writer.Write(requestObjectArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAutoAssociate())
             {
                 context.Writer.WritePropertyName("AutoAssociate");
-                context.Writer.Write(requestObject.AutoAssociate.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoAssociate.Value);
             }
 
             if(requestObject.IsSetPricingPlan())
             {
                 context.Writer.WritePropertyName("PricingPlan");
-                context.Writer.Write(requestObject.PricingPlan);
+                context.Writer.WriteStringValue(requestObject.PricingPlan);
             }
 
             if(requestObject.IsSetStatuses())
             {
                 context.Writer.WritePropertyName("Statuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStatusesListValue in requestObject.Statuses)
                 {
-                        context.Writer.Write(requestObjectStatusesListValue);
+                        context.Writer.WriteStringValue(requestObjectStatusesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
 {
@@ -51,34 +49,34 @@ namespace Amazon.CleanRoomsML.Model.Internal.MarshallTransformations
             if(requestObject.IsSetTrainedModelExports())
             {
                 context.Writer.WritePropertyName("trainedModelExports");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainedModelExportsConfigurationPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrainedModelExports, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrainedModelInferenceJobs())
             {
                 context.Writer.WritePropertyName("trainedModelInferenceJobs");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainedModelInferenceJobsConfigurationPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrainedModelInferenceJobs, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrainedModels())
             {
                 context.Writer.WritePropertyName("trainedModels");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrainedModelsConfigurationPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrainedModels, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

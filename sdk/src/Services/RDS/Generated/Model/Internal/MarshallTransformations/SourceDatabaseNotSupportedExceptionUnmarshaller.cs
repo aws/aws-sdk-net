@@ -35,7 +35,7 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SourceDatabaseNotSupportedException operation
     /// </summary>  
-    public class SourceDatabaseNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<SourceDatabaseNotSupportedException, XmlUnmarshallerContext>
+    public class SourceDatabaseNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SourceDatabaseNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

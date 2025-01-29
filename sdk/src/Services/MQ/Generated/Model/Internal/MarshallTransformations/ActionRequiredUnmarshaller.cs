@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MQ.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ActionRequired Object
     /// </summary>  
-    public class ActionRequiredUnmarshaller : IUnmarshaller<ActionRequired, XmlUnmarshallerContext>, IUnmarshaller<ActionRequired, JsonUnmarshallerContext>
+    public class ActionRequiredUnmarshaller : IJsonUnmarshaller<ActionRequired, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ActionRequired IUnmarshaller<ActionRequired, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ActionRequired Unmarshall(JsonUnmarshallerContext context)
+        public ActionRequired Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ActionRequired unmarshalledObject = new ActionRequired();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("actionRequiredCode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionRequiredCode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionRequiredCode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("actionRequiredInfo", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ActionRequiredInfo = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ActionRequiredInfo = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,101 +29,91 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ResourceDataSyncItem Object
     /// </summary>  
-    public class ResourceDataSyncItemUnmarshaller : IUnmarshaller<ResourceDataSyncItem, XmlUnmarshallerContext>, IUnmarshaller<ResourceDataSyncItem, JsonUnmarshallerContext>
+    public class ResourceDataSyncItemUnmarshaller : IJsonUnmarshaller<ResourceDataSyncItem, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ResourceDataSyncItem IUnmarshaller<ResourceDataSyncItem, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ResourceDataSyncItem Unmarshall(JsonUnmarshallerContext context)
+        public ResourceDataSyncItem Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ResourceDataSyncItem unmarshalledObject = new ResourceDataSyncItem();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("LastStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSuccessfulSyncTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSuccessfulSyncTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSuccessfulSyncTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSyncStatusMessage", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LastSyncStatusMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSyncStatusMessage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LastSyncTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastSyncTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastSyncTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("S3Destination", targetDepth))
                 {
                     var unmarshaller = ResourceDataSyncS3DestinationUnmarshaller.Instance;
-                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.S3Destination = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SyncCreatedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SyncCreatedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncCreatedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SyncLastModifiedTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.SyncLastModifiedTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncLastModifiedTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SyncName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SyncName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SyncSource", targetDepth))
                 {
                     var unmarshaller = ResourceDataSyncSourceWithStateUnmarshaller.Instance;
-                    unmarshalledObject.SyncSource = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncSource = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SyncType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SyncType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SyncType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

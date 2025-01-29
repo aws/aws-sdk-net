@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgent.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for MongoDbAtlasConfiguration Object
     /// </summary>  
-    public class MongoDbAtlasConfigurationUnmarshaller : IUnmarshaller<MongoDbAtlasConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MongoDbAtlasConfiguration, JsonUnmarshallerContext>
+    public class MongoDbAtlasConfigurationUnmarshaller : IJsonUnmarshaller<MongoDbAtlasConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        MongoDbAtlasConfiguration IUnmarshaller<MongoDbAtlasConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public MongoDbAtlasConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public MongoDbAtlasConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             MongoDbAtlasConfiguration unmarshalledObject = new MongoDbAtlasConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("collectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CollectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CollectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("credentialsSecretArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CredentialsSecretArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CredentialsSecretArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("databaseName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatabaseName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endpoint", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("endpointServiceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EndpointServiceName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndpointServiceName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("fieldMapping", targetDepth))
                 {
                     var unmarshaller = MongoDbAtlasFieldMappingUnmarshaller.Instance;
-                    unmarshalledObject.FieldMapping = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FieldMapping = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("vectorIndexName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VectorIndexName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VectorIndexName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

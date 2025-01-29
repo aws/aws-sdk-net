@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Budgets.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Budgets.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmount())
             {
                 context.Writer.WritePropertyName("Amount");
-                context.Writer.Write(Amazon.Runtime.Internal.Util.StringUtils.FromDecimal(requestObject.Amount));
+                context.Writer.WriteStringValue(Amazon.Runtime.Internal.Util.StringUtils.FromDecimal(requestObject.Amount));
             }
 
             if(requestObject.IsSetUnit())
             {
                 context.Writer.WritePropertyName("Unit");
-                context.Writer.Write(requestObject.Unit);
+                context.Writer.WriteStringValue(requestObject.Unit);
             }
 
         }

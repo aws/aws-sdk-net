@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GitConfiguration Object
     /// </summary>  
-    public class GitConfigurationUnmarshaller : IUnmarshaller<GitConfiguration, XmlUnmarshallerContext>, IUnmarshaller<GitConfiguration, JsonUnmarshallerContext>
+    public class GitConfigurationUnmarshaller : IJsonUnmarshaller<GitConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GitConfiguration IUnmarshaller<GitConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GitConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public GitConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GitConfiguration unmarshalledObject = new GitConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("pullRequest", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GitPullRequestFilter, GitPullRequestFilterUnmarshaller>(GitPullRequestFilterUnmarshaller.Instance);
-                    unmarshalledObject.PullRequest = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GitPullRequestFilter, GitPullRequestFilterUnmarshaller>(GitPullRequestFilterUnmarshaller.Instance);
+                    unmarshalledObject.PullRequest = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("push", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<GitPushFilter, GitPushFilterUnmarshaller>(GitPushFilterUnmarshaller.Instance);
-                    unmarshalledObject.Push = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<GitPushFilter, GitPushFilterUnmarshaller>(GitPushFilterUnmarshaller.Instance);
+                    unmarshalledObject.Push = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("sourceActionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceActionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceActionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

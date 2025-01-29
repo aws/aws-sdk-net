@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGid())
             {
                 context.Writer.WritePropertyName("Gid");
-                context.Writer.Write(requestObject.Gid.Value);
+                context.Writer.WriteNumberValue(requestObject.Gid.Value);
             }
 
             if(requestObject.IsSetSecondaryGids())
             {
                 context.Writer.WritePropertyName("SecondaryGids");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecondaryGidsListValue in requestObject.SecondaryGids)
                 {
-                        context.Writer.Write(requestObjectSecondaryGidsListValue);
+                        context.Writer.WriteNumberValue(requestObjectSecondaryGidsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetUid())
             {
                 context.Writer.WritePropertyName("Uid");
-                context.Writer.Write(requestObject.Uid.Value);
+                context.Writer.WriteNumberValue(requestObject.Uid.Value);
             }
 
         }

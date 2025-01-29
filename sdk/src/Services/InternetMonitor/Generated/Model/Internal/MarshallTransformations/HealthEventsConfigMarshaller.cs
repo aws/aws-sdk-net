@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
 {
@@ -51,12 +49,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAvailabilityLocalHealthEventsConfig())
             {
                 context.Writer.WritePropertyName("AvailabilityLocalHealthEventsConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocalHealthEventsConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.AvailabilityLocalHealthEventsConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAvailabilityScoreThreshold())
@@ -64,23 +62,23 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("AvailabilityScoreThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.AvailabilityScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.AvailabilityScoreThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.AvailabilityScoreThreshold.Value);
                 }
             }
 
             if(requestObject.IsSetPerformanceLocalHealthEventsConfig())
             {
                 context.Writer.WritePropertyName("PerformanceLocalHealthEventsConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LocalHealthEventsConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.PerformanceLocalHealthEventsConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPerformanceScoreThreshold())
@@ -88,11 +86,11 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("PerformanceScoreThreshold");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.PerformanceScoreThreshold.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.PerformanceScoreThreshold.Value);
+                    context.Writer.WriteNumberValue(requestObject.PerformanceScoreThreshold.Value);
                 }
             }
 

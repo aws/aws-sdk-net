@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,71 +49,71 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCustomerAwsId())
             {
                 context.Writer.WritePropertyName("CustomerAwsId");
-                context.Writer.Write(requestObject.CustomerAwsId);
+                context.Writer.WriteStringValue(requestObject.CustomerAwsId);
             }
 
             if(requestObject.IsSetCustSubscriptionId())
             {
                 context.Writer.WritePropertyName("CustSubscriptionId");
-                context.Writer.Write(requestObject.CustSubscriptionId);
+                context.Writer.WriteStringValue(requestObject.CustSubscriptionId);
             }
 
             if(requestObject.IsSetEnabled())
             {
                 context.Writer.WritePropertyName("Enabled");
-                context.Writer.Write(requestObject.Enabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.Enabled.Value);
             }
 
             if(requestObject.IsSetEventCategoriesList())
             {
                 context.Writer.WritePropertyName("EventCategoriesList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventCategoriesListListValue in requestObject.EventCategoriesList)
                 {
-                        context.Writer.Write(requestObjectEventCategoriesListListValue);
+                        context.Writer.WriteStringValue(requestObjectEventCategoriesListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEventSubscriptionArn())
             {
                 context.Writer.WritePropertyName("EventSubscriptionArn");
-                context.Writer.Write(requestObject.EventSubscriptionArn);
+                context.Writer.WriteStringValue(requestObject.EventSubscriptionArn);
             }
 
             if(requestObject.IsSetSnsTopicArn())
             {
                 context.Writer.WritePropertyName("SnsTopicArn");
-                context.Writer.Write(requestObject.SnsTopicArn);
+                context.Writer.WriteStringValue(requestObject.SnsTopicArn);
             }
 
             if(requestObject.IsSetSourceIdsList())
             {
                 context.Writer.WritePropertyName("SourceIdsList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSourceIdsListListValue in requestObject.SourceIdsList)
                 {
-                        context.Writer.Write(requestObjectSourceIdsListListValue);
+                        context.Writer.WriteStringValue(requestObjectSourceIdsListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSourceType())
             {
                 context.Writer.WritePropertyName("SourceType");
-                context.Writer.Write(requestObject.SourceType);
+                context.Writer.WriteStringValue(requestObject.SourceType);
             }
 
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("Status");
-                context.Writer.Write(requestObject.Status);
+                context.Writer.WriteStringValue(requestObject.Status);
             }
 
             if(requestObject.IsSetSubscriptionCreationTime())
             {
                 context.Writer.WritePropertyName("SubscriptionCreationTime");
-                context.Writer.Write(requestObject.SubscriptionCreationTime);
+                context.Writer.WriteStringValue(requestObject.SubscriptionCreationTime);
             }
 
         }

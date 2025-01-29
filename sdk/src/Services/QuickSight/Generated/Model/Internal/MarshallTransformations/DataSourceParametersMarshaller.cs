@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,287 +49,287 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmazonElasticsearchParameters())
             {
                 context.Writer.WritePropertyName("AmazonElasticsearchParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonElasticsearchParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmazonElasticsearchParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAmazonOpenSearchParameters())
             {
                 context.Writer.WritePropertyName("AmazonOpenSearchParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AmazonOpenSearchParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.AmazonOpenSearchParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAthenaParameters())
             {
                 context.Writer.WritePropertyName("AthenaParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AthenaParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.AthenaParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAuroraParameters())
             {
                 context.Writer.WritePropertyName("AuroraParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuroraParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuroraParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAuroraPostgreSqlParameters())
             {
                 context.Writer.WritePropertyName("AuroraPostgreSqlParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AuroraPostgreSqlParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.AuroraPostgreSqlParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAwsIotAnalyticsParameters())
             {
                 context.Writer.WritePropertyName("AwsIotAnalyticsParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsIotAnalyticsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsIotAnalyticsParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBigQueryParameters())
             {
                 context.Writer.WritePropertyName("BigQueryParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BigQueryParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.BigQueryParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDatabricksParameters())
             {
                 context.Writer.WritePropertyName("DatabricksParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DatabricksParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.DatabricksParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExasolParameters())
             {
                 context.Writer.WritePropertyName("ExasolParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ExasolParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ExasolParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetJiraParameters())
             {
                 context.Writer.WritePropertyName("JiraParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JiraParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.JiraParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMariaDbParameters())
             {
                 context.Writer.WritePropertyName("MariaDbParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MariaDbParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.MariaDbParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMySqlParameters())
             {
                 context.Writer.WritePropertyName("MySqlParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MySqlParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.MySqlParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOracleParameters())
             {
                 context.Writer.WritePropertyName("OracleParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OracleParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.OracleParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPostgreSqlParameters())
             {
                 context.Writer.WritePropertyName("PostgreSqlParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PostgreSqlParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.PostgreSqlParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPrestoParameters())
             {
                 context.Writer.WritePropertyName("PrestoParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PrestoParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrestoParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRdsParameters())
             {
                 context.Writer.WritePropertyName("RdsParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RdsParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RdsParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRedshiftParameters())
             {
                 context.Writer.WritePropertyName("RedshiftParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = RedshiftParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.RedshiftParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetS3Parameters())
             {
                 context.Writer.WritePropertyName("S3Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = S3ParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.S3Parameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceNowParameters())
             {
                 context.Writer.WritePropertyName("ServiceNowParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ServiceNowParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.ServiceNowParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSnowflakeParameters())
             {
                 context.Writer.WritePropertyName("SnowflakeParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SnowflakeParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SnowflakeParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSparkParameters())
             {
                 context.Writer.WritePropertyName("SparkParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SparkParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SparkParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSqlServerParameters())
             {
                 context.Writer.WritePropertyName("SqlServerParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqlServerParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.SqlServerParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStarburstParameters())
             {
                 context.Writer.WritePropertyName("StarburstParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StarburstParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.StarburstParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTeradataParameters())
             {
                 context.Writer.WritePropertyName("TeradataParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TeradataParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.TeradataParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTrinoParameters())
             {
                 context.Writer.WritePropertyName("TrinoParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TrinoParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.TrinoParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTwitterParameters())
             {
                 context.Writer.WritePropertyName("TwitterParameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TwitterParametersMarshaller.Instance;
                 marshaller.Marshall(requestObject.TwitterParameters, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

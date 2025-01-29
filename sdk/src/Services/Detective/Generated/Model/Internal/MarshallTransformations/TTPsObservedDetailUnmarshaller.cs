@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Detective.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for TTPsObservedDetail Object
     /// </summary>  
-    public class TTPsObservedDetailUnmarshaller : IUnmarshaller<TTPsObservedDetail, XmlUnmarshallerContext>, IUnmarshaller<TTPsObservedDetail, JsonUnmarshallerContext>
+    public class TTPsObservedDetailUnmarshaller : IJsonUnmarshaller<TTPsObservedDetail, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        TTPsObservedDetail IUnmarshaller<TTPsObservedDetail, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public TTPsObservedDetail Unmarshall(JsonUnmarshallerContext context)
+        public TTPsObservedDetail Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             TTPsObservedDetail unmarshalledObject = new TTPsObservedDetail();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("APIFailureCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.APIFailureCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.APIFailureCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("APIName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.APIName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.APIName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("APISuccessCount", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.APISuccessCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.APISuccessCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("IpAddress", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IpAddress = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Procedure", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Procedure = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Procedure = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Tactic", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Tactic = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Tactic = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Technique", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Technique = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Technique = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.RoboMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComputeType())
             {
                 context.Writer.WritePropertyName("computeType");
-                context.Writer.Write(requestObject.ComputeType);
+                context.Writer.WriteStringValue(requestObject.ComputeType);
             }
 
             if(requestObject.IsSetGpuUnitLimit())
             {
                 context.Writer.WritePropertyName("gpuUnitLimit");
-                context.Writer.Write(requestObject.GpuUnitLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.GpuUnitLimit.Value);
             }
 
             if(requestObject.IsSetSimulationUnitLimit())
             {
                 context.Writer.WritePropertyName("simulationUnitLimit");
-                context.Writer.Write(requestObject.SimulationUnitLimit.Value);
+                context.Writer.WriteNumberValue(requestObject.SimulationUnitLimit.Value);
             }
 
         }

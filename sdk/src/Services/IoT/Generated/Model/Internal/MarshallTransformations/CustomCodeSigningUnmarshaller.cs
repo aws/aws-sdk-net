@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for CustomCodeSigning Object
     /// </summary>  
-    public class CustomCodeSigningUnmarshaller : IUnmarshaller<CustomCodeSigning, XmlUnmarshallerContext>, IUnmarshaller<CustomCodeSigning, JsonUnmarshallerContext>
+    public class CustomCodeSigningUnmarshaller : IJsonUnmarshaller<CustomCodeSigning, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        CustomCodeSigning IUnmarshaller<CustomCodeSigning, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public CustomCodeSigning Unmarshall(JsonUnmarshallerContext context)
+        public CustomCodeSigning Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             CustomCodeSigning unmarshalledObject = new CustomCodeSigning();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("certificateChain", targetDepth))
                 {
                     var unmarshaller = CodeSigningCertificateChainUnmarshaller.Instance;
-                    unmarshalledObject.CertificateChain = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CertificateChain = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("hashAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HashAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("signature", targetDepth))
                 {
                     var unmarshaller = CodeSigningSignatureUnmarshaller.Instance;
-                    unmarshalledObject.Signature = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Signature = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("signatureAlgorithm", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SignatureAlgorithm = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SignatureAlgorithm = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

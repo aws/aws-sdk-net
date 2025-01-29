@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetComplianceType())
             {
                 context.Writer.WritePropertyName("ComplianceType");
-                context.Writer.Write(requestObject.ComplianceType);
+                context.Writer.WriteStringValue(requestObject.ComplianceType);
             }
 
             if(requestObject.IsSetConfigRuleNames())
             {
                 context.Writer.WritePropertyName("ConfigRuleNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConfigRuleNamesListValue in requestObject.ConfigRuleNames)
                 {
-                        context.Writer.Write(requestObjectConfigRuleNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectConfigRuleNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceIds())
             {
                 context.Writer.WritePropertyName("ResourceIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceIdsListValue in requestObject.ResourceIds)
                 {
-                        context.Writer.Write(requestObjectResourceIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetResourceType())
             {
                 context.Writer.WritePropertyName("ResourceType");
-                context.Writer.Write(requestObject.ResourceType);
+                context.Writer.WriteStringValue(requestObject.ResourceType);
             }
 
         }

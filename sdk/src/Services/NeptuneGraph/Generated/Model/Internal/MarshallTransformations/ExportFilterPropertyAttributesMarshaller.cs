@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMultiValueHandling())
             {
                 context.Writer.WritePropertyName("multiValueHandling");
-                context.Writer.Write(requestObject.MultiValueHandling);
+                context.Writer.WriteStringValue(requestObject.MultiValueHandling);
             }
 
             if(requestObject.IsSetOutputType())
             {
                 context.Writer.WritePropertyName("outputType");
-                context.Writer.Write(requestObject.OutputType);
+                context.Writer.WriteStringValue(requestObject.OutputType);
             }
 
             if(requestObject.IsSetSourcePropertyName())
             {
                 context.Writer.WritePropertyName("sourcePropertyName");
-                context.Writer.Write(requestObject.SourcePropertyName);
+                context.Writer.WriteStringValue(requestObject.SourcePropertyName);
             }
 
         }

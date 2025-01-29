@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,43 +49,43 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultValue())
             {
                 context.Writer.WritePropertyName("DefaultValue");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TypedAttributeValueMarshaller.Instance;
                 marshaller.Marshall(requestObject.DefaultValue, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsImmutable())
             {
                 context.Writer.WritePropertyName("IsImmutable");
-                context.Writer.Write(requestObject.IsImmutable.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsImmutable.Value);
             }
 
             if(requestObject.IsSetRules())
             {
                 context.Writer.WritePropertyName("Rules");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectRulesKvp in requestObject.Rules)
                 {
                     context.Writer.WritePropertyName(requestObjectRulesKvp.Key);
                     var requestObjectRulesValue = requestObjectRulesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = RuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectRulesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

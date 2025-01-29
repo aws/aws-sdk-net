@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DataStorage Object
     /// </summary>  
-    public class DataStorageUnmarshaller : IUnmarshaller<DataStorage, XmlUnmarshallerContext>, IUnmarshaller<DataStorage, JsonUnmarshallerContext>
+    public class DataStorageUnmarshaller : IXmlUnmarshaller<DataStorage, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DataStorage Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DataStorageUnmarshaller _instance = new DataStorageUnmarshaller();        
 

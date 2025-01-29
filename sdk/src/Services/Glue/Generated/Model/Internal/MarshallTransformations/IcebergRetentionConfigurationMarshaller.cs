@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCleanExpiredFiles())
             {
                 context.Writer.WritePropertyName("cleanExpiredFiles");
-                context.Writer.Write(requestObject.CleanExpiredFiles.Value);
+                context.Writer.WriteBooleanValue(requestObject.CleanExpiredFiles.Value);
             }
 
             if(requestObject.IsSetNumberOfSnapshotsToRetain())
             {
                 context.Writer.WritePropertyName("numberOfSnapshotsToRetain");
-                context.Writer.Write(requestObject.NumberOfSnapshotsToRetain.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfSnapshotsToRetain.Value);
             }
 
             if(requestObject.IsSetSnapshotRetentionPeriodInDays())
             {
                 context.Writer.WritePropertyName("snapshotRetentionPeriodInDays");
-                context.Writer.Write(requestObject.SnapshotRetentionPeriodInDays.Value);
+                context.Writer.WriteNumberValue(requestObject.SnapshotRetentionPeriodInDays.Value);
             }
 
         }

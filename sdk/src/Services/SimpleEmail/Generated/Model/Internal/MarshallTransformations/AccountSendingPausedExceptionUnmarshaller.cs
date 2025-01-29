@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccountSendingPausedException operation
     /// </summary>  
-    public class AccountSendingPausedExceptionUnmarshaller : IErrorResponseUnmarshaller<AccountSendingPausedException, XmlUnmarshallerContext>
+    public class AccountSendingPausedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AccountSendingPausedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

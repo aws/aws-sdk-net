@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetStaticRoutesOnly())
             {
                 context.Writer.WritePropertyName("StaticRoutesOnly");
-                context.Writer.Write(requestObject.StaticRoutesOnly.Value);
+                context.Writer.WriteBooleanValue(requestObject.StaticRoutesOnly.Value);
             }
 
             if(requestObject.IsSetTunnelOptions())
             {
                 context.Writer.WritePropertyName("TunnelOptions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTunnelOptionsListValue in requestObject.TunnelOptions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEc2VpnConnectionOptionsTunnelOptionsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectTunnelOptionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

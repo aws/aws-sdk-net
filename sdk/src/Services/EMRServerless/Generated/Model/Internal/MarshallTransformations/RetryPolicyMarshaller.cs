@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxAttempts())
             {
                 context.Writer.WritePropertyName("maxAttempts");
-                context.Writer.Write(requestObject.MaxAttempts.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxAttempts.Value);
             }
 
             if(requestObject.IsSetMaxFailedAttemptsPerHour())
             {
                 context.Writer.WritePropertyName("maxFailedAttemptsPerHour");
-                context.Writer.Write(requestObject.MaxFailedAttemptsPerHour.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFailedAttemptsPerHour.Value);
             }
 
         }

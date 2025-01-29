@@ -29,83 +29,73 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Trace Object
     /// </summary>  
-    public class TraceUnmarshaller : IUnmarshaller<Trace, XmlUnmarshallerContext>, IUnmarshaller<Trace, JsonUnmarshallerContext>
+    public class TraceUnmarshaller : IJsonUnmarshaller<Trace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Trace IUnmarshaller<Trace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Trace Unmarshall(JsonUnmarshallerContext context)
+        public Trace Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Trace unmarshalledObject = new Trace();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("customOrchestrationTrace", targetDepth))
                 {
                     var unmarshaller = CustomOrchestrationTraceUnmarshaller.Instance;
-                    unmarshalledObject.CustomOrchestrationTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CustomOrchestrationTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("failureTrace", targetDepth))
                 {
                     var unmarshaller = FailureTraceUnmarshaller.Instance;
-                    unmarshalledObject.FailureTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FailureTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("guardrailTrace", targetDepth))
                 {
                     var unmarshaller = GuardrailTraceUnmarshaller.Instance;
-                    unmarshalledObject.GuardrailTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GuardrailTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("orchestrationTrace", targetDepth))
                 {
                     var unmarshaller = OrchestrationTraceUnmarshaller.Instance;
-                    unmarshalledObject.OrchestrationTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OrchestrationTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("postProcessingTrace", targetDepth))
                 {
                     var unmarshaller = PostProcessingTraceUnmarshaller.Instance;
-                    unmarshalledObject.PostProcessingTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PostProcessingTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("preProcessingTrace", targetDepth))
                 {
                     var unmarshaller = PreProcessingTraceUnmarshaller.Instance;
-                    unmarshalledObject.PreProcessingTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PreProcessingTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("routingClassifierTrace", targetDepth))
                 {
                     var unmarshaller = RoutingClassifierTraceUnmarshaller.Instance;
-                    unmarshalledObject.RoutingClassifierTrace = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RoutingClassifierTrace = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

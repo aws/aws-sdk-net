@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
 {
@@ -51,35 +49,35 @@ namespace Amazon.ACMPCA.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCsrExtensions())
             {
                 context.Writer.WritePropertyName("CsrExtensions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CsrExtensionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.CsrExtensions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKeyAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyAlgorithm");
-                context.Writer.Write(requestObject.KeyAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyAlgorithm);
             }
 
             if(requestObject.IsSetSigningAlgorithm())
             {
                 context.Writer.WritePropertyName("SigningAlgorithm");
-                context.Writer.Write(requestObject.SigningAlgorithm);
+                context.Writer.WriteStringValue(requestObject.SigningAlgorithm);
             }
 
             if(requestObject.IsSetSubject())
             {
                 context.Writer.WritePropertyName("Subject");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ASN1SubjectMarshaller.Instance;
                 marshaller.Marshall(requestObject.Subject, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

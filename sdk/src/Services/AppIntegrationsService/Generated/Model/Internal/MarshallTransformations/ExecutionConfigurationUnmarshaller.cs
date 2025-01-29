@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ExecutionConfiguration Object
     /// </summary>  
-    public class ExecutionConfigurationUnmarshaller : IUnmarshaller<ExecutionConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ExecutionConfiguration, JsonUnmarshallerContext>
+    public class ExecutionConfigurationUnmarshaller : IJsonUnmarshaller<ExecutionConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ExecutionConfiguration IUnmarshaller<ExecutionConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ExecutionConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ExecutionConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ExecutionConfiguration unmarshalledObject = new ExecutionConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ExecutionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OnDemandConfiguration", targetDepth))
                 {
                     var unmarshaller = OnDemandConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OnDemandConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OnDemandConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScheduleConfiguration", targetDepth))
                 {
                     var unmarshaller = ScheduleConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ScheduleConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScheduleConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

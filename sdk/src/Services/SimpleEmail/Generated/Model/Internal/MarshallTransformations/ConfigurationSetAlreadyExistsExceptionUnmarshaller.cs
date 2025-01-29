@@ -35,7 +35,7 @@ namespace Amazon.SimpleEmail.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConfigurationSetAlreadyExistsException operation
     /// </summary>  
-    public class ConfigurationSetAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ConfigurationSetAlreadyExistsException, XmlUnmarshallerContext>
+    public class ConfigurationSetAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ConfigurationSetAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

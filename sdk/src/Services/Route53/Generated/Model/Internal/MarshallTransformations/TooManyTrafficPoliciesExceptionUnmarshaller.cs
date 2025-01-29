@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyTrafficPoliciesException operation
     /// </summary>  
-    public class TooManyTrafficPoliciesExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyTrafficPoliciesException, XmlUnmarshallerContext>
+    public class TooManyTrafficPoliciesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyTrafficPoliciesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

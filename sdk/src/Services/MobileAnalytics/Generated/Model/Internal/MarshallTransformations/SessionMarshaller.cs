@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.MobileAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDuration())
             {
                 context.Writer.WritePropertyName("duration");
-                context.Writer.Write(requestObject.Duration.Value);
+                context.Writer.WriteNumberValue(requestObject.Duration.Value);
             }
 
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("id");
-                context.Writer.Write(requestObject.Id);
+                context.Writer.WriteStringValue(requestObject.Id);
             }
 
             if(requestObject.IsSetStartTimestamp())
             {
                 context.Writer.WritePropertyName("startTimestamp");
-                context.Writer.Write(Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartTimestamp));
+                context.Writer.WriteStringValue(Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StartTimestamp));
             }
 
             if(requestObject.IsSetStopTimestamp())
             {
                 context.Writer.WritePropertyName("stopTimestamp");
-                context.Writer.Write(Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StopTimestamp));
+                context.Writer.WriteStringValue(Amazon.Runtime.Internal.Util.StringUtils.FromDateTimeToISO8601WithOptionalMs(requestObject.StopTimestamp));
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
 {
@@ -51,59 +49,59 @@ namespace Amazon.PartnerCentralSelling.Model.Internal.MarshallTransformations
             if(requestObject.IsSetClosedLostReason())
             {
                 context.Writer.WritePropertyName("ClosedLostReason");
-                context.Writer.Write(requestObject.ClosedLostReason);
+                context.Writer.WriteStringValue(requestObject.ClosedLostReason);
             }
 
             if(requestObject.IsSetNextSteps())
             {
                 context.Writer.WritePropertyName("NextSteps");
-                context.Writer.Write(requestObject.NextSteps);
+                context.Writer.WriteStringValue(requestObject.NextSteps);
             }
 
             if(requestObject.IsSetNextStepsHistory())
             {
                 context.Writer.WritePropertyName("NextStepsHistory");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNextStepsHistoryListValue in requestObject.NextStepsHistory)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = NextStepsHistoryMarshaller.Instance;
                     marshaller.Marshall(requestObjectNextStepsHistoryListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetReviewComments())
             {
                 context.Writer.WritePropertyName("ReviewComments");
-                context.Writer.Write(requestObject.ReviewComments);
+                context.Writer.WriteStringValue(requestObject.ReviewComments);
             }
 
             if(requestObject.IsSetReviewStatus())
             {
                 context.Writer.WritePropertyName("ReviewStatus");
-                context.Writer.Write(requestObject.ReviewStatus);
+                context.Writer.WriteStringValue(requestObject.ReviewStatus);
             }
 
             if(requestObject.IsSetReviewStatusReason())
             {
                 context.Writer.WritePropertyName("ReviewStatusReason");
-                context.Writer.Write(requestObject.ReviewStatusReason);
+                context.Writer.WriteStringValue(requestObject.ReviewStatusReason);
             }
 
             if(requestObject.IsSetStage())
             {
                 context.Writer.WritePropertyName("Stage");
-                context.Writer.Write(requestObject.Stage);
+                context.Writer.WriteStringValue(requestObject.Stage);
             }
 
             if(requestObject.IsSetTargetCloseDate())
             {
                 context.Writer.WritePropertyName("TargetCloseDate");
-                context.Writer.Write(requestObject.TargetCloseDate);
+                context.Writer.WriteStringValue(requestObject.TargetCloseDate);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBinCount())
             {
                 context.Writer.WritePropertyName("BinCount");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BinCountOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BinCount, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetBinWidth())
             {
                 context.Writer.WritePropertyName("BinWidth");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = BinWidthOptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.BinWidth, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSelectedBinType())
             {
                 context.Writer.WritePropertyName("SelectedBinType");
-                context.Writer.Write(requestObject.SelectedBinType);
+                context.Writer.WriteStringValue(requestObject.SelectedBinType);
             }
 
             if(requestObject.IsSetStartValue())
@@ -81,11 +79,11 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("StartValue");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.StartValue.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.StartValue.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.StartValue.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.StartValue.Value);
+                    context.Writer.WriteNumberValue(requestObject.StartValue.Value);
                 }
             }
 

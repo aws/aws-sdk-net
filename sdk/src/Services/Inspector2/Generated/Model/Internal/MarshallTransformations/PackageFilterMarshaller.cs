@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
 {
@@ -51,89 +49,89 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArchitecture())
             {
                 context.Writer.WritePropertyName("architecture");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Architecture, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEpoch())
             {
                 context.Writer.WritePropertyName("epoch");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumberFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Epoch, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFilePath())
             {
                 context.Writer.WritePropertyName("filePath");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.FilePath, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Name, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRelease())
             {
                 context.Writer.WritePropertyName("release");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Release, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceLambdaLayerArn())
             {
                 context.Writer.WritePropertyName("sourceLambdaLayerArn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceLambdaLayerArn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSourceLayerHash())
             {
                 context.Writer.WritePropertyName("sourceLayerHash");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.SourceLayerHash, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("version");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StringFilterMarshaller.Instance;
                 marshaller.Marshall(requestObject.Version, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

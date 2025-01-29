@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.CloudDirectory.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIndexReference())
             {
                 context.Writer.WritePropertyName("IndexReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ObjectReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.IndexReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxResults())
             {
                 context.Writer.WritePropertyName("MaxResults");
-                context.Writer.Write(requestObject.MaxResults.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxResults.Value);
             }
 
             if(requestObject.IsSetNextToken())
             {
                 context.Writer.WritePropertyName("NextToken");
-                context.Writer.Write(requestObject.NextToken);
+                context.Writer.WriteStringValue(requestObject.NextToken);
             }
 
             if(requestObject.IsSetRangesOnIndexedValues())
             {
                 context.Writer.WritePropertyName("RangesOnIndexedValues");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRangesOnIndexedValuesListValue in requestObject.RangesOnIndexedValues)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ObjectAttributeRangeMarshaller.Instance;
                     marshaller.Marshall(requestObjectRangesOnIndexedValuesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

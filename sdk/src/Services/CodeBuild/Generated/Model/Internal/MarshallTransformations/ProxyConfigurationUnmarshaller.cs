@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ProxyConfiguration Object
     /// </summary>  
-    public class ProxyConfigurationUnmarshaller : IUnmarshaller<ProxyConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ProxyConfiguration, JsonUnmarshallerContext>
+    public class ProxyConfigurationUnmarshaller : IJsonUnmarshaller<ProxyConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ProxyConfiguration IUnmarshaller<ProxyConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ProxyConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ProxyConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ProxyConfiguration unmarshalledObject = new ProxyConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("defaultBehavior", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DefaultBehavior = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DefaultBehavior = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("orderedProxyRules", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<FleetProxyRule, FleetProxyRuleUnmarshaller>(FleetProxyRuleUnmarshaller.Instance);
-                    unmarshalledObject.OrderedProxyRules = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<FleetProxyRule, FleetProxyRuleUnmarshaller>(FleetProxyRuleUnmarshaller.Instance);
+                    unmarshalledObject.OrderedProxyRules = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.CodeBuild.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDefaultBehavior())
             {
                 context.Writer.WritePropertyName("defaultBehavior");
-                context.Writer.Write(requestObject.DefaultBehavior);
+                context.Writer.WriteStringValue(requestObject.DefaultBehavior);
             }
 
             if(requestObject.IsSetOrderedProxyRules())
             {
                 context.Writer.WritePropertyName("orderedProxyRules");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOrderedProxyRulesListValue in requestObject.OrderedProxyRules)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = FleetProxyRuleMarshaller.Instance;
                     marshaller.Marshall(requestObjectOrderedProxyRulesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,39 +49,39 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetPrimitiveMessageDefinition())
             {
                 context.Writer.WritePropertyName("primitiveMessageDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PrimitiveMessageDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimitiveMessageDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStructuredMessageDefinition())
             {
                 context.Writer.WritePropertyName("structuredMessageDefinition");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectStructuredMessageDefinitionListValue in requestObject.StructuredMessageDefinition)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = StructuredMessageFieldNameAndDataTypePairMarshaller.Instance;
                     marshaller.Marshall(requestObjectStructuredMessageDefinitionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStructuredMessageListDefinition())
             {
                 context.Writer.WritePropertyName("structuredMessageListDefinition");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StructuredMessageListDefinitionMarshaller.Instance;
                 marshaller.Marshall(requestObject.StructuredMessageListDefinition, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

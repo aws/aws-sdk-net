@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,61 +49,61 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocationId())
             {
                 context.Writer.WritePropertyName("AllocationId");
-                context.Writer.Write(requestObject.AllocationId);
+                context.Writer.WriteStringValue(requestObject.AllocationId);
             }
 
             if(requestObject.IsSetAssociationId())
             {
                 context.Writer.WritePropertyName("AssociationId");
-                context.Writer.Write(requestObject.AssociationId);
+                context.Writer.WriteStringValue(requestObject.AssociationId);
             }
 
             if(requestObject.IsSetDomain())
             {
                 context.Writer.WritePropertyName("Domain");
-                context.Writer.Write(requestObject.Domain);
+                context.Writer.WriteStringValue(requestObject.Domain);
             }
 
             if(requestObject.IsSetInstanceId())
             {
                 context.Writer.WritePropertyName("InstanceId");
-                context.Writer.Write(requestObject.InstanceId);
+                context.Writer.WriteStringValue(requestObject.InstanceId);
             }
 
             if(requestObject.IsSetNetworkBorderGroup())
             {
                 context.Writer.WritePropertyName("NetworkBorderGroup");
-                context.Writer.Write(requestObject.NetworkBorderGroup);
+                context.Writer.WriteStringValue(requestObject.NetworkBorderGroup);
             }
 
             if(requestObject.IsSetNetworkInterfaceId())
             {
                 context.Writer.WritePropertyName("NetworkInterfaceId");
-                context.Writer.Write(requestObject.NetworkInterfaceId);
+                context.Writer.WriteStringValue(requestObject.NetworkInterfaceId);
             }
 
             if(requestObject.IsSetNetworkInterfaceOwnerId())
             {
                 context.Writer.WritePropertyName("NetworkInterfaceOwnerId");
-                context.Writer.Write(requestObject.NetworkInterfaceOwnerId);
+                context.Writer.WriteStringValue(requestObject.NetworkInterfaceOwnerId);
             }
 
             if(requestObject.IsSetPrivateIpAddress())
             {
                 context.Writer.WritePropertyName("PrivateIpAddress");
-                context.Writer.Write(requestObject.PrivateIpAddress);
+                context.Writer.WriteStringValue(requestObject.PrivateIpAddress);
             }
 
             if(requestObject.IsSetPublicIp())
             {
                 context.Writer.WritePropertyName("PublicIp");
-                context.Writer.Write(requestObject.PublicIp);
+                context.Writer.WriteStringValue(requestObject.PublicIp);
             }
 
             if(requestObject.IsSetPublicIpv4Pool())
             {
                 context.Writer.WritePropertyName("PublicIpv4Pool");
-                context.Writer.Write(requestObject.PublicIpv4Pool);
+                context.Writer.WriteStringValue(requestObject.PublicIpv4Pool);
             }
 
         }

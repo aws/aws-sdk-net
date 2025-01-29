@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsightRule Object
     /// </summary>  
-    public class InsightRuleUnmarshaller : IUnmarshaller<InsightRule, XmlUnmarshallerContext>, IUnmarshaller<InsightRule, JsonUnmarshallerContext>
+    public class InsightRuleUnmarshaller : IXmlUnmarshaller<InsightRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InsightRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InsightRuleUnmarshaller _instance = new InsightRuleUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
             if(requestObject.IsSetColumnSeparator())
             {
                 context.Writer.WritePropertyName("ColumnSeparator");
-                context.Writer.Write(requestObject.ColumnSeparator);
+                context.Writer.WriteStringValue(requestObject.ColumnSeparator);
             }
 
             if(requestObject.IsSetEscapeChar())
             {
                 context.Writer.WritePropertyName("EscapeChar");
-                context.Writer.Write(requestObject.EscapeChar);
+                context.Writer.WriteStringValue(requestObject.EscapeChar);
             }
 
             if(requestObject.IsSetNullValue())
             {
                 context.Writer.WritePropertyName("NullValue");
-                context.Writer.Write(requestObject.NullValue);
+                context.Writer.WriteStringValue(requestObject.NullValue);
             }
 
             if(requestObject.IsSetQuoteChar())
             {
                 context.Writer.WritePropertyName("QuoteChar");
-                context.Writer.Write(requestObject.QuoteChar);
+                context.Writer.WriteStringValue(requestObject.QuoteChar);
             }
 
             if(requestObject.IsSetTrimWhiteSpace())
             {
                 context.Writer.WritePropertyName("TrimWhiteSpace");
-                context.Writer.Write(requestObject.TrimWhiteSpace.Value);
+                context.Writer.WriteBooleanValue(requestObject.TrimWhiteSpace.Value);
             }
 
         }

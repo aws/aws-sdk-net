@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
 {
@@ -64,94 +67,99 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 throw new AmazonAppIntegrationsServiceException("Request object does not have required field DataIntegrationIdentifier set");
             request.AddPathResource("{Identifier}", StringUtils.FromString(publicRequest.DataIntegrationIdentifier));
             request.ResourcePath = "/dataIntegrations/{Identifier}/associations";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientAssociationMetadata())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
+                context.Writer.WritePropertyName("ClientAssociationMetadata");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestClientAssociationMetadataKvp in publicRequest.ClientAssociationMetadata)
                 {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientAssociationMetadata())
-                    {
-                        context.Writer.WritePropertyName("ClientAssociationMetadata");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestClientAssociationMetadataKvp in publicRequest.ClientAssociationMetadata)
-                        {
-                            context.Writer.WritePropertyName(publicRequestClientAssociationMetadataKvp.Key);
-                            var publicRequestClientAssociationMetadataValue = publicRequestClientAssociationMetadataKvp.Value;
+                    context.Writer.WritePropertyName(publicRequestClientAssociationMetadataKvp.Key);
+                    var publicRequestClientAssociationMetadataValue = publicRequestClientAssociationMetadataKvp.Value;
 
-                                context.Writer.Write(publicRequestClientAssociationMetadataValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetClientId())
-                    {
-                        context.Writer.WritePropertyName("ClientId");
-                        context.Writer.Write(publicRequest.ClientId);
-                    }
-
-                    if(publicRequest.IsSetClientToken())
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(publicRequest.ClientToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientToken()))
-                    {
-                        context.Writer.WritePropertyName("ClientToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetDestinationURI())
-                    {
-                        context.Writer.WritePropertyName("DestinationURI");
-                        context.Writer.Write(publicRequest.DestinationURI);
-                    }
-
-                    if(publicRequest.IsSetExecutionConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ExecutionConfiguration");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ExecutionConfigurationMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.ExecutionConfiguration, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetObjectConfiguration())
-                    {
-                        context.Writer.WritePropertyName("ObjectConfiguration");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
-                        {
-                            context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
-                            var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
-
-                            context.Writer.WriteObjectStart();
-                            foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
-                            {
-                                context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
-                                var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
-
-                                context.Writer.WriteArrayStart();
-                                foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
-                                {
-                                        context.Writer.Write(publicRequestObjectConfigurationValueValueListValue);
-                                }
-                                context.Writer.WriteArrayEnd();
-                            }
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
+                        context.Writer.WriteStringValue(publicRequestClientAssociationMetadataValue);
                 }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("ClientId");
+                context.Writer.WriteStringValue(publicRequest.ClientId);
+            }
+
+            if(publicRequest.IsSetClientToken())
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(publicRequest.ClientToken);
+            }
+
+            else if(!(publicRequest.IsSetClientToken()))
+            {
+                context.Writer.WritePropertyName("ClientToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetDestinationURI())
+            {
+                context.Writer.WritePropertyName("DestinationURI");
+                context.Writer.WriteStringValue(publicRequest.DestinationURI);
+            }
+
+            if(publicRequest.IsSetExecutionConfiguration())
+            {
+                context.Writer.WritePropertyName("ExecutionConfiguration");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ExecutionConfigurationMarshaller.Instance;
+                marshaller.Marshall(publicRequest.ExecutionConfiguration, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetObjectConfiguration())
+            {
+                context.Writer.WritePropertyName("ObjectConfiguration");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestObjectConfigurationKvp in publicRequest.ObjectConfiguration)
+                {
+                    context.Writer.WritePropertyName(publicRequestObjectConfigurationKvp.Key);
+                    var publicRequestObjectConfigurationValue = publicRequestObjectConfigurationKvp.Value;
+
+                    context.Writer.WriteStartObject();
+                    foreach (var publicRequestObjectConfigurationValueKvp in publicRequestObjectConfigurationValue)
+                    {
+                        context.Writer.WritePropertyName(publicRequestObjectConfigurationValueKvp.Key);
+                        var publicRequestObjectConfigurationValueValue = publicRequestObjectConfigurationValueKvp.Value;
+
+                        context.Writer.WriteStartArray();
+                        foreach(var publicRequestObjectConfigurationValueValueListValue in publicRequestObjectConfigurationValueValue)
+                        {
+                                context.Writer.WriteStringValue(publicRequestObjectConfigurationValueValueListValue);
+                        }
+                        context.Writer.WriteEndArray();
+                    }
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

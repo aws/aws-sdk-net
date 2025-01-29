@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.ResourceExplorer2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFilterString())
             {
                 context.Writer.WritePropertyName("FilterString");
-                context.Writer.Write(requestObject.FilterString);
+                context.Writer.WriteStringValue(requestObject.FilterString);
             }
 
         }

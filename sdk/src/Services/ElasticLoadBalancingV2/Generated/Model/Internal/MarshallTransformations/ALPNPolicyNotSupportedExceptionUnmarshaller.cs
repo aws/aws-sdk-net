@@ -35,7 +35,7 @@ namespace Amazon.ElasticLoadBalancingV2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ALPNPolicyNotSupportedException operation
     /// </summary>  
-    public class ALPNPolicyNotSupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<ALPNPolicyNotSupportedException, XmlUnmarshallerContext>
+    public class ALPNPolicyNotSupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ALPNPolicyNotSupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

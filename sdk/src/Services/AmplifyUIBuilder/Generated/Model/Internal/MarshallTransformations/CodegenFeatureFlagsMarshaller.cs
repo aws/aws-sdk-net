@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIsNonModelSupported())
             {
                 context.Writer.WritePropertyName("isNonModelSupported");
-                context.Writer.Write(requestObject.IsNonModelSupported.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsNonModelSupported.Value);
             }
 
             if(requestObject.IsSetIsRelationshipSupported())
             {
                 context.Writer.WritePropertyName("isRelationshipSupported");
-                context.Writer.Write(requestObject.IsRelationshipSupported.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsRelationshipSupported.Value);
             }
 
         }

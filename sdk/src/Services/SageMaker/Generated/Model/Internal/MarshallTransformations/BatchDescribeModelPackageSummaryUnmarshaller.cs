@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BatchDescribeModelPackageSummary Object
     /// </summary>  
-    public class BatchDescribeModelPackageSummaryUnmarshaller : IUnmarshaller<BatchDescribeModelPackageSummary, XmlUnmarshallerContext>, IUnmarshaller<BatchDescribeModelPackageSummary, JsonUnmarshallerContext>
+    public class BatchDescribeModelPackageSummaryUnmarshaller : IJsonUnmarshaller<BatchDescribeModelPackageSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BatchDescribeModelPackageSummary IUnmarshaller<BatchDescribeModelPackageSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BatchDescribeModelPackageSummary Unmarshall(JsonUnmarshallerContext context)
+        public BatchDescribeModelPackageSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BatchDescribeModelPackageSummary unmarshalledObject = new BatchDescribeModelPackageSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CreationTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InferenceSpecification", targetDepth))
                 {
                     var unmarshaller = InferenceSpecificationUnmarshaller.Instance;
-                    unmarshalledObject.InferenceSpecification = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InferenceSpecification = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelApprovalStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelApprovalStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelApprovalStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageDescription", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageDescription = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageDescription = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageGroupName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageGroupName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageGroupName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ModelPackageVersion", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ModelPackageVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelPackageVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

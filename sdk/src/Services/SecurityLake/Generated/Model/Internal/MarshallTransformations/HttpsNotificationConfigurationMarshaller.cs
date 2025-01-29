@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAuthorizationApiKeyName())
             {
                 context.Writer.WritePropertyName("authorizationApiKeyName");
-                context.Writer.Write(requestObject.AuthorizationApiKeyName);
+                context.Writer.WriteStringValue(requestObject.AuthorizationApiKeyName);
             }
 
             if(requestObject.IsSetAuthorizationApiKeyValue())
             {
                 context.Writer.WritePropertyName("authorizationApiKeyValue");
-                context.Writer.Write(requestObject.AuthorizationApiKeyValue);
+                context.Writer.WriteStringValue(requestObject.AuthorizationApiKeyValue);
             }
 
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");
-                context.Writer.Write(requestObject.Endpoint);
+                context.Writer.WriteStringValue(requestObject.Endpoint);
             }
 
             if(requestObject.IsSetHttpMethod())
             {
                 context.Writer.WritePropertyName("httpMethod");
-                context.Writer.Write(requestObject.HttpMethod);
+                context.Writer.WriteStringValue(requestObject.HttpMethod);
             }
 
             if(requestObject.IsSetTargetRoleArn())
             {
                 context.Writer.WritePropertyName("targetRoleArn");
-                context.Writer.Write(requestObject.TargetRoleArn);
+                context.Writer.WriteStringValue(requestObject.TargetRoleArn);
             }
 
         }

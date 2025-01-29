@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -61,59 +64,64 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/chat-integration-event";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetDestinationId())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetDestinationId())
-                    {
-                        context.Writer.WritePropertyName("DestinationId");
-                        context.Writer.Write(publicRequest.DestinationId);
-                    }
-
-                    if(publicRequest.IsSetEvent())
-                    {
-                        context.Writer.WritePropertyName("Event");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ChatEventMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Event, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetNewSessionDetails())
-                    {
-                        context.Writer.WritePropertyName("NewSessionDetails");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = NewSessionDetailsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.NewSessionDetails, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetSourceId())
-                    {
-                        context.Writer.WritePropertyName("SourceId");
-                        context.Writer.Write(publicRequest.SourceId);
-                    }
-
-                    if(publicRequest.IsSetSubtype())
-                    {
-                        context.Writer.WritePropertyName("Subtype");
-                        context.Writer.Write(publicRequest.Subtype);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("DestinationId");
+                context.Writer.WriteStringValue(publicRequest.DestinationId);
             }
+
+            if(publicRequest.IsSetEvent())
+            {
+                context.Writer.WritePropertyName("Event");
+                context.Writer.WriteStartObject();
+
+                var marshaller = ChatEventMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Event, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetNewSessionDetails())
+            {
+                context.Writer.WritePropertyName("NewSessionDetails");
+                context.Writer.WriteStartObject();
+
+                var marshaller = NewSessionDetailsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.NewSessionDetails, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetSourceId())
+            {
+                context.Writer.WritePropertyName("SourceId");
+                context.Writer.WriteStringValue(publicRequest.SourceId);
+            }
+
+            if(publicRequest.IsSetSubtype())
+            {
+                context.Writer.WritePropertyName("Subtype");
+                context.Writer.WriteStringValue(publicRequest.Subtype);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Mp4Settings Object
     /// </summary>  
-    public class Mp4SettingsUnmarshaller : IUnmarshaller<Mp4Settings, XmlUnmarshallerContext>, IUnmarshaller<Mp4Settings, JsonUnmarshallerContext>
+    public class Mp4SettingsUnmarshaller : IJsonUnmarshaller<Mp4Settings, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Mp4Settings IUnmarshaller<Mp4Settings, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Mp4Settings Unmarshall(JsonUnmarshallerContext context)
+        public Mp4Settings Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Mp4Settings unmarshalledObject = new Mp4Settings();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("audioDuration", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AudioDuration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cslgAtom", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CslgAtom = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CslgAtom = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("cttsVersion", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.CttsVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CttsVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("freeSpaceBox", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FreeSpaceBox = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.FreeSpaceBox = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("moovPlacement", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MoovPlacement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MoovPlacement = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("mp4MajorBrand", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Mp4MajorBrand = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Mp4MajorBrand = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

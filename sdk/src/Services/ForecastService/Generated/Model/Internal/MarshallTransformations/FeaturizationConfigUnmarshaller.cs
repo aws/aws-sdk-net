@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for FeaturizationConfig Object
     /// </summary>  
-    public class FeaturizationConfigUnmarshaller : IUnmarshaller<FeaturizationConfig, XmlUnmarshallerContext>, IUnmarshaller<FeaturizationConfig, JsonUnmarshallerContext>
+    public class FeaturizationConfigUnmarshaller : IJsonUnmarshaller<FeaturizationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        FeaturizationConfig IUnmarshaller<FeaturizationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public FeaturizationConfig Unmarshall(JsonUnmarshallerContext context)
+        public FeaturizationConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             FeaturizationConfig unmarshalledObject = new FeaturizationConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Featurizations", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Featurization, FeaturizationUnmarshaller>(FeaturizationUnmarshaller.Instance);
-                    unmarshalledObject.Featurizations = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Featurization, FeaturizationUnmarshaller>(FeaturizationUnmarshaller.Instance);
+                    unmarshalledObject.Featurizations = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForecastDimensions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.ForecastDimensions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.ForecastDimensions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ForecastFrequency", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ForecastFrequency = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ForecastFrequency = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

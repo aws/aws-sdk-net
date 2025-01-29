@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayPolicyTableEntry Object
     /// </summary>  
-    public class TransitGatewayPolicyTableEntryUnmarshaller : IUnmarshaller<TransitGatewayPolicyTableEntry, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayPolicyTableEntry, JsonUnmarshallerContext>
+    public class TransitGatewayPolicyTableEntryUnmarshaller : IXmlUnmarshaller<TransitGatewayPolicyTableEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayPolicyTableEntry Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayPolicyTableEntryUnmarshaller _instance = new TransitGatewayPolicyTableEntryUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             if(requestObject.IsSetKeywordRegex())
             {
                 context.Writer.WritePropertyName("keywordRegex");
-                context.Writer.Write(requestObject.KeywordRegex);
+                context.Writer.WriteStringValue(requestObject.KeywordRegex);
             }
 
             if(requestObject.IsSetPatternDescription())
             {
                 context.Writer.WritePropertyName("patternDescription");
-                context.Writer.Write(requestObject.PatternDescription);
+                context.Writer.WriteStringValue(requestObject.PatternDescription);
             }
 
             if(requestObject.IsSetPatternName())
             {
                 context.Writer.WritePropertyName("patternName");
-                context.Writer.Write(requestObject.PatternName);
+                context.Writer.WriteStringValue(requestObject.PatternName);
             }
 
             if(requestObject.IsSetPatternRegex())
             {
                 context.Writer.WritePropertyName("patternRegex");
-                context.Writer.Write(requestObject.PatternRegex);
+                context.Writer.WriteStringValue(requestObject.PatternRegex);
             }
 
         }

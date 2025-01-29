@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ContributionAnalysisTimeRanges Object
     /// </summary>  
-    public class ContributionAnalysisTimeRangesUnmarshaller : IUnmarshaller<ContributionAnalysisTimeRanges, XmlUnmarshallerContext>, IUnmarshaller<ContributionAnalysisTimeRanges, JsonUnmarshallerContext>
+    public class ContributionAnalysisTimeRangesUnmarshaller : IJsonUnmarshaller<ContributionAnalysisTimeRanges, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ContributionAnalysisTimeRanges IUnmarshaller<ContributionAnalysisTimeRanges, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ContributionAnalysisTimeRanges Unmarshall(JsonUnmarshallerContext context)
+        public ContributionAnalysisTimeRanges Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ContributionAnalysisTimeRanges unmarshalledObject = new ContributionAnalysisTimeRanges();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EndRange", targetDepth))
                 {
                     var unmarshaller = TopicIRFilterOptionUnmarshaller.Instance;
-                    unmarshalledObject.EndRange = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EndRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StartRange", targetDepth))
                 {
                     var unmarshaller = TopicIRFilterOptionUnmarshaller.Instance;
-                    unmarshalledObject.StartRange = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StartRange = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

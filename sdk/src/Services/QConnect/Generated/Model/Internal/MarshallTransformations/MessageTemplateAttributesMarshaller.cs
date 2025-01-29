@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QConnect.Model.Internal.MarshallTransformations
 {
@@ -51,48 +49,48 @@ namespace Amazon.QConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAgentAttributes())
             {
                 context.Writer.WritePropertyName("agentAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AgentAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.AgentAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomAttributes())
             {
                 context.Writer.WritePropertyName("customAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCustomAttributesKvp in requestObject.CustomAttributes)
                 {
                     context.Writer.WritePropertyName(requestObjectCustomAttributesKvp.Key);
                     var requestObjectCustomAttributesValue = requestObjectCustomAttributesKvp.Value;
 
-                        context.Writer.Write(requestObjectCustomAttributesValue);
+                        context.Writer.WriteStringValue(requestObjectCustomAttributesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCustomerProfileAttributes())
             {
                 context.Writer.WritePropertyName("customerProfileAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomerProfileAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomerProfileAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSystemAttributes())
             {
                 context.Writer.WritePropertyName("systemAttributes");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SystemAttributesMarshaller.Instance;
                 marshaller.Marshall(requestObject.SystemAttributes, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

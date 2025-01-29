@@ -29,107 +29,97 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for VolumeRecommendation Object
     /// </summary>  
-    public class VolumeRecommendationUnmarshaller : IUnmarshaller<VolumeRecommendation, XmlUnmarshallerContext>, IUnmarshaller<VolumeRecommendation, JsonUnmarshallerContext>
+    public class VolumeRecommendationUnmarshaller : IJsonUnmarshaller<VolumeRecommendation, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        VolumeRecommendation IUnmarshaller<VolumeRecommendation, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public VolumeRecommendation Unmarshall(JsonUnmarshallerContext context)
+        public VolumeRecommendation Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             VolumeRecommendation unmarshalledObject = new VolumeRecommendation();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentConfiguration", targetDepth))
                 {
                     var unmarshaller = VolumeConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CurrentConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("currentPerformanceRisk", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CurrentPerformanceRisk = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("effectiveRecommendationPreferences", targetDepth))
                 {
                     var unmarshaller = EBSEffectiveRecommendationPreferencesUnmarshaller.Instance;
-                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("finding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Finding = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Finding = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastRefreshTimestamp = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lookBackPeriodInDays", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LookBackPeriodInDays = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("tags", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
-                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("utilizationMetrics", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<EBSUtilizationMetric, EBSUtilizationMetricUnmarshaller>(EBSUtilizationMetricUnmarshaller.Instance);
-                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<EBSUtilizationMetric, EBSUtilizationMetricUnmarshaller>(EBSUtilizationMetricUnmarshaller.Instance);
+                    unmarshalledObject.UtilizationMetrics = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumeArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumeArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumeArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("volumeRecommendationOptions", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<VolumeRecommendationOption, VolumeRecommendationOptionUnmarshaller>(VolumeRecommendationOptionUnmarshaller.Instance);
-                    unmarshalledObject.VolumeRecommendationOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<VolumeRecommendationOption, VolumeRecommendationOptionUnmarshaller>(VolumeRecommendationOptionUnmarshaller.Instance);
+                    unmarshalledObject.VolumeRecommendationOptions = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
@@ -51,32 +49,32 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCanDbcFiles())
             {
                 context.Writer.WritePropertyName("canDbcFiles");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCanDbcFilesListValue in requestObject.CanDbcFiles)
                 {
-                    context.Writer.Write(StringUtils.FromMemoryStream(requestObjectCanDbcFilesListValue));
+                    context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObjectCanDbcFilesListValue));
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetNetworkInterface())
             {
                 context.Writer.WritePropertyName("networkInterface");
-                context.Writer.Write(requestObject.NetworkInterface);
+                context.Writer.WriteStringValue(requestObject.NetworkInterface);
             }
 
             if(requestObject.IsSetSignalsMap())
             {
                 context.Writer.WritePropertyName("signalsMap");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectSignalsMapKvp in requestObject.SignalsMap)
                 {
                     context.Writer.WritePropertyName(requestObjectSignalsMapKvp.Key);
                     var requestObjectSignalsMapValue = requestObjectSignalsMapKvp.Value;
 
-                        context.Writer.Write(requestObjectSignalsMapValue);
+                        context.Writer.WriteStringValue(requestObjectSignalsMapValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

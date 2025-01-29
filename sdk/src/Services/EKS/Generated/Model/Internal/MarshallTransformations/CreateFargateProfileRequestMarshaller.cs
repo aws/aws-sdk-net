@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -64,83 +67,88 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
                 throw new AmazonEKSException("Request object does not have required field ClusterName set");
             request.AddPathResource("{name}", StringUtils.FromString(publicRequest.ClusterName));
             request.ResourcePath = "/clusters/{name}/fargate-profiles";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetClientRequestToken())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetClientRequestToken())
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(publicRequest.ClientRequestToken);
-                    }
-
-                    else if(!(publicRequest.IsSetClientRequestToken()))
-                    {
-                        context.Writer.WritePropertyName("clientRequestToken");
-                        context.Writer.Write(Guid.NewGuid().ToString());
-                    }
-                    if(publicRequest.IsSetFargateProfileName())
-                    {
-                        context.Writer.WritePropertyName("fargateProfileName");
-                        context.Writer.Write(publicRequest.FargateProfileName);
-                    }
-
-                    if(publicRequest.IsSetPodExecutionRoleArn())
-                    {
-                        context.Writer.WritePropertyName("podExecutionRoleArn");
-                        context.Writer.Write(publicRequest.PodExecutionRoleArn);
-                    }
-
-                    if(publicRequest.IsSetSelectors())
-                    {
-                        context.Writer.WritePropertyName("selectors");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSelectorsListValue in publicRequest.Selectors)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = FargateProfileSelectorMarshaller.Instance;
-                            marshaller.Marshall(publicRequestSelectorsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetSubnets())
-                    {
-                        context.Writer.WritePropertyName("subnets");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
-                        {
-                                context.Writer.Write(publicRequestSubnetsListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetTags())
-                    {
-                        context.Writer.WritePropertyName("tags");
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestTagsKvp in publicRequest.Tags)
-                        {
-                            context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                            var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                                context.Writer.Write(publicRequestTagsValue);
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(publicRequest.ClientRequestToken);
             }
+
+            else if(!(publicRequest.IsSetClientRequestToken()))
+            {
+                context.Writer.WritePropertyName("clientRequestToken");
+                context.Writer.WriteStringValue(Guid.NewGuid().ToString());
+            }
+            if(publicRequest.IsSetFargateProfileName())
+            {
+                context.Writer.WritePropertyName("fargateProfileName");
+                context.Writer.WriteStringValue(publicRequest.FargateProfileName);
+            }
+
+            if(publicRequest.IsSetPodExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("podExecutionRoleArn");
+                context.Writer.WriteStringValue(publicRequest.PodExecutionRoleArn);
+            }
+
+            if(publicRequest.IsSetSelectors())
+            {
+                context.Writer.WritePropertyName("selectors");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSelectorsListValue in publicRequest.Selectors)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = FargateProfileSelectorMarshaller.Instance;
+                    marshaller.Marshall(publicRequestSelectorsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetSubnets())
+            {
+                context.Writer.WritePropertyName("subnets");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestSubnetsListValue in publicRequest.Subnets)
+                {
+                        context.Writer.WriteStringValue(publicRequestSubnetsListValue);
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetTags())
+            {
+                context.Writer.WritePropertyName("tags");
+                context.Writer.WriteStartObject();
+                foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                {
+                    context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
+                    var publicRequestTagsValue = publicRequestTagsKvp.Value;
+
+                        context.Writer.WriteStringValue(publicRequestTagsValue);
+                }
+                context.Writer.WriteEndObject();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

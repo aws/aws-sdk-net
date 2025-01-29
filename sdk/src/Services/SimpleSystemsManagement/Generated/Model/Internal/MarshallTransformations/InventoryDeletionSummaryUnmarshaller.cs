@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SimpleSystemsManagement.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for InventoryDeletionSummary Object
     /// </summary>  
-    public class InventoryDeletionSummaryUnmarshaller : IUnmarshaller<InventoryDeletionSummary, XmlUnmarshallerContext>, IUnmarshaller<InventoryDeletionSummary, JsonUnmarshallerContext>
+    public class InventoryDeletionSummaryUnmarshaller : IJsonUnmarshaller<InventoryDeletionSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        InventoryDeletionSummary IUnmarshaller<InventoryDeletionSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public InventoryDeletionSummary Unmarshall(JsonUnmarshallerContext context)
+        public InventoryDeletionSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             InventoryDeletionSummary unmarshalledObject = new InventoryDeletionSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("RemainingCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RemainingCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RemainingCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SummaryItems", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<InventoryDeletionSummaryItem, InventoryDeletionSummaryItemUnmarshaller>(InventoryDeletionSummaryItemUnmarshaller.Instance);
-                    unmarshalledObject.SummaryItems = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<InventoryDeletionSummaryItem, InventoryDeletionSummaryItemUnmarshaller>(InventoryDeletionSummaryItemUnmarshaller.Instance);
+                    unmarshalledObject.SummaryItems = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalCount", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalCount = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

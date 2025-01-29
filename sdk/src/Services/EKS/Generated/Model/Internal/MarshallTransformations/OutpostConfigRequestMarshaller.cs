@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EKS.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.EKS.Model.Internal.MarshallTransformations
             if(requestObject.IsSetControlPlaneInstanceType())
             {
                 context.Writer.WritePropertyName("controlPlaneInstanceType");
-                context.Writer.Write(requestObject.ControlPlaneInstanceType);
+                context.Writer.WriteStringValue(requestObject.ControlPlaneInstanceType);
             }
 
             if(requestObject.IsSetControlPlanePlacement())
             {
                 context.Writer.WritePropertyName("controlPlanePlacement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ControlPlanePlacementRequestMarshaller.Instance;
                 marshaller.Marshall(requestObject.ControlPlanePlacement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetOutpostArns())
             {
                 context.Writer.WritePropertyName("outpostArns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectOutpostArnsListValue in requestObject.OutpostArns)
                 {
-                        context.Writer.Write(requestObjectOutpostArnsListValue);
+                        context.Writer.WriteStringValue(requestObjectOutpostArnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

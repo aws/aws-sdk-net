@@ -29,149 +29,139 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for OpenZFSVolumeConfiguration Object
     /// </summary>  
-    public class OpenZFSVolumeConfigurationUnmarshaller : IUnmarshaller<OpenZFSVolumeConfiguration, XmlUnmarshallerContext>, IUnmarshaller<OpenZFSVolumeConfiguration, JsonUnmarshallerContext>
+    public class OpenZFSVolumeConfigurationUnmarshaller : IJsonUnmarshaller<OpenZFSVolumeConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        OpenZFSVolumeConfiguration IUnmarshaller<OpenZFSVolumeConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public OpenZFSVolumeConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public OpenZFSVolumeConfiguration Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             OpenZFSVolumeConfiguration unmarshalledObject = new OpenZFSVolumeConfiguration();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CopyStrategy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CopyStrategy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CopyStrategy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CopyTagsToSnapshots", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.CopyTagsToSnapshots = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CopyTagsToSnapshots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DataCompressionType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataCompressionType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeleteClonedVolumes", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeleteClonedVolumes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeleteClonedVolumes = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeleteIntermediateData", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeleteIntermediateData = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeleteIntermediateData = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DeleteIntermediateSnaphots", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.DeleteIntermediateSnaphots = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DeleteIntermediateSnaphots = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("DestinationSnapshot", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DestinationSnapshot = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NfsExports", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<OpenZFSNfsExport, OpenZFSNfsExportUnmarshaller>(OpenZFSNfsExportUnmarshaller.Instance);
-                    unmarshalledObject.NfsExports = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<OpenZFSNfsExport, OpenZFSNfsExportUnmarshaller>(OpenZFSNfsExportUnmarshaller.Instance);
+                    unmarshalledObject.NfsExports = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("OriginSnapshot", targetDepth))
                 {
                     var unmarshaller = OpenZFSOriginSnapshotConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.OriginSnapshot = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.OriginSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ParentVolumeId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ParentVolumeId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ParentVolumeId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ReadOnly", targetDepth))
                 {
                     var unmarshaller = NullableBoolUnmarshaller.Instance;
-                    unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ReadOnly = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RecordSizeKiB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RecordSizeKiB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RecordSizeKiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RestoreToSnapshot", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.RestoreToSnapshot = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RestoreToSnapshot = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SourceSnapshotARN", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SourceSnapshotARN = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SourceSnapshotARN = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StorageCapacityQuotaGiB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StorageCapacityQuotaGiB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageCapacityQuotaGiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("StorageCapacityReservationGiB", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.StorageCapacityReservationGiB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageCapacityReservationGiB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("UserAndGroupQuotas", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<OpenZFSUserOrGroupQuota, OpenZFSUserOrGroupQuotaUnmarshaller>(OpenZFSUserOrGroupQuotaUnmarshaller.Instance);
-                    unmarshalledObject.UserAndGroupQuotas = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<OpenZFSUserOrGroupQuota, OpenZFSUserOrGroupQuotaUnmarshaller>(OpenZFSUserOrGroupQuotaUnmarshaller.Instance);
+                    unmarshalledObject.UserAndGroupQuotas = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("VolumePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.VolumePath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.VolumePath = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

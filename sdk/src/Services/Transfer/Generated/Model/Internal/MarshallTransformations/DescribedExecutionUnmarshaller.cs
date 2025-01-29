@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Transfer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for DescribedExecution Object
     /// </summary>  
-    public class DescribedExecutionUnmarshaller : IUnmarshaller<DescribedExecution, XmlUnmarshallerContext>, IUnmarshaller<DescribedExecution, JsonUnmarshallerContext>
+    public class DescribedExecutionUnmarshaller : IJsonUnmarshaller<DescribedExecution, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        DescribedExecution IUnmarshaller<DescribedExecution, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public DescribedExecution Unmarshall(JsonUnmarshallerContext context)
+        public DescribedExecution Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             DescribedExecution unmarshalledObject = new DescribedExecution();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ExecutionRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InitialFileLocation", targetDepth))
                 {
                     var unmarshaller = FileLocationUnmarshaller.Instance;
-                    unmarshalledObject.InitialFileLocation = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InitialFileLocation = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LoggingConfiguration", targetDepth))
                 {
                     var unmarshaller = LoggingConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.LoggingConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LoggingConfiguration = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PosixProfile", targetDepth))
                 {
                     var unmarshaller = PosixProfileUnmarshaller.Instance;
-                    unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PosixProfile = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Results", targetDepth))
                 {
                     var unmarshaller = ExecutionResultsUnmarshaller.Instance;
-                    unmarshalledObject.Results = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Results = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceMetadata", targetDepth))
                 {
                     var unmarshaller = ServiceMetadataUnmarshaller.Instance;
-                    unmarshalledObject.ServiceMetadata = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceMetadata = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

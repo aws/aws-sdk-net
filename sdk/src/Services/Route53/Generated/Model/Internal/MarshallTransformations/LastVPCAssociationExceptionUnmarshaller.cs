@@ -36,7 +36,7 @@ namespace Amazon.Route53.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LastVPCAssociationException operation
     /// </summary>  
-    public class LastVPCAssociationExceptionUnmarshaller : IErrorResponseUnmarshaller<LastVPCAssociationException, XmlUnmarshallerContext>
+    public class LastVPCAssociationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<LastVPCAssociationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

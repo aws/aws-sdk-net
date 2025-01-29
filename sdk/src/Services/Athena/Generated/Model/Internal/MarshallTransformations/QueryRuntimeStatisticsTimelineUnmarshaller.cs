@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Athena.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for QueryRuntimeStatisticsTimeline Object
     /// </summary>  
-    public class QueryRuntimeStatisticsTimelineUnmarshaller : IUnmarshaller<QueryRuntimeStatisticsTimeline, XmlUnmarshallerContext>, IUnmarshaller<QueryRuntimeStatisticsTimeline, JsonUnmarshallerContext>
+    public class QueryRuntimeStatisticsTimelineUnmarshaller : IJsonUnmarshaller<QueryRuntimeStatisticsTimeline, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        QueryRuntimeStatisticsTimeline IUnmarshaller<QueryRuntimeStatisticsTimeline, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public QueryRuntimeStatisticsTimeline Unmarshall(JsonUnmarshallerContext context)
+        public QueryRuntimeStatisticsTimeline Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             QueryRuntimeStatisticsTimeline unmarshalledObject = new QueryRuntimeStatisticsTimeline();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EngineExecutionTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.EngineExecutionTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EngineExecutionTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryPlanningTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.QueryPlanningTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryPlanningTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryQueueTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryQueueTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServicePreProcessingTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ServicePreProcessingTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServicePreProcessingTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ServiceProcessingTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.ServiceProcessingTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ServiceProcessingTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalExecutionTimeInMillis", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalExecutionTimeInMillis = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalExecutionTimeInMillis = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

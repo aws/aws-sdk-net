@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Greengrass.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for GroupCertificateAuthorityProperties Object
     /// </summary>  
-    public class GroupCertificateAuthorityPropertiesUnmarshaller : IUnmarshaller<GroupCertificateAuthorityProperties, XmlUnmarshallerContext>, IUnmarshaller<GroupCertificateAuthorityProperties, JsonUnmarshallerContext>
+    public class GroupCertificateAuthorityPropertiesUnmarshaller : IJsonUnmarshaller<GroupCertificateAuthorityProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        GroupCertificateAuthorityProperties IUnmarshaller<GroupCertificateAuthorityProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public GroupCertificateAuthorityProperties Unmarshall(JsonUnmarshallerContext context)
+        public GroupCertificateAuthorityProperties Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             GroupCertificateAuthorityProperties unmarshalledObject = new GroupCertificateAuthorityProperties();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("GroupCertificateAuthorityArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupCertificateAuthorityArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupCertificateAuthorityArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("GroupCertificateAuthorityId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GroupCertificateAuthorityId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GroupCertificateAuthorityId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

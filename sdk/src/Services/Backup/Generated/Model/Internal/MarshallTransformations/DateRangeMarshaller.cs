@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Backup.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
             if(requestObject.IsSetFromDate())
             {
                 context.Writer.WritePropertyName("FromDate");
-                context.Writer.Write(requestObject.FromDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.FromDate.Value)));
             }
 
             if(requestObject.IsSetToDate())
             {
                 context.Writer.WritePropertyName("ToDate");
-                context.Writer.Write(requestObject.ToDate.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.ToDate.Value)));
             }
 
         }

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for KinesisVideoStreamConfig Object
     /// </summary>  
-    public class KinesisVideoStreamConfigUnmarshaller : IUnmarshaller<KinesisVideoStreamConfig, XmlUnmarshallerContext>, IUnmarshaller<KinesisVideoStreamConfig, JsonUnmarshallerContext>
+    public class KinesisVideoStreamConfigUnmarshaller : IJsonUnmarshaller<KinesisVideoStreamConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        KinesisVideoStreamConfig IUnmarshaller<KinesisVideoStreamConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public KinesisVideoStreamConfig Unmarshall(JsonUnmarshallerContext context)
+        public KinesisVideoStreamConfig Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             KinesisVideoStreamConfig unmarshalledObject = new KinesisVideoStreamConfig();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EncryptionConfig", targetDepth))
                 {
                     var unmarshaller = EncryptionConfigUnmarshaller.Instance;
-                    unmarshalledObject.EncryptionConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EncryptionConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("RetentionPeriodHours", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RetentionPeriodHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

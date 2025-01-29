@@ -35,7 +35,7 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DoubleRange Object
     /// </summary>  
-    public class DoubleRangeUnmarshaller : IUnmarshaller<DoubleRange, XmlUnmarshallerContext>, IUnmarshaller<DoubleRange, JsonUnmarshallerContext>
+    public class DoubleRangeUnmarshaller : IXmlUnmarshaller<DoubleRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Neptune.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DoubleRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DoubleRangeUnmarshaller _instance = new DoubleRangeUnmarshaller();        
 

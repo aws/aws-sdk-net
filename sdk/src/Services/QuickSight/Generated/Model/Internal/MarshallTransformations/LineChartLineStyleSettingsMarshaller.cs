@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetLineInterpolation())
             {
                 context.Writer.WritePropertyName("LineInterpolation");
-                context.Writer.Write(requestObject.LineInterpolation);
+                context.Writer.WriteStringValue(requestObject.LineInterpolation);
             }
 
             if(requestObject.IsSetLineStyle())
             {
                 context.Writer.WritePropertyName("LineStyle");
-                context.Writer.Write(requestObject.LineStyle);
+                context.Writer.WriteStringValue(requestObject.LineStyle);
             }
 
             if(requestObject.IsSetLineVisibility())
             {
                 context.Writer.WritePropertyName("LineVisibility");
-                context.Writer.Write(requestObject.LineVisibility);
+                context.Writer.WriteStringValue(requestObject.LineVisibility);
             }
 
             if(requestObject.IsSetLineWidth())
             {
                 context.Writer.WritePropertyName("LineWidth");
-                context.Writer.Write(requestObject.LineWidth);
+                context.Writer.WriteStringValue(requestObject.LineWidth);
             }
 
         }

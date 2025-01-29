@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxFilesToKeep())
             {
                 context.Writer.WritePropertyName("maxFilesToKeep");
-                context.Writer.Write(requestObject.MaxFilesToKeep.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxFilesToKeep.Value);
             }
 
             if(requestObject.IsSetRotationSize())
             {
                 context.Writer.WritePropertyName("rotationSize");
-                context.Writer.Write(requestObject.RotationSize);
+                context.Writer.WriteStringValue(requestObject.RotationSize);
             }
 
         }

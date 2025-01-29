@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,151 +49,151 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalTreatments())
             {
                 context.Writer.WritePropertyName("AdditionalTreatments");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalTreatmentsListValue in requestObject.AdditionalTreatments)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = WriteTreatmentResourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectAdditionalTreatmentsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomDeliveryConfiguration())
             {
                 context.Writer.WritePropertyName("CustomDeliveryConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CustomDeliveryConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.CustomDeliveryConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetHoldoutPercent())
             {
                 context.Writer.WritePropertyName("HoldoutPercent");
-                context.Writer.Write(requestObject.HoldoutPercent.Value);
+                context.Writer.WriteNumberValue(requestObject.HoldoutPercent.Value);
             }
 
             if(requestObject.IsSetHook())
             {
                 context.Writer.WritePropertyName("Hook");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CampaignHookMarshaller.Instance;
                 marshaller.Marshall(requestObject.Hook, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIsPaused())
             {
                 context.Writer.WritePropertyName("IsPaused");
-                context.Writer.Write(requestObject.IsPaused.Value);
+                context.Writer.WriteBooleanValue(requestObject.IsPaused.Value);
             }
 
             if(requestObject.IsSetLimits())
             {
                 context.Writer.WritePropertyName("Limits");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CampaignLimitsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Limits, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMessageConfiguration())
             {
                 context.Writer.WritePropertyName("MessageConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = MessageConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.MessageConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetPriority())
             {
                 context.Writer.WritePropertyName("Priority");
-                context.Writer.Write(requestObject.Priority.Value);
+                context.Writer.WriteNumberValue(requestObject.Priority.Value);
             }
 
             if(requestObject.IsSetSchedule())
             {
                 context.Writer.WritePropertyName("Schedule");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ScheduleMarshaller.Instance;
                 marshaller.Marshall(requestObject.Schedule, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSegmentId())
             {
                 context.Writer.WritePropertyName("SegmentId");
-                context.Writer.Write(requestObject.SegmentId);
+                context.Writer.WriteStringValue(requestObject.SegmentId);
             }
 
             if(requestObject.IsSetSegmentVersion())
             {
                 context.Writer.WritePropertyName("SegmentVersion");
-                context.Writer.Write(requestObject.SegmentVersion.Value);
+                context.Writer.WriteNumberValue(requestObject.SegmentVersion.Value);
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTemplateConfiguration())
             {
                 context.Writer.WritePropertyName("TemplateConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TemplateConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.TemplateConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTreatmentDescription())
             {
                 context.Writer.WritePropertyName("TreatmentDescription");
-                context.Writer.Write(requestObject.TreatmentDescription);
+                context.Writer.WriteStringValue(requestObject.TreatmentDescription);
             }
 
             if(requestObject.IsSetTreatmentName())
             {
                 context.Writer.WritePropertyName("TreatmentName");
-                context.Writer.Write(requestObject.TreatmentName);
+                context.Writer.WriteStringValue(requestObject.TreatmentName);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             if(requestObject.IsSetInitialActiveLearningModelArn())
             {
                 context.Writer.WritePropertyName("InitialActiveLearningModelArn");
-                context.Writer.Write(requestObject.InitialActiveLearningModelArn);
+                context.Writer.WriteStringValue(requestObject.InitialActiveLearningModelArn);
             }
 
             if(requestObject.IsSetLabelingJobAlgorithmSpecificationArn())
             {
                 context.Writer.WritePropertyName("LabelingJobAlgorithmSpecificationArn");
-                context.Writer.Write(requestObject.LabelingJobAlgorithmSpecificationArn);
+                context.Writer.WriteStringValue(requestObject.LabelingJobAlgorithmSpecificationArn);
             }
 
             if(requestObject.IsSetLabelingJobResourceConfig())
             {
                 context.Writer.WritePropertyName("LabelingJobResourceConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LabelingJobResourceConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.LabelingJobResourceConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

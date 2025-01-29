@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DataZone.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for SparkGluePropertiesOutput Object
     /// </summary>  
-    public class SparkGluePropertiesOutputUnmarshaller : IUnmarshaller<SparkGluePropertiesOutput, XmlUnmarshallerContext>, IUnmarshaller<SparkGluePropertiesOutput, JsonUnmarshallerContext>
+    public class SparkGluePropertiesOutputUnmarshaller : IJsonUnmarshaller<SparkGluePropertiesOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        SparkGluePropertiesOutput IUnmarshaller<SparkGluePropertiesOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public SparkGluePropertiesOutput Unmarshall(JsonUnmarshallerContext context)
+        public SparkGluePropertiesOutput Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             SparkGluePropertiesOutput unmarshalledObject = new SparkGluePropertiesOutput();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("additionalArgs", targetDepth))
                 {
                     var unmarshaller = SparkGlueArgsUnmarshaller.Instance;
-                    unmarshalledObject.AdditionalArgs = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AdditionalArgs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("glueConnectionName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GlueConnectionName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlueConnectionName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("glueVersion", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.GlueVersion = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.GlueVersion = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("idleTimeout", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.IdleTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.IdleTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("javaVirtualEnv", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.JavaVirtualEnv = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.JavaVirtualEnv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("numberOfWorkers", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.NumberOfWorkers = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.NumberOfWorkers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("pythonVirtualEnv", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PythonVirtualEnv = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PythonVirtualEnv = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("workerType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.WorkerType = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.WorkerType = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

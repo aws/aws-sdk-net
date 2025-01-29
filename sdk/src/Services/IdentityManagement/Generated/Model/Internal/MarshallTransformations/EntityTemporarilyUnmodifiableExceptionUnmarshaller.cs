@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EntityTemporarilyUnmodifiableException operation
     /// </summary>  
-    public class EntityTemporarilyUnmodifiableExceptionUnmarshaller : IErrorResponseUnmarshaller<EntityTemporarilyUnmodifiableException, XmlUnmarshallerContext>
+    public class EntityTemporarilyUnmodifiableExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EntityTemporarilyUnmodifiableException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

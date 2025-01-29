@@ -29,77 +29,67 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for BehaviorModelTrainingSummary Object
     /// </summary>  
-    public class BehaviorModelTrainingSummaryUnmarshaller : IUnmarshaller<BehaviorModelTrainingSummary, XmlUnmarshallerContext>, IUnmarshaller<BehaviorModelTrainingSummary, JsonUnmarshallerContext>
+    public class BehaviorModelTrainingSummaryUnmarshaller : IJsonUnmarshaller<BehaviorModelTrainingSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        BehaviorModelTrainingSummary IUnmarshaller<BehaviorModelTrainingSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public BehaviorModelTrainingSummary Unmarshall(JsonUnmarshallerContext context)
+        public BehaviorModelTrainingSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             BehaviorModelTrainingSummary unmarshalledObject = new BehaviorModelTrainingSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("behaviorName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.BehaviorName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BehaviorName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("datapointsCollectionPercentage", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.DatapointsCollectionPercentage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DatapointsCollectionPercentage = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("lastModelRefreshDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LastModelRefreshDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastModelRefreshDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("modelStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ModelStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ModelStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("securityProfileName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SecurityProfileName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SecurityProfileName = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("trainingDataCollectionStartDate", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.TrainingDataCollectionStartDate = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TrainingDataCollectionStartDate = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlternateDataSourceParameters())
             {
                 context.Writer.WritePropertyName("AlternateDataSourceParameters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAlternateDataSourceParametersListValue in requestObject.AlternateDataSourceParameters)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataSourceParametersMarshaller.Instance;
                     marshaller.Marshall(requestObjectAlternateDataSourceParametersListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("Username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Batch.Model.Internal.MarshallTransformations
 {
@@ -51,141 +49,141 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAllocationStrategy())
             {
                 context.Writer.WritePropertyName("allocationStrategy");
-                context.Writer.Write(requestObject.AllocationStrategy);
+                context.Writer.WriteStringValue(requestObject.AllocationStrategy);
             }
 
             if(requestObject.IsSetBidPercentage())
             {
                 context.Writer.WritePropertyName("bidPercentage");
-                context.Writer.Write(requestObject.BidPercentage.Value);
+                context.Writer.WriteNumberValue(requestObject.BidPercentage.Value);
             }
 
             if(requestObject.IsSetDesiredvCpus())
             {
                 context.Writer.WritePropertyName("desiredvCpus");
-                context.Writer.Write(requestObject.DesiredvCpus.Value);
+                context.Writer.WriteNumberValue(requestObject.DesiredvCpus.Value);
             }
 
             if(requestObject.IsSetEc2Configuration())
             {
                 context.Writer.WritePropertyName("ec2Configuration");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEc2ConfigurationListValue in requestObject.Ec2Configuration)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = Ec2ConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectEc2ConfigurationListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEc2KeyPair())
             {
                 context.Writer.WritePropertyName("ec2KeyPair");
-                context.Writer.Write(requestObject.Ec2KeyPair);
+                context.Writer.WriteStringValue(requestObject.Ec2KeyPair);
             }
 
             if(requestObject.IsSetImageId())
             {
                 context.Writer.WritePropertyName("imageId");
-                context.Writer.Write(requestObject.ImageId);
+                context.Writer.WriteStringValue(requestObject.ImageId);
             }
 
             if(requestObject.IsSetInstanceRole())
             {
                 context.Writer.WritePropertyName("instanceRole");
-                context.Writer.Write(requestObject.InstanceRole);
+                context.Writer.WriteStringValue(requestObject.InstanceRole);
             }
 
             if(requestObject.IsSetInstanceTypes())
             {
                 context.Writer.WritePropertyName("instanceTypes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceTypesListValue in requestObject.InstanceTypes)
                 {
-                        context.Writer.Write(requestObjectInstanceTypesListValue);
+                        context.Writer.WriteStringValue(requestObjectInstanceTypesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetLaunchTemplate())
             {
                 context.Writer.WritePropertyName("launchTemplate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LaunchTemplateSpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchTemplate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxvCpus())
             {
                 context.Writer.WritePropertyName("maxvCpus");
-                context.Writer.Write(requestObject.MaxvCpus.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxvCpus.Value);
             }
 
             if(requestObject.IsSetMinvCpus())
             {
                 context.Writer.WritePropertyName("minvCpus");
-                context.Writer.Write(requestObject.MinvCpus.Value);
+                context.Writer.WriteNumberValue(requestObject.MinvCpus.Value);
             }
 
             if(requestObject.IsSetPlacementGroup())
             {
                 context.Writer.WritePropertyName("placementGroup");
-                context.Writer.Write(requestObject.PlacementGroup);
+                context.Writer.WriteStringValue(requestObject.PlacementGroup);
             }
 
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("securityGroupIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSecurityGroupIdsListValue in requestObject.SecurityGroupIds)
                 {
-                        context.Writer.Write(requestObjectSecurityGroupIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectSecurityGroupIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetSubnets())
             {
                 context.Writer.WritePropertyName("subnets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSubnetsListValue in requestObject.Subnets)
                 {
-                        context.Writer.Write(requestObjectSubnetsListValue);
+                        context.Writer.WriteStringValue(requestObjectSubnetsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetTags())
             {
                 context.Writer.WritePropertyName("tags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectTagsKvp in requestObject.Tags)
                 {
                     context.Writer.WritePropertyName(requestObjectTagsKvp.Key);
                     var requestObjectTagsValue = requestObjectTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectTagsValue);
+                        context.Writer.WriteStringValue(requestObjectTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
             if(requestObject.IsSetUpdateToLatestImageVersion())
             {
                 context.Writer.WritePropertyName("updateToLatestImageVersion");
-                context.Writer.Write(requestObject.UpdateToLatestImageVersion.Value);
+                context.Writer.WriteBooleanValue(requestObject.UpdateToLatestImageVersion.Value);
             }
 
         }

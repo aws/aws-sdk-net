@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for EncryptionAtRest Object
     /// </summary>  
-    public class EncryptionAtRestUnmarshaller : IUnmarshaller<EncryptionAtRest, XmlUnmarshallerContext>, IUnmarshaller<EncryptionAtRest, JsonUnmarshallerContext>
+    public class EncryptionAtRestUnmarshaller : IJsonUnmarshaller<EncryptionAtRest, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        EncryptionAtRest IUnmarshaller<EncryptionAtRest, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public EncryptionAtRest Unmarshall(JsonUnmarshallerContext context)
+        public EncryptionAtRest Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             EncryptionAtRest unmarshalledObject = new EncryptionAtRest();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CatalogEncryptionMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogEncryptionMode = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogEncryptionMode = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CatalogEncryptionServiceRole", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.CatalogEncryptionServiceRole = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CatalogEncryptionServiceRole = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("SseAwsKmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SseAwsKmsKeyId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SseAwsKmsKeyId = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

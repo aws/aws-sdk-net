@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
 {
@@ -51,26 +49,26 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBoostingOverride())
             {
                 context.Writer.WritePropertyName("boostingOverride");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectBoostingOverrideKvp in requestObject.BoostingOverride)
                 {
                     context.Writer.WritePropertyName(requestObjectBoostingOverrideKvp.Key);
                     var requestObjectBoostingOverrideValue = requestObjectBoostingOverrideKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DocumentAttributeBoostingConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectBoostingOverrideValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetIndexId())
             {
                 context.Writer.WritePropertyName("indexId");
-                context.Writer.Write(requestObject.IndexId);
+                context.Writer.WriteStringValue(requestObject.IndexId);
             }
 
         }

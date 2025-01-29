@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
             if(requestObject.IsSetOAuth2Credentials())
             {
                 context.Writer.WritePropertyName("oAuth2Credentials");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OAuth2CredentialsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OAuth2Credentials, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("password");
-                context.Writer.Write(requestObject.Password);
+                context.Writer.WriteStringValue(requestObject.Password);
             }
 
             if(requestObject.IsSetUsername())
             {
                 context.Writer.WritePropertyName("username");
-                context.Writer.Write(requestObject.Username);
+                context.Writer.WriteStringValue(requestObject.Username);
             }
 
         }

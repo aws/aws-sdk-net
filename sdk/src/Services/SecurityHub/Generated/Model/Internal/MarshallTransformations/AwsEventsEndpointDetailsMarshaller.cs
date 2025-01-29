@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,87 +49,87 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArn())
             {
                 context.Writer.WritePropertyName("Arn");
-                context.Writer.Write(requestObject.Arn);
+                context.Writer.WriteStringValue(requestObject.Arn);
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("Description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetEndpointId())
             {
                 context.Writer.WritePropertyName("EndpointId");
-                context.Writer.Write(requestObject.EndpointId);
+                context.Writer.WriteStringValue(requestObject.EndpointId);
             }
 
             if(requestObject.IsSetEndpointUrl())
             {
                 context.Writer.WritePropertyName("EndpointUrl");
-                context.Writer.Write(requestObject.EndpointUrl);
+                context.Writer.WriteStringValue(requestObject.EndpointUrl);
             }
 
             if(requestObject.IsSetEventBuses())
             {
                 context.Writer.WritePropertyName("EventBuses");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEventBusesListValue in requestObject.EventBuses)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsEventsEndpointEventBusesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectEventBusesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetReplicationConfig())
             {
                 context.Writer.WritePropertyName("ReplicationConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEventsEndpointReplicationConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.ReplicationConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRoleArn())
             {
                 context.Writer.WritePropertyName("RoleArn");
-                context.Writer.Write(requestObject.RoleArn);
+                context.Writer.WriteStringValue(requestObject.RoleArn);
             }
 
             if(requestObject.IsSetRoutingConfig())
             {
                 context.Writer.WritePropertyName("RoutingConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsEventsEndpointRoutingConfigDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.RoutingConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetState())
             {
                 context.Writer.WritePropertyName("State");
-                context.Writer.Write(requestObject.State);
+                context.Writer.WriteStringValue(requestObject.State);
             }
 
             if(requestObject.IsSetStateReason())
             {
                 context.Writer.WritePropertyName("StateReason");
-                context.Writer.Write(requestObject.StateReason);
+                context.Writer.WriteStringValue(requestObject.StateReason);
             }
 
         }

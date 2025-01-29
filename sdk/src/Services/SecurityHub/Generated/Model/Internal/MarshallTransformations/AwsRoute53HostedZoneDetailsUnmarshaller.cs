@@ -29,65 +29,55 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AwsRoute53HostedZoneDetails Object
     /// </summary>  
-    public class AwsRoute53HostedZoneDetailsUnmarshaller : IUnmarshaller<AwsRoute53HostedZoneDetails, XmlUnmarshallerContext>, IUnmarshaller<AwsRoute53HostedZoneDetails, JsonUnmarshallerContext>
+    public class AwsRoute53HostedZoneDetailsUnmarshaller : IJsonUnmarshaller<AwsRoute53HostedZoneDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AwsRoute53HostedZoneDetails IUnmarshaller<AwsRoute53HostedZoneDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AwsRoute53HostedZoneDetails Unmarshall(JsonUnmarshallerContext context)
+        public AwsRoute53HostedZoneDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AwsRoute53HostedZoneDetails unmarshalledObject = new AwsRoute53HostedZoneDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("HostedZone", targetDepth))
                 {
                     var unmarshaller = AwsRoute53HostedZoneObjectDetailsUnmarshaller.Instance;
-                    unmarshalledObject.HostedZone = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.HostedZone = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("NameServers", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.NameServers = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.NameServers = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("QueryLoggingConfig", targetDepth))
                 {
                     var unmarshaller = AwsRoute53QueryLoggingConfigDetailsUnmarshaller.Instance;
-                    unmarshalledObject.QueryLoggingConfig = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.QueryLoggingConfig = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Vpcs", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AwsRoute53HostedZoneVpcDetails, AwsRoute53HostedZoneVpcDetailsUnmarshaller>(AwsRoute53HostedZoneVpcDetailsUnmarshaller.Instance);
-                    unmarshalledObject.Vpcs = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<AwsRoute53HostedZoneVpcDetails, AwsRoute53HostedZoneVpcDetailsUnmarshaller>(AwsRoute53HostedZoneVpcDetailsUnmarshaller.Instance);
+                    unmarshalledObject.Vpcs = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

@@ -29,89 +29,79 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for JobProgressReport Object
     /// </summary>  
-    public class JobProgressReportUnmarshaller : IUnmarshaller<JobProgressReport, XmlUnmarshallerContext>, IUnmarshaller<JobProgressReport, JsonUnmarshallerContext>
+    public class JobProgressReportUnmarshaller : IJsonUnmarshaller<JobProgressReport, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        JobProgressReport IUnmarshaller<JobProgressReport, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public JobProgressReport Unmarshall(JsonUnmarshallerContext context)
+        public JobProgressReport Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             JobProgressReport unmarshalledObject = new JobProgressReport();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Throughput", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.Throughput = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Throughput = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfFilesReadWithCustomerError", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfFilesReadWithCustomerError = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfFilesReadWithCustomerError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfImportedFiles", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfImportedFiles = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfImportedFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfResourcesImported", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfResourcesImported = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfResourcesImported = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfResourcesScanned", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfResourcesScanned = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfResourcesScanned = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfResourcesWithCustomerError", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfResourcesWithCustomerError = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfResourcesWithCustomerError = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalNumberOfScannedFiles", targetDepth))
                 {
                     var unmarshaller = NullableLongUnmarshaller.Instance;
-                    unmarshalledObject.TotalNumberOfScannedFiles = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalNumberOfScannedFiles = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("TotalSizeOfScannedFilesInMB", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.TotalSizeOfScannedFilesInMB = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TotalSizeOfScannedFilesInMB = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

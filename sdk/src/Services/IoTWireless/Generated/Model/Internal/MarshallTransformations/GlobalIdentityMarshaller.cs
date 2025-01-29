@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGeranCid())
             {
                 context.Writer.WritePropertyName("GeranCid");
-                context.Writer.Write(requestObject.GeranCid.Value);
+                context.Writer.WriteNumberValue(requestObject.GeranCid.Value);
             }
 
             if(requestObject.IsSetLac())
             {
                 context.Writer.WritePropertyName("Lac");
-                context.Writer.Write(requestObject.Lac.Value);
+                context.Writer.WriteNumberValue(requestObject.Lac.Value);
             }
 
         }

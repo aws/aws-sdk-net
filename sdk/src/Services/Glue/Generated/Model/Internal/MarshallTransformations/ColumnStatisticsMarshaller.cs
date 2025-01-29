@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,30 +49,30 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAnalyzedTime())
             {
                 context.Writer.WritePropertyName("AnalyzedTime");
-                context.Writer.Write(requestObject.AnalyzedTime.Value);
+                context.Writer.WriteNumberValue(Convert.ToInt64(StringUtils.FromDateTimeToUnixTimestamp(requestObject.AnalyzedTime.Value)));
             }
 
             if(requestObject.IsSetColumnName())
             {
                 context.Writer.WritePropertyName("ColumnName");
-                context.Writer.Write(requestObject.ColumnName);
+                context.Writer.WriteStringValue(requestObject.ColumnName);
             }
 
             if(requestObject.IsSetColumnType())
             {
                 context.Writer.WritePropertyName("ColumnType");
-                context.Writer.Write(requestObject.ColumnType);
+                context.Writer.WriteStringValue(requestObject.ColumnType);
             }
 
             if(requestObject.IsSetStatisticsData())
             {
                 context.Writer.WritePropertyName("StatisticsData");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ColumnStatisticsDataMarshaller.Instance;
                 marshaller.Marshall(requestObject.StatisticsData, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

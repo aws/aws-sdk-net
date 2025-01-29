@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCopyStrategy())
             {
                 context.Writer.WritePropertyName("CopyStrategy");
-                context.Writer.Write(requestObject.CopyStrategy);
+                context.Writer.WriteStringValue(requestObject.CopyStrategy);
             }
 
             if(requestObject.IsSetSnapshotARN())
             {
                 context.Writer.WritePropertyName("SnapshotARN");
-                context.Writer.Write(requestObject.SnapshotARN);
+                context.Writer.WriteStringValue(requestObject.SnapshotARN);
             }
 
         }

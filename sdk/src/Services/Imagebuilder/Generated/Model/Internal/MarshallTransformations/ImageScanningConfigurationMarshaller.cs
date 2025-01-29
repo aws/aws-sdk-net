@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEcrConfiguration())
             {
                 context.Writer.WritePropertyName("ecrConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EcrConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EcrConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageScanningEnabled())
             {
                 context.Writer.WritePropertyName("imageScanningEnabled");
-                context.Writer.Write(requestObject.ImageScanningEnabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.ImageScanningEnabled.Value);
             }
 
         }

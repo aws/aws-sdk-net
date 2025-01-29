@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
 {
@@ -51,55 +49,55 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAmiTags())
             {
                 context.Writer.WritePropertyName("amiTags");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAmiTagsKvp in requestObject.AmiTags)
                 {
                     context.Writer.WritePropertyName(requestObjectAmiTagsKvp.Key);
                     var requestObjectAmiTagsValue = requestObjectAmiTagsKvp.Value;
 
-                        context.Writer.Write(requestObjectAmiTagsValue);
+                        context.Writer.WriteStringValue(requestObjectAmiTagsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("kmsKeyId");
-                context.Writer.Write(requestObject.KmsKeyId);
+                context.Writer.WriteStringValue(requestObject.KmsKeyId);
             }
 
             if(requestObject.IsSetLaunchPermission())
             {
                 context.Writer.WritePropertyName("launchPermission");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LaunchPermissionConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LaunchPermission, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetTargetAccountIds())
             {
                 context.Writer.WritePropertyName("targetAccountIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetAccountIdsListValue in requestObject.TargetAccountIds)
                 {
-                        context.Writer.Write(requestObjectTargetAccountIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectTargetAccountIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

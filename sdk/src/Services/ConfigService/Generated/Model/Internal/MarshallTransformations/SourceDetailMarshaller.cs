@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEventSource())
             {
                 context.Writer.WritePropertyName("EventSource");
-                context.Writer.Write(requestObject.EventSource);
+                context.Writer.WriteStringValue(requestObject.EventSource);
             }
 
             if(requestObject.IsSetMaximumExecutionFrequency())
             {
                 context.Writer.WritePropertyName("MaximumExecutionFrequency");
-                context.Writer.Write(requestObject.MaximumExecutionFrequency);
+                context.Writer.WriteStringValue(requestObject.MaximumExecutionFrequency);
             }
 
             if(requestObject.IsSetMessageType())
             {
                 context.Writer.WritePropertyName("MessageType");
-                context.Writer.Write(requestObject.MessageType);
+                context.Writer.WriteStringValue(requestObject.MessageType);
             }
 
         }

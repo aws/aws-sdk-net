@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.SSMContacts.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationInMinutes())
             {
                 context.Writer.WritePropertyName("DurationInMinutes");
-                context.Writer.Write(requestObject.DurationInMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationInMinutes.Value);
             }
 
             if(requestObject.IsSetTargets())
             {
                 context.Writer.WritePropertyName("Targets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectTargetsListValue in requestObject.Targets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = TargetMarshaller.Instance;
                     marshaller.Marshall(requestObjectTargetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContributorDimensions())
             {
                 context.Writer.WritePropertyName("ContributorDimensions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectContributorDimensionsListValue in requestObject.ContributorDimensions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnIdentifierMarshaller.Instance;
                     marshaller.Marshall(requestObjectContributorDimensionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMeasureFieldId())
             {
                 context.Writer.WritePropertyName("MeasureFieldId");
-                context.Writer.Write(requestObject.MeasureFieldId);
+                context.Writer.WriteStringValue(requestObject.MeasureFieldId);
             }
 
         }

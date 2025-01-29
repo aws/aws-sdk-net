@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,138 +49,138 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalLocations())
             {
                 context.Writer.WritePropertyName("AdditionalLocations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalLocationsListValue in requestObject.AdditionalLocations)
                 {
-                        context.Writer.Write(requestObjectAdditionalLocationsListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalLocationsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBucketColumns())
             {
                 context.Writer.WritePropertyName("BucketColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectBucketColumnsListValue in requestObject.BucketColumns)
                 {
-                        context.Writer.Write(requestObjectBucketColumnsListValue);
+                        context.Writer.WriteStringValue(requestObjectBucketColumnsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetColumns())
             {
                 context.Writer.WritePropertyName("Columns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectColumnsListValue in requestObject.Columns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ColumnMarshaller.Instance;
                     marshaller.Marshall(requestObjectColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCompressed())
             {
                 context.Writer.WritePropertyName("Compressed");
-                context.Writer.Write(requestObject.Compressed.Value);
+                context.Writer.WriteBooleanValue(requestObject.Compressed.Value);
             }
 
             if(requestObject.IsSetInputFormat())
             {
                 context.Writer.WritePropertyName("InputFormat");
-                context.Writer.Write(requestObject.InputFormat);
+                context.Writer.WriteStringValue(requestObject.InputFormat);
             }
 
             if(requestObject.IsSetLocation())
             {
                 context.Writer.WritePropertyName("Location");
-                context.Writer.Write(requestObject.Location);
+                context.Writer.WriteStringValue(requestObject.Location);
             }
 
             if(requestObject.IsSetNumberOfBuckets())
             {
                 context.Writer.WritePropertyName("NumberOfBuckets");
-                context.Writer.Write(requestObject.NumberOfBuckets.Value);
+                context.Writer.WriteNumberValue(requestObject.NumberOfBuckets.Value);
             }
 
             if(requestObject.IsSetOutputFormat())
             {
                 context.Writer.WritePropertyName("OutputFormat");
-                context.Writer.Write(requestObject.OutputFormat);
+                context.Writer.WriteStringValue(requestObject.OutputFormat);
             }
 
             if(requestObject.IsSetParameters())
             {
                 context.Writer.WritePropertyName("Parameters");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectParametersKvp in requestObject.Parameters)
                 {
                     context.Writer.WritePropertyName(requestObjectParametersKvp.Key);
                     var requestObjectParametersValue = requestObjectParametersKvp.Value;
 
-                        context.Writer.Write(requestObjectParametersValue);
+                        context.Writer.WriteStringValue(requestObjectParametersValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSchemaReference())
             {
                 context.Writer.WritePropertyName("SchemaReference");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SchemaReferenceMarshaller.Instance;
                 marshaller.Marshall(requestObject.SchemaReference, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSerdeInfo())
             {
                 context.Writer.WritePropertyName("SerdeInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SerDeInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.SerdeInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSkewedInfo())
             {
                 context.Writer.WritePropertyName("SkewedInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SkewedInfoMarshaller.Instance;
                 marshaller.Marshall(requestObject.SkewedInfo, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSortColumns())
             {
                 context.Writer.WritePropertyName("SortColumns");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectSortColumnsListValue in requestObject.SortColumns)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = OrderMarshaller.Instance;
                     marshaller.Marshall(requestObjectSortColumnsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetStoredAsSubDirectories())
             {
                 context.Writer.WritePropertyName("StoredAsSubDirectories");
-                context.Writer.Write(requestObject.StoredAsSubDirectories.Value);
+                context.Writer.WriteBooleanValue(requestObject.StoredAsSubDirectories.Value);
             }
 
         }

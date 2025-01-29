@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.IoTEvents.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDetectorModelName())
             {
                 context.Writer.WritePropertyName("detectorModelName");
-                context.Writer.Write(requestObject.DetectorModelName);
+                context.Writer.WriteStringValue(requestObject.DetectorModelName);
             }
 
             if(requestObject.IsSetKeyValue())
             {
                 context.Writer.WritePropertyName("keyValue");
-                context.Writer.Write(requestObject.KeyValue);
+                context.Writer.WriteStringValue(requestObject.KeyValue);
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
 {
@@ -51,53 +49,53 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConstantInitializationVector())
             {
                 context.Writer.WritePropertyName("constantInitializationVector");
-                context.Writer.Write(requestObject.ConstantInitializationVector);
+                context.Writer.WriteStringValue(requestObject.ConstantInitializationVector);
             }
 
             if(requestObject.IsSetEncryptionMethod())
             {
                 context.Writer.WritePropertyName("encryptionMethod");
-                context.Writer.Write(requestObject.EncryptionMethod);
+                context.Writer.WriteStringValue(requestObject.EncryptionMethod);
             }
 
             if(requestObject.IsSetInitializationVectorInManifest())
             {
                 context.Writer.WritePropertyName("initializationVectorInManifest");
-                context.Writer.Write(requestObject.InitializationVectorInManifest);
+                context.Writer.WriteStringValue(requestObject.InitializationVectorInManifest);
             }
 
             if(requestObject.IsSetOfflineEncrypted())
             {
                 context.Writer.WritePropertyName("offlineEncrypted");
-                context.Writer.Write(requestObject.OfflineEncrypted);
+                context.Writer.WriteStringValue(requestObject.OfflineEncrypted);
             }
 
             if(requestObject.IsSetSpekeKeyProvider())
             {
                 context.Writer.WritePropertyName("spekeKeyProvider");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SpekeKeyProviderMarshaller.Instance;
                 marshaller.Marshall(requestObject.SpekeKeyProvider, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetStaticKeyProvider())
             {
                 context.Writer.WritePropertyName("staticKeyProvider");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = StaticKeyProviderMarshaller.Instance;
                 marshaller.Marshall(requestObject.StaticKeyProvider, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

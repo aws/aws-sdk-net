@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAltText())
             {
                 context.Writer.WritePropertyName("AltText");
-                context.Writer.Write(requestObject.AltText);
+                context.Writer.WriteStringValue(requestObject.AltText);
             }
 
             if(requestObject.IsSetLogoSet())
             {
                 context.Writer.WritePropertyName("LogoSet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = LogoSetConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.LogoSet, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

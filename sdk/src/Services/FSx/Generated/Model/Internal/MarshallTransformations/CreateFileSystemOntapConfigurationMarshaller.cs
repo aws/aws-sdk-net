@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.FSx.Model.Internal.MarshallTransformations
 {
@@ -51,83 +49,83 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutomaticBackupRetentionDays())
             {
                 context.Writer.WritePropertyName("AutomaticBackupRetentionDays");
-                context.Writer.Write(requestObject.AutomaticBackupRetentionDays.Value);
+                context.Writer.WriteNumberValue(requestObject.AutomaticBackupRetentionDays.Value);
             }
 
             if(requestObject.IsSetDailyAutomaticBackupStartTime())
             {
                 context.Writer.WritePropertyName("DailyAutomaticBackupStartTime");
-                context.Writer.Write(requestObject.DailyAutomaticBackupStartTime);
+                context.Writer.WriteStringValue(requestObject.DailyAutomaticBackupStartTime);
             }
 
             if(requestObject.IsSetDeploymentType())
             {
                 context.Writer.WritePropertyName("DeploymentType");
-                context.Writer.Write(requestObject.DeploymentType);
+                context.Writer.WriteStringValue(requestObject.DeploymentType);
             }
 
             if(requestObject.IsSetDiskIopsConfiguration())
             {
                 context.Writer.WritePropertyName("DiskIopsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DiskIopsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.DiskIopsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEndpointIpAddressRange())
             {
                 context.Writer.WritePropertyName("EndpointIpAddressRange");
-                context.Writer.Write(requestObject.EndpointIpAddressRange);
+                context.Writer.WriteStringValue(requestObject.EndpointIpAddressRange);
             }
 
             if(requestObject.IsSetFsxAdminPassword())
             {
                 context.Writer.WritePropertyName("FsxAdminPassword");
-                context.Writer.Write(requestObject.FsxAdminPassword);
+                context.Writer.WriteStringValue(requestObject.FsxAdminPassword);
             }
 
             if(requestObject.IsSetHAPairs())
             {
                 context.Writer.WritePropertyName("HAPairs");
-                context.Writer.Write(requestObject.HAPairs.Value);
+                context.Writer.WriteNumberValue(requestObject.HAPairs.Value);
             }
 
             if(requestObject.IsSetPreferredSubnetId())
             {
                 context.Writer.WritePropertyName("PreferredSubnetId");
-                context.Writer.Write(requestObject.PreferredSubnetId);
+                context.Writer.WriteStringValue(requestObject.PreferredSubnetId);
             }
 
             if(requestObject.IsSetRouteTableIds())
             {
                 context.Writer.WritePropertyName("RouteTableIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectRouteTableIdsListValue in requestObject.RouteTableIds)
                 {
-                        context.Writer.Write(requestObjectRouteTableIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectRouteTableIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetThroughputCapacity())
             {
                 context.Writer.WritePropertyName("ThroughputCapacity");
-                context.Writer.Write(requestObject.ThroughputCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.ThroughputCapacity.Value);
             }
 
             if(requestObject.IsSetThroughputCapacityPerHAPair())
             {
                 context.Writer.WritePropertyName("ThroughputCapacityPerHAPair");
-                context.Writer.Write(requestObject.ThroughputCapacityPerHAPair.Value);
+                context.Writer.WriteNumberValue(requestObject.ThroughputCapacityPerHAPair.Value);
             }
 
             if(requestObject.IsSetWeeklyMaintenanceStartTime())
             {
                 context.Writer.WritePropertyName("WeeklyMaintenanceStartTime");
-                context.Writer.Write(requestObject.WeeklyMaintenanceStartTime);
+                context.Writer.WriteStringValue(requestObject.WeeklyMaintenanceStartTime);
             }
 
         }

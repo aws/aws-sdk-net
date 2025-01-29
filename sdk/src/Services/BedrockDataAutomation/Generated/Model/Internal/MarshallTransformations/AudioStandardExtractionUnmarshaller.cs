@@ -29,47 +29,37 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BedrockDataAutomation.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for AudioStandardExtraction Object
     /// </summary>  
-    public class AudioStandardExtractionUnmarshaller : IUnmarshaller<AudioStandardExtraction, XmlUnmarshallerContext>, IUnmarshaller<AudioStandardExtraction, JsonUnmarshallerContext>
+    public class AudioStandardExtractionUnmarshaller : IJsonUnmarshaller<AudioStandardExtraction, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        AudioStandardExtraction IUnmarshaller<AudioStandardExtraction, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public AudioStandardExtraction Unmarshall(JsonUnmarshallerContext context)
+        public AudioStandardExtraction Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             AudioStandardExtraction unmarshalledObject = new AudioStandardExtraction();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("category", targetDepth))
                 {
                     var unmarshaller = AudioExtractionCategoryUnmarshaller.Instance;
-                    unmarshalledObject.Category = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Category = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

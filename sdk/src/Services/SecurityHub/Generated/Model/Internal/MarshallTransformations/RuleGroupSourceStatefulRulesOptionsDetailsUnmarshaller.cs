@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for RuleGroupSourceStatefulRulesOptionsDetails Object
     /// </summary>  
-    public class RuleGroupSourceStatefulRulesOptionsDetailsUnmarshaller : IUnmarshaller<RuleGroupSourceStatefulRulesOptionsDetails, XmlUnmarshallerContext>, IUnmarshaller<RuleGroupSourceStatefulRulesOptionsDetails, JsonUnmarshallerContext>
+    public class RuleGroupSourceStatefulRulesOptionsDetailsUnmarshaller : IJsonUnmarshaller<RuleGroupSourceStatefulRulesOptionsDetails, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        RuleGroupSourceStatefulRulesOptionsDetails IUnmarshaller<RuleGroupSourceStatefulRulesOptionsDetails, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public RuleGroupSourceStatefulRulesOptionsDetails Unmarshall(JsonUnmarshallerContext context)
+        public RuleGroupSourceStatefulRulesOptionsDetails Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             RuleGroupSourceStatefulRulesOptionsDetails unmarshalledObject = new RuleGroupSourceStatefulRulesOptionsDetails();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("Keyword", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Keyword = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Keyword = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("Settings", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Settings = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

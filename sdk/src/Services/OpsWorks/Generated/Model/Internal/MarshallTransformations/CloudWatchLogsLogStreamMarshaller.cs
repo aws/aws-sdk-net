@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
 {
@@ -51,67 +49,67 @@ namespace Amazon.OpsWorks.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBatchCount())
             {
                 context.Writer.WritePropertyName("BatchCount");
-                context.Writer.Write(requestObject.BatchCount.Value);
+                context.Writer.WriteNumberValue(requestObject.BatchCount.Value);
             }
 
             if(requestObject.IsSetBatchSize())
             {
                 context.Writer.WritePropertyName("BatchSize");
-                context.Writer.Write(requestObject.BatchSize.Value);
+                context.Writer.WriteNumberValue(requestObject.BatchSize.Value);
             }
 
             if(requestObject.IsSetBufferDuration())
             {
                 context.Writer.WritePropertyName("BufferDuration");
-                context.Writer.Write(requestObject.BufferDuration.Value);
+                context.Writer.WriteNumberValue(requestObject.BufferDuration.Value);
             }
 
             if(requestObject.IsSetDatetimeFormat())
             {
                 context.Writer.WritePropertyName("DatetimeFormat");
-                context.Writer.Write(requestObject.DatetimeFormat);
+                context.Writer.WriteStringValue(requestObject.DatetimeFormat);
             }
 
             if(requestObject.IsSetEncoding())
             {
                 context.Writer.WritePropertyName("Encoding");
-                context.Writer.Write(requestObject.Encoding);
+                context.Writer.WriteStringValue(requestObject.Encoding);
             }
 
             if(requestObject.IsSetFile())
             {
                 context.Writer.WritePropertyName("File");
-                context.Writer.Write(requestObject.File);
+                context.Writer.WriteStringValue(requestObject.File);
             }
 
             if(requestObject.IsSetFileFingerprintLines())
             {
                 context.Writer.WritePropertyName("FileFingerprintLines");
-                context.Writer.Write(requestObject.FileFingerprintLines);
+                context.Writer.WriteStringValue(requestObject.FileFingerprintLines);
             }
 
             if(requestObject.IsSetInitialPosition())
             {
                 context.Writer.WritePropertyName("InitialPosition");
-                context.Writer.Write(requestObject.InitialPosition);
+                context.Writer.WriteStringValue(requestObject.InitialPosition);
             }
 
             if(requestObject.IsSetLogGroupName())
             {
                 context.Writer.WritePropertyName("LogGroupName");
-                context.Writer.Write(requestObject.LogGroupName);
+                context.Writer.WriteStringValue(requestObject.LogGroupName);
             }
 
             if(requestObject.IsSetMultiLineStartPattern())
             {
                 context.Writer.WritePropertyName("MultiLineStartPattern");
-                context.Writer.Write(requestObject.MultiLineStartPattern);
+                context.Writer.WriteStringValue(requestObject.MultiLineStartPattern);
             }
 
             if(requestObject.IsSetTimeZone())
             {
                 context.Writer.WritePropertyName("TimeZone");
-                context.Writer.Write(requestObject.TimeZone);
+                context.Writer.WriteStringValue(requestObject.TimeZone);
             }
 
         }

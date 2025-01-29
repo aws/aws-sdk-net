@@ -36,7 +36,7 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ObjectLambdaConfiguration Object
     /// </summary>  
-    public class ObjectLambdaConfigurationUnmarshaller : IUnmarshaller<ObjectLambdaConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ObjectLambdaConfiguration, JsonUnmarshallerContext>
+    public class ObjectLambdaConfigurationUnmarshaller : IXmlUnmarshaller<ObjectLambdaConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -96,17 +96,6 @@ namespace Amazon.S3Control.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ObjectLambdaConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ObjectLambdaConfigurationUnmarshaller _instance = new ObjectLambdaConfigurationUnmarshaller();        
 
         /// <summary>

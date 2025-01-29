@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,52 +49,52 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCertificate())
             {
                 context.Writer.WritePropertyName("Certificate");
-                context.Writer.Write(requestObject.Certificate);
+                context.Writer.WriteStringValue(requestObject.Certificate);
             }
 
             if(requestObject.IsSetEnvironmentVariables())
             {
                 context.Writer.WritePropertyName("EnvironmentVariables");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEnvironmentVariablesListValue in requestObject.EnvironmentVariables)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsCodeBuildProjectEnvironmentEnvironmentVariablesDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectEnvironmentVariablesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetImagePullCredentialsType())
             {
                 context.Writer.WritePropertyName("ImagePullCredentialsType");
-                context.Writer.Write(requestObject.ImagePullCredentialsType);
+                context.Writer.WriteStringValue(requestObject.ImagePullCredentialsType);
             }
 
             if(requestObject.IsSetPrivilegedMode())
             {
                 context.Writer.WritePropertyName("PrivilegedMode");
-                context.Writer.Write(requestObject.PrivilegedMode.Value);
+                context.Writer.WriteBooleanValue(requestObject.PrivilegedMode.Value);
             }
 
             if(requestObject.IsSetRegistryCredential())
             {
                 context.Writer.WritePropertyName("RegistryCredential");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsCodeBuildProjectEnvironmentRegistryCredentialMarshaller.Instance;
                 marshaller.Marshall(requestObject.RegistryCredential, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetType())
             {
                 context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WriteStringValue(requestObject.Type);
             }
 
         }

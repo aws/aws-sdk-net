@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
@@ -51,23 +49,23 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNumberDisplayFormatConfiguration())
             {
                 context.Writer.WritePropertyName("NumberDisplayFormatConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NumberDisplayFormatConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.NumberDisplayFormatConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetPercentageDisplayFormatConfiguration())
             {
                 context.Writer.WritePropertyName("PercentageDisplayFormatConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PercentageDisplayFormatConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.PercentageDisplayFormatConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

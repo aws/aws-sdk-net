@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for StepAdjustment Object
     /// </summary>  
-    public class StepAdjustmentUnmarshaller : IUnmarshaller<StepAdjustment, XmlUnmarshallerContext>, IUnmarshaller<StepAdjustment, JsonUnmarshallerContext>
+    public class StepAdjustmentUnmarshaller : IJsonUnmarshaller<StepAdjustment, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        StepAdjustment IUnmarshaller<StepAdjustment, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public StepAdjustment Unmarshall(JsonUnmarshallerContext context)
+        public StepAdjustment Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             StepAdjustment unmarshalledObject = new StepAdjustment();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("MetricIntervalLowerBound", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MetricIntervalLowerBound = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricIntervalLowerBound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MetricIntervalUpperBound", targetDepth))
                 {
                     var unmarshaller = NullableDoubleUnmarshaller.Instance;
-                    unmarshalledObject.MetricIntervalUpperBound = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MetricIntervalUpperBound = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ScalingAdjustment", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ScalingAdjustment = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

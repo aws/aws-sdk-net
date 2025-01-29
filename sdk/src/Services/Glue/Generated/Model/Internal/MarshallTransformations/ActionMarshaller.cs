@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
@@ -51,50 +49,50 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArguments())
             {
                 context.Writer.WritePropertyName("Arguments");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectArgumentsKvp in requestObject.Arguments)
                 {
                     context.Writer.WritePropertyName(requestObjectArgumentsKvp.Key);
                     var requestObjectArgumentsValue = requestObjectArgumentsKvp.Value;
 
-                        context.Writer.Write(requestObjectArgumentsValue);
+                        context.Writer.WriteStringValue(requestObjectArgumentsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCrawlerName())
             {
                 context.Writer.WritePropertyName("CrawlerName");
-                context.Writer.Write(requestObject.CrawlerName);
+                context.Writer.WriteStringValue(requestObject.CrawlerName);
             }
 
             if(requestObject.IsSetJobName())
             {
                 context.Writer.WritePropertyName("JobName");
-                context.Writer.Write(requestObject.JobName);
+                context.Writer.WriteStringValue(requestObject.JobName);
             }
 
             if(requestObject.IsSetNotificationProperty())
             {
                 context.Writer.WritePropertyName("NotificationProperty");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NotificationPropertyMarshaller.Instance;
                 marshaller.Marshall(requestObject.NotificationProperty, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecurityConfiguration())
             {
                 context.Writer.WritePropertyName("SecurityConfiguration");
-                context.Writer.Write(requestObject.SecurityConfiguration);
+                context.Writer.WriteStringValue(requestObject.SecurityConfiguration);
             }
 
             if(requestObject.IsSetTimeout())
             {
                 context.Writer.WritePropertyName("Timeout");
-                context.Writer.Write(requestObject.Timeout.Value);
+                context.Writer.WriteNumberValue(requestObject.Timeout.Value);
             }
 
         }

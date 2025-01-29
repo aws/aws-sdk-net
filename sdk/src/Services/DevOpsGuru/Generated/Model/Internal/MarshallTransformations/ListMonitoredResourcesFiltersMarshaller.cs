@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
             if(requestObject.IsSetResourcePermission())
             {
                 context.Writer.WritePropertyName("ResourcePermission");
-                context.Writer.Write(requestObject.ResourcePermission);
+                context.Writer.WriteStringValue(requestObject.ResourcePermission);
             }
 
             if(requestObject.IsSetResourceTypeFilters())
             {
                 context.Writer.WritePropertyName("ResourceTypeFilters");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectResourceTypeFiltersListValue in requestObject.ResourceTypeFilters)
                 {
-                        context.Writer.Write(requestObjectResourceTypeFiltersListValue);
+                        context.Writer.WriteStringValue(requestObjectResourceTypeFiltersListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

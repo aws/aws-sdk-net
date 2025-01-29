@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDataResources())
             {
                 context.Writer.WritePropertyName("DataResources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectDataResourcesListValue in requestObject.DataResources)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = DataResourceMarshaller.Instance;
                     marshaller.Marshall(requestObjectDataResourcesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetExcludeManagementEventSources())
             {
                 context.Writer.WritePropertyName("ExcludeManagementEventSources");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectExcludeManagementEventSourcesListValue in requestObject.ExcludeManagementEventSources)
                 {
-                        context.Writer.Write(requestObjectExcludeManagementEventSourcesListValue);
+                        context.Writer.WriteStringValue(requestObjectExcludeManagementEventSourcesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetIncludeManagementEvents())
             {
                 context.Writer.WritePropertyName("IncludeManagementEvents");
-                context.Writer.Write(requestObject.IncludeManagementEvents.Value);
+                context.Writer.WriteBooleanValue(requestObject.IncludeManagementEvents.Value);
             }
 
             if(requestObject.IsSetReadWriteType())
             {
                 context.Writer.WritePropertyName("ReadWriteType");
-                context.Writer.Write(requestObject.ReadWriteType);
+                context.Writer.WriteStringValue(requestObject.ReadWriteType);
             }
 
         }

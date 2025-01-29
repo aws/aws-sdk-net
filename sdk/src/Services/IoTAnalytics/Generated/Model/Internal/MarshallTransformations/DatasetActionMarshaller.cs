@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
 {
@@ -51,29 +49,29 @@ namespace Amazon.IoTAnalytics.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionName())
             {
                 context.Writer.WritePropertyName("actionName");
-                context.Writer.Write(requestObject.ActionName);
+                context.Writer.WriteStringValue(requestObject.ActionName);
             }
 
             if(requestObject.IsSetContainerAction())
             {
                 context.Writer.WritePropertyName("containerAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ContainerDatasetActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ContainerAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetQueryAction())
             {
                 context.Writer.WritePropertyName("queryAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SqlQueryDatasetActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.QueryAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

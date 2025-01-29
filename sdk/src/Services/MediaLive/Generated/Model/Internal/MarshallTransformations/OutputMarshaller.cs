@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
 {
@@ -51,46 +49,46 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudioDescriptionNames())
             {
                 context.Writer.WritePropertyName("audioDescriptionNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAudioDescriptionNamesListValue in requestObject.AudioDescriptionNames)
                 {
-                        context.Writer.Write(requestObjectAudioDescriptionNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectAudioDescriptionNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCaptionDescriptionNames())
             {
                 context.Writer.WritePropertyName("captionDescriptionNames");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCaptionDescriptionNamesListValue in requestObject.CaptionDescriptionNames)
                 {
-                        context.Writer.Write(requestObjectCaptionDescriptionNamesListValue);
+                        context.Writer.WriteStringValue(requestObjectCaptionDescriptionNamesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOutputName())
             {
                 context.Writer.WritePropertyName("outputName");
-                context.Writer.Write(requestObject.OutputName);
+                context.Writer.WriteStringValue(requestObject.OutputName);
             }
 
             if(requestObject.IsSetOutputSettings())
             {
                 context.Writer.WritePropertyName("outputSettings");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OutputSettingsMarshaller.Instance;
                 marshaller.Marshall(requestObject.OutputSettings, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetVideoDescriptionName())
             {
                 context.Writer.WritePropertyName("videoDescriptionName");
-                context.Writer.Write(requestObject.VideoDescriptionName);
+                context.Writer.WriteStringValue(requestObject.VideoDescriptionName);
             }
 
         }

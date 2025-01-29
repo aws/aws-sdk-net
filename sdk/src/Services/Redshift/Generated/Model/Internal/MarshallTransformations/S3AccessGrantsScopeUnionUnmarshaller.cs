@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3AccessGrantsScopeUnion Object
     /// </summary>  
-    public class S3AccessGrantsScopeUnionUnmarshaller : IUnmarshaller<S3AccessGrantsScopeUnion, XmlUnmarshallerContext>, IUnmarshaller<S3AccessGrantsScopeUnion, JsonUnmarshallerContext>
+    public class S3AccessGrantsScopeUnionUnmarshaller : IXmlUnmarshaller<S3AccessGrantsScopeUnion, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3AccessGrantsScopeUnion Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static S3AccessGrantsScopeUnionUnmarshaller _instance = new S3AccessGrantsScopeUnionUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,70 +49,70 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCompletionWindowMinutes())
             {
                 context.Writer.WritePropertyName("CompletionWindowMinutes");
-                context.Writer.Write(requestObject.CompletionWindowMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.CompletionWindowMinutes.Value);
             }
 
             if(requestObject.IsSetCopyActions())
             {
                 context.Writer.WritePropertyName("CopyActions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCopyActionsListValue in requestObject.CopyActions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AwsBackupBackupPlanRuleCopyActionsDetailsMarshaller.Instance;
                     marshaller.Marshall(requestObjectCopyActionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEnableContinuousBackup())
             {
                 context.Writer.WritePropertyName("EnableContinuousBackup");
-                context.Writer.Write(requestObject.EnableContinuousBackup.Value);
+                context.Writer.WriteBooleanValue(requestObject.EnableContinuousBackup.Value);
             }
 
             if(requestObject.IsSetLifecycle())
             {
                 context.Writer.WritePropertyName("Lifecycle");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsBackupBackupPlanLifecycleDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Lifecycle, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRuleId())
             {
                 context.Writer.WritePropertyName("RuleId");
-                context.Writer.Write(requestObject.RuleId);
+                context.Writer.WriteStringValue(requestObject.RuleId);
             }
 
             if(requestObject.IsSetRuleName())
             {
                 context.Writer.WritePropertyName("RuleName");
-                context.Writer.Write(requestObject.RuleName);
+                context.Writer.WriteStringValue(requestObject.RuleName);
             }
 
             if(requestObject.IsSetScheduleExpression())
             {
                 context.Writer.WritePropertyName("ScheduleExpression");
-                context.Writer.Write(requestObject.ScheduleExpression);
+                context.Writer.WriteStringValue(requestObject.ScheduleExpression);
             }
 
             if(requestObject.IsSetStartWindowMinutes())
             {
                 context.Writer.WritePropertyName("StartWindowMinutes");
-                context.Writer.Write(requestObject.StartWindowMinutes.Value);
+                context.Writer.WriteNumberValue(requestObject.StartWindowMinutes.Value);
             }
 
             if(requestObject.IsSetTargetBackupVault())
             {
                 context.Writer.WritePropertyName("TargetBackupVault");
-                context.Writer.Write(requestObject.TargetBackupVault);
+                context.Writer.WriteStringValue(requestObject.TargetBackupVault);
             }
 
         }

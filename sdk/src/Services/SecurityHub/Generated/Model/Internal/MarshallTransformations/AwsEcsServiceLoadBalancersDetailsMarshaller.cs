@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContainerName())
             {
                 context.Writer.WritePropertyName("ContainerName");
-                context.Writer.Write(requestObject.ContainerName);
+                context.Writer.WriteStringValue(requestObject.ContainerName);
             }
 
             if(requestObject.IsSetContainerPort())
             {
                 context.Writer.WritePropertyName("ContainerPort");
-                context.Writer.Write(requestObject.ContainerPort.Value);
+                context.Writer.WriteNumberValue(requestObject.ContainerPort.Value);
             }
 
             if(requestObject.IsSetLoadBalancerName())
             {
                 context.Writer.WritePropertyName("LoadBalancerName");
-                context.Writer.Write(requestObject.LoadBalancerName);
+                context.Writer.WriteStringValue(requestObject.LoadBalancerName);
             }
 
             if(requestObject.IsSetTargetGroupArn())
             {
                 context.Writer.WritePropertyName("TargetGroupArn");
-                context.Writer.Write(requestObject.TargetGroupArn);
+                context.Writer.WriteStringValue(requestObject.TargetGroupArn);
             }
 
         }

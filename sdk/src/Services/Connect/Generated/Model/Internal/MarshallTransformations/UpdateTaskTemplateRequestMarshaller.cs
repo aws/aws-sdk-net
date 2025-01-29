@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Connect.Model.Internal.MarshallTransformations
 {
@@ -67,87 +70,92 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 throw new AmazonConnectException("Request object does not have required field TaskTemplateId set");
             request.AddPathResource("{TaskTemplateId}", StringUtils.FromString(publicRequest.TaskTemplateId));
             request.ResourcePath = "/instance/{InstanceId}/task/template/{TaskTemplateId}";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetConstraints())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetConstraints())
-                    {
-                        context.Writer.WritePropertyName("Constraints");
-                        context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("Constraints");
+                context.Writer.WriteStartObject();
 
-                        var marshaller = TaskTemplateConstraintsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Constraints, context);
+                var marshaller = TaskTemplateConstraintsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Constraints, context);
 
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetContactFlowId())
-                    {
-                        context.Writer.WritePropertyName("ContactFlowId");
-                        context.Writer.Write(publicRequest.ContactFlowId);
-                    }
-
-                    if(publicRequest.IsSetDefaults())
-                    {
-                        context.Writer.WritePropertyName("Defaults");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TaskTemplateDefaultsMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.Defaults, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetDescription())
-                    {
-                        context.Writer.WritePropertyName("Description");
-                        context.Writer.Write(publicRequest.Description);
-                    }
-
-                    if(publicRequest.IsSetFields())
-                    {
-                        context.Writer.WritePropertyName("Fields");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestFieldsListValue in publicRequest.Fields)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = TaskTemplateFieldMarshaller.Instance;
-                            marshaller.Marshall(publicRequestFieldsListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetName())
-                    {
-                        context.Writer.WritePropertyName("Name");
-                        context.Writer.Write(publicRequest.Name);
-                    }
-
-                    if(publicRequest.IsSetSelfAssignFlowId())
-                    {
-                        context.Writer.WritePropertyName("SelfAssignFlowId");
-                        context.Writer.Write(publicRequest.SelfAssignFlowId);
-                    }
-
-                    if(publicRequest.IsSetStatus())
-                    {
-                        context.Writer.WritePropertyName("Status");
-                        context.Writer.Write(publicRequest.Status);
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WriteEndObject();
             }
+
+            if(publicRequest.IsSetContactFlowId())
+            {
+                context.Writer.WritePropertyName("ContactFlowId");
+                context.Writer.WriteStringValue(publicRequest.ContactFlowId);
+            }
+
+            if(publicRequest.IsSetDefaults())
+            {
+                context.Writer.WritePropertyName("Defaults");
+                context.Writer.WriteStartObject();
+
+                var marshaller = TaskTemplateDefaultsMarshaller.Instance;
+                marshaller.Marshall(publicRequest.Defaults, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetDescription())
+            {
+                context.Writer.WritePropertyName("Description");
+                context.Writer.WriteStringValue(publicRequest.Description);
+            }
+
+            if(publicRequest.IsSetFields())
+            {
+                context.Writer.WritePropertyName("Fields");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestFieldsListValue in publicRequest.Fields)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = TaskTemplateFieldMarshaller.Instance;
+                    marshaller.Marshall(publicRequestFieldsListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetName())
+            {
+                context.Writer.WritePropertyName("Name");
+                context.Writer.WriteStringValue(publicRequest.Name);
+            }
+
+            if(publicRequest.IsSetSelfAssignFlowId())
+            {
+                context.Writer.WritePropertyName("SelfAssignFlowId");
+                context.Writer.WriteStringValue(publicRequest.SelfAssignFlowId);
+            }
+
+            if(publicRequest.IsSetStatus())
+            {
+                context.Writer.WritePropertyName("Status");
+                context.Writer.WriteStringValue(publicRequest.Status);
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

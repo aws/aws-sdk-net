@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceFamilyCreditSpecification Object
     /// </summary>  
-    public class InstanceFamilyCreditSpecificationUnmarshaller : IUnmarshaller<InstanceFamilyCreditSpecification, XmlUnmarshallerContext>, IUnmarshaller<InstanceFamilyCreditSpecification, JsonUnmarshallerContext>
+    public class InstanceFamilyCreditSpecificationUnmarshaller : IXmlUnmarshaller<InstanceFamilyCreditSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceFamilyCreditSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceFamilyCreditSpecificationUnmarshaller _instance = new InstanceFamilyCreditSpecificationUnmarshaller();        
 

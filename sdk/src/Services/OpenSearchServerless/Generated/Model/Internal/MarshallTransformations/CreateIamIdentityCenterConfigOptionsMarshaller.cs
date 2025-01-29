@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.OpenSearchServerless.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGroupAttribute())
             {
                 context.Writer.WritePropertyName("groupAttribute");
-                context.Writer.Write(requestObject.GroupAttribute);
+                context.Writer.WriteStringValue(requestObject.GroupAttribute);
             }
 
             if(requestObject.IsSetInstanceArn())
             {
                 context.Writer.WritePropertyName("instanceArn");
-                context.Writer.Write(requestObject.InstanceArn);
+                context.Writer.WriteStringValue(requestObject.InstanceArn);
             }
 
             if(requestObject.IsSetUserAttribute())
             {
                 context.Writer.WritePropertyName("userAttribute");
-                context.Writer.Write(requestObject.UserAttribute);
+                context.Writer.WriteStringValue(requestObject.UserAttribute);
             }
 
         }

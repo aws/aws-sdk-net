@@ -35,7 +35,7 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReplicationGroupNotUnderMigrationException operation
     /// </summary>  
-    public class ReplicationGroupNotUnderMigrationExceptionUnmarshaller : IErrorResponseUnmarshaller<ReplicationGroupNotUnderMigrationException, XmlUnmarshallerContext>
+    public class ReplicationGroupNotUnderMigrationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReplicationGroupNotUnderMigrationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginAccessControlAlreadyExistsException operation
     /// </summary>  
-    public class OriginAccessControlAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<OriginAccessControlAlreadyExistsException, XmlUnmarshallerContext>
+    public class OriginAccessControlAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OriginAccessControlAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

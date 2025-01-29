@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
 {
@@ -51,122 +49,122 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             if(requestObject.IsSetCidrAllowList())
             {
                 context.Writer.WritePropertyName("cidrAllowList");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCidrAllowListListValue in requestObject.CidrAllowList)
                 {
-                        context.Writer.Write(requestObjectCidrAllowListListValue);
+                        context.Writer.WriteStringValue(requestObjectCidrAllowListListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WriteStringValue(requestObject.Description);
             }
 
             if(requestObject.IsSetDestination())
             {
                 context.Writer.WritePropertyName("destination");
-                context.Writer.Write(requestObject.Destination);
+                context.Writer.WriteStringValue(requestObject.Destination);
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetMaxLatency())
             {
                 context.Writer.WritePropertyName("maxLatency");
-                context.Writer.Write(requestObject.MaxLatency.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxLatency.Value);
             }
 
             if(requestObject.IsSetMediaStreamOutputConfigurations())
             {
                 context.Writer.WritePropertyName("mediaStreamOutputConfigurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectMediaStreamOutputConfigurationsListValue in requestObject.MediaStreamOutputConfigurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = MediaStreamOutputConfigurationRequestMarshaller.Instance;
                     marshaller.Marshall(requestObjectMediaStreamOutputConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetMinLatency())
             {
                 context.Writer.WritePropertyName("minLatency");
-                context.Writer.Write(requestObject.MinLatency.Value);
+                context.Writer.WriteNumberValue(requestObject.MinLatency.Value);
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetOutputStatus())
             {
                 context.Writer.WritePropertyName("outputStatus");
-                context.Writer.Write(requestObject.OutputStatus);
+                context.Writer.WriteStringValue(requestObject.OutputStatus);
             }
 
             if(requestObject.IsSetPort())
             {
                 context.Writer.WritePropertyName("port");
-                context.Writer.Write(requestObject.Port.Value);
+                context.Writer.WriteNumberValue(requestObject.Port.Value);
             }
 
             if(requestObject.IsSetProtocol())
             {
                 context.Writer.WritePropertyName("protocol");
-                context.Writer.Write(requestObject.Protocol);
+                context.Writer.WriteStringValue(requestObject.Protocol);
             }
 
             if(requestObject.IsSetRemoteId())
             {
                 context.Writer.WritePropertyName("remoteId");
-                context.Writer.Write(requestObject.RemoteId);
+                context.Writer.WriteStringValue(requestObject.RemoteId);
             }
 
             if(requestObject.IsSetSenderControlPort())
             {
                 context.Writer.WritePropertyName("senderControlPort");
-                context.Writer.Write(requestObject.SenderControlPort.Value);
+                context.Writer.WriteNumberValue(requestObject.SenderControlPort.Value);
             }
 
             if(requestObject.IsSetSmoothingLatency())
             {
                 context.Writer.WritePropertyName("smoothingLatency");
-                context.Writer.Write(requestObject.SmoothingLatency.Value);
+                context.Writer.WriteNumberValue(requestObject.SmoothingLatency.Value);
             }
 
             if(requestObject.IsSetStreamId())
             {
                 context.Writer.WritePropertyName("streamId");
-                context.Writer.Write(requestObject.StreamId);
+                context.Writer.WriteStringValue(requestObject.StreamId);
             }
 
             if(requestObject.IsSetVpcInterfaceAttachment())
             {
                 context.Writer.WritePropertyName("vpcInterfaceAttachment");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = VpcInterfaceAttachmentMarshaller.Instance;
                 marshaller.Marshall(requestObject.VpcInterfaceAttachment, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

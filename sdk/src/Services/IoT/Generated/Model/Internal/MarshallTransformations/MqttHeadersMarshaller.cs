@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.IoT.Model.Internal.MarshallTransformations
 {
@@ -51,47 +49,47 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
             if(requestObject.IsSetContentType())
             {
                 context.Writer.WritePropertyName("contentType");
-                context.Writer.Write(requestObject.ContentType);
+                context.Writer.WriteStringValue(requestObject.ContentType);
             }
 
             if(requestObject.IsSetCorrelationData())
             {
                 context.Writer.WritePropertyName("correlationData");
-                context.Writer.Write(requestObject.CorrelationData);
+                context.Writer.WriteStringValue(requestObject.CorrelationData);
             }
 
             if(requestObject.IsSetMessageExpiry())
             {
                 context.Writer.WritePropertyName("messageExpiry");
-                context.Writer.Write(requestObject.MessageExpiry);
+                context.Writer.WriteStringValue(requestObject.MessageExpiry);
             }
 
             if(requestObject.IsSetPayloadFormatIndicator())
             {
                 context.Writer.WritePropertyName("payloadFormatIndicator");
-                context.Writer.Write(requestObject.PayloadFormatIndicator);
+                context.Writer.WriteStringValue(requestObject.PayloadFormatIndicator);
             }
 
             if(requestObject.IsSetResponseTopic())
             {
                 context.Writer.WritePropertyName("responseTopic");
-                context.Writer.Write(requestObject.ResponseTopic);
+                context.Writer.WriteStringValue(requestObject.ResponseTopic);
             }
 
             if(requestObject.IsSetUserProperties())
             {
                 context.Writer.WritePropertyName("userProperties");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectUserPropertiesListValue in requestObject.UserProperties)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = UserPropertyMarshaller.Instance;
                     marshaller.Marshall(requestObjectUserPropertiesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

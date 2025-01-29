@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.CostExplorer.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Coverage Object
     /// </summary>  
-    public class CoverageUnmarshaller : IUnmarshaller<Coverage, XmlUnmarshallerContext>, IUnmarshaller<Coverage, JsonUnmarshallerContext>
+    public class CoverageUnmarshaller : IJsonUnmarshaller<Coverage, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Coverage IUnmarshaller<Coverage, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Coverage Unmarshall(JsonUnmarshallerContext context)
+        public Coverage Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Coverage unmarshalledObject = new Coverage();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CoverageCost", targetDepth))
                 {
                     var unmarshaller = CoverageCostUnmarshaller.Instance;
-                    unmarshalledObject.CoverageCost = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CoverageCost = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CoverageHours", targetDepth))
                 {
                     var unmarshaller = CoverageHoursUnmarshaller.Instance;
-                    unmarshalledObject.CoverageHours = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CoverageHours = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CoverageNormalizedUnits", targetDepth))
                 {
                     var unmarshaller = CoverageNormalizedUnitsUnmarshaller.Instance;
-                    unmarshalledObject.CoverageNormalizedUnits = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.CoverageNormalizedUnits = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

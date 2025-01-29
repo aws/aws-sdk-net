@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAudit())
             {
                 context.Writer.WritePropertyName("Audit");
-                context.Writer.Write(requestObject.Audit.Value);
+                context.Writer.WriteBooleanValue(requestObject.Audit.Value);
             }
 
             if(requestObject.IsSetAuditLogGroup())
             {
                 context.Writer.WritePropertyName("AuditLogGroup");
-                context.Writer.Write(requestObject.AuditLogGroup);
+                context.Writer.WriteStringValue(requestObject.AuditLogGroup);
             }
 
             if(requestObject.IsSetGeneral())
             {
                 context.Writer.WritePropertyName("General");
-                context.Writer.Write(requestObject.General.Value);
+                context.Writer.WriteBooleanValue(requestObject.General.Value);
             }
 
             if(requestObject.IsSetGeneralLogGroup())
             {
                 context.Writer.WritePropertyName("GeneralLogGroup");
-                context.Writer.Write(requestObject.GeneralLogGroup);
+                context.Writer.WriteStringValue(requestObject.GeneralLogGroup);
             }
 
             if(requestObject.IsSetPending())
             {
                 context.Writer.WritePropertyName("Pending");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AwsAmazonMqBrokerLogsPendingDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Pending, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

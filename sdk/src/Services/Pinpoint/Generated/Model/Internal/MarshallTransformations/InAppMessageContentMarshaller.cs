@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.Pinpoint.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBackgroundColor())
             {
                 context.Writer.WritePropertyName("BackgroundColor");
-                context.Writer.Write(requestObject.BackgroundColor);
+                context.Writer.WriteStringValue(requestObject.BackgroundColor);
             }
 
             if(requestObject.IsSetBodyConfig())
             {
                 context.Writer.WritePropertyName("BodyConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InAppMessageBodyConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.BodyConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetHeaderConfig())
             {
                 context.Writer.WritePropertyName("HeaderConfig");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InAppMessageHeaderConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HeaderConfig, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetImageUrl())
             {
                 context.Writer.WritePropertyName("ImageUrl");
-                context.Writer.Write(requestObject.ImageUrl);
+                context.Writer.WriteStringValue(requestObject.ImageUrl);
             }
 
             if(requestObject.IsSetPrimaryBtn())
             {
                 context.Writer.WritePropertyName("PrimaryBtn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InAppMessageButtonMarshaller.Instance;
                 marshaller.Marshall(requestObject.PrimaryBtn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSecondaryBtn())
             {
                 context.Writer.WritePropertyName("SecondaryBtn");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InAppMessageButtonMarshaller.Instance;
                 marshaller.Marshall(requestObject.SecondaryBtn, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
 {
@@ -51,45 +49,45 @@ namespace Amazon.BCMPricingCalculator.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAddReservedInstanceAction())
             {
                 context.Writer.WritePropertyName("addReservedInstanceAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddReservedInstanceActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddReservedInstanceAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetAddSavingsPlanAction())
             {
                 context.Writer.WritePropertyName("addSavingsPlanAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AddSavingsPlanActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.AddSavingsPlanAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNegateReservedInstanceAction())
             {
                 context.Writer.WritePropertyName("negateReservedInstanceAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NegateReservedInstanceActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NegateReservedInstanceAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetNegateSavingsPlanAction())
             {
                 context.Writer.WritePropertyName("negateSavingsPlanAction");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = NegateSavingsPlanActionMarshaller.Instance;
                 marshaller.Marshall(requestObject.NegateSavingsPlanAction, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

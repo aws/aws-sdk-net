@@ -35,7 +35,7 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SigningCertificate Object
     /// </summary>  
-    public class SigningCertificateUnmarshaller : IUnmarshaller<SigningCertificate, XmlUnmarshallerContext>, IUnmarshaller<SigningCertificate, JsonUnmarshallerContext>
+    public class SigningCertificateUnmarshaller : IXmlUnmarshaller<SigningCertificate, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SigningCertificate Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SigningCertificateUnmarshaller _instance = new SigningCertificateUnmarshaller();        
 
