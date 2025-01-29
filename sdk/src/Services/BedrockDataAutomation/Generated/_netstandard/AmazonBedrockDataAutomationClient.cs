@@ -64,7 +64,7 @@ namespace Amazon.BedrockDataAutomation
         ///
         /// </summary>
         public AmazonBedrockDataAutomationClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockDataAutomationConfig()) { }
+            : base(new AmazonBedrockDataAutomationConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBedrockDataAutomationClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.BedrockDataAutomation
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBedrockDataAutomationClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockDataAutomationConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBedrockDataAutomationConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBedrockDataAutomationClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.BedrockDataAutomation
         /// </summary>
         /// <param name="config">The AmazonBedrockDataAutomationClient Configuration Object</param>
         public AmazonBedrockDataAutomationClient(AmazonBedrockDataAutomationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -227,14 +227,6 @@ namespace Amazon.BedrockDataAutomation
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -242,7 +234,9 @@ namespace Amazon.BedrockDataAutomation
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockDataAutomationEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockDataAutomationAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

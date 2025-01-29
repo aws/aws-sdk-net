@@ -69,7 +69,7 @@ namespace Amazon.EC2
         ///
         /// </summary>
         public AmazonEC2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2Config()) { }
+            : base(new AmazonEC2Config()) { }
 
         /// <summary>
         /// Constructs AmazonEC2Client with the credentials loaded from the application's
@@ -88,7 +88,7 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonEC2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonEC2Config{RegionEndpoint = region}) { }
+            : base(new AmazonEC2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonEC2Client with the credentials loaded from the application's
@@ -107,7 +107,7 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="config">The AmazonEC2Client Configuration Object</param>
         public AmazonEC2Client(AmazonEC2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -232,20 +232,12 @@ namespace Amazon.EC2
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
         protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PreMarshallHandler(this.Credentials));
+            pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PreMarshallHandler(this.Config.DefaultAWSCredentials));
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new Amazon.EC2.Internal.AmazonEC2PostMarshallHandler());
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.EC2.Internal.AmazonEC2ResponseHandler());
             if(this.Config.RetryMode == RequestRetryMode.Standard)
@@ -258,7 +250,9 @@ namespace Amazon.EC2
             }
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEC2EndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonEC2AuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

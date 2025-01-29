@@ -97,7 +97,7 @@ namespace Amazon.SSOAdmin
         ///
         /// </summary>
         public AmazonSSOAdminClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSOAdminConfig()) { }
+            : base(new AmazonSSOAdminConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSSOAdminClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.SSOAdmin
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSSOAdminClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSOAdminConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSSOAdminConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSSOAdminClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.SSOAdmin
         /// </summary>
         /// <param name="config">The AmazonSSOAdminClient Configuration Object</param>
         public AmazonSSOAdminClient(AmazonSSOAdminConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -260,14 +260,6 @@ namespace Amazon.SSOAdmin
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -275,7 +267,9 @@ namespace Amazon.SSOAdmin
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSOAdminEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSOAdminAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

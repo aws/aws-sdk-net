@@ -79,7 +79,7 @@ namespace Amazon.MachineLearning
         ///
         /// </summary>
         public AmazonMachineLearningClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMachineLearningConfig()) { }
+            : base(new AmazonMachineLearningConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMachineLearningClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.MachineLearning
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMachineLearningClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMachineLearningConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMachineLearningConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMachineLearningClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.MachineLearning
         /// </summary>
         /// <param name="config">The AmazonMachineLearningClient Configuration Object</param>
         public AmazonMachineLearningClient(AmazonMachineLearningConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonMachineLearningClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.MachineLearning
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -240,7 +232,9 @@ namespace Amazon.MachineLearning
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Marshaller>(new Amazon.MachineLearning.Internal.IdempotencyHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMachineLearningEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMachineLearningAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

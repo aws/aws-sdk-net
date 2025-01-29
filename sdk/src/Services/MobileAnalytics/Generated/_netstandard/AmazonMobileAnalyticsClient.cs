@@ -65,7 +65,7 @@ namespace Amazon.MobileAnalytics
         ///
         /// </summary>
         public AmazonMobileAnalyticsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMobileAnalyticsConfig()) { }
+            : base(new AmazonMobileAnalyticsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMobileAnalyticsClient with the credentials loaded from the application's
@@ -84,7 +84,7 @@ namespace Amazon.MobileAnalytics
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMobileAnalyticsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMobileAnalyticsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMobileAnalyticsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMobileAnalyticsClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.MobileAnalytics
         /// </summary>
         /// <param name="config">The AmazonMobileAnalyticsClient Configuration Object</param>
         public AmazonMobileAnalyticsClient(AmazonMobileAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -210,14 +210,6 @@ namespace Amazon.MobileAnalytics
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -225,7 +217,9 @@ namespace Amazon.MobileAnalytics
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMobileAnalyticsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMobileAnalyticsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

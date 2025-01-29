@@ -82,7 +82,7 @@ namespace Amazon.NotificationsContacts
         ///
         /// </summary>
         public AmazonNotificationsContactsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNotificationsContactsConfig()) { }
+            : base(new AmazonNotificationsContactsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonNotificationsContactsClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.NotificationsContacts
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonNotificationsContactsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonNotificationsContactsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonNotificationsContactsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonNotificationsContactsClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.NotificationsContacts
         /// </summary>
         /// <param name="config">The AmazonNotificationsContactsClient Configuration Object</param>
         public AmazonNotificationsContactsClient(AmazonNotificationsContactsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonNotificationsContactsClient with AWS Credentials
@@ -223,15 +223,7 @@ namespace Amazon.NotificationsContacts
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -241,7 +233,9 @@ namespace Amazon.NotificationsContacts
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNotificationsContactsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonNotificationsContactsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -82,7 +82,7 @@ namespace Amazon.Batch
         ///
         /// </summary>
         public AmazonBatchClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBatchConfig()) { }
+            : base(new AmazonBatchConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBatchClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.Batch
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBatchClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBatchConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBatchConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBatchClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.Batch
         /// </summary>
         /// <param name="config">The AmazonBatchClient Configuration Object</param>
         public AmazonBatchClient(AmazonBatchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -245,14 +245,6 @@ namespace Amazon.Batch
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -260,7 +252,9 @@ namespace Amazon.Batch
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBatchEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBatchAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

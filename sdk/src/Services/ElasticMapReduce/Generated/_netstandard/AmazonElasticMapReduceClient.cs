@@ -67,7 +67,7 @@ namespace Amazon.ElasticMapReduce
         ///
         /// </summary>
         public AmazonElasticMapReduceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig()) { }
+            : base(new AmazonElasticMapReduceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -86,7 +86,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonElasticMapReduceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonElasticMapReduceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonElasticMapReduceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonElasticMapReduceClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.ElasticMapReduce
         /// </summary>
         /// <param name="config">The AmazonElasticMapReduceClient Configuration Object</param>
         public AmazonElasticMapReduceClient(AmazonElasticMapReduceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -230,14 +230,6 @@ namespace Amazon.ElasticMapReduce
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -245,7 +237,9 @@ namespace Amazon.ElasticMapReduce
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticMapReduceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonElasticMapReduceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

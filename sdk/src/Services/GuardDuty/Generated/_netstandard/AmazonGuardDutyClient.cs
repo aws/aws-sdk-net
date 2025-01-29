@@ -90,7 +90,7 @@ namespace Amazon.GuardDuty
         ///
         /// </summary>
         public AmazonGuardDutyClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGuardDutyConfig()) { }
+            : base(new AmazonGuardDutyConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGuardDutyClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.GuardDuty
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGuardDutyClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGuardDutyConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGuardDutyConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGuardDutyClient with the credentials loaded from the application's
@@ -128,7 +128,7 @@ namespace Amazon.GuardDuty
         /// </summary>
         /// <param name="config">The AmazonGuardDutyClient Configuration Object</param>
         public AmazonGuardDutyClient(AmazonGuardDutyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -253,14 +253,6 @@ namespace Amazon.GuardDuty
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -268,7 +260,9 @@ namespace Amazon.GuardDuty
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGuardDutyEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGuardDutyAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

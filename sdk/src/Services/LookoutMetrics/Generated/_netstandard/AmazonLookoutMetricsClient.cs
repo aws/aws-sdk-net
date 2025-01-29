@@ -66,7 +66,7 @@ namespace Amazon.LookoutMetrics
         ///
         /// </summary>
         public AmazonLookoutMetricsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLookoutMetricsConfig()) { }
+            : base(new AmazonLookoutMetricsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLookoutMetricsClient with the credentials loaded from the application's
@@ -85,7 +85,7 @@ namespace Amazon.LookoutMetrics
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLookoutMetricsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLookoutMetricsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLookoutMetricsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLookoutMetricsClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.LookoutMetrics
         /// </summary>
         /// <param name="config">The AmazonLookoutMetricsClient Configuration Object</param>
         public AmazonLookoutMetricsClient(AmazonLookoutMetricsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -229,14 +229,6 @@ namespace Amazon.LookoutMetrics
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -244,7 +236,9 @@ namespace Amazon.LookoutMetrics
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLookoutMetricsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLookoutMetricsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

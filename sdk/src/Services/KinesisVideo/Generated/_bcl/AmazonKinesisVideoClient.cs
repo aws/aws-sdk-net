@@ -79,7 +79,7 @@ namespace Amazon.KinesisVideo
         ///
         /// </summary>
         public AmazonKinesisVideoClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisVideoConfig()) { }
+            : base(new AmazonKinesisVideoConfig()) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.KinesisVideo
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonKinesisVideoClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonKinesisVideoConfig{RegionEndpoint = region}) { }
+            : base(new AmazonKinesisVideoConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.KinesisVideo
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoClient Configuration Object</param>
         public AmazonKinesisVideoClient(AmazonKinesisVideoConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonKinesisVideoClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.KinesisVideo
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.KinesisVideo
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonKinesisVideoAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

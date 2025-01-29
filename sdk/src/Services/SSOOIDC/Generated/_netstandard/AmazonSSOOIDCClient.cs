@@ -114,7 +114,7 @@ namespace Amazon.SSOOIDC
         ///
         /// </summary>
         public AmazonSSOOIDCClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSOOIDCConfig()) { }
+            : base(new AmazonSSOOIDCConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSSOOIDCClient with the credentials loaded from the application's
@@ -133,7 +133,7 @@ namespace Amazon.SSOOIDC
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSSOOIDCClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSSOOIDCConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSSOOIDCConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSSOOIDCClient with the credentials loaded from the application's
@@ -152,7 +152,7 @@ namespace Amazon.SSOOIDC
         /// </summary>
         /// <param name="config">The AmazonSSOOIDCClient Configuration Object</param>
         public AmazonSSOOIDCClient(AmazonSSOOIDCConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -259,14 +259,6 @@ namespace Amazon.SSOOIDC
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -274,7 +266,9 @@ namespace Amazon.SSOOIDC
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSOOIDCEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSSOOIDCAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

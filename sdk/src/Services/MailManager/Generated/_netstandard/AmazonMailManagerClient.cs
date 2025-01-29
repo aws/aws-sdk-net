@@ -78,7 +78,7 @@ namespace Amazon.MailManager
         ///
         /// </summary>
         public AmazonMailManagerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMailManagerConfig()) { }
+            : base(new AmazonMailManagerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonMailManagerClient with the credentials loaded from the application's
@@ -97,7 +97,7 @@ namespace Amazon.MailManager
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonMailManagerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonMailManagerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonMailManagerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonMailManagerClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.MailManager
         /// </summary>
         /// <param name="config">The AmazonMailManagerClient Configuration Object</param>
         public AmazonMailManagerClient(AmazonMailManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -241,14 +241,6 @@ namespace Amazon.MailManager
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -256,7 +248,9 @@ namespace Amazon.MailManager
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMailManagerEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonMailManagerAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -80,7 +80,7 @@ namespace Amazon.LicenseManagerUserSubscriptions
         ///
         /// </summary>
         public AmazonLicenseManagerUserSubscriptionsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLicenseManagerUserSubscriptionsConfig()) { }
+            : base(new AmazonLicenseManagerUserSubscriptionsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerUserSubscriptionsClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.LicenseManagerUserSubscriptions
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonLicenseManagerUserSubscriptionsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonLicenseManagerUserSubscriptionsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonLicenseManagerUserSubscriptionsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerUserSubscriptionsClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.LicenseManagerUserSubscriptions
         /// </summary>
         /// <param name="config">The AmazonLicenseManagerUserSubscriptionsClient Configuration Object</param>
         public AmazonLicenseManagerUserSubscriptionsClient(AmazonLicenseManagerUserSubscriptionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonLicenseManagerUserSubscriptionsClient with AWS Credentials
@@ -221,15 +221,7 @@ namespace Amazon.LicenseManagerUserSubscriptions
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -239,7 +231,9 @@ namespace Amazon.LicenseManagerUserSubscriptions
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLicenseManagerUserSubscriptionsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonLicenseManagerUserSubscriptionsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

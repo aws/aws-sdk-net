@@ -84,7 +84,7 @@ namespace Amazon.Backup
         ///
         /// </summary>
         public AmazonBackupClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBackupConfig()) { }
+            : base(new AmazonBackupConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBackupClient with the credentials loaded from the application's
@@ -103,7 +103,7 @@ namespace Amazon.Backup
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBackupClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBackupConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBackupConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBackupClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.Backup
         /// </summary>
         /// <param name="config">The AmazonBackupClient Configuration Object</param>
         public AmazonBackupClient(AmazonBackupConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonBackupClient with AWS Credentials
@@ -225,15 +225,7 @@ namespace Amazon.Backup
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -243,7 +235,9 @@ namespace Amazon.Backup
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBackupAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

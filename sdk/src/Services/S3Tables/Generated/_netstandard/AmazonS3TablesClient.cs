@@ -74,7 +74,7 @@ namespace Amazon.S3Tables
         ///
         /// </summary>
         public AmazonS3TablesClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3TablesConfig()) { }
+            : base(new AmazonS3TablesConfig()) { }
 
         /// <summary>
         /// Constructs AmazonS3TablesClient with the credentials loaded from the application's
@@ -93,7 +93,7 @@ namespace Amazon.S3Tables
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonS3TablesClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonS3TablesConfig{RegionEndpoint = region}) { }
+            : base(new AmazonS3TablesConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonS3TablesClient with the credentials loaded from the application's
@@ -112,7 +112,7 @@ namespace Amazon.S3Tables
         /// </summary>
         /// <param name="config">The AmazonS3TablesClient Configuration Object</param>
         public AmazonS3TablesClient(AmazonS3TablesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -237,14 +237,6 @@ namespace Amazon.S3Tables
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -252,7 +244,9 @@ namespace Amazon.S3Tables
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3TablesEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonS3TablesAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

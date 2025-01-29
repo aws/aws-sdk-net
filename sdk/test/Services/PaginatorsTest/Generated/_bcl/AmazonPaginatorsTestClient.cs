@@ -79,7 +79,7 @@ namespace Amazon.PaginatorsTest
         ///
         /// </summary>
         public AmazonPaginatorsTestClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPaginatorsTestConfig()) { }
+            : base(new AmazonPaginatorsTestConfig()) { }
 
         /// <summary>
         /// Constructs AmazonPaginatorsTestClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.PaginatorsTest
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonPaginatorsTestClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonPaginatorsTestConfig{RegionEndpoint = region}) { }
+            : base(new AmazonPaginatorsTestConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonPaginatorsTestClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.PaginatorsTest
         /// </summary>
         /// <param name="config">The AmazonPaginatorsTestClient Configuration Object</param>
         public AmazonPaginatorsTestClient(AmazonPaginatorsTestConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonPaginatorsTestClient with AWS Credentials
@@ -220,15 +220,16 @@ namespace Amazon.PaginatorsTest
 
         #endregion
 
-        #region Overrides
+        #region Overrides  
 
         /// <summary>
-        /// Creates the signer for the service.
+        /// Customize the pipeline
         /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
+        /// <param name="pipeline"></param>
+        protected override void CustomizeRuntimePipeline(RuntimePipeline pipeline)
         {
-            return new AWS4Signer();
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonPaginatorsTestAuthSchemeHandler());
+        }
 
         /// <summary>
         /// Capture metadata for the service.

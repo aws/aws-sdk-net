@@ -90,7 +90,7 @@ namespace Amazon.DataSync
         ///
         /// </summary>
         public AmazonDataSyncClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataSyncConfig()) { }
+            : base(new AmazonDataSyncConfig()) { }
 
         /// <summary>
         /// Constructs AmazonDataSyncClient with the credentials loaded from the application's
@@ -109,7 +109,7 @@ namespace Amazon.DataSync
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonDataSyncClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonDataSyncConfig{RegionEndpoint = region}) { }
+            : base(new AmazonDataSyncConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonDataSyncClient with the credentials loaded from the application's
@@ -128,7 +128,7 @@ namespace Amazon.DataSync
         /// </summary>
         /// <param name="config">The AmazonDataSyncClient Configuration Object</param>
         public AmazonDataSyncClient(AmazonDataSyncConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonDataSyncClient with AWS Credentials
@@ -231,15 +231,7 @@ namespace Amazon.DataSync
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -249,7 +241,9 @@ namespace Amazon.DataSync
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataSyncEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonDataSyncAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

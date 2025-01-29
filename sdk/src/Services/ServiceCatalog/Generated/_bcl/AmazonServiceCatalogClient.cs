@@ -86,7 +86,7 @@ namespace Amazon.ServiceCatalog
         ///
         /// </summary>
         public AmazonServiceCatalogClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonServiceCatalogConfig()) { }
+            : base(new AmazonServiceCatalogConfig()) { }
 
         /// <summary>
         /// Constructs AmazonServiceCatalogClient with the credentials loaded from the application's
@@ -105,7 +105,7 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonServiceCatalogClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonServiceCatalogConfig{RegionEndpoint = region}) { }
+            : base(new AmazonServiceCatalogConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonServiceCatalogClient with the credentials loaded from the application's
@@ -124,7 +124,7 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         /// <param name="config">The AmazonServiceCatalogClient Configuration Object</param>
         public AmazonServiceCatalogClient(AmazonServiceCatalogConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonServiceCatalogClient with AWS Credentials
@@ -227,15 +227,7 @@ namespace Amazon.ServiceCatalog
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -245,7 +237,9 @@ namespace Amazon.ServiceCatalog
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonServiceCatalogEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonServiceCatalogAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

@@ -278,7 +278,7 @@ namespace Amazon.CodeCatalyst
         ///
         /// </summary>
         public AmazonCodeCatalystClient()
-            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), new AmazonCodeCatalystConfig()) { }
+            : base(new AmazonCodeCatalystConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCodeCatalystClient with the credentials loaded from the application's
@@ -297,7 +297,7 @@ namespace Amazon.CodeCatalyst
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCodeCatalystClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(fallbackToAnonymous: true), new AmazonCodeCatalystConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCodeCatalystConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCodeCatalystClient with the credentials loaded from the application's
@@ -316,7 +316,7 @@ namespace Amazon.CodeCatalyst
         /// </summary>
         /// <param name="config">The AmazonCodeCatalystClient Configuration Object</param>
         public AmazonCodeCatalystClient(AmazonCodeCatalystConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config, fallbackToAnonymous: true), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCodeCatalystClient with AWS Credentials
@@ -419,15 +419,7 @@ namespace Amazon.CodeCatalyst
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new BearerTokenSigner();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -437,7 +429,9 @@ namespace Amazon.CodeCatalyst
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeCatalystEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCodeCatalystAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

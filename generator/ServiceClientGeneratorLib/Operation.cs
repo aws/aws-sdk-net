@@ -1085,6 +1085,7 @@ namespace ServiceClientGenerator
                 return false;
             }
         }
+
         /// <summary>
         /// List of authentication schemes supported by this operation.
         /// </summary>

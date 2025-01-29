@@ -124,7 +124,7 @@ namespace Amazon.WAFV2
         ///
         /// </summary>
         public AmazonWAFV2Client()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWAFV2Config()) { }
+            : base(new AmazonWAFV2Config()) { }
 
         /// <summary>
         /// Constructs AmazonWAFV2Client with the credentials loaded from the application's
@@ -143,7 +143,7 @@ namespace Amazon.WAFV2
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonWAFV2Client(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonWAFV2Config{RegionEndpoint = region}) { }
+            : base(new AmazonWAFV2Config{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonWAFV2Client with the credentials loaded from the application's
@@ -162,7 +162,7 @@ namespace Amazon.WAFV2
         /// </summary>
         /// <param name="config">The AmazonWAFV2Client Configuration Object</param>
         public AmazonWAFV2Client(AmazonWAFV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonWAFV2Client with AWS Credentials
@@ -265,15 +265,7 @@ namespace Amazon.WAFV2
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -283,7 +275,9 @@ namespace Amazon.WAFV2
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWAFV2EndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonWAFV2AuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

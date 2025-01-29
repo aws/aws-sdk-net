@@ -64,7 +64,7 @@ namespace Amazon.IoT1ClickProjects
         ///
         /// </summary>
         public AmazonIoT1ClickProjectsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoT1ClickProjectsConfig()) { }
+            : base(new AmazonIoT1ClickProjectsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoT1ClickProjectsClient with the credentials loaded from the application's
@@ -83,7 +83,7 @@ namespace Amazon.IoT1ClickProjects
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoT1ClickProjectsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoT1ClickProjectsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoT1ClickProjectsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoT1ClickProjectsClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.IoT1ClickProjects
         /// </summary>
         /// <param name="config">The AmazonIoT1ClickProjectsClient Configuration Object</param>
         public AmazonIoT1ClickProjectsClient(AmazonIoT1ClickProjectsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -209,14 +209,6 @@ namespace Amazon.IoT1ClickProjects
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -224,7 +216,9 @@ namespace Amazon.IoT1ClickProjects
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoT1ClickProjectsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoT1ClickProjectsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

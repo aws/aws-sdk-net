@@ -98,7 +98,7 @@ namespace Amazon.GeoMaps
         ///
         /// </summary>
         public AmazonGeoMapsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGeoMapsConfig()) { }
+            : base(new AmazonGeoMapsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGeoMapsClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.GeoMaps
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGeoMapsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGeoMapsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGeoMapsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGeoMapsClient with the credentials loaded from the application's
@@ -136,7 +136,7 @@ namespace Amazon.GeoMaps
         /// </summary>
         /// <param name="config">The AmazonGeoMapsClient Configuration Object</param>
         public AmazonGeoMapsClient(AmazonGeoMapsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -243,14 +243,6 @@ namespace Amazon.GeoMaps
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -258,7 +250,9 @@ namespace Amazon.GeoMaps
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGeoMapsEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGeoMapsAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

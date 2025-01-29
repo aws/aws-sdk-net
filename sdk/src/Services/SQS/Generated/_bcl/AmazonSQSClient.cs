@@ -151,7 +151,7 @@ namespace Amazon.SQS
         ///
         /// </summary>
         public AmazonSQSClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSQSConfig()) { }
+            : base(new AmazonSQSConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with the credentials loaded from the application's
@@ -170,7 +170,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSQSClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSQSConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSQSConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with the credentials loaded from the application's
@@ -189,7 +189,7 @@ namespace Amazon.SQS
         /// </summary>
         /// <param name="config">The AmazonSQSClient Configuration Object</param>
         public AmazonSQSClient(AmazonSQSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSQSClient with AWS Credentials
@@ -292,15 +292,7 @@ namespace Amazon.SQS
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -312,7 +304,9 @@ namespace Amazon.SQS
             pipeline.AddHandlerBefore<Amazon.Runtime.Internal.Unmarshaller>(new Amazon.SQS.Internal.ValidationResponseHandler());
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSQSEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSQSAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

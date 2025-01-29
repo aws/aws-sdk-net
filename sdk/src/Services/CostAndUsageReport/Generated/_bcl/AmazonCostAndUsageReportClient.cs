@@ -103,7 +103,7 @@ namespace Amazon.CostAndUsageReport
         ///
         /// </summary>
         public AmazonCostAndUsageReportClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCostAndUsageReportConfig()) { }
+            : base(new AmazonCostAndUsageReportConfig()) { }
 
         /// <summary>
         /// Constructs AmazonCostAndUsageReportClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonCostAndUsageReportClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonCostAndUsageReportConfig{RegionEndpoint = region}) { }
+            : base(new AmazonCostAndUsageReportConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonCostAndUsageReportClient with the credentials loaded from the application's
@@ -141,7 +141,7 @@ namespace Amazon.CostAndUsageReport
         /// </summary>
         /// <param name="config">The AmazonCostAndUsageReportClient Configuration Object</param>
         public AmazonCostAndUsageReportClient(AmazonCostAndUsageReportConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonCostAndUsageReportClient with AWS Credentials
@@ -244,15 +244,7 @@ namespace Amazon.CostAndUsageReport
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -262,7 +254,9 @@ namespace Amazon.CostAndUsageReport
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCostAndUsageReportEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonCostAndUsageReportAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

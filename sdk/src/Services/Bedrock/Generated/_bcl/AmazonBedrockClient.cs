@@ -80,7 +80,7 @@ namespace Amazon.Bedrock
         ///
         /// </summary>
         public AmazonBedrockClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockConfig()) { }
+            : base(new AmazonBedrockConfig()) { }
 
         /// <summary>
         /// Constructs AmazonBedrockClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.Bedrock
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonBedrockClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonBedrockConfig{RegionEndpoint = region}) { }
+            : base(new AmazonBedrockConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonBedrockClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.Bedrock
         /// </summary>
         /// <param name="config">The AmazonBedrockClient Configuration Object</param>
         public AmazonBedrockClient(AmazonBedrockConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonBedrockClient with AWS Credentials
@@ -221,15 +221,7 @@ namespace Amazon.Bedrock
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -239,7 +231,9 @@ namespace Amazon.Bedrock
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonBedrockAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

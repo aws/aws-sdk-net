@@ -63,7 +63,7 @@ namespace Amazon.SagemakerEdgeManager
         ///
         /// </summary>
         public AmazonSagemakerEdgeManagerClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSagemakerEdgeManagerConfig()) { }
+            : base(new AmazonSagemakerEdgeManagerConfig()) { }
 
         /// <summary>
         /// Constructs AmazonSagemakerEdgeManagerClient with the credentials loaded from the application's
@@ -82,7 +82,7 @@ namespace Amazon.SagemakerEdgeManager
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonSagemakerEdgeManagerClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonSagemakerEdgeManagerConfig{RegionEndpoint = region}) { }
+            : base(new AmazonSagemakerEdgeManagerConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonSagemakerEdgeManagerClient with the credentials loaded from the application's
@@ -101,7 +101,7 @@ namespace Amazon.SagemakerEdgeManager
         /// </summary>
         /// <param name="config">The AmazonSagemakerEdgeManagerClient Configuration Object</param>
         public AmazonSagemakerEdgeManagerClient(AmazonSagemakerEdgeManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonSagemakerEdgeManagerClient with AWS Credentials
@@ -204,15 +204,7 @@ namespace Amazon.SagemakerEdgeManager
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -222,7 +214,9 @@ namespace Amazon.SagemakerEdgeManager
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSagemakerEdgeManagerEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonSagemakerEdgeManagerAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

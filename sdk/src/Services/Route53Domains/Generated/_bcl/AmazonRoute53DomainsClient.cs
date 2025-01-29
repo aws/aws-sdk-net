@@ -79,7 +79,7 @@ namespace Amazon.Route53Domains
         ///
         /// </summary>
         public AmazonRoute53DomainsClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig()) { }
+            : base(new AmazonRoute53DomainsConfig()) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with the credentials loaded from the application's
@@ -98,7 +98,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonRoute53DomainsClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonRoute53DomainsConfig{RegionEndpoint = region}) { }
+            : base(new AmazonRoute53DomainsConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with the credentials loaded from the application's
@@ -117,7 +117,7 @@ namespace Amazon.Route53Domains
         /// </summary>
         /// <param name="config">The AmazonRoute53DomainsClient Configuration Object</param>
         public AmazonRoute53DomainsClient(AmazonRoute53DomainsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonRoute53DomainsClient with AWS Credentials
@@ -220,15 +220,7 @@ namespace Amazon.Route53Domains
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -238,7 +230,9 @@ namespace Amazon.Route53Domains
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53DomainsEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonRoute53DomainsAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

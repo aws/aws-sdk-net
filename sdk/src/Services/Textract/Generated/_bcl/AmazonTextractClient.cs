@@ -80,7 +80,7 @@ namespace Amazon.Textract
         ///
         /// </summary>
         public AmazonTextractClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTextractConfig()) { }
+            : base(new AmazonTextractConfig()) { }
 
         /// <summary>
         /// Constructs AmazonTextractClient with the credentials loaded from the application's
@@ -99,7 +99,7 @@ namespace Amazon.Textract
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonTextractClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonTextractConfig{RegionEndpoint = region}) { }
+            : base(new AmazonTextractConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonTextractClient with the credentials loaded from the application's
@@ -118,7 +118,7 @@ namespace Amazon.Textract
         /// </summary>
         /// <param name="config">The AmazonTextractClient Configuration Object</param>
         public AmazonTextractClient(AmazonTextractConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonTextractClient with AWS Credentials
@@ -221,15 +221,7 @@ namespace Amazon.Textract
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -239,7 +231,9 @@ namespace Amazon.Textract
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTextractEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonTextractAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

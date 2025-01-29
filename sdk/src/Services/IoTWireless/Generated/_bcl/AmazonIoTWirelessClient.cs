@@ -103,7 +103,7 @@ namespace Amazon.IoTWireless
         ///
         /// </summary>
         public AmazonIoTWirelessClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTWirelessConfig()) { }
+            : base(new AmazonIoTWirelessConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoTWirelessClient with the credentials loaded from the application's
@@ -122,7 +122,7 @@ namespace Amazon.IoTWireless
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoTWirelessClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoTWirelessConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoTWirelessConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoTWirelessClient with the credentials loaded from the application's
@@ -141,7 +141,7 @@ namespace Amazon.IoTWireless
         /// </summary>
         /// <param name="config">The AmazonIoTWirelessClient Configuration Object</param>
         public AmazonIoTWirelessClient(AmazonIoTWirelessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonIoTWirelessClient with AWS Credentials
@@ -244,15 +244,7 @@ namespace Amazon.IoTWireless
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -262,7 +254,9 @@ namespace Amazon.IoTWireless
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTWirelessEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoTWirelessAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

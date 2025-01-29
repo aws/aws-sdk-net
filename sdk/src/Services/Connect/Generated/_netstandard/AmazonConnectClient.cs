@@ -97,7 +97,7 @@ namespace Amazon.Connect
         ///
         /// </summary>
         public AmazonConnectClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectConfig()) { }
+            : base(new AmazonConnectConfig()) { }
 
         /// <summary>
         /// Constructs AmazonConnectClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.Connect
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonConnectClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonConnectConfig{RegionEndpoint = region}) { }
+            : base(new AmazonConnectConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonConnectClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.Connect
         /// </summary>
         /// <param name="config">The AmazonConnectClient Configuration Object</param>
         public AmazonConnectClient(AmazonConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -260,14 +260,6 @@ namespace Amazon.Connect
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -275,7 +267,9 @@ namespace Amazon.Connect
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonConnectAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

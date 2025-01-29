@@ -83,7 +83,7 @@ namespace Amazon.ChimeSDKIdentity
         ///
         /// </summary>
         public AmazonChimeSDKIdentityClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeSDKIdentityConfig()) { }
+            : base(new AmazonChimeSDKIdentityConfig()) { }
 
         /// <summary>
         /// Constructs AmazonChimeSDKIdentityClient with the credentials loaded from the application's
@@ -102,7 +102,7 @@ namespace Amazon.ChimeSDKIdentity
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonChimeSDKIdentityClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonChimeSDKIdentityConfig{RegionEndpoint = region}) { }
+            : base(new AmazonChimeSDKIdentityConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonChimeSDKIdentityClient with the credentials loaded from the application's
@@ -121,7 +121,7 @@ namespace Amazon.ChimeSDKIdentity
         /// </summary>
         /// <param name="config">The AmazonChimeSDKIdentityClient Configuration Object</param>
         public AmazonChimeSDKIdentityClient(AmazonChimeSDKIdentityConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonChimeSDKIdentityClient with AWS Credentials
@@ -224,15 +224,7 @@ namespace Amazon.ChimeSDKIdentity
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -242,7 +234,9 @@ namespace Amazon.ChimeSDKIdentity
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeSDKIdentityEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonChimeSDKIdentityAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

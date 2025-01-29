@@ -101,7 +101,7 @@ namespace Amazon.AugmentedAIRuntime
         ///
         /// </summary>
         public AmazonAugmentedAIRuntimeClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAugmentedAIRuntimeConfig()) { }
+            : base(new AmazonAugmentedAIRuntimeConfig()) { }
 
         /// <summary>
         /// Constructs AmazonAugmentedAIRuntimeClient with the credentials loaded from the application's
@@ -120,7 +120,7 @@ namespace Amazon.AugmentedAIRuntime
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonAugmentedAIRuntimeClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonAugmentedAIRuntimeConfig{RegionEndpoint = region}) { }
+            : base(new AmazonAugmentedAIRuntimeConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonAugmentedAIRuntimeClient with the credentials loaded from the application's
@@ -139,7 +139,7 @@ namespace Amazon.AugmentedAIRuntime
         /// </summary>
         /// <param name="config">The AmazonAugmentedAIRuntimeClient Configuration Object</param>
         public AmazonAugmentedAIRuntimeClient(AmazonAugmentedAIRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -264,14 +264,6 @@ namespace Amazon.AugmentedAIRuntime
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -279,7 +271,9 @@ namespace Amazon.AugmentedAIRuntime
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAugmentedAIRuntimeEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonAugmentedAIRuntimeAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

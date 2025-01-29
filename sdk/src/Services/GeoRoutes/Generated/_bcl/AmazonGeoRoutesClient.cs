@@ -92,7 +92,7 @@ namespace Amazon.GeoRoutes
         ///
         /// </summary>
         public AmazonGeoRoutesClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGeoRoutesConfig()) { }
+            : base(new AmazonGeoRoutesConfig()) { }
 
         /// <summary>
         /// Constructs AmazonGeoRoutesClient with the credentials loaded from the application's
@@ -111,7 +111,7 @@ namespace Amazon.GeoRoutes
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonGeoRoutesClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonGeoRoutesConfig{RegionEndpoint = region}) { }
+            : base(new AmazonGeoRoutesConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonGeoRoutesClient with the credentials loaded from the application's
@@ -130,7 +130,7 @@ namespace Amazon.GeoRoutes
         /// </summary>
         /// <param name="config">The AmazonGeoRoutesClient Configuration Object</param>
         public AmazonGeoRoutesClient(AmazonGeoRoutesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonGeoRoutesClient with AWS Credentials
@@ -233,15 +233,7 @@ namespace Amazon.GeoRoutes
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -251,7 +243,9 @@ namespace Amazon.GeoRoutes
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGeoRoutesEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonGeoRoutesAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

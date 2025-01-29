@@ -66,7 +66,7 @@ namespace Amazon.IoT1ClickDevicesService
         ///
         /// </summary>
         public AmazonIoT1ClickDevicesServiceClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoT1ClickDevicesServiceConfig()) { }
+            : base(new AmazonIoT1ClickDevicesServiceConfig()) { }
 
         /// <summary>
         /// Constructs AmazonIoT1ClickDevicesServiceClient with the credentials loaded from the application's
@@ -85,7 +85,7 @@ namespace Amazon.IoT1ClickDevicesService
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonIoT1ClickDevicesServiceClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonIoT1ClickDevicesServiceConfig{RegionEndpoint = region}) { }
+            : base(new AmazonIoT1ClickDevicesServiceConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonIoT1ClickDevicesServiceClient with the credentials loaded from the application's
@@ -104,7 +104,7 @@ namespace Amazon.IoT1ClickDevicesService
         /// </summary>
         /// <param name="config">The AmazonIoT1ClickDevicesServiceClient Configuration Object</param>
         public AmazonIoT1ClickDevicesServiceClient(AmazonIoT1ClickDevicesServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
 
         /// <summary>
@@ -211,14 +211,6 @@ namespace Amazon.IoT1ClickDevicesService
         #region Overrides
 
         /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        } 
-
-        /// <summary>
         /// Customizes the runtime pipeline.
         /// </summary>
         /// <param name="pipeline">Runtime pipeline for the current client.</param>
@@ -226,7 +218,9 @@ namespace Amazon.IoT1ClickDevicesService
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoT1ClickDevicesServiceEndpointResolver());
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonIoT1ClickDevicesServiceAuthSchemeHandler());
         }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>

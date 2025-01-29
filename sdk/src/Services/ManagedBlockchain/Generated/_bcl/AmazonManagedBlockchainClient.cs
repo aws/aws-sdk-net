@@ -97,7 +97,7 @@ namespace Amazon.ManagedBlockchain
         ///
         /// </summary>
         public AmazonManagedBlockchainClient()
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonManagedBlockchainConfig()) { }
+            : base(new AmazonManagedBlockchainConfig()) { }
 
         /// <summary>
         /// Constructs AmazonManagedBlockchainClient with the credentials loaded from the application's
@@ -116,7 +116,7 @@ namespace Amazon.ManagedBlockchain
         /// </summary>
         /// <param name="region">The region to connect.</param>
         public AmazonManagedBlockchainClient(RegionEndpoint region)
-            : base(FallbackCredentialsFactory.GetCredentials(), new AmazonManagedBlockchainConfig{RegionEndpoint = region}) { }
+            : base(new AmazonManagedBlockchainConfig{RegionEndpoint = region}) { }
 
         /// <summary>
         /// Constructs AmazonManagedBlockchainClient with the credentials loaded from the application's
@@ -135,7 +135,7 @@ namespace Amazon.ManagedBlockchain
         /// </summary>
         /// <param name="config">The AmazonManagedBlockchainClient Configuration Object</param>
         public AmazonManagedBlockchainClient(AmazonManagedBlockchainConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
+            : base(config) { }
 
         /// <summary>
         /// Constructs AmazonManagedBlockchainClient with AWS Credentials
@@ -238,15 +238,7 @@ namespace Amazon.ManagedBlockchain
 
         #endregion
 
-        #region Overrides
-
-        /// <summary>
-        /// Creates the signer for the service.
-        /// </summary>
-        protected override AbstractAWSSigner CreateSigner()
-        {
-            return new AWS4Signer();
-        }    
+        #region Overrides  
 
         /// <summary>
         /// Customize the pipeline
@@ -256,7 +248,9 @@ namespace Amazon.ManagedBlockchain
         {
             pipeline.RemoveHandler<Amazon.Runtime.Internal.EndpointResolver>();
             pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonManagedBlockchainEndpointResolver());
-        }    
+            pipeline.AddHandlerAfter<Amazon.Runtime.Internal.Marshaller>(new AmazonManagedBlockchainAuthSchemeHandler());
+        }
+
         /// <summary>
         /// Capture metadata for the service.
         /// </summary>
