@@ -31,7 +31,14 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTable operation.
-    /// Gets details about a table.
+    /// Gets details about a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+    /// Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:GetTable</c> permission to use this operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class GetTableRequest : AmazonS3TablesRequest
     {

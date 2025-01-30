@@ -30,38 +30,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Tables.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteTableBucket operation.
-    /// Deletes a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-delete.html">Deleting
-    /// a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.
-    /// 
-    ///  <dl> <dt>Permissions</dt> <dd> 
-    /// <para>
-    /// You must have the <c>s3tables:DeleteTableBucket</c> permission to use this operation.
-    /// 
-    /// </para>
-    ///  </dd> </dl>
+    /// Contains details about the schema for an Iceberg table.
     /// </summary>
-    public partial class DeleteTableBucketRequest : AmazonS3TablesRequest
+    public partial class IcebergSchema
     {
-        private string _tableBucketARN;
+        private List<SchemaField> _fields = AWSConfigs.InitializeCollections ? new List<SchemaField>() : null;
 
         /// <summary>
-        /// Gets and sets the property TableBucketARN. 
+        /// Gets and sets the property Fields. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the table bucket.
+        /// The schema fields for the table
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TableBucketARN
+        public List<SchemaField> Fields
         {
-            get { return this._tableBucketARN; }
-            set { this._tableBucketARN = value; }
+            get { return this._fields; }
+            set { this._fields = value; }
         }
 
-        // Check to see if TableBucketARN property is set
-        internal bool IsSetTableBucketARN()
+        // Check to see if Fields property is set
+        internal bool IsSetFields()
         {
-            return this._tableBucketARN != null;
+            return this._fields != null && (this._fields.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

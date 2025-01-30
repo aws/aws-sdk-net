@@ -31,7 +31,15 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the GetTableBucketPolicy operation.
-    /// Gets details about a table bucket policy.
+    /// Gets details about a table bucket policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-get">Viewing
+    /// a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:GetTableBucketPolicy</c> permission to use this operation.
+    /// 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class GetTableBucketPolicyRequest : AmazonS3TablesRequest
     {
@@ -40,7 +48,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property TableBucketARN. 
         /// <para>
-        /// The Amazon Resource Number (ARN) of the table bucket.
+        /// The Amazon Resource Name (ARN) of the table bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

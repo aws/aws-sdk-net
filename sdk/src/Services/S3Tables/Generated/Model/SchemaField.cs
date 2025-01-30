@@ -30,30 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Tables.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetTablePolicy operation.
-    /// Gets details about a table policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-get">Viewing
-    /// a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
-    /// 
-    ///  <dl> <dt>Permissions</dt> <dd> 
-    /// <para>
-    /// You must have the <c>s3tables:GetTablePolicy</c> permission to use this operation.
-    /// 
-    /// </para>
-    ///  </dd> </dl>
+    /// Contains details about a schema field.
     /// </summary>
-    public partial class GetTablePolicyRequest : AmazonS3TablesRequest
+    public partial class SchemaField
     {
         private string _name;
-        private string _awsNamespace;
-        private string _tableBucketARN;
+        private bool? _required;
+        private string _type;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the table.
+        /// The name of the field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true)]
         public string Name
         {
             get { return this._name; }
@@ -67,41 +58,44 @@ namespace Amazon.S3Tables.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Namespace. 
+        /// Gets and sets the property Required. 
         /// <para>
-        /// The namespace associated with the table.
+        /// A Boolean value that specifies whether values are required for each row in this field.
+        /// By default, this is <c>false</c> and null values are allowed in the field. If this
+        /// is <c>true</c> the field does not allow null values.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string Namespace
+        public bool Required
         {
-            get { return this._awsNamespace; }
-            set { this._awsNamespace = value; }
+            get { return this._required.GetValueOrDefault(); }
+            set { this._required = value; }
         }
 
-        // Check to see if Namespace property is set
-        internal bool IsSetNamespace()
+        // Check to see if Required property is set
+        internal bool IsSetRequired()
         {
-            return this._awsNamespace != null;
+            return this._required.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property TableBucketARN. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the table bucket that contains the table.
+        /// The field type. S3 Tables supports all Apache Iceberg primitive types. For more information,
+        /// see the <a href="https://iceberg.apache.org/spec/#primitive-types">Apache Iceberg
+        /// documentation</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string TableBucketARN
+        public string Type
         {
-            get { return this._tableBucketARN; }
-            set { this._tableBucketARN = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if TableBucketARN property is set
-        internal bool IsSetTableBucketARN()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._tableBucketARN != null;
+            return this._type != null;
         }
 
     }

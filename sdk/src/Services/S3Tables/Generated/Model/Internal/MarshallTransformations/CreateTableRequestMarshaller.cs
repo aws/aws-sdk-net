@@ -79,6 +79,17 @@ namespace Amazon.S3Tables.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Format);
                 }
 
+                if(publicRequest.IsSetMetadata())
+                {
+                    context.Writer.WritePropertyName("metadata");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TableMetadataMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Metadata, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

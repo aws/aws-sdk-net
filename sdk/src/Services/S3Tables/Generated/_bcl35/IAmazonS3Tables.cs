@@ -60,8 +60,15 @@ namespace Amazon.S3Tables
 
         /// <summary>
         /// Creates a namespace. A namespace is a logical grouping of tables within your table
-        /// bucket, which you can use to organize tables. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
-        /// namespaces</a>.
+        /// bucket, which you can use to organize tables. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-create.html">Create
+        /// a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:CreateNamespace</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNamespace service method.</param>
         /// 
@@ -120,7 +127,20 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Creates a new table associated with the given namespace in a table bucket.
+        /// Creates a new table associated with the given namespace in a table bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html">Creating
+        /// an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:CreateTable</c> permission to use this operation. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Additionally, you must have the <c>s3tables:PutTableData</c> permission to use this
+        /// operation with the optional <c>metadata</c> request parameter. 
+        /// </para>
+        ///  </note> </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTable service method.</param>
         /// 
@@ -179,7 +199,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Creates a table bucket.
+        /// Creates a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-create.html">Creating
+        /// a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:CreateTableBucket</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTableBucket service method.</param>
         /// 
@@ -238,7 +266,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Deletes a namespace.
+        /// Deletes a namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace-delete.html">Delete
+        /// a namespace</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteNamespace</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteNamespace service method.</param>
         /// 
@@ -297,7 +333,14 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Deletes a table.
+        /// Deletes a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-delete.html">Deleting
+        /// an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTable</c> permission to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTable service method.</param>
         /// 
@@ -356,7 +399,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Deletes a table bucket.
+        /// Deletes a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-delete.html">Deleting
+        /// a table bucket</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucket</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucket service method.</param>
         /// 
@@ -415,7 +466,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Deletes a table bucket policy.
+        /// Deletes a table bucket policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-delete">Deleting
+        /// a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTableBucketPolicy</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTableBucketPolicy service method.</param>
         /// 
@@ -474,7 +533,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Deletes a table policy.
+        /// Deletes a table policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-delete">Deleting
+        /// a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:DeleteTablePolicy</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTablePolicy service method.</param>
         /// 
@@ -533,7 +600,14 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets details about a namespace.
+        /// Gets details about a namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
+        /// namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetNamespace</c> permission to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetNamespace service method.</param>
         /// 
@@ -595,7 +669,14 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets details about a table.
+        /// Gets details about a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+        /// Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTable</c> permission to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTable service method.</param>
         /// 
@@ -657,7 +738,16 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets details on a table bucket.
+        /// Gets details on a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets-details.html">Viewing
+        /// details about an Amazon S3 table bucket</a> in the <i>Amazon Simple Storage Service
+        /// User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucket</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableBucket service method.</param>
         /// 
@@ -719,7 +809,16 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets details about a maintenance configuration for a given table bucket.
+        /// Gets details about a maintenance configuration for a given table bucket. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
+        /// S3 table bucket maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketMaintenanceConfiguration</c> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableBucketMaintenanceConfiguration service method.</param>
         /// 
@@ -778,7 +877,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets details about a table bucket policy.
+        /// Gets details about a table bucket policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-get">Viewing
+        /// a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableBucketPolicy</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableBucketPolicy service method.</param>
         /// 
@@ -837,7 +944,16 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets details about the maintenance configuration of a table.
+        /// Gets details about the maintenance configuration of a table. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
+        /// Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableMaintenanceConfiguration</c> permission to use
+        /// this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableMaintenanceConfiguration service method.</param>
         /// 
@@ -896,7 +1012,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets the status of a maintenance job for a table.
+        /// Gets the status of a maintenance job for a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
+        /// Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableMaintenanceJobStatus</c> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableMaintenanceJobStatus service method.</param>
         /// 
@@ -956,6 +1080,13 @@ namespace Amazon.S3Tables
 
         /// <summary>
         /// Gets the location of the table metadata.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTableMetadataLocation</c> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTableMetadataLocation service method.</param>
         /// 
@@ -1014,7 +1145,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Gets details about a table policy.
+        /// Gets details about a table policy. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-get">Viewing
+        /// a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:GetTablePolicy</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTablePolicy service method.</param>
         /// 
@@ -1073,7 +1212,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Lists the namespaces within a table bucket.
+        /// Lists the namespaces within a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-namespace.html">Table
+        /// namespaces</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:ListNamespaces</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNamespaces service method.</param>
         /// 
@@ -1135,7 +1282,15 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Lists table buckets for your account.
+        /// Lists table buckets for your account. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-buckets.html">S3
+        /// Table buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:ListTableBuckets</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTableBuckets service method.</param>
         /// 
@@ -1197,7 +1352,14 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// List tables in the given table bucket.
+        /// List tables in the given table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+        /// Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:ListTables</c> permission to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTables service method.</param>
         /// 
@@ -1257,7 +1419,15 @@ namespace Amazon.S3Tables
 
         /// <summary>
         /// Creates a new maintenance configuration or replaces an existing maintenance configuration
-        /// for a table bucket.
+        /// for a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-table-buckets-maintenance.html">Amazon
+        /// S3 table bucket maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketMaintenanceConfiguration</c> permission
+        /// to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTableBucketMaintenanceConfiguration service method.</param>
         /// 
@@ -1317,7 +1487,15 @@ namespace Amazon.S3Tables
 
         /// <summary>
         /// Creates a new maintenance configuration or replaces an existing table bucket policy
-        /// for a table bucket.
+        /// for a table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-bucket-policy.html#table-bucket-policy-add">Adding
+        /// a table bucket policy</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableBucketPolicy</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTableBucketPolicy service method.</param>
         /// 
@@ -1377,7 +1555,15 @@ namespace Amazon.S3Tables
 
         /// <summary>
         /// Creates a new maintenance configuration or replaces an existing maintenance configuration
-        /// for a table.
+        /// for a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-maintenance.html">S3
+        /// Tables maintenance</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTableMaintenanceConfiguration</c> permission to use
+        /// this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTableMaintenanceConfiguration service method.</param>
         /// 
@@ -1437,7 +1623,15 @@ namespace Amazon.S3Tables
 
         /// <summary>
         /// Creates a new maintenance configuration or replaces an existing table policy for a
-        /// table.
+        /// table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-table-policy.html#table-policy-add">Adding
+        /// a table policy</a> in the <i>Amazon Simple Storage Service User Guide</i>. 
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:PutTablePolicy</c> permission to use this operation.
+        /// 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutTablePolicy service method.</param>
         /// 
@@ -1496,7 +1690,14 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Renames a table or a namespace.
+        /// Renames a table or a namespace. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+        /// Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:RenameTable</c> permission to use this operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RenameTable service method.</param>
         /// 
@@ -1555,7 +1756,17 @@ namespace Amazon.S3Tables
 
 
         /// <summary>
-        /// Updates the metadata location for a table.
+        /// Updates the metadata location for a table. The metadata location of a table must be
+        /// an S3 URI that begins with the table's warehouse location. The metadata location for
+        /// an Apache Iceberg table must end with <c>.metadata.json</c>, or if the metadata file
+        /// is Gzip-compressed, <c>.metadata.json.gz</c>.
+        /// 
+        ///  <dl> <dt>Permissions</dt> <dd> 
+        /// <para>
+        /// You must have the <c>s3tables:UpdateTableMetadataLocation</c> permission to use this
+        /// operation. 
+        /// </para>
+        ///  </dd> </dl>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTableMetadataLocation service method.</param>
         /// 

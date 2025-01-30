@@ -31,11 +31,25 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTable operation.
-    /// Creates a new table associated with the given namespace in a table bucket.
+    /// Creates a new table associated with the given namespace in a table bucket. For more
+    /// information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-create.html">Creating
+    /// an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:CreateTable</c> permission to use this operation. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// Additionally, you must have the <c>s3tables:PutTableData</c> permission to use this
+    /// operation with the optional <c>metadata</c> request parameter. 
+    /// </para>
+    ///  </note> </dd> </dl>
     /// </summary>
     public partial class CreateTableRequest : AmazonS3TablesRequest
     {
         private OpenTableFormat _format;
+        private TableMetadata _metadata;
         private string _name;
         private string _awsNamespace;
         private string _tableBucketARN;
@@ -57,6 +71,24 @@ namespace Amazon.S3Tables.Model
         internal bool IsSetFormat()
         {
             return this._format != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        /// The metadata for the table.
+        /// </para>
+        /// </summary>
+        public TableMetadata Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null;
         }
 
         /// <summary>

@@ -31,7 +31,14 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteTable operation.
-    /// Deletes a table.
+    /// Deletes a table. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-delete.html">Deleting
+    /// an Amazon S3 table</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:DeleteTable</c> permission to use this operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class DeleteTableRequest : AmazonS3TablesRequest
     {

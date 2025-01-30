@@ -31,7 +31,14 @@ namespace Amazon.S3Tables.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTables operation.
-    /// List tables in the given table bucket.
+    /// List tables in the given table bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-tables-tables.html">S3
+    /// Tables</a> in the <i>Amazon Simple Storage Service User Guide</i>.
+    /// 
+    ///  <dl> <dt>Permissions</dt> <dd> 
+    /// <para>
+    /// You must have the <c>s3tables:ListTables</c> permission to use this operation. 
+    /// </para>
+    ///  </dd> </dl>
     /// </summary>
     public partial class ListTablesRequest : AmazonS3TablesRequest
     {
@@ -122,7 +129,7 @@ namespace Amazon.S3Tables.Model
         /// <summary>
         /// Gets and sets the property TableBucketARN. 
         /// <para>
-        /// The Amazon resource Number (ARN) of the table bucket.
+        /// The Amazon resource Name (ARN) of the table bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
