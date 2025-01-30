@@ -367,14 +367,21 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         /// </summary>
         public static string InterpolateJson(string json, Dictionary<string, object> refs)
         {
-            using var document = JsonDocument.Parse(json);
-            using var stream = new MemoryStream();
-            using var writer = new Utf8JsonWriter(stream);
+            try
+            {
+                var document = JsonDocument.Parse(json);
+                using var stream = new MemoryStream();
+                using var writer = new Utf8JsonWriter(stream);
 
-            InterpolateJson(document.RootElement, refs, writer);
-            writer.Flush();
+                InterpolateJson(document.RootElement, refs, writer);
+                writer.Flush();
 
-            return Encoding.UTF8.GetString(stream.ToArray());
+                return Encoding.UTF8.GetString(stream.ToArray());
+            }
+            catch (JsonException)
+            {
+                return "";
+            }
         }
 
         private static void InterpolateJson(JsonElement element, Dictionary<string, object> refs, Utf8JsonWriter writer)
