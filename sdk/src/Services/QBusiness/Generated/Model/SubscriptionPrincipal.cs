@@ -30,48 +30,52 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Specifies an allowed action and its associated filter configuration.
+    /// A user or group in the IAM Identity Center instance connected to the Amazon Q Business
+    /// application.
     /// </summary>
-    public partial class ActionConfiguration
+    public partial class SubscriptionPrincipal
     {
-        private string _action;
-        private ActionFilterConfiguration _filterConfiguration;
+        private string _group;
+        private string _user;
 
         /// <summary>
-        /// Gets and sets the property Action. 
+        /// Gets and sets the property Group. 
         /// <para>
-        /// The Amazon Q Business action that is allowed.
+        /// The identifier of a group in the IAM Identity Center instance connected to the Amazon
+        /// Q Business application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Action
+        [AWSProperty(Min=1, Max=47)]
+        public string Group
         {
-            get { return this._action; }
-            set { this._action = value; }
+            get { return this._group; }
+            set { this._group = value; }
         }
 
-        // Check to see if Action property is set
-        internal bool IsSetAction()
+        // Check to see if Group property is set
+        internal bool IsSetGroup()
         {
-            return this._action != null;
+            return this._group != null;
         }
 
         /// <summary>
-        /// Gets and sets the property FilterConfiguration. 
+        /// Gets and sets the property User. 
         /// <para>
-        /// The filter configuration for the action, if any.
+        /// The identifier of a user in the IAM Identity Center instance connected to the Amazon
+        /// Q Business application.
         /// </para>
         /// </summary>
-        public ActionFilterConfiguration FilterConfiguration
+        [AWSProperty(Min=1, Max=47)]
+        public string User
         {
-            get { return this._filterConfiguration; }
-            set { this._filterConfiguration = value; }
+            get { return this._user; }
+            set { this._user = value; }
         }
 
-        // Check to see if FilterConfiguration property is set
-        internal bool IsSetFilterConfiguration()
+        // Check to see if User property is set
+        internal bool IsSetUser()
         {
-            return this._filterConfiguration != null;
+            return this._user != null;
         }
 
     }

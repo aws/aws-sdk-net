@@ -30,20 +30,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataAccessor operation.
-    /// Deletes a specified data accessor. This operation permanently removes the data accessor
-    /// and its associated IAM Identity Center application. Any access granted to the ISV
-    /// through this data accessor will be revoked.
+    /// Container for the parameters to the ListSubscriptions operation.
+    /// Lists all subscriptions created in an Amazon Q Business application.
     /// </summary>
-    public partial class DeleteDataAccessorRequest : AmazonQBusinessRequest
+    public partial class ListSubscriptionsRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
-        private string _dataAccessorId;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Amazon Q Business application.
+        /// The identifier of the Amazon Q Business application linked to the subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -60,22 +59,43 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataAccessorId. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The unique identifier of the data accessor to delete.
+        /// The maximum number of Amazon Q Business subscriptions to return.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string DataAccessorId
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._dataAccessorId; }
-            set { this._dataAccessorId = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if DataAccessorId property is set
-        internal bool IsSetDataAccessorId()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._dataAccessorId != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// If the <c>maxResults</c> response was incomplete because there is more data to retrieve,
+        /// Amazon Q Business returns a pagination token in the response. You can use this pagination
+        /// token to retrieve the next set of Amazon Q Business subscriptions.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=800)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

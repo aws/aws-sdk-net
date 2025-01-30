@@ -31,10 +31,11 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociatePermission operation.
-    /// Adds or updates a permission policy for a Q Business application, allowing cross-account
-    /// access for an ISV. This operation creates a new policy statement for the specified
-    /// Q Business application. The policy statement defines the IAM actions that the ISV
-    /// is allowed to perform on the Q Business application's resources.
+    /// Adds or updates a permission policy for a Amazon Q Business application, allowing
+    /// cross-account access for an ISV. This operation creates a new policy statement for
+    /// the specified Amazon Q Business application. The policy statement defines the IAM
+    /// actions that the ISV is allowed to perform on the Amazon Q Business application's
+    /// resources.
     /// </summary>
     public partial class AssociatePermissionRequest : AmazonQBusinessRequest
     {
@@ -46,7 +47,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Actions. 
         /// <para>
-        /// The list of Q Business actions that the ISV is allowed to perform.
+        /// The list of Amazon Q Business actions that the ISV is allowed to perform.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -65,7 +66,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application.
+        /// The unique identifier of the Amazon Q Business application.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -84,7 +85,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property Principal. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the IAM role for the ISV that is being granted permission.
+        /// The Amazon Resource Name of the IAM role for the ISV that is being granted permission.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1284)]

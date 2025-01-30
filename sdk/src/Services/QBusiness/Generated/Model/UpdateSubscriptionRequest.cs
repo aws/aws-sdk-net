@@ -30,21 +30,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListDataAccessors operation.
-    /// Lists the data accessors for a Amazon Q Business application. This operation returns
-    /// a paginated list of data accessor summaries, including the friendly name, unique identifier,
-    /// ARN, associated IAM role, and creation/update timestamps for each data accessor.
+    /// Container for the parameters to the UpdateSubscription operation.
+    /// Updates the pricing tier for an Amazon Q Business subscription. Upgrades are instant.
+    /// Downgrades apply at the start of the next month. Subscription tier determines feature
+    /// access for the user. For more information on subscriptions and pricing tiers, see
+    /// <a href="https://aws.amazon.com/q/business/pricing/">Amazon Q Business pricing</a>.
     /// </summary>
-    public partial class ListDataAccessorsRequest : AmazonQBusinessRequest
+    public partial class UpdateSubscriptionRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
-        private int? _maxResults;
-        private string _nextToken;
+        private string _subscriptionId;
+        private SubscriptionType _type;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Amazon Q Business application.
+        /// The identifier of the Amazon Q Business application where the subscription update
+        /// should take effect.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -61,41 +63,41 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults. 
+        /// Gets and sets the property SubscriptionId. 
         /// <para>
-        /// The maximum number of results to return in a single call.
+        /// The identifier of the Amazon Q Business subscription to be updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
-        public int MaxResults
+        [AWSProperty(Required=true, Min=0, Max=1224)]
+        public string SubscriptionId
         {
-            get { return this._maxResults.GetValueOrDefault(); }
-            set { this._maxResults = value; }
+            get { return this._subscriptionId; }
+            set { this._subscriptionId = value; }
         }
 
-        // Check to see if MaxResults property is set
-        internal bool IsSetMaxResults()
+        // Check to see if SubscriptionId property is set
+        internal bool IsSetSubscriptionId()
         {
-            return this._maxResults.HasValue; 
+            return this._subscriptionId != null;
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The token for the next set of results. (You received this token from a previous call.)
+        /// The type of the Amazon Q Business subscription to be updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1500)]
-        public string NextToken
+        [AWSProperty(Required=true)]
+        public SubscriptionType Type
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._nextToken != null;
+            return this._type != null;
         }
 
     }

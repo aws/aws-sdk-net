@@ -30,32 +30,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the GetPolicy operation.
-    /// Retrieves the current permission policy for a Amazon Q Business application. The policy
-    /// is returned as a JSON-formatted string and defines the IAM actions that are allowed
-    /// or denied for the application's resources.
+    /// The details of an Amazon Q Business subscription.
     /// </summary>
-    public partial class GetPolicyRequest : AmazonQBusinessRequest
+    public partial class SubscriptionDetails
     {
-        private string _applicationId;
+        private SubscriptionType _type;
 
         /// <summary>
-        /// Gets and sets the property ApplicationId. 
+        /// Gets and sets the property Type. 
         /// <para>
-        /// The unique identifier of the Amazon Q Business application.
+        ///  The type of an Amazon Q Business subscription. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string ApplicationId
+        public SubscriptionType Type
         {
-            get { return this._applicationId; }
-            set { this._applicationId = value; }
+            get { return this._type; }
+            set { this._type = value; }
         }
 
-        // Check to see if ApplicationId property is set
-        internal bool IsSetApplicationId()
+        // Check to see if Type property is set
+        internal bool IsSetType()
         {
-            return this._applicationId != null;
+            return this._type != null;
         }
 
     }

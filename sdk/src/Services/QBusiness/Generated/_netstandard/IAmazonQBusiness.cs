@@ -88,10 +88,11 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Adds or updates a permission policy for a Q Business application, allowing cross-account
-        /// access for an ISV. This operation creates a new policy statement for the specified
-        /// Q Business application. The policy statement defines the IAM actions that the ISV
-        /// is allowed to perform on the Q Business application's resources.
+        /// Adds or updates a permission policy for a Amazon Q Business application, allowing
+        /// cross-account access for an ISV. This operation creates a new policy statement for
+        /// the specified Amazon Q Business application. The policy statement defines the IAM
+        /// actions that the ISV is allowed to perform on the Amazon Q Business application's
+        /// resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociatePermission service method.</param>
         /// <param name="cancellationToken">
@@ -248,6 +249,46 @@ namespace Amazon.QBusiness
 
         #endregion
                 
+        #region  CancelSubscription
+
+
+
+        /// <summary>
+        /// Unsubscribes a user or a group from their pricing tier in an Amazon Q Business application.
+        /// An unsubscribed user or group loses all Amazon Q Business feature access at the start
+        /// of next month.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CancelSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CancelSubscription">REST API Reference for CancelSubscription Operation</seealso>
+        Task<CancelSubscriptionResponse> CancelSubscriptionAsync(CancelSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ChatSync
 
 
@@ -372,13 +413,13 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Creates a new data accessor for an ISV to access data from a Q Business application.
-        /// The data accessor is an entity that represents the ISV's access to the Q Business
+        /// Creates a new data accessor for an ISV to access data from a Amazon Q Business application.
+        /// The data accessor is an entity that represents the ISV's access to the Amazon Q Business
         /// application's data. It includes the IAM role ARN for the ISV, a friendly name, and
         /// a set of action configurations that define the specific actions the ISV is allowed
         /// to perform and any associated data filters. When the data accessor is created, an
-        /// AWS IAM Identity Center application is also created to manage the ISV's identity and
-        /// authentication for accessing the Q Business application.
+        /// IAM Identity Center application is also created to manage the ISV's identity and authentication
+        /// for accessing the Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDataAccessor service method.</param>
         /// <param name="cancellationToken">
@@ -617,6 +658,57 @@ namespace Amazon.QBusiness
 
         #endregion
                 
+        #region  CreateSubscription
+
+
+
+        /// <summary>
+        /// Subscribes an IAM Identity Center user or a group to a pricing tier for an Amazon
+        /// Q Business application.
+        /// 
+        ///  
+        /// <para>
+        /// Amazon Q Business offers two subscription tiers: <c>Q_LITE</c> and <c>Q_BUSINESS</c>.
+        /// Subscription tier determines feature access for the user. For more information on
+        /// subscriptions and pricing tiers, see <a href="https://aws.amazon.com/q/business/pricing/">Amazon
+        /// Q Business pricing</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/CreateSubscription">REST API Reference for CreateSubscription Operation</seealso>
+        Task<CreateSubscriptionResponse> CreateSubscriptionAsync(CreateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateUser
 
 
@@ -836,8 +928,8 @@ namespace Amazon.QBusiness
 
         /// <summary>
         /// Deletes a specified data accessor. This operation permanently removes the data accessor
-        /// and its associated AWS IAM Identity Center application. Any access granted to the
-        /// ISV through this data accessor will be revoked
+        /// and its associated IAM Identity Center application. Any access granted to the ISV
+        /// through this data accessor will be revoked.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteDataAccessor service method.</param>
         /// <param name="cancellationToken">
@@ -1186,7 +1278,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Removes a permission policy from a Q Business application, revoking the cross-account
+        /// Removes a permission policy from a Amazon Q Business application, revoking the cross-account
         /// access that was previously granted to an ISV. This operation deletes the specified
         /// policy statement from the application's permission policy.
         /// </summary>
@@ -1309,7 +1401,7 @@ namespace Amazon.QBusiness
         /// <summary>
         /// Retrieves information about a specified data accessor. This operation returns details
         /// about the data accessor, including its display name, unique identifier, Amazon Resource
-        /// Name (ARN), the associated Q Business application and AWS IAM Identity Center application,
+        /// Name (ARN), the associated Amazon Q Business application and IAM Identity Center application,
         /// the IAM role for the ISV, the action configurations, and the timestamps for when the
         /// data accessor was created and last updated.
         /// </summary>
@@ -1559,9 +1651,9 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Retrieves the current permission policy for a Q Business application. The policy is
-        /// returned as a JSON-formatted string and defines the IAM actions that are allowed or
-        /// denied for the application's resources.
+        /// Retrieves the current permission policy for a Amazon Q Business application. The policy
+        /// is returned as a JSON-formatted string and defines the IAM actions that are allowed
+        /// or denied for the application's resources.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1845,9 +1937,9 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Lists the data accessors for a Q Business application. This operation returns a paginated
-        /// list of data accessor summaries, including the friendly name, unique identifier, ARN,
-        /// associated IAM role, and creation/update timestamps for each data accessor.
+        /// Lists the data accessors for a Amazon Q Business application. This operation returns
+        /// a paginated list of data accessor summaries, including the friendly name, unique identifier,
+        /// ARN, associated IAM role, and creation/update timestamps for each data accessor.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDataAccessors service method.</param>
         /// <param name="cancellationToken">
@@ -2303,6 +2395,48 @@ namespace Amazon.QBusiness
 
         #endregion
                 
+        #region  ListSubscriptions
+
+
+
+        /// <summary>
+        /// Lists all subscriptions created in an Amazon Q Business application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSubscriptions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSubscriptions service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/ListSubscriptions">REST API Reference for ListSubscriptions Operation</seealso>
+        Task<ListSubscriptionsResponse> ListSubscriptionsAsync(ListSubscriptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListTagsForResource
 
 
@@ -2434,6 +2568,14 @@ namespace Amazon.QBusiness
         /// work in research and engineering, and therefore belong in the intellectual property
         /// group, can see top-secret company documents in their Amazon Q Business chat results.
         /// </para>
+        ///  
+        /// <para>
+        /// There are two options for creating groups, either passing group members inline or
+        /// using an S3 file via the S3PathForGroupMembers field. For inline groups, there is
+        /// a limit of 1000 members per group and for provided S3 files there is a limit of 100
+        /// thousand members. When creating a group using an S3 file, you provide both an S3 file
+        /// and a <c>RoleArn</c> for Amazon Q Buisness to access the file.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutGroup service method.</param>
         /// <param name="cancellationToken">
@@ -2478,12 +2620,12 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Searches for relevant content in a Q Business application based on a query. This operation
-        /// takes a search query text, the Q Business application identifier, and optional filters
-        /// (such as content source and maximum results) as input. It returns a list of relevant
-        /// content items, where each item includes the content text, the unique document identifier,
-        /// the document title, the document URI, any relevant document attributes, and score
-        /// attributes indicating the confidence level of the relevance.
+        /// Searches for relevant content in a Amazon Q Business application based on a query.
+        /// This operation takes a search query text, the Amazon Q Business application identifier,
+        /// and optional filters (such as content source and maximum results) as input. It returns
+        /// a list of relevant content items, where each item includes the content text, the unique
+        /// document identifier, the document title, the document URI, any relevant document attributes,
+        /// and score attributes indicating the confidence level of the relevance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SearchRelevantContent service method.</param>
         /// <param name="cancellationToken">
@@ -3010,6 +3152,51 @@ namespace Amazon.QBusiness
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateRetriever">REST API Reference for UpdateRetriever Operation</seealso>
         Task<UpdateRetrieverResponse> UpdateRetrieverAsync(UpdateRetrieverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateSubscription
+
+
+
+        /// <summary>
+        /// Updates the pricing tier for an Amazon Q Business subscription. Upgrades are instant.
+        /// Downgrades apply at the start of the next month. Subscription tier determines feature
+        /// access for the user. For more information on subscriptions and pricing tiers, see
+        /// <a href="https://aws.amazon.com/q/business/pricing/">Amazon Q Business pricing</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSubscription service method, as returned by QBusiness.</returns>
+        /// <exception cref="Amazon.QBusiness.Model.AccessDeniedException">
+        /// You don't have access to perform this action. Make sure you have the required permission
+        /// policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ConflictException">
+        /// You are trying to perform an action that conflicts with the current status of your
+        /// resource. Fix any inconsistencies with your resources and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Q Business service.
+        /// Wait some minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ResourceNotFoundException">
+        /// The application or plugin resource you want to use doesn’t exist. Make sure you have
+        /// provided the correct resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ThrottlingException">
+        /// The request was denied due to throttling. Reduce the number of requests and try again.
+        /// </exception>
+        /// <exception cref="Amazon.QBusiness.Model.ValidationException">
+        /// The input doesn't meet the constraints set by the Amazon Q Business service. Provide
+        /// the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/qbusiness-2023-11-27/UpdateSubscription">REST API Reference for UpdateSubscription Operation</seealso>
+        Task<UpdateSubscriptionResponse> UpdateSubscriptionAsync(UpdateSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

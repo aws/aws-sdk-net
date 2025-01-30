@@ -30,20 +30,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QBusiness.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDataAccessor operation.
-    /// Deletes a specified data accessor. This operation permanently removes the data accessor
-    /// and its associated IAM Identity Center application. Any access granted to the ISV
-    /// through this data accessor will be revoked.
+    /// Container for the parameters to the CancelSubscription operation.
+    /// Unsubscribes a user or a group from their pricing tier in an Amazon Q Business application.
+    /// An unsubscribed user or group loses all Amazon Q Business feature access at the start
+    /// of next month.
     /// </summary>
-    public partial class DeleteDataAccessorRequest : AmazonQBusinessRequest
+    public partial class CancelSubscriptionRequest : AmazonQBusinessRequest
     {
         private string _applicationId;
-        private string _dataAccessorId;
+        private string _subscriptionId;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Amazon Q Business application.
+        /// The identifier of the Amazon Q Business application for which the subscription is
+        /// being cancelled.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
@@ -60,22 +61,22 @@ namespace Amazon.QBusiness.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DataAccessorId. 
+        /// Gets and sets the property SubscriptionId. 
         /// <para>
-        /// The unique identifier of the data accessor to delete.
+        /// The identifier of the Amazon Q Business subscription being cancelled.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
-        public string DataAccessorId
+        [AWSProperty(Required=true, Min=0, Max=1224)]
+        public string SubscriptionId
         {
-            get { return this._dataAccessorId; }
-            set { this._dataAccessorId = value; }
+            get { return this._subscriptionId; }
+            set { this._subscriptionId = value; }
         }
 
-        // Check to see if DataAccessorId property is set
-        internal bool IsSetDataAccessorId()
+        // Check to see if SubscriptionId property is set
+        internal bool IsSetSubscriptionId()
         {
-            return this._dataAccessorId != null;
+            return this._subscriptionId != null;
         }
 
     }

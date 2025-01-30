@@ -31,12 +31,12 @@ namespace Amazon.QBusiness.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchRelevantContent operation.
-    /// Searches for relevant content in a Q Business application based on a query. This operation
-    /// takes a search query text, the Q Business application identifier, and optional filters
-    /// (such as content source and maximum results) as input. It returns a list of relevant
-    /// content items, where each item includes the content text, the unique document identifier,
-    /// the document title, the document URI, any relevant document attributes, and score
-    /// attributes indicating the confidence level of the relevance.
+    /// Searches for relevant content in a Amazon Q Business application based on a query.
+    /// This operation takes a search query text, the Amazon Q Business application identifier,
+    /// and optional filters (such as content source and maximum results) as input. It returns
+    /// a list of relevant content items, where each item includes the content text, the unique
+    /// document identifier, the document title, the document URI, any relevant document attributes,
+    /// and score attributes indicating the confidence level of the relevance.
     /// </summary>
     public partial class SearchRelevantContentRequest : AmazonQBusinessRequest
     {
@@ -50,7 +50,7 @@ namespace Amazon.QBusiness.Model
         /// <summary>
         /// Gets and sets the property ApplicationId. 
         /// <para>
-        /// The unique identifier of the Q Business application to search.
+        /// The unique identifier of the Amazon Q Business application to search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]
