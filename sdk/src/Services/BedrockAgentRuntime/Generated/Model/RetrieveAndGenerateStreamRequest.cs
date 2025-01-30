@@ -38,7 +38,10 @@ namespace Amazon.BedrockAgentRuntime.Model
     /// <para>
     /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// This operation requires permission for the <c> bedrock:RetrieveAndGenerate</c> action.
+    /// </para>
     /// </summary>
     public partial class RetrieveAndGenerateStreamRequest : AmazonBedrockAgentRuntimeRequest
     {

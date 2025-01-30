@@ -659,7 +659,10 @@ namespace Amazon.BedrockAgentRuntime
         /// <para>
         /// The CLI doesn't support streaming operations in Amazon Bedrock, including <c>InvokeModelWithResponseStream</c>.
         /// </para>
-        ///  </note>
+        ///  </note> 
+        /// <para>
+        /// This operation requires permission for the <c> bedrock:RetrieveAndGenerate</c> action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RetrieveAndGenerateStream service method.</param>
         /// <param name="cancellationToken">
