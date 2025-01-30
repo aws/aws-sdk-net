@@ -1,3 +1,24 @@
+### 3.7.973.0 (2025-01-30 19:38 UTC)
+* AppStream (3.7.405.0)
+	* Add support for managing admin consent requirement on selected domains for OneDrive Storage Connectors in AppStream2.0.
+* BedrockAgentRuntime (3.7.417.0)
+	* Add a 'reason' field to InternalServerException
+* ECR (3.7.408.0)
+	* Temporarily updating dualstack endpoint support
+* ECRPublic (3.7.404.0)
+	* Temporarily updating dualstack endpoint support
+* MediaTailor (3.7.401.0)
+	* Adds options for configuring how MediaTailor conditions ads before inserting them into the content stream. Based on the new settings, MediaTailor will either transcode ads to match the content stream as it has in the past, or it will insert ads without first transcoding them.
+* QBusiness (3.7.408.0)
+	* Added APIs to manage QBusiness user subscriptions
+* S3Tables (3.7.401.0)
+	* You can now use the CreateTable API operation to create tables with schemas by adding an optional metadata argument.
+* VerifiedPermissions (3.7.402.0)
+	* Adds Cedar JSON format support for entities and context data in authorization requests
+* Core 3.7.401.6
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.972.0 (2025-01-29 19:54 UTC)
 * BCMPricingCalculator (3.7.403.0)
 	* Added ConflictException error type in DeleteBillScenario, BatchDeleteBillScenarioCommitmentModification, BatchDeleteBillScenarioUsageModification, BatchUpdateBillScenarioUsageModification, and BatchUpdateBillScenarioCommitmentModification API operations.
