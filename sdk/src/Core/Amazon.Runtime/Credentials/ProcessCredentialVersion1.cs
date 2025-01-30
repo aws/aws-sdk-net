@@ -16,7 +16,6 @@
 using System;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-//using ThirdParty.Json.LitJson;
 
 namespace Amazon.Runtime.Internal
 {
@@ -29,16 +28,23 @@ namespace Amazon.Runtime.Internal
         /// <summary>
         /// Version of the Json payload
         /// </summary>
+        #if NET8_0_OR_GREATER
+        [JsonRequired]
+        #endif
         public int Version { get; set; }
         /// <summary>
         /// AWS Access key
         /// </summary>
-        [JsonProperty(Required = true)]
+        #if NET8_0_OR_GREATER
+        [JsonRequired]
+        #endif
         public string AccessKeyId { get; set; }
         /// <summary>
         /// AWS Secret key
         /// </summary>
-        [JsonProperty(Required = true)]
+        #if NET8_0_OR_GREATER
+        [JsonRequired]
+        #endif
         public string SecretAccessKey { get; set; }
         /// <summary>
         /// AWS Session token for session credentials

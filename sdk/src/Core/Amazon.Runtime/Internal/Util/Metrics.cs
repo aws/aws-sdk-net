@@ -21,7 +21,7 @@ using System.Linq;
 using System.Text;
 using Amazon.Util;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
+using System.Text.Json;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -358,56 +358,58 @@ namespace Amazon.Runtime.Internal.Util
             if (!this.IsEnabled)
                 return "{ }";
 
-            var sb = new StringBuilder();
-            var jw = new JsonWriter(sb);
-
-            jw.WriteObjectStart();
-            jw.WritePropertyName("properties");
-            jw.WriteObjectStart();
-            foreach (var kvp in this.Properties)
+            using (var stream = new MemoryStream())
+            using (var jw = new Utf8JsonWriter(stream))
             {
-                jw.WritePropertyName(kvp.Key.ToString());
-                var properties = kvp.Value;
-                if (properties.Count > 1)
-                    jw.WriteArrayStart();
-                foreach (var obj in properties)
+                jw.WriteStartObject();
+                jw.WritePropertyName("properties");
+                jw.WriteStartObject();
+                foreach (var kvp in this.Properties)
                 {
-                    if (obj == null)
-                        jw.Write((string)null);
-                    else
-                        jw.Write(obj.ToString());
+                    jw.WritePropertyName(kvp.Key.ToString());
+                    var properties = kvp.Value;
+                    if (properties.Count > 1)
+                        jw.WriteStartArray();
+                    foreach (var obj in properties)
+                    {
+                        if (obj == null)
+                            jw.WriteStringValue((string)null);
+                        else
+                            jw.WriteStringValue(obj.ToString());
+                    }
+                    if (properties.Count > 1)
+                        jw.WriteEndArray();
                 }
-                if (properties.Count > 1)
-                    jw.WriteArrayEnd();
-            }
-            jw.WriteObjectEnd();
-            jw.WritePropertyName("timings");
-            jw.WriteObjectStart();
-            foreach (var kvp in this.Timings)
-            {
-                jw.WritePropertyName(kvp.Key.ToString());
-                var timings = kvp.Value;
-                if (timings.Count > 1)
-                    jw.WriteArrayStart();
-                foreach (var timing in kvp.Value)
+                jw.WriteEndObject();
+                jw.WritePropertyName("timings");
+                jw.WriteStartObject();
+                foreach (var kvp in this.Timings)
                 {
-                    if (timing.IsFinished)
-                        jw.Write(timing.ElapsedTime.TotalMilliseconds);
+                    jw.WritePropertyName(kvp.Key.ToString());
+                    var timings = kvp.Value;
+                    if (timings.Count > 1)
+                        jw.WriteStartArray();
+                    foreach (var timing in kvp.Value)
+                    {
+                        if (timing.IsFinished)
+                            jw.WriteNumberValue(timing.ElapsedTime.TotalMilliseconds);
+                    }
+                    if (timings.Count > 1)
+                        jw.WriteEndArray();
                 }
-                if (timings.Count > 1)
-                    jw.WriteArrayEnd();
+                jw.WriteEndObject();
+                jw.WritePropertyName("counters");
+                jw.WriteStartObject();
+                foreach (var kvp in this.Counters)
+                {
+                    jw.WritePropertyName(kvp.Key.ToString());
+                    jw.WriteNumberValue(kvp.Value);
+                }
+                jw.WriteEndObject();
+                jw.WriteEndObject();
+                jw.Flush();
+                return Encoding.UTF8.GetString(stream.ToArray());
             }
-            jw.WriteObjectEnd();
-            jw.WritePropertyName("counters");
-            jw.WriteObjectStart();
-            foreach (var kvp in this.Counters)
-            {
-                jw.WritePropertyName(kvp.Key.ToString());
-                jw.Write(kvp.Value);
-            }
-            jw.WriteObjectEnd();
-            jw.WriteObjectEnd();
-            return sb.ToString();
         }
 
         #endregion
