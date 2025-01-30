@@ -31,7 +31,7 @@ namespace Amazon.MediaTailor.Model
 {
     /// <summary>
     /// Container for the parameters to the ConfigureLogsForPlaybackConfiguration operation.
-    /// Amazon CloudWatch log settings for a playback configuration.
+    /// Defines where AWS Elemental MediaTailor sends logs for the playback configuration.
     /// </summary>
     public partial class ConfigureLogsForPlaybackConfigurationRequest : AmazonMediaTailorRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property PercentEnabled. 
         /// <para>
-        /// The percentage of session logs that MediaTailor sends to your Cloudwatch Logs account.
+        /// The percentage of session logs that MediaTailor sends to your CloudWatch Logs account.
         /// For example, if your playback configuration has 1000 sessions and percentEnabled is
         /// set to <c>60</c>, MediaTailor sends logs for 600 of the sessions to CloudWatch Logs.
         /// MediaTailor decides at random which of the playback configuration sessions to send

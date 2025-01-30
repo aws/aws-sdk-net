@@ -733,6 +733,56 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type StreamingMediaFileConditioning.
+    /// </summary>
+    public class StreamingMediaFileConditioning : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NONE for StreamingMediaFileConditioning
+        /// </summary>
+        public static readonly StreamingMediaFileConditioning NONE = new StreamingMediaFileConditioning("NONE");
+        /// <summary>
+        /// Constant TRANSCODE for StreamingMediaFileConditioning
+        /// </summary>
+        public static readonly StreamingMediaFileConditioning TRANSCODE = new StreamingMediaFileConditioning("TRANSCODE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StreamingMediaFileConditioning(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StreamingMediaFileConditioning FindValue(string value)
+        {
+            return FindValue<StreamingMediaFileConditioning>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StreamingMediaFileConditioning(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Tier.
     /// </summary>
     public class Tier : ConstantClass

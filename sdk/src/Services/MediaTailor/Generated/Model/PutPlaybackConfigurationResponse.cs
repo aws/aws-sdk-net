@@ -34,6 +34,7 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class PutPlaybackConfigurationResponse : AmazonWebServiceResponse
     {
+        private AdConditioningConfiguration _adConditioningConfiguration;
         private string _adDecisionServerUrl;
         private AvailSuppression _availSuppression;
         private Bumper _bumper;
@@ -54,6 +55,25 @@ namespace Amazon.MediaTailor.Model
         private Dictionary<string, string> _tags = AWSConfigs.InitializeCollections ? new Dictionary<string, string>() : null;
         private string _transcodeProfileName;
         private string _videoContentSourceUrl;
+
+        /// <summary>
+        /// Gets and sets the property AdConditioningConfiguration. 
+        /// <para>
+        /// The setting that indicates what conditioning MediaTailor will perform on ads that
+        /// the ad decision server (ADS) returns.
+        /// </para>
+        /// </summary>
+        public AdConditioningConfiguration AdConditioningConfiguration
+        {
+            get { return this._adConditioningConfiguration; }
+            set { this._adConditioningConfiguration = value; }
+        }
+
+        // Check to see if AdConditioningConfiguration property is set
+        internal bool IsSetAdConditioningConfiguration()
+        {
+            return this._adConditioningConfiguration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AdDecisionServerUrl. 
@@ -138,7 +158,7 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property ConfigurationAliases. 
         /// <para>
         /// The player parameters and aliases used as dynamic variables during session initialization.
-        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domain.html">Domain
+        /// For more information, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/variables-domains.html">Domain
         /// Variables</a>.
         /// </para>
         /// </summary>
@@ -233,7 +253,8 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property LogConfiguration. 
         /// <para>
-        /// The Amazon CloudWatch log settings for a playback configuration.
+        /// The configuration that defines where AWS Elemental MediaTailor sends logs for the
+        /// playback configuration.
         /// </para>
         /// </summary>
         public LogConfiguration LogConfiguration
