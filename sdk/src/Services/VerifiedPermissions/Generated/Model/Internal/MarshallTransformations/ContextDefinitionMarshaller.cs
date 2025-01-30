@@ -48,6 +48,12 @@ namespace Amazon.VerifiedPermissions.Model.Internal.MarshallTransformations
         {
             if(requestObject == null)
                 return;
+            if(requestObject.IsSetCedarJson())
+            {
+                context.Writer.WritePropertyName("cedarJson");
+                context.Writer.Write(requestObject.CedarJson);
+            }
+
             if(requestObject.IsSetContextMap())
             {
                 context.Writer.WritePropertyName("contextMap");
