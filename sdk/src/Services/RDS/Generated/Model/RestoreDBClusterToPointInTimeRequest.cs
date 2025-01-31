@@ -402,7 +402,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, and <c>slowquery</c>.
+        /// Possible values are <c>audit</c>, <c>error</c>, <c>general</c>, <c>instance</c>, and
+        /// <c>slowquery</c>.
         /// </para>
         ///  
         /// <para>
@@ -410,7 +411,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Possible value is <c>postgresql</c>.
+        /// Possible value are <c>instance</c> and <c>postgresql</c>.
         /// </para>
         ///  
         /// <para>

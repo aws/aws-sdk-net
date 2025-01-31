@@ -2653,7 +2653,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageThroughput. 
         /// <para>
-        /// The storage throughput value for the DB instance.
+        /// The storage throughput value, in mebibyte per second (MiBps), for the DB instance.
         /// </para>
         ///  
         /// <para>

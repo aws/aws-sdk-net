@@ -375,11 +375,11 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Aurora MySQL - <c>audit | error | general | slowquery</c> 
+        /// Aurora MySQL - <c>audit | error | general | instance | slowquery</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Aurora PostgreSQL - <c>postgresql</c> 
+        /// Aurora PostgreSQL - <c>instance | postgresql</c> 
         /// </para>
         ///  </li> <li> 
         /// <para>
