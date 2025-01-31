@@ -1,3 +1,17 @@
+### 3.7.974.0 (2025-01-31 19:21 UTC)
+* BedrockAgentRuntime (3.7.418.0)
+	* This change is to deprecate the existing citation field under RetrieveAndGenerateStream API response in lieu of GeneratedResponsePart and RetrievedReferences
+* CodeBuild (3.7.409.0)
+	* Added support for CodeBuild self-hosted Buildkite runner builds
+* GeoRoutes (3.7.401.0)
+	* The OptimizeWaypoints API now supports 50 waypoints per request (20 with constraints like AccessHours or AppointmentTime). It adds waypoint clustering via Clustering and ClusteringIndex for better optimization. Also, total distance validation is removed for greater flexibility.
+* PrometheusService (3.7.402.0)
+	* Add support for sending metrics to cross account and CMCK AMP workspaces through RoleConfiguration on Create/Update Scraper.
+* RDS (3.7.410.24)
+	* Updates to Aurora MySQL and Aurora PostgreSQL API pages with instance log type in the create and modify DB Cluster.
+* SageMaker (3.7.422.0)
+	* This release introduces a new valid value in InstanceType parameter: p5en.48xlarge, in ProductionVariant.
+
 ### 3.7.973.0 (2025-01-30 19:38 UTC)
 * AppStream (3.7.405.0)
 	* Add support for managing admin consent requirement on selected domains for OneDrive Storage Connectors in AppStream2.0.
