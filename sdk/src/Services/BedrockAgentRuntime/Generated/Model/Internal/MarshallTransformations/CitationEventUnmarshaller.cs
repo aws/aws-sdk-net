@@ -72,6 +72,18 @@ namespace Amazon.BedrockAgentRuntime.Model.Internal.MarshallTransformations
                     unmarshalledObject.Citation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("generatedResponsePart", targetDepth))
+                {
+                    var unmarshaller = GeneratedResponsePartUnmarshaller.Instance;
+                    unmarshalledObject.GeneratedResponsePart = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("retrievedReferences", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RetrievedReference, RetrievedReferenceUnmarshaller>(RetrievedReferenceUnmarshaller.Instance);
+                    unmarshalledObject.RetrievedReferences = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
             return unmarshalledObject;
         }
