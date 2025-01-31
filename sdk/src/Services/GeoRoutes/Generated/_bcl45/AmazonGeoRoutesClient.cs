@@ -348,7 +348,7 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Calculates route matrix containing the results for all pairs of Origins to Destinations.
+        /// Use <c>CalculateRouteMatrix</c> to compute results for all pairs of Origins to Destinations.
         /// Each row corresponds to one entry in Origins. Each entry in the row corresponds to
         /// the route from that entry in Origins to an entry in Destinations positions.
         /// </summary>
@@ -379,7 +379,7 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Calculates route matrix containing the results for all pairs of Origins to Destinations.
+        /// Use <c>CalculateRouteMatrix</c> to compute results for all pairs of Origins to Destinations.
         /// Each row corresponds to one entry in Origins. Each entry in the row corresponds to
         /// the route from that entry in Origins to an entry in Destinations positions.
         /// </summary>
@@ -417,7 +417,8 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Calculates a route given the following required parameters: <c>Origin</c> and <c>Destination</c>.
+        /// <c>CalculateRoutes</c> computes routes given the following required parameters: <c>Origin</c>
+        /// and <c>Destination</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoutes service method.</param>
         /// 
@@ -446,7 +447,8 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Calculates a route given the following required parameters: <c>Origin</c> and <c>Destination</c>.
+        /// <c>CalculateRoutes</c> computes routes given the following required parameters: <c>Origin</c>
+        /// and <c>Destination</c>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CalculateRoutes service method.</param>
         /// <param name="cancellationToken">
@@ -482,9 +484,9 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Calculates the optimal order to travel between a set of waypoints to minimize either
-        /// the travel time or the distance travelled during the journey, based on road network
-        /// restrictions and the traffic pattern data.
+        /// <c>OptimizeWaypoints</c> calculates the optimal order to travel between a set of
+        /// waypoints to minimize either the travel time or the distance travelled during the
+        /// journey, based on road network restrictions and the traffic pattern data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OptimizeWaypoints service method.</param>
         /// 
@@ -513,9 +515,9 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// Calculates the optimal order to travel between a set of waypoints to minimize either
-        /// the travel time or the distance travelled during the journey, based on road network
-        /// restrictions and the traffic pattern data.
+        /// <c>OptimizeWaypoints</c> calculates the optimal order to travel between a set of
+        /// waypoints to minimize either the travel time or the distance travelled during the
+        /// journey, based on road network restrictions and the traffic pattern data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the OptimizeWaypoints service method.</param>
         /// <param name="cancellationToken">
@@ -551,7 +553,7 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// The SnapToRoads action matches GPS trace to roads most likely traveled on.
+        /// <c>SnapToRoads</c> matches GPS trace to roads most likely traveled on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SnapToRoads service method.</param>
         /// 
@@ -580,7 +582,7 @@ namespace Amazon.GeoRoutes
 
 
         /// <summary>
-        /// The SnapToRoads action matches GPS trace to roads most likely traveled on.
+        /// <c>SnapToRoads</c> matches GPS trace to roads most likely traveled on.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SnapToRoads service method.</param>
         /// <param name="cancellationToken">

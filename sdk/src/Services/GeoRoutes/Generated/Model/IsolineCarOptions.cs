@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Options for vehicles.
+    /// Travel mode options when the provided travel mode is <c>Car</c>.
     /// </summary>
     public partial class IsolineCarOptions
     {

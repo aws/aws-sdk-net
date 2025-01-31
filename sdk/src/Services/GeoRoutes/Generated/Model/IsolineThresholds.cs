@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Threshold to be used for the isoline calculation. Up to 3 thresholds per provided
+    /// Threshold to be used for the isoline calculation. Up to 5 thresholds per provided
     /// type can be requested.
     /// </summary>
     public partial class IsolineThresholds

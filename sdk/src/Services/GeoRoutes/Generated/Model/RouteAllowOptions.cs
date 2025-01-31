@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Features that are allowed while calculating. a route
+    /// Features that are allowed while calculating a route.
     /// </summary>
     public partial class RouteAllowOptions
     {
@@ -41,6 +41,10 @@ namespace Amazon.GeoRoutes.Model
         /// Gets and sets the property Hot. 
         /// <para>
         /// Allow Hot (High Occupancy Toll) lanes while calculating the route.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Hot
@@ -59,6 +63,10 @@ namespace Amazon.GeoRoutes.Model
         /// Gets and sets the property Hov. 
         /// <para>
         /// Allow Hov (High Occupancy vehicle) lanes while calculating the route.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Hov

@@ -81,6 +81,17 @@ namespace Amazon.GeoRoutes.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetClustering())
+                {
+                    context.Writer.WritePropertyName("Clustering");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = WaypointOptimizationClusteringOptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Clustering, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDepartureTime())
                 {
                     context.Writer.WritePropertyName("DepartureTime");

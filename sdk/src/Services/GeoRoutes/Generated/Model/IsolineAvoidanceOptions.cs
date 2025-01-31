@@ -30,8 +30,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Features that are avoided while calculating a route. Avoidance is on a best-case basis.
-    /// If an avoidance can't be satisfied for a particular case, it violates the avoidance
+    /// Features that are avoided while calculating isolines. Avoidance is on a best-case
+    /// basis. If an avoidance can't be satisfied for a particular case, it violates the avoidance
     /// and the returned response produces a notice for the violation.
     /// </summary>
     public partial class IsolineAvoidanceOptions
@@ -70,7 +70,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property CarShuttleTrains. 
         /// <para>
-        /// Avoid car-shuttle-trains while calculating the route.
+        /// Avoid car-shuttle-trains while calculating an isoline.
         /// </para>
         /// </summary>
         public bool CarShuttleTrains
@@ -88,7 +88,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property ControlledAccessHighways. 
         /// <para>
-        /// Avoid controlled access highways while calculating the route.
+        /// Avoid controlled access highways while calculating an isoline.
         /// </para>
         /// </summary>
         public bool ControlledAccessHighways
@@ -106,7 +106,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property DirtRoads. 
         /// <para>
-        /// Avoid dirt roads while calculating the route.
+        /// Avoid dirt roads while calculating an isoline.
         /// </para>
         /// </summary>
         public bool DirtRoads
@@ -124,7 +124,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Ferries. 
         /// <para>
-        /// Avoid ferries while calculating the route.
+        /// Avoid ferries while calculating an isoline.
         /// </para>
         /// </summary>
         public bool Ferries
@@ -142,7 +142,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property SeasonalClosure. 
         /// <para>
-        /// Avoid roads that have seasonal closure while calculating the route.
+        /// Avoid roads that have seasonal closure while calculating an isoline.
         /// </para>
         /// </summary>
         public bool SeasonalClosure
@@ -221,7 +221,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Tunnels. 
         /// <para>
-        /// Avoid tunnels while calculating the route.
+        /// Avoid tunnels while calculating an isoline.
         /// </para>
         /// </summary>
         public bool Tunnels

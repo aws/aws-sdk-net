@@ -30,7 +30,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Exclusion options.
+    /// Specifies strict exclusion options for the route calculation. This setting mandates
+    /// that the router will avoid any routes that include the specified options, rather than
+    /// merely attempting to minimize them.
     /// </summary>
     public partial class RouteMatrixExclusionOptions
     {

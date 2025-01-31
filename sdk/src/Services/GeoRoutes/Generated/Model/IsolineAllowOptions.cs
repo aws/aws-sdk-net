@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Features that are allowed while calculating. a route
+    /// Features that are allowed while calculating an isoline.
     /// </summary>
     public partial class IsolineAllowOptions
     {
@@ -40,7 +40,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Hot. 
         /// <para>
-        /// Allow Hot (High Occupancy Toll) lanes while calculating the route.
+        /// Allow Hot (High Occupancy Toll) lanes while calculating an isoline.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Hot
@@ -58,7 +62,11 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Hov. 
         /// <para>
-        /// Allow Hov (High Occupancy vehicle) lanes while calculating the route.
+        /// Allow Hov (High Occupancy vehicle) lanes while calculating an isoline.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default value: <c>false</c> 
         /// </para>
         /// </summary>
         public bool Hov

@@ -31,7 +31,7 @@ namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
     /// Container for the parameters to the SnapToRoads operation.
-    /// The SnapToRoads action matches GPS trace to roads most likely traveled on.
+    /// <c>SnapToRoads</c> matches GPS trace to roads most likely traveled on.
     /// </summary>
     public partial class SnapToRoadsRequest : AmazonGeoRoutesRequest
     {

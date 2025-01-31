@@ -63,7 +63,7 @@ namespace Amazon.GeoRoutes.Model
         /// </para>
         ///  
         /// <para>
-        ///  <b>Unit</b>: <c>centimeters</c> 
+        ///  <b>Unit</b>: <c>meters</c> 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=4294967295)]

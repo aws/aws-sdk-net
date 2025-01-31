@@ -31,7 +31,7 @@ namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
     /// Container for the parameters to the CalculateRouteMatrix operation.
-    /// Calculates route matrix containing the results for all pairs of Origins to Destinations.
+    /// Use <c>CalculateRouteMatrix</c> to compute results for all pairs of Origins to Destinations.
     /// Each row corresponds to one entry in Origins. Each entry in the row corresponds to
     /// the route from that entry in Origins to an entry in Destinations positions.
     /// </summary>
@@ -54,7 +54,7 @@ namespace Amazon.GeoRoutes.Model
         /// <summary>
         /// Gets and sets the property Allow. 
         /// <para>
-        /// Features that are allowed while calculating. a route
+        /// Features that are allowed while calculating a route.
         /// </para>
         /// </summary>
         public RouteMatrixAllowOptions Allow
@@ -146,6 +146,13 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// List of destinations for the route.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Route calculations are billed for each origin and destination pair. If you use a large
+        /// matrix of origins and destinations, your costs will increase accordingly. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
+        /// Amazon Location's pricing page</a> for more information.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<RouteMatrixDestination> Destinations
@@ -225,6 +232,13 @@ namespace Amazon.GeoRoutes.Model
         /// <para>
         /// The position in longitude and latitude for the origin.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Route calculations are billed for each origin and destination pair. Using a large
+        /// amount of Origins in a request can lead you to incur unexpected charges. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/routes-pricing.html`">
+        /// Amazon Location's pricing page</a> for more information.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<RouteMatrixOrigin> Origins

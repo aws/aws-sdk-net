@@ -30,7 +30,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// The avoidance geometry, to be included while calculating the route.
+    /// The avoidance geometry, to be included while calculating an isoline.
     /// </summary>
     public partial class IsolineAvoidanceAreaGeometry
     {

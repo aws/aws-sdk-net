@@ -30,29 +30,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Origin related options.
+    /// Driving distance related options.
     /// </summary>
-    public partial class WaypointOptimizationOriginOptions
+    public partial class WaypointOptimizationDrivingDistanceOptions
     {
-        private string _id;
+        private long? _drivingDistance;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property DrivingDistance. 
         /// <para>
-        /// The Origin Id.
+        /// DrivingDistance assigns all the waypoints that are within driving distance of each
+        /// other into a single cluster.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
-        public string Id
+        [AWSProperty(Required=true, Min=0, Max=4294967295)]
+        public long DrivingDistance
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._drivingDistance.GetValueOrDefault(); }
+            set { this._drivingDistance = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if DrivingDistance property is set
+        internal bool IsSetDrivingDistance()
         {
-            return this._id != null;
+            return this._drivingDistance.HasValue; 
         }
 
     }

@@ -30,7 +30,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GeoRoutes.Model
 {
     /// <summary>
-    /// Options for WaypointOptimizationAvoidance.
+    /// Specifies options for areas to avoid. This is a best-effort avoidance setting, meaning
+    /// the router will try to honor the avoidance preferences but may still include restricted
+    /// areas if no feasible alternative route exists. If avoidance options are not followed,
+    /// the response will indicate that the avoidance criteria were violated.
     /// </summary>
     public partial class WaypointOptimizationAvoidanceOptions
     {
