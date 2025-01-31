@@ -2670,6 +2670,10 @@ namespace Amazon.CodeBuild
         /// Constant BUILD_BATCH for WebhookBuildType
         /// </summary>
         public static readonly WebhookBuildType BUILD_BATCH = new WebhookBuildType("BUILD_BATCH");
+        /// <summary>
+        /// Constant RUNNER_BUILDKITE_BUILD for WebhookBuildType
+        /// </summary>
+        public static readonly WebhookBuildType RUNNER_BUILDKITE_BUILD = new WebhookBuildType("RUNNER_BUILDKITE_BUILD");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
