@@ -60,7 +60,8 @@ namespace Amazon.MediaTailor.Model
         /// Gets and sets the property AdConditioningConfiguration. 
         /// <para>
         /// The setting that indicates what conditioning MediaTailor will perform on ads that
-        /// the ad decision server (ADS) returns.
+        /// the ad decision server (ADS) returns, and what priority MediaTailor uses when inserting
+        /// ads. 
         /// </para>
         /// </summary>
         public AdConditioningConfiguration AdConditioningConfiguration

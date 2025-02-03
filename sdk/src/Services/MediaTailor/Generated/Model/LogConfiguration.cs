@@ -34,7 +34,30 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class LogConfiguration
     {
+        private List<string> _enabledLoggingStrategies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _percentEnabled;
+
+        /// <summary>
+        /// Gets and sets the property EnabledLoggingStrategies. 
+        /// <para>
+        /// The method used for collecting logs from AWS Elemental MediaTailor. <c>LEGACY_CLOUDWATCH</c>
+        /// indicates that MediaTailor is sending logs directly to Amazon CloudWatch Logs. <c>VENDED_LOGS</c>
+        /// indicates that MediaTailor is sending logs to CloudWatch, which then vends the logs
+        /// to your destination of choice. Supported destinations are CloudWatch Logs log group,
+        /// Amazon S3 bucket, and Amazon Data Firehose stream. 
+        /// </para>
+        /// </summary>
+        public List<string> EnabledLoggingStrategies
+        {
+            get { return this._enabledLoggingStrategies; }
+            set { this._enabledLoggingStrategies = value; }
+        }
+
+        // Check to see if EnabledLoggingStrategies property is set
+        internal bool IsSetEnabledLoggingStrategies()
+        {
+            return this._enabledLoggingStrategies != null && (this._enabledLoggingStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property PercentEnabled. 

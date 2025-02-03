@@ -333,6 +333,56 @@ namespace Amazon.MediaTailor
 
 
     /// <summary>
+    /// Constants used for properties of type LoggingStrategy.
+    /// </summary>
+    public class LoggingStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LEGACY_CLOUDWATCH for LoggingStrategy
+        /// </summary>
+        public static readonly LoggingStrategy LEGACY_CLOUDWATCH = new LoggingStrategy("LEGACY_CLOUDWATCH");
+        /// <summary>
+        /// Constant VENDED_LOGS for LoggingStrategy
+        /// </summary>
+        public static readonly LoggingStrategy VENDED_LOGS = new LoggingStrategy("VENDED_LOGS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LoggingStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LoggingStrategy FindValue(string value)
+        {
+            return FindValue<LoggingStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LoggingStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LogType.
     /// </summary>
     public class LogType : ConstantClass

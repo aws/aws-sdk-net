@@ -35,8 +35,37 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class ConfigureLogsForPlaybackConfigurationRequest : AmazonMediaTailorRequest
     {
+        private List<string> _enabledLoggingStrategies = AWSConfigs.InitializeCollections ? new List<string>() : null;
         private int? _percentEnabled;
         private string _playbackConfigurationName;
+
+        /// <summary>
+        /// Gets and sets the property EnabledLoggingStrategies. 
+        /// <para>
+        /// The method used for collecting logs from AWS Elemental MediaTailor. To configure MediaTailor
+        /// to send logs directly to Amazon CloudWatch Logs, choose <c>LEGACY_CLOUDWATCH</c>.
+        /// To configure MediaTailor to send logs to CloudWatch, which then vends the logs to
+        /// your destination of choice, choose <c>VENDED_LOGS</c>. Supported destinations are
+        /// CloudWatch Logs log group, Amazon S3 bucket, and Amazon Data Firehose stream.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use vended logs, you must configure the delivery destination in Amazon CloudWatch,
+        /// as described in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html#AWS-vended-logs-permissions-V2">Enable
+        /// logging from AWS services, Logging that requires additional permissions [V2]</a>.
+        /// </para>
+        /// </summary>
+        public List<string> EnabledLoggingStrategies
+        {
+            get { return this._enabledLoggingStrategies; }
+            set { this._enabledLoggingStrategies = value; }
+        }
+
+        // Check to see if EnabledLoggingStrategies property is set
+        internal bool IsSetEnabledLoggingStrategies()
+        {
+            return this._enabledLoggingStrategies != null && (this._enabledLoggingStrategies.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
 
         /// <summary>
         /// Gets and sets the property PercentEnabled. 

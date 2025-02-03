@@ -67,6 +67,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
                 writer.Validate = false;
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetEnabledLoggingStrategies())
+                {
+                    context.Writer.WritePropertyName("EnabledLoggingStrategies");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEnabledLoggingStrategiesListValue in publicRequest.EnabledLoggingStrategies)
+                    {
+                            context.Writer.Write(publicRequestEnabledLoggingStrategiesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetPercentEnabled())
                 {
                     context.Writer.WritePropertyName("PercentEnabled");

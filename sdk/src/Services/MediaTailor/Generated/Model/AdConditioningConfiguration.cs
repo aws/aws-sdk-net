@@ -40,11 +40,12 @@ namespace Amazon.MediaTailor.Model
         /// <summary>
         /// Gets and sets the property StreamingMediaFileConditioning. 
         /// <para>
-        /// For ads that have media files with streaming delivery, indicates what transcoding
-        /// action MediaTailor it first receives these ads from the ADS. <c>TRANSCODE</c> indicates
-        /// that MediaTailor must transcode the ads. <c>NONE</c> indicates that you have already
-        /// transcoded the ads outside of MediaTailor and don't need them transcoded as part of
-        /// the ad insertion workflow. For more information about ad conditioning see <a href="https://docs.aws.amazon.com/precondition-ads.html">https://docs.aws.amazon.com/precondition-ads.html</a>.
+        /// For ads that have media files with streaming delivery and supported file extensions,
+        /// indicates what transcoding action MediaTailor takes when it first receives these ads
+        /// from the ADS. <c>TRANSCODE</c> indicates that MediaTailor must transcode the ads.
+        /// <c>NONE</c> indicates that you have already transcoded the ads outside of MediaTailor
+        /// and don't need them transcoded as part of the ad insertion workflow. For more information
+        /// about ad conditioning see <a href="https://docs.aws.amazon.com/precondition-ads.html">https://docs.aws.amazon.com/precondition-ads.html</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
