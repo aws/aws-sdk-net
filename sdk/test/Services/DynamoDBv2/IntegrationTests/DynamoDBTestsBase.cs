@@ -86,6 +86,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
         public void CleanupTables()
         {
             ClearTable(hashTableName);
+            ClearTable(nestedTableName);
             ClearTable(hashRangeTableName);
             ClearTable(numericHashRangeTableName);
         }
@@ -102,6 +103,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Context = new DynamoDBContext(Client, config);
         }
 
+        public static string nestedTableName;
         public static string hashTableName;
         public static string hashRangeTableName;
         public static string numericHashRangeTableName;
@@ -148,15 +150,22 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
         public static void CreateTestTables()
         {
+            nestedTableName = TableNamePrefix + "NestedTable";
             hashTableName = TableNamePrefix + "HashTable";
             hashRangeTableName = TableNamePrefix + "HashRangeTable";
             numericHashRangeTableName = TableNamePrefix + "NumericHashRangeTable";
+            bool createTestTable = true;
             bool createHashTable = true;
             bool createHashRangeTable = true;
             bool createNumericHashRangeTable = true;
 
             if (ReuseTables)
             {
+                if (GetStatus(nestedTableName) != null)
+                {
+                    WaitForTableStatus(nestedTableName, TableStatus.ACTIVE);
+                    createTestTable = false;
+                }
                 if (GetStatus(hashTableName) != null)
                 {
                     WaitForTableStatus(hashTableName, TableStatus.ACTIVE);
@@ -172,6 +181,28 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
                     WaitForTableStatus(numericHashRangeTableName, TableStatus.ACTIVE);
                     createNumericHashRangeTable = false;
                 }
+            }
+
+            if (createTestTable)
+            {
+                // Create hash-key table with global index
+                Client.CreateTable(new CreateTableRequest
+                {
+                    TableName = nestedTableName,
+                    AttributeDefinitions = new List<AttributeDefinition>
+                    {
+                        new AttributeDefinition { AttributeName = "Id", AttributeType = ScalarAttributeType.S },
+                    },
+                    KeySchema = new List<KeySchemaElement>
+                    {
+                        new KeySchemaElement { KeyType = KeyType.HASH, AttributeName = "Id" }
+                    },
+                    BillingMode = BillingMode.PAY_PER_REQUEST
+                });
+                CreatedTables.Add(nestedTableName);
+
+                // Wait for table to be ready
+                WaitForTableStatus(nestedTableName, TableStatus.ACTIVE);
             }
 
             if (createHashTable)
@@ -294,6 +325,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
 
 
             // Make sure TTL is enabled for the tables and is on the correct attribute
+            EnsureTTL(nestedTableName);
             EnsureTTL(hashTableName);
             EnsureTTL(hashRangeTableName);
             EnsureTTL(numericHashRangeTableName);

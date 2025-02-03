@@ -54,6 +54,18 @@ namespace Amazon.DynamoDBv2.DataModel
         // Converter, if one is present
         public IPropertyConverter Converter { get; protected set; }
 
+        public void AddDerivedType(string typeDiscriminator, Type type)
+        {
+            DerivedTypesDictionary[type] = typeDiscriminator;
+            DerivedTypeKeysDictionary[typeDiscriminator] = type;
+        }
+
+        // derived type information used for polymorphic serialization
+        public Dictionary<Type, string> DerivedTypesDictionary { get; private set; }
+
+        // derived type information used for polymorphic deserialization
+        public Dictionary<string, Type> DerivedTypeKeysDictionary { get; private set; }
+
         public SimplePropertyStorage(MemberInfo member)
             : this(Utils.GetType(member))
         {
@@ -63,6 +75,18 @@ namespace Amazon.DynamoDBv2.DataModel
         public SimplePropertyStorage(Type memberType)
         {
             MemberType = memberType;
+            DerivedTypesDictionary = new Dictionary<Type, string>();
+            DerivedTypeKeysDictionary = new Dictionary<string,Type>();
+        }
+        public SimplePropertyStorage(Type memberType, Dictionary<Type, string> derivedTypesDictionary)
+        {
+            MemberType = memberType;
+            DerivedTypesDictionary = derivedTypesDictionary;
+        }
+        public SimplePropertyStorage(Type memberType, Dictionary<string, Type> derivedTypeKeysDictionary)
+        {
+            MemberType = memberType;
+            DerivedTypeKeysDictionary = derivedTypeKeysDictionary;
         }
 
         public override string ToString()
@@ -93,6 +117,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
         // whether to store DateTime as epoch seconds integer
         public bool StoreAsEpoch { get; set; }
+
+        // whether to store Type Name
+        public bool TypeNameHandling { get; set; }
 
         // corresponding IndexNames, if applicable
         public List<string> IndexNames { get; set; }
@@ -164,6 +191,9 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (ConverterType != null)
             {
+                if (TypeNameHandling)
+                    throw new InvalidOperationException("Converter for " + PropertyName + " must not be set at the same time as derived types.");
+
                 if (StoreAsEpoch)
                     throw new InvalidOperationException("Converter for " + PropertyName + " must not be set at the same time as StoreAsEpoch is set to true");
 
@@ -189,6 +219,7 @@ namespace Amazon.DynamoDBv2.DataModel
             IndexNames = new List<string>();
             Indexes = new List<Index>();
         }
+
     }
 
     /// <summary>
@@ -787,7 +818,7 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (propertyAttribute != null)
                     {
                         propertyStorage.StoreAsEpoch = propertyAttribute.StoreAsEpoch;
-
+                       
                         if (propertyAttribute.Converter != null)
                             propertyStorage.ConverterType = propertyAttribute.Converter;
                         
@@ -809,7 +840,7 @@ namespace Amazon.DynamoDBv2.DataModel
                             {
                                 propertyStorage.IsGSIRangeKey = true;
                                 propertyStorage.AddIndex(gsiRangeAttribute);
-                           }
+                            }
                             else
                                 propertyStorage.IsRangeKey = true;
                         }
@@ -819,6 +850,13 @@ namespace Amazon.DynamoDBv2.DataModel
                         {
                             propertyStorage.IsLSIRangeKey = true;
                             propertyStorage.AddIndex(lsiRangeKeyAttribute);
+                        }
+
+                        DynamoDBDerivedTypeAttribute polymorphicAttribute = attribute as DynamoDBDerivedTypeAttribute;
+                        if (polymorphicAttribute != null)
+                        {
+                            propertyStorage.TypeNameHandling = true;
+                            propertyStorage.AddDerivedType(polymorphicAttribute.TypeDiscriminator, polymorphicAttribute.DerivedType);
                         }
                     }
                 }

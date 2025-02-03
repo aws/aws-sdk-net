@@ -140,6 +140,11 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <remarks>This setting is only applicable to the high-level library. Service calls made via <see cref="AmazonDynamoDBClient"/> will always return <see cref="DateTime"/> attributes in UTC.</remarks>
         public bool? RetrieveDateTimeInUtc { get; set; }
+
+        /// <summary>
+        /// Property indicating the name of the attribute used for derived types conversion.
+        /// </summary>
+        public string DerivedTypeAttributeName { get; set; }
     }
 
     /// <summary>
@@ -365,6 +370,9 @@ namespace Amazon.DynamoDBv2.DataModel
             ConditionalOperatorValues conditionalOperator = operationConfig.ConditionalOperator;
             DynamoDBEntryConversion conversion = operationConfig.Conversion ?? contextConfig.Conversion ?? DynamoDBEntryConversion.CurrentConversion;
             MetadataCachingMode metadataCachingMode = operationConfig.MetadataCachingMode ?? contextConfig.MetadataCachingMode ?? DynamoDBv2.MetadataCachingMode.Default;
+            string derivedTypeAttributeName =
+                !string.IsNullOrEmpty(operationConfig.DerivedTypeAttributeName) ? operationConfig.DerivedTypeAttributeName :
+                !string.IsNullOrEmpty(contextConfig.DerivedTypeAttributeName) ? contextConfig.DerivedTypeAttributeName : "$type";
 
             ConsistentRead = consistentRead;
             SkipVersionCheck = skipVersionCheck;
@@ -380,6 +388,7 @@ namespace Amazon.DynamoDBv2.DataModel
             MetadataCachingMode = metadataCachingMode;
             DisableFetchingTableMetadata = disableFetchingTableMetadata;
             RetrieveDateTimeInUtc = retrieveDateTimeInUtc;
+            DerivedTypeAttributeName = derivedTypeAttributeName;
 
             State = new OperationState();
         }
@@ -480,6 +489,12 @@ namespace Amazon.DynamoDBv2.DataModel
 
         // State of the operation using this config
         internal OperationState State { get; private set; }
+
+        /// <summary>
+        /// Property indicating the name of the attribute used for derived types conversion.
+        /// Default value is "$type" if not set in the config.
+        /// </summary>
+        public string DerivedTypeAttributeName { get; set; }
 
         public class OperationState
         {
