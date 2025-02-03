@@ -244,6 +244,36 @@ namespace Amazon.DynamoDBv2.DataModel
     }
 
     /// <summary>
+    /// DynamoDB attribute that marks a class for polymorphism support.
+    /// Specifies the field name to be used as the type discriminator and the derived types.
+    /// </summary>
+    [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = true)]
+    public sealed class DynamoDBDerivedTypeAttribute : DynamoDBPropertyAttribute
+    {
+        /// <summary>
+        /// Unique name discriminator of the derived type.
+        /// </summary>
+        public string TypeDiscriminator { get; }
+
+        /// <summary>
+        /// Derived type of the Property type.
+        /// Type must be a subclass of the Property type.
+        /// </summary>
+        public Type DerivedType{ get; }
+
+        /// <summary>
+        /// Construct an instance of DynamoDBPolymorphicAttribute
+        /// </summary>
+        /// <param name="typeDiscriminator">Name of the field to be used as the type discriminator.</param>
+        /// <param name="derivedType">Derived type names and their corresponding types.</param>
+        public DynamoDBDerivedTypeAttribute(string typeDiscriminator, Type derivedType)
+        {
+            TypeDiscriminator = typeDiscriminator;
+            DerivedType = derivedType;
+        }
+    }
+
+    /// <summary>
     /// DynamoDB property that marks up current member as a hash key element.
     /// Exactly one member in a class must be marked with this attribute.
     /// 

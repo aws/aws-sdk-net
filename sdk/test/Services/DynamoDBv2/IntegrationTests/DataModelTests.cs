@@ -10,6 +10,7 @@ using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.Model;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
+using System.Threading.Tasks;
 
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
@@ -474,6 +475,74 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee.Name, storedEmployee.Name);
             Assert.AreEqual(employee.Age, storedEmployee.Age);
         }
+
+        /// <summary>
+        /// Tests that the DynamoDB operations can read and write polymorphic items.
+        /// </summary>
+        /// <returns></returns>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_SaveAndLoad_WithDerivedTypeItems()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var a1 = new A { Name = "A1", MyPropA = 1};
+            var b1 = new B { Name = "B1", MyPropA = 2,MyPropB = 3};
+
+            Guid id = Guid.NewGuid();
+
+            var model = new ModelA
+            {
+                Id = id,
+                MyType = b1,
+                MyClasses = new List<A> { a1, b1 },
+                DictionaryClasses = new Dictionary<string, A>()
+                {
+                    {"A",a1},
+                    {"B",b1}
+                }
+            };
+            
+            await Context.SaveAsync(model);
+
+            var storedModel = await Context.LoadAsync<ModelA>(id);
+            Assert.AreEqual(model.Id, storedModel.Id);
+            Assert.AreEqual(model.MyType.GetType(), storedModel.MyType.GetType());
+            Assert.AreEqual(model.MyClasses.Count, storedModel.MyClasses.Count);
+            Assert.AreEqual(model.MyClasses[0].GetType(), storedModel.MyClasses[0].GetType());
+            Assert.AreEqual(model.MyClasses[1].GetType(), storedModel.MyClasses[1].GetType());
+            Assert.AreEqual(model.DictionaryClasses["A"].GetType(), storedModel.DictionaryClasses["A"].GetType());
+            Assert.AreEqual(model.DictionaryClasses["B"].GetType(), storedModel.DictionaryClasses["B"].GetType());
+        }
+
+        /// <summary>
+        /// Tests that the DynamoDB operations can read and write polymorphic items.
+        /// </summary>
+        /// <returns></returns>
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public async Task TestContext_TransactWriteAndLoad_WithDerivedTypeItems()
+        {
+            CleanupTables();
+            TableCache.Clear();
+
+            var model = CreateNestedTypeItem(out var id);
+
+            var transactWrite = Context.CreateTransactWrite<ModelA>();
+            transactWrite.AddSaveItem(model);
+            await transactWrite.ExecuteAsync();
+
+            var storedModel = await Context.LoadAsync<ModelA>(id);
+            Assert.AreEqual(model.Id, storedModel.Id);
+            Assert.AreEqual(model.MyType.GetType(), storedModel.MyType.GetType());
+            Assert.AreEqual(model.MyClasses.Count, storedModel.MyClasses.Count);
+            Assert.AreEqual(model.MyClasses[0].GetType(), storedModel.MyClasses[0].GetType());
+            Assert.AreEqual(model.MyClasses[1].GetType(), storedModel.MyClasses[1].GetType());
+            Assert.AreEqual(model.DictionaryClasses["A"].GetType(), storedModel.DictionaryClasses["A"].GetType());
+            Assert.AreEqual(model.DictionaryClasses["B"].GetType(), storedModel.DictionaryClasses["B"].GetType());
+        }
+
 
         /// <summary>
         /// Runs the same object-mapper integration tests as <see cref="TestContextWithEmptyStringEnabled"/>,
@@ -2249,25 +2318,45 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             Assert.AreEqual(employee1.Data.Length, doc["Data"].AsByteArray().Length);
         }
 
+        private ModelA CreateNestedTypeItem(out Guid id)
+        {
+            var a1 = new A { Name = "A1", MyPropA = 1 };
+            var b1 = new B { Name = "B1", MyPropA = 2, MyPropB = 3 };
+
+            id = Guid.NewGuid();
+
+            var model = new ModelA
+            {
+                Id = id,
+                MyType = b1,
+                MyClasses = new List<A> { a1, b1 },
+                DictionaryClasses = new Dictionary<string, A>()
+                {
+                    {"A",a1},
+                    {"B",b1}
+                }
+            };
+            return model;
+        }
 
         #region OPM definitions
 
         public enum Status : long
         {
-            Active =    256,
-            Inactive =  1024,
-            Upcoming =  9999,
-            Obsolete =  -10,
-            Removed =   42
+            Active = 256,
+            Inactive = 1024,
+            Upcoming = 9999,
+            Obsolete = -10,
+            Removed = 42
         }
 
         [Flags]
         public enum Support
         {
-            Windows =   1 << 0,
-            iOS =       1 << 1,
-            Unix =      1 << 2,
-            Abacus =    1 << 3,
+            Windows = 1 << 0,
+            iOS = 1 << 1,
+            Unix = 1 << 2,
+            Abacus = 1 << 3,
         }
 
         public class StatusConverter : IPropertyConverter
@@ -2677,6 +2766,35 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.DynamoDB
             }
         }
 
+        public class A
+        {
+            public string Name { get; set; }
+
+            public int MyPropA { get; set; }
+        }
+
+        public class B : A
+        {
+            public int MyPropB { get; set; }
+        }
+
+        [DynamoDBTable("NestedTable")]
+        public class ModelA
+        {
+            [DynamoDBHashKey]
+            public Guid Id { get; set; }
+
+            [DynamoDBDerivedType("B", typeof(B))]
+            public A MyType { get; set; }
+
+            [DynamoDBDerivedType("B", typeof(B))]
+            [DynamoDBProperty("test")]
+            public List<A> MyClasses { get; set; }
+
+
+            [DynamoDBDerivedType("B", typeof(B))]
+            public Dictionary<string,A> DictionaryClasses { get; set; }
+        }
         #endregion
     }
 }

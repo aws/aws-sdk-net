@@ -412,7 +412,7 @@ namespace Amazon.DynamoDBv2.DataModel
         private ItemStorage ObjectToItemStorage(object toStore, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type objectType, bool keysOnly, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig config = StorageConfigCache.GetConfig(objectType, flatConfig);
-            ItemStorage storage = ObjectToItemStorageHelper(toStore, config, flatConfig, keysOnly, flatConfig.IgnoreNullValues.Value);
+            ItemStorage storage = ObjectToItemStorageHelper(toStore, config, flatConfig, keysOnly, flatConfig.IgnoreNullValues != null && flatConfig.IgnoreNullValues.Value);
             return storage;
         }
         internal ItemStorage ObjectToItemStorageHelper(object toStore, ItemStorageConfig config, DynamoDBFlatConfig flatConfig, bool keysOnly, bool ignoreNullValues)
@@ -499,15 +499,23 @@ namespace Amazon.DynamoDBv2.DataModel
                 Document document = entry as Document;
                 if (document != null)
                 {
-                    if (TryFromMap(targetType, document, flatConfig, out output))
+                    if (TryFromMap(targetType, document, flatConfig, propertyStorage.DerivedTypeKeysDictionary, out output))
                         return output;
+
+                    var typeAttributeName = flatConfig.DerivedTypeAttributeName;//"$type"; 
+                    var derivedType = document.ContainsKey(typeAttributeName) ? document[typeAttributeName].AsString() : null;
+
+                    if (derivedType != null && propertyStorage.DerivedTypeKeysDictionary.TryGetValue(derivedType, out var value))
+                    {
+                        targetType = value;
+                    }
 
                     return DeserializeFromDocument(document, targetType, flatConfig);
                 }
 
                 DynamoDBList list = entry as DynamoDBList;
                 if (list != null &&
-                    TryFromList(targetType, list, flatConfig, out output))
+                    TryFromList(targetType, list, flatConfig, propertyStorage.DerivedTypeKeysDictionary, out output))
                 {
                     return output;
                 }
@@ -517,18 +525,18 @@ namespace Amazon.DynamoDBv2.DataModel
                     entry, entry.GetType().FullName, propertyStorage.PropertyName, propertyStorage.MemberType.FullName));
             }
         }
-
-        private bool TryFromList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig,
+            Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             return targetType.IsArray ?
-                 TryFromListToArray(targetType, list, flatConfig, out output) : //targetType is Array
-                 TryFromListToIList(targetType, list, flatConfig, out output) ; //targetType is IList or has Add method.
+                 TryFromListToArray(targetType, list, flatConfig, derivedTypeKeysDictionary, out output) : //targetType is Array
+                 TryFromListToIList(targetType, list, flatConfig, derivedTypeKeysDictionary, out output) ; //targetType is IList or has Add method.
         }
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2062",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
 
-        private bool TryFromListToIList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromListToIList([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig,Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             if ((!Utils.ImplementsInterface(targetType, typeof(ICollection<>)) &&
                 !Utils.ImplementsInterface(targetType, typeof(IList))) ||
@@ -542,7 +550,7 @@ namespace Amazon.DynamoDBv2.DataModel
             var collection = Utils.Instantiate(targetType);
             IList ilist = collection as IList;
             bool useIListInterface = ilist != null;
-            var propertyStorage = new SimplePropertyStorage(elementType);
+            var propertyStorage = new SimplePropertyStorage(elementType, derivedTypeKeysDictionary);
 
             MethodInfo collectionAdd = null;
             if (!useIListInterface)
@@ -564,7 +572,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        private bool TryFromListToArray([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromListToArray([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, DynamoDBList list, DynamoDBFlatConfig flatConfig, Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             if (!Utils.CanInstantiateArray(targetType))
             {
@@ -574,8 +582,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var elementType = Utils.GetElementType(targetType);
             var array = (Array)Utils.InstantiateArray(targetType,list.Entries.Count);
-            var propertyStorage = new SimplePropertyStorage(elementType);
-
+            var propertyStorage = new SimplePropertyStorage(elementType, derivedTypeKeysDictionary);
 
             for (int i = 0; i < list.Entries.Count; i++)
             {
@@ -590,7 +597,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
-        private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, out object output)
+        private bool TryFromMap([DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type targetType, Document map, DynamoDBFlatConfig flatConfig, Dictionary<string, Type> derivedTypeKeysDictionary, out object output)
         {
             output = null;
 
@@ -603,7 +610,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             var dictionary = Utils.Instantiate(targetType);
             var idictionary = dictionary as IDictionary;
-            var propertyStorage = new SimplePropertyStorage(valueType);
+            var propertyStorage = new SimplePropertyStorage(valueType, derivedTypeKeysDictionary);
 
             foreach (var kvp in map)
             {
@@ -637,7 +644,17 @@ namespace Amazon.DynamoDBv2.DataModel
                 return entry;
             }
 
-            var type = propertyStorage.MemberType;
+            Type type;
+            string typeDiscriminator = null;
+            if (propertyStorage.DerivedTypesDictionary.ContainsKey(value.GetType()))
+            {
+                typeDiscriminator = propertyStorage.DerivedTypesDictionary[value.GetType()];
+                type = value.GetType();
+            }
+            else
+            {
+                type = propertyStorage.MemberType;
+            }
 
             if (canReturnScalarInsteadOfList)
             {
@@ -651,20 +668,21 @@ namespace Amazon.DynamoDBv2.DataModel
             else
             {
                 Document map;
-                if (TryToMap(value, type, flatConfig, out map))
+                if (TryToMap(value, type, flatConfig, propertyStorage.DerivedTypesDictionary, out map))
                     return map;
 
                 DynamoDBList list;
-                if (TryToList(value, type, flatConfig, out list))
+                if (TryToList(value, type, flatConfig, propertyStorage.DerivedTypesDictionary, out list))
                     return list;
 
-                return SerializeToDocument(value, type, flatConfig);
+                return SerializeToDocument(value, type, flatConfig, typeDiscriminator);
             }
         }
 
         [UnconditionalSuppressMessage("ReflectionAnalysis", "IL2067",
             Justification = "The user's type has been annotated with InternalConstants.DataModelModeledType with the public API into the library. At this point the type will not be trimmed.")]
-        private bool TryToMap(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig, out Document output)
+        private bool TryToMap(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig,
+            Dictionary<Type, string> derivedTypesDictionary, out Document output)
         {
             output = null;
 
@@ -677,7 +695,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
 
             output = new Document();
-            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(valueType);
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(valueType,derivedTypesDictionary);
 
             foreach (object keyValue in idictionary.Keys)
             {
@@ -697,7 +715,8 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        private bool TryToList(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, DynamoDBFlatConfig flatConfig, out DynamoDBList output)
+        private bool TryToList(object value, [DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.Interfaces)] Type type, DynamoDBFlatConfig flatConfig,
+            Dictionary<Type, string> derivedTypesDictionary, out DynamoDBList output)
         {
             if (!Utils.ImplementsInterface(type, typeof(ICollection<>)))
             {
@@ -715,7 +734,9 @@ namespace Amazon.DynamoDBv2.DataModel
             }
 
             Type elementType = Utils.GetElementType(type);
-            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType);
+
+            //Todo IH: implement get element type for arrays with inheritance
+            SimplePropertyStorage propertyStorage = new SimplePropertyStorage(elementType,derivedTypesDictionary);
             output = new DynamoDBList();
             foreach (var item in enumerable)
             {
@@ -723,7 +744,9 @@ namespace Amazon.DynamoDBv2.DataModel
                 if (item == null)
                     entry = DynamoDBNull.Null;
                 else
+                {
                     entry = ToDynamoDBEntry(propertyStorage, item, flatConfig);
+                }
 
                 output.Add(entry);
             }
@@ -752,7 +775,7 @@ namespace Amazon.DynamoDBv2.DataModel
                         {
                             try
                             {
-                                entry = SerializeToDocument(value, elementType, flatConfig);
+                                entry = SerializeToDocument(value, elementType, flatConfig, typeDiscriminator: null);
                                 return true;
                             }
                             catch { }
@@ -807,11 +830,16 @@ namespace Amazon.DynamoDBv2.DataModel
         /// Serializes a given value to Document
         /// Use only for property conversions, not for full item conversion
         /// </summary>
-        private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig)
+        private Document SerializeToDocument(object value, [DynamicallyAccessedMembers(InternalConstants.DataModelModeledType)] Type type, DynamoDBFlatConfig flatConfig, string typeDiscriminator)
         {
             ItemStorageConfig config = StorageConfigCache.GetConfig(type, flatConfig, conversionOnly: true);
             var itemStorage = ObjectToItemStorageHelper(value, config, flatConfig, keysOnly: false, ignoreNullValues: flatConfig.IgnoreNullValues.Value);
             var doc = itemStorage.Document;
+            if (typeDiscriminator != null)
+            {
+                var typeAttributeName = flatConfig.DerivedTypeAttributeName;
+                doc[typeAttributeName] = new Primitive(typeDiscriminator);
+            }
             return doc;
         }
 
@@ -838,6 +866,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return false;
             }
         }
+
         private static bool TryGetValue(object instance, MemberInfo member, out object value)
         {
             FieldInfo fieldInfo = member as FieldInfo;
