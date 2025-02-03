@@ -55,19 +55,9 @@ namespace Amazon.SimpleNotificationService.Util
         public static Message ParseMessage(string messageText)
         {
             var message = new Message();
-            string santizedMessageText;
             JsonDocument jsonData;
-            try
-            {
-                jsonData = JsonDocument.Parse(messageText);
-            }
-            // we don't want to sanitize the message if it is already valid JSON. so only santize
-            // if we catch ane exception
-            catch (JsonException)
-            {
-                santizedMessageText = JsonSerializerHelper.SanitizeJson(messageText);
-                jsonData = JsonDocument.Parse(santizedMessageText);
-            }
+            jsonData = JsonDocument.Parse(messageText);
+
             Func<string, string> extractField = ((fieldName) =>
                 {
                     if (jsonData.RootElement.TryGetProperty(fieldName, out var value) && value.ValueKind == JsonValueKind.String)
