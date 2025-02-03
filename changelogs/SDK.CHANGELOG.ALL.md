@@ -1,3 +1,10 @@
+### 3.7.975.0 (2025-02-03 19:13 UTC)
+* MediaTailor (3.7.402.0)
+	* Add support for CloudWatch Vended Logs which allows for delivery of customer logs to CloudWatch Logs, S3, or Firehose.
+* Core 3.7.401.7
+	* Update `HttpRequestMessageFactory` to correctly set the `Content-Length` header for .NET Standard / .NET 8
+	* All services packages updated to require new Core
+
 ### 3.7.974.0 (2025-01-31 19:21 UTC)
 * BedrockAgentRuntime (3.7.418.0)
 	* This change is to deprecate the existing citation field under RetrieveAndGenerateStream API response in lieu of GeneratedResponsePart and RetrievedReferences
