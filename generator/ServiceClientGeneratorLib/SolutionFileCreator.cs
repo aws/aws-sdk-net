@@ -571,11 +571,7 @@ namespace ServiceClientGenerator
             var testProjectsRoot = Utils.PathCombineAlt(Options.SdkRootFolder, GeneratorDriver.TestsSubFoldername, GeneratorDriver.ServicesSubFoldername, serviceDirectory.Name);
             foreach (var configuration in projectFileConfigurations)
             {
-                // TODO: At the moment the project files for net35 / net45 have not been deleted yet, so the previous file pattern ("*.csproj") would include them in the service solution.
-                // We'll filter for the current target framework (similar to what's done for the CRT project), but this method is only invoked for the .NET Framework.
-                //
-                // We should revert the filter later so that the service specific solution includes all tests files (including any we eventually add for .NET Standard).
-                string filePattern = string.Format($"*.{configuration.Name}.csproj");
+                string filePattern = string.Format($"*.csproj");
                 
                 foreach (var projectFile in Directory.GetFiles(testProjectsRoot, filePattern, SearchOption.AllDirectories).OrderBy(f => f))
                 {
