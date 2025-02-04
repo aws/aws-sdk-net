@@ -32,7 +32,7 @@ namespace Amazon.WorkSpacesThinClient
     public partial class AmazonWorkSpacesThinClientConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("WorkSpaces Thin Client", "3.7.401.7");
+            InternalSDKUtils.BuildUserAgentString("WorkSpaces Thin Client", "3.7.401.8");
 
         private string _userAgent = UserAgentString;
         ///<summary>

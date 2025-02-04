@@ -1,3 +1,20 @@
+### 3.7.976.0 (2025-02-04 21:29 UTC)
+* DatabaseMigrationService (3.7.404.0)
+	* Introduces TargetDataSettings with the TablePreparationMode option available for data migrations.
+* DataSync (3.7.403.3)
+	* Doc-only update to provide more information on using Kerberos authentication with SMB locations.
+* IdentityManagement (3.7.404.0)
+	* This release adds support for accepting encrypted SAML assertions. Customers can now configure their identity provider to encrypt the SAML assertions it sends to IAM.
+* NeptuneGraph (3.7.404.0)
+	* Added argument to `list-export` to filter by graph ID
+* QBusiness (3.7.409.0)
+	* Adds functionality to enable/disable a new Q Business Chat orchestration feature. If enabled, Q Business can orchestrate over datasources and plugins without the need for customers to select specific chat modes.
+* SageMaker (3.7.422.2)
+	* IPv6 support for Hyperpod clusters
+* Core 3.7.401.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.975.0 (2025-02-03 19:13 UTC)
 * MediaTailor (3.7.402.0)
 	* Add support for CloudWatch Vended Logs which allows for delivery of customer logs to CloudWatch Logs, S3, or Firehose.
