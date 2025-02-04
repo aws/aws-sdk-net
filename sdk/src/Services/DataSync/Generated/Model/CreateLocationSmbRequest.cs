@@ -150,19 +150,18 @@ namespace Amazon.DataSync.Model
         /// Gets and sets the property KerberosKeytab. 
         /// <para>
         /// Specifies your Kerberos key table (keytab) file, which includes mappings between your
-        /// service principal name (SPN) and encryption keys.
+        /// Kerberos principal and encryption keys.
         /// </para>
         ///  
         /// <para>
-        /// You can specify the keytab using a file path (for example, <c>file://path/to/file.keytab</c>).
         /// The file must be base64 encoded. If you're using the CLI, the encoding is done for
         /// you.
         /// </para>
         ///  
         /// <para>
-        /// To avoid task execution errors, make sure that the SPN in the keytab file matches
-        /// exactly what you specify for <c>KerberosPrincipal</c> and in your <c>krb5.conf</c>
-        /// file. 
+        /// To avoid task execution errors, make sure that the Kerberos principal that you use
+        /// to create the keytab file matches exactly what you specify for <c>KerberosPrincipal</c>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Max=65536)]
@@ -186,15 +185,8 @@ namespace Amazon.DataSync.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify the <c>krb5.conf</c> using a file path (for example, <c>file://path/to/krb5.conf</c>).
         /// The file must be base64 encoded. If you're using the CLI, the encoding is done for
         /// you.
-        /// </para>
-        ///  
-        /// <para>
-        /// To avoid task execution errors, make sure that the service principal name (SPN) in
-        /// the <c>krb5.conf</c> file matches exactly what you specify for <c>KerberosPrincipal</c>
-        /// and in your keytab file.
         /// </para>
         /// </summary>
         [AWSProperty(Max=131072)]
@@ -213,19 +205,18 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property KerberosPrincipal. 
         /// <para>
-        /// Specifies a service principal name (SPN), which is an identity in your Kerberos realm
-        /// that has permission to access the files, folders, and file metadata in your SMB file
-        /// server.
+        /// Specifies a Kerberos prinicpal, which is an identity in your Kerberos realm that has
+        /// permission to access the files, folders, and file metadata in your SMB file server.
         /// </para>
         ///  
         /// <para>
-        /// SPNs are case sensitive and must include a prepended <c>cifs/</c>. For example, an
-        /// SPN might look like <c>cifs/kerberosuser@EXAMPLE.COM</c>.
+        /// A Kerberos principal might look like <c>HOST/kerberosuser@EXAMPLE.COM</c>.
         /// </para>
         ///  
         /// <para>
-        /// Your task execution will fail if the SPN that you provide for this parameter doesn’t
-        /// match what’s exactly in your keytab or <c>krb5.conf</c> files. 
+        /// Principal names are case sensitive. Your DataSync task execution will fail if the
+        /// principal that you specify for this parameter doesn’t exactly match the principal
+        /// that you use to create the keytab file.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

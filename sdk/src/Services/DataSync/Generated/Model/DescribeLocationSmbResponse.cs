@@ -143,8 +143,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property KerberosPrincipal. 
         /// <para>
-        /// The Kerberos service principal name (SPN) that has permission to access the files,
-        /// folders, and file metadata in your SMB file server.
+        /// The Kerberos principal that has permission to access the files, folders, and file
+        /// metadata in your SMB file server.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
