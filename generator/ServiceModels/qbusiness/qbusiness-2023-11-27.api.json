@@ -1633,6 +1633,13 @@
         "creatorModeControl":{"shape":"CreatorModeControl"}
       }
     },
+    "AppliedOrchestrationConfiguration":{
+      "type":"structure",
+      "required":["control"],
+      "members":{
+        "control":{"shape":"OrchestrationControl"}
+      }
+    },
     "AssociatePermissionRequest":{
       "type":"structure",
       "required":[
@@ -3410,6 +3417,7 @@
       "type":"structure",
       "members":{
         "responseScope":{"shape":"ResponseScope"},
+        "orchestrationConfiguration":{"shape":"AppliedOrchestrationConfiguration"},
         "blockedPhrases":{"shape":"BlockedPhrasesConfiguration"},
         "topicConfigurations":{"shape":"TopicConfigurations"},
         "creatorModeConfiguration":{"shape":"AppliedCreatorModeConfiguration"},
@@ -4958,6 +4966,20 @@
         "secretsRole":{"shape":"RoleArn"}
       }
     },
+    "OrchestrationConfiguration":{
+      "type":"structure",
+      "required":["control"],
+      "members":{
+        "control":{"shape":"OrchestrationControl"}
+      }
+    },
+    "OrchestrationControl":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
     "Origin":{
       "type":"string",
       "max":256,
@@ -5930,6 +5952,7 @@
           "idempotencyToken":true
         },
         "responseScope":{"shape":"ResponseScope"},
+        "orchestrationConfiguration":{"shape":"OrchestrationConfiguration"},
         "blockedPhrasesConfigurationUpdate":{"shape":"BlockedPhrasesConfigurationUpdate"},
         "topicConfigurationsToCreateOrUpdate":{"shape":"TopicConfigurations"},
         "topicConfigurationsToDelete":{"shape":"TopicConfigurations"},

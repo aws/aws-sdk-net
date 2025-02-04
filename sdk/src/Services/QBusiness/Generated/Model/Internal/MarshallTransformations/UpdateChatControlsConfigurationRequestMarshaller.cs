@@ -103,6 +103,17 @@ namespace Amazon.QBusiness.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetOrchestrationConfiguration())
+                {
+                    context.Writer.WritePropertyName("orchestrationConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OrchestrationConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OrchestrationConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetResponseScope())
                 {
                     context.Writer.WritePropertyName("responseScope");

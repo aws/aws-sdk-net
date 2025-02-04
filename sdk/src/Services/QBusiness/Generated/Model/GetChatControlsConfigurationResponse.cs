@@ -37,6 +37,7 @@ namespace Amazon.QBusiness.Model
         private BlockedPhrasesConfiguration _blockedPhrases;
         private AppliedCreatorModeConfiguration _creatorModeConfiguration;
         private string _nextToken;
+        private AppliedOrchestrationConfiguration _orchestrationConfiguration;
         private ResponseScope _responseScope;
         private List<TopicConfiguration> _topicConfigurations = AWSConfigs.InitializeCollections ? new List<TopicConfiguration>() : null;
 
@@ -95,6 +96,31 @@ namespace Amazon.QBusiness.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OrchestrationConfiguration. 
+        /// <para>
+        ///  The chat response orchestration settings for your application.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Chat orchestration is optimized to work for English language content. For more details
+        /// on language support in Amazon Q Business, see <a href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/supported-languages.html">Supported
+        /// languages</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public AppliedOrchestrationConfiguration OrchestrationConfiguration
+        {
+            get { return this._orchestrationConfiguration; }
+            set { this._orchestrationConfiguration = value; }
+        }
+
+        // Check to see if OrchestrationConfiguration property is set
+        internal bool IsSetOrchestrationConfiguration()
+        {
+            return this._orchestrationConfiguration != null;
         }
 
         /// <summary>

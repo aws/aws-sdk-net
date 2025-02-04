@@ -1955,7 +1955,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Gets information about an chat controls configured for an existing Amazon Q Business
+        /// Gets information about chat controls configured for an existing Amazon Q Business
         /// application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChatControlsConfiguration service method.</param>
@@ -4302,7 +4302,7 @@ namespace Amazon.QBusiness
 
 
         /// <summary>
-        /// Updates an set of chat controls configured for an existing Amazon Q Business application.
+        /// Updates a set of chat controls configured for an existing Amazon Q Business application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChatControlsConfiguration service method.</param>
         /// 
