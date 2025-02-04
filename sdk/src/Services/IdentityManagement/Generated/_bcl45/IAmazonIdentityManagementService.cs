@@ -141,7 +141,16 @@ namespace Amazon.IdentityManagement
         /// The caller of this operation must be granted the <c>PassRole</c> permission on the
         /// IAM role by a permissions policy.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// When using the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#available-keys-for-iam">iam:AssociatedResourceArn</a>
+        /// condition in a policy to restrict the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+        /// IAM action, special considerations apply if the policy is intended to define access
+        /// for the <c>AddRoleToInstanceProfile</c> action. In this case, you cannot specify a
+        /// Region or instance ID in the EC2 instance ARN. The ARN value must be <c>arn:aws:ec2:*:CallerAccountId:instance/*</c>.
+        /// Using any other ARN value may lead to unexpected evaluation results.
+        /// </para>
+        ///  </important> 
         /// <para>
         ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
         /// roles</a> in the <i>IAM User Guide</i>. For more information about instance profiles,
@@ -192,7 +201,16 @@ namespace Amazon.IdentityManagement
         /// The caller of this operation must be granted the <c>PassRole</c> permission on the
         /// IAM role by a permissions policy.
         /// </para>
-        ///  </note> 
+        ///  </note> <important> 
+        /// <para>
+        /// When using the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_iam-condition-keys.html#available-keys-for-iam">iam:AssociatedResourceArn</a>
+        /// condition in a policy to restrict the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">PassRole</a>
+        /// IAM action, special considerations apply if the policy is intended to define access
+        /// for the <c>AddRoleToInstanceProfile</c> action. In this case, you cannot specify a
+        /// Region or instance ID in the EC2 instance ARN. The ARN value must be <c>arn:aws:ec2:*:CallerAccountId:instance/*</c>.
+        /// Using any other ARN value may lead to unexpected evaluation results.
+        /// </para>
+        ///  </important> 
         /// <para>
         ///  For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM
         /// roles</a> in the <i>IAM User Guide</i>. For more information about instance profiles,
@@ -4392,7 +4410,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Disables the management of privileged root user credentials across member accounts
         /// in your organization. When you disable this feature, the management account and the
-        /// delegated admininstrator for IAM can no longer manage root user credentials for member
+        /// delegated administrator for IAM can no longer manage root user credentials for member
         /// accounts in your organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootCredentialsManagement service method.</param>
@@ -4423,7 +4441,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Disables the management of privileged root user credentials across member accounts
         /// in your organization. When you disable this feature, the management account and the
-        /// delegated admininstrator for IAM can no longer manage root user credentials for member
+        /// delegated administrator for IAM can no longer manage root user credentials for member
         /// accounts in your organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootCredentialsManagement service method.</param>
@@ -4459,7 +4477,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Disables root user sessions for privileged tasks across member accounts in your organization.
-        /// When you disable this feature, the management account and the delegated admininstrator
+        /// When you disable this feature, the management account and the delegated administrator
         /// for IAM can no longer perform privileged tasks on member accounts in your organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootSessions service method.</param>
@@ -4489,7 +4507,7 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Disables root user sessions for privileged tasks across member accounts in your organization.
-        /// When you disable this feature, the management account and the delegated admininstrator
+        /// When you disable this feature, the management account and the delegated administrator
         /// for IAM can no longer perform privileged tasks on member accounts in your organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisableOrganizationsRootSessions service method.</param>
@@ -4614,7 +4632,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Enables the management of privileged root user credentials across member accounts
         /// in your organization. When you enable root credentials management for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
-        /// root access</a>, the management account and the delegated admininstrator for IAM can
+        /// root access</a>, the management account and the delegated administrator for IAM can
         /// manage root user credentials for member accounts in your organization.
         /// 
         ///  
@@ -4629,7 +4647,7 @@ namespace Amazon.IdentityManagement
         ///  </li> <li> 
         /// <para>
         /// Enable trusted access for Identity and Access Management in Organizations. For details,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-iam.html">IAM
         /// and Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -4666,7 +4684,7 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Enables the management of privileged root user credentials across member accounts
         /// in your organization. When you enable root credentials management for <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_root-user.html#id_root-user-access-management">centralized
-        /// root access</a>, the management account and the delegated admininstrator for IAM can
+        /// root access</a>, the management account and the delegated administrator for IAM can
         /// manage root user credentials for member accounts in your organization.
         /// 
         ///  
@@ -4681,7 +4699,7 @@ namespace Amazon.IdentityManagement
         ///  </li> <li> 
         /// <para>
         /// Enable trusted access for Identity and Access Management in Organizations. For details,
-        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-ra.html">IAM
+        /// see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/services-that-can-integrate-iam.html">IAM
         /// and Organizations</a> in the <i>Organizations User Guide</i>.
         /// </para>
         ///  </li> </ul>
@@ -7857,9 +7875,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
@@ -7873,9 +7891,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// 
@@ -7890,9 +7908,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -7910,9 +7928,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
-        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
-        /// Services Sign-In User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/console_account-alias.html#CreateAccountAlias">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>IAM User
+        /// Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// <param name="cancellationToken">
@@ -14499,14 +14517,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Updates the metadata document for an existing SAML provider resource object.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-        /// Version 4</a>.
-        /// </para>
-        ///  </note>
+        /// Updates the metadata document, SAML encryption settings, and private keys for an existing
+        /// SAML provider. To rotate private keys, add your new private key and then remove the
+        /// old key in a separate request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
         /// 
@@ -14532,14 +14545,9 @@ namespace Amazon.IdentityManagement
 
 
         /// <summary>
-        /// Updates the metadata document for an existing SAML provider resource object.
-        /// 
-        ///  <note> 
-        /// <para>
-        /// This operation requires <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
-        /// Version 4</a>.
-        /// </para>
-        ///  </note>
+        /// Updates the metadata document, SAML encryption settings, and private keys for an existing
+        /// SAML provider. To rotate private keys, add your new private key and then remove the
+        /// old key in a separate request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateSAMLProvider service method.</param>
         /// <param name="cancellationToken">
