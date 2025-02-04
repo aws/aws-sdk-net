@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InProgressTableRestoreQuotaExceededException operation
     /// </summary>  
-    public class InProgressTableRestoreQuotaExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<InProgressTableRestoreQuotaExceededException, XmlUnmarshallerContext>
+    public class InProgressTableRestoreQuotaExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InProgressTableRestoreQuotaExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

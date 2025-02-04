@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrustedKeyGroupDoesNotExistException operation
     /// </summary>  
-    public class TrustedKeyGroupDoesNotExistExceptionUnmarshaller : IErrorResponseUnmarshaller<TrustedKeyGroupDoesNotExistException, XmlUnmarshallerContext>
+    public class TrustedKeyGroupDoesNotExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TrustedKeyGroupDoesNotExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

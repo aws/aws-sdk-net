@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchPublicKeyException operation
     /// </summary>  
-    public class NoSuchPublicKeyExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchPublicKeyException, XmlUnmarshallerContext>
+    public class NoSuchPublicKeyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchPublicKeyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

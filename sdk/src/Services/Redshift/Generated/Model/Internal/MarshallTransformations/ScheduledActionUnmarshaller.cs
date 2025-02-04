@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScheduledAction Object
     /// </summary>  
-    public class ScheduledActionUnmarshaller : IUnmarshaller<ScheduledAction, XmlUnmarshallerContext>, IUnmarshaller<ScheduledAction, JsonUnmarshallerContext>
+    public class ScheduledActionUnmarshaller : IXmlUnmarshaller<ScheduledAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -123,17 +123,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ScheduledAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ScheduledActionUnmarshaller _instance = new ScheduledActionUnmarshaller();        
 

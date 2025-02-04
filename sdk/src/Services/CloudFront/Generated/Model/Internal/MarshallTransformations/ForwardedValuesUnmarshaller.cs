@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ForwardedValues Object
     /// </summary>  
-    public class ForwardedValuesUnmarshaller : IUnmarshaller<ForwardedValues, XmlUnmarshallerContext>, IUnmarshaller<ForwardedValues, JsonUnmarshallerContext>
+    public class ForwardedValuesUnmarshaller : IXmlUnmarshaller<ForwardedValues, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ForwardedValues Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ForwardedValuesUnmarshaller _instance = new ForwardedValuesUnmarshaller();        
 
         /// <summary>

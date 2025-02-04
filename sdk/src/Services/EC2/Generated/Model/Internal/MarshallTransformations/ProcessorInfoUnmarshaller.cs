@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ProcessorInfo Object
     /// </summary>  
-    public class ProcessorInfoUnmarshaller : IUnmarshaller<ProcessorInfo, XmlUnmarshallerContext>, IUnmarshaller<ProcessorInfo, JsonUnmarshallerContext>
+    public class ProcessorInfoUnmarshaller : IXmlUnmarshaller<ProcessorInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,17 +98,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ProcessorInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ProcessorInfoUnmarshaller _instance = new ProcessorInfoUnmarshaller();        
 

@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for Captions Object
     /// </summary>  
-    public class CaptionsUnmarshaller : IUnmarshaller<Captions, XmlUnmarshallerContext>, IUnmarshaller<Captions, JsonUnmarshallerContext>
+    public class CaptionsUnmarshaller : IJsonUnmarshaller<Captions, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        Captions IUnmarshaller<Captions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public Captions Unmarshall(JsonUnmarshallerContext context)
+        public Captions Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             Captions unmarshalledObject = new Captions();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("CaptionFormats", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CaptionFormat, CaptionFormatUnmarshaller>(CaptionFormatUnmarshaller.Instance);
-                    unmarshalledObject.CaptionFormats = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CaptionFormat, CaptionFormatUnmarshaller>(CaptionFormatUnmarshaller.Instance);
+                    unmarshalledObject.CaptionFormats = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("CaptionSources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CaptionSource, CaptionSourceUnmarshaller>(CaptionSourceUnmarshaller.Instance);
-                    unmarshalledObject.CaptionSources = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new JsonListUnmarshaller<CaptionSource, CaptionSourceUnmarshaller>(CaptionSourceUnmarshaller.Instance);
+                    unmarshalledObject.CaptionSources = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("MergePolicy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MergePolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.MergePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

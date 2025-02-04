@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyRealtimeLogConfigsException operation
     /// </summary>  
-    public class TooManyRealtimeLogConfigsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyRealtimeLogConfigsException, XmlUnmarshallerContext>
+    public class TooManyRealtimeLogConfigsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyRealtimeLogConfigsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

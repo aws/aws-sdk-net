@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnalysisRouteTableRoute Object
     /// </summary>  
-    public class AnalysisRouteTableRouteUnmarshaller : IUnmarshaller<AnalysisRouteTableRoute, XmlUnmarshallerContext>, IUnmarshaller<AnalysisRouteTableRoute, JsonUnmarshallerContext>
+    public class AnalysisRouteTableRouteUnmarshaller : IXmlUnmarshaller<AnalysisRouteTableRoute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -148,17 +148,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnalysisRouteTableRoute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AnalysisRouteTableRouteUnmarshaller _instance = new AnalysisRouteTableRouteUnmarshaller();        
 

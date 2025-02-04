@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FailedCapacityReservationFleetCancellationResult Object
     /// </summary>  
-    public class FailedCapacityReservationFleetCancellationResultUnmarshaller : IUnmarshaller<FailedCapacityReservationFleetCancellationResult, XmlUnmarshallerContext>, IUnmarshaller<FailedCapacityReservationFleetCancellationResult, JsonUnmarshallerContext>
+    public class FailedCapacityReservationFleetCancellationResultUnmarshaller : IXmlUnmarshaller<FailedCapacityReservationFleetCancellationResult, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FailedCapacityReservationFleetCancellationResult Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FailedCapacityReservationFleetCancellationResultUnmarshaller _instance = new FailedCapacityReservationFleetCancellationResultUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidPolicyException operation
     /// </summary>  
-    public class InvalidPolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidPolicyException, XmlUnmarshallerContext>
+    public class InvalidPolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidPolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

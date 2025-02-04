@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UpdateTarget Object
     /// </summary>  
-    public class UpdateTargetUnmarshaller : IUnmarshaller<UpdateTarget, XmlUnmarshallerContext>, IUnmarshaller<UpdateTarget, JsonUnmarshallerContext>
+    public class UpdateTargetUnmarshaller : IXmlUnmarshaller<UpdateTarget, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public UpdateTarget Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static UpdateTargetUnmarshaller _instance = new UpdateTargetUnmarshaller();        
 

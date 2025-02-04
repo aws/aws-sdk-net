@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LaunchTemplateInstanceMetadataOptions Object
     /// </summary>  
-    public class LaunchTemplateInstanceMetadataOptionsUnmarshaller : IUnmarshaller<LaunchTemplateInstanceMetadataOptions, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateInstanceMetadataOptions, JsonUnmarshallerContext>
+    public class LaunchTemplateInstanceMetadataOptionsUnmarshaller : IXmlUnmarshaller<LaunchTemplateInstanceMetadataOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LaunchTemplateInstanceMetadataOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LaunchTemplateInstanceMetadataOptionsUnmarshaller _instance = new LaunchTemplateInstanceMetadataOptionsUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TrafficSourceIdentifier Object
     /// </summary>  
-    public class TrafficSourceIdentifierUnmarshaller : IUnmarshaller<TrafficSourceIdentifier, XmlUnmarshallerContext>, IUnmarshaller<TrafficSourceIdentifier, JsonUnmarshallerContext>
+    public class TrafficSourceIdentifierUnmarshaller : IXmlUnmarshaller<TrafficSourceIdentifier, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TrafficSourceIdentifier Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TrafficSourceIdentifierUnmarshaller _instance = new TrafficSourceIdentifierUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VerifiedAccessEndpointPortRange Object
     /// </summary>  
-    public class VerifiedAccessEndpointPortRangeUnmarshaller : IUnmarshaller<VerifiedAccessEndpointPortRange, XmlUnmarshallerContext>, IUnmarshaller<VerifiedAccessEndpointPortRange, JsonUnmarshallerContext>
+    public class VerifiedAccessEndpointPortRangeUnmarshaller : IXmlUnmarshaller<VerifiedAccessEndpointPortRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VerifiedAccessEndpointPortRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VerifiedAccessEndpointPortRangeUnmarshaller _instance = new VerifiedAccessEndpointPortRangeUnmarshaller();        
 

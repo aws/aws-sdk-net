@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EgressOnlyInternetGateway Object
     /// </summary>  
-    public class EgressOnlyInternetGatewayUnmarshaller : IUnmarshaller<EgressOnlyInternetGateway, XmlUnmarshallerContext>, IUnmarshaller<EgressOnlyInternetGateway, JsonUnmarshallerContext>
+    public class EgressOnlyInternetGatewayUnmarshaller : IXmlUnmarshaller<EgressOnlyInternetGateway, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -92,17 +92,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EgressOnlyInternetGateway Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EgressOnlyInternetGatewayUnmarshaller _instance = new EgressOnlyInternetGatewayUnmarshaller();        
 

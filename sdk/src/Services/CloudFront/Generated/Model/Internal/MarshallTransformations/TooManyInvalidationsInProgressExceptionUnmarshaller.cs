@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyInvalidationsInProgressException operation
     /// </summary>  
-    public class TooManyInvalidationsInProgressExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyInvalidationsInProgressException, XmlUnmarshallerContext>
+    public class TooManyInvalidationsInProgressExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyInvalidationsInProgressException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

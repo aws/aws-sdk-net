@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityReservationGroup Object
     /// </summary>  
-    public class CapacityReservationGroupUnmarshaller : IUnmarshaller<CapacityReservationGroup, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationGroup, JsonUnmarshallerContext>
+    public class CapacityReservationGroupUnmarshaller : IXmlUnmarshaller<CapacityReservationGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityReservationGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityReservationGroupUnmarshaller _instance = new CapacityReservationGroupUnmarshaller();        
 

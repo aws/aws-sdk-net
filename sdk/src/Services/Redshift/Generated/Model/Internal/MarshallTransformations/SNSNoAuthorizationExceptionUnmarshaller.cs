@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SNSNoAuthorizationException operation
     /// </summary>  
-    public class SNSNoAuthorizationExceptionUnmarshaller : IErrorResponseUnmarshaller<SNSNoAuthorizationException, XmlUnmarshallerContext>
+    public class SNSNoAuthorizationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SNSNoAuthorizationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

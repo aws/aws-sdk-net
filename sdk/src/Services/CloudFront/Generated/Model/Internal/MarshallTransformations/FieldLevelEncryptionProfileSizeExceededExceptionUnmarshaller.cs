@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FieldLevelEncryptionProfileSizeExceededException operation
     /// </summary>  
-    public class FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller : IErrorResponseUnmarshaller<FieldLevelEncryptionProfileSizeExceededException, XmlUnmarshallerContext>
+    public class FieldLevelEncryptionProfileSizeExceededExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<FieldLevelEncryptionProfileSizeExceededException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

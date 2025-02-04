@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpcOriginConfig Object
     /// </summary>  
-    public class VpcOriginConfigUnmarshaller : IUnmarshaller<VpcOriginConfig, XmlUnmarshallerContext>, IUnmarshaller<VpcOriginConfig, JsonUnmarshallerContext>
+    public class VpcOriginConfigUnmarshaller : IXmlUnmarshaller<VpcOriginConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VpcOriginConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static VpcOriginConfigUnmarshaller _instance = new VpcOriginConfigUnmarshaller();        
 
         /// <summary>

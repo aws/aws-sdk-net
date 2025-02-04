@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MacHost Object
     /// </summary>  
-    public class MacHostUnmarshaller : IUnmarshaller<MacHost, XmlUnmarshallerContext>, IUnmarshaller<MacHost, JsonUnmarshallerContext>
+    public class MacHostUnmarshaller : IXmlUnmarshaller<MacHost, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MacHost Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MacHostUnmarshaller _instance = new MacHostUnmarshaller();        
 

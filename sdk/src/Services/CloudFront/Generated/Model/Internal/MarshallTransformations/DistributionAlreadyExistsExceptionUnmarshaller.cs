@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DistributionAlreadyExistsException operation
     /// </summary>  
-    public class DistributionAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<DistributionAlreadyExistsException, XmlUnmarshallerContext>
+    public class DistributionAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<DistributionAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

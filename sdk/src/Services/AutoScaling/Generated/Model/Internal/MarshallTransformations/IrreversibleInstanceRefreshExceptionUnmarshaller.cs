@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IrreversibleInstanceRefreshException operation
     /// </summary>  
-    public class IrreversibleInstanceRefreshExceptionUnmarshaller : IErrorResponseUnmarshaller<IrreversibleInstanceRefreshException, XmlUnmarshallerContext>
+    public class IrreversibleInstanceRefreshExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IrreversibleInstanceRefreshException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

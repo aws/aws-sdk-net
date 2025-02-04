@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AlarmSpecification Object
     /// </summary>  
-    public class AlarmSpecificationUnmarshaller : IUnmarshaller<AlarmSpecification, XmlUnmarshallerContext>, IUnmarshaller<AlarmSpecification, JsonUnmarshallerContext>
+    public class AlarmSpecificationUnmarshaller : IXmlUnmarshaller<AlarmSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AlarmSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AlarmSpecificationUnmarshaller _instance = new AlarmSpecificationUnmarshaller();        
 

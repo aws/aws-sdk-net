@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ImportVolumeTaskDetails Object
     /// </summary>  
-    public class ImportVolumeTaskDetailsUnmarshaller : IUnmarshaller<ImportVolumeTaskDetails, XmlUnmarshallerContext>, IUnmarshaller<ImportVolumeTaskDetails, JsonUnmarshallerContext>
+    public class ImportVolumeTaskDetailsUnmarshaller : IXmlUnmarshaller<ImportVolumeTaskDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ImportVolumeTaskDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ImportVolumeTaskDetailsUnmarshaller _instance = new ImportVolumeTaskDetailsUnmarshaller();        
 

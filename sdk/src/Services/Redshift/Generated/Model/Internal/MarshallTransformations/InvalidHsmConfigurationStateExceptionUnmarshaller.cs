@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidHsmConfigurationStateException operation
     /// </summary>  
-    public class InvalidHsmConfigurationStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidHsmConfigurationStateException, XmlUnmarshallerContext>
+    public class InvalidHsmConfigurationStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidHsmConfigurationStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

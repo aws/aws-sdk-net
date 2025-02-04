@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidRelativePathException operation
     /// </summary>  
-    public class InvalidRelativePathExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidRelativePathException, XmlUnmarshallerContext>
+    public class InvalidRelativePathExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidRelativePathException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

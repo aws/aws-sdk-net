@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StreamingDistributionNotDisabledException operation
     /// </summary>  
-    public class StreamingDistributionNotDisabledExceptionUnmarshaller : IErrorResponseUnmarshaller<StreamingDistributionNotDisabledException, XmlUnmarshallerContext>
+    public class StreamingDistributionNotDisabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StreamingDistributionNotDisabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

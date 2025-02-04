@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidGeoRestrictionParameterException operation
     /// </summary>  
-    public class InvalidGeoRestrictionParameterExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidGeoRestrictionParameterException, XmlUnmarshallerContext>
+    public class InvalidGeoRestrictionParameterExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidGeoRestrictionParameterException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

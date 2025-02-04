@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HsmClientCertificateAlreadyExistsException operation
     /// </summary>  
-    public class HsmClientCertificateAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<HsmClientCertificateAlreadyExistsException, XmlUnmarshallerContext>
+    public class HsmClientCertificateAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HsmClientCertificateAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

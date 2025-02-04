@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaximumCapacityUnits");
-                context.Writer.Write(requestObject.MaximumCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMaximumCoreCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaximumCoreCapacityUnits");
-                context.Writer.Write(requestObject.MaximumCoreCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumCoreCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMaximumOnDemandCapacityUnits())
             {
                 context.Writer.WritePropertyName("MaximumOnDemandCapacityUnits");
-                context.Writer.Write(requestObject.MaximumOnDemandCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumOnDemandCapacityUnits.Value);
             }
 
             if(requestObject.IsSetMinimumCapacityUnits())
             {
                 context.Writer.WritePropertyName("MinimumCapacityUnits");
-                context.Writer.Write(requestObject.MinimumCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumCapacityUnits.Value);
             }
 
             if(requestObject.IsSetUnitType())
             {
                 context.Writer.WritePropertyName("UnitType");
-                context.Writer.Write(requestObject.UnitType);
+                context.Writer.WriteStringValue(requestObject.UnitType);
             }
 
         }

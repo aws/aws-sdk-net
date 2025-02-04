@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DirectoryServiceAuthentication Object
     /// </summary>  
-    public class DirectoryServiceAuthenticationUnmarshaller : IUnmarshaller<DirectoryServiceAuthentication, XmlUnmarshallerContext>, IUnmarshaller<DirectoryServiceAuthentication, JsonUnmarshallerContext>
+    public class DirectoryServiceAuthenticationUnmarshaller : IXmlUnmarshaller<DirectoryServiceAuthentication, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DirectoryServiceAuthentication Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DirectoryServiceAuthenticationUnmarshaller _instance = new DirectoryServiceAuthenticationUnmarshaller();        
 

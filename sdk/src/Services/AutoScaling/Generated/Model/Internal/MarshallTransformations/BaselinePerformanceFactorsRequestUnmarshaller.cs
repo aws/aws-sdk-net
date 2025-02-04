@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BaselinePerformanceFactorsRequest Object
     /// </summary>  
-    public class BaselinePerformanceFactorsRequestUnmarshaller : IUnmarshaller<BaselinePerformanceFactorsRequest, XmlUnmarshallerContext>, IUnmarshaller<BaselinePerformanceFactorsRequest, JsonUnmarshallerContext>
+    public class BaselinePerformanceFactorsRequestUnmarshaller : IXmlUnmarshaller<BaselinePerformanceFactorsRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public BaselinePerformanceFactorsRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static BaselinePerformanceFactorsRequestUnmarshaller _instance = new BaselinePerformanceFactorsRequestUnmarshaller();        
 

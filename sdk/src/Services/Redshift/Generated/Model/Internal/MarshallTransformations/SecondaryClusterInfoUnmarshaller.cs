@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SecondaryClusterInfo Object
     /// </summary>  
-    public class SecondaryClusterInfoUnmarshaller : IUnmarshaller<SecondaryClusterInfo, XmlUnmarshallerContext>, IUnmarshaller<SecondaryClusterInfo, JsonUnmarshallerContext>
+    public class SecondaryClusterInfoUnmarshaller : IXmlUnmarshaller<SecondaryClusterInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SecondaryClusterInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SecondaryClusterInfoUnmarshaller _instance = new SecondaryClusterInfoUnmarshaller();        
 

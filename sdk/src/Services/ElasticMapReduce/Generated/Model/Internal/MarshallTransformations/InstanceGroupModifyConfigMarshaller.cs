@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConfigurations())
             {
                 context.Writer.WritePropertyName("Configurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConfigurationsListValue in requestObject.Configurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEC2InstanceIdsToTerminate())
             {
                 context.Writer.WritePropertyName("EC2InstanceIdsToTerminate");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEC2InstanceIdsToTerminateListValue in requestObject.EC2InstanceIdsToTerminate)
                 {
-                        context.Writer.Write(requestObjectEC2InstanceIdsToTerminateListValue);
+                        context.Writer.WriteStringValue(requestObjectEC2InstanceIdsToTerminateListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceGroupId())
             {
                 context.Writer.WritePropertyName("InstanceGroupId");
-                context.Writer.Write(requestObject.InstanceGroupId);
+                context.Writer.WriteStringValue(requestObject.InstanceGroupId);
             }
 
             if(requestObject.IsSetReconfigurationType())
             {
                 context.Writer.WritePropertyName("ReconfigurationType");
-                context.Writer.Write(requestObject.ReconfigurationType);
+                context.Writer.WriteStringValue(requestObject.ReconfigurationType);
             }
 
             if(requestObject.IsSetShrinkPolicy())
             {
                 context.Writer.WritePropertyName("ShrinkPolicy");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ShrinkPolicyMarshaller.Instance;
                 marshaller.Marshall(requestObject.ShrinkPolicy, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

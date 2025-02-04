@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ScheduleDefinitionTypeUnsupportedException operation
     /// </summary>  
-    public class ScheduleDefinitionTypeUnsupportedExceptionUnmarshaller : IErrorResponseUnmarshaller<ScheduleDefinitionTypeUnsupportedException, XmlUnmarshallerContext>
+    public class ScheduleDefinitionTypeUnsupportedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ScheduleDefinitionTypeUnsupportedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

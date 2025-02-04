@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAccess())
             {
                 context.Writer.WritePropertyName("Access");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAccessListValue in requestObject.Access)
                 {
-                        context.Writer.Write(requestObjectAccessListValue);
+                        context.Writer.WriteStringValue(requestObjectAccessListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetGrantee())
             {
                 context.Writer.WritePropertyName("Grantee");
-                context.Writer.Write(requestObject.Grantee);
+                context.Writer.WriteStringValue(requestObject.Grantee);
             }
 
             if(requestObject.IsSetGranteeType())
             {
                 context.Writer.WritePropertyName("GranteeType");
-                context.Writer.Write(requestObject.GranteeType);
+                context.Writer.WriteStringValue(requestObject.GranteeType);
             }
 
         }

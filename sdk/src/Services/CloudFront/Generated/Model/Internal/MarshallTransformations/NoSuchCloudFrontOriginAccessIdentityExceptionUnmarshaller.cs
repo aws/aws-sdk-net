@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchCloudFrontOriginAccessIdentityException operation
     /// </summary>  
-    public class NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchCloudFrontOriginAccessIdentityException, XmlUnmarshallerContext>
+    public class NoSuchCloudFrontOriginAccessIdentityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchCloudFrontOriginAccessIdentityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

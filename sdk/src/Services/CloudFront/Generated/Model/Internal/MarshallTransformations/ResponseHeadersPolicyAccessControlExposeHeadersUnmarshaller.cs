@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResponseHeadersPolicyAccessControlExposeHeaders Object
     /// </summary>  
-    public class ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller : IUnmarshaller<ResponseHeadersPolicyAccessControlExposeHeaders, XmlUnmarshallerContext>, IUnmarshaller<ResponseHeadersPolicyAccessControlExposeHeaders, JsonUnmarshallerContext>
+    public class ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller : IXmlUnmarshaller<ResponseHeadersPolicyAccessControlExposeHeaders, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,17 +80,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResponseHeadersPolicyAccessControlExposeHeaders Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller _instance = new ResponseHeadersPolicyAccessControlExposeHeadersUnmarshaller();        
 
         /// <summary>

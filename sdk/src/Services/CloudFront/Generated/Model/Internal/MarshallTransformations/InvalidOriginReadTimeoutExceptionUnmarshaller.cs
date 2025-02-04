@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidOriginReadTimeoutException operation
     /// </summary>  
-    public class InvalidOriginReadTimeoutExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidOriginReadTimeoutException, XmlUnmarshallerContext>
+    public class InvalidOriginReadTimeoutExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidOriginReadTimeoutException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

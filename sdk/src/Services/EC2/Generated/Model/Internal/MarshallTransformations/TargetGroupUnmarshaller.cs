@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetGroup Object
     /// </summary>  
-    public class TargetGroupUnmarshaller : IUnmarshaller<TargetGroup, XmlUnmarshallerContext>, IUnmarshaller<TargetGroup, JsonUnmarshallerContext>
+    public class TargetGroupUnmarshaller : IXmlUnmarshaller<TargetGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TargetGroupUnmarshaller _instance = new TargetGroupUnmarshaller();        
 

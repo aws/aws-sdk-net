@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceContentionException operation
     /// </summary>  
-    public class ResourceContentionExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceContentionException, XmlUnmarshallerContext>
+    public class ResourceContentionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceContentionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

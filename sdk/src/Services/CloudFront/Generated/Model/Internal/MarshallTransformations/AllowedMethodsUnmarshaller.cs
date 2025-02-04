@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AllowedMethods Object
     /// </summary>  
-    public class AllowedMethodsUnmarshaller : IUnmarshaller<AllowedMethods, XmlUnmarshallerContext>, IUnmarshaller<AllowedMethods, JsonUnmarshallerContext>
+    public class AllowedMethodsUnmarshaller : IXmlUnmarshaller<AllowedMethods, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,17 +86,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AllowedMethods Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static AllowedMethodsUnmarshaller _instance = new AllowedMethodsUnmarshaller();        
 
         /// <summary>

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PciId Object
     /// </summary>  
-    public class PciIdUnmarshaller : IUnmarshaller<PciId, XmlUnmarshallerContext>, IUnmarshaller<PciId, JsonUnmarshallerContext>
+    public class PciIdUnmarshaller : IXmlUnmarshaller<PciId, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PciId Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PciIdUnmarshaller _instance = new PciIdUnmarshaller();        
 

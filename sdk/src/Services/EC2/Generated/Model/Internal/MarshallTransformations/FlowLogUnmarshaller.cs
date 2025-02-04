@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FlowLog Object
     /// </summary>  
-    public class FlowLogUnmarshaller : IUnmarshaller<FlowLog, XmlUnmarshallerContext>, IUnmarshaller<FlowLog, JsonUnmarshallerContext>
+    public class FlowLogUnmarshaller : IXmlUnmarshaller<FlowLog, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -165,17 +165,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FlowLog Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FlowLogUnmarshaller _instance = new FlowLogUnmarshaller();        
 

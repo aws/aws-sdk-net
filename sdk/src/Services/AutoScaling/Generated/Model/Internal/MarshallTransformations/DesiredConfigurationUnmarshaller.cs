@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DesiredConfiguration Object
     /// </summary>  
-    public class DesiredConfigurationUnmarshaller : IUnmarshaller<DesiredConfiguration, XmlUnmarshallerContext>, IUnmarshaller<DesiredConfiguration, JsonUnmarshallerContext>
+    public class DesiredConfigurationUnmarshaller : IXmlUnmarshaller<DesiredConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DesiredConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DesiredConfigurationUnmarshaller _instance = new DesiredConfigurationUnmarshaller();        
 

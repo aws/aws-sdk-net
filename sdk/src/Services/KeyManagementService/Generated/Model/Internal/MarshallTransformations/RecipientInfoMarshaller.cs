@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttestationDocument())
             {
                 context.Writer.WritePropertyName("AttestationDocument");
-                context.Writer.Write(StringUtils.FromMemoryStream(requestObject.AttestationDocument));
+                context.Writer.WriteStringValue(StringUtils.FromMemoryStream(requestObject.AttestationDocument));
             }
 
             if(requestObject.IsSetKeyEncryptionAlgorithm())
             {
                 context.Writer.WritePropertyName("KeyEncryptionAlgorithm");
-                context.Writer.Write(requestObject.KeyEncryptionAlgorithm);
+                context.Writer.WriteStringValue(requestObject.KeyEncryptionAlgorithm);
             }
 
         }

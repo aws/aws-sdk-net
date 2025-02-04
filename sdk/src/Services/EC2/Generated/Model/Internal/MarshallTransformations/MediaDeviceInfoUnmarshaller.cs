@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MediaDeviceInfo Object
     /// </summary>  
-    public class MediaDeviceInfoUnmarshaller : IUnmarshaller<MediaDeviceInfo, XmlUnmarshallerContext>, IUnmarshaller<MediaDeviceInfo, JsonUnmarshallerContext>
+    public class MediaDeviceInfoUnmarshaller : IXmlUnmarshaller<MediaDeviceInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MediaDeviceInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MediaDeviceInfoUnmarshaller _instance = new MediaDeviceInfoUnmarshaller();        
 

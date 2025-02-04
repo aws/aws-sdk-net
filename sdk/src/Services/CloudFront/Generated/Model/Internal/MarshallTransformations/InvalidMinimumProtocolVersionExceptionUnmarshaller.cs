@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidMinimumProtocolVersionException operation
     /// </summary>  
-    public class InvalidMinimumProtocolVersionExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidMinimumProtocolVersionException, XmlUnmarshallerContext>
+    public class InvalidMinimumProtocolVersionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidMinimumProtocolVersionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

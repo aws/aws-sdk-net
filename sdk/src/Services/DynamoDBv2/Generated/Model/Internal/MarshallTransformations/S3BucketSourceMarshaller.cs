@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,19 +49,19 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetS3Bucket())
             {
                 context.Writer.WritePropertyName("S3Bucket");
-                context.Writer.Write(requestObject.S3Bucket);
+                context.Writer.WriteStringValue(requestObject.S3Bucket);
             }
 
             if(requestObject.IsSetS3BucketOwner())
             {
                 context.Writer.WritePropertyName("S3BucketOwner");
-                context.Writer.Write(requestObject.S3BucketOwner);
+                context.Writer.WriteStringValue(requestObject.S3BucketOwner);
             }
 
             if(requestObject.IsSetS3KeyPrefix())
             {
                 context.Writer.WritePropertyName("S3KeyPrefix");
-                context.Writer.Write(requestObject.S3KeyPrefix);
+                context.Writer.WriteStringValue(requestObject.S3KeyPrefix);
             }
 
         }

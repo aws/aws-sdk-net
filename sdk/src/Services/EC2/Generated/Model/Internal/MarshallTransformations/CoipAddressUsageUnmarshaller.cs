@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CoipAddressUsage Object
     /// </summary>  
-    public class CoipAddressUsageUnmarshaller : IUnmarshaller<CoipAddressUsage, XmlUnmarshallerContext>, IUnmarshaller<CoipAddressUsage, JsonUnmarshallerContext>
+    public class CoipAddressUsageUnmarshaller : IXmlUnmarshaller<CoipAddressUsage, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CoipAddressUsage Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CoipAddressUsageUnmarshaller _instance = new CoipAddressUsageUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterOnLatestRevisionException operation
     /// </summary>  
-    public class ClusterOnLatestRevisionExceptionUnmarshaller : IErrorResponseUnmarshaller<ClusterOnLatestRevisionException, XmlUnmarshallerContext>
+    public class ClusterOnLatestRevisionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ClusterOnLatestRevisionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

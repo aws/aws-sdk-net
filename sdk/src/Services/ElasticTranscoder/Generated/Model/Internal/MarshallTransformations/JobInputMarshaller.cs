@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,81 +49,81 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAspectRatio())
             {
                 context.Writer.WritePropertyName("AspectRatio");
-                context.Writer.Write(requestObject.AspectRatio);
+                context.Writer.WriteStringValue(requestObject.AspectRatio);
             }
 
             if(requestObject.IsSetContainer())
             {
                 context.Writer.WritePropertyName("Container");
-                context.Writer.Write(requestObject.Container);
+                context.Writer.WriteStringValue(requestObject.Container);
             }
 
             if(requestObject.IsSetDetectedProperties())
             {
                 context.Writer.WritePropertyName("DetectedProperties");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = DetectedPropertiesMarshaller.Instance;
                 marshaller.Marshall(requestObject.DetectedProperties, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("Encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetFrameRate())
             {
                 context.Writer.WritePropertyName("FrameRate");
-                context.Writer.Write(requestObject.FrameRate);
+                context.Writer.WriteStringValue(requestObject.FrameRate);
             }
 
             if(requestObject.IsSetInputCaptions())
             {
                 context.Writer.WritePropertyName("InputCaptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = InputCaptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.InputCaptions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInterlaced())
             {
                 context.Writer.WritePropertyName("Interlaced");
-                context.Writer.Write(requestObject.Interlaced);
+                context.Writer.WriteStringValue(requestObject.Interlaced);
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetResolution())
             {
                 context.Writer.WritePropertyName("Resolution");
-                context.Writer.Write(requestObject.Resolution);
+                context.Writer.WriteStringValue(requestObject.Resolution);
             }
 
             if(requestObject.IsSetTimeSpan())
             {
                 context.Writer.WritePropertyName("TimeSpan");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = TimeSpanMarshaller.Instance;
                 marshaller.Marshall(requestObject.TimeSpan, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

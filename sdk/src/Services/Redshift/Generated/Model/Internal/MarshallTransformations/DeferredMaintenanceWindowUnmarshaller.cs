@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DeferredMaintenanceWindow Object
     /// </summary>  
-    public class DeferredMaintenanceWindowUnmarshaller : IUnmarshaller<DeferredMaintenanceWindow, XmlUnmarshallerContext>, IUnmarshaller<DeferredMaintenanceWindow, JsonUnmarshallerContext>
+    public class DeferredMaintenanceWindowUnmarshaller : IXmlUnmarshaller<DeferredMaintenanceWindow, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DeferredMaintenanceWindow Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DeferredMaintenanceWindowUnmarshaller _instance = new DeferredMaintenanceWindowUnmarshaller();        
 

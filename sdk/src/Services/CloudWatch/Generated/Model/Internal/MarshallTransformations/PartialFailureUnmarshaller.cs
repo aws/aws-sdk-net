@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PartialFailure Object
     /// </summary>  
-    public class PartialFailureUnmarshaller : IUnmarshaller<PartialFailure, XmlUnmarshallerContext>, IUnmarshaller<PartialFailure, JsonUnmarshallerContext>
+    public class PartialFailureUnmarshaller : IXmlUnmarshaller<PartialFailure, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PartialFailure Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PartialFailureUnmarshaller _instance = new PartialFailureUnmarshaller();        
 

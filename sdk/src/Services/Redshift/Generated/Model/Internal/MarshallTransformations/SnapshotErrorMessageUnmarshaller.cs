@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotErrorMessage Object
     /// </summary>  
-    public class SnapshotErrorMessageUnmarshaller : IUnmarshaller<SnapshotErrorMessage, XmlUnmarshallerContext>, IUnmarshaller<SnapshotErrorMessage, JsonUnmarshallerContext>
+    public class SnapshotErrorMessageUnmarshaller : IXmlUnmarshaller<SnapshotErrorMessage, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SnapshotErrorMessage Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SnapshotErrorMessageUnmarshaller _instance = new SnapshotErrorMessageUnmarshaller();        
 

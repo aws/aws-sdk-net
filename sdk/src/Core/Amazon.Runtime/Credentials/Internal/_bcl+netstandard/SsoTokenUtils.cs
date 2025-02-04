@@ -167,19 +167,19 @@ namespace Amazon.Runtime.Credentials.Internal
                 token.RefreshToken = refreshTokenElement.GetString();
 
             if (jsonData.TryGetProperty(JsonPropertyNames.ClientId, out JsonElement clientIdElement))
-                token.ClientId = refreshTokenElement.GetString();
+                token.ClientId = clientIdElement.GetString();
 
             if (jsonData.TryGetProperty(JsonPropertyNames.ClientSecret, out JsonElement clientSecretElement))
-                token.ClientSecret = refreshTokenElement.GetString();
+                token.ClientSecret = clientSecretElement.GetString();
 
             if (jsonData.TryGetProperty(JsonPropertyNames.RegistrationExpiresAt, out JsonElement registrationExpiresAtElement))
-                token.RegistrationExpiresAt = refreshTokenElement.GetString();
+                token.RegistrationExpiresAt = registrationExpiresAtElement.GetString();
 
             if (jsonData.TryGetProperty(JsonPropertyNames.Region, out JsonElement regionElement))
-                token.Region = refreshTokenElement.GetString();
+                token.Region = regionElement.GetString();
 
             if (jsonData.TryGetProperty(JsonPropertyNames.StartUrl, out JsonElement startUrlElement))
-                token.StartUrl = refreshTokenElement.GetString();
+                token.StartUrl = startUrlElement.GetString();
 
             return token;
         }

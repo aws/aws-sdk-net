@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientClusterCapacityException operation
     /// </summary>  
-    public class InsufficientClusterCapacityExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientClusterCapacityException, XmlUnmarshallerContext>
+    public class InsufficientClusterCapacityExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientClusterCapacityException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

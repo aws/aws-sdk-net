@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpcSecurityGroupMembership Object
     /// </summary>  
-    public class VpcSecurityGroupMembershipUnmarshaller : IUnmarshaller<VpcSecurityGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<VpcSecurityGroupMembership, JsonUnmarshallerContext>
+    public class VpcSecurityGroupMembershipUnmarshaller : IXmlUnmarshaller<VpcSecurityGroupMembership, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VpcSecurityGroupMembership Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VpcSecurityGroupMembershipUnmarshaller _instance = new VpcSecurityGroupMembershipUnmarshaller();        
 

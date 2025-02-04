@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceAttachmentEnaSrdSpecification Object
     /// </summary>  
-    public class InstanceAttachmentEnaSrdSpecificationUnmarshaller : IUnmarshaller<InstanceAttachmentEnaSrdSpecification, XmlUnmarshallerContext>, IUnmarshaller<InstanceAttachmentEnaSrdSpecification, JsonUnmarshallerContext>
+    public class InstanceAttachmentEnaSrdSpecificationUnmarshaller : IXmlUnmarshaller<InstanceAttachmentEnaSrdSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceAttachmentEnaSrdSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceAttachmentEnaSrdSpecificationUnmarshaller _instance = new InstanceAttachmentEnaSrdSpecificationUnmarshaller();        
 

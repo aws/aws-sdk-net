@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PeeringAttachmentStatus Object
     /// </summary>  
-    public class PeeringAttachmentStatusUnmarshaller : IUnmarshaller<PeeringAttachmentStatus, XmlUnmarshallerContext>, IUnmarshaller<PeeringAttachmentStatus, JsonUnmarshallerContext>
+    public class PeeringAttachmentStatusUnmarshaller : IXmlUnmarshaller<PeeringAttachmentStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PeeringAttachmentStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PeeringAttachmentStatusUnmarshaller _instance = new PeeringAttachmentStatusUnmarshaller();        
 

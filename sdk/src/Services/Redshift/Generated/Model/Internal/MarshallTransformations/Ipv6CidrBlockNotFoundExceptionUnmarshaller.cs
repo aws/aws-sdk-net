@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ipv6CidrBlockNotFoundException operation
     /// </summary>  
-    public class Ipv6CidrBlockNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<Ipv6CidrBlockNotFoundException, XmlUnmarshallerContext>
+    public class Ipv6CidrBlockNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<Ipv6CidrBlockNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterSecurityGroupMembership Object
     /// </summary>  
-    public class ClusterSecurityGroupMembershipUnmarshaller : IUnmarshaller<ClusterSecurityGroupMembership, XmlUnmarshallerContext>, IUnmarshaller<ClusterSecurityGroupMembership, JsonUnmarshallerContext>
+    public class ClusterSecurityGroupMembershipUnmarshaller : IXmlUnmarshaller<ClusterSecurityGroupMembership, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClusterSecurityGroupMembership Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClusterSecurityGroupMembershipUnmarshaller _instance = new ClusterSecurityGroupMembershipUnmarshaller();        
 

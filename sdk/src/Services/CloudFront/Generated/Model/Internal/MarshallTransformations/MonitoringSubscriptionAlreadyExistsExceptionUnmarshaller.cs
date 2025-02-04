@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MonitoringSubscriptionAlreadyExistsException operation
     /// </summary>  
-    public class MonitoringSubscriptionAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<MonitoringSubscriptionAlreadyExistsException, XmlUnmarshallerContext>
+    public class MonitoringSubscriptionAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<MonitoringSubscriptionAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

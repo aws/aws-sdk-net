@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConversionTask Object
     /// </summary>  
-    public class ConversionTaskUnmarshaller : IUnmarshaller<ConversionTask, XmlUnmarshallerContext>, IUnmarshaller<ConversionTask, JsonUnmarshallerContext>
+    public class ConversionTaskUnmarshaller : IXmlUnmarshaller<ConversionTask, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -111,17 +111,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConversionTask Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ConversionTaskUnmarshaller _instance = new ConversionTaskUnmarshaller();        
 

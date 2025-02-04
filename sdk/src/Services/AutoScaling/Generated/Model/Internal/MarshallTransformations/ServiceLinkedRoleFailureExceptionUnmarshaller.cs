@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ServiceLinkedRoleFailureException operation
     /// </summary>  
-    public class ServiceLinkedRoleFailureExceptionUnmarshaller : IErrorResponseUnmarshaller<ServiceLinkedRoleFailureException, XmlUnmarshallerContext>
+    public class ServiceLinkedRoleFailureExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ServiceLinkedRoleFailureException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

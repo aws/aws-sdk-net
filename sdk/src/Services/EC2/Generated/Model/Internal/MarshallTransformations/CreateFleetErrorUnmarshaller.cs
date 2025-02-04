@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CreateFleetError Object
     /// </summary>  
-    public class CreateFleetErrorUnmarshaller : IUnmarshaller<CreateFleetError, XmlUnmarshallerContext>, IUnmarshaller<CreateFleetError, JsonUnmarshallerContext>
+    public class CreateFleetErrorUnmarshaller : IXmlUnmarshaller<CreateFleetError, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CreateFleetError Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CreateFleetErrorUnmarshaller _instance = new CreateFleetErrorUnmarshaller();        
 

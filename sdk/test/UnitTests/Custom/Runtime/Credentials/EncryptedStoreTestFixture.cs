@@ -101,6 +101,11 @@ namespace AWSSDK.UnitTests
             Assert.AreEqual(fileContents.Trim(), File.ReadAllText(Path.Combine(DirectoryPath, filename)).Trim());
         }
 
+        public void AssertFileContentsIgnoreWhitespace(string filename, string fileContents)
+        {
+            Assert.AreEqual(fileContents.Replace(" ", ""), File.ReadAllText(Path.Combine(DirectoryPath, filename)).Replace(" ",""));
+        }
+
         public void AssertObjectCount(int expectedCount)
         {
             AssertObjectCount(MainFilename, expectedCount);

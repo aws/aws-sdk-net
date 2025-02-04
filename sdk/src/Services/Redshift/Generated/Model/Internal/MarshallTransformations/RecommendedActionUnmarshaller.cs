@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RecommendedAction Object
     /// </summary>  
-    public class RecommendedActionUnmarshaller : IUnmarshaller<RecommendedAction, XmlUnmarshallerContext>, IUnmarshaller<RecommendedAction, JsonUnmarshallerContext>
+    public class RecommendedActionUnmarshaller : IXmlUnmarshaller<RecommendedAction, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RecommendedAction Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RecommendedActionUnmarshaller _instance = new RecommendedActionUnmarshaller();        
 

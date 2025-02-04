@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AsnAssociation Object
     /// </summary>  
-    public class AsnAssociationUnmarshaller : IUnmarshaller<AsnAssociation, XmlUnmarshallerContext>, IUnmarshaller<AsnAssociation, JsonUnmarshallerContext>
+    public class AsnAssociationUnmarshaller : IXmlUnmarshaller<AsnAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AsnAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AsnAssociationUnmarshaller _instance = new AsnAssociationUnmarshaller();        
 

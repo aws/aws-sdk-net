@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HostReservation Object
     /// </summary>  
-    public class HostReservationUnmarshaller : IUnmarshaller<HostReservation, XmlUnmarshallerContext>, IUnmarshaller<HostReservation, JsonUnmarshallerContext>
+    public class HostReservationUnmarshaller : IXmlUnmarshaller<HostReservation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -158,17 +158,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public HostReservation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static HostReservationUnmarshaller _instance = new HostReservationUnmarshaller();        
 

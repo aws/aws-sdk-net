@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMarket())
             {
                 context.Writer.WritePropertyName("Market");
-                context.Writer.Write(requestObject.Market);
+                context.Writer.WriteStringValue(requestObject.Market);
             }
 
             if(requestObject.IsSetSimpleScalingPolicyConfiguration())
             {
                 context.Writer.WritePropertyName("SimpleScalingPolicyConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SimpleScalingPolicyConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SimpleScalingPolicyConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

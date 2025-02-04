@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FirewallStatefulRule Object
     /// </summary>  
-    public class FirewallStatefulRuleUnmarshaller : IUnmarshaller<FirewallStatefulRule, XmlUnmarshallerContext>, IUnmarshaller<FirewallStatefulRule, JsonUnmarshallerContext>
+    public class FirewallStatefulRuleUnmarshaller : IXmlUnmarshaller<FirewallStatefulRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -132,17 +132,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FirewallStatefulRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FirewallStatefulRuleUnmarshaller _instance = new FirewallStatefulRuleUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VolumeStatusAttachmentStatus Object
     /// </summary>  
-    public class VolumeStatusAttachmentStatusUnmarshaller : IUnmarshaller<VolumeStatusAttachmentStatus, XmlUnmarshallerContext>, IUnmarshaller<VolumeStatusAttachmentStatus, JsonUnmarshallerContext>
+    public class VolumeStatusAttachmentStatusUnmarshaller : IXmlUnmarshaller<VolumeStatusAttachmentStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VolumeStatusAttachmentStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VolumeStatusAttachmentStatusUnmarshaller _instance = new VolumeStatusAttachmentStatusUnmarshaller();        
 

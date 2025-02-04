@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,49 +49,49 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAspectRatio())
             {
                 context.Writer.WritePropertyName("AspectRatio");
-                context.Writer.Write(requestObject.AspectRatio);
+                context.Writer.WriteStringValue(requestObject.AspectRatio);
             }
 
             if(requestObject.IsSetFormat())
             {
                 context.Writer.WritePropertyName("Format");
-                context.Writer.Write(requestObject.Format);
+                context.Writer.WriteStringValue(requestObject.Format);
             }
 
             if(requestObject.IsSetInterval())
             {
                 context.Writer.WritePropertyName("Interval");
-                context.Writer.Write(requestObject.Interval);
+                context.Writer.WriteStringValue(requestObject.Interval);
             }
 
             if(requestObject.IsSetMaxHeight())
             {
                 context.Writer.WritePropertyName("MaxHeight");
-                context.Writer.Write(requestObject.MaxHeight);
+                context.Writer.WriteStringValue(requestObject.MaxHeight);
             }
 
             if(requestObject.IsSetMaxWidth())
             {
                 context.Writer.WritePropertyName("MaxWidth");
-                context.Writer.Write(requestObject.MaxWidth);
+                context.Writer.WriteStringValue(requestObject.MaxWidth);
             }
 
             if(requestObject.IsSetPaddingPolicy())
             {
                 context.Writer.WritePropertyName("PaddingPolicy");
-                context.Writer.Write(requestObject.PaddingPolicy);
+                context.Writer.WriteStringValue(requestObject.PaddingPolicy);
             }
 
             if(requestObject.IsSetResolution())
             {
                 context.Writer.WritePropertyName("Resolution");
-                context.Writer.Write(requestObject.Resolution);
+                context.Writer.WriteStringValue(requestObject.Resolution);
             }
 
             if(requestObject.IsSetSizingPolicy())
             {
                 context.Writer.WritePropertyName("SizingPolicy");
-                context.Writer.Write(requestObject.SizingPolicy);
+                context.Writer.WriteStringValue(requestObject.SizingPolicy);
             }
 
         }

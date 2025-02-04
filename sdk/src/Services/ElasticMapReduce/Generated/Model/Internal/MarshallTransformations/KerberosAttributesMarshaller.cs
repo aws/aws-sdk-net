@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetADDomainJoinPassword())
             {
                 context.Writer.WritePropertyName("ADDomainJoinPassword");
-                context.Writer.Write(requestObject.ADDomainJoinPassword);
+                context.Writer.WriteStringValue(requestObject.ADDomainJoinPassword);
             }
 
             if(requestObject.IsSetADDomainJoinUser())
             {
                 context.Writer.WritePropertyName("ADDomainJoinUser");
-                context.Writer.Write(requestObject.ADDomainJoinUser);
+                context.Writer.WriteStringValue(requestObject.ADDomainJoinUser);
             }
 
             if(requestObject.IsSetCrossRealmTrustPrincipalPassword())
             {
                 context.Writer.WritePropertyName("CrossRealmTrustPrincipalPassword");
-                context.Writer.Write(requestObject.CrossRealmTrustPrincipalPassword);
+                context.Writer.WriteStringValue(requestObject.CrossRealmTrustPrincipalPassword);
             }
 
             if(requestObject.IsSetKdcAdminPassword())
             {
                 context.Writer.WritePropertyName("KdcAdminPassword");
-                context.Writer.Write(requestObject.KdcAdminPassword);
+                context.Writer.WriteStringValue(requestObject.KdcAdminPassword);
             }
 
             if(requestObject.IsSetRealm())
             {
                 context.Writer.WritePropertyName("Realm");
-                context.Writer.Write(requestObject.Realm);
+                context.Writer.WriteStringValue(requestObject.Realm);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BlockPublicAccessStates Object
     /// </summary>  
-    public class BlockPublicAccessStatesUnmarshaller : IUnmarshaller<BlockPublicAccessStates, XmlUnmarshallerContext>, IUnmarshaller<BlockPublicAccessStates, JsonUnmarshallerContext>
+    public class BlockPublicAccessStatesUnmarshaller : IXmlUnmarshaller<BlockPublicAccessStates, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public BlockPublicAccessStates Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static BlockPublicAccessStatesUnmarshaller _instance = new BlockPublicAccessStatesUnmarshaller();        
 

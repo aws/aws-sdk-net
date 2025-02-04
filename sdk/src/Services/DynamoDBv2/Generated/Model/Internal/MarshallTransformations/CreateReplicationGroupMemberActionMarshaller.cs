@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,57 +49,57 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetGlobalSecondaryIndexes())
             {
                 context.Writer.WritePropertyName("GlobalSecondaryIndexes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGlobalSecondaryIndexesListValue in requestObject.GlobalSecondaryIndexes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ReplicaGlobalSecondaryIndexMarshaller.Instance;
                     marshaller.Marshall(requestObjectGlobalSecondaryIndexesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKMSMasterKeyId())
             {
                 context.Writer.WritePropertyName("KMSMasterKeyId");
-                context.Writer.Write(requestObject.KMSMasterKeyId);
+                context.Writer.WriteStringValue(requestObject.KMSMasterKeyId);
             }
 
             if(requestObject.IsSetOnDemandThroughputOverride())
             {
                 context.Writer.WritePropertyName("OnDemandThroughputOverride");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OnDemandThroughputOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnDemandThroughputOverride, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProvisionedThroughputOverride())
             {
                 context.Writer.WritePropertyName("ProvisionedThroughputOverride");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProvisionedThroughputOverrideMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionedThroughputOverride, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetRegionName())
             {
                 context.Writer.WritePropertyName("RegionName");
-                context.Writer.Write(requestObject.RegionName);
+                context.Writer.WriteStringValue(requestObject.RegionName);
             }
 
             if(requestObject.IsSetTableClassOverride())
             {
                 context.Writer.WritePropertyName("TableClassOverride");
-                context.Writer.Write(requestObject.TableClassOverride);
+                context.Writer.WriteStringValue(requestObject.TableClassOverride);
             }
 
         }

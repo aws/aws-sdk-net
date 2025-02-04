@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PortRange Object
     /// </summary>  
-    public class PortRangeUnmarshaller : IUnmarshaller<PortRange, XmlUnmarshallerContext>, IUnmarshaller<PortRange, JsonUnmarshallerContext>
+    public class PortRangeUnmarshaller : IXmlUnmarshaller<PortRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PortRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PortRangeUnmarshaller _instance = new PortRangeUnmarshaller();        
 

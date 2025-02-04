@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotScheduleUpdateInProgressException operation
     /// </summary>  
-    public class SnapshotScheduleUpdateInProgressExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotScheduleUpdateInProgressException, XmlUnmarshallerContext>
+    public class SnapshotScheduleUpdateInProgressExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotScheduleUpdateInProgressException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

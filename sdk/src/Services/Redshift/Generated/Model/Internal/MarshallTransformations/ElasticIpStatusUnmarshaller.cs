@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ElasticIpStatus Object
     /// </summary>  
-    public class ElasticIpStatusUnmarshaller : IUnmarshaller<ElasticIpStatus, XmlUnmarshallerContext>, IUnmarshaller<ElasticIpStatus, JsonUnmarshallerContext>
+    public class ElasticIpStatusUnmarshaller : IXmlUnmarshaller<ElasticIpStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ElasticIpStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ElasticIpStatusUnmarshaller _instance = new ElasticIpStatusUnmarshaller();        
 

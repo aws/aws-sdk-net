@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ManagedPrefixList Object
     /// </summary>  
-    public class ManagedPrefixListUnmarshaller : IUnmarshaller<ManagedPrefixList, XmlUnmarshallerContext>, IUnmarshaller<ManagedPrefixList, JsonUnmarshallerContext>
+    public class ManagedPrefixListUnmarshaller : IXmlUnmarshaller<ManagedPrefixList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -129,17 +129,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ManagedPrefixList Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ManagedPrefixListUnmarshaller _instance = new ManagedPrefixListUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NotificationConfiguration Object
     /// </summary>  
-    public class NotificationConfigurationUnmarshaller : IUnmarshaller<NotificationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<NotificationConfiguration, JsonUnmarshallerContext>
+    public class NotificationConfigurationUnmarshaller : IXmlUnmarshaller<NotificationConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NotificationConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NotificationConfigurationUnmarshaller _instance = new NotificationConfigurationUnmarshaller();        
 

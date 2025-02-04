@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EndPoint Object
     /// </summary>  
-    public class EndPointUnmarshaller : IUnmarshaller<EndPoint, XmlUnmarshallerContext>, IUnmarshaller<EndPoint, JsonUnmarshallerContext>
+    public class EndPointUnmarshaller : IXmlUnmarshaller<EndPoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EndPoint Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static EndPointUnmarshaller _instance = new EndPointUnmarshaller();        
 
         /// <summary>

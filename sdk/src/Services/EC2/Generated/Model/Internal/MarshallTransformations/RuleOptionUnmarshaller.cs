@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RuleOption Object
     /// </summary>  
-    public class RuleOptionUnmarshaller : IUnmarshaller<RuleOption, XmlUnmarshallerContext>, IUnmarshaller<RuleOption, JsonUnmarshallerContext>
+    public class RuleOptionUnmarshaller : IXmlUnmarshaller<RuleOption, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RuleOption Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RuleOptionUnmarshaller _instance = new RuleOptionUnmarshaller();        
 

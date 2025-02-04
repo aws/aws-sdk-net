@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayMulticastDomainAssociation Object
     /// </summary>  
-    public class TransitGatewayMulticastDomainAssociationUnmarshaller : IUnmarshaller<TransitGatewayMulticastDomainAssociation, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayMulticastDomainAssociation, JsonUnmarshallerContext>
+    public class TransitGatewayMulticastDomainAssociationUnmarshaller : IXmlUnmarshaller<TransitGatewayMulticastDomainAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayMulticastDomainAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayMulticastDomainAssociationUnmarshaller _instance = new TransitGatewayMulticastDomainAssociationUnmarshaller();        
 

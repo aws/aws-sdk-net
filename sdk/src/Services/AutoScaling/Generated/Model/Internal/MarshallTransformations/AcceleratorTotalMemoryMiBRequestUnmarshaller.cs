@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AcceleratorTotalMemoryMiBRequest Object
     /// </summary>  
-    public class AcceleratorTotalMemoryMiBRequestUnmarshaller : IUnmarshaller<AcceleratorTotalMemoryMiBRequest, XmlUnmarshallerContext>, IUnmarshaller<AcceleratorTotalMemoryMiBRequest, JsonUnmarshallerContext>
+    public class AcceleratorTotalMemoryMiBRequestUnmarshaller : IXmlUnmarshaller<AcceleratorTotalMemoryMiBRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AcceleratorTotalMemoryMiBRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AcceleratorTotalMemoryMiBRequestUnmarshaller _instance = new AcceleratorTotalMemoryMiBRequestUnmarshaller();        
 

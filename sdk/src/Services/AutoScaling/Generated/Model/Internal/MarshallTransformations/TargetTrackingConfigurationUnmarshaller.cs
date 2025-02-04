@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TargetTrackingConfiguration Object
     /// </summary>  
-    public class TargetTrackingConfigurationUnmarshaller : IUnmarshaller<TargetTrackingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TargetTrackingConfiguration, JsonUnmarshallerContext>
+    public class TargetTrackingConfigurationUnmarshaller : IXmlUnmarshaller<TargetTrackingConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TargetTrackingConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TargetTrackingConfigurationUnmarshaller _instance = new TargetTrackingConfigurationUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RecurringCharge Object
     /// </summary>  
-    public class RecurringChargeUnmarshaller : IUnmarshaller<RecurringCharge, XmlUnmarshallerContext>, IUnmarshaller<RecurringCharge, JsonUnmarshallerContext>
+    public class RecurringChargeUnmarshaller : IXmlUnmarshaller<RecurringCharge, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RecurringCharge Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RecurringChargeUnmarshaller _instance = new RecurringChargeUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CancelledSpotInstanceRequest Object
     /// </summary>  
-    public class CancelledSpotInstanceRequestUnmarshaller : IUnmarshaller<CancelledSpotInstanceRequest, XmlUnmarshallerContext>, IUnmarshaller<CancelledSpotInstanceRequest, JsonUnmarshallerContext>
+    public class CancelledSpotInstanceRequestUnmarshaller : IXmlUnmarshaller<CancelledSpotInstanceRequest, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CancelledSpotInstanceRequest Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CancelledSpotInstanceRequestUnmarshaller _instance = new CancelledSpotInstanceRequestUnmarshaller();        
 

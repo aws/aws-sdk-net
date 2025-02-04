@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SpotOptions Object
     /// </summary>  
-    public class SpotOptionsUnmarshaller : IUnmarshaller<SpotOptions, XmlUnmarshallerContext>, IUnmarshaller<SpotOptions, JsonUnmarshallerContext>
+    public class SpotOptionsUnmarshaller : IXmlUnmarshaller<SpotOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SpotOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SpotOptionsUnmarshaller _instance = new SpotOptionsUnmarshaller();        
 

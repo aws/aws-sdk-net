@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EndpointAccess Object
     /// </summary>  
-    public class EndpointAccessUnmarshaller : IUnmarshaller<EndpointAccess, XmlUnmarshallerContext>, IUnmarshaller<EndpointAccess, JsonUnmarshallerContext>
+    public class EndpointAccessUnmarshaller : IXmlUnmarshaller<EndpointAccess, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -129,17 +129,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EndpointAccess Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EndpointAccessUnmarshaller _instance = new EndpointAccessUnmarshaller();        
 

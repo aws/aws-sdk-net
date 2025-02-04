@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,77 +49,77 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetConditionExpression())
             {
                 context.Writer.WritePropertyName("ConditionExpression");
-                context.Writer.Write(requestObject.ConditionExpression);
+                context.Writer.WriteStringValue(requestObject.ConditionExpression);
             }
 
             if(requestObject.IsSetExpressionAttributeNames())
             {
                 context.Writer.WritePropertyName("ExpressionAttributeNames");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectExpressionAttributeNamesKvp in requestObject.ExpressionAttributeNames)
                 {
                     context.Writer.WritePropertyName(requestObjectExpressionAttributeNamesKvp.Key);
                     var requestObjectExpressionAttributeNamesValue = requestObjectExpressionAttributeNamesKvp.Value;
 
-                        context.Writer.Write(requestObjectExpressionAttributeNamesValue);
+                        context.Writer.WriteStringValue(requestObjectExpressionAttributeNamesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetExpressionAttributeValues())
             {
                 context.Writer.WritePropertyName("ExpressionAttributeValues");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectExpressionAttributeValuesKvp in requestObject.ExpressionAttributeValues)
                 {
                     context.Writer.WritePropertyName(requestObjectExpressionAttributeValuesKvp.Key);
                     var requestObjectExpressionAttributeValuesValue = requestObjectExpressionAttributeValuesKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectExpressionAttributeValuesValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectKeyKvp in requestObject.Key)
                 {
                     context.Writer.WritePropertyName(requestObjectKeyKvp.Key);
                     var requestObjectKeyValue = requestObjectKeyKvp.Value;
 
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectKeyValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetReturnValuesOnConditionCheckFailure())
             {
                 context.Writer.WritePropertyName("ReturnValuesOnConditionCheckFailure");
-                context.Writer.Write(requestObject.ReturnValuesOnConditionCheckFailure);
+                context.Writer.WriteStringValue(requestObject.ReturnValuesOnConditionCheckFailure);
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("TableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
             if(requestObject.IsSetUpdateExpression())
             {
                 context.Writer.WritePropertyName("UpdateExpression");
-                context.Writer.Write(requestObject.UpdateExpression);
+                context.Writer.WriteStringValue(requestObject.UpdateExpression);
             }
 
         }

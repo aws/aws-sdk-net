@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidLocationCodeException operation
     /// </summary>  
-    public class InvalidLocationCodeExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidLocationCodeException, XmlUnmarshallerContext>
+    public class InvalidLocationCodeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidLocationCodeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

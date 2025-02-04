@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidAuthenticationProfileRequestException operation
     /// </summary>  
-    public class InvalidAuthenticationProfileRequestExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidAuthenticationProfileRequestException, XmlUnmarshallerContext>
+    public class InvalidAuthenticationProfileRequestExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidAuthenticationProfileRequestException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

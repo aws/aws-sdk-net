@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SpotFleetRequestConfig Object
     /// </summary>  
-    public class SpotFleetRequestConfigUnmarshaller : IUnmarshaller<SpotFleetRequestConfig, XmlUnmarshallerContext>, IUnmarshaller<SpotFleetRequestConfig, JsonUnmarshallerContext>
+    public class SpotFleetRequestConfigUnmarshaller : IXmlUnmarshaller<SpotFleetRequestConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,17 +105,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SpotFleetRequestConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SpotFleetRequestConfigUnmarshaller _instance = new SpotFleetRequestConfigUnmarshaller();        
 

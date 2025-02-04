@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LaunchTemplateEbsBlockDevice Object
     /// </summary>  
-    public class LaunchTemplateEbsBlockDeviceUnmarshaller : IUnmarshaller<LaunchTemplateEbsBlockDevice, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateEbsBlockDevice, JsonUnmarshallerContext>
+    public class LaunchTemplateEbsBlockDeviceUnmarshaller : IXmlUnmarshaller<LaunchTemplateEbsBlockDevice, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LaunchTemplateEbsBlockDevice Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LaunchTemplateEbsBlockDeviceUnmarshaller _instance = new LaunchTemplateEbsBlockDeviceUnmarshaller();        
 

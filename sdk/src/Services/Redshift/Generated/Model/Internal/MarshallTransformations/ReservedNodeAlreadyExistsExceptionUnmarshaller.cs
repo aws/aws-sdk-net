@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedNodeAlreadyExistsException operation
     /// </summary>  
-    public class ReservedNodeAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ReservedNodeAlreadyExistsException, XmlUnmarshallerContext>
+    public class ReservedNodeAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ReservedNodeAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

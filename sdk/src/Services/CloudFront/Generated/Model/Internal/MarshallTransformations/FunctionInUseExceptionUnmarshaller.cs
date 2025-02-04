@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FunctionInUseException operation
     /// </summary>  
-    public class FunctionInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<FunctionInUseException, XmlUnmarshallerContext>
+    public class FunctionInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<FunctionInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

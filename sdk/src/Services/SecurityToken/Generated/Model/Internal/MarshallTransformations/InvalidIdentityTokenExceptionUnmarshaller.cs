@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidIdentityTokenException operation
     /// </summary>  
-    public class InvalidIdentityTokenExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidIdentityTokenException, XmlUnmarshallerContext>
+    public class InvalidIdentityTokenExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidIdentityTokenException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnalysisLoadBalancerListener Object
     /// </summary>  
-    public class AnalysisLoadBalancerListenerUnmarshaller : IUnmarshaller<AnalysisLoadBalancerListener, XmlUnmarshallerContext>, IUnmarshaller<AnalysisLoadBalancerListener, JsonUnmarshallerContext>
+    public class AnalysisLoadBalancerListenerUnmarshaller : IXmlUnmarshaller<AnalysisLoadBalancerListener, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnalysisLoadBalancerListener Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AnalysisLoadBalancerListenerUnmarshaller _instance = new AnalysisLoadBalancerListenerUnmarshaller();        
 

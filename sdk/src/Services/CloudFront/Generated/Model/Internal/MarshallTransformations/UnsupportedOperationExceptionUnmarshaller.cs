@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UnsupportedOperationException operation
     /// </summary>  
-    public class UnsupportedOperationExceptionUnmarshaller : IErrorResponseUnmarshaller<UnsupportedOperationException, XmlUnmarshallerContext>
+    public class UnsupportedOperationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UnsupportedOperationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EfaInfo Object
     /// </summary>  
-    public class EfaInfoUnmarshaller : IUnmarshaller<EfaInfo, XmlUnmarshallerContext>, IUnmarshaller<EfaInfo, JsonUnmarshallerContext>
+    public class EfaInfoUnmarshaller : IXmlUnmarshaller<EfaInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EfaInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EfaInfoUnmarshaller _instance = new EfaInfoUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VgwTelemetry Object
     /// </summary>  
-    public class VgwTelemetryUnmarshaller : IUnmarshaller<VgwTelemetry, XmlUnmarshallerContext>, IUnmarshaller<VgwTelemetry, JsonUnmarshallerContext>
+    public class VgwTelemetryUnmarshaller : IXmlUnmarshaller<VgwTelemetry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VgwTelemetry Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VgwTelemetryUnmarshaller _instance = new VgwTelemetryUnmarshaller();        
 

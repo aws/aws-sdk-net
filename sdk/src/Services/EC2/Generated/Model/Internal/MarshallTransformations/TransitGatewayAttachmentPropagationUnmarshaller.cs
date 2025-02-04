@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayAttachmentPropagation Object
     /// </summary>  
-    public class TransitGatewayAttachmentPropagationUnmarshaller : IUnmarshaller<TransitGatewayAttachmentPropagation, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayAttachmentPropagation, JsonUnmarshallerContext>
+    public class TransitGatewayAttachmentPropagationUnmarshaller : IXmlUnmarshaller<TransitGatewayAttachmentPropagation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayAttachmentPropagation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayAttachmentPropagationUnmarshaller _instance = new TransitGatewayAttachmentPropagationUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceEventWindowStateChange Object
     /// </summary>  
-    public class InstanceEventWindowStateChangeUnmarshaller : IUnmarshaller<InstanceEventWindowStateChange, XmlUnmarshallerContext>, IUnmarshaller<InstanceEventWindowStateChange, JsonUnmarshallerContext>
+    public class InstanceEventWindowStateChangeUnmarshaller : IXmlUnmarshaller<InstanceEventWindowStateChange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceEventWindowStateChange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceEventWindowStateChangeUnmarshaller _instance = new InstanceEventWindowStateChangeUnmarshaller();        
 

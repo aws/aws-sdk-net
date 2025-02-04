@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FieldLevelEncryptionProfile Object
     /// </summary>  
-    public class FieldLevelEncryptionProfileUnmarshaller : IUnmarshaller<FieldLevelEncryptionProfile, XmlUnmarshallerContext>, IUnmarshaller<FieldLevelEncryptionProfile, JsonUnmarshallerContext>
+    public class FieldLevelEncryptionProfileUnmarshaller : IXmlUnmarshaller<FieldLevelEncryptionProfile, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FieldLevelEncryptionProfile Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static FieldLevelEncryptionProfileUnmarshaller _instance = new FieldLevelEncryptionProfileUnmarshaller();        
 
         /// <summary>

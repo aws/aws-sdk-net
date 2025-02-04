@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PublicKeyAlreadyExistsException operation
     /// </summary>  
-    public class PublicKeyAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<PublicKeyAlreadyExistsException, XmlUnmarshallerContext>
+    public class PublicKeyAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PublicKeyAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

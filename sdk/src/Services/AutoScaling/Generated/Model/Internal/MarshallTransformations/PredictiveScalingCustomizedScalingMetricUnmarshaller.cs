@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PredictiveScalingCustomizedScalingMetric Object
     /// </summary>  
-    public class PredictiveScalingCustomizedScalingMetricUnmarshaller : IUnmarshaller<PredictiveScalingCustomizedScalingMetric, XmlUnmarshallerContext>, IUnmarshaller<PredictiveScalingCustomizedScalingMetric, JsonUnmarshallerContext>
+    public class PredictiveScalingCustomizedScalingMetricUnmarshaller : IXmlUnmarshaller<PredictiveScalingCustomizedScalingMetric, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -75,17 +75,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PredictiveScalingCustomizedScalingMetric Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PredictiveScalingCustomizedScalingMetricUnmarshaller _instance = new PredictiveScalingCustomizedScalingMetricUnmarshaller();        
 

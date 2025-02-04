@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PreconditionFailedException operation
     /// </summary>  
-    public class PreconditionFailedExceptionUnmarshaller : IErrorResponseUnmarshaller<PreconditionFailedException, XmlUnmarshallerContext>
+    public class PreconditionFailedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<PreconditionFailedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

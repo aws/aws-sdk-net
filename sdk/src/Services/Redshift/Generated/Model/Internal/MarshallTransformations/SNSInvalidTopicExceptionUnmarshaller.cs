@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SNSInvalidTopicException operation
     /// </summary>  
-    public class SNSInvalidTopicExceptionUnmarshaller : IErrorResponseUnmarshaller<SNSInvalidTopicException, XmlUnmarshallerContext>
+    public class SNSInvalidTopicExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SNSInvalidTopicException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

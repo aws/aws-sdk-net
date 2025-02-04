@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LaunchTemplateInstanceNetworkInterfaceSpecification Object
     /// </summary>  
-    public class LaunchTemplateInstanceNetworkInterfaceSpecificationUnmarshaller : IUnmarshaller<LaunchTemplateInstanceNetworkInterfaceSpecification, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateInstanceNetworkInterfaceSpecification, JsonUnmarshallerContext>
+    public class LaunchTemplateInstanceNetworkInterfaceSpecificationUnmarshaller : IXmlUnmarshaller<LaunchTemplateInstanceNetworkInterfaceSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -221,17 +221,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LaunchTemplateInstanceNetworkInterfaceSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LaunchTemplateInstanceNetworkInterfaceSpecificationUnmarshaller _instance = new LaunchTemplateInstanceNetworkInterfaceSpecificationUnmarshaller();        
 

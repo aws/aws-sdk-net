@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LicenseConfiguration Object
     /// </summary>  
-    public class LicenseConfigurationUnmarshaller : IUnmarshaller<LicenseConfiguration, XmlUnmarshallerContext>, IUnmarshaller<LicenseConfiguration, JsonUnmarshallerContext>
+    public class LicenseConfigurationUnmarshaller : IXmlUnmarshaller<LicenseConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LicenseConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LicenseConfigurationUnmarshaller _instance = new LicenseConfigurationUnmarshaller();        
 

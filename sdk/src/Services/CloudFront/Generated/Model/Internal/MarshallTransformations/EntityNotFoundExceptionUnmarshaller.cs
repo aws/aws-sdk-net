@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EntityNotFoundException operation
     /// </summary>  
-    public class EntityNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<EntityNotFoundException, XmlUnmarshallerContext>
+    public class EntityNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<EntityNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayPrefixListReference Object
     /// </summary>  
-    public class TransitGatewayPrefixListReferenceUnmarshaller : IUnmarshaller<TransitGatewayPrefixListReference, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayPrefixListReference, JsonUnmarshallerContext>
+    public class TransitGatewayPrefixListReferenceUnmarshaller : IXmlUnmarshaller<TransitGatewayPrefixListReference, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayPrefixListReference Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayPrefixListReferenceUnmarshaller _instance = new TransitGatewayPrefixListReferenceUnmarshaller();        
 

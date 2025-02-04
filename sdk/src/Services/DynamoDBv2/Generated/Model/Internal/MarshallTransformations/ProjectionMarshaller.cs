@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetNonKeyAttributes())
             {
                 context.Writer.WritePropertyName("NonKeyAttributes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectNonKeyAttributesListValue in requestObject.NonKeyAttributes)
                 {
-                        context.Writer.Write(requestObjectNonKeyAttributesListValue);
+                        context.Writer.WriteStringValue(requestObjectNonKeyAttributesListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProjectionType())
             {
                 context.Writer.WritePropertyName("ProjectionType");
-                context.Writer.Write(requestObject.ProjectionType);
+                context.Writer.WriteStringValue(requestObject.ProjectionType);
             }
 
         }

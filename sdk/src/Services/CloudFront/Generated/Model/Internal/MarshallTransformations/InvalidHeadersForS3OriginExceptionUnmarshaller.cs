@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidHeadersForS3OriginException operation
     /// </summary>  
-    public class InvalidHeadersForS3OriginExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidHeadersForS3OriginException, XmlUnmarshallerContext>
+    public class InvalidHeadersForS3OriginExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidHeadersForS3OriginException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

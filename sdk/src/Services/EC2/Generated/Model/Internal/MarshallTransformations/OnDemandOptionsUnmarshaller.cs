@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OnDemandOptions Object
     /// </summary>  
-    public class OnDemandOptionsUnmarshaller : IUnmarshaller<OnDemandOptions, XmlUnmarshallerContext>, IUnmarshaller<OnDemandOptions, JsonUnmarshallerContext>
+    public class OnDemandOptionsUnmarshaller : IXmlUnmarshaller<OnDemandOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OnDemandOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OnDemandOptionsUnmarshaller _instance = new OnDemandOptionsUnmarshaller();        
 

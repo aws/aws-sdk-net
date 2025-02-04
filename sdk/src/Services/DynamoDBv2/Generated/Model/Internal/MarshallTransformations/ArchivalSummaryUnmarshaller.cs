@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ArchivalSummary Object
     /// </summary>  
-    public class ArchivalSummaryUnmarshaller : IUnmarshaller<ArchivalSummary, XmlUnmarshallerContext>, IUnmarshaller<ArchivalSummary, JsonUnmarshallerContext>
+    public class ArchivalSummaryUnmarshaller : IJsonUnmarshaller<ArchivalSummary, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ArchivalSummary IUnmarshaller<ArchivalSummary, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ArchivalSummary Unmarshall(JsonUnmarshallerContext context)
+        public ArchivalSummary Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ArchivalSummary unmarshalledObject = new ArchivalSummary();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("ArchivalBackupArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArchivalBackupArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchivalBackupArn = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ArchivalDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.ArchivalDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchivalDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("ArchivalReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ArchivalReason = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ArchivalReason = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

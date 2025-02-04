@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyFunctionsException operation
     /// </summary>  
-    public class TooManyFunctionsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyFunctionsException, XmlUnmarshallerContext>
+    public class TooManyFunctionsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyFunctionsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,25 +49,25 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBitDepth())
             {
                 context.Writer.WritePropertyName("BitDepth");
-                context.Writer.Write(requestObject.BitDepth);
+                context.Writer.WriteStringValue(requestObject.BitDepth);
             }
 
             if(requestObject.IsSetBitOrder())
             {
                 context.Writer.WritePropertyName("BitOrder");
-                context.Writer.Write(requestObject.BitOrder);
+                context.Writer.WriteStringValue(requestObject.BitOrder);
             }
 
             if(requestObject.IsSetProfile())
             {
                 context.Writer.WritePropertyName("Profile");
-                context.Writer.Write(requestObject.Profile);
+                context.Writer.WriteStringValue(requestObject.Profile);
             }
 
             if(requestObject.IsSetSigned())
             {
                 context.Writer.WritePropertyName("Signed");
-                context.Writer.Write(requestObject.Signed);
+                context.Writer.WriteStringValue(requestObject.Signed);
             }
 
         }

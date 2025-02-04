@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PrefixListId Object
     /// </summary>  
-    public class PrefixListIdUnmarshaller : IUnmarshaller<PrefixListId, XmlUnmarshallerContext>, IUnmarshaller<PrefixListId, JsonUnmarshallerContext>
+    public class PrefixListIdUnmarshaller : IXmlUnmarshaller<PrefixListId, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PrefixListId Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PrefixListIdUnmarshaller _instance = new PrefixListIdUnmarshaller();        
 

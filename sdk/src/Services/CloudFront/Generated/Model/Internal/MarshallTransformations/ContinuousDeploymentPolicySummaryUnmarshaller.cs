@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ContinuousDeploymentPolicySummary Object
     /// </summary>  
-    public class ContinuousDeploymentPolicySummaryUnmarshaller : IUnmarshaller<ContinuousDeploymentPolicySummary, XmlUnmarshallerContext>, IUnmarshaller<ContinuousDeploymentPolicySummary, JsonUnmarshallerContext>
+    public class ContinuousDeploymentPolicySummaryUnmarshaller : IXmlUnmarshaller<ContinuousDeploymentPolicySummary, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ContinuousDeploymentPolicySummary Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ContinuousDeploymentPolicySummaryUnmarshaller _instance = new ContinuousDeploymentPolicySummaryUnmarshaller();        
 
         /// <summary>

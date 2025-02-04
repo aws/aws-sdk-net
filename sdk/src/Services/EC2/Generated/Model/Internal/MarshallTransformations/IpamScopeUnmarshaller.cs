@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpamScope Object
     /// </summary>  
-    public class IpamScopeUnmarshaller : IUnmarshaller<IpamScope, XmlUnmarshallerContext>, IUnmarshaller<IpamScope, JsonUnmarshallerContext>
+    public class IpamScopeUnmarshaller : IXmlUnmarshaller<IpamScope, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -135,17 +135,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpamScope Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpamScopeUnmarshaller _instance = new IpamScopeUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Association Object
     /// </summary>  
-    public class AssociationUnmarshaller : IUnmarshaller<Association, XmlUnmarshallerContext>, IUnmarshaller<Association, JsonUnmarshallerContext>
+    public class AssociationUnmarshaller : IXmlUnmarshaller<Association, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Association Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AssociationUnmarshaller _instance = new AssociationUnmarshaller();        
 

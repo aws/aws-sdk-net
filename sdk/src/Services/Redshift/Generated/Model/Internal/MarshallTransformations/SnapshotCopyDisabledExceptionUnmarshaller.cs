@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotCopyDisabledException operation
     /// </summary>  
-    public class SnapshotCopyDisabledExceptionUnmarshaller : IErrorResponseUnmarshaller<SnapshotCopyDisabledException, XmlUnmarshallerContext>
+    public class SnapshotCopyDisabledExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SnapshotCopyDisabledException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

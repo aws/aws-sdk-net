@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ElasticInferenceAcceleratorAssociation Object
     /// </summary>  
-    public class ElasticInferenceAcceleratorAssociationUnmarshaller : IUnmarshaller<ElasticInferenceAcceleratorAssociation, XmlUnmarshallerContext>, IUnmarshaller<ElasticInferenceAcceleratorAssociation, JsonUnmarshallerContext>
+    public class ElasticInferenceAcceleratorAssociationUnmarshaller : IXmlUnmarshaller<ElasticInferenceAcceleratorAssociation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ElasticInferenceAcceleratorAssociation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ElasticInferenceAcceleratorAssociationUnmarshaller _instance = new ElasticInferenceAcceleratorAssociationUnmarshaller();        
 

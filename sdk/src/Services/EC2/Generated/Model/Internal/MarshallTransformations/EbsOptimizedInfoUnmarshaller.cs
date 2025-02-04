@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EbsOptimizedInfo Object
     /// </summary>  
-    public class EbsOptimizedInfoUnmarshaller : IUnmarshaller<EbsOptimizedInfo, XmlUnmarshallerContext>, IUnmarshaller<EbsOptimizedInfo, JsonUnmarshallerContext>
+    public class EbsOptimizedInfoUnmarshaller : IXmlUnmarshaller<EbsOptimizedInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EbsOptimizedInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EbsOptimizedInfoUnmarshaller _instance = new EbsOptimizedInfoUnmarshaller();        
 

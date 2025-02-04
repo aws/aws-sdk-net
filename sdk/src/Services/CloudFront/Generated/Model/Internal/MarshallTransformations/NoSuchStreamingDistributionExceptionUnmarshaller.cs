@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchStreamingDistributionException operation
     /// </summary>  
-    public class NoSuchStreamingDistributionExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchStreamingDistributionException, XmlUnmarshallerContext>
+    public class NoSuchStreamingDistributionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchStreamingDistributionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

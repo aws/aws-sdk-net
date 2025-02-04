@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SpotPrice Object
     /// </summary>  
-    public class SpotPriceUnmarshaller : IUnmarshaller<SpotPrice, XmlUnmarshallerContext>, IUnmarshaller<SpotPrice, JsonUnmarshallerContext>
+    public class SpotPriceUnmarshaller : IXmlUnmarshaller<SpotPrice, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SpotPrice Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SpotPriceUnmarshaller _instance = new SpotPriceUnmarshaller();        
 

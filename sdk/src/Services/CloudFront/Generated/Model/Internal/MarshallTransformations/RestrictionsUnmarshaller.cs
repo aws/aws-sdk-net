@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Restrictions Object
     /// </summary>  
-    public class RestrictionsUnmarshaller : IUnmarshaller<Restrictions, XmlUnmarshallerContext>, IUnmarshaller<Restrictions, JsonUnmarshallerContext>
+    public class RestrictionsUnmarshaller : IXmlUnmarshaller<Restrictions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Restrictions Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static RestrictionsUnmarshaller _instance = new RestrictionsUnmarshaller();        
 
         /// <summary>

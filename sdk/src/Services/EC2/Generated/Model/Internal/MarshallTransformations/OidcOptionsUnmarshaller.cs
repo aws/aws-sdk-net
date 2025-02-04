@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OidcOptions Object
     /// </summary>  
-    public class OidcOptionsUnmarshaller : IUnmarshaller<OidcOptions, XmlUnmarshallerContext>, IUnmarshaller<OidcOptions, JsonUnmarshallerContext>
+    public class OidcOptionsUnmarshaller : IXmlUnmarshaller<OidcOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -106,17 +106,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OidcOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OidcOptionsUnmarshaller _instance = new OidcOptionsUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CannotChangeImmutablePublicKeyFieldsException operation
     /// </summary>  
-    public class CannotChangeImmutablePublicKeyFieldsExceptionUnmarshaller : IErrorResponseUnmarshaller<CannotChangeImmutablePublicKeyFieldsException, XmlUnmarshallerContext>
+    public class CannotChangeImmutablePublicKeyFieldsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CannotChangeImmutablePublicKeyFieldsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

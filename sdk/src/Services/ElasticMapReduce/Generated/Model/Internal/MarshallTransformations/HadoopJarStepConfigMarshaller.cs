@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,40 +49,40 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetArgs())
             {
                 context.Writer.WritePropertyName("Args");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArgsListValue in requestObject.Args)
                 {
-                        context.Writer.Write(requestObjectArgsListValue);
+                        context.Writer.WriteStringValue(requestObjectArgsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetJar())
             {
                 context.Writer.WritePropertyName("Jar");
-                context.Writer.Write(requestObject.Jar);
+                context.Writer.WriteStringValue(requestObject.Jar);
             }
 
             if(requestObject.IsSetMainClass())
             {
                 context.Writer.WritePropertyName("MainClass");
-                context.Writer.Write(requestObject.MainClass);
+                context.Writer.WriteStringValue(requestObject.MainClass);
             }
 
             if(requestObject.IsSetProperties())
             {
                 context.Writer.WritePropertyName("Properties");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectPropertiesListValue in requestObject.Properties)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KeyValueMarshaller.Instance;
                     marshaller.Marshall(requestObjectPropertiesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

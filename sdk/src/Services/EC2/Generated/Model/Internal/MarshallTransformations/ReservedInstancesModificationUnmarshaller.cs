@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedInstancesModification Object
     /// </summary>  
-    public class ReservedInstancesModificationUnmarshaller : IUnmarshaller<ReservedInstancesModification, XmlUnmarshallerContext>, IUnmarshaller<ReservedInstancesModification, JsonUnmarshallerContext>
+    public class ReservedInstancesModificationUnmarshaller : IXmlUnmarshaller<ReservedInstancesModification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -128,17 +128,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReservedInstancesModification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReservedInstancesModificationUnmarshaller _instance = new ReservedInstancesModificationUnmarshaller();        
 

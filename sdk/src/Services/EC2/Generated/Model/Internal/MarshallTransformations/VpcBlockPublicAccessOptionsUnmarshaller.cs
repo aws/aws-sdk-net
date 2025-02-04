@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VpcBlockPublicAccessOptions Object
     /// </summary>  
-    public class VpcBlockPublicAccessOptionsUnmarshaller : IUnmarshaller<VpcBlockPublicAccessOptions, XmlUnmarshallerContext>, IUnmarshaller<VpcBlockPublicAccessOptions, JsonUnmarshallerContext>
+    public class VpcBlockPublicAccessOptionsUnmarshaller : IXmlUnmarshaller<VpcBlockPublicAccessOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -112,17 +112,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VpcBlockPublicAccessOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VpcBlockPublicAccessOptionsUnmarshaller _instance = new VpcBlockPublicAccessOptionsUnmarshaller();        
 

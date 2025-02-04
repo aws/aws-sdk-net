@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConflictingAlias Object
     /// </summary>  
-    public class ConflictingAliasUnmarshaller : IUnmarshaller<ConflictingAlias, XmlUnmarshallerContext>, IUnmarshaller<ConflictingAlias, JsonUnmarshallerContext>
+    public class ConflictingAliasUnmarshaller : IXmlUnmarshaller<ConflictingAlias, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConflictingAlias Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static ConflictingAliasUnmarshaller _instance = new ConflictingAliasUnmarshaller();        
 
         /// <summary>

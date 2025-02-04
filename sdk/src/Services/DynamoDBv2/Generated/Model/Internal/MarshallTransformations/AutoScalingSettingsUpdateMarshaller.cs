@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAutoScalingDisabled())
             {
                 context.Writer.WritePropertyName("AutoScalingDisabled");
-                context.Writer.Write(requestObject.AutoScalingDisabled.Value);
+                context.Writer.WriteBooleanValue(requestObject.AutoScalingDisabled.Value);
             }
 
             if(requestObject.IsSetAutoScalingRoleArn())
             {
                 context.Writer.WritePropertyName("AutoScalingRoleArn");
-                context.Writer.Write(requestObject.AutoScalingRoleArn);
+                context.Writer.WriteStringValue(requestObject.AutoScalingRoleArn);
             }
 
             if(requestObject.IsSetMaximumUnits())
             {
                 context.Writer.WritePropertyName("MaximumUnits");
-                context.Writer.Write(requestObject.MaximumUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MaximumUnits.Value);
             }
 
             if(requestObject.IsSetMinimumUnits())
             {
                 context.Writer.WritePropertyName("MinimumUnits");
-                context.Writer.Write(requestObject.MinimumUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.MinimumUnits.Value);
             }
 
             if(requestObject.IsSetScalingPolicyUpdate())
             {
                 context.Writer.WritePropertyName("ScalingPolicyUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoScalingPolicyUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ScalingPolicyUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

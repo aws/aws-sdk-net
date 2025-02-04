@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchResourceException operation
     /// </summary>  
-    public class NoSuchResourceExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchResourceException, XmlUnmarshallerContext>
+    public class NoSuchResourceExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchResourceException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

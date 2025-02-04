@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AnomalyDetectorConfiguration Object
     /// </summary>  
-    public class AnomalyDetectorConfigurationUnmarshaller : IUnmarshaller<AnomalyDetectorConfiguration, XmlUnmarshallerContext>, IUnmarshaller<AnomalyDetectorConfiguration, JsonUnmarshallerContext>
+    public class AnomalyDetectorConfigurationUnmarshaller : IXmlUnmarshaller<AnomalyDetectorConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AnomalyDetectorConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AnomalyDetectorConfigurationUnmarshaller _instance = new AnomalyDetectorConfigurationUnmarshaller();        
 

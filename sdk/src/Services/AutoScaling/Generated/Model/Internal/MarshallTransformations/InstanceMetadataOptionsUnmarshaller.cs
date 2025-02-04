@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceMetadataOptions Object
     /// </summary>  
-    public class InstanceMetadataOptionsUnmarshaller : IUnmarshaller<InstanceMetadataOptions, XmlUnmarshallerContext>, IUnmarshaller<InstanceMetadataOptions, JsonUnmarshallerContext>
+    public class InstanceMetadataOptionsUnmarshaller : IXmlUnmarshaller<InstanceMetadataOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceMetadataOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceMetadataOptionsUnmarshaller _instance = new InstanceMetadataOptionsUnmarshaller();        
 

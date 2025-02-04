@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LaunchPermission Object
     /// </summary>  
-    public class LaunchPermissionUnmarshaller : IUnmarshaller<LaunchPermission, XmlUnmarshallerContext>, IUnmarshaller<LaunchPermission, JsonUnmarshallerContext>
+    public class LaunchPermissionUnmarshaller : IXmlUnmarshaller<LaunchPermission, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LaunchPermission Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LaunchPermissionUnmarshaller _instance = new LaunchPermissionUnmarshaller();        
 

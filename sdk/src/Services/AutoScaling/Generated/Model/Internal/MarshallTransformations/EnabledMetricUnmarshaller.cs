@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EnabledMetric Object
     /// </summary>  
-    public class EnabledMetricUnmarshaller : IUnmarshaller<EnabledMetric, XmlUnmarshallerContext>, IUnmarshaller<EnabledMetric, JsonUnmarshallerContext>
+    public class EnabledMetricUnmarshaller : IXmlUnmarshaller<EnabledMetric, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EnabledMetric Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EnabledMetricUnmarshaller _instance = new EnabledMetricUnmarshaller();        
 

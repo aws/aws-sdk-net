@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PropagatingVgw Object
     /// </summary>  
-    public class PropagatingVgwUnmarshaller : IUnmarshaller<PropagatingVgw, XmlUnmarshallerContext>, IUnmarshaller<PropagatingVgw, JsonUnmarshallerContext>
+    public class PropagatingVgwUnmarshaller : IXmlUnmarshaller<PropagatingVgw, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PropagatingVgw Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PropagatingVgwUnmarshaller _instance = new PropagatingVgwUnmarshaller();        
 

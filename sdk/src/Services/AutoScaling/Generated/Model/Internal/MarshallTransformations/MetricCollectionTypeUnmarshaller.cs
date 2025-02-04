@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MetricCollectionType Object
     /// </summary>  
-    public class MetricCollectionTypeUnmarshaller : IUnmarshaller<MetricCollectionType, XmlUnmarshallerContext>, IUnmarshaller<MetricCollectionType, JsonUnmarshallerContext>
+    public class MetricCollectionTypeUnmarshaller : IXmlUnmarshaller<MetricCollectionType, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MetricCollectionType Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MetricCollectionTypeUnmarshaller _instance = new MetricCollectionTypeUnmarshaller();        
 

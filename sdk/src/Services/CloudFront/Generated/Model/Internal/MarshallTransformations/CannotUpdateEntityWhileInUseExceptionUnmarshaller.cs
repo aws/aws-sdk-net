@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CannotUpdateEntityWhileInUseException operation
     /// </summary>  
-    public class CannotUpdateEntityWhileInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<CannotUpdateEntityWhileInUseException, XmlUnmarshallerContext>
+    public class CannotUpdateEntityWhileInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CannotUpdateEntityWhileInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

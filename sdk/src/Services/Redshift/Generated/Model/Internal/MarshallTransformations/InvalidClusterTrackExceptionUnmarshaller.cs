@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidClusterTrackException operation
     /// </summary>  
-    public class InvalidClusterTrackExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidClusterTrackException, XmlUnmarshallerContext>
+    public class InvalidClusterTrackExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidClusterTrackException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for UsageLimitAlreadyExistsException operation
     /// </summary>  
-    public class UsageLimitAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<UsageLimitAlreadyExistsException, XmlUnmarshallerContext>
+    public class UsageLimitAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<UsageLimitAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

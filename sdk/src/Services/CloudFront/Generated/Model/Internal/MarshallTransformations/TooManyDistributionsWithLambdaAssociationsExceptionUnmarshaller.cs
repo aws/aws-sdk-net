@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyDistributionsWithLambdaAssociationsException operation
     /// </summary>  
-    public class TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyDistributionsWithLambdaAssociationsException, XmlUnmarshallerContext>
+    public class TooManyDistributionsWithLambdaAssociationsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyDistributionsWithLambdaAssociationsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

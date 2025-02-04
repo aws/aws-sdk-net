@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PtrUpdateStatus Object
     /// </summary>  
-    public class PtrUpdateStatusUnmarshaller : IUnmarshaller<PtrUpdateStatus, XmlUnmarshallerContext>, IUnmarshaller<PtrUpdateStatus, JsonUnmarshallerContext>
+    public class PtrUpdateStatusUnmarshaller : IXmlUnmarshaller<PtrUpdateStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PtrUpdateStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PtrUpdateStatusUnmarshaller _instance = new PtrUpdateStatusUnmarshaller();        
 

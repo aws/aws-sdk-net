@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchInvalidationException operation
     /// </summary>  
-    public class NoSuchInvalidationExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchInvalidationException, XmlUnmarshallerContext>
+    public class NoSuchInvalidationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchInvalidationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

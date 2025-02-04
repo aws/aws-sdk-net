@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CachePolicyInUseException operation
     /// </summary>  
-    public class CachePolicyInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<CachePolicyInUseException, XmlUnmarshallerContext>
+    public class CachePolicyInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CachePolicyInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

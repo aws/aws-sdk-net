@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NetworkInterfaceIpv6Address Object
     /// </summary>  
-    public class NetworkInterfaceIpv6AddressUnmarshaller : IUnmarshaller<NetworkInterfaceIpv6Address, XmlUnmarshallerContext>, IUnmarshaller<NetworkInterfaceIpv6Address, JsonUnmarshallerContext>
+    public class NetworkInterfaceIpv6AddressUnmarshaller : IXmlUnmarshaller<NetworkInterfaceIpv6Address, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public NetworkInterfaceIpv6Address Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static NetworkInterfaceIpv6AddressUnmarshaller _instance = new NetworkInterfaceIpv6AddressUnmarshaller();        
 

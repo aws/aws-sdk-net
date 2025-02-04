@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,31 +49,31 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetDurationMillis())
             {
                 context.Writer.WritePropertyName("DurationMillis");
-                context.Writer.Write(requestObject.DurationMillis.Value);
+                context.Writer.WriteNumberValue(requestObject.DurationMillis.Value);
             }
 
             if(requestObject.IsSetFileSize())
             {
                 context.Writer.WritePropertyName("FileSize");
-                context.Writer.Write(requestObject.FileSize.Value);
+                context.Writer.WriteNumberValue(requestObject.FileSize.Value);
             }
 
             if(requestObject.IsSetFrameRate())
             {
                 context.Writer.WritePropertyName("FrameRate");
-                context.Writer.Write(requestObject.FrameRate);
+                context.Writer.WriteStringValue(requestObject.FrameRate);
             }
 
             if(requestObject.IsSetHeight())
             {
                 context.Writer.WritePropertyName("Height");
-                context.Writer.Write(requestObject.Height.Value);
+                context.Writer.WriteNumberValue(requestObject.Height.Value);
             }
 
             if(requestObject.IsSetWidth())
             {
                 context.Writer.WritePropertyName("Width");
-                context.Writer.Write(requestObject.Width.Value);
+                context.Writer.WriteNumberValue(requestObject.Width.Value);
             }
 
         }

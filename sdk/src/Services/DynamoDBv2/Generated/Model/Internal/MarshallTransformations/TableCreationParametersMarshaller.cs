@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,94 +49,94 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributeDefinitions())
             {
                 context.Writer.WritePropertyName("AttributeDefinitions");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributeDefinitionsListValue in requestObject.AttributeDefinitions)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = AttributeDefinitionMarshaller.Instance;
                     marshaller.Marshall(requestObjectAttributeDefinitionsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetBillingMode())
             {
                 context.Writer.WritePropertyName("BillingMode");
-                context.Writer.Write(requestObject.BillingMode);
+                context.Writer.WriteStringValue(requestObject.BillingMode);
             }
 
             if(requestObject.IsSetGlobalSecondaryIndexes())
             {
                 context.Writer.WritePropertyName("GlobalSecondaryIndexes");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectGlobalSecondaryIndexesListValue in requestObject.GlobalSecondaryIndexes)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = GlobalSecondaryIndexMarshaller.Instance;
                     marshaller.Marshall(requestObjectGlobalSecondaryIndexesListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKeySchema())
             {
                 context.Writer.WritePropertyName("KeySchema");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeySchemaListValue in requestObject.KeySchema)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = KeySchemaElementMarshaller.Instance;
                     marshaller.Marshall(requestObjectKeySchemaListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetOnDemandThroughput())
             {
                 context.Writer.WritePropertyName("OnDemandThroughput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = OnDemandThroughputMarshaller.Instance;
                 marshaller.Marshall(requestObject.OnDemandThroughput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetProvisionedThroughput())
             {
                 context.Writer.WritePropertyName("ProvisionedThroughput");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = ProvisionedThroughputMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionedThroughput, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetSSESpecification())
             {
                 context.Writer.WritePropertyName("SSESpecification");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = SSESpecificationMarshaller.Instance;
                 marshaller.Marshall(requestObject.SSESpecification, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetTableName())
             {
                 context.Writer.WritePropertyName("TableName");
-                context.Writer.Write(requestObject.TableName);
+                context.Writer.WriteStringValue(requestObject.TableName);
             }
 
         }

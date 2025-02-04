@@ -35,7 +35,7 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Credentials Object
     /// </summary>  
-    public class CredentialsUnmarshaller : IUnmarshaller<Credentials, XmlUnmarshallerContext>, IUnmarshaller<Credentials, JsonUnmarshallerContext>
+    public class CredentialsUnmarshaller : IXmlUnmarshaller<Credentials, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.SecurityToken.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Credentials Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CredentialsUnmarshaller _instance = new CredentialsUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ElasticGpus Object
     /// </summary>  
-    public class ElasticGpusUnmarshaller : IUnmarshaller<ElasticGpus, XmlUnmarshallerContext>, IUnmarshaller<ElasticGpus, JsonUnmarshallerContext>
+    public class ElasticGpusUnmarshaller : IXmlUnmarshaller<ElasticGpus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -111,17 +111,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ElasticGpus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ElasticGpusUnmarshaller _instance = new ElasticGpusUnmarshaller();        
 

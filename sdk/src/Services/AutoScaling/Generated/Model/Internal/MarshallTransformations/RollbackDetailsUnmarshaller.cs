@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RollbackDetails Object
     /// </summary>  
-    public class RollbackDetailsUnmarshaller : IUnmarshaller<RollbackDetails, XmlUnmarshallerContext>, IUnmarshaller<RollbackDetails, JsonUnmarshallerContext>
+    public class RollbackDetailsUnmarshaller : IXmlUnmarshaller<RollbackDetails, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RollbackDetails Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RollbackDetailsUnmarshaller _instance = new RollbackDetailsUnmarshaller();        
 

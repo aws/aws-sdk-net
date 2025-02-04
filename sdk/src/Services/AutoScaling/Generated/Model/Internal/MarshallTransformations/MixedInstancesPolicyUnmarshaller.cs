@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for MixedInstancesPolicy Object
     /// </summary>  
-    public class MixedInstancesPolicyUnmarshaller : IUnmarshaller<MixedInstancesPolicy, XmlUnmarshallerContext>, IUnmarshaller<MixedInstancesPolicy, JsonUnmarshallerContext>
+    public class MixedInstancesPolicyUnmarshaller : IXmlUnmarshaller<MixedInstancesPolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public MixedInstancesPolicy Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static MixedInstancesPolicyUnmarshaller _instance = new MixedInstancesPolicyUnmarshaller();        
 

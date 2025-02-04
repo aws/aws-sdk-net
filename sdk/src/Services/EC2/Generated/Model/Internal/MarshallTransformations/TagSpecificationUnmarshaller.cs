@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TagSpecification Object
     /// </summary>  
-    public class TagSpecificationUnmarshaller : IUnmarshaller<TagSpecification, XmlUnmarshallerContext>, IUnmarshaller<TagSpecification, JsonUnmarshallerContext>
+    public class TagSpecificationUnmarshaller : IXmlUnmarshaller<TagSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TagSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TagSpecificationUnmarshaller _instance = new TagSpecificationUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PredefinedMetricSpecification Object
     /// </summary>  
-    public class PredefinedMetricSpecificationUnmarshaller : IUnmarshaller<PredefinedMetricSpecification, XmlUnmarshallerContext>, IUnmarshaller<PredefinedMetricSpecification, JsonUnmarshallerContext>
+    public class PredefinedMetricSpecificationUnmarshaller : IXmlUnmarshaller<PredefinedMetricSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PredefinedMetricSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PredefinedMetricSpecificationUnmarshaller _instance = new PredefinedMetricSpecificationUnmarshaller();        
 

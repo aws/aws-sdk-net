@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidForwardCookiesException operation
     /// </summary>  
-    public class InvalidForwardCookiesExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidForwardCookiesException, XmlUnmarshallerContext>
+    public class InvalidForwardCookiesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidForwardCookiesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

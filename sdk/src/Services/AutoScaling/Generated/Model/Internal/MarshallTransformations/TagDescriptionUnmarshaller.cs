@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TagDescription Object
     /// </summary>  
-    public class TagDescriptionUnmarshaller : IUnmarshaller<TagDescription, XmlUnmarshallerContext>, IUnmarshaller<TagDescription, JsonUnmarshallerContext>
+    public class TagDescriptionUnmarshaller : IXmlUnmarshaller<TagDescription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TagDescription Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TagDescriptionUnmarshaller _instance = new TagDescriptionUnmarshaller();        
 

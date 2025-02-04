@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityAllocation Object
     /// </summary>  
-    public class CapacityAllocationUnmarshaller : IUnmarshaller<CapacityAllocation, XmlUnmarshallerContext>, IUnmarshaller<CapacityAllocation, JsonUnmarshallerContext>
+    public class CapacityAllocationUnmarshaller : IXmlUnmarshaller<CapacityAllocation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityAllocation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityAllocationUnmarshaller _instance = new CapacityAllocationUnmarshaller();        
 

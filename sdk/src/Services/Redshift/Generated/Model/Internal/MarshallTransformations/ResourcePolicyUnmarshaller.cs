@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourcePolicy Object
     /// </summary>  
-    public class ResourcePolicyUnmarshaller : IUnmarshaller<ResourcePolicy, XmlUnmarshallerContext>, IUnmarshaller<ResourcePolicy, JsonUnmarshallerContext>
+    public class ResourcePolicyUnmarshaller : IXmlUnmarshaller<ResourcePolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ResourcePolicy Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ResourcePolicyUnmarshaller _instance = new ResourcePolicyUnmarshaller();        
 

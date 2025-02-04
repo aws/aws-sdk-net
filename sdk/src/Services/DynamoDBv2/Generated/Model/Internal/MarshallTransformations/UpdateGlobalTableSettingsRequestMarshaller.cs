@@ -28,8 +28,11 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
+using System.Buffers;
+#if !NETFRAMEWORK
+using ThirdParty.RuntimeBackports;
+#endif
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -63,80 +66,85 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             request.HttpMethod = "POST";
 
             request.ResourcePath = "/";
-            using (MemoryStream memoryStream = new MemoryStream())
+#if !NETFRAMEWORK
+            using ArrayPoolBufferWriter<byte> arrayPoolBufferWriter = new ArrayPoolBufferWriter<byte>();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(arrayPoolBufferWriter);
+#else
+            using var memoryStream = new MemoryStream();
+            using Utf8JsonWriter writer = new Utf8JsonWriter(memoryStream);
+#endif
+            writer.WriteStartObject();
+            var context = new JsonMarshallerContext(request, writer);
+            if(publicRequest.IsSetGlobalTableBillingMode())
             {
-                using (StreamWriter streamWriter = new InvariantCultureStreamWriter(memoryStream))
-                {
-                    JsonWriter writer = new JsonWriter(streamWriter);
-                    writer.Validate = false;
-                    writer.WriteObjectStart();
-                    var context = new JsonMarshallerContext(request, writer);
-                    if(publicRequest.IsSetGlobalTableBillingMode())
-                    {
-                        context.Writer.WritePropertyName("GlobalTableBillingMode");
-                        context.Writer.Write(publicRequest.GlobalTableBillingMode);
-                    }
-
-                    if(publicRequest.IsSetGlobalTableGlobalSecondaryIndexSettingsUpdate())
-                    {
-                        context.Writer.WritePropertyName("GlobalTableGlobalSecondaryIndexSettingsUpdate");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestGlobalTableGlobalSecondaryIndexSettingsUpdateListValue in publicRequest.GlobalTableGlobalSecondaryIndexSettingsUpdate)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = GlobalTableGlobalSecondaryIndexSettingsUpdateMarshaller.Instance;
-                            marshaller.Marshall(publicRequestGlobalTableGlobalSecondaryIndexSettingsUpdateListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    if(publicRequest.IsSetGlobalTableName())
-                    {
-                        context.Writer.WritePropertyName("GlobalTableName");
-                        context.Writer.Write(publicRequest.GlobalTableName);
-                    }
-
-                    if(publicRequest.IsSetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate())
-                    {
-                        context.Writer.WritePropertyName("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate");
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
-                        marshaller.Marshall(publicRequest.GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-
-                    if(publicRequest.IsSetGlobalTableProvisionedWriteCapacityUnits())
-                    {
-                        context.Writer.WritePropertyName("GlobalTableProvisionedWriteCapacityUnits");
-                        context.Writer.Write(publicRequest.GlobalTableProvisionedWriteCapacityUnits.Value);
-                    }
-
-                    if(publicRequest.IsSetReplicaSettingsUpdate())
-                    {
-                        context.Writer.WritePropertyName("ReplicaSettingsUpdate");
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestReplicaSettingsUpdateListValue in publicRequest.ReplicaSettingsUpdate)
-                        {
-                            context.Writer.WriteObjectStart();
-
-                            var marshaller = ReplicaSettingsUpdateMarshaller.Instance;
-                            marshaller.Marshall(publicRequestReplicaSettingsUpdateListValue, context);
-
-                            context.Writer.WriteObjectEnd();
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-
-                    writer.WriteObjectEnd();
-                }
-
-                request.Content = memoryStream.ToArray();
+                context.Writer.WritePropertyName("GlobalTableBillingMode");
+                context.Writer.WriteStringValue(publicRequest.GlobalTableBillingMode);
             }
+
+            if(publicRequest.IsSetGlobalTableGlobalSecondaryIndexSettingsUpdate())
+            {
+                context.Writer.WritePropertyName("GlobalTableGlobalSecondaryIndexSettingsUpdate");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestGlobalTableGlobalSecondaryIndexSettingsUpdateListValue in publicRequest.GlobalTableGlobalSecondaryIndexSettingsUpdate)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = GlobalTableGlobalSecondaryIndexSettingsUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestGlobalTableGlobalSecondaryIndexSettingsUpdateListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            if(publicRequest.IsSetGlobalTableName())
+            {
+                context.Writer.WritePropertyName("GlobalTableName");
+                context.Writer.WriteStringValue(publicRequest.GlobalTableName);
+            }
+
+            if(publicRequest.IsSetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate())
+            {
+                context.Writer.WritePropertyName("GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate");
+                context.Writer.WriteStartObject();
+
+                var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
+                marshaller.Marshall(publicRequest.GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate, context);
+
+                context.Writer.WriteEndObject();
+            }
+
+            if(publicRequest.IsSetGlobalTableProvisionedWriteCapacityUnits())
+            {
+                context.Writer.WritePropertyName("GlobalTableProvisionedWriteCapacityUnits");
+                context.Writer.WriteNumberValue(publicRequest.GlobalTableProvisionedWriteCapacityUnits.Value);
+            }
+
+            if(publicRequest.IsSetReplicaSettingsUpdate())
+            {
+                context.Writer.WritePropertyName("ReplicaSettingsUpdate");
+                context.Writer.WriteStartArray();
+                foreach(var publicRequestReplicaSettingsUpdateListValue in publicRequest.ReplicaSettingsUpdate)
+                {
+                    context.Writer.WriteStartObject();
+
+                    var marshaller = ReplicaSettingsUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequestReplicaSettingsUpdateListValue, context);
+
+                    context.Writer.WriteEndObject();
+                }
+                context.Writer.WriteEndArray();
+            }
+
+            writer.WriteEndObject();
+            writer.Flush();
+            // ToArray() must be called here because aspects of sigv4 signing require a byte array
+#if !NETFRAMEWORK
+            request.Content = arrayPoolBufferWriter.WrittenMemory.ToArray();
+#else
+            request.Content = memoryStream.ToArray();
+#endif
+            
 
 
             return request;

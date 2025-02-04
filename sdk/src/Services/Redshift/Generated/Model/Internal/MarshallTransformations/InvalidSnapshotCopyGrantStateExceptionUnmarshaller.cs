@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidSnapshotCopyGrantStateException operation
     /// </summary>  
-    public class InvalidSnapshotCopyGrantStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidSnapshotCopyGrantStateException, XmlUnmarshallerContext>
+    public class InvalidSnapshotCopyGrantStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidSnapshotCopyGrantStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

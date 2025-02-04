@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InboundIntegration Object
     /// </summary>  
-    public class InboundIntegrationUnmarshaller : IUnmarshaller<InboundIntegration, XmlUnmarshallerContext>, IUnmarshaller<InboundIntegration, JsonUnmarshallerContext>
+    public class InboundIntegrationUnmarshaller : IXmlUnmarshaller<InboundIntegration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,17 +105,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InboundIntegration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InboundIntegrationUnmarshaller _instance = new InboundIntegrationUnmarshaller();        
 

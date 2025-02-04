@@ -47,6 +47,10 @@ namespace Amazon.Runtime
         private const string _versionString = "Version";
         private Logger _logger = Logger.GetLogger(typeof(ProcessAWSCredentials));
         private readonly ProcessStartInfo _processStartInfo;
+        private static JsonDocumentOptions _options = new JsonDocumentOptions
+        {
+            AllowTrailingCommas = true
+        };
         #endregion
 
         #region Public constructors
@@ -157,7 +161,7 @@ namespace Amazon.Runtime
                 JsonDocument data = null;
                 try
                 {
-                    data = JsonDocument.Parse(processInfo.StandardOutput);
+                    data = JsonDocument.Parse(processInfo.StandardOutput, _options);
                 }
                 catch(JsonException je)
                 {

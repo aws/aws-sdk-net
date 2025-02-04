@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AccessToSnapshotDeniedException operation
     /// </summary>  
-    public class AccessToSnapshotDeniedExceptionUnmarshaller : IErrorResponseUnmarshaller<AccessToSnapshotDeniedException, XmlUnmarshallerContext>
+    public class AccessToSnapshotDeniedExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AccessToSnapshotDeniedException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

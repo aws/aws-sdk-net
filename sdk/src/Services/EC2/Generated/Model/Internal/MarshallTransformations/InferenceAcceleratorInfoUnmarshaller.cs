@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InferenceAcceleratorInfo Object
     /// </summary>  
-    public class InferenceAcceleratorInfoUnmarshaller : IUnmarshaller<InferenceAcceleratorInfo, XmlUnmarshallerContext>, IUnmarshaller<InferenceAcceleratorInfo, JsonUnmarshallerContext>
+    public class InferenceAcceleratorInfoUnmarshaller : IXmlUnmarshaller<InferenceAcceleratorInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InferenceAcceleratorInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InferenceAcceleratorInfoUnmarshaller _instance = new InferenceAcceleratorInfoUnmarshaller();        
 

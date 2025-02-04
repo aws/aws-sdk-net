@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidParameterCombinationException operation
     /// </summary>  
-    public class InvalidParameterCombinationExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidParameterCombinationException, XmlUnmarshallerContext>
+    public class InvalidParameterCombinationExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidParameterCombinationException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomOriginConfig Object
     /// </summary>  
-    public class CustomOriginConfigUnmarshaller : IUnmarshaller<CustomOriginConfig, XmlUnmarshallerContext>, IUnmarshaller<CustomOriginConfig, JsonUnmarshallerContext>
+    public class CustomOriginConfigUnmarshaller : IXmlUnmarshaller<CustomOriginConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CustomOriginConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static CustomOriginConfigUnmarshaller _instance = new CustomOriginConfigUnmarshaller();        
 
         /// <summary>

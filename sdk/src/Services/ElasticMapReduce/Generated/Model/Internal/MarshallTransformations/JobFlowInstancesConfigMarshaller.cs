@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,149 +49,149 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalMasterSecurityGroups())
             {
                 context.Writer.WritePropertyName("AdditionalMasterSecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalMasterSecurityGroupsListValue in requestObject.AdditionalMasterSecurityGroups)
                 {
-                        context.Writer.Write(requestObjectAdditionalMasterSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalMasterSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetAdditionalSlaveSecurityGroups())
             {
                 context.Writer.WritePropertyName("AdditionalSlaveSecurityGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAdditionalSlaveSecurityGroupsListValue in requestObject.AdditionalSlaveSecurityGroups)
                 {
-                        context.Writer.Write(requestObjectAdditionalSlaveSecurityGroupsListValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalSlaveSecurityGroupsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEc2KeyName())
             {
                 context.Writer.WritePropertyName("Ec2KeyName");
-                context.Writer.Write(requestObject.Ec2KeyName);
+                context.Writer.WriteStringValue(requestObject.Ec2KeyName);
             }
 
             if(requestObject.IsSetEc2SubnetId())
             {
                 context.Writer.WritePropertyName("Ec2SubnetId");
-                context.Writer.Write(requestObject.Ec2SubnetId);
+                context.Writer.WriteStringValue(requestObject.Ec2SubnetId);
             }
 
             if(requestObject.IsSetEc2SubnetIds())
             {
                 context.Writer.WritePropertyName("Ec2SubnetIds");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectEc2SubnetIdsListValue in requestObject.Ec2SubnetIds)
                 {
-                        context.Writer.Write(requestObjectEc2SubnetIdsListValue);
+                        context.Writer.WriteStringValue(requestObjectEc2SubnetIdsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEmrManagedMasterSecurityGroup())
             {
                 context.Writer.WritePropertyName("EmrManagedMasterSecurityGroup");
-                context.Writer.Write(requestObject.EmrManagedMasterSecurityGroup);
+                context.Writer.WriteStringValue(requestObject.EmrManagedMasterSecurityGroup);
             }
 
             if(requestObject.IsSetEmrManagedSlaveSecurityGroup())
             {
                 context.Writer.WritePropertyName("EmrManagedSlaveSecurityGroup");
-                context.Writer.Write(requestObject.EmrManagedSlaveSecurityGroup);
+                context.Writer.WriteStringValue(requestObject.EmrManagedSlaveSecurityGroup);
             }
 
             if(requestObject.IsSetHadoopVersion())
             {
                 context.Writer.WritePropertyName("HadoopVersion");
-                context.Writer.Write(requestObject.HadoopVersion);
+                context.Writer.WriteStringValue(requestObject.HadoopVersion);
             }
 
             if(requestObject.IsSetInstanceCount())
             {
                 context.Writer.WritePropertyName("InstanceCount");
-                context.Writer.Write(requestObject.InstanceCount.Value);
+                context.Writer.WriteNumberValue(requestObject.InstanceCount.Value);
             }
 
             if(requestObject.IsSetInstanceFleets())
             {
                 context.Writer.WritePropertyName("InstanceFleets");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceFleetsListValue in requestObject.InstanceFleets)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InstanceFleetConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceFleetsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetInstanceGroups())
             {
                 context.Writer.WritePropertyName("InstanceGroups");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectInstanceGroupsListValue in requestObject.InstanceGroups)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = InstanceGroupConfigMarshaller.Instance;
                     marshaller.Marshall(requestObjectInstanceGroupsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetKeepJobFlowAliveWhenNoSteps())
             {
                 context.Writer.WritePropertyName("KeepJobFlowAliveWhenNoSteps");
-                context.Writer.Write(requestObject.KeepJobFlowAliveWhenNoSteps.Value);
+                context.Writer.WriteBooleanValue(requestObject.KeepJobFlowAliveWhenNoSteps.Value);
             }
 
             if(requestObject.IsSetMasterInstanceType())
             {
                 context.Writer.WritePropertyName("MasterInstanceType");
-                context.Writer.Write(requestObject.MasterInstanceType);
+                context.Writer.WriteStringValue(requestObject.MasterInstanceType);
             }
 
             if(requestObject.IsSetPlacement())
             {
                 context.Writer.WritePropertyName("Placement");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = PlacementTypeMarshaller.Instance;
                 marshaller.Marshall(requestObject.Placement, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetServiceAccessSecurityGroup())
             {
                 context.Writer.WritePropertyName("ServiceAccessSecurityGroup");
-                context.Writer.Write(requestObject.ServiceAccessSecurityGroup);
+                context.Writer.WriteStringValue(requestObject.ServiceAccessSecurityGroup);
             }
 
             if(requestObject.IsSetSlaveInstanceType())
             {
                 context.Writer.WritePropertyName("SlaveInstanceType");
-                context.Writer.Write(requestObject.SlaveInstanceType);
+                context.Writer.WriteStringValue(requestObject.SlaveInstanceType);
             }
 
             if(requestObject.IsSetTerminationProtected())
             {
                 context.Writer.WritePropertyName("TerminationProtected");
-                context.Writer.Write(requestObject.TerminationProtected.Value);
+                context.Writer.WriteBooleanValue(requestObject.TerminationProtected.Value);
             }
 
             if(requestObject.IsSetUnhealthyNodeReplacement())
             {
                 context.Writer.WritePropertyName("UnhealthyNodeReplacement");
-                context.Writer.Write(requestObject.UnhealthyNodeReplacement.Value);
+                context.Writer.WriteBooleanValue(requestObject.UnhealthyNodeReplacement.Value);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IntegrationAlreadyExistsException operation
     /// </summary>  
-    public class IntegrationAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<IntegrationAlreadyExistsException, XmlUnmarshallerContext>
+    public class IntegrationAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IntegrationAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

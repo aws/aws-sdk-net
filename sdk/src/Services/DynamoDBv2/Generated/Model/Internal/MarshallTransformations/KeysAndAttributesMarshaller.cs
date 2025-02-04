@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,62 +49,62 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAttributesToGet())
             {
                 context.Writer.WritePropertyName("AttributesToGet");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectAttributesToGetListValue in requestObject.AttributesToGet)
                 {
-                        context.Writer.Write(requestObjectAttributesToGetListValue);
+                        context.Writer.WriteStringValue(requestObjectAttributesToGetListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetConsistentRead())
             {
                 context.Writer.WritePropertyName("ConsistentRead");
-                context.Writer.Write(requestObject.ConsistentRead.Value);
+                context.Writer.WriteBooleanValue(requestObject.ConsistentRead.Value);
             }
 
             if(requestObject.IsSetExpressionAttributeNames())
             {
                 context.Writer.WritePropertyName("ExpressionAttributeNames");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectExpressionAttributeNamesKvp in requestObject.ExpressionAttributeNames)
                 {
                     context.Writer.WritePropertyName(requestObjectExpressionAttributeNamesKvp.Key);
                     var requestObjectExpressionAttributeNamesValue = requestObjectExpressionAttributeNamesKvp.Value;
 
-                        context.Writer.Write(requestObjectExpressionAttributeNamesValue);
+                        context.Writer.WriteStringValue(requestObjectExpressionAttributeNamesValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKeys())
             {
                 context.Writer.WritePropertyName("Keys");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectKeysListValue in requestObject.Keys)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
                     foreach (var requestObjectKeysListValueKvp in requestObjectKeysListValue)
                     {
                         context.Writer.WritePropertyName(requestObjectKeysListValueKvp.Key);
                         var requestObjectKeysListValueValue = requestObjectKeysListValueKvp.Value;
 
-                        context.Writer.WriteObjectStart();
+                        context.Writer.WriteStartObject();
 
                         var marshaller = AttributeValueMarshaller.Instance;
                         marshaller.Marshall(requestObjectKeysListValueValue, context);
 
-                        context.Writer.WriteObjectEnd();
+                        context.Writer.WriteEndObject();
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetProjectionExpression())
             {
                 context.Writer.WritePropertyName("ProjectionExpression");
-                context.Writer.Write(requestObject.ProjectionExpression);
+                context.Writer.WriteStringValue(requestObject.ProjectionExpression);
             }
 
         }

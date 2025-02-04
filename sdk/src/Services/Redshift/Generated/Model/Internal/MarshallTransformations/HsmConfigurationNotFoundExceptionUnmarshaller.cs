@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HsmConfigurationNotFoundException operation
     /// </summary>  
-    public class HsmConfigurationNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<HsmConfigurationNotFoundException, XmlUnmarshallerContext>
+    public class HsmConfigurationNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HsmConfigurationNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for QueryStringCacheKeys Object
     /// </summary>  
-    public class QueryStringCacheKeysUnmarshaller : IUnmarshaller<QueryStringCacheKeys, XmlUnmarshallerContext>, IUnmarshaller<QueryStringCacheKeys, JsonUnmarshallerContext>
+    public class QueryStringCacheKeysUnmarshaller : IXmlUnmarshaller<QueryStringCacheKeys, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,17 +80,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public QueryStringCacheKeys Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static QueryStringCacheKeysUnmarshaller _instance = new QueryStringCacheKeysUnmarshaller();        
 
         /// <summary>

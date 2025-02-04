@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IllegalDeleteException operation
     /// </summary>  
-    public class IllegalDeleteExceptionUnmarshaller : IErrorResponseUnmarshaller<IllegalDeleteException, XmlUnmarshallerContext>
+    public class IllegalDeleteExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IllegalDeleteException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

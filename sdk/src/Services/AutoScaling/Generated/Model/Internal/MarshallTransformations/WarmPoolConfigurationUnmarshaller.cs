@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for WarmPoolConfiguration Object
     /// </summary>  
-    public class WarmPoolConfigurationUnmarshaller : IUnmarshaller<WarmPoolConfiguration, XmlUnmarshallerContext>, IUnmarshaller<WarmPoolConfiguration, JsonUnmarshallerContext>
+    public class WarmPoolConfigurationUnmarshaller : IXmlUnmarshaller<WarmPoolConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public WarmPoolConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static WarmPoolConfigurationUnmarshaller _instance = new WarmPoolConfigurationUnmarshaller();        
 

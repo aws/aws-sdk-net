@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,38 +49,38 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAdditionalInfo())
             {
                 context.Writer.WritePropertyName("AdditionalInfo");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectAdditionalInfoKvp in requestObject.AdditionalInfo)
                 {
                     context.Writer.WritePropertyName(requestObjectAdditionalInfoKvp.Key);
                     var requestObjectAdditionalInfoValue = requestObjectAdditionalInfoKvp.Value;
 
-                        context.Writer.Write(requestObjectAdditionalInfoValue);
+                        context.Writer.WriteStringValue(requestObjectAdditionalInfoValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetArgs())
             {
                 context.Writer.WritePropertyName("Args");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectArgsListValue in requestObject.Args)
                 {
-                        context.Writer.Write(requestObjectArgsListValue);
+                        context.Writer.WriteStringValue(requestObjectArgsListValue);
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
             if(requestObject.IsSetVersion())
             {
                 context.Writer.WritePropertyName("Version");
-                context.Writer.Write(requestObject.Version);
+                context.Writer.WriteStringValue(requestObject.Version);
             }
 
         }

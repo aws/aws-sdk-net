@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AuthorizationNotFoundException operation
     /// </summary>  
-    public class AuthorizationNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<AuthorizationNotFoundException, XmlUnmarshallerContext>
+    public class AuthorizationNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AuthorizationNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

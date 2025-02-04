@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RedshiftIdcApplicationNotExistsException operation
     /// </summary>  
-    public class RedshiftIdcApplicationNotExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<RedshiftIdcApplicationNotExistsException, XmlUnmarshallerContext>
+    public class RedshiftIdcApplicationNotExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RedshiftIdcApplicationNotExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

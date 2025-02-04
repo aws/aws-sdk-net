@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterSubnetGroupAlreadyExistsException operation
     /// </summary>  
-    public class ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ClusterSubnetGroupAlreadyExistsException, XmlUnmarshallerContext>
+    public class ClusterSubnetGroupAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ClusterSubnetGroupAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

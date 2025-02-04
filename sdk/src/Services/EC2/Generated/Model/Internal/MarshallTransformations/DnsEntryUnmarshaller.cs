@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DnsEntry Object
     /// </summary>  
-    public class DnsEntryUnmarshaller : IUnmarshaller<DnsEntry, XmlUnmarshallerContext>, IUnmarshaller<DnsEntry, JsonUnmarshallerContext>
+    public class DnsEntryUnmarshaller : IXmlUnmarshaller<DnsEntry, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DnsEntry Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DnsEntryUnmarshaller _instance = new DnsEntryUnmarshaller();        
 

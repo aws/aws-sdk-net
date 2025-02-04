@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IpRange Object
     /// </summary>  
-    public class IpRangeUnmarshaller : IUnmarshaller<IpRange, XmlUnmarshallerContext>, IUnmarshaller<IpRange, JsonUnmarshallerContext>
+    public class IpRangeUnmarshaller : IXmlUnmarshaller<IpRange, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IpRange Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IpRangeUnmarshaller _instance = new IpRangeUnmarshaller();        
 

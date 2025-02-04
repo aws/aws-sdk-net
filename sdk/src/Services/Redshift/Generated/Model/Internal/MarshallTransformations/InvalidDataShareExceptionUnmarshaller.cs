@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidDataShareException operation
     /// </summary>  
-    public class InvalidDataShareExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidDataShareException, XmlUnmarshallerContext>
+    public class InvalidDataShareExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidDataShareException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

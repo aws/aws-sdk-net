@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,36 +49,36 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("Encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetLabel())
             {
                 context.Writer.WritePropertyName("Label");
-                context.Writer.Write(requestObject.Label);
+                context.Writer.WriteStringValue(requestObject.Label);
             }
 
             if(requestObject.IsSetLanguage())
             {
                 context.Writer.WritePropertyName("Language");
-                context.Writer.Write(requestObject.Language);
+                context.Writer.WriteStringValue(requestObject.Language);
             }
 
             if(requestObject.IsSetTimeOffset())
             {
                 context.Writer.WritePropertyName("TimeOffset");
-                context.Writer.Write(requestObject.TimeOffset);
+                context.Writer.WriteStringValue(requestObject.TimeOffset);
             }
 
         }

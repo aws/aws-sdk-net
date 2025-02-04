@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LoadBalancerTargetGroupState Object
     /// </summary>  
-    public class LoadBalancerTargetGroupStateUnmarshaller : IUnmarshaller<LoadBalancerTargetGroupState, XmlUnmarshallerContext>, IUnmarshaller<LoadBalancerTargetGroupState, JsonUnmarshallerContext>
+    public class LoadBalancerTargetGroupStateUnmarshaller : IXmlUnmarshaller<LoadBalancerTargetGroupState, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LoadBalancerTargetGroupState Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LoadBalancerTargetGroupStateUnmarshaller _instance = new LoadBalancerTargetGroupStateUnmarshaller();        
 

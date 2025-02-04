@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstancePrivateIpAddress Object
     /// </summary>  
-    public class InstancePrivateIpAddressUnmarshaller : IUnmarshaller<InstancePrivateIpAddress, XmlUnmarshallerContext>, IUnmarshaller<InstancePrivateIpAddress, JsonUnmarshallerContext>
+    public class InstancePrivateIpAddressUnmarshaller : IXmlUnmarshaller<InstancePrivateIpAddress, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstancePrivateIpAddress Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstancePrivateIpAddressUnmarshaller _instance = new InstancePrivateIpAddressUnmarshaller();        
 

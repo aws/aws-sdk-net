@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StaleSecurityGroup Object
     /// </summary>  
-    public class StaleSecurityGroupUnmarshaller : IUnmarshaller<StaleSecurityGroup, XmlUnmarshallerContext>, IUnmarshaller<StaleSecurityGroup, JsonUnmarshallerContext>
+    public class StaleSecurityGroupUnmarshaller : IXmlUnmarshaller<StaleSecurityGroup, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -110,17 +110,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StaleSecurityGroup Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StaleSecurityGroupUnmarshaller _instance = new StaleSecurityGroupUnmarshaller();        
 

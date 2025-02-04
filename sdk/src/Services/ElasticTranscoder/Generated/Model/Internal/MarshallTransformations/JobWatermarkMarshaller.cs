@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("Encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInputKey())
             {
                 context.Writer.WritePropertyName("InputKey");
-                context.Writer.Write(requestObject.InputKey);
+                context.Writer.WriteStringValue(requestObject.InputKey);
             }
 
             if(requestObject.IsSetPresetWatermarkId())
             {
                 context.Writer.WritePropertyName("PresetWatermarkId");
-                context.Writer.Write(requestObject.PresetWatermarkId);
+                context.Writer.WriteStringValue(requestObject.PresetWatermarkId);
             }
 
         }

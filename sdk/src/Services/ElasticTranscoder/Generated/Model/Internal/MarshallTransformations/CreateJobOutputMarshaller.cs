@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,107 +49,107 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAlbumArt())
             {
                 context.Writer.WritePropertyName("AlbumArt");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = JobAlbumArtMarshaller.Instance;
                 marshaller.Marshall(requestObject.AlbumArt, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetCaptions())
             {
                 context.Writer.WritePropertyName("Captions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = CaptionsMarshaller.Instance;
                 marshaller.Marshall(requestObject.Captions, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetComposition())
             {
                 context.Writer.WritePropertyName("Composition");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectCompositionListValue in requestObject.Composition)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ClipMarshaller.Instance;
                     marshaller.Marshall(requestObjectCompositionListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetEncryption())
             {
                 context.Writer.WritePropertyName("Encryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.Encryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetKey())
             {
                 context.Writer.WritePropertyName("Key");
-                context.Writer.Write(requestObject.Key);
+                context.Writer.WriteStringValue(requestObject.Key);
             }
 
             if(requestObject.IsSetPresetId())
             {
                 context.Writer.WritePropertyName("PresetId");
-                context.Writer.Write(requestObject.PresetId);
+                context.Writer.WriteStringValue(requestObject.PresetId);
             }
 
             if(requestObject.IsSetRotate())
             {
                 context.Writer.WritePropertyName("Rotate");
-                context.Writer.Write(requestObject.Rotate);
+                context.Writer.WriteStringValue(requestObject.Rotate);
             }
 
             if(requestObject.IsSetSegmentDuration())
             {
                 context.Writer.WritePropertyName("SegmentDuration");
-                context.Writer.Write(requestObject.SegmentDuration);
+                context.Writer.WriteStringValue(requestObject.SegmentDuration);
             }
 
             if(requestObject.IsSetThumbnailEncryption())
             {
                 context.Writer.WritePropertyName("ThumbnailEncryption");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EncryptionMarshaller.Instance;
                 marshaller.Marshall(requestObject.ThumbnailEncryption, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetThumbnailPattern())
             {
                 context.Writer.WritePropertyName("ThumbnailPattern");
-                context.Writer.Write(requestObject.ThumbnailPattern);
+                context.Writer.WriteStringValue(requestObject.ThumbnailPattern);
             }
 
             if(requestObject.IsSetWatermarks())
             {
                 context.Writer.WritePropertyName("Watermarks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWatermarksListValue in requestObject.Watermarks)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = JobWatermarkMarshaller.Instance;
                     marshaller.Marshall(requestObjectWatermarksListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

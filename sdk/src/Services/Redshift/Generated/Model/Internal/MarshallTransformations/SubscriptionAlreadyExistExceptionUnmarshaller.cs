@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubscriptionAlreadyExistException operation
     /// </summary>  
-    public class SubscriptionAlreadyExistExceptionUnmarshaller : IErrorResponseUnmarshaller<SubscriptionAlreadyExistException, XmlUnmarshallerContext>
+    public class SubscriptionAlreadyExistExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SubscriptionAlreadyExistException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

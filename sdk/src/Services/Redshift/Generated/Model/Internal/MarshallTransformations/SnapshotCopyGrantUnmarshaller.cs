@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SnapshotCopyGrant Object
     /// </summary>  
-    public class SnapshotCopyGrantUnmarshaller : IUnmarshaller<SnapshotCopyGrant, XmlUnmarshallerContext>, IUnmarshaller<SnapshotCopyGrant, JsonUnmarshallerContext>
+    public class SnapshotCopyGrantUnmarshaller : IXmlUnmarshaller<SnapshotCopyGrant, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -87,17 +87,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SnapshotCopyGrant Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SnapshotCopyGrantUnmarshaller _instance = new SnapshotCopyGrantUnmarshaller();        
 

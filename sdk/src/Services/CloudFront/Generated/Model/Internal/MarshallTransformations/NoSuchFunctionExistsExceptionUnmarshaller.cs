@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchFunctionExistsException operation
     /// </summary>  
-    public class NoSuchFunctionExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchFunctionExistsException, XmlUnmarshallerContext>
+    public class NoSuchFunctionExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchFunctionExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

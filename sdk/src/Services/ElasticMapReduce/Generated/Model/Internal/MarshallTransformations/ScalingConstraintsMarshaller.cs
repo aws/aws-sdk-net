@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaxCapacity())
             {
                 context.Writer.WritePropertyName("MaxCapacity");
-                context.Writer.Write(requestObject.MaxCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.MaxCapacity.Value);
             }
 
             if(requestObject.IsSetMinCapacity())
             {
                 context.Writer.WritePropertyName("MinCapacity");
-                context.Writer.Write(requestObject.MinCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.MinCapacity.Value);
             }
 
         }

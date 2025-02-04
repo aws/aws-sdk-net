@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IntegrationNotFoundException operation
     /// </summary>  
-    public class IntegrationNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<IntegrationNotFoundException, XmlUnmarshallerContext>
+    public class IntegrationNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<IntegrationNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

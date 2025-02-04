@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CustomerGateway Object
     /// </summary>  
-    public class CustomerGatewayUnmarshaller : IUnmarshaller<CustomerGateway, XmlUnmarshallerContext>, IUnmarshaller<CustomerGateway, JsonUnmarshallerContext>
+    public class CustomerGatewayUnmarshaller : IXmlUnmarshaller<CustomerGateway, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -123,17 +123,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CustomerGateway Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CustomerGatewayUnmarshaller _instance = new CustomerGatewayUnmarshaller();        
 

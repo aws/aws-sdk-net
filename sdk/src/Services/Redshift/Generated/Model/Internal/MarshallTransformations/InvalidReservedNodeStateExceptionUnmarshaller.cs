@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidReservedNodeStateException operation
     /// </summary>  
-    public class InvalidReservedNodeStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidReservedNodeStateException, XmlUnmarshallerContext>
+    public class InvalidReservedNodeStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidReservedNodeStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RealtimeLogConfigAlreadyExistsException operation
     /// </summary>  
-    public class RealtimeLogConfigAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<RealtimeLogConfigAlreadyExistsException, XmlUnmarshallerContext>
+    public class RealtimeLogConfigAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<RealtimeLogConfigAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidClusterParameterGroupStateException operation
     /// </summary>  
-    public class InvalidClusterParameterGroupStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidClusterParameterGroupStateException, XmlUnmarshallerContext>
+    public class InvalidClusterParameterGroupStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidClusterParameterGroupStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

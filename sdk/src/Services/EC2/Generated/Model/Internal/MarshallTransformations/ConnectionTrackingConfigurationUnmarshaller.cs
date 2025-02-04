@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ConnectionTrackingConfiguration Object
     /// </summary>  
-    public class ConnectionTrackingConfigurationUnmarshaller : IUnmarshaller<ConnectionTrackingConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ConnectionTrackingConfiguration, JsonUnmarshallerContext>
+    public class ConnectionTrackingConfigurationUnmarshaller : IXmlUnmarshaller<ConnectionTrackingConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ConnectionTrackingConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ConnectionTrackingConfigurationUnmarshaller _instance = new ConnectionTrackingConfigurationUnmarshaller();        
 

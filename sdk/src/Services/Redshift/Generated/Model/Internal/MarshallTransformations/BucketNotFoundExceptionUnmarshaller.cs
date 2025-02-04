@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BucketNotFoundException operation
     /// </summary>  
-    public class BucketNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<BucketNotFoundException, XmlUnmarshallerContext>
+    public class BucketNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BucketNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

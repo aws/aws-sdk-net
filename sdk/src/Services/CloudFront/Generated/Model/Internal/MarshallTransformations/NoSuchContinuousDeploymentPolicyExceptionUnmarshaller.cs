@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchContinuousDeploymentPolicyException operation
     /// </summary>  
-    public class NoSuchContinuousDeploymentPolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchContinuousDeploymentPolicyException, XmlUnmarshallerContext>
+    public class NoSuchContinuousDeploymentPolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchContinuousDeploymentPolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

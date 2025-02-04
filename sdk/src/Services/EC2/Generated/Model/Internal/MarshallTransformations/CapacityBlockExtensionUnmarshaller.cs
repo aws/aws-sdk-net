@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityBlockExtension Object
     /// </summary>  
-    public class CapacityBlockExtensionUnmarshaller : IUnmarshaller<CapacityBlockExtension, XmlUnmarshallerContext>, IUnmarshaller<CapacityBlockExtension, JsonUnmarshallerContext>
+    public class CapacityBlockExtensionUnmarshaller : IXmlUnmarshaller<CapacityBlockExtension, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -142,17 +142,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityBlockExtension Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityBlockExtensionUnmarshaller _instance = new CapacityBlockExtensionUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for RuleGroupRuleOptionsPair Object
     /// </summary>  
-    public class RuleGroupRuleOptionsPairUnmarshaller : IUnmarshaller<RuleGroupRuleOptionsPair, XmlUnmarshallerContext>, IUnmarshaller<RuleGroupRuleOptionsPair, JsonUnmarshallerContext>
+    public class RuleGroupRuleOptionsPairUnmarshaller : IXmlUnmarshaller<RuleGroupRuleOptionsPair, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public RuleGroupRuleOptionsPair Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RuleGroupRuleOptionsPairUnmarshaller _instance = new RuleGroupRuleOptionsPairUnmarshaller();        
 

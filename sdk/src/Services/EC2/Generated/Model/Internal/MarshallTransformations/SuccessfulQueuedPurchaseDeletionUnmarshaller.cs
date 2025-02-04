@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SuccessfulQueuedPurchaseDeletion Object
     /// </summary>  
-    public class SuccessfulQueuedPurchaseDeletionUnmarshaller : IUnmarshaller<SuccessfulQueuedPurchaseDeletion, XmlUnmarshallerContext>, IUnmarshaller<SuccessfulQueuedPurchaseDeletion, JsonUnmarshallerContext>
+    public class SuccessfulQueuedPurchaseDeletionUnmarshaller : IXmlUnmarshaller<SuccessfulQueuedPurchaseDeletion, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public SuccessfulQueuedPurchaseDeletion Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static SuccessfulQueuedPurchaseDeletionUnmarshaller _instance = new SuccessfulQueuedPurchaseDeletionUnmarshaller();        
 

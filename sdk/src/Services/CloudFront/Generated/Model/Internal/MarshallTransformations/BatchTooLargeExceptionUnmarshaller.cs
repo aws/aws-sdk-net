@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for BatchTooLargeException operation
     /// </summary>  
-    public class BatchTooLargeExceptionUnmarshaller : IErrorResponseUnmarshaller<BatchTooLargeException, XmlUnmarshallerContext>
+    public class BatchTooLargeExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<BatchTooLargeException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

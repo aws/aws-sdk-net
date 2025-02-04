@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Range Object
     /// </summary>  
-    public class RangeUnmarshaller : IUnmarshaller<Range, XmlUnmarshallerContext>, IUnmarshaller<Range, JsonUnmarshallerContext>
+    public class RangeUnmarshaller : IXmlUnmarshaller<Range, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Range Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static RangeUnmarshaller _instance = new RangeUnmarshaller();        
 

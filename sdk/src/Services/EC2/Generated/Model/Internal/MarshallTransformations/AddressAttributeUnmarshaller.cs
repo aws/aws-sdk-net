@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AddressAttribute Object
     /// </summary>  
-    public class AddressAttributeUnmarshaller : IUnmarshaller<AddressAttribute, XmlUnmarshallerContext>, IUnmarshaller<AddressAttribute, JsonUnmarshallerContext>
+    public class AddressAttributeUnmarshaller : IXmlUnmarshaller<AddressAttribute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AddressAttribute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AddressAttributeUnmarshaller _instance = new AddressAttributeUnmarshaller();        
 

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,13 +49,13 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetReadCapacityUnits())
             {
                 context.Writer.WritePropertyName("ReadCapacityUnits");
-                context.Writer.Write(requestObject.ReadCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.ReadCapacityUnits.Value);
             }
 
             if(requestObject.IsSetWriteCapacityUnits())
             {
                 context.Writer.WritePropertyName("WriteCapacityUnits");
-                context.Writer.Write(requestObject.WriteCapacityUnits.Value);
+                context.Writer.WriteNumberValue(requestObject.WriteCapacityUnits.Value);
             }
 
         }

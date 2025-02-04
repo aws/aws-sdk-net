@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidEndpointStateException operation
     /// </summary>  
-    public class InvalidEndpointStateExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidEndpointStateException, XmlUnmarshallerContext>
+    public class InvalidEndpointStateExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidEndpointStateException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterParameterGroupNotFoundException operation
     /// </summary>  
-    public class ClusterParameterGroupNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<ClusterParameterGroupNotFoundException, XmlUnmarshallerContext>
+    public class ClusterParameterGroupNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ClusterParameterGroupNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

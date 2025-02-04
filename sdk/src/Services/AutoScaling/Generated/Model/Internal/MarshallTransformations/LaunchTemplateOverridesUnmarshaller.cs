@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LaunchTemplateOverrides Object
     /// </summary>  
-    public class LaunchTemplateOverridesUnmarshaller : IUnmarshaller<LaunchTemplateOverrides, XmlUnmarshallerContext>, IUnmarshaller<LaunchTemplateOverrides, JsonUnmarshallerContext>
+    public class LaunchTemplateOverridesUnmarshaller : IXmlUnmarshaller<LaunchTemplateOverrides, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LaunchTemplateOverrides Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LaunchTemplateOverridesUnmarshaller _instance = new LaunchTemplateOverridesUnmarshaller();        
 

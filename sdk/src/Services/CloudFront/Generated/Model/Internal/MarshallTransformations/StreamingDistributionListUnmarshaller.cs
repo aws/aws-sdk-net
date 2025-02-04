@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StreamingDistributionList Object
     /// </summary>  
-    public class StreamingDistributionListUnmarshaller : IUnmarshaller<StreamingDistributionList, XmlUnmarshallerContext>, IUnmarshaller<StreamingDistributionList, JsonUnmarshallerContext>
+    public class StreamingDistributionListUnmarshaller : IXmlUnmarshaller<StreamingDistributionList, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -104,17 +104,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StreamingDistributionList Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static StreamingDistributionListUnmarshaller _instance = new StreamingDistributionListUnmarshaller();        
 
         /// <summary>

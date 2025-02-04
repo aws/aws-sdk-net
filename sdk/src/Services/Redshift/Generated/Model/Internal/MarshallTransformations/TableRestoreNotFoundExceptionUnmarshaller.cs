@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TableRestoreNotFoundException operation
     /// </summary>  
-    public class TableRestoreNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<TableRestoreNotFoundException, XmlUnmarshallerContext>
+    public class TableRestoreNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TableRestoreNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

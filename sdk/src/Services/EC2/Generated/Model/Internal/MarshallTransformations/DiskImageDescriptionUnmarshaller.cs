@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DiskImageDescription Object
     /// </summary>  
-    public class DiskImageDescriptionUnmarshaller : IUnmarshaller<DiskImageDescription, XmlUnmarshallerContext>, IUnmarshaller<DiskImageDescription, JsonUnmarshallerContext>
+    public class DiskImageDescriptionUnmarshaller : IXmlUnmarshaller<DiskImageDescription, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DiskImageDescription Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DiskImageDescriptionUnmarshaller _instance = new DiskImageDescriptionUnmarshaller();        
 

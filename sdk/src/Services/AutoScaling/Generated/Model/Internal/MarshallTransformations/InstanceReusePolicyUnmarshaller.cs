@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceReusePolicy Object
     /// </summary>  
-    public class InstanceReusePolicyUnmarshaller : IUnmarshaller<InstanceReusePolicy, XmlUnmarshallerContext>, IUnmarshaller<InstanceReusePolicy, JsonUnmarshallerContext>
+    public class InstanceReusePolicyUnmarshaller : IXmlUnmarshaller<InstanceReusePolicy, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceReusePolicy Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceReusePolicyUnmarshaller _instance = new InstanceReusePolicyUnmarshaller();        
 

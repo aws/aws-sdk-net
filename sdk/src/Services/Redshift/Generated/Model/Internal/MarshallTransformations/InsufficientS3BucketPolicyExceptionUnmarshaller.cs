@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InsufficientS3BucketPolicyException operation
     /// </summary>  
-    public class InsufficientS3BucketPolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<InsufficientS3BucketPolicyException, XmlUnmarshallerContext>
+    public class InsufficientS3BucketPolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InsufficientS3BucketPolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

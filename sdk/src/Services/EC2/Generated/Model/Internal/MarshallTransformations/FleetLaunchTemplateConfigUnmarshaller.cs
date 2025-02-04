@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FleetLaunchTemplateConfig Object
     /// </summary>  
-    public class FleetLaunchTemplateConfigUnmarshaller : IUnmarshaller<FleetLaunchTemplateConfig, XmlUnmarshallerContext>, IUnmarshaller<FleetLaunchTemplateConfig, JsonUnmarshallerContext>
+    public class FleetLaunchTemplateConfigUnmarshaller : IXmlUnmarshaller<FleetLaunchTemplateConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -81,17 +81,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FleetLaunchTemplateConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FleetLaunchTemplateConfigUnmarshaller _instance = new FleetLaunchTemplateConfigUnmarshaller();        
 

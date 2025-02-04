@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FunctionAlreadyExistsException operation
     /// </summary>  
-    public class FunctionAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<FunctionAlreadyExistsException, XmlUnmarshallerContext>
+    public class FunctionAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<FunctionAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TransitGatewayConnectPeerConfiguration Object
     /// </summary>  
-    public class TransitGatewayConnectPeerConfigurationUnmarshaller : IUnmarshaller<TransitGatewayConnectPeerConfiguration, XmlUnmarshallerContext>, IUnmarshaller<TransitGatewayConnectPeerConfiguration, JsonUnmarshallerContext>
+    public class TransitGatewayConnectPeerConfigurationUnmarshaller : IXmlUnmarshaller<TransitGatewayConnectPeerConfiguration, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -104,17 +104,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TransitGatewayConnectPeerConfiguration Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TransitGatewayConnectPeerConfigurationUnmarshaller _instance = new TransitGatewayConnectPeerConfigurationUnmarshaller();        
 

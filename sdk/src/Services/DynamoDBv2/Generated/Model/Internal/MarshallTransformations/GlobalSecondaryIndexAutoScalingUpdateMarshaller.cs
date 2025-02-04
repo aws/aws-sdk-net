@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
@@ -51,18 +49,18 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
             if(requestObject.IsSetIndexName())
             {
                 context.Writer.WritePropertyName("IndexName");
-                context.Writer.Write(requestObject.IndexName);
+                context.Writer.WriteStringValue(requestObject.IndexName);
             }
 
             if(requestObject.IsSetProvisionedWriteCapacityAutoScalingUpdate())
             {
                 context.Writer.WritePropertyName("ProvisionedWriteCapacityAutoScalingUpdate");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = AutoScalingSettingsUpdateMarshaller.Instance;
                 marshaller.Marshall(requestObject.ProvisionedWriteCapacityAutoScalingUpdate, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LocalGateway Object
     /// </summary>  
-    public class LocalGatewayUnmarshaller : IUnmarshaller<LocalGateway, XmlUnmarshallerContext>, IUnmarshaller<LocalGateway, JsonUnmarshallerContext>
+    public class LocalGatewayUnmarshaller : IXmlUnmarshaller<LocalGateway, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -99,17 +99,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LocalGateway Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LocalGatewayUnmarshaller _instance = new LocalGatewayUnmarshaller();        
 

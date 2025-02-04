@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyDistributionsAssociatedToCachePolicyException operation
     /// </summary>  
-    public class TooManyDistributionsAssociatedToCachePolicyExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyDistributionsAssociatedToCachePolicyException, XmlUnmarshallerContext>
+    public class TooManyDistributionsAssociatedToCachePolicyExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyDistributionsAssociatedToCachePolicyException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

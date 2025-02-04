@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for FleetSpotMaintenanceStrategies Object
     /// </summary>  
-    public class FleetSpotMaintenanceStrategiesUnmarshaller : IUnmarshaller<FleetSpotMaintenanceStrategies, XmlUnmarshallerContext>, IUnmarshaller<FleetSpotMaintenanceStrategies, JsonUnmarshallerContext>
+    public class FleetSpotMaintenanceStrategiesUnmarshaller : IXmlUnmarshaller<FleetSpotMaintenanceStrategies, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public FleetSpotMaintenanceStrategies Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static FleetSpotMaintenanceStrategiesUnmarshaller _instance = new FleetSpotMaintenanceStrategiesUnmarshaller();        
 

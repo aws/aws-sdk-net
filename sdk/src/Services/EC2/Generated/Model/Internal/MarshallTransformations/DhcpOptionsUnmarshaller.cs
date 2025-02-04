@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DhcpOptions Object
     /// </summary>  
-    public class DhcpOptionsUnmarshaller : IUnmarshaller<DhcpOptions, XmlUnmarshallerContext>, IUnmarshaller<DhcpOptions, JsonUnmarshallerContext>
+    public class DhcpOptionsUnmarshaller : IXmlUnmarshaller<DhcpOptions, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -98,17 +98,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DhcpOptions Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DhcpOptionsUnmarshaller _instance = new DhcpOptionsUnmarshaller();        
 

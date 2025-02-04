@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidQueryStringParametersException operation
     /// </summary>  
-    public class InvalidQueryStringParametersExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidQueryStringParametersException, XmlUnmarshallerContext>
+    public class InvalidQueryStringParametersExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidQueryStringParametersException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

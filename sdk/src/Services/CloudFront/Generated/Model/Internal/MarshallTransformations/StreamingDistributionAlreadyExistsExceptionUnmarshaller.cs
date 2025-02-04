@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StreamingDistributionAlreadyExistsException operation
     /// </summary>  
-    public class StreamingDistributionAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<StreamingDistributionAlreadyExistsException, XmlUnmarshallerContext>
+    public class StreamingDistributionAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<StreamingDistributionAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

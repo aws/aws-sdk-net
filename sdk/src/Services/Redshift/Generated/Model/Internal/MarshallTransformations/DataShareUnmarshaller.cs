@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DataShare Object
     /// </summary>  
-    public class DataShareUnmarshaller : IUnmarshaller<DataShare, XmlUnmarshallerContext>, IUnmarshaller<DataShare, JsonUnmarshallerContext>
+    public class DataShareUnmarshaller : IXmlUnmarshaller<DataShare, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,17 +105,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DataShare Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DataShareUnmarshaller _instance = new DataShareUnmarshaller();        
 

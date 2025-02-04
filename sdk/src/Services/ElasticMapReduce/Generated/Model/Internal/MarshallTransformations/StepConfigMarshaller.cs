@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,24 +49,24 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetActionOnFailure())
             {
                 context.Writer.WritePropertyName("ActionOnFailure");
-                context.Writer.Write(requestObject.ActionOnFailure);
+                context.Writer.WriteStringValue(requestObject.ActionOnFailure);
             }
 
             if(requestObject.IsSetHadoopJarStep())
             {
                 context.Writer.WritePropertyName("HadoopJarStep");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = HadoopJarStepConfigMarshaller.Instance;
                 marshaller.Marshall(requestObject.HadoopJarStep, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");
-                context.Writer.Write(requestObject.Name);
+                context.Writer.WriteStringValue(requestObject.Name);
             }
 
         }

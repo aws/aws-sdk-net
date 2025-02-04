@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for EventInformation Object
     /// </summary>  
-    public class EventInformationUnmarshaller : IUnmarshaller<EventInformation, XmlUnmarshallerContext>, IUnmarshaller<EventInformation, JsonUnmarshallerContext>
+    public class EventInformationUnmarshaller : IXmlUnmarshaller<EventInformation, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public EventInformation Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static EventInformationUnmarshaller _instance = new EventInformationUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Ipv6CidrBlock Object
     /// </summary>  
-    public class Ipv6CidrBlockUnmarshaller : IUnmarshaller<Ipv6CidrBlock, XmlUnmarshallerContext>, IUnmarshaller<Ipv6CidrBlock, JsonUnmarshallerContext>
+    public class Ipv6CidrBlockUnmarshaller : IXmlUnmarshaller<Ipv6CidrBlock, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Ipv6CidrBlock Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static Ipv6CidrBlockUnmarshaller _instance = new Ipv6CidrBlockUnmarshaller();        
 

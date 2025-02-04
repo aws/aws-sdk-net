@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AlternatePathHint Object
     /// </summary>  
-    public class AlternatePathHintUnmarshaller : IUnmarshaller<AlternatePathHint, XmlUnmarshallerContext>, IUnmarshaller<AlternatePathHint, JsonUnmarshallerContext>
+    public class AlternatePathHintUnmarshaller : IXmlUnmarshaller<AlternatePathHint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AlternatePathHint Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AlternatePathHintUnmarshaller _instance = new AlternatePathHintUnmarshaller();        
 

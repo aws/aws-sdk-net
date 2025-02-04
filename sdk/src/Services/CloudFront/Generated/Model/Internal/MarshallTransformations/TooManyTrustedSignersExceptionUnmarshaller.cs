@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyTrustedSignersException operation
     /// </summary>  
-    public class TooManyTrustedSignersExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyTrustedSignersException, XmlUnmarshallerContext>
+    public class TooManyTrustedSignersExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyTrustedSignersException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for VerifiedAccessLogDeliveryStatus Object
     /// </summary>  
-    public class VerifiedAccessLogDeliveryStatusUnmarshaller : IUnmarshaller<VerifiedAccessLogDeliveryStatus, XmlUnmarshallerContext>, IUnmarshaller<VerifiedAccessLogDeliveryStatus, JsonUnmarshallerContext>
+    public class VerifiedAccessLogDeliveryStatusUnmarshaller : IXmlUnmarshaller<VerifiedAccessLogDeliveryStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public VerifiedAccessLogDeliveryStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static VerifiedAccessLogDeliveryStatusUnmarshaller _instance = new VerifiedAccessLogDeliveryStatusUnmarshaller();        
 

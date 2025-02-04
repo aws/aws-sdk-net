@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CancelSpotFleetRequestsSuccessItem Object
     /// </summary>  
-    public class CancelSpotFleetRequestsSuccessItemUnmarshaller : IUnmarshaller<CancelSpotFleetRequestsSuccessItem, XmlUnmarshallerContext>, IUnmarshaller<CancelSpotFleetRequestsSuccessItem, JsonUnmarshallerContext>
+    public class CancelSpotFleetRequestsSuccessItemUnmarshaller : IXmlUnmarshaller<CancelSpotFleetRequestsSuccessItem, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CancelSpotFleetRequestsSuccessItem Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CancelSpotFleetRequestsSuccessItemUnmarshaller _instance = new CancelSpotFleetRequestsSuccessItemUnmarshaller();        
 

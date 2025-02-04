@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginAccessControlInUseException operation
     /// </summary>  
-    public class OriginAccessControlInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<OriginAccessControlInUseException, XmlUnmarshallerContext>
+    public class OriginAccessControlInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OriginAccessControlInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

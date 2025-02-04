@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for IcmpTypeCode Object
     /// </summary>  
-    public class IcmpTypeCodeUnmarshaller : IUnmarshaller<IcmpTypeCode, XmlUnmarshallerContext>, IUnmarshaller<IcmpTypeCode, JsonUnmarshallerContext>
+    public class IcmpTypeCodeUnmarshaller : IXmlUnmarshaller<IcmpTypeCode, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public IcmpTypeCode Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static IcmpTypeCodeUnmarshaller _instance = new IcmpTypeCodeUnmarshaller();        
 

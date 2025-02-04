@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OrderableClusterOption Object
     /// </summary>  
-    public class OrderableClusterOptionUnmarshaller : IUnmarshaller<OrderableClusterOption, XmlUnmarshallerContext>, IUnmarshaller<OrderableClusterOption, JsonUnmarshallerContext>
+    public class OrderableClusterOptionUnmarshaller : IXmlUnmarshaller<OrderableClusterOption, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -93,17 +93,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OrderableClusterOption Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OrderableClusterOptionUnmarshaller _instance = new OrderableClusterOptionUnmarshaller();        
 

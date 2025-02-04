@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterSnapshotAlreadyExistsException operation
     /// </summary>  
-    public class ClusterSnapshotAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<ClusterSnapshotAlreadyExistsException, XmlUnmarshallerContext>
+    public class ClusterSnapshotAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ClusterSnapshotAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

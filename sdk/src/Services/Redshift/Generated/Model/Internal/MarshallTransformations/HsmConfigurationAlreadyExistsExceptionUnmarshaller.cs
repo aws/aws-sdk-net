@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for HsmConfigurationAlreadyExistsException operation
     /// </summary>  
-    public class HsmConfigurationAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<HsmConfigurationAlreadyExistsException, XmlUnmarshallerContext>
+    public class HsmConfigurationAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<HsmConfigurationAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

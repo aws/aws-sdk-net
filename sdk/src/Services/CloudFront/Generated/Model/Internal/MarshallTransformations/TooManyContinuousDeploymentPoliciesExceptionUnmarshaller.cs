@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TooManyContinuousDeploymentPoliciesException operation
     /// </summary>  
-    public class TooManyContinuousDeploymentPoliciesExceptionUnmarshaller : IErrorResponseUnmarshaller<TooManyContinuousDeploymentPoliciesException, XmlUnmarshallerContext>
+    public class TooManyContinuousDeploymentPoliciesExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<TooManyContinuousDeploymentPoliciesException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ClusterSnapshotCopyStatus Object
     /// </summary>  
-    public class ClusterSnapshotCopyStatusUnmarshaller : IUnmarshaller<ClusterSnapshotCopyStatus, XmlUnmarshallerContext>, IUnmarshaller<ClusterSnapshotCopyStatus, JsonUnmarshallerContext>
+    public class ClusterSnapshotCopyStatusUnmarshaller : IXmlUnmarshaller<ClusterSnapshotCopyStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ClusterSnapshotCopyStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ClusterSnapshotCopyStatusUnmarshaller _instance = new ClusterSnapshotCopyStatusUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AlreadyExistsException operation
     /// </summary>  
-    public class AlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<AlreadyExistsException, XmlUnmarshallerContext>
+    public class AlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<AlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

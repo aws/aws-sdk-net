@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OriginRequestPolicyAlreadyExistsException operation
     /// </summary>  
-    public class OriginRequestPolicyAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<OriginRequestPolicyAlreadyExistsException, XmlUnmarshallerContext>
+    public class OriginRequestPolicyAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<OriginRequestPolicyAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

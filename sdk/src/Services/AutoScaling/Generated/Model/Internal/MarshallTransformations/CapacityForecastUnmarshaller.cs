@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityForecast Object
     /// </summary>  
-    public class CapacityForecastUnmarshaller : IUnmarshaller<CapacityForecast, XmlUnmarshallerContext>, IUnmarshaller<CapacityForecast, JsonUnmarshallerContext>
+    public class CapacityForecastUnmarshaller : IXmlUnmarshaller<CapacityForecast, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -86,17 +86,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityForecast Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityForecastUnmarshaller _instance = new CapacityForecastUnmarshaller();        
 

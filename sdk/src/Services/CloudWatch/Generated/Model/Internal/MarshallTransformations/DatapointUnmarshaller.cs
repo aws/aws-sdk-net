@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Datapoint Object
     /// </summary>  
-    public class DatapointUnmarshaller : IUnmarshaller<Datapoint, XmlUnmarshallerContext>, IUnmarshaller<Datapoint, JsonUnmarshallerContext>
+    public class DatapointUnmarshaller : IXmlUnmarshaller<Datapoint, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -63,7 +63,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     }
                     if (context.TestExpression("ExtendedStatistics/entry", targetDepth))
                     {
-                        var unmarshaller = new KeyValueUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
+                        var unmarshaller = new XmlKeyValueUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
                         if (unmarshalledObject.ExtendedStatistics == null)
                         {
                             unmarshalledObject.ExtendedStatistics = new Dictionary<string, double>();
@@ -117,17 +117,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Datapoint Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DatapointUnmarshaller _instance = new DatapointUnmarshaller();        
 

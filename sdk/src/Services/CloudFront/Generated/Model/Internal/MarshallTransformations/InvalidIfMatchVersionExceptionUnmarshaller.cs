@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidIfMatchVersionException operation
     /// </summary>  
-    public class InvalidIfMatchVersionExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidIfMatchVersionException, XmlUnmarshallerContext>
+    public class InvalidIfMatchVersionExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidIfMatchVersionException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

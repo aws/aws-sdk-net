@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchOriginAccessControlException operation
     /// </summary>  
-    public class NoSuchOriginAccessControlExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchOriginAccessControlException, XmlUnmarshallerContext>
+    public class NoSuchOriginAccessControlExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchOriginAccessControlException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

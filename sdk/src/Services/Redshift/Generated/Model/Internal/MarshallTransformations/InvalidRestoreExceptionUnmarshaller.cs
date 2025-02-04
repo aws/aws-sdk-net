@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidRestoreException operation
     /// </summary>  
-    public class InvalidRestoreExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidRestoreException, XmlUnmarshallerContext>
+    public class InvalidRestoreExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidRestoreException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

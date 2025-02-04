@@ -29,59 +29,49 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PointInTimeRecoveryDescription Object
     /// </summary>  
-    public class PointInTimeRecoveryDescriptionUnmarshaller : IUnmarshaller<PointInTimeRecoveryDescription, XmlUnmarshallerContext>, IUnmarshaller<PointInTimeRecoveryDescription, JsonUnmarshallerContext>
+    public class PointInTimeRecoveryDescriptionUnmarshaller : IJsonUnmarshaller<PointInTimeRecoveryDescription, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        PointInTimeRecoveryDescription IUnmarshaller<PointInTimeRecoveryDescription, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public PointInTimeRecoveryDescription Unmarshall(JsonUnmarshallerContext context)
+        public PointInTimeRecoveryDescription Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             PointInTimeRecoveryDescription unmarshalledObject = new PointInTimeRecoveryDescription();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("EarliestRestorableDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.EarliestRestorableDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EarliestRestorableDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("LatestRestorableDateTime", targetDepth))
                 {
                     var unmarshaller = NullableDateTimeUnmarshaller.Instance;
-                    unmarshalledObject.LatestRestorableDateTime = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LatestRestorableDateTime = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("PointInTimeRecoveryStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PointInTimeRecoveryStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.PointInTimeRecoveryStatus = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

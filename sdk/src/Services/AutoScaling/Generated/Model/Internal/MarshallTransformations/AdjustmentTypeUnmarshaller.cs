@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AdjustmentType Object
     /// </summary>  
-    public class AdjustmentTypeUnmarshaller : IUnmarshaller<AdjustmentType, XmlUnmarshallerContext>, IUnmarshaller<AdjustmentType, JsonUnmarshallerContext>
+    public class AdjustmentTypeUnmarshaller : IXmlUnmarshaller<AdjustmentType, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AdjustmentType Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AdjustmentTypeUnmarshaller _instance = new AdjustmentTypeUnmarshaller();        
 

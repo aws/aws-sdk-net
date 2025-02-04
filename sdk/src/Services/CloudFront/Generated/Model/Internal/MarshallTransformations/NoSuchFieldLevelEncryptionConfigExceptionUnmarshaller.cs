@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for NoSuchFieldLevelEncryptionConfigException operation
     /// </summary>  
-    public class NoSuchFieldLevelEncryptionConfigExceptionUnmarshaller : IErrorResponseUnmarshaller<NoSuchFieldLevelEncryptionConfigException, XmlUnmarshallerContext>
+    public class NoSuchFieldLevelEncryptionConfigExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<NoSuchFieldLevelEncryptionConfigException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

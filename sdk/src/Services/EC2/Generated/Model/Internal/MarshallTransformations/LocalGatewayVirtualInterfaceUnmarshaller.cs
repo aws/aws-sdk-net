@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LocalGatewayVirtualInterface Object
     /// </summary>  
-    public class LocalGatewayVirtualInterfaceUnmarshaller : IUnmarshaller<LocalGatewayVirtualInterface, XmlUnmarshallerContext>, IUnmarshaller<LocalGatewayVirtualInterface, JsonUnmarshallerContext>
+    public class LocalGatewayVirtualInterfaceUnmarshaller : IXmlUnmarshaller<LocalGatewayVirtualInterface, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -123,17 +123,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LocalGatewayVirtualInterface Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static LocalGatewayVirtualInterfaceUnmarshaller _instance = new LocalGatewayVirtualInterfaceUnmarshaller();        
 

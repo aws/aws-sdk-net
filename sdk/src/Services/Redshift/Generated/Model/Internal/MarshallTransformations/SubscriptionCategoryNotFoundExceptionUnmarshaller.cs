@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubscriptionCategoryNotFoundException operation
     /// </summary>  
-    public class SubscriptionCategoryNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SubscriptionCategoryNotFoundException, XmlUnmarshallerContext>
+    public class SubscriptionCategoryNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SubscriptionCategoryNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InferenceDeviceInfo Object
     /// </summary>  
-    public class InferenceDeviceInfoUnmarshaller : IUnmarshaller<InferenceDeviceInfo, XmlUnmarshallerContext>, IUnmarshaller<InferenceDeviceInfo, JsonUnmarshallerContext>
+    public class InferenceDeviceInfoUnmarshaller : IXmlUnmarshaller<InferenceDeviceInfo, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InferenceDeviceInfo Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InferenceDeviceInfoUnmarshaller _instance = new InferenceDeviceInfoUnmarshaller();        
 

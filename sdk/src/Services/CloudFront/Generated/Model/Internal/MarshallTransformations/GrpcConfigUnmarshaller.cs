@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for GrpcConfig Object
     /// </summary>  
-    public class GrpcConfigUnmarshaller : IUnmarshaller<GrpcConfig, XmlUnmarshallerContext>, IUnmarshaller<GrpcConfig, JsonUnmarshallerContext>
+    public class GrpcConfigUnmarshaller : IXmlUnmarshaller<GrpcConfig, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public GrpcConfig Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static GrpcConfigUnmarshaller _instance = new GrpcConfigUnmarshaller();        
 
         /// <summary>

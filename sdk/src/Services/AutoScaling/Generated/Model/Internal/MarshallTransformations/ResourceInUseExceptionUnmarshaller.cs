@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ResourceInUseException operation
     /// </summary>  
-    public class ResourceInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<ResourceInUseException, XmlUnmarshallerContext>
+    public class ResourceInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<ResourceInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

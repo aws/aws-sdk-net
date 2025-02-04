@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for TerminateConnectionStatus Object
     /// </summary>  
-    public class TerminateConnectionStatusUnmarshaller : IUnmarshaller<TerminateConnectionStatus, XmlUnmarshallerContext>, IUnmarshaller<TerminateConnectionStatus, JsonUnmarshallerContext>
+    public class TerminateConnectionStatusUnmarshaller : IXmlUnmarshaller<TerminateConnectionStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -82,17 +82,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public TerminateConnectionStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static TerminateConnectionStatusUnmarshaller _instance = new TerminateConnectionStatusUnmarshaller();        
 

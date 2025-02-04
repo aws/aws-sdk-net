@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for ReservedNodeExchangeStatus Object
     /// </summary>  
-    public class ReservedNodeExchangeStatusUnmarshaller : IUnmarshaller<ReservedNodeExchangeStatus, XmlUnmarshallerContext>, IUnmarshaller<ReservedNodeExchangeStatus, JsonUnmarshallerContext>
+    public class ReservedNodeExchangeStatusUnmarshaller : IXmlUnmarshaller<ReservedNodeExchangeStatus, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -118,17 +118,6 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public ReservedNodeExchangeStatus Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static ReservedNodeExchangeStatusUnmarshaller _instance = new ReservedNodeExchangeStatusUnmarshaller();        
 

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceTopology Object
     /// </summary>  
-    public class InstanceTopologyUnmarshaller : IUnmarshaller<InstanceTopology, XmlUnmarshallerContext>, IUnmarshaller<InstanceTopology, JsonUnmarshallerContext>
+    public class InstanceTopologyUnmarshaller : IXmlUnmarshaller<InstanceTopology, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -105,17 +105,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceTopology Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceTopologyUnmarshaller _instance = new InstanceTopologyUnmarshaller();        
 

@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CachePolicyAlreadyExistsException operation
     /// </summary>  
-    public class CachePolicyAlreadyExistsExceptionUnmarshaller : IErrorResponseUnmarshaller<CachePolicyAlreadyExistsException, XmlUnmarshallerContext>
+    public class CachePolicyAlreadyExistsExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CachePolicyAlreadyExistsException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

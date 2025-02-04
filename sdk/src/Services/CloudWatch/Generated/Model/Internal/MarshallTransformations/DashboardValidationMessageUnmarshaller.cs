@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for DashboardValidationMessage Object
     /// </summary>  
-    public class DashboardValidationMessageUnmarshaller : IUnmarshaller<DashboardValidationMessage, XmlUnmarshallerContext>, IUnmarshaller<DashboardValidationMessage, JsonUnmarshallerContext>
+    public class DashboardValidationMessageUnmarshaller : IXmlUnmarshaller<DashboardValidationMessage, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public DashboardValidationMessage Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static DashboardValidationMessageUnmarshaller _instance = new DashboardValidationMessageUnmarshaller();        
 

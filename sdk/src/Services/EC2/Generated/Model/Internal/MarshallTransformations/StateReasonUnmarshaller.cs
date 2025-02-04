@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for StateReason Object
     /// </summary>  
-    public class StateReasonUnmarshaller : IUnmarshaller<StateReason, XmlUnmarshallerContext>, IUnmarshaller<StateReason, JsonUnmarshallerContext>
+    public class StateReasonUnmarshaller : IXmlUnmarshaller<StateReason, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public StateReason Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static StateReasonUnmarshaller _instance = new StateReasonUnmarshaller();        
 

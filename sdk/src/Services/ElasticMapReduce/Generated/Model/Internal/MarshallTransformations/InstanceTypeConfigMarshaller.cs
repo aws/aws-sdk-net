@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
@@ -51,7 +49,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
             if(requestObject.IsSetBidPrice())
             {
                 context.Writer.WritePropertyName("BidPrice");
-                context.Writer.Write(requestObject.BidPrice);
+                context.Writer.WriteStringValue(requestObject.BidPrice);
             }
 
             if(requestObject.IsSetBidPriceAsPercentageOfOnDemandPrice())
@@ -59,51 +57,51 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("BidPriceAsPercentageOfOnDemandPrice");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value);
+                    context.Writer.WriteNumberValue(requestObject.BidPriceAsPercentageOfOnDemandPrice.Value);
                 }
             }
 
             if(requestObject.IsSetConfigurations())
             {
                 context.Writer.WritePropertyName("Configurations");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectConfigurationsListValue in requestObject.Configurations)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = ConfigurationMarshaller.Instance;
                     marshaller.Marshall(requestObjectConfigurationsListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
             if(requestObject.IsSetCustomAmiId())
             {
                 context.Writer.WritePropertyName("CustomAmiId");
-                context.Writer.Write(requestObject.CustomAmiId);
+                context.Writer.WriteStringValue(requestObject.CustomAmiId);
             }
 
             if(requestObject.IsSetEbsConfiguration())
             {
                 context.Writer.WritePropertyName("EbsConfiguration");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
 
                 var marshaller = EbsConfigurationMarshaller.Instance;
                 marshaller.Marshall(requestObject.EbsConfiguration, context);
 
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetInstanceType())
             {
                 context.Writer.WritePropertyName("InstanceType");
-                context.Writer.Write(requestObject.InstanceType);
+                context.Writer.WriteStringValue(requestObject.InstanceType);
             }
 
             if(requestObject.IsSetPriority())
@@ -111,18 +109,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("Priority");
                 if(StringUtils.IsSpecialDoubleValue(requestObject.Priority.Value))
                 {
-                    context.Writer.Write(StringUtils.FromSpecialDoubleValue(requestObject.Priority.Value));
+                    context.Writer.WriteStringValue(StringUtils.FromSpecialDoubleValue(requestObject.Priority.Value));
                 }
                 else
                 {
-                    context.Writer.Write(requestObject.Priority.Value);
+                    context.Writer.WriteNumberValue(requestObject.Priority.Value);
                 }
             }
 
             if(requestObject.IsSetWeightedCapacity())
             {
                 context.Writer.WritePropertyName("WeightedCapacity");
-                context.Writer.Write(requestObject.WeightedCapacity.Value);
+                context.Writer.WriteNumberValue(requestObject.WeightedCapacity.Value);
             }
 
         }

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AddedPrincipal Object
     /// </summary>  
-    public class AddedPrincipalUnmarshaller : IUnmarshaller<AddedPrincipal, XmlUnmarshallerContext>, IUnmarshaller<AddedPrincipal, JsonUnmarshallerContext>
+    public class AddedPrincipalUnmarshaller : IXmlUnmarshaller<AddedPrincipal, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AddedPrincipal Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AddedPrincipalUnmarshaller _instance = new AddedPrincipalUnmarshaller();        
 

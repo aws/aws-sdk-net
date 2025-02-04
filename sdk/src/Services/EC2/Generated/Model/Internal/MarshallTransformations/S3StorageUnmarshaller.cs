@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for S3Storage Object
     /// </summary>  
-    public class S3StorageUnmarshaller : IUnmarshaller<S3Storage, XmlUnmarshallerContext>, IUnmarshaller<S3Storage, JsonUnmarshallerContext>
+    public class S3StorageUnmarshaller : IXmlUnmarshaller<S3Storage, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -94,17 +94,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public S3Storage Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static S3StorageUnmarshaller _instance = new S3StorageUnmarshaller();        
 

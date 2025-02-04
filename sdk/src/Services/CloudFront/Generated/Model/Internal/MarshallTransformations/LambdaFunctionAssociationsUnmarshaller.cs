@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for LambdaFunctionAssociations Object
     /// </summary>  
-    public class LambdaFunctionAssociationsUnmarshaller : IUnmarshaller<LambdaFunctionAssociations, XmlUnmarshallerContext>, IUnmarshaller<LambdaFunctionAssociations, JsonUnmarshallerContext>
+    public class LambdaFunctionAssociationsUnmarshaller : IXmlUnmarshaller<LambdaFunctionAssociations, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -80,17 +80,6 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
             }          
             return unmarshalledObject;
         }
-        
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public LambdaFunctionAssociations Unmarshall(JsonUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
         private static LambdaFunctionAssociationsUnmarshaller _instance = new LambdaFunctionAssociationsUnmarshaller();        
 
         /// <summary>

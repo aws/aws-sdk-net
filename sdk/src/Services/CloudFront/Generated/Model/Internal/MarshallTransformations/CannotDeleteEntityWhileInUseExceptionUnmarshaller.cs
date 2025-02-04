@@ -36,7 +36,7 @@ namespace Amazon.CloudFront.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CannotDeleteEntityWhileInUseException operation
     /// </summary>  
-    public class CannotDeleteEntityWhileInUseExceptionUnmarshaller : IErrorResponseUnmarshaller<CannotDeleteEntityWhileInUseException, XmlUnmarshallerContext>
+    public class CannotDeleteEntityWhileInUseExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<CannotDeleteEntityWhileInUseException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

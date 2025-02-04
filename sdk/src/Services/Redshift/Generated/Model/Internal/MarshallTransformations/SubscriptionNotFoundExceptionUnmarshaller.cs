@@ -35,7 +35,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for SubscriptionNotFoundException operation
     /// </summary>  
-    public class SubscriptionNotFoundExceptionUnmarshaller : IErrorResponseUnmarshaller<SubscriptionNotFoundException, XmlUnmarshallerContext>
+    public class SubscriptionNotFoundExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<SubscriptionNotFoundException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

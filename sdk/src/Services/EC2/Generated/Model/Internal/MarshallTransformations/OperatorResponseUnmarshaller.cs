@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for OperatorResponse Object
     /// </summary>  
-    public class OperatorResponseUnmarshaller : IUnmarshaller<OperatorResponse, XmlUnmarshallerContext>, IUnmarshaller<OperatorResponse, JsonUnmarshallerContext>
+    public class OperatorResponseUnmarshaller : IXmlUnmarshaller<OperatorResponse, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public OperatorResponse Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static OperatorResponseUnmarshaller _instance = new OperatorResponseUnmarshaller();        
 

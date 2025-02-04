@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for PriceSchedule Object
     /// </summary>  
-    public class PriceScheduleUnmarshaller : IUnmarshaller<PriceSchedule, XmlUnmarshallerContext>, IUnmarshaller<PriceSchedule, JsonUnmarshallerContext>
+    public class PriceScheduleUnmarshaller : IXmlUnmarshaller<PriceSchedule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -88,17 +88,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public PriceSchedule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static PriceScheduleUnmarshaller _instance = new PriceScheduleUnmarshaller();        
 

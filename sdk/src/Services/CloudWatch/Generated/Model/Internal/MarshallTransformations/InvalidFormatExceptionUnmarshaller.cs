@@ -35,7 +35,7 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InvalidFormatException operation
     /// </summary>  
-    public class InvalidFormatExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidFormatException, XmlUnmarshallerContext>
+    public class InvalidFormatExceptionUnmarshaller : IXmlErrorResponseUnmarshaller<InvalidFormatException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.

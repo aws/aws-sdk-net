@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for Phase1EncryptionAlgorithmsListValue Object
     /// </summary>  
-    public class Phase1EncryptionAlgorithmsListValueUnmarshaller : IUnmarshaller<Phase1EncryptionAlgorithmsListValue, XmlUnmarshallerContext>, IUnmarshaller<Phase1EncryptionAlgorithmsListValue, JsonUnmarshallerContext>
+    public class Phase1EncryptionAlgorithmsListValueUnmarshaller : IXmlUnmarshaller<Phase1EncryptionAlgorithmsListValue, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -70,17 +70,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public Phase1EncryptionAlgorithmsListValue Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static Phase1EncryptionAlgorithmsListValueUnmarshaller _instance = new Phase1EncryptionAlgorithmsListValueUnmarshaller();        
 

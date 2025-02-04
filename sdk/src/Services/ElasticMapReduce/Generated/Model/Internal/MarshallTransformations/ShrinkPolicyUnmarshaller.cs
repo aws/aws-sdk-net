@@ -29,53 +29,43 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
+using System.Text.Json;
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for ShrinkPolicy Object
     /// </summary>  
-    public class ShrinkPolicyUnmarshaller : IUnmarshaller<ShrinkPolicy, XmlUnmarshallerContext>, IUnmarshaller<ShrinkPolicy, JsonUnmarshallerContext>
+    public class ShrinkPolicyUnmarshaller : IJsonUnmarshaller<ShrinkPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
-        /// <returns></returns>
-        ShrinkPolicy IUnmarshaller<ShrinkPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
-        {
-            throw new NotImplementedException();
-        }
-
-        /// <summary>
-        /// Unmarshaller the response from the service to the response class.
-        /// </summary>  
-        /// <param name="context"></param>
+        /// <param name="reader"></param>
         /// <returns>The unmarshalled object</returns>
-        public ShrinkPolicy Unmarshall(JsonUnmarshallerContext context)
+        public ShrinkPolicy Unmarshall(JsonUnmarshallerContext context, ref StreamingUtf8JsonReader reader)
         {
             ShrinkPolicy unmarshalledObject = new ShrinkPolicy();
             if (context.IsEmptyResponse)
                 return null;
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
+            context.Read(ref reader);
+            if (context.CurrentTokenType == JsonTokenType.Null) 
                 return null;
 
             int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
+            while (context.ReadAtDepth(targetDepth, ref reader))
             {
                 if (context.TestExpression("DecommissionTimeout", targetDepth))
                 {
                     var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.DecommissionTimeout = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DecommissionTimeout = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
                 if (context.TestExpression("InstanceResizePolicy", targetDepth))
                 {
                     var unmarshaller = InstanceResizePolicyUnmarshaller.Instance;
-                    unmarshalledObject.InstanceResizePolicy = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.InstanceResizePolicy = unmarshaller.Unmarshall(context, ref reader);
                     continue;
                 }
             }

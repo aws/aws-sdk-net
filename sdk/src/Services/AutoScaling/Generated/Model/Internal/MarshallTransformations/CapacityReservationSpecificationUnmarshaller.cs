@@ -35,7 +35,7 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for CapacityReservationSpecification Object
     /// </summary>  
-    public class CapacityReservationSpecificationUnmarshaller : IUnmarshaller<CapacityReservationSpecification, XmlUnmarshallerContext>, IUnmarshaller<CapacityReservationSpecification, JsonUnmarshallerContext>
+    public class CapacityReservationSpecificationUnmarshaller : IXmlUnmarshaller<CapacityReservationSpecification, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -76,17 +76,6 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public CapacityReservationSpecification Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static CapacityReservationSpecificationUnmarshaller _instance = new CapacityReservationSpecificationUnmarshaller();        
 

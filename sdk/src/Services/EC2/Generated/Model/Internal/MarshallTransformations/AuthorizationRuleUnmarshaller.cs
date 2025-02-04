@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for AuthorizationRule Object
     /// </summary>  
-    public class AuthorizationRuleUnmarshaller : IUnmarshaller<AuthorizationRule, XmlUnmarshallerContext>, IUnmarshaller<AuthorizationRule, JsonUnmarshallerContext>
+    public class AuthorizationRuleUnmarshaller : IXmlUnmarshaller<AuthorizationRule, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -100,17 +100,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public AuthorizationRule Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static AuthorizationRuleUnmarshaller _instance = new AuthorizationRuleUnmarshaller();        
 

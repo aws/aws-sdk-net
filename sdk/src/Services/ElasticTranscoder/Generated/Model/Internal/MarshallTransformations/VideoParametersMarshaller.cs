@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 #pragma warning disable CS0612,CS0618
 namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
 {
@@ -51,109 +49,109 @@ namespace Amazon.ElasticTranscoder.Model.Internal.MarshallTransformations
             if(requestObject.IsSetAspectRatio())
             {
                 context.Writer.WritePropertyName("AspectRatio");
-                context.Writer.Write(requestObject.AspectRatio);
+                context.Writer.WriteStringValue(requestObject.AspectRatio);
             }
 
             if(requestObject.IsSetBitRate())
             {
                 context.Writer.WritePropertyName("BitRate");
-                context.Writer.Write(requestObject.BitRate);
+                context.Writer.WriteStringValue(requestObject.BitRate);
             }
 
             if(requestObject.IsSetCodec())
             {
                 context.Writer.WritePropertyName("Codec");
-                context.Writer.Write(requestObject.Codec);
+                context.Writer.WriteStringValue(requestObject.Codec);
             }
 
             if(requestObject.IsSetCodecOptions())
             {
                 context.Writer.WritePropertyName("CodecOptions");
-                context.Writer.WriteObjectStart();
+                context.Writer.WriteStartObject();
                 foreach (var requestObjectCodecOptionsKvp in requestObject.CodecOptions)
                 {
                     context.Writer.WritePropertyName(requestObjectCodecOptionsKvp.Key);
                     var requestObjectCodecOptionsValue = requestObjectCodecOptionsKvp.Value;
 
-                        context.Writer.Write(requestObjectCodecOptionsValue);
+                        context.Writer.WriteStringValue(requestObjectCodecOptionsValue);
                 }
-                context.Writer.WriteObjectEnd();
+                context.Writer.WriteEndObject();
             }
 
             if(requestObject.IsSetDisplayAspectRatio())
             {
                 context.Writer.WritePropertyName("DisplayAspectRatio");
-                context.Writer.Write(requestObject.DisplayAspectRatio);
+                context.Writer.WriteStringValue(requestObject.DisplayAspectRatio);
             }
 
             if(requestObject.IsSetFixedGOP())
             {
                 context.Writer.WritePropertyName("FixedGOP");
-                context.Writer.Write(requestObject.FixedGOP);
+                context.Writer.WriteStringValue(requestObject.FixedGOP);
             }
 
             if(requestObject.IsSetFrameRate())
             {
                 context.Writer.WritePropertyName("FrameRate");
-                context.Writer.Write(requestObject.FrameRate);
+                context.Writer.WriteStringValue(requestObject.FrameRate);
             }
 
             if(requestObject.IsSetKeyframesMaxDist())
             {
                 context.Writer.WritePropertyName("KeyframesMaxDist");
-                context.Writer.Write(requestObject.KeyframesMaxDist);
+                context.Writer.WriteStringValue(requestObject.KeyframesMaxDist);
             }
 
             if(requestObject.IsSetMaxFrameRate())
             {
                 context.Writer.WritePropertyName("MaxFrameRate");
-                context.Writer.Write(requestObject.MaxFrameRate);
+                context.Writer.WriteStringValue(requestObject.MaxFrameRate);
             }
 
             if(requestObject.IsSetMaxHeight())
             {
                 context.Writer.WritePropertyName("MaxHeight");
-                context.Writer.Write(requestObject.MaxHeight);
+                context.Writer.WriteStringValue(requestObject.MaxHeight);
             }
 
             if(requestObject.IsSetMaxWidth())
             {
                 context.Writer.WritePropertyName("MaxWidth");
-                context.Writer.Write(requestObject.MaxWidth);
+                context.Writer.WriteStringValue(requestObject.MaxWidth);
             }
 
             if(requestObject.IsSetPaddingPolicy())
             {
                 context.Writer.WritePropertyName("PaddingPolicy");
-                context.Writer.Write(requestObject.PaddingPolicy);
+                context.Writer.WriteStringValue(requestObject.PaddingPolicy);
             }
 
             if(requestObject.IsSetResolution())
             {
                 context.Writer.WritePropertyName("Resolution");
-                context.Writer.Write(requestObject.Resolution);
+                context.Writer.WriteStringValue(requestObject.Resolution);
             }
 
             if(requestObject.IsSetSizingPolicy())
             {
                 context.Writer.WritePropertyName("SizingPolicy");
-                context.Writer.Write(requestObject.SizingPolicy);
+                context.Writer.WriteStringValue(requestObject.SizingPolicy);
             }
 
             if(requestObject.IsSetWatermarks())
             {
                 context.Writer.WritePropertyName("Watermarks");
-                context.Writer.WriteArrayStart();
+                context.Writer.WriteStartArray();
                 foreach(var requestObjectWatermarksListValue in requestObject.Watermarks)
                 {
-                    context.Writer.WriteObjectStart();
+                    context.Writer.WriteStartObject();
 
                     var marshaller = PresetWatermarkMarshaller.Instance;
                     marshaller.Marshall(requestObjectWatermarksListValue, context);
 
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteEndObject();
                 }
-                context.Writer.WriteArrayEnd();
+                context.Writer.WriteEndArray();
             }
 
         }

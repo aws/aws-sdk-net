@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "ServiceClientGenerator": {
+      "commandName": "Project",
+      "commandLineArgs": "-sm autoscaling;bearer-token-auth-test;cloudfront;monitoring;dynamodb;ec2;elasticmapreduce;elastictranscoder;iot-data;kms;redshift;s3;sts;sso;sso-oidc -sro"
+    }
+  }
+}

@@ -35,7 +35,7 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
     /// <summary>
     /// Response Unmarshaller for InstanceAttribute Object
     /// </summary>  
-    public class InstanceAttributeUnmarshaller : IUnmarshaller<InstanceAttribute, XmlUnmarshallerContext>, IUnmarshaller<InstanceAttribute, JsonUnmarshallerContext>
+    public class InstanceAttributeUnmarshaller : IXmlUnmarshaller<InstanceAttribute, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -181,17 +181,6 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
 
             return unmarshalledObject;
         }
-
-        /// <summary>
-        /// Unmarshaller error response to exception.
-        /// </summary>  
-        /// <param name="context"></param>
-        /// <returns></returns>
-        public InstanceAttribute Unmarshall(JsonUnmarshallerContext context)
-        {
-            return null;
-        }
-
 
         private static InstanceAttributeUnmarshaller _instance = new InstanceAttributeUnmarshaller();        
 
