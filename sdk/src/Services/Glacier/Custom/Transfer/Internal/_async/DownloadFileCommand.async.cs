@@ -14,28 +14,12 @@
  */
 using System;
 using System.Collections.Generic;
-using System.Globalization;
-using System.IO;
-using System.Net;
-using System.Text;
-using System.Threading;
+using System.Threading.Tasks;
 
 using Amazon.Glacier.Model;
-using Amazon.Glacier.Transfer.Internal;
-
-using Amazon.Runtime.Internal;
-
-using Amazon.SimpleNotificationService;
 using Amazon.SimpleNotificationService.Model;
-
-using Amazon.SQS;
 using Amazon.SQS.Model;
 using Amazon.SQS.Util;
-
-using Amazon.Util;
-
-using ThirdParty.Json.LitJson;
-using System.Threading.Tasks;
 
 namespace Amazon.Glacier.Transfer.Internal
 {
