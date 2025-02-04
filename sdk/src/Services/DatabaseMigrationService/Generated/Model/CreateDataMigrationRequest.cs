@@ -44,6 +44,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _serviceAccessRoleArn;
         private List<SourceDataSetting> _sourceDataSettings = AWSConfigs.InitializeCollections ? new List<SourceDataSetting>() : null;
         private List<Tag> _tags = AWSConfigs.InitializeCollections ? new List<Tag>() : null;
+        private List<TargetDataSetting> _targetDataSettings = AWSConfigs.InitializeCollections ? new List<TargetDataSetting>() : null;
 
         /// <summary>
         /// Gets and sets the property DataMigrationName. 
@@ -228,6 +229,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetTags()
         {
             return this._tags != null && (this._tags.Count > 0 || !AWSConfigs.InitializeCollections); 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TargetDataSettings. 
+        /// <para>
+        /// Specifies information about the target data provider.
+        /// </para>
+        /// </summary>
+        public List<TargetDataSetting> TargetDataSettings
+        {
+            get { return this._targetDataSettings; }
+            set { this._targetDataSettings = value; }
+        }
+
+        // Check to see if TargetDataSettings property is set
+        internal bool IsSetTargetDataSettings()
+        {
+            return this._targetDataSettings != null && (this._targetDataSettings.Count > 0 || !AWSConfigs.InitializeCollections); 
         }
 
     }

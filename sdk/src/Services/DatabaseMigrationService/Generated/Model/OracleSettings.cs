@@ -283,7 +283,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property AuthenticationMethod. 
         /// <para>
-        /// Specifies using Kerberos authentication with Oracle.
+        /// Specifies the authentication method to be used with Oracle.
         /// </para>
         /// </summary>
         public OracleAuthenticationMethod AuthenticationMethod
