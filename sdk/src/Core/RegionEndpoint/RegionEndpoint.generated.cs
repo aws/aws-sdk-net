@@ -232,5 +232,15 @@ namespace Amazon
         /// </summary>
         public static readonly RegionEndpoint EUIsoeWest1 = GetEndpoint("eu-isoe-west-1", "EU ISOE West");
 
+        /// <summary>
+        /// The US ISOF EAST endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsofEast1 = GetEndpoint("us-isof-east-1", "US ISOF EAST");
+
+        /// <summary>
+        /// The US ISOF SOUTH endpoint.
+        /// </summary>
+        public static readonly RegionEndpoint USIsofSouth1 = GetEndpoint("us-isof-south-1", "US ISOF SOUTH");
+
     }
 }
