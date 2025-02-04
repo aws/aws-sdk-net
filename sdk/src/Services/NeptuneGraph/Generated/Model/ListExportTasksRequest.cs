@@ -35,8 +35,27 @@ namespace Amazon.NeptuneGraph.Model
     /// </summary>
     public partial class ListExportTasksRequest : AmazonNeptuneGraphRequest
     {
+        private string _graphIdentifier;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property GraphIdentifier. 
+        /// <para>
+        /// The unique identifier of the Neptune Analytics graph.
+        /// </para>
+        /// </summary>
+        public string GraphIdentifier
+        {
+            get { return this._graphIdentifier; }
+            set { this._graphIdentifier = value; }
+        }
+
+        // Check to see if GraphIdentifier property is set
+        internal bool IsSetGraphIdentifier()
+        {
+            return this._graphIdentifier != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

@@ -60,6 +60,9 @@ namespace Amazon.NeptuneGraph.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetGraphIdentifier())
+                request.Parameters.Add("graphIdentifier", StringUtils.FromString(publicRequest.GraphIdentifier));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             

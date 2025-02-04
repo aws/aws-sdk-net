@@ -214,9 +214,9 @@ namespace Amazon.NeptuneGraph.Model
         /// </para>
         ///  
         /// <para>
-        ///  If both the minimum and maximum values are specified, the max of the <c>min-provisioned-memory</c>
-        /// and <c>max-provisioned memory</c> is used to create the graph. If neither value is
-        /// specified 128 m-NCUs are used.
+        ///  If both the minimum and maximum values are specified, the final <c>provisioned-memory</c>
+        /// will be chosen per the actual size of your imported data. If neither value is specified,
+        /// 128 m-NCUs are used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=16, Max=24576)]
