@@ -369,11 +369,11 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         {
             try
             {
-                var document = JsonDocument.Parse(json);
+                var document = JsonDocument.Parse(json).RootElement;
                 using var stream = new MemoryStream();
                 using var writer = new Utf8JsonWriter(stream);
 
-                InterpolateJson(document.RootElement, refs, writer);
+                InterpolateJson(document, refs, writer);
                 writer.Flush();
 
                 return Encoding.UTF8.GetString(stream.ToArray());

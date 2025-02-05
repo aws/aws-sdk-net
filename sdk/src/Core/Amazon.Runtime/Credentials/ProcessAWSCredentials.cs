@@ -158,48 +158,46 @@ namespace Amazon.Runtime
             // The system will attempt to find the executable within folders specified by the PATH environment variable.
             if (processInfo.ExitCode == 0)
             {
-                JsonDocument data = null;
                 try
                 {
-                    data = JsonDocument.Parse(processInfo.StandardOutput, _options);
+                    JsonElement data = JsonDocument.Parse(processInfo.StandardOutput, _options).RootElement;
+                    if ((data.EnumerateObject().Select(x => x.NameEquals(_versionString)) == null) || !(data.TryGetProperty(_versionString, out _)))
+                    {
+                        throw new ProcessAWSCredentialException("Missing required parameter - Version in JSON Payload");
+                    }
+                    var version = data.GetProperty(_versionString).GetInt32();
+                    switch (version)
+                    {
+                        case 1:
+                            ProcessCredentialVersion1 processCredentialDataV1 = null;
+                            try
+                            {
+                                processCredentialDataV1 = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(processInfo.StandardOutput, ProcessCredentialVersion1JsonSerializerContexts.Default);
+                                if (processCredentialDataV1.Expiration == DateTime.MaxValue && processCredentialDataV1.Expiration.Kind != DateTimeKind.Utc)
+                                {
+                                    processCredentialDataV1.Expiration = DateTime.SpecifyKind(processCredentialDataV1.Expiration, DateTimeKind.Utc);
+                                }
+                                else
+                                {
+                                    processCredentialDataV1.Expiration = processCredentialDataV1.Expiration.ToUniversalTime();
+                                }
+
+                            }
+                            catch (Exception e)
+                            {
+                                throw new ProcessAWSCredentialException("The response back from the process credential provider returned back a malformed JSON document.", e);
+                            }
+
+                            return new CredentialsRefreshState(
+                                new ImmutableCredentials(processCredentialDataV1.AccessKeyId,
+                                    processCredentialDataV1.SecretAccessKey, processCredentialDataV1.SessionToken), processCredentialDataV1.Expiration);
+                        default:
+                            throw new ProcessAWSCredentialException(string.Format(CultureInfo.CurrentCulture, "Unsupported credential version: {0}" + version));
+                    }
                 }
                 catch(JsonException je)
                 {
                     throw new ProcessAWSCredentialException("The response back from the process credential provider returned back a malformed JSON document.", je);
-                }
-                if ((data.RootElement.EnumerateObject().Select(x => x.NameEquals(_versionString)) == null) || string.IsNullOrEmpty(data.RootElement.GetProperty(_versionString).GetString()))
-                {
-                    throw new ProcessAWSCredentialException("Missing required parameter - Version in JSON Payload");
-                }
-
-                var version = data.RootElement.GetProperty(_versionString).GetInt32();
-                switch (version)
-                {
-                    case 1:
-                        ProcessCredentialVersion1 processCredentialDataV1 = null;            
-                        try
-                        {
-                            processCredentialDataV1 = JsonSerializerHelper.Deserialize<ProcessCredentialVersion1>(processInfo.StandardOutput, ProcessCredentialVersion1JsonSerializerContexts.Default);
-                            if (processCredentialDataV1.Expiration == DateTime.MaxValue && processCredentialDataV1.Expiration.Kind != DateTimeKind.Utc)
-                            {
-                                processCredentialDataV1.Expiration = DateTime.SpecifyKind(processCredentialDataV1.Expiration, DateTimeKind.Utc);
-                            }
-                            else
-                            {
-                                processCredentialDataV1.Expiration = processCredentialDataV1.Expiration.ToUniversalTime();
-                            }
-                            
-                        }
-                        catch (Exception e)
-                        {
-                            throw new ProcessAWSCredentialException("The response back from the process credential provider returned back a malformed JSON document.", e);
-                        }
-
-                        return new CredentialsRefreshState(
-                            new ImmutableCredentials(processCredentialDataV1.AccessKeyId,
-                                processCredentialDataV1.SecretAccessKey, processCredentialDataV1.SessionToken),processCredentialDataV1.Expiration);
-                    default:
-                        throw new ProcessAWSCredentialException(string.Format(CultureInfo.CurrentCulture,"Unsupported credential version: {0}" + version));
                 }
             }
             var processException = new ProcessAWSCredentialException(string.Format(CultureInfo.CurrentCulture, "Command returned non-zero exit value {0} with the error - {1}", processInfo.ExitCode, processInfo.StandardError));
