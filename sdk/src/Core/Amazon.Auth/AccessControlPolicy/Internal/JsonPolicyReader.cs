@@ -81,6 +81,17 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
         {
             if (jStatement.TryGetProperty(JsonDocumentFields.PRINCIPAL, out JsonElement jPrincipals))
             {
+                // if the principal's value is a string and not an object then it can only be "*".
+                // do not try to enumerate the object and return.
+                if (jPrincipals.ValueKind == JsonValueKind.String)
+                {
+                    if (jPrincipals.GetString().Equals("*"))
+                    {
+                        statement.Principals.Add(Principal.Anonymous);
+                        return;
+                    }
+                }
+
                 foreach (JsonProperty jPrincipal in jPrincipals.EnumerateObject())
                 {
                     if (jPrincipal.Value.ValueKind == JsonValueKind.String)
