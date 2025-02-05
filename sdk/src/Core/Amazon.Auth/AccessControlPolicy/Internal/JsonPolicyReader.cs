@@ -158,11 +158,14 @@ namespace Amazon.Auth.AccessControlPolicy.Internal
                 {
                     statement.Resources.Add(new Resource(jResourceElement.GetString()));
                 }
-                foreach (JsonElement jResourceValue in jResourceElement.EnumerateArray())
+                else if (jResourceElement.ValueKind == JsonValueKind.Array)
                 {
-                    if (jResourceValue.ValueKind == JsonValueKind.String)
+                    foreach (JsonElement jResourceValue in jResourceElement.EnumerateArray())
                     {
-                        statement.Resources.Add(new Resource(jResourceValue.GetString()));
+                        if (jResourceValue.ValueKind == JsonValueKind.String)
+                        {
+                            statement.Resources.Add(new Resource(jResourceValue.GetString()));
+                        }
                     }
                 }
             }
