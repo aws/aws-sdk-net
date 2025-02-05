@@ -1,3 +1,10 @@
+### 3.7.976.1 (2025-02-05 19:15 UTC)
+* RDS (3.7.410.27)
+	* Documentation updates to clarify the description for the parameter AllocatedStorage for the DB cluster data type, the description for the parameter DeleteAutomatedBackups for the DeleteDBCluster API operation, and removing an outdated note for the CreateDBParameterGroup API operation.
+* Core 3.7.401.9
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.976.0 (2025-02-04 21:29 UTC)
 * DatabaseMigrationService (3.7.404.0)
 	* Introduces TargetDataSettings with the TablePreparationMode option available for data migrations.
